@@ -17,7 +17,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/images/icon-butterfly.png',
       },
     },
     'gatsby-plugin-sharp',
@@ -36,7 +36,7 @@ const config: GatsbyConfig = {
         token: NOTION_INTEGRATION_TOKEN,
         databaseId: NOTION_DB_ID,
         propsToFrontmatter: true,
-        lowerTitleLevel: true
+        lowerTitleLevel: true,
       },
     },
   ],
