@@ -1,8 +1,8 @@
 import * as React from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
-import '../css/global.scss'
-import { useGetNotionQuery } from '../services/use-notion'
-import { INode } from '../types/notionTypes'
+import '@scss/global.scss'
+import { INotionNode } from '@types'
+import { useGetNotionQuery } from '@services'
 
 export const Head: HeadFC = () => <title>Home</title>
 
@@ -12,7 +12,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <main>
       Hello, stranger.
       <section>
-        {nodes.map((node: INode, i: number) => {
+        {nodes.map((node: INotionNode, i: number) => {
           return (
             <div key={`node-${i}`}>
               <p>

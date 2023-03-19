@@ -1,4 +1,4 @@
-export interface INode {
+export interface INotionNode {
   id: string
   title: string
   archived: boolean

@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby'
-import { INode } from '../types/notionTypes'
+import { INotionNode } from '@types'
 
 export const getNotionQuery = graphql`
   query {
@@ -24,8 +24,8 @@ export const useGetNotionQuery = () => {
   console.log('run useGetNotionQuery')
   const res = useStaticQuery(getNotionQuery)
   const rows = res?.allNotion?.edges
-  let nodes: INode[] = []
-  rows.forEach(({ node }: { node: INode }) => {
+  let nodes: INotionNode[] = []
+  rows.forEach(({ node }: { node: INotionNode }) => {
     nodes.push(node)
   })
   console.log({ nodes })

@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby'
+import path from 'path'
 import { NOTION_INTEGRATION_TOKEN, NOTION_DB_ID } from './src/constants/key'
 
 const config: GatsbyConfig = {
@@ -37,6 +38,20 @@ const config: GatsbyConfig = {
         databaseId: NOTION_DB_ID,
         propsToFrontmatter: true,
         lowerTitleLevel: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@components': path.resolve(__dirname, 'src/components'),
+          '@services': path.resolve(__dirname, 'src/services'),
+          '@constants': path.resolve(__dirname, 'src/constants'),
+          '@types': path.resolve(__dirname, 'src/types'),
+          '@images': path.resolve(__dirname, 'src/images'),
+          '@scss': path.resolve(__dirname, 'src/scss'),
+        },
+        extensions: ['ts', 'tsx', 'js'],
       },
     },
   ],
