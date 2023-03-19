@@ -1,19 +1,51 @@
 import { useStaticQuery, graphql } from 'gatsby'
-import { INotionNode } from '@types'
+import { INotionNode } from '../types'
 
 export const getNotionQuery = graphql`
   query {
     allNotion {
       edges {
         node {
-          id
-          title
           archived
-          createdAt
-          updatedAt
-          raw {
+          children {
             id
           }
+          createdAt
+          id
+          internal {
+            content
+          }
+          json
+          markdownString
+          parent {
+            id
+            internal {
+              content
+            }
+          }
+          raw {
+            archived
+            children {
+              id
+            }
+            created_by {
+              id
+            }
+            created_time
+            id
+            last_edited_by {
+              id
+            }
+            last_edited_time
+            object
+            parent {
+              database_id
+              type
+            }
+            url
+          }
+          title
+          updatedAt
         }
       }
     }
