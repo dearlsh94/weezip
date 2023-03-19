@@ -1277,7 +1277,6 @@ type Notion = Node & {
   readonly json: Maybe<Scalars['String']>;
   readonly markdownString: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
-  readonly properties: Maybe<NotionProperties>;
   readonly raw: Maybe<NotionRaw>;
   readonly title: Maybe<Scalars['String']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
@@ -1353,7 +1352,6 @@ type NotionFieldSelector = {
   readonly json: InputMaybe<FieldSelectorEnum>;
   readonly markdownString: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
-  readonly properties: InputMaybe<NotionPropertiesFieldSelector>;
   readonly raw: InputMaybe<NotionRawFieldSelector>;
   readonly title: InputMaybe<FieldSelectorEnum>;
   readonly updatedAt: InputMaybe<FieldSelectorEnum>;
@@ -1368,7 +1366,6 @@ type NotionFilterInput = {
   readonly json: InputMaybe<StringQueryOperatorInput>;
   readonly markdownString: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
-  readonly properties: InputMaybe<NotionPropertiesFilterInput>;
   readonly raw: InputMaybe<NotionRawFilterInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
   readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
@@ -1413,46 +1410,6 @@ type NotionGroupConnection_minArgs = {
 
 type NotionGroupConnection_sumArgs = {
   field: NotionFieldSelector;
-};
-
-type NotionProperties = {
-  readonly _x: Maybe<NotionProperties_x>;
-};
-
-type NotionPropertiesFieldSelector = {
-  readonly _x: InputMaybe<NotionProperties_xFieldSelector>;
-};
-
-type NotionPropertiesFilterInput = {
-  readonly _x: InputMaybe<NotionProperties_xFilterInput>;
-};
-
-type NotionPropertiesSortInput = {
-  readonly _x: InputMaybe<NotionProperties_xSortInput>;
-};
-
-type NotionProperties_x = {
-  readonly id: Maybe<Scalars['String']>;
-  readonly key: Maybe<Scalars['String']>;
-  readonly type: Maybe<Scalars['String']>;
-};
-
-type NotionProperties_xFieldSelector = {
-  readonly id: InputMaybe<FieldSelectorEnum>;
-  readonly key: InputMaybe<FieldSelectorEnum>;
-  readonly type: InputMaybe<FieldSelectorEnum>;
-};
-
-type NotionProperties_xFilterInput = {
-  readonly id: InputMaybe<StringQueryOperatorInput>;
-  readonly key: InputMaybe<StringQueryOperatorInput>;
-  readonly type: InputMaybe<StringQueryOperatorInput>;
-};
-
-type NotionProperties_xSortInput = {
-  readonly id: InputMaybe<SortOrderEnum>;
-  readonly key: InputMaybe<SortOrderEnum>;
-  readonly type: InputMaybe<SortOrderEnum>;
 };
 
 type NotionRaw = {
@@ -1892,7 +1849,6 @@ type NotionSortInput = {
   readonly json: InputMaybe<SortOrderEnum>;
   readonly markdownString: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
-  readonly properties: InputMaybe<NotionPropertiesSortInput>;
   readonly raw: InputMaybe<NotionRawSortInput>;
   readonly title: InputMaybe<SortOrderEnum>;
   readonly updatedAt: InputMaybe<SortOrderEnum>;
@@ -2132,7 +2088,6 @@ type Query_notionArgs = {
   json: InputMaybe<StringQueryOperatorInput>;
   markdownString: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
-  properties: InputMaybe<NotionPropertiesFilterInput>;
   raw: InputMaybe<NotionRawFilterInput>;
   title: InputMaybe<StringQueryOperatorInput>;
   updatedAt: InputMaybe<DateQueryOperatorInput>;

@@ -1,9 +1,9 @@
 import * as React from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
-import '@scss/global.scss'
-import { INotionNode } from '@types'
-import { useGetNotionQuery } from '@services'
-import { urlMap } from '@constants'
+import '../scss/global.scss'
+import { useGetNotionQuery } from '../services/use-notion'
+import { INotionNode } from '../types/notionTypes'
+import { urlMap } from '../constants/url-map'
 
 export const Head: HeadFC = () => <title>Home</title>
 
