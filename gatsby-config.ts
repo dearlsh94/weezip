@@ -1,6 +1,6 @@
 import type { GatsbyConfig } from 'gatsby'
 import path from 'path'
-import { NOTION_INTEGRATION_TOKEN, NOTION_DB_ID } from './src/constants/key'
+import { NOTION_INTEGRATION_TOKEN, NOTION_DB_ID } from '@constants'
 
 const config: GatsbyConfig = {
   siteMetadata: {

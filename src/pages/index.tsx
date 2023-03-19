@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from 'gatsby'
 import '@scss/global.scss'
 import { INotionNode } from '@types'
 import { useGetNotionQuery } from '@services'
+import { urlMap } from '@constants'
 
 export const Head: HeadFC = () => <title>Home</title>
 
@@ -15,11 +16,13 @@ const IndexPage: React.FC<PageProps> = () => {
         {nodes.map((node: INotionNode, i: number) => {
           return (
             <div key={`node-${i}`}>
-              <p>
-                <span>id: {node.id}</span>
-                <span>&nbsp;/&nbsp;</span>
-                <span>title: {node.title}</span>
-              </p>
+              <a href={`${urlMap.get(node.id) || location.pathname}`}>
+                <p>
+                  <span>id: {node.id}</span>
+                  <span>&nbsp;/&nbsp;</span>
+                  <span>title: {node.title}</span>
+                </p>
+              </a>
             </div>
           )
         })}
