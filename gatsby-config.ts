@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby'
+import { NOTION_INTEGRATION_TOKEN, NOTION_DB_ID } from './src/constants'
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -16,7 +17,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/images/icon-butterfly.png',
       },
     },
     'gatsby-plugin-sharp',
@@ -28,6 +29,15 @@ const config: GatsbyConfig = {
         path: './src/images/',
       },
       __key: 'images',
+    },
+    {
+      resolve: 'gatsby-source-notion-api',
+      options: {
+        token: NOTION_INTEGRATION_TOKEN,
+        databaseId: NOTION_DB_ID,
+        propsToFrontmatter: true,
+        lowerTitleLevel: true,
+      },
     },
   ],
 }
