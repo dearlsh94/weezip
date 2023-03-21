@@ -1,5 +1,8 @@
 import type { GatsbyConfig } from 'gatsby'
-import { NOTION_INTEGRATION_TOKEN, NOTION_DB_ID } from './src/constants'
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -33,8 +36,8 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-notion-api',
       options: {
-        token: NOTION_INTEGRATION_TOKEN,
-        databaseId: NOTION_DB_ID,
+        token: process.env.NOTION_INTEGRATION_TOKEN,
+        databaseId: process.env.NOTION_DB_ID,
         propsToFrontmatter: true,
         lowerTitleLevel: true,
       },
