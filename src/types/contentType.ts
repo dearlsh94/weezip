@@ -92,7 +92,8 @@ export interface Children {
   has_children: boolean
   archived: boolean
   type: string
-  paragraph: Paragraph
+  paragraph?: Paragraph
+  heading_1: Heading
 }
 
 export interface Parent2 {
@@ -112,6 +113,12 @@ export interface LastEditedBy2 {
 
 export interface Paragraph {
   color: string
+  text: Text2[]
+}
+
+export interface Heading {
+  color: string
+  is_toggleable: boolean
   text: Text2[]
 }
 

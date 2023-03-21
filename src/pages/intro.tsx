@@ -11,7 +11,7 @@ export const Head: HeadFC = () => <title>Home</title>
 
 const IndexPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery()
-  const content: PageContent | null = getContentNode(nodes, '/')
+  const content: PageContent | null = getContentNode(nodes, '/intro')
   console.log({ content })
   return (
     <main>
