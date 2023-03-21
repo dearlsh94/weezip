@@ -1,6 +1,7 @@
-import { NOTION_GUMCHIDAN_DB_ID } from '../constants/key'
-import { INotionNode } from '../types/notionTypes'
+import { PageContent } from '../types/contentType'
+import { NotionNode } from '../types/notionTypes'
 
-export const getGumchidanNode = (nodes: INotionNode[]) => {
-  return nodes.find(n => n.id === NOTION_GUMCHIDAN_DB_ID)
+export const getContentNode = (nodes: NotionNode[], url: string): PageContent | null => {
+  const node = nodes.find(n => n.title === url)
+  return node ? JSON.parse(node?.json) : null
 }

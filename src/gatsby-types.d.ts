@@ -1277,6 +1277,7 @@ type Notion = Node & {
   readonly json: Maybe<Scalars['String']>;
   readonly markdownString: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
+  readonly properties: Maybe<NotionProperties>;
   readonly raw: Maybe<NotionRaw>;
   readonly title: Maybe<Scalars['String']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
@@ -1352,6 +1353,7 @@ type NotionFieldSelector = {
   readonly json: InputMaybe<FieldSelectorEnum>;
   readonly markdownString: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly properties: InputMaybe<NotionPropertiesFieldSelector>;
   readonly raw: InputMaybe<NotionRawFieldSelector>;
   readonly title: InputMaybe<FieldSelectorEnum>;
   readonly updatedAt: InputMaybe<FieldSelectorEnum>;
@@ -1366,6 +1368,7 @@ type NotionFilterInput = {
   readonly json: InputMaybe<StringQueryOperatorInput>;
   readonly markdownString: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
+  readonly properties: InputMaybe<NotionPropertiesFilterInput>;
   readonly raw: InputMaybe<NotionRawFilterInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
   readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
@@ -1412,6 +1415,142 @@ type NotionGroupConnection_sumArgs = {
   field: NotionFieldSelector;
 };
 
+type NotionProperties = {
+  readonly Category: Maybe<NotionPropertiesCategory>;
+  readonly Remark: Maybe<NotionPropertiesRemark>;
+  readonly URL: Maybe<NotionPropertiesURL>;
+};
+
+type NotionPropertiesCategory = {
+  readonly id: Maybe<Scalars['String']>;
+  readonly key: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
+  readonly value: Maybe<ReadonlyArray<Maybe<NotionPropertiesCategoryValue>>>;
+};
+
+type NotionPropertiesCategoryFieldSelector = {
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly key: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+  readonly value: InputMaybe<NotionPropertiesCategoryValueFieldSelector>;
+};
+
+type NotionPropertiesCategoryFilterInput = {
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly key: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+  readonly value: InputMaybe<NotionPropertiesCategoryValueFilterListInput>;
+};
+
+type NotionPropertiesCategorySortInput = {
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly key: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
+  readonly value: InputMaybe<NotionPropertiesCategoryValueSortInput>;
+};
+
+type NotionPropertiesCategoryValue = {
+  readonly color: Maybe<Scalars['String']>;
+  readonly id: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+};
+
+type NotionPropertiesCategoryValueFieldSelector = {
+  readonly color: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionPropertiesCategoryValueFilterInput = {
+  readonly color: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionPropertiesCategoryValueFilterListInput = {
+  readonly elemMatch: InputMaybe<NotionPropertiesCategoryValueFilterInput>;
+};
+
+type NotionPropertiesCategoryValueSortInput = {
+  readonly color: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly name: InputMaybe<SortOrderEnum>;
+};
+
+type NotionPropertiesFieldSelector = {
+  readonly Category: InputMaybe<NotionPropertiesCategoryFieldSelector>;
+  readonly Remark: InputMaybe<NotionPropertiesRemarkFieldSelector>;
+  readonly URL: InputMaybe<NotionPropertiesURLFieldSelector>;
+};
+
+type NotionPropertiesFilterInput = {
+  readonly Category: InputMaybe<NotionPropertiesCategoryFilterInput>;
+  readonly Remark: InputMaybe<NotionPropertiesRemarkFilterInput>;
+  readonly URL: InputMaybe<NotionPropertiesURLFilterInput>;
+};
+
+type NotionPropertiesRemark = {
+  readonly id: Maybe<Scalars['String']>;
+  readonly key: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
+  readonly value: Maybe<Scalars['String']>;
+};
+
+type NotionPropertiesRemarkFieldSelector = {
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly key: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+  readonly value: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionPropertiesRemarkFilterInput = {
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly key: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+  readonly value: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionPropertiesRemarkSortInput = {
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly key: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
+  readonly value: InputMaybe<SortOrderEnum>;
+};
+
+type NotionPropertiesSortInput = {
+  readonly Category: InputMaybe<NotionPropertiesCategorySortInput>;
+  readonly Remark: InputMaybe<NotionPropertiesRemarkSortInput>;
+  readonly URL: InputMaybe<NotionPropertiesURLSortInput>;
+};
+
+type NotionPropertiesURL = {
+  readonly id: Maybe<Scalars['String']>;
+  readonly key: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
+  readonly value: Maybe<Scalars['String']>;
+};
+
+type NotionPropertiesURLFieldSelector = {
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly key: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+  readonly value: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionPropertiesURLFilterInput = {
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly key: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+  readonly value: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionPropertiesURLSortInput = {
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly key: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
+  readonly value: InputMaybe<SortOrderEnum>;
+};
+
 type NotionRaw = {
   readonly archived: Maybe<Scalars['Boolean']>;
   readonly children: Maybe<ReadonlyArray<Maybe<NotionRawChildren>>>;
@@ -1444,7 +1583,6 @@ type NotionRaw_last_edited_timeArgs = {
 
 type NotionRawChildren = {
   readonly archived: Maybe<Scalars['Boolean']>;
-  readonly child_database: Maybe<NotionRawChildrenChild_database>;
   readonly created_by: Maybe<NotionRawChildrenCreated_by>;
   readonly created_time: Maybe<Scalars['Date']>;
   readonly has_children: Maybe<Scalars['Boolean']>;
@@ -1473,22 +1611,6 @@ type NotionRawChildren_last_edited_timeArgs = {
   locale: InputMaybe<Scalars['String']>;
 };
 
-type NotionRawChildrenChild_database = {
-  readonly title: Maybe<Scalars['String']>;
-};
-
-type NotionRawChildrenChild_databaseFieldSelector = {
-  readonly title: InputMaybe<FieldSelectorEnum>;
-};
-
-type NotionRawChildrenChild_databaseFilterInput = {
-  readonly title: InputMaybe<StringQueryOperatorInput>;
-};
-
-type NotionRawChildrenChild_databaseSortInput = {
-  readonly title: InputMaybe<SortOrderEnum>;
-};
-
 type NotionRawChildrenCreated_by = {
   readonly id: Maybe<Scalars['String']>;
   readonly object: Maybe<Scalars['String']>;
@@ -1511,7 +1633,6 @@ type NotionRawChildrenCreated_bySortInput = {
 
 type NotionRawChildrenFieldSelector = {
   readonly archived: InputMaybe<FieldSelectorEnum>;
-  readonly child_database: InputMaybe<NotionRawChildrenChild_databaseFieldSelector>;
   readonly created_by: InputMaybe<NotionRawChildrenCreated_byFieldSelector>;
   readonly created_time: InputMaybe<FieldSelectorEnum>;
   readonly has_children: InputMaybe<FieldSelectorEnum>;
@@ -1526,7 +1647,6 @@ type NotionRawChildrenFieldSelector = {
 
 type NotionRawChildrenFilterInput = {
   readonly archived: InputMaybe<BooleanQueryOperatorInput>;
-  readonly child_database: InputMaybe<NotionRawChildrenChild_databaseFilterInput>;
   readonly created_by: InputMaybe<NotionRawChildrenCreated_byFilterInput>;
   readonly created_time: InputMaybe<DateQueryOperatorInput>;
   readonly has_children: InputMaybe<BooleanQueryOperatorInput>;
@@ -1565,18 +1685,106 @@ type NotionRawChildrenLast_edited_bySortInput = {
 
 type NotionRawChildrenParagraph = {
   readonly color: Maybe<Scalars['String']>;
+  readonly text: Maybe<ReadonlyArray<Maybe<NotionRawChildrenParagraphText>>>;
 };
 
 type NotionRawChildrenParagraphFieldSelector = {
   readonly color: InputMaybe<FieldSelectorEnum>;
+  readonly text: InputMaybe<NotionRawChildrenParagraphTextFieldSelector>;
 };
 
 type NotionRawChildrenParagraphFilterInput = {
   readonly color: InputMaybe<StringQueryOperatorInput>;
+  readonly text: InputMaybe<NotionRawChildrenParagraphTextFilterListInput>;
 };
 
 type NotionRawChildrenParagraphSortInput = {
   readonly color: InputMaybe<SortOrderEnum>;
+  readonly text: InputMaybe<NotionRawChildrenParagraphTextSortInput>;
+};
+
+type NotionRawChildrenParagraphText = {
+  readonly annotations: Maybe<NotionRawChildrenParagraphTextAnnotations>;
+  readonly plain_text: Maybe<Scalars['String']>;
+  readonly text: Maybe<NotionRawChildrenParagraphTextText>;
+  readonly type: Maybe<Scalars['String']>;
+};
+
+type NotionRawChildrenParagraphTextAnnotations = {
+  readonly bold: Maybe<Scalars['Boolean']>;
+  readonly code: Maybe<Scalars['Boolean']>;
+  readonly color: Maybe<Scalars['String']>;
+  readonly italic: Maybe<Scalars['Boolean']>;
+  readonly strikethrough: Maybe<Scalars['Boolean']>;
+  readonly underline: Maybe<Scalars['Boolean']>;
+};
+
+type NotionRawChildrenParagraphTextAnnotationsFieldSelector = {
+  readonly bold: InputMaybe<FieldSelectorEnum>;
+  readonly code: InputMaybe<FieldSelectorEnum>;
+  readonly color: InputMaybe<FieldSelectorEnum>;
+  readonly italic: InputMaybe<FieldSelectorEnum>;
+  readonly strikethrough: InputMaybe<FieldSelectorEnum>;
+  readonly underline: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenParagraphTextAnnotationsFilterInput = {
+  readonly bold: InputMaybe<BooleanQueryOperatorInput>;
+  readonly code: InputMaybe<BooleanQueryOperatorInput>;
+  readonly color: InputMaybe<StringQueryOperatorInput>;
+  readonly italic: InputMaybe<BooleanQueryOperatorInput>;
+  readonly strikethrough: InputMaybe<BooleanQueryOperatorInput>;
+  readonly underline: InputMaybe<BooleanQueryOperatorInput>;
+};
+
+type NotionRawChildrenParagraphTextAnnotationsSortInput = {
+  readonly bold: InputMaybe<SortOrderEnum>;
+  readonly code: InputMaybe<SortOrderEnum>;
+  readonly color: InputMaybe<SortOrderEnum>;
+  readonly italic: InputMaybe<SortOrderEnum>;
+  readonly strikethrough: InputMaybe<SortOrderEnum>;
+  readonly underline: InputMaybe<SortOrderEnum>;
+};
+
+type NotionRawChildrenParagraphTextFieldSelector = {
+  readonly annotations: InputMaybe<NotionRawChildrenParagraphTextAnnotationsFieldSelector>;
+  readonly plain_text: InputMaybe<FieldSelectorEnum>;
+  readonly text: InputMaybe<NotionRawChildrenParagraphTextTextFieldSelector>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenParagraphTextFilterInput = {
+  readonly annotations: InputMaybe<NotionRawChildrenParagraphTextAnnotationsFilterInput>;
+  readonly plain_text: InputMaybe<StringQueryOperatorInput>;
+  readonly text: InputMaybe<NotionRawChildrenParagraphTextTextFilterInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawChildrenParagraphTextFilterListInput = {
+  readonly elemMatch: InputMaybe<NotionRawChildrenParagraphTextFilterInput>;
+};
+
+type NotionRawChildrenParagraphTextSortInput = {
+  readonly annotations: InputMaybe<NotionRawChildrenParagraphTextAnnotationsSortInput>;
+  readonly plain_text: InputMaybe<SortOrderEnum>;
+  readonly text: InputMaybe<NotionRawChildrenParagraphTextTextSortInput>;
+  readonly type: InputMaybe<SortOrderEnum>;
+};
+
+type NotionRawChildrenParagraphTextText = {
+  readonly content: Maybe<Scalars['String']>;
+};
+
+type NotionRawChildrenParagraphTextTextFieldSelector = {
+  readonly content: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenParagraphTextTextFilterInput = {
+  readonly content: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawChildrenParagraphTextTextSortInput = {
+  readonly content: InputMaybe<SortOrderEnum>;
 };
 
 type NotionRawChildrenParent = {
@@ -1601,7 +1809,6 @@ type NotionRawChildrenParentSortInput = {
 
 type NotionRawChildrenSortInput = {
   readonly archived: InputMaybe<SortOrderEnum>;
-  readonly child_database: InputMaybe<NotionRawChildrenChild_databaseSortInput>;
   readonly created_by: InputMaybe<NotionRawChildrenCreated_bySortInput>;
   readonly created_time: InputMaybe<SortOrderEnum>;
   readonly has_children: InputMaybe<SortOrderEnum>;
@@ -1703,19 +1910,131 @@ type NotionRawParentSortInput = {
 };
 
 type NotionRawProperties = {
+  readonly Category: Maybe<NotionRawPropertiesCategory>;
+  readonly Remark: Maybe<NotionRawPropertiesRemark>;
+  readonly URL: Maybe<NotionRawPropertiesURL>;
   readonly _x: Maybe<NotionRawProperties_x>;
 };
 
+type NotionRawPropertiesCategory = {
+  readonly id: Maybe<Scalars['String']>;
+  readonly multi_select: Maybe<ReadonlyArray<Maybe<NotionRawPropertiesCategoryMulti_select>>>;
+  readonly type: Maybe<Scalars['String']>;
+};
+
+type NotionRawPropertiesCategoryFieldSelector = {
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly multi_select: InputMaybe<NotionRawPropertiesCategoryMulti_selectFieldSelector>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawPropertiesCategoryFilterInput = {
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly multi_select: InputMaybe<NotionRawPropertiesCategoryMulti_selectFilterListInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawPropertiesCategoryMulti_select = {
+  readonly color: Maybe<Scalars['String']>;
+  readonly id: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+};
+
+type NotionRawPropertiesCategoryMulti_selectFieldSelector = {
+  readonly color: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawPropertiesCategoryMulti_selectFilterInput = {
+  readonly color: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawPropertiesCategoryMulti_selectFilterListInput = {
+  readonly elemMatch: InputMaybe<NotionRawPropertiesCategoryMulti_selectFilterInput>;
+};
+
+type NotionRawPropertiesCategoryMulti_selectSortInput = {
+  readonly color: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly name: InputMaybe<SortOrderEnum>;
+};
+
+type NotionRawPropertiesCategorySortInput = {
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly multi_select: InputMaybe<NotionRawPropertiesCategoryMulti_selectSortInput>;
+  readonly type: InputMaybe<SortOrderEnum>;
+};
+
 type NotionRawPropertiesFieldSelector = {
+  readonly Category: InputMaybe<NotionRawPropertiesCategoryFieldSelector>;
+  readonly Remark: InputMaybe<NotionRawPropertiesRemarkFieldSelector>;
+  readonly URL: InputMaybe<NotionRawPropertiesURLFieldSelector>;
   readonly _x: InputMaybe<NotionRawProperties_xFieldSelector>;
 };
 
 type NotionRawPropertiesFilterInput = {
+  readonly Category: InputMaybe<NotionRawPropertiesCategoryFilterInput>;
+  readonly Remark: InputMaybe<NotionRawPropertiesRemarkFilterInput>;
+  readonly URL: InputMaybe<NotionRawPropertiesURLFilterInput>;
   readonly _x: InputMaybe<NotionRawProperties_xFilterInput>;
 };
 
+type NotionRawPropertiesRemark = {
+  readonly id: Maybe<Scalars['String']>;
+  readonly rich_text: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
+};
+
+type NotionRawPropertiesRemarkFieldSelector = {
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly rich_text: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawPropertiesRemarkFilterInput = {
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly rich_text: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawPropertiesRemarkSortInput = {
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly rich_text: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
+};
+
 type NotionRawPropertiesSortInput = {
+  readonly Category: InputMaybe<NotionRawPropertiesCategorySortInput>;
+  readonly Remark: InputMaybe<NotionRawPropertiesRemarkSortInput>;
+  readonly URL: InputMaybe<NotionRawPropertiesURLSortInput>;
   readonly _x: InputMaybe<NotionRawProperties_xSortInput>;
+};
+
+type NotionRawPropertiesURL = {
+  readonly id: Maybe<Scalars['String']>;
+  readonly rich_text: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
+};
+
+type NotionRawPropertiesURLFieldSelector = {
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly rich_text: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawPropertiesURLFilterInput = {
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly rich_text: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawPropertiesURLSortInput = {
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly rich_text: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
 };
 
 type NotionRawProperties_x = {
@@ -1849,6 +2168,7 @@ type NotionSortInput = {
   readonly json: InputMaybe<SortOrderEnum>;
   readonly markdownString: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
+  readonly properties: InputMaybe<NotionPropertiesSortInput>;
   readonly raw: InputMaybe<NotionRawSortInput>;
   readonly title: InputMaybe<SortOrderEnum>;
   readonly updatedAt: InputMaybe<SortOrderEnum>;
@@ -2088,6 +2408,7 @@ type Query_notionArgs = {
   json: InputMaybe<StringQueryOperatorInput>;
   markdownString: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+  properties: InputMaybe<NotionPropertiesFilterInput>;
   raw: InputMaybe<NotionRawFilterInput>;
   title: InputMaybe<StringQueryOperatorInput>;
   updatedAt: InputMaybe<DateQueryOperatorInput>;
