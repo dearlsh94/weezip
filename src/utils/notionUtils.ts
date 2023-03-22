@@ -5,3 +5,8 @@ export const getContentNode = (nodes: NotionNode[], url: string): PageContent | 
   const node = nodes.find(n => n.title === url)
   return node ? JSON.parse(node?.json) : null
 }
+
+export const getMDContentNode = (nodes: NotionNode[], url: string): string => {
+  const node = nodes.find(n => n.title === url)
+  return node ? node.markdownString : '';
+}

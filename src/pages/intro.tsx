@@ -3,16 +3,18 @@ import type { HeadFC, PageProps } from 'gatsby'
 import '../scss/global.scss'
 import { useGetNotionQuery } from '../services/use-notion'
 import { NotionNode } from '../types/nodeTypes'
-import { getContentNode } from '../utils/notionUtils'
+import { getContentNode, getMDContentNode } from '../utils/notionUtils'
 import { PageContent } from '../types/contentType'
 import ContentChildren from '../module/ContentChildren'
+import MarkdownChildren from '../module/MarkdownChildren'
 
 export const Head: HeadFC = () => <title>Home</title>
 
 const IndexPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery()
   const content: PageContent | null = getContentNode(nodes, '/intro')
-  console.log({ content })
+  const md = getMDContentNode(nodes, '/intro')
+  console.log({ content, md })
   return (
     <main>
       Hello, stranger.
@@ -31,7 +33,7 @@ const IndexPage: React.FC<PageProps> = () => {
           )
         })}
       </section>
-      {content && (
+      {/* {content && (
         <section>
           {content.children.map((block, i) => {
             return (
@@ -40,6 +42,11 @@ const IndexPage: React.FC<PageProps> = () => {
               </div>
             )
           })}
+        </section>
+      )} */}
+      {content && (
+        <section>
+          <MarkdownChildren md={md} />
         </section>
       )}
     </main>
