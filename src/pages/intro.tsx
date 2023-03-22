@@ -33,7 +33,7 @@ const IndexPage: React.FC<PageProps> = () => {
           )
         })}
       </section>
-      {/* {content && (
+      {content && (
         <section>
           {content.children.map((block, i) => {
             return (
@@ -43,7 +43,7 @@ const IndexPage: React.FC<PageProps> = () => {
             )
           })}
         </section>
-      )} */}
+      )}
       {content && (
         <section>
           <MarkdownChildren md={md} />
