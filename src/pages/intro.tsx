@@ -33,10 +33,10 @@ const IndexPage: React.FC<PageProps> = () => {
       </section>
       {content && (
         <section>
-          {content.children.map((c, i) => {
+          {content.children.map((block, i) => {
             return (
               <div key={i}>
-                <ContentChildren />
+                <ContentChildren block={block} />
               </div>
             )
           })}

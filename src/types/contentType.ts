@@ -31,8 +31,8 @@ export interface Children {
   last_edited_by: WorkBy
   has_children: boolean
   archived: boolean
-  type: string
   // NOTE Block Types
+  type: 'paragraph'
   paragraph?: Paragraph
   heading_1?: Heading
 }
