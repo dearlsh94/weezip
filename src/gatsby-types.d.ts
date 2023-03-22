@@ -1583,6 +1583,7 @@ type NotionRaw_last_edited_timeArgs = {
 
 type NotionRawChildren = {
   readonly archived: Maybe<Scalars['Boolean']>;
+  readonly bookmark: Maybe<NotionRawChildrenBookmark>;
   readonly bulleted_list_item: Maybe<NotionRawChildrenBulleted_list_item>;
   readonly callout: Maybe<NotionRawChildrenCallout>;
   readonly children: Maybe<ReadonlyArray<Maybe<NotionRawChildrenChildren>>>;
@@ -1619,6 +1620,22 @@ type NotionRawChildren_last_edited_timeArgs = {
   formatString: InputMaybe<Scalars['String']>;
   fromNow: InputMaybe<Scalars['Boolean']>;
   locale: InputMaybe<Scalars['String']>;
+};
+
+type NotionRawChildrenBookmark = {
+  readonly url: Maybe<Scalars['String']>;
+};
+
+type NotionRawChildrenBookmarkFieldSelector = {
+  readonly url: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenBookmarkFilterInput = {
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawChildrenBookmarkSortInput = {
+  readonly url: InputMaybe<SortOrderEnum>;
 };
 
 type NotionRawChildrenBulleted_list_item = {
@@ -2467,6 +2484,7 @@ type NotionRawChildrenCreated_bySortInput = {
 
 type NotionRawChildrenFieldSelector = {
   readonly archived: InputMaybe<FieldSelectorEnum>;
+  readonly bookmark: InputMaybe<NotionRawChildrenBookmarkFieldSelector>;
   readonly bulleted_list_item: InputMaybe<NotionRawChildrenBulleted_list_itemFieldSelector>;
   readonly callout: InputMaybe<NotionRawChildrenCalloutFieldSelector>;
   readonly children: InputMaybe<NotionRawChildrenChildrenFieldSelector>;
@@ -2491,6 +2509,7 @@ type NotionRawChildrenFieldSelector = {
 
 type NotionRawChildrenFilterInput = {
   readonly archived: InputMaybe<BooleanQueryOperatorInput>;
+  readonly bookmark: InputMaybe<NotionRawChildrenBookmarkFilterInput>;
   readonly bulleted_list_item: InputMaybe<NotionRawChildrenBulleted_list_itemFilterInput>;
   readonly callout: InputMaybe<NotionRawChildrenCalloutFilterInput>;
   readonly children: InputMaybe<NotionRawChildrenChildrenFilterListInput>;
@@ -2987,6 +3006,7 @@ type NotionRawChildrenParagraphSortInput = {
 
 type NotionRawChildrenParagraphText = {
   readonly annotations: Maybe<NotionRawChildrenParagraphTextAnnotations>;
+  readonly href: Maybe<Scalars['String']>;
   readonly plain_text: Maybe<Scalars['String']>;
   readonly text: Maybe<NotionRawChildrenParagraphTextText>;
   readonly type: Maybe<Scalars['String']>;
@@ -3030,6 +3050,7 @@ type NotionRawChildrenParagraphTextAnnotationsSortInput = {
 
 type NotionRawChildrenParagraphTextFieldSelector = {
   readonly annotations: InputMaybe<NotionRawChildrenParagraphTextAnnotationsFieldSelector>;
+  readonly href: InputMaybe<FieldSelectorEnum>;
   readonly plain_text: InputMaybe<FieldSelectorEnum>;
   readonly text: InputMaybe<NotionRawChildrenParagraphTextTextFieldSelector>;
   readonly type: InputMaybe<FieldSelectorEnum>;
@@ -3037,6 +3058,7 @@ type NotionRawChildrenParagraphTextFieldSelector = {
 
 type NotionRawChildrenParagraphTextFilterInput = {
   readonly annotations: InputMaybe<NotionRawChildrenParagraphTextAnnotationsFilterInput>;
+  readonly href: InputMaybe<StringQueryOperatorInput>;
   readonly plain_text: InputMaybe<StringQueryOperatorInput>;
   readonly text: InputMaybe<NotionRawChildrenParagraphTextTextFilterInput>;
   readonly type: InputMaybe<StringQueryOperatorInput>;
@@ -3048,6 +3070,7 @@ type NotionRawChildrenParagraphTextFilterListInput = {
 
 type NotionRawChildrenParagraphTextSortInput = {
   readonly annotations: InputMaybe<NotionRawChildrenParagraphTextAnnotationsSortInput>;
+  readonly href: InputMaybe<SortOrderEnum>;
   readonly plain_text: InputMaybe<SortOrderEnum>;
   readonly text: InputMaybe<NotionRawChildrenParagraphTextTextSortInput>;
   readonly type: InputMaybe<SortOrderEnum>;
@@ -3055,18 +3078,38 @@ type NotionRawChildrenParagraphTextSortInput = {
 
 type NotionRawChildrenParagraphTextText = {
   readonly content: Maybe<Scalars['String']>;
+  readonly link: Maybe<NotionRawChildrenParagraphTextTextLink>;
 };
 
 type NotionRawChildrenParagraphTextTextFieldSelector = {
   readonly content: InputMaybe<FieldSelectorEnum>;
+  readonly link: InputMaybe<NotionRawChildrenParagraphTextTextLinkFieldSelector>;
 };
 
 type NotionRawChildrenParagraphTextTextFilterInput = {
   readonly content: InputMaybe<StringQueryOperatorInput>;
+  readonly link: InputMaybe<NotionRawChildrenParagraphTextTextLinkFilterInput>;
+};
+
+type NotionRawChildrenParagraphTextTextLink = {
+  readonly url: Maybe<Scalars['String']>;
+};
+
+type NotionRawChildrenParagraphTextTextLinkFieldSelector = {
+  readonly url: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenParagraphTextTextLinkFilterInput = {
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawChildrenParagraphTextTextLinkSortInput = {
+  readonly url: InputMaybe<SortOrderEnum>;
 };
 
 type NotionRawChildrenParagraphTextTextSortInput = {
   readonly content: InputMaybe<SortOrderEnum>;
+  readonly link: InputMaybe<NotionRawChildrenParagraphTextTextLinkSortInput>;
 };
 
 type NotionRawChildrenParent = {
@@ -3195,6 +3238,7 @@ type NotionRawChildrenQuoteTextTextSortInput = {
 
 type NotionRawChildrenSortInput = {
   readonly archived: InputMaybe<SortOrderEnum>;
+  readonly bookmark: InputMaybe<NotionRawChildrenBookmarkSortInput>;
   readonly bulleted_list_item: InputMaybe<NotionRawChildrenBulleted_list_itemSortInput>;
   readonly callout: InputMaybe<NotionRawChildrenCalloutSortInput>;
   readonly children: InputMaybe<NotionRawChildrenChildrenSortInput>;

@@ -1,1 +1,2 @@
-export * from './notionTypes'
+export * from './nodeTypes'
+export * from './contentType'
