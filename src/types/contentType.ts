@@ -32,7 +32,7 @@ export interface Children {
   has_children: boolean
   archived: boolean
   // NOTE Block Types
-  type: 'paragraph'
+  type: 'paragraph' | 'numbered_list_item'
   paragraph?: Paragraph
   heading_1?: Heading
 }

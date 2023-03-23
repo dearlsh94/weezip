@@ -13,6 +13,8 @@ const ContentChildren = ({ block }: Props) => {
     switch (type) {
       case 'paragraph':
         return <Paragraph paragraph={block.paragraph} />
+      case 'numbered_list_item':
+        return <div />
       default:
         break
     }
