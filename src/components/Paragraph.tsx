@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Paragraph } from '../types/componentType'
 import { checkNewLine } from '../utils/convertUtils'
+import { getHexByColor } from '../utils/convertUtils'
 
 interface Props {
   paragraph?: Paragraph
@@ -23,7 +24,7 @@ const ContentChildren = ({ paragraph }: Props) => {
               <div
                 key={`block-paragraph-text-${i}`}
                 className={classNames.join(' ')}
-                style={{ color: t?.annotations?.color, backgroundColor: bgColor }}
+                style={{ color: getHexByColor(bgColor ? 'black' : t?.annotations?.color), backgroundColor: getHexByColor(bgColor, '#fff') }}
                 dangerouslySetInnerHTML={{ __html: checkNewLine(t.plain_text) }}
               />
             )
