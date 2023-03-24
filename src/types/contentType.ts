@@ -1,6 +1,6 @@
 import { WorkBy, Properties, Heading, TextBlock, NumberedListItem, BulletedListItem } from './componentType'
 
-export interface PageContent {
+export interface Children {
   object: 'block'
   id: string
   created_time: string
@@ -14,6 +14,12 @@ export interface PageContent {
   properties: Properties
   url: string
   children: Children[]
+  has_children: boolean
+  type: BlockType
+  paragraph?: TextBlock
+  bulleted_list_item: TextBlock
+  numbered_list_item: NumberedListItem
+  heading_1?: Heading
 }
 
 export interface Parent {
@@ -21,21 +27,9 @@ export interface Parent {
   database_id: string
 }
 
-export interface Children {
-  object: string
-  id: string
-  parent: Parent
-  created_time: string
-  last_edited_time: string
-  created_by: WorkBy
-  last_edited_by: WorkBy
-  has_children: boolean
-  archived: boolean
-  children: Children[]
-  // NOTE Block Types
-  type: 'paragraph' | 'bulleted_list_item' | 'numbered_list_item'
-  paragraph?: TextBlock
-  bulleted_list_item: TextBlock
-  numbered_list_item: NumberedListItem
-  heading_1?: Heading
+// NOTE Block Types
+export enum BlockType {
+  PARAGRAPH = 'paragraph',
+  BULLETED_LIST_ITEM = 'bulleted_list_item',
+  NUMBERED_LIST_ITEM = 'numbered_list_item',
 }

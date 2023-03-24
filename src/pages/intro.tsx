@@ -4,7 +4,7 @@ import '../scss/global.scss'
 import { useGetNotionQuery } from '../services/use-notion'
 import { NotionNode } from '../types/nodeTypes'
 import { getContentNode, getMDContentNode } from '../utils/notionUtils'
-import { PageContent } from '../types/contentType'
+import { Children } from '../types/contentType'
 import ContentChildren from '../module/ContentChildren'
 import MarkdownChildren from '../module/MarkdownChildren'
 
@@ -12,7 +12,7 @@ export const Head: HeadFC = () => <title>Home</title>
 
 const IndexPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery()
-  const content: PageContent | null = getContentNode(nodes, '/intro')
+  const content: Children | null = getContentNode(nodes, '/intro')
   const md = getMDContentNode(nodes, '/intro')
   console.log({ content, md })
   return (

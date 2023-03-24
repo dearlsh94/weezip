@@ -16,17 +16,19 @@ const MyBulletedList = ({ bulletedList, hasChild = false, childList = [] }: Prop
     level++
     return (
       bulletedList && (
-        <li className={`block-bulleted-list level-${level}`}>
-          <Paragraph paragraph={bulletedList} />
+        <ul className={`block-bulleted-list level-${level}`}>
+          <li>
+            <Paragraph paragraph={bulletedList} />
+          </li>
           {hasChild &&
             childList?.length > 0 &&
             render(childList[0]?.bulleted_list_item, childList[0]?.has_children, childList[0]?.children, level++)}
-        </li>
+        </ul>
       )
     )
   }
 
-  return <ul>{render(bulletedList, hasChild, childList, level)}</ul>
+  return <React.Fragment>{render(bulletedList, hasChild, childList, level)}</React.Fragment>
 }
 
 export default MyBulletedList
