@@ -1,4 +1,4 @@
-import { WorkBy, Properties, Heading, Paragraph } from './componentType'
+import { WorkBy, Properties, Heading, TextBlock, NumberedListItem, BulletedListItem } from './componentType'
 
 export interface PageContent {
   object: 'block'
@@ -31,8 +31,11 @@ export interface Children {
   last_edited_by: WorkBy
   has_children: boolean
   archived: boolean
+  children: Children[]
   // NOTE Block Types
-  type: 'paragraph' | 'numbered_list_item'
-  paragraph?: Paragraph
+  type: 'paragraph' | 'bulleted_list_item' | 'numbered_list_item'
+  paragraph?: TextBlock
+  bulleted_list_item: TextBlock
+  numbered_list_item: NumberedListItem
   heading_1?: Heading
 }

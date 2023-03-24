@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { Paragraph } from '../types/componentType'
+import { TextBlock } from '../types/componentType'
 import { checkNewLine } from '../utils/convertUtils'
 import { getHexByColor } from '../utils/convertUtils'
 
 interface Props {
-  paragraph?: Paragraph
+  paragraph?: TextBlock
 }
 
 const ContentChildren = ({ paragraph }: Props) => {
