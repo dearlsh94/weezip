@@ -1,3 +1,24 @@
+.block-paragraph {
+  line-height: 24px;
+}
+
 .block-paragraph-text {
-  width: fit-content
+  width: fit-content;
+}
+
+.block-bulleted-list {
+  line-height: 28px;
+}
+.block-bulleted-list::marker {
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  text-transform: none;
+  text-indent: 0px !important;
+  text-align: start !important;
+  text-align-last: start !important;
+}
+
+.block-bulleted-list.level-2,
+.block-bulleted-list.level-3 {
+  margin-left: 16px;
 }
