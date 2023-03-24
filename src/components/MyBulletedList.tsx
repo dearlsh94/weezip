@@ -1,18 +1,18 @@
 import * as React from 'react'
 import '../scss/components.scss'
-import { BulletedListItem } from '../types/componentType'
+import { TextBlock } from '../types/componentType'
 import Paragraph from './Paragraph'
 import { Children } from '../types'
 
 interface Props {
-  bulletedList: BulletedListItem
+  bulletedList: TextBlock
   hasChild: boolean
   childList: Children[]
 }
 
 const MyBulletedList = ({ bulletedList, hasChild = false, childList = [] }: Props) => {
   let level = 0
-  const render = (bulletedList: BulletedListItem, hasChild = false, childList: Children[], level: number) => {
+  const render = (bulletedList: TextBlock, hasChild = false, childList: Children[], level: number) => {
     level++
     return (
       bulletedList && (
@@ -22,7 +22,8 @@ const MyBulletedList = ({ bulletedList, hasChild = false, childList = [] }: Prop
           </li>
           {hasChild &&
             childList?.length > 0 &&
-            render(childList[0]?.bulleted_list_item, childList[0]?.has_children, childList[0]?.children, level++)}
+            childList[0].bulleted_list_item &&
+            render(childList[0].bulleted_list_item, childList[0]?.has_children, childList[0]?.children, level++)}
         </ul>
       )
     )

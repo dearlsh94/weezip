@@ -63,13 +63,3 @@ export interface TextBlock {
   color: string
   text: TextItem[]
 }
-
-export interface BulletedListItem {
-  color: string
-  text: TextItem[]
-}
-
-export interface NumberedListItem {
-  color: string
-  text: TextItem[]
-}

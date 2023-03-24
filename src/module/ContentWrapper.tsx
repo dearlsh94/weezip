@@ -40,7 +40,7 @@ const ContentWrapper = ({ childrens }: Props) => {
         }
 
         return (
-          <div key={i}>
+          <div key={i} className={`content-wrapper`}>
             <ContentChildren block={block} />
           </div>
         )

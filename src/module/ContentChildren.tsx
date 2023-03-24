@@ -15,17 +15,18 @@ const ContentChildren = ({ block }: Props) => {
   const render = () => {
     switch (type) {
       case BlockType.PARAGRAPH:
-        return <Paragraph paragraph={block.paragraph} />
+        if (block.paragraph) return <Paragraph paragraph={block.paragraph} />
       case BlockType.BULLETED_LIST_ITEM:
-        return (
-          <MyBulletedList
-            bulletedList={block.bulleted_list_item}
-            hasChild={block.has_children}
-            childList={block.children}
-          />
-        )
+        if (block.bulleted_list_item)
+          return (
+            <MyBulletedList
+              bulletedList={block.bulleted_list_item}
+              hasChild={block.has_children}
+              childList={block.children}
+            />
+          )
       case BlockType.NUMBERED_LIST_ITEM:
-        return <MyNumberedListItem numberedListItem={block} />
+        if (block) return <MyNumberedListItem numberedListItem={block} />
       default:
         break
     }

@@ -1,4 +1,4 @@
-import { WorkBy, Properties, Heading, TextBlock, NumberedListItem, BulletedListItem } from './componentType'
+import { WorkBy, Properties, Heading, TextBlock } from './componentType'
 
 export interface Children {
   object: 'block'
@@ -17,8 +17,8 @@ export interface Children {
   has_children: boolean
   type: BlockType
   paragraph?: TextBlock
-  bulleted_list_item: TextBlock
-  numbered_list_item: NumberedListItem
+  bulleted_list_item?: TextBlock
+  numbered_list_item?: TextBlock
   heading_1?: Heading
 }
 
@@ -30,6 +30,9 @@ export interface Parent {
 // NOTE Block Types
 export enum BlockType {
   PARAGRAPH = 'paragraph',
+  HEADING_1 = 'heading_1',
+  HEADING_2 = 'heading_2',
+  HEADING_3 = 'heading_3',
   BULLETED_LIST_ITEM = 'bulleted_list_item',
   NUMBERED_LIST_ITEM = 'numbered_list_item',
 }
