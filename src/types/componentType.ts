@@ -69,4 +69,7 @@ export interface BulletedListItem {
   text: TextItem[]
 }
 
-export interface NumberedListItem {}
+export interface NumberedListItem {
+  color: string
+  text: TextItem[]
+}

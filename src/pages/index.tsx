@@ -5,7 +5,7 @@ import { useGetNotionQuery } from '../services/use-notion'
 import { NotionNode } from '../types/nodeTypes'
 import { getContentNode } from '../utils/notionUtils'
 import { Children } from '../types/contentType'
-import ContentChildren from '../module/ContentChildren'
+import ContentWrapper from '../module/ContentWrapper'
 
 export const Head: HeadFC = () => <title>Home</title>
 
@@ -30,17 +30,7 @@ const IndexPage: React.FC<PageProps> = () => {
           )
         })}
       </section>
-      {content && (
-        <section>
-          {content?.children?.map((block, i) => {
-            return (
-              <div key={i}>
-                <ContentChildren block={block} />
-              </div>
-            )
-          })}
-        </section>
-      )}
+      {content && <ContentWrapper childrens={content.children} />}
     </main>
   )
 }
