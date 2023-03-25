@@ -63,3 +63,7 @@ export interface TextBlock {
   color: string
   text: TextItem[]
 }
+
+export interface Todo extends TextBlock {
+  checked: boolean
+}

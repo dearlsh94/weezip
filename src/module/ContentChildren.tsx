@@ -8,6 +8,7 @@ import Heading3 from '../components/Heading3'
 import MyBulletedList from '../components/MyBulletedList'
 import MyNumberedListItem from '../components/MyNumberedListItem'
 import MyQuote from '../components/MyQuote'
+import MyTodo from '../components/MyTodo'
 
 interface Props {
   block: Children
@@ -39,6 +40,8 @@ const ContentChildren = ({ block }: Props) => {
           )
       case BlockType.NUMBERED_LIST_ITEM:
         if (block) return <MyNumberedListItem numberedListItem={block} />
+      case BlockType.TODO:
+        if (block.to_do) return <MyTodo todo={block.to_do} />
       default:
         break
     }

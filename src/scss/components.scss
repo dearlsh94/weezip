@@ -89,3 +89,14 @@
   padding: 8px 12px;
   border-left: 4px solid #1b262c;
 }
+
+.block-todo {
+  display: flex;
+  align-items: center;
+}
+.block-todo input[type='checkbox'] {
+  margin-left: 8px;
+}
+.block-todo label {
+  margin-left: 4px;
+}
