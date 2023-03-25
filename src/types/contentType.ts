@@ -22,6 +22,7 @@ export interface Children {
   heading_1?: Heading
   heading_2?: Heading
   heading_3?: Heading
+  quote?: TextBlock
 }
 
 export interface Parent {
@@ -35,6 +36,7 @@ export enum BlockType {
   HEADING_1 = 'heading_1',
   HEADING_2 = 'heading_2',
   HEADING_3 = 'heading_3',
+  QUOTE = 'quote',
   BULLETED_LIST_ITEM = 'bulleted_list_item',
   NUMBERED_LIST_ITEM = 'numbered_list_item',
 }

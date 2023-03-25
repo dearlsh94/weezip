@@ -7,6 +7,7 @@ import Heading2 from '../components/Heading2'
 import Heading3 from '../components/Heading3'
 import MyBulletedList from '../components/MyBulletedList'
 import MyNumberedListItem from '../components/MyNumberedListItem'
+import MyQuote from '../components/MyQuote'
 
 interface Props {
   block: Children
@@ -25,6 +26,8 @@ const ContentChildren = ({ block }: Props) => {
         if (block.heading_2) return <Heading2 head2={block.heading_2} />
       case BlockType.HEADING_3:
         if (block.heading_3) return <Heading3 head3={block.heading_3} />
+      case BlockType.QUOTE:
+        if (block.quote) return <MyQuote quote={block.quote} />
       case BlockType.BULLETED_LIST_ITEM:
         if (block.bulleted_list_item)
           return (
