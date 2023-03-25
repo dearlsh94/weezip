@@ -20,6 +20,8 @@ export interface Children {
   bulleted_list_item?: TextBlock
   numbered_list_item?: TextBlock
   heading_1?: Heading
+  heading_2?: Heading
+  heading_3?: Heading
 }
 
 export interface Parent {
