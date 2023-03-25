@@ -1,5 +1,4 @@
 import * as React from 'react'
-import type { HeadFC } from 'gatsby'
 import '../scss/components.scss'
 
 interface Props {

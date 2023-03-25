@@ -1,69 +1,71 @@
+@import './abstracts/variables';
+
 .block-paragraph {
   line-height: 24px;
   width: fit-content;
 
   .gray {
-    color: #b8b8b8;
+    color: $gray-color;
   }
   .gray_background {
-    background-color: #b8b8b8;
-    color: #000;
+    background-color: $gray-color;
+    color: $black-color;
   }
   .brown {
-    color: #c9ac9f;
+    color: $brown-color;
   }
   .brown_background {
-    background-color: #c9ac9f;
-    color: #000;
+    background-color: $brown-color;
+    color: $black-color;
   }
   .orange {
-    color: #e6a15f;
+    color: $orange-color;
   }
   .orange_background {
-    background-color: #e6a15f;
-    color: #000;
+    background-color: $orange-color;
+    color: $black-color;
   }
   .yellow {
-    color: #dbb271;
+    color: $yellow-color;
   }
   .yellow_background {
-    background-color: #dbb271;
-    color: #000;
+    background-color: $yellow-color;
+    color: $black-color;
   }
   .blue {
-    color: #96bbd2;
+    color: $blue-color;
   }
   .blue_background {
-    background-color: #96bbd2;
-    color: #000;
+    background-color: $blue-color;
+    color: $black-color;
   }
   .pink {
-    color: #cf72a2;
+    color: $pink-color;
   }
   .pink_background {
-    background-color: #cf72a2;
-    color: #000;
+    background-color: $pink-color;
+    color: $black-color;
   }
   .red {
-    color: #d95d58;
+    color: $red-color;
   }
   .red_background {
-    background-color: #d95d58;
-    color: #000;
+    background-color: $red-color;
+    color: $black-color;
   }
   .purple {
-    color: #9b6dc6;
+    color: $purple-color;
   }
   .purple_background {
-    background-color: #9b6dc6;
-    color: #000;
+    background-color: $purple-color;
+    color: $black-color;
   }
   .black {
-    color: #000;
+    color: $black-color;
   }
   .black_background {
-    background-color: #000;
-    color: #fff;
+    background-color: $black-color;
+    color: $white-color;
   }
 }
 
@@ -87,7 +89,7 @@
 .block-quote {
   margin: 12px 0px;
   padding: 8px 12px;
-  border-left: 4px solid #1b262c;
+  border-left: 4px solid $primary-color;
 }
 
 .block-todo {
