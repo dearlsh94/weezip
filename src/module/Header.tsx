@@ -2,9 +2,8 @@ import * as React from 'react'
 import { NotionContext } from '../store/rootStore'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
-import { urlMap } from '../constants'
+import { isDebug, urlMap } from '../constants'
 import Linker from '../components/Linker'
-
 const Header = () => {
   const nodes: NotionNode[] = React.useContext(NotionContext)
   return (
@@ -22,6 +21,23 @@ const Header = () => {
             })}
         </div>
       </header>
+      {isDebug && (
+        <section>
+          {nodes.map((node: NotionNode, i: number) => {
+            return (
+              <div key={`node-${i}`}>
+                <a href={`${node.title || location.pathname}`}>
+                  <p>
+                    <span>id: {node.id}</span>
+                    <span>&nbsp;/&nbsp;</span>
+                    <span>title: {node.title}</span>
+                  </p>
+                </a>
+              </div>
+            )
+          })}
+        </section>
+      )}
     </React.Fragment>
   )
 }
