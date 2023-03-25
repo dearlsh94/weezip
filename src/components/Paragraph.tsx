@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { TextBlock } from '../types/componentType'
 import { checkNewLine } from '../utils/convertUtils'
-import { getHexByColor } from '../utils/convertUtils'
 
 interface Props {
   paragraph?: TextBlock
@@ -27,15 +26,13 @@ const ContentChildren = ({ paragraph }: Props) => {
             if (t?.annotations?.underline) {
               classNames.push('underline')
             }
-            const bgColor = t?.annotations?.color.includes('_background') ? t?.annotations?.color.split('_')[0] : ''
+            if (t?.annotations?.color) {
+              classNames.push(t?.annotations?.color)
+            }
             return (
               <div
                 key={`block-paragraph-text-${i}`}
                 className={classNames.join(' ')}
-                style={{
-                  color: getHexByColor(bgColor ? 'black' : t?.annotations?.color),
-                  backgroundColor: getHexByColor(bgColor, '#fff'),
-                }}
                 dangerouslySetInnerHTML={{ __html: checkNewLine(t.plain_text) }}
               />
             )
