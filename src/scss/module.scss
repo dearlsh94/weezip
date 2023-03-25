@@ -4,7 +4,6 @@
   flex-direction: row;
   width: 100%;
   justify-content: center;
-  padding: 12px 0px;
   box-shadow: 0px 3px 9px #ccc;
   margin-bottom: 12px;
 
@@ -13,10 +12,14 @@
   }
 
   .gnb-item {
+    padding: 12px 6px;
     font-size: 14pt;
     cursor: pointer;
   }
+  .gnb-item:hover {
+    text-decoration: underline;
+  }
   .gnb-item + .gnb-item {
-    margin-left: 4px;
+    margin-left: 12px;
   }
 }
