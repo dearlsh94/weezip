@@ -27,6 +27,7 @@ export interface Children {
   callout?: Callout
   toggle?: TextBlock
   bookmark?: Bookmark
+  divider?: {}
 }
 
 export interface Parent {
@@ -47,4 +48,5 @@ export enum BlockType {
   CALLOUT = 'callout',
   TOGGLE = 'toggle',
   BOOKMARK = 'bookmark',
+  DIVIDER = 'divider',
 }
