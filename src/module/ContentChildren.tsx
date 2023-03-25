@@ -9,6 +9,8 @@ import MyBulletedList from '../components/MyBulletedList'
 import MyNumberedListItem from '../components/MyNumberedListItem'
 import MyQuote from '../components/MyQuote'
 import MyTodo from '../components/MyTodo'
+import MyCallout from '../components/MyCallout'
+import MyToggle from '../components/MyToggle'
 
 interface Props {
   block: Children
@@ -42,6 +44,11 @@ const ContentChildren = ({ block }: Props) => {
         if (block) return <MyNumberedListItem numberedListItem={block} />
       case BlockType.TODO:
         if (block.to_do) return <MyTodo todo={block.to_do} />
+      case BlockType.CALLOUT:
+        if (block.callout) return <MyCallout callout={block.callout} />
+      case BlockType.TOGGLE:
+        if (block.toggle)
+          return <MyToggle toggle={block.toggle} hasChild={block.has_children} childList={block.children} />
       default:
         break
     }

@@ -67,3 +67,11 @@ export interface TextBlock {
 export interface Todo extends TextBlock {
   checked: boolean
 }
+
+export interface CalloutIcon {
+  emoji: string
+  type: 'emoji'
+}
+export interface Callout extends TextBlock {
+  icon: CalloutIcon
+}

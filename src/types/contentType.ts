@@ -1,4 +1,4 @@
-import { WorkBy, Properties, Heading, TextBlock, Todo } from './componentType'
+import { WorkBy, Properties, Heading, TextBlock, Todo, Callout } from './componentType'
 
 export interface Children {
   object: 'block'
@@ -24,6 +24,8 @@ export interface Children {
   heading_3?: Heading
   quote?: TextBlock
   to_do?: Todo
+  callout?: Callout
+  toggle?: TextBlock
 }
 
 export interface Parent {
@@ -41,4 +43,6 @@ export enum BlockType {
   BULLETED_LIST_ITEM = 'bulleted_list_item',
   NUMBERED_LIST_ITEM = 'numbered_list_item',
   TODO = 'to_do',
+  CALLOUT = 'callout',
+  TOGGLE = 'toggle',
 }
