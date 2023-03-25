@@ -17,9 +17,9 @@ const MyToggle = ({ toggle, hasChild, childList }: Props) => {
           <div className="toggle-title-box" onClick={() => setIsOpen(!isOpen)}>
             <div>
               {isOpen ? (
-                <img src="/static/icon-arrow-down.png" alt="icon expanded" />
+                <img src="/icon-arrow-down.png" alt="icon expanded" />
               ) : (
-                <img src="/static/icon-arrow-right.png" alt="icon reduced" />
+                <img src="/icon-arrow-right.png" alt="icon reduced" />
               )}
             </div>
             <Paragraph paragraph={toggle} />
