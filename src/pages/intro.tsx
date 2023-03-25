@@ -34,11 +34,6 @@ const IndexPage: React.FC<PageProps> = () => {
         })}
       </section>
       {content && <ContentWrapper childrens={content.children} />}
-      {content && (
-        <section>
-          <MarkdownChildren md={md} />
-        </section>
-      )}
     </main>
   )
 }

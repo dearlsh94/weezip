@@ -11,6 +11,7 @@ import MyQuote from '../components/MyQuote'
 import MyTodo from '../components/MyTodo'
 import MyCallout from '../components/MyCallout'
 import MyToggle from '../components/MyToggle'
+import MyBookmark from '../components/MyBookmark'
 
 interface Props {
   block: Children
@@ -49,6 +50,8 @@ const ContentChildren = ({ block }: Props) => {
       case BlockType.TOGGLE:
         if (block.toggle)
           return <MyToggle toggle={block.toggle} hasChild={block.has_children} childList={block.children} />
+      case BlockType.BOOKMARK:
+        if (block.bookmark) return <MyBookmark bookmark={block.bookmark} />
       default:
         break
     }

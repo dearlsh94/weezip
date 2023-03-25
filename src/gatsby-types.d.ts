@@ -1591,18 +1591,106 @@ type NotionRawChildren_last_edited_timeArgs = {
 };
 
 type NotionRawChildrenBookmark = {
+  readonly caption: Maybe<ReadonlyArray<Maybe<NotionRawChildrenBookmarkCaption>>>;
   readonly url: Maybe<Scalars['String']>;
 };
 
+type NotionRawChildrenBookmarkCaption = {
+  readonly annotations: Maybe<NotionRawChildrenBookmarkCaptionAnnotations>;
+  readonly plain_text: Maybe<Scalars['String']>;
+  readonly text: Maybe<NotionRawChildrenBookmarkCaptionText>;
+  readonly type: Maybe<Scalars['String']>;
+};
+
+type NotionRawChildrenBookmarkCaptionAnnotations = {
+  readonly bold: Maybe<Scalars['Boolean']>;
+  readonly code: Maybe<Scalars['Boolean']>;
+  readonly color: Maybe<Scalars['String']>;
+  readonly italic: Maybe<Scalars['Boolean']>;
+  readonly strikethrough: Maybe<Scalars['Boolean']>;
+  readonly underline: Maybe<Scalars['Boolean']>;
+};
+
+type NotionRawChildrenBookmarkCaptionAnnotationsFieldSelector = {
+  readonly bold: InputMaybe<FieldSelectorEnum>;
+  readonly code: InputMaybe<FieldSelectorEnum>;
+  readonly color: InputMaybe<FieldSelectorEnum>;
+  readonly italic: InputMaybe<FieldSelectorEnum>;
+  readonly strikethrough: InputMaybe<FieldSelectorEnum>;
+  readonly underline: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenBookmarkCaptionAnnotationsFilterInput = {
+  readonly bold: InputMaybe<BooleanQueryOperatorInput>;
+  readonly code: InputMaybe<BooleanQueryOperatorInput>;
+  readonly color: InputMaybe<StringQueryOperatorInput>;
+  readonly italic: InputMaybe<BooleanQueryOperatorInput>;
+  readonly strikethrough: InputMaybe<BooleanQueryOperatorInput>;
+  readonly underline: InputMaybe<BooleanQueryOperatorInput>;
+};
+
+type NotionRawChildrenBookmarkCaptionAnnotationsSortInput = {
+  readonly bold: InputMaybe<SortOrderEnum>;
+  readonly code: InputMaybe<SortOrderEnum>;
+  readonly color: InputMaybe<SortOrderEnum>;
+  readonly italic: InputMaybe<SortOrderEnum>;
+  readonly strikethrough: InputMaybe<SortOrderEnum>;
+  readonly underline: InputMaybe<SortOrderEnum>;
+};
+
+type NotionRawChildrenBookmarkCaptionFieldSelector = {
+  readonly annotations: InputMaybe<NotionRawChildrenBookmarkCaptionAnnotationsFieldSelector>;
+  readonly plain_text: InputMaybe<FieldSelectorEnum>;
+  readonly text: InputMaybe<NotionRawChildrenBookmarkCaptionTextFieldSelector>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenBookmarkCaptionFilterInput = {
+  readonly annotations: InputMaybe<NotionRawChildrenBookmarkCaptionAnnotationsFilterInput>;
+  readonly plain_text: InputMaybe<StringQueryOperatorInput>;
+  readonly text: InputMaybe<NotionRawChildrenBookmarkCaptionTextFilterInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawChildrenBookmarkCaptionFilterListInput = {
+  readonly elemMatch: InputMaybe<NotionRawChildrenBookmarkCaptionFilterInput>;
+};
+
+type NotionRawChildrenBookmarkCaptionSortInput = {
+  readonly annotations: InputMaybe<NotionRawChildrenBookmarkCaptionAnnotationsSortInput>;
+  readonly plain_text: InputMaybe<SortOrderEnum>;
+  readonly text: InputMaybe<NotionRawChildrenBookmarkCaptionTextSortInput>;
+  readonly type: InputMaybe<SortOrderEnum>;
+};
+
+type NotionRawChildrenBookmarkCaptionText = {
+  readonly content: Maybe<Scalars['String']>;
+};
+
+type NotionRawChildrenBookmarkCaptionTextFieldSelector = {
+  readonly content: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenBookmarkCaptionTextFilterInput = {
+  readonly content: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawChildrenBookmarkCaptionTextSortInput = {
+  readonly content: InputMaybe<SortOrderEnum>;
+};
+
 type NotionRawChildrenBookmarkFieldSelector = {
+  readonly caption: InputMaybe<NotionRawChildrenBookmarkCaptionFieldSelector>;
   readonly url: InputMaybe<FieldSelectorEnum>;
 };
 
 type NotionRawChildrenBookmarkFilterInput = {
+  readonly caption: InputMaybe<NotionRawChildrenBookmarkCaptionFilterListInput>;
   readonly url: InputMaybe<StringQueryOperatorInput>;
 };
 
 type NotionRawChildrenBookmarkSortInput = {
+  readonly caption: InputMaybe<NotionRawChildrenBookmarkCaptionSortInput>;
   readonly url: InputMaybe<SortOrderEnum>;
 };
 

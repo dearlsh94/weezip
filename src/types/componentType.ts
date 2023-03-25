@@ -75,3 +75,8 @@ export interface CalloutIcon {
 export interface Callout extends TextBlock {
   icon: CalloutIcon
 }
+
+export interface Bookmark {
+  caption: TextItem[]
+  url: string
+}
