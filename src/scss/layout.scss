@@ -10,8 +10,9 @@
     .content {
       box-sizing: border-box;
       width: 100%;
+      min-height: calc(100vh - 50px - 12px);
       max-width: 768px;
-      padding: 0 40px;
+      padding: 12px 40px 40px;
       word-wrap: break-word;
     }
   }
