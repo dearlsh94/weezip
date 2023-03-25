@@ -12,7 +12,7 @@ const MyTodo = ({ todo }: Props) => {
     <React.Fragment>
       {todo && (
         <div className="block-todo">
-          <input type="checkbox" checked={todo.checked} />
+          <input type="checkbox" checked={todo.checked} onChange={() => {}} />
           <label>
             <Paragraph paragraph={todo} />
           </label>

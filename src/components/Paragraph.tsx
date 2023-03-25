@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TextBlock } from '../types/componentType'
+import { TextBlock, TextItem } from '../types/componentType'
 import { checkNewLine } from '../utils/convertUtils'
 
 interface Props {
@@ -10,9 +10,9 @@ const ContentChildren = ({ paragraph }: Props) => {
   return (
     <React.Fragment>
       {paragraph && (
-        <div className="block-paragraph" style={{ color: paragraph.color }}>
+        <div className="block-paragraph">
           {paragraph.text?.length === 0 && <br />}
-          {paragraph.text?.map((t, i) => {
+          {paragraph.text?.map((t: TextItem, i: number) => {
             let classNames = ['block-paragraph-text']
             if (t?.annotations?.bold) {
               classNames.push('bold')
@@ -30,11 +30,21 @@ const ContentChildren = ({ paragraph }: Props) => {
               classNames.push(t?.annotations?.color)
             }
             return (
-              <div
-                key={`block-paragraph-text-${i}`}
-                className={classNames.join(' ')}
-                dangerouslySetInnerHTML={{ __html: checkNewLine(t.plain_text) }}
-              />
+              <React.Fragment key={`block-paragraph-text-${i}`}>
+                {t.href ? (
+                  <a href={t.href} target="_blank" rel="noopener noreferrer">
+                    <span
+                      className={classNames.join(' ')}
+                      dangerouslySetInnerHTML={{ __html: checkNewLine(t.plain_text) }}
+                    />
+                  </a>
+                ) : (
+                  <span
+                    className={classNames.join(' ')}
+                    dangerouslySetInnerHTML={{ __html: checkNewLine(t.plain_text) }}
+                  />
+                )}
+              </React.Fragment>
             )
           })}
         </div>
