@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '../scss/components.scss'
+import '../scss/layout.scss'
 import Header from '../module/Header'
 import { NotionContext } from '../store/rootStore'
 
@@ -13,7 +13,9 @@ const MainLayout = ({ children }: Props) => {
     <React.Fragment>
       <div className="main-layout">
         <Header />
-        <main>{children}</main>
+        <main>
+          <div className="content">{children}</div>
+        </main>
       </div>
     </React.Fragment>
   )

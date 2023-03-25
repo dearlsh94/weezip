@@ -1,5 +1,11 @@
 @import './abstracts/variables';
 
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
 .gnb-box {
   display: flex;
   align-items: center;

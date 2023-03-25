@@ -17,9 +17,7 @@ const IndexPage: React.FC<PageProps> = () => {
   console.log({ content })
   return (
     <NotionContext.Provider value={nodes}>
-      <MainLayout>
-        <main>{content && <ContentWrapper childrens={content.children} />}</main>
-      </MainLayout>
+      <MainLayout>{content && <ContentWrapper childrens={content.children} />}</MainLayout>
     </NotionContext.Provider>
   )
 }
