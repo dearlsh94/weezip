@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NotionCategories, NotionContext } from '../store/rootStore'
+import { NotionCategories, NotionContext, PageContext } from '../store/rootStore'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
 import { isDebug, gnbLinkes } from '../constants'
@@ -8,9 +8,11 @@ import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
 
 const Header = () => {
+  const pageProps = React.useContext(PageContext)
   const nodes: NotionNode[] = React.useContext(NotionContext).nodes
   const categories: NotionCategories = React.useContext(NotionContext).categories
   const [isSnbOpen, setIsSnbOpen] = React.useState(false)
+  console.log({ pageProps })
   console.log({ categories })
   return (
     <React.Fragment>

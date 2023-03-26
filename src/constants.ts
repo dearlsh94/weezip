@@ -7,8 +7,8 @@ export const urlMap: Map<string, string> = new Map([
 export const gnbLinkes = [
   { url: '/', title: 'Home' },
   { url: '/intro', title: 'Intro' },
-  { url: '/write', title: 'Write' },
-  { url: '/explain', title: 'Explain' },
-  { url: '/edit', title: 'Edit' },
-  { url: '/zip', title: 'Zip' },
+  { url: '/list?cateogry=write', title: 'Write' },
+  { url: '/list?cateogry=explain', title: 'Explain' },
+  { url: '/list?cateogry=edit', title: 'Edit' },
+  { url: '/list?cateogry=zip', title: 'Zip' },
 ]
