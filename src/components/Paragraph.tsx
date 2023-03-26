@@ -1,31 +1,51 @@
 import * as React from 'react'
-import { Paragraph } from '../types/componentType'
-import { checkNewLine } from '../utils/convertUtils'
+import { TextBlock, TextItem } from '../types/componentType'
+import { convertNewLine } from '../utils/convertUtils'
+import Linker from './Linker'
 
 interface Props {
-  paragraph?: Paragraph
+  paragraph?: TextBlock
 }
 
 const ContentChildren = ({ paragraph }: Props) => {
   return (
     <React.Fragment>
       {paragraph && (
-        <div className="block-paragraph" style={{ color: paragraph.color }}>
+        <div className="block-paragraph">
           {paragraph.text?.length === 0 && <br />}
-          {paragraph.text?.map((t, i) => {
+          {paragraph.text?.map((t: TextItem, i: number) => {
             let classNames = ['block-paragraph-text']
-            if (t?.annotations?.bold) classNames.push('bold')
-            if (t?.annotations?.italic) classNames.push('italic')
-            if (t?.annotations?.strikethrough) classNames.push('strikethrough')
-            if (t?.annotations?.underline) classNames.push('underline')
-            const bgColor = t?.annotations?.color.includes('_background') ? t?.annotations?.color.split('_')[0] : ''
+            if (t?.annotations?.bold) {
+              classNames.push('bold')
+            }
+            if (t?.annotations?.italic) {
+              classNames.push('italic')
+            }
+            if (t?.annotations?.strikethrough) {
+              classNames.push('strikethrough')
+            }
+            if (t?.annotations?.underline) {
+              classNames.push('underline')
+            }
+            if (t?.annotations?.color) {
+              classNames.push(t?.annotations?.color)
+            }
             return (
-              <div
-                key={`block-paragraph-text-${i}`}
-                className={classNames.join(' ')}
-                style={{ color: t?.annotations?.color, backgroundColor: bgColor }}
-                dangerouslySetInnerHTML={{ __html: checkNewLine(t.plain_text) }}
-              />
+              <React.Fragment key={`block-paragraph-text-${i}`}>
+                {t.href ? (
+                  <Linker url={t.href} target="_blank">
+                    <span
+                      className={classNames.join(' ')}
+                      dangerouslySetInnerHTML={{ __html: convertNewLine(t.plain_text) }}
+                    />
+                  </Linker>
+                ) : (
+                  <span
+                    className={classNames.join(' ')}
+                    dangerouslySetInnerHTML={{ __html: convertNewLine(t.plain_text) }}
+                  />
+                )}
+              </React.Fragment>
             )
           })}
         </div>

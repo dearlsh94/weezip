@@ -1,0 +1,112 @@
+@import './abstracts/variables';
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  box-shadow: 0px 3px 9px #ccc;
+  height: 50px;
+  margin-bottom: 12px;
+
+  .left-box {
+    position: absolute;
+    left: 10px;
+    img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+  .logo-box {
+    width: 42px;
+  }
+}
+
+.snb-container {
+  visibility: hidden;
+  .snb-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    margin-left: -261px;
+    overflow-y: auto;
+    background-color: $white-color;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in;
+    box-shadow: 6px 0px 18px -5px rgb(105, 105, 105);
+
+    .introduce-box {
+      width: 100%;
+      padding: 24px 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $third-color;
+      img {
+        width: 80px;
+        height: 80px;
+      }
+      p {
+        margin-top: 24px;
+      }
+    }
+  }
+  &.open {
+    visibility: visible;
+    .snb-box {
+      margin-left: 0px;
+    }
+  }
+}
+
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 12px;
+
+  a {
+    text-decoration: none;
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 13pt;
+    box-sizing: border-box;
+  }
+  a:hover {
+    background-color: $secondary-color;
+    color: $white-color;
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .count {
+      color: $base-color;
+      background-color: $third-color;
+      border-radius: 45%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10pt;
+      padding-top: 2px;
+    }
+  }
+}

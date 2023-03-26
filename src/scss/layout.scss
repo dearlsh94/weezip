@@ -1,0 +1,19 @@
+.main-layout {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+
+    .content {
+      box-sizing: border-box;
+      width: 100%;
+      min-height: calc(100vh - 50px - 12px);
+      max-width: 768px;
+      padding: 12px 40px 40px;
+      word-wrap: break-word;
+    }
+  }
+}

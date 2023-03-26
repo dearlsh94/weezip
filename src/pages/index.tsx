@@ -2,46 +2,27 @@ import * as React from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
 import '../scss/global.scss'
 import { useGetNotionQuery } from '../services/use-notion'
-import { NotionNode } from '../types/nodeTypes'
-import { getContentNode } from '../utils/notionUtils'
-import { PageContent } from '../types/contentType'
-import ContentChildren from '../module/ContentChildren'
+import { classifyCategory, findContentNode } from '../utils/notionUtils'
+import { Children } from '../types/contentType'
+import ContentWrapper from '../module/ContentWrapper'
+import { NotionContext, INotionContext } from '../store/rootStore'
+import MainLayout from '../layout/MainLayout'
+import MyHead from '../components/MyHead'
 
-export const Head: HeadFC = () => <title>Home</title>
+export const Head: HeadFC = () => <MyHead title="홈" />
 
 const IndexPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery()
-  const content: PageContent | null = getContentNode(nodes, '/')
+  const store: INotionContext = {
+    nodes: nodes,
+    categories: classifyCategory(nodes),
+  }
+  const content: Children | null = findContentNode(nodes, '/')
   console.log({ content })
   return (
-    <main>
-      <section>
-        {nodes.map((node: NotionNode, i: number) => {
-          return (
-            <div key={`node-${i}`}>
-              <a href={`${node.title || location.pathname}`}>
-                <p>
-                  <span>id: {node.id}</span>
-                  <span>&nbsp;/&nbsp;</span>
-                  <span>title: {node.title}</span>
-                </p>
-              </a>
-            </div>
-          )
-        })}
-      </section>
-      {content && (
-        <section>
-          {content?.children?.map((block, i) => {
-            return (
-              <div key={i}>
-                <ContentChildren block={block} />
-              </div>
-            )
-          })}
-        </section>
-      )}
-    </main>
+    <NotionContext.Provider value={store}>
+      <MainLayout>{content && <ContentWrapper childrens={content.children} />}</MainLayout>
+    </NotionContext.Provider>
   )
 }
 

@@ -1,5 +1,36 @@
+@import './abstracts/variables';
+
+body {
+  margin: 0px;
+  min-width: 468px;
+  background-color: #fbfbfb;
+}
+
 main {
-  color: #000;
+  color: #333;
+}
+
+a {
+  color: $base-color;
+}
+
+h1 {
+  font-size: 2em;
+  color: $base-color;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: $base-color;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: $base-color;
+}
+
+p {
+  margin: 0px;
 }
 
 .bold {
@@ -16,4 +47,9 @@ main {
 
 .underline {
   text-decoration: underline;
+}
+
+img.icon {
+  width: 28px;
+  height: 28px;
 }

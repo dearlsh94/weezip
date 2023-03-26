@@ -3,9 +3,10 @@ export interface WorkBy {
   id: string
 }
 
+// NOTE Notion Database Column
 export interface Properties {
-  url: Property
   title: Property
+  url: Property
   remark: Property
   category: Property
 }
@@ -14,7 +15,7 @@ export interface Properties {
 export interface Property {
   id: string
   type: 'title' | 'multi_select' | 'rich_text'
-  title?: Title // type === title
+  title?: TextItem // type === title
   rich_text?: string // type === rich_text
   multi_select?: MultiSelect[]
 }
@@ -25,7 +26,7 @@ export interface MultiSelect {
   color: string
 }
 
-export interface Title {
+export interface TextItem {
   type: string
   text: Text
   annotations: Annotations
@@ -56,10 +57,27 @@ export interface Text {
 export interface Heading {
   color: string
   is_toggleable: boolean
-  text: Title[]
+  text: TextItem[]
 }
 
-export interface Paragraph {
+export interface TextBlock {
   color: string
-  text: Title[]
+  text: TextItem[]
+}
+
+export interface Todo extends TextBlock {
+  checked: boolean
+}
+
+export interface CalloutIcon {
+  emoji: string
+  type: 'emoji'
+}
+export interface Callout extends TextBlock {
+  icon: CalloutIcon
+}
+
+export interface Bookmark {
+  caption: TextItem[]
+  url: string
 }
