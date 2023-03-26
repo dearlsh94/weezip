@@ -6,18 +6,22 @@ import { isDebug, urlMap, gnbLinkes } from '../constants'
 import Linker from '../components/Linker'
 import Logo from '../components/Logo'
 import { StaticImage } from 'gatsby-plugin-image'
+import DimWrapper from '../layout/DimWrapper'
 
 const Header = () => {
   const nodes: NotionNode[] = React.useContext(NotionContext)
+  const [isSnbOpen, setIsSnbOpen] = React.useState(false)
   return (
     <React.Fragment>
       <header>
-        <div className="left-box">
+        <div className="left-box" onClick={() => setIsSnbOpen(!isSnbOpen)}>
           <StaticImage src="../images/icon-hamburger.svg" alt="icon hamburger menu" className="icon hamburger" />
         </div>
-        <div className="logo-box">
-          <Logo />
-        </div>
+        <Linker url="/">
+          <div className="logo-box">
+            <Logo />
+          </div>
+        </Linker>
         {/* <div className="gnb-box">
           {gnbLinkes?.length > 0 &&
             gnbLinkes.map((nav, i) => {
@@ -29,6 +33,12 @@ const Header = () => {
             })}
         </div> */}
       </header>
+      <div className={`snb-container ${isSnbOpen ? 'open' : ''}`}>
+        <DimWrapper handleClose={() => setIsSnbOpen(false)}>
+          <div className="snb-box">here is snb</div>
+        </DimWrapper>
+      </div>
+
       {isDebug && (
         <section>
           {nodes.map((node: NotionNode, i: number) => {

@@ -144,3 +144,18 @@
   background-color: #e5e5e5;
   margin: 16px 0px;
 }
+
+.dim-wrapper {
+  .content {
+    z-index: 8;
+  }
+  .dim {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: rgba(105, 105, 105, 0.4);
+  }
+}

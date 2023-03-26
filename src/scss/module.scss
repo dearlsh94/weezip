@@ -30,6 +30,34 @@ header {
   }
 }
 
+.snb-container {
+  visibility: hidden;
+  .snb-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    margin-left: -261px;
+    overflow-y: auto;
+    background-color: $white-color;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in;
+  }
+  &.open {
+    visibility: visible;
+    .snb-box {
+      margin-left: 0px;
+    }
+  }
+}
+
 .gnb-box {
   a {
     text-decoration: none;
