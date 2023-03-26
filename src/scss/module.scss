@@ -92,4 +92,22 @@ header {
     background-color: $secondary-color;
     color: $white-color;
   }
+
+  .nav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .count {
+      color: $base-color;
+      background-color: $third-color;
+      border-radius: 45%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10pt;
+      padding-top: 2px;
+    }
+  }
 }

@@ -16,28 +16,28 @@ export const getMDContentNode = (nodes: NotionNode[], url: string): string => {
 }
 
 export const classifyCategory = (nodes: NotionNode[]) => {
-  let writes: Children[] = []
-  let explains: Children[] = []
-  let edits: Children[] = []
-  let zips: Children[] = []
+  let write: Children[] = []
+  let explain: Children[] = []
+  let edit: Children[] = []
+  let zip: Children[] = []
   nodes.map(node => {
     const json = nodeToJson(node)
     json.properties?.category?.multi_select?.map(select => {
       if (select?.name?.toUpperCase().includes('WRITE')) {
-        writes.push(json)
+        write.push(json)
       } else if (select?.name?.toUpperCase().includes('EXPLAIN')) {
-        explains.push(json)
+        explain.push(json)
       } else if (select?.name?.toUpperCase().includes('EDIT')) {
-        edits.push(json)
+        edit.push(json)
       } else if (select?.name?.toUpperCase().includes('ZIP')) {
-        zips.push(json)
+        zip.push(json)
       }
     })
   })
   return {
-    writes,
-    explains,
-    edits,
-    zips,
+    write,
+    explain,
+    edit,
+    zip,
   }
 }

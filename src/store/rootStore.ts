@@ -8,18 +8,19 @@ export interface INotionContext {
   categories: NotionCategories
 }
 export interface NotionCategories {
-  writes: Children[]
-  explains: Children[]
-  edits: Children[]
-  zips: Children[]
+  [key: string]: Children[]
+  write: Children[]
+  explain: Children[]
+  edit: Children[]
+  zip: Children[]
 }
 export const NotionContext = React.createContext<INotionContext>({
   nodes: [],
   categories: {
-    writes: [],
-    explains: [],
-    edits: [],
-    zips: [],
+    write: [],
+    explain: [],
+    edit: [],
+    zip: [],
   },
 })
 

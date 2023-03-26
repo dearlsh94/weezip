@@ -8,12 +8,9 @@ import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
 
 const Header = () => {
-  const pageProps = React.useContext(PageContext)
   const nodes: NotionNode[] = React.useContext(NotionContext).nodes
   const categories: NotionCategories = React.useContext(NotionContext).categories
   const [isSnbOpen, setIsSnbOpen] = React.useState(false)
-  console.log({ pageProps })
-  console.log({ categories })
   return (
     <React.Fragment>
       <header>
@@ -38,7 +35,12 @@ const Header = () => {
                 gnbLinkes.map((nav, i) => {
                   return (
                     <Linker url={nav.url} key={`gnb-${i}`}>
-                      <nav className={`nav-item`}>{nav.title}</nav>
+                      <nav className={`nav-item`}>
+                        <span>{nav.title}</span>
+                        {nav.url.includes('/list') && (
+                          <div className="count">{categories[nav.title.toLowerCase()]?.length || 0}</div>
+                        )}
+                      </nav>
                     </Linker>
                   )
                 })}

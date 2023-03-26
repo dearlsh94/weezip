@@ -8,6 +8,7 @@ import ContentWrapper from '../module/ContentWrapper'
 import MainLayout from '../layout/MainLayout'
 import { NotionContext, INotionContext, PageContext } from '../store/rootStore'
 import MyHead from '../components/MyHead'
+import { getLocationQuery } from '../utils/parseUtils'
 
 export const Head: HeadFC = () => <MyHead title="Intro" />
 
@@ -17,12 +18,13 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     nodes: nodes,
     categories: classifyCategory(nodes),
   }
-  console.log({ location })
-  // const [category, setCategory] = useQueryParam('category', StringParam)
+  const { category } = getLocationQuery(props.location.search)
+  const list = store.categories[category] || []
+  console.log({ list })
   return (
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
-        <MainLayout>{/* {store.categories.} */}</MainLayout>
+        <MainLayout>{list.length}</MainLayout>
       </NotionContext.Provider>
     </PageContext.Provider>
   )
