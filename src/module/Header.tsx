@@ -4,7 +4,6 @@ import '../scss/module.scss'
 import { NotionNode } from '../types'
 import { isDebug, urlMap, gnbLinkes } from '../constants'
 import Linker from '../components/Linker'
-import Logo from '../components/Logo'
 import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
 
@@ -19,23 +18,28 @@ const Header = () => {
         </div>
         <Linker url="/">
           <div className="logo-box">
-            <Logo />
+            <StaticImage src={`../images/logo-2x.png`} alt="WeeZip Logo" className="logo" />
           </div>
         </Linker>
-        {/* <div className="gnb-box">
-          {gnbLinkes?.length > 0 &&
-            gnbLinkes.map((nav, i) => {
-              return (
-                <nav key={`gnb-${i}`} className={`gnb-item`}>
-                  <Linker url={nav.url}>{nav.title}</Linker>
-                </nav>
-              )
-            })}
-        </div> */}
       </header>
       <div className={`snb-container ${isSnbOpen ? 'open' : ''}`}>
         <DimWrapper handleClose={() => setIsSnbOpen(false)}>
-          <div className="snb-box">here is snb</div>
+          <div className="snb-box">
+            <div className="introduce-box">
+              <StaticImage src={`../images/logo-3x.png`} alt="WeeZip Logo" className="logo" />
+              <p>Welcome to WeeZip</p>
+            </div>
+            <div className="nav-box">
+              {gnbLinkes?.length > 0 &&
+                gnbLinkes.map((nav, i) => {
+                  return (
+                    <nav key={`gnb-${i}`} className={`nav-item`}>
+                      <Linker url={nav.url}>{nav.title}</Linker>
+                    </nav>
+                  )
+                })}
+            </div>
+          </div>
         </DimWrapper>
       </div>
 

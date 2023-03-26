@@ -20,7 +20,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon-butterfly.png',
+        icon: 'src/images/logo-bg-1x.png',
       },
     },
     'gatsby-plugin-sharp',

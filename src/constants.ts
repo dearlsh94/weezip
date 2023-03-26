@@ -5,7 +5,7 @@ export const urlMap: Map<string, string> = new Map([
 ])
 
 export const gnbLinkes = [
-  { url: '/', title: 'Hoem' },
+  { url: '/', title: 'Home' },
   { url: '/intro', title: 'Intro' },
   { url: '/write', title: 'Write' },
   { url: '/explain', title: 'Explain' },
