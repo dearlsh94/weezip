@@ -21,18 +21,21 @@ export const classifyCategory = (nodes: NotionNode[]) => {
   let edit: NotionNode[] = []
   let zip: NotionNode[] = []
   nodes.map(node => {
-    const json = nodeToJson(node)
-    json.properties?.category?.multi_select?.map(select => {
-      if (select?.name?.toUpperCase().includes('WRITE')) {
-        write.push(node)
-      } else if (select?.name?.toUpperCase().includes('EXPLAIN')) {
-        explain.push(node)
-      } else if (select?.name?.toUpperCase().includes('EDIT')) {
-        edit.push(node)
-      } else if (select?.name?.toUpperCase().includes('ZIP')) {
-        zip.push(node)
-      }
-    })
+    // post 경로가 아닌 글들은 제외
+    if (node.title.toUpperCase().includes('POST')) {
+      const json = nodeToJson(node)
+      json.properties?.category?.multi_select?.map(select => {
+        if (select?.name?.toUpperCase().includes('WRITE')) {
+          write.push(node)
+        } else if (select?.name?.toUpperCase().includes('EXPLAIN')) {
+          explain.push(node)
+        } else if (select?.name?.toUpperCase().includes('EDIT')) {
+          edit.push(node)
+        } else if (select?.name?.toUpperCase().includes('ZIP')) {
+          zip.push(node)
+        }
+      })
+    }
   })
   return {
     write,
