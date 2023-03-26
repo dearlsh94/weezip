@@ -9,9 +9,9 @@ import MainLayout from '../layout/MainLayout'
 import { NotionContext, INotionContext } from '../store/rootStore'
 import MyHead from '../components/MyHead'
 
-export const Head: HeadFC = () => <MyHead title="Intro" />
+export const Head: HeadFC = () => <MyHead title="소개" />
 
-const IndexPage: React.FC<PageProps> = () => {
+const IntroPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
     nodes: nodes,
@@ -26,4 +26,4 @@ const IndexPage: React.FC<PageProps> = () => {
   )
 }
 
-export default IndexPage
+export default IntroPage
