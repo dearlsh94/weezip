@@ -3,9 +3,10 @@ export interface WorkBy {
   id: string
 }
 
+// NOTE Notion Database Column
 export interface Properties {
-  url: Property
   title: Property
+  url: Property
   remark: Property
   category: Property
 }

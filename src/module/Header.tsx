@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NotionContext } from '../store/rootStore'
+import { NotionCategories, NotionContext } from '../store/rootStore'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
 import { isDebug, gnbLinkes } from '../constants'
@@ -8,8 +8,10 @@ import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
 
 const Header = () => {
-  const nodes: NotionNode[] = React.useContext(NotionContext)
+  const nodes: NotionNode[] = React.useContext(NotionContext).nodes
+  const categories: NotionCategories = React.useContext(NotionContext).categories
   const [isSnbOpen, setIsSnbOpen] = React.useState(false)
+  console.log({ categories })
   return (
     <React.Fragment>
       <header>
@@ -33,10 +35,8 @@ const Header = () => {
               {gnbLinkes?.length > 0 &&
                 gnbLinkes.map((nav, i) => {
                   return (
-                    <Linker url={nav.url}>
-                      <nav key={`gnb-${i}`} className={`nav-item`}>
-                        {nav.title}
-                      </nav>
+                    <Linker url={nav.url} key={`gnb-${i}`}>
+                      <nav className={`nav-item`}>{nav.title}</nav>
                     </Linker>
                   )
                 })}
