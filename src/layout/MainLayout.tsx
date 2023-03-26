@@ -8,7 +8,6 @@ interface Props {
 }
 
 const MainLayout = ({ children }: Props) => {
-  const nodes = React.useContext(NotionContext)
   return (
     <React.Fragment>
       <div className="main-layout">

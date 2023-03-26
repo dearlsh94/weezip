@@ -4,18 +4,33 @@ header {
   position: sticky;
   top: 0;
   background-color: rgba(255, 255, 255, 0.95);
-}
-
-.gnb-box {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 100%;
-  justify-content: center;
   box-shadow: 0px 3px 9px #ccc;
-  margin-bottom: 12px;
   height: 50px;
+  margin-bottom: 12px;
 
+  .left-box {
+    position: absolute;
+    left: 10px;
+    img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+  .logo-box {
+    height: 50px;
+    img {
+      height: 50px;
+    }
+  }
+}
+
+.gnb-box {
   a {
     text-decoration: none;
   }

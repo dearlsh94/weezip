@@ -2,24 +2,32 @@ import * as React from 'react'
 import { NotionContext } from '../store/rootStore'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
-import { isDebug, urlMap } from '../constants'
+import { isDebug, urlMap, gnbLinkes } from '../constants'
 import Linker from '../components/Linker'
+import Logo from '../components/Logo'
+import { StaticImage } from 'gatsby-plugin-image'
+
 const Header = () => {
   const nodes: NotionNode[] = React.useContext(NotionContext)
   return (
     <React.Fragment>
       <header>
-        {/* <img src="../images/logo.png" alt="logo" /> */}
-        <div className="gnb-box">
-          {nodes?.length > 0 &&
-            nodes.map((nav, i) => {
+        <div className="left-box">
+          <StaticImage src="../images/icon-hamburger.svg" alt="icon hamburger menu" className="icon hamburger" />
+        </div>
+        <div className="logo-box">
+          <Logo />
+        </div>
+        {/* <div className="gnb-box">
+          {gnbLinkes?.length > 0 &&
+            gnbLinkes.map((nav, i) => {
               return (
                 <nav key={`gnb-${i}`} className={`gnb-item`}>
-                  <Linker url={nav.title}>{urlMap.get(nav.title)}</Linker>
+                  <Linker url={nav.url}>{nav.title}</Linker>
                 </nav>
               )
             })}
-        </div>
+        </div> */}
       </header>
       {isDebug && (
         <section>

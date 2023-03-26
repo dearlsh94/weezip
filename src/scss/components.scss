@@ -1,5 +1,9 @@
 @import './abstracts/variables';
 
+.logo {
+  display: flex;
+}
+
 .block-paragraph {
   line-height: 24px;
   width: fit-content;
