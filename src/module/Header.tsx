@@ -33,9 +33,11 @@ const Header = () => {
               {gnbLinkes?.length > 0 &&
                 gnbLinkes.map((nav, i) => {
                   return (
-                    <nav key={`gnb-${i}`} className={`nav-item`}>
-                      <Linker url={nav.url}>{nav.title}</Linker>
-                    </nav>
+                    <Linker url={nav.url}>
+                      <nav key={`gnb-${i}`} className={`nav-item`}>
+                        {nav.title}
+                      </nav>
+                    </Linker>
                   )
                 })}
             </div>

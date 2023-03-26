@@ -86,16 +86,13 @@ header {
 
   a {
     text-decoration: none;
-  }
-
-  .nav-item {
     width: 100%;
     padding: 12px 24px;
     font-size: 13pt;
     box-sizing: border-box;
-    cursor: pointer;
   }
-  .nav-item:hover {
-    background-color: #e5e5e5;
+  a:hover {
+    background-color: $secondary-color;
+    color: $white-color;
   }
 }
