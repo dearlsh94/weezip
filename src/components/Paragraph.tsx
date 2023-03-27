@@ -1,19 +1,21 @@
 import * as React from 'react'
 import { TextBlock, TextItem } from '../types/componentType'
-import { convertNewLine } from '../utils/convertUtils'
+import { convertNewLine, convertTab } from '../utils/convertUtils'
 import Linker from './Linker'
 
 interface Props {
   paragraph?: TextBlock
+  text?: TextItem[]
 }
 
-const ContentChildren = ({ paragraph }: Props) => {
+const ContentChildren = ({ paragraph, text }: Props) => {
+  let blockTexts = paragraph?.text || text || []
   return (
     <React.Fragment>
-      {paragraph && (
+      {blockTexts && (
         <div className="block-paragraph">
-          {paragraph.text?.length === 0 && <br />}
-          {paragraph.text?.map((t: TextItem, i: number) => {
+          {blockTexts.length === 0 && <br />}
+          {blockTexts.map((t: TextItem, i: number) => {
             let classNames = ['block-paragraph-text']
             if (t?.annotations?.bold) {
               classNames.push('bold')
@@ -36,13 +38,13 @@ const ContentChildren = ({ paragraph }: Props) => {
                   <Linker url={t.href} target="_blank">
                     <span
                       className={classNames.join(' ')}
-                      dangerouslySetInnerHTML={{ __html: convertNewLine(t.plain_text) }}
+                      dangerouslySetInnerHTML={{ __html: convertTab(convertNewLine(t.plain_text)) }}
                     />
                   </Linker>
                 ) : (
                   <span
                     className={classNames.join(' ')}
-                    dangerouslySetInnerHTML={{ __html: convertNewLine(t.plain_text) }}
+                    dangerouslySetInnerHTML={{ __html: convertTab(convertNewLine(t.plain_text)) }}
                   />
                 )}
               </React.Fragment>

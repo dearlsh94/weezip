@@ -2,6 +2,10 @@ export const convertNewLine = (text: string) => {
   return text.replaceAll('\n', '<br/>')
 }
 
+export const convertTab = (text: string) => {
+  return text.replaceAll('	', '&emsp;')
+}
+
 export const convertDatetimeFormat = (datetimeString: string, format = 'YYYY-MM-DD'): string => {
   const date = new Date(datetimeString)
   const year = date.getFullYear()

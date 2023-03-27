@@ -81,3 +81,9 @@ export interface Bookmark {
   caption: TextItem[]
   url: string
 }
+
+export interface Code {
+  caption: TextItem[]
+  language: string
+  text: TextItem[]
+}

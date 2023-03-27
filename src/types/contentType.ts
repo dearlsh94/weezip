@@ -1,4 +1,4 @@
-import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, MultiSelect } from './componentType'
+import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, MultiSelect, Code } from './componentType'
 
 export interface Children {
   object: 'block'
@@ -27,6 +27,7 @@ export interface Children {
   callout?: Callout
   toggle?: TextBlock
   bookmark?: Bookmark
+  code?: Code
   divider?: {}
 }
 
@@ -49,6 +50,7 @@ export enum BlockType {
   TOGGLE = 'toggle',
   BOOKMARK = 'bookmark',
   DIVIDER = 'divider',
+  CODE = 'code',
 }
 
 export interface ContentValue {
