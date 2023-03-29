@@ -79,6 +79,7 @@
 
 .block-bulleted-list {
   line-height: 28px;
+  padding-left: 20px;
 
   ::marker {
     unicode-bidi: isolate;
@@ -88,6 +89,11 @@
     text-align: start !important;
     text-align-last: start !important;
   }
+}
+
+.block-numbered-list {
+  line-height: 28px;
+  padding-left: 20px;
 }
 
 .block-quote {
