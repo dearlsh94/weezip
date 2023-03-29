@@ -7,7 +7,6 @@ interface Props {
 }
 
 const MyCode = ({ code }: Props) => {
-  console.log({ code })
   return (
     <React.Fragment>
       <div className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
