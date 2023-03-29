@@ -115,7 +115,7 @@
   margin: 8px 0px;
   border-radius: 4px;
   .icon-box {
-    margin: 0px 4px;
+    margin: 0px 10px 0px 6px;
     font-size: 12pt;
   }
 }
@@ -132,6 +132,7 @@
       width: 12px;
       height: 12px;
       margin-right: 6px;
+      margin-bottom: 2px;
       transform: rotate(0);
       transition-duration: 0.1s;
       &.open {
@@ -151,6 +152,10 @@
   margin: 8px 0px;
   border-radius: 4px;
   position: relative;
+
+  .code {
+    white-space: pre-wrap;
+  }
   &.language {
     padding-top: 28px;
   }
