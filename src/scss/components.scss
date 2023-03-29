@@ -110,8 +110,8 @@
 
 .block-callout {
   display: flex;
-  background-color: #efefef;
-  padding: 8px 4px;
+  background-color: #e5e5e5;
+  padding: 12px 4px;
   margin: 8px 0px;
   border-radius: 4px;
   .icon-box {
@@ -141,6 +141,35 @@
   }
   .toggle-content-box {
     margin-left: 20px;
+  }
+}
+
+.block-code {
+  display: flex;
+  background-color: #efefef;
+  padding: 16px 24px;
+  margin: 8px 0px;
+  border-radius: 4px;
+  position: relative;
+  &.language {
+    padding-top: 28px;
+  }
+  &.caption {
+    margin-bottom: 28px;
+  }
+  .language {
+    color: $gray-color;
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    font-size: 10pt;
+  }
+  .caption {
+    color: $gray-color;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 10pt;
   }
 }
 

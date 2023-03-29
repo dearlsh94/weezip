@@ -12,6 +12,7 @@ import MyTodo from '../components/MyTodo'
 import MyCallout from '../components/MyCallout'
 import MyToggle from '../components/MyToggle'
 import MyBookmark from '../components/MyBookmark'
+import MyCode from '../components/MyCode'
 import Divider from '../components/Divider'
 
 interface Props {
@@ -53,6 +54,8 @@ const ContentChildren = ({ block }: Props) => {
           return <MyToggle toggle={block.toggle} hasChild={block.has_children} childList={block.children} />
       case BlockType.BOOKMARK:
         if (block.bookmark) return <MyBookmark bookmark={block.bookmark} />
+      case BlockType.CODE:
+        if (block.code) return <MyCode code={block.code} />
       case BlockType.DIVIDER:
         if (block.divider) return <Divider />
       default:
