@@ -24,7 +24,7 @@ const ContentWrapper = ({ childrens }: Props) => {
             childrens[Math.min(i + 1, childrens.length)]?.type !== BlockType.NUMBERED_LIST_ITEM
           ) {
             return (
-              <ol key={i}>
+              <ol key={i} className={`block-numbered-list`}>
                 {numberedList?.map((item, i) => {
                   return (
                     <li key={`numbered-list-${i}`}>

@@ -7,12 +7,11 @@ interface Props {
 }
 
 const MyCode = ({ code }: Props) => {
-  console.log({ code })
   return (
     <React.Fragment>
       <div className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
         {code.language && <div className="language">{code.language}</div>}
-        <Paragraph text={code.text} />
+        <Paragraph text={code.text} className="code" />
         {code.caption && (
           <div className="caption">
             <Paragraph text={code.caption} />

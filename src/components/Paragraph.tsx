@@ -6,9 +6,10 @@ import Linker from './Linker'
 interface Props {
   paragraph?: TextBlock
   text?: TextItem[]
+  className?: string
 }
 
-const ContentChildren = ({ paragraph, text }: Props) => {
+const ContentChildren = ({ paragraph, text, className }: Props) => {
   let blockTexts = paragraph?.text || text || []
   return (
     <React.Fragment>
@@ -17,6 +18,9 @@ const ContentChildren = ({ paragraph, text }: Props) => {
           {blockTexts.length === 0 && <br />}
           {blockTexts.map((t: TextItem, i: number) => {
             let classNames = ['block-paragraph-text']
+            if (className) {
+              classNames.push(className)
+            }
             if (t?.annotations?.bold) {
               classNames.push('bold')
             }
@@ -38,13 +42,13 @@ const ContentChildren = ({ paragraph, text }: Props) => {
                   <Linker url={t.href} target="_blank">
                     <span
                       className={classNames.join(' ')}
-                      dangerouslySetInnerHTML={{ __html: convertTab(convertNewLine(t.plain_text)) }}
+                      dangerouslySetInnerHTML={{ __html: convertNewLine(t.plain_text) }}
                     />
                   </Linker>
                 ) : (
                   <span
                     className={classNames.join(' ')}
-                    dangerouslySetInnerHTML={{ __html: convertTab(convertNewLine(t.plain_text)) }}
+                    dangerouslySetInnerHTML={{ __html: convertNewLine(t.plain_text) }}
                   />
                 )}
               </React.Fragment>

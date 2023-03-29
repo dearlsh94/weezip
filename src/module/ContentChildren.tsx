@@ -13,6 +13,7 @@ import MyCallout from '../components/MyCallout'
 import MyToggle from '../components/MyToggle'
 import MyBookmark from '../components/MyBookmark'
 import MyCode from '../components/MyCode'
+import MyImage from '../components/MyImage'
 import Divider from '../components/Divider'
 
 interface Props {
@@ -56,6 +57,8 @@ const ContentChildren = ({ block }: Props) => {
         if (block.bookmark) return <MyBookmark bookmark={block.bookmark} />
       case BlockType.CODE:
         if (block.code) return <MyCode code={block.code} />
+      case BlockType.IMAGE:
+        if (block.image) return <MyImage image={block.image} />
       case BlockType.DIVIDER:
         if (block.divider) return <Divider />
       default:
