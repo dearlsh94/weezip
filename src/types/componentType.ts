@@ -87,3 +87,14 @@ export interface Code {
   language: string
   text: TextItem[]
 }
+
+export interface Image {
+  caption: TextItem[]
+  file: ImageFile
+  type: 'file'
+}
+
+export interface ImageFile {
+  expiry_time: string
+  url: string
+}
