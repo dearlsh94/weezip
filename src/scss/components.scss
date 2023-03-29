@@ -118,11 +118,15 @@
   display: flex;
   background-color: #e5e5e5;
   padding: 12px 4px;
+  padding-left: 40px;
   margin: 8px 0px;
   border-radius: 4px;
+  position: relative;
   .icon-box {
-    margin: 0px 10px 0px 6px;
-    font-size: 12pt;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16pt;
   }
 }
 
