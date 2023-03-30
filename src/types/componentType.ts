@@ -9,15 +9,20 @@ export interface Properties {
   url: Property
   remark: Property
   category: Property
+  created_date: Property
+  edited_date: Property
+  series: Property
+  tag: Property
 }
 
 // NOTE 노션 DB 테이블의 컬럼
 export interface Property {
   id: string
-  type: 'title' | 'multi_select' | 'rich_text'
+  type: 'title' | 'multi_select' | 'rich_text' | 'date'
   title?: TextItem // type === title
   rich_text?: string // type === rich_text
   multi_select?: MultiSelect[]
+  date: PropDate
 }
 
 export interface MultiSelect {
@@ -97,4 +102,10 @@ export interface Image {
 export interface ImageFile {
   expiry_time: string
   url: string
+}
+
+export interface PropDate {
+  end: string
+  start: string
+  time_zone?: string
 }
