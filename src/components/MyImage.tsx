@@ -1,4 +1,3 @@
-import { StaticImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import '../scss/components.scss'
 import { Image } from '../types'
@@ -15,6 +14,7 @@ const MyImage = ({ image }: Props) => {
     <React.Fragment>
       <div className={`block-image`}>
         <img src={url} alt={alt} />
+        <p>{alt}</p>
       </div>
     </React.Fragment>
   )
