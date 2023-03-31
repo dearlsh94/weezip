@@ -30,21 +30,23 @@ const Header = () => {
               <StaticImage src={`../images/logo-3x.png`} alt="WeeZip Logo" className="logo" />
               <p>Welcome to WeeZip</p>
             </div>
-            <div className="nav-box">
-              {gnbLinkes?.length > 0 &&
-                gnbLinkes.map((nav, i) => {
-                  return (
-                    <Linker url={nav.url} key={`gnb-${i}`}>
-                      <nav className={`nav-item`}>
-                        <span>{nav.title}</span>
-                        {nav.url.includes('/list') && (
-                          <div className="count">{categories[nav.title.toLowerCase()]?.length || 0}</div>
-                        )}
-                      </nav>
-                    </Linker>
-                  )
-                })}
-            </div>
+            <nav className="nav-box">
+              <ul>
+                {gnbLinkes?.length > 0 &&
+                  gnbLinkes.map((nav, i) => {
+                    return (
+                      <li className={`nav-item`}>
+                        <Linker url={nav.url} key={`gnb-${i}`}>
+                          <span>{nav.title}</span>
+                          {nav.url.includes('/list') && (
+                            <div className="count">{categories[nav.title.toLowerCase()]?.length || 0}</div>
+                          )}
+                        </Linker>
+                      </li>
+                    )
+                  })}
+              </ul>
+            </nav>
           </div>
         </DimWrapper>
       </div>

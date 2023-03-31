@@ -92,22 +92,29 @@ header {
   width: 100%;
   margin-top: 12px;
 
-  a {
-    text-decoration: none;
-    width: 100%;
-    padding: 12px 24px;
-    font-size: 13pt;
-    box-sizing: border-box;
-  }
-  a:hover {
-    background-color: $secondary-color;
-    color: $white-color;
-  }
+  ul {
+    padding: 0px;
+    li {
+      width: 100%;
+      padding: 12px 24px;
+      font-size: 13pt;
+      box-sizing: border-box;
+      cursor: pointer;
+      a {
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    li:hover {
+      background-color: $secondary-color;
+      a {
+        color: $white-color;
+      }
+    }
 
-  .nav-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     .count {
       color: $base-color;
       background-color: $third-color;
