@@ -35,8 +35,8 @@ const Header = () => {
                 {gnbLinkes?.length > 0 &&
                   gnbLinkes.map((nav, i) => {
                     return (
-                      <li className={`nav-item`}>
-                        <Linker url={nav.url} key={`gnb-${i}`}>
+                      <li key={`gnb-${i}`} className={`nav-item`}>
+                        <Linker url={nav.url}>
                           <span>{nav.title}</span>
                           {nav.url.includes('/list') && (
                             <div className="count">{categories[nav.title.toLowerCase()]?.length || 0}</div>
