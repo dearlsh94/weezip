@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect } from 'react'
 import '../scss/components.scss'
 import { BlockType, Children } from '../types'
 import ContentChildren from '../module/ContentChildren'
@@ -7,8 +8,32 @@ interface Props {
   childrens: Children[]
 }
 
+interface HeaderHierarchy {
+  [h1: string]: {
+    [h2: string]: string[]
+  }
+}
+
 const ContentWrapper = ({ childrens }: Props) => {
   let numberedList: Children[] = []
+  useEffect(() => {
+    const headers = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')
+    const headerHierarchy: HeaderHierarchy = {}
+
+    // TODO Create Index
+    headers.forEach(header => {
+      console.log({ header })
+      if (header) {
+        const elHeader = header as HTMLElement
+        const level = elHeader.tagName.toLowerCase()
+        const text = elHeader.outerText
+        console.log(level, text)
+      }
+    })
+
+    console.log({ headerHierarchy })
+  }, [])
+
   return (
     <section>
       {childrens.map((block, i) => {
