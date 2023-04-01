@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect, useState } from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
 import '../scss/global.scss'
 import { useGetNotionQuery } from '../services/use-notion'

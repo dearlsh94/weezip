@@ -9,16 +9,18 @@ interface Props {
 }
 
 const PostListItem = ({ post }: Props) => {
-  const content = nodeToJson(post)
-  console.log({ post, content })
-  const contentValue = parseContentValue(content)
+  const { contentValue } = post
+  const remark = contentValue?.remark || ''
+  const lastEditedTime = contentValue?.lastEditedTime || ''
+  const createdTime = contentValue?.createdTime || ''
+  console.log({ post })
   return (
     <React.Fragment>
       <div className={`post-list-item`}>
-        <p>{contentValue.remark}</p>
+        <p>{remark}</p>
         <div className="info-box">
-          <span>수정일 : {contentValue.lastEditedTime}</span>
-          <span>작성일 : {contentValue.createdTime}</span>
+          <span>수정일 : {lastEditedTime}</span>
+          <span>작성일 : {createdTime}</span>
         </div>
       </div>
     </React.Fragment>
