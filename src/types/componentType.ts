@@ -109,3 +109,8 @@ export interface PropDate {
   start: string
   time_zone?: string
 }
+
+export interface HeaderIndex {
+  tag: string
+  text: string
+}
