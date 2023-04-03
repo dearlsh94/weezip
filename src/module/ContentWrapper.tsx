@@ -1,7 +1,9 @@
 import * as React from 'react'
+import { useState, useEffect } from 'react'
 import '../scss/components.scss'
-import { BlockType, Children } from '../types'
+import { BlockType, Children, HeaderIndex } from '../types'
 import ContentChildren from '../module/ContentChildren'
+import HeaderIndexList from '../components/HeaderIndexList'
 
 interface Props {
   childrens: Children[]
@@ -9,10 +11,27 @@ interface Props {
 
 const ContentWrapper = ({ childrens }: Props) => {
   let numberedList: Children[] = []
+  const [indexList, setIndexList] = useState<HeaderIndex[]>([])
+
+  useEffect(() => {
+    const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')
+    if (elHeaders && elHeaders?.length > 0) {
+      const headers: HeaderIndex[] = []
+      elHeaders.forEach(el => {
+        headers.push({
+          tag: el.tagName.toLowerCase(),
+          text: el.outerText,
+        })
+      })
+      console.log({ elHeaders, headers })
+      setIndexList(headers)
+    }
+  }, [])
+
   return (
     <section>
       {childrens.map((block, i) => {
-        /** NOTE numbered_list 타입의 경우
+        /** numbered_list 타입의 경우
          * 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
          */
         if (block.type === BlockType.NUMBERED_LIST_ITEM) {
@@ -42,6 +61,7 @@ const ContentWrapper = ({ childrens }: Props) => {
         return (
           <div key={i} className={`content-wrapper`}>
             <ContentChildren block={block} />
+            {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
           </div>
         )
       })}
