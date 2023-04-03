@@ -3,21 +3,29 @@ import '../scss/components.scss'
 import { HeaderIndex } from '../types'
 
 interface Props {
-  list: HeaderIndex[]
+  list: HTMLHeadingElement[]
 }
 
 const HeaderIndexList = ({ list }: Props) => {
+  const move = (item: HTMLHeadingElement) => {
+    window.scrollTo({
+      top: item.offsetTop - 140, // minus header height
+      behavior: 'smooth',
+    })
+  }
   return (
     <React.Fragment>
-      <div className={`block-header-index-list`}>
+      <ul className={`block-header-index-list`}>
         {list.map((item, i) => {
+          const tag = item.tagName.toLowerCase()
+          const text = item.outerText
           return (
-            <div className={`tag-${item.tag}`} key={`header-index-item-${i}`}>
-              {item.text}
-            </div>
+            <li className={`tag-${tag}`} key={`header-index-item-${i}`} onClick={() => move(item)}>
+              {text}
+            </li>
           )
         })}
-      </div>
+      </ul>
     </React.Fragment>
   )
 }

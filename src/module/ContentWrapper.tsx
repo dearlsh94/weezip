@@ -11,17 +11,14 @@ interface Props {
 
 const ContentWrapper = ({ childrens }: Props) => {
   let numberedList: Children[] = []
-  const [indexList, setIndexList] = useState<HeaderIndex[]>([])
+  const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
 
   useEffect(() => {
     const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')
     if (elHeaders && elHeaders?.length > 0) {
-      const headers: HeaderIndex[] = []
+      const headers: HTMLHeadingElement[] = []
       elHeaders.forEach(el => {
-        headers.push({
-          tag: el.tagName.toLowerCase(),
-          text: el.outerText,
-        })
+        headers.push(el)
       })
       console.log({ elHeaders, headers })
       setIndexList(headers)
@@ -30,6 +27,7 @@ const ContentWrapper = ({ childrens }: Props) => {
 
   return (
     <section>
+      {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
       {childrens.map((block, i) => {
         /** numbered_list 타입의 경우
          * 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
@@ -61,7 +59,6 @@ const ContentWrapper = ({ childrens }: Props) => {
         return (
           <div key={i} className={`content-wrapper`}>
             <ContentChildren block={block} />
-            {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
           </div>
         )
       })}
