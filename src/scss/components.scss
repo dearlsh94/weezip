@@ -276,17 +276,30 @@
 }
 
 .block-header-index-list {
-  position: fixed;
-  top: 15%;
-  right: -10%;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 15px;
-  border-radius: 8px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0px;
+  text-decoration: underline;
+  color: $gray-color;
 
+  li {
+    cursor: pointer;
+    width: 100%;
+    list-style: none;
+  }
+
+  @mixin desktop {
+    position: fixed;
+    top: 15%;
+    right: -10%;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+  }
   .tag-h2 {
-    padding-left: 8px;
+    padding-left: 16px;
   }
   .tag-h3 {
-    padding-left: 16px;
+    padding-left: 32px;
   }
 }
