@@ -25,7 +25,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   return (
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
-        <MainLayout>{content && <ContentWrapper childrens={content.children} />}</MainLayout>
+        <MainLayout>{content && <ContentWrapper childrens={content.children} isUseIndexList={true} />}</MainLayout>
       </NotionContext.Provider>
     </PageContext.Provider>
   )

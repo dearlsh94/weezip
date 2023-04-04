@@ -7,9 +7,10 @@ import HeaderIndexList from '../components/HeaderIndexList'
 
 interface Props {
   childrens: Children[]
+  isUseIndexList?: boolean
 }
 
-const ContentWrapper = ({ childrens }: Props) => {
+const ContentWrapper = ({ childrens = [], isUseIndexList = false }: Props) => {
   let numberedList: Children[] = []
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
 
@@ -27,7 +28,7 @@ const ContentWrapper = ({ childrens }: Props) => {
 
   return (
     <section>
-      {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
+      {isUseIndexList && indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
       {childrens.map((block, i) => {
         /** numbered_list 타입의 경우
          * 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
