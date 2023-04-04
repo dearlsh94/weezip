@@ -13,7 +13,7 @@ const Header = () => {
   const [isSnbOpen, setIsSnbOpen] = React.useState(false)
   return (
     <React.Fragment>
-      <header>
+      <header id="header">
         <div className="left-box" onClick={() => setIsSnbOpen(!isSnbOpen)}>
           <StaticImage src="../images/icon-hamburger.svg" alt="icon hamburger menu" className="icon hamburger" />
         </div>

@@ -8,8 +8,9 @@ interface Props {
 
 const HeaderIndexList = ({ list }: Props) => {
   const move = (item: HTMLHeadingElement) => {
+    const elHeader = document.getElementById('header')
     window.scrollTo({
-      top: item.offsetTop - 140, // minus header height
+      top: item.offsetTop - ((elHeader?.clientHeight || 0) + 12), // minus header height + margin
       behavior: 'smooth',
     })
   }
