@@ -11,6 +11,7 @@ import { parseLocationQuery } from '../utils/parseUtils'
 import { Children } from '../types'
 import ContentWrapper from '../module/ContentWrapper'
 import HeaderIndexList from '../components/HeaderIndexList'
+import TagBadges from '../components/TagBadges'
 
 export const Head: HeadFC = () => <MyHead title="게시글 목록" />
 
@@ -36,10 +37,14 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   }, [])
 
   console.log(content)
+
   return (
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
         <MainLayout>
+          <div>
+            <TagBadges tags={content?.properties.tag} />
+          </div>
           <div className="title-box">
             <p className="title">{content?.properties?.remark.rich_text || ''}</p>
             <div className="desc-box">
