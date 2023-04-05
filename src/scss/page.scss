@@ -1,3 +1,5 @@
+@import './abstracts/variables';
+
 .title-box {
   p.title {
     font-weight: 700;
@@ -8,7 +10,7 @@
     width: 100%;
     text-align: right;
     span.date {
-      color: #808080;
+      color: $gray-color;
       line-height: 23px;
     }
     span.date + span.date {
