@@ -1,20 +1,32 @@
 import * as React from 'react'
 import '../scss/components.scss'
-import { Property } from '../types'
+import { Property, Select } from '../types'
 
 interface Props {
-  tags: Property | undefined
+  tag?: Property | undefined
+  selectTags?: Select[]
 }
 
-const CategoryBadges = ({ tags }: Props) => {
+const TagBadges = ({ tag, selectTags }: Props) => {
   return (
     <React.Fragment>
-      {tags && (
+      {tag && (
         <div className="badge-box">
-          {tags.multi_select?.map((category, i) => {
+          {tag.multi_select?.map((t, i) => {
             return (
-              <span className={`badge ${category.color}_background`} key={`category-badge-${i}`}>
-                {category.name}
+              <span className={`badge ${t.color}_background`} key={`t-badge-${i}`}>
+                {t.name}
+              </span>
+            )
+          })}
+        </div>
+      )}
+      {selectTags && (
+        <div className="badge-box">
+          {selectTags.map((t, i) => {
+            return (
+              <span className={`badge ${t.color}_background`} key={`t-badge-${i}`}>
+                {t.name}
               </span>
             )
           })}
@@ -24,4 +36,4 @@ const CategoryBadges = ({ tags }: Props) => {
   )
 }
 
-export default CategoryBadges
+export default TagBadges

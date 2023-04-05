@@ -247,18 +247,22 @@
 
     .post-list-item {
       p {
-        font-size: 14pt;
+        font-size: 15pt;
+        font-weight: 500;
         margin: 8px 0px;
       }
       .info-box {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        span {
+        .tag-box {
+          margin-right: 8px;
+        }
+        span.date {
           color: $gray-color;
           font-size: 10pt;
         }
-        span + span {
+        span.date + span.date {
           margin-left: 8px;
         }
       }
@@ -326,6 +330,8 @@
     border-radius: 12px;
     width: 48px;
     font-size: 9pt;
+    color: #333;
+
     & + .badge {
       margin-left: 8px;
     }
