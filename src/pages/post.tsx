@@ -40,12 +40,17 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
         <MainLayout>
-          <div>
+          <div className="title-box">
             <p className="title">{content?.properties?.remark.rich_text || ''}</p>
-            <p>작성일 : {content?.properties?.created_date?.date.start}</p>
-            <p>수정일 : {content?.properties?.edited_date?.date.start}</p>
+            <div className="desc-box">
+              <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
+              <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
+            </div>
           </div>
-          <div className="index-box">{indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}</div>
+          <div className="index-box">
+            <p>목차</p>
+            {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
+          </div>
           {content && <ContentWrapper childrens={content.children} />}
         </MainLayout>
       </NotionContext.Provider>

@@ -278,15 +278,18 @@
 .block-header-index-list {
   width: 100%;
   margin: 0 auto;
-  padding: 10px 0px;
   text-decoration: underline;
-  color: $gray-color;
+  color: #959595;
   line-height: 28px;
 
   li {
     cursor: pointer;
     width: fit-content;
     list-style: none;
+    &:hover {
+      text-decoration: underline;
+      color: $secondary-color;
+    }
   }
 
   @mixin desktop {

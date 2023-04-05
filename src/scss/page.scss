@@ -1,0 +1,32 @@
+.title-box {
+  p.title {
+    font-weight: 700;
+    font-size: 24pt;
+    margin: 12px 0px;
+  }
+  .desc-box {
+    width: 100%;
+    text-align: right;
+    span.date {
+      color: #808080;
+      line-height: 23px;
+    }
+    span.date + span.date {
+      margin-left: 12px;
+    }
+  }
+}
+
+.index-box {
+  background-color: #e5e5e5;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 24px 0px 48px;
+  p {
+    font-size: 13pt;
+    font-weight: 500;
+    padding-top: 4px;
+    padding-left: 6px;
+    margin-bottom: 4px;
+  }
+}
