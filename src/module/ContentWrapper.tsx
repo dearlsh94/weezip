@@ -3,32 +3,15 @@ import { useState, useEffect } from 'react'
 import '../scss/components.scss'
 import { BlockType, Children, HeaderIndex } from '../types'
 import ContentChildren from '../module/ContentChildren'
-import HeaderIndexList from '../components/HeaderIndexList'
 
 interface Props {
   childrens: Children[]
-  isUseIndexList?: boolean
 }
 
-const ContentWrapper = ({ childrens = [], isUseIndexList = false }: Props) => {
+const ContentWrapper = ({ childrens = [] }: Props) => {
   let numberedList: Children[] = []
-  const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
-
-  useEffect(() => {
-    const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')
-    if (elHeaders && elHeaders?.length > 0) {
-      const headers: HTMLHeadingElement[] = []
-      elHeaders.forEach(el => {
-        headers.push(el)
-      })
-      console.log({ elHeaders, headers })
-      setIndexList(headers)
-    }
-  }, [])
-
   return (
     <section>
-      {isUseIndexList && indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
       {childrens.map((block, i) => {
         /** numbered_list 타입의 경우
          * 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.

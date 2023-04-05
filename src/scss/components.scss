@@ -281,10 +281,11 @@
   padding: 10px 0px;
   text-decoration: underline;
   color: $gray-color;
+  line-height: 28px;
 
   li {
     cursor: pointer;
-    width: 100%;
+    width: fit-content;
     list-style: none;
   }
 
