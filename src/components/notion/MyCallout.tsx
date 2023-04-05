@@ -1,6 +1,6 @@
 import * as React from 'react'
-import '../scss/components.scss'
-import { Callout } from '../types'
+import '../../scss/components.scss'
+import { Callout } from '../../types'
 import Paragraph from './Paragraph'
 interface Props {
   callout: Callout

@@ -1,8 +1,8 @@
 import * as React from 'react'
-import '../scss/components.scss'
-import { TextBlock } from '../types/componentType'
+import '../../scss/components.scss'
+import { TextBlock } from '../../types/componentType'
 import Paragraph from './Paragraph'
-import { Children } from '../types'
+import { Children } from '../../types'
 
 interface Props {
   bulletedList: TextBlock

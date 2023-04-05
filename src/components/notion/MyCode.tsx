@@ -1,6 +1,5 @@
 import * as React from 'react'
-import '../scss/components.scss'
-import { Code } from '../types'
+import { Code } from '../../types'
 import Paragraph from './Paragraph'
 interface Props {
   code: Code

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import '../scss/components.scss'
-import { Image } from '../types'
+import '../../scss/components.scss'
+import { Image } from '../../types'
 
 interface Props {
   image: Image

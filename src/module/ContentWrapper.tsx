@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
 import '../scss/components.scss'
-import { BlockType, Children, HeaderIndex } from '../types'
+import { BlockType, Children } from '../types'
 import ContentChildren from '../module/ContentChildren'
 
 interface Props {

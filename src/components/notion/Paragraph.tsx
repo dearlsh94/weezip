@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { TextBlock, TextItem } from '../types/componentType'
-import { convertNewLine, convertTab } from '../utils/convertUtils'
-import Linker from './Linker'
+import { TextBlock, TextItem } from '../../types/componentType'
+import { convertNewLine } from '../../utils/convertUtils'
+import Linker from '../Linker'
 
 interface Props {
   paragraph?: TextBlock

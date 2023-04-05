@@ -1,9 +1,9 @@
 import { StaticImage } from 'gatsby-plugin-image'
 import * as React from 'react'
-import '../scss/components.scss'
-import { Children, TextBlock } from '../types'
+import '../../scss/components.scss'
+import { Children, TextBlock } from '../../types'
 import Paragraph from './Paragraph'
-import ContentWrapper from '../module/ContentWrapper'
+import ContentWrapper from '../../module/ContentWrapper'
 
 interface Props {
   toggle: TextBlock
