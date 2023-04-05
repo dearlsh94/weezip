@@ -1,5 +1,76 @@
 @import './abstracts/variables';
 
+.gray {
+  color: $gray-color;
+}
+.gray_background {
+  background-color: $gray-color;
+  color: $black-color;
+}
+.brown {
+  color: $brown-color;
+}
+.brown_background {
+  background-color: $brown-color;
+  color: $black-color;
+}
+.orange {
+  color: $orange-color;
+}
+.orange_background {
+  background-color: $orange-color;
+  color: $black-color;
+}
+.yellow {
+  color: $yellow-color;
+}
+.yellow_background {
+  background-color: $yellow-color;
+  color: $black-color;
+}
+.blue {
+  color: $blue-color;
+}
+.blue_background {
+  background-color: $blue-color;
+  color: $black-color;
+}
+.pink {
+  color: $pink-color;
+}
+.pink_background {
+  background-color: $pink-color;
+  color: $black-color;
+}
+.red {
+  color: $red-color;
+}
+.red_background {
+  background-color: $red-color;
+  color: $black-color;
+}
+.green {
+  color: $green-color;
+}
+.green_background {
+  background-color: $green-color;
+  color: $black-color;
+}
+.purple {
+  color: $purple-color;
+}
+.purple_background {
+  background-color: $purple-color;
+  color: $black-color;
+}
+.black {
+  color: $black-color;
+}
+.black_background {
+  background-color: $black-color;
+  color: $white-color;
+}
+
 .logo {
   display: flex;
 }
@@ -7,70 +78,6 @@
 .block-paragraph {
   line-height: 28px;
   width: fit-content;
-
-  .gray {
-    color: $gray-color;
-  }
-  .gray_background {
-    background-color: $gray-color;
-    color: $black-color;
-  }
-  .brown {
-    color: $brown-color;
-  }
-  .brown_background {
-    background-color: $brown-color;
-    color: $black-color;
-  }
-  .orange {
-    color: $orange-color;
-  }
-  .orange_background {
-    background-color: $orange-color;
-    color: $black-color;
-  }
-  .yellow {
-    color: $yellow-color;
-  }
-  .yellow_background {
-    background-color: $yellow-color;
-    color: $black-color;
-  }
-  .blue {
-    color: $blue-color;
-  }
-  .blue_background {
-    background-color: $blue-color;
-    color: $black-color;
-  }
-  .pink {
-    color: $pink-color;
-  }
-  .pink_background {
-    background-color: $pink-color;
-    color: $black-color;
-  }
-  .red {
-    color: $red-color;
-  }
-  .red_background {
-    background-color: $red-color;
-    color: $black-color;
-  }
-  .purple {
-    color: $purple-color;
-  }
-  .purple_background {
-    background-color: $purple-color;
-    color: $black-color;
-  }
-  .black {
-    color: $black-color;
-  }
-  .black_background {
-    background-color: $black-color;
-    color: $white-color;
-  }
 }
 
 .block-paragraph-text {
