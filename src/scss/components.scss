@@ -311,10 +311,14 @@
     padding: 15px;
     border-radius: 8px;
   }
-  .tag-h2 {
+
+  .tag-h1 + .tag-h2,
+  .tag-h2 + .tag-h2,
+  .tag-h1 + .tag-h3 {
     padding-left: 16px;
   }
-  .tag-h3 {
+  .tag-h2 + .tag-h3,
+  .tag-h3 + .tag-h3 {
     padding-left: 32px;
   }
 }
