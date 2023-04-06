@@ -6,7 +6,8 @@ import { classifyCategory, findContentNode } from '../utils/notionUtils'
 import { Children } from '../types/contentType'
 import ContentWrapper from '../module/ContentWrapper'
 import MainLayout from '../layout/MainLayout'
-import { NotionContext, INotionContext } from '../store/rootStore'
+import { NotionContext } from '../store/rootStore'
+import { INotionContext } from '../types'
 import MyHead from '../components/MyHead'
 
 export const Head: HeadFC = () => <MyHead title="소개" />
