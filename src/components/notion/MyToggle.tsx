@@ -19,7 +19,7 @@ const MyToggle = ({ toggle, hasChild, childList }: Props) => {
         <div className="block-toggle">
           <div className="toggle-title-box" onClick={() => setIsOpen(!isOpen)}>
             <div className={`icon-box ${isOpen ? 'open' : ''}`}>
-              <StaticImage src={`../images/icon-arrow-right.svg`} alt={`확장 축소 아이콘`} />
+              <StaticImage src={`../../images/icon-arrow-right.svg`} alt={`확장 축소 아이콘`} />
             </div>
             <Paragraph paragraph={toggle} />
           </div>
