@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useEffect, useContext, useState } from 'react'
-import { NotionCategories, NotionContext } from '../store/rootStore'
+import { NotionContext } from '../store/rootStore'
+import { NotionCategories } from '../types'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
 import { isDebug, gnbLinkes } from '../constants'
