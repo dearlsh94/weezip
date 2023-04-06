@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { NotionCategories, NotionContext, PageContext } from '../store/rootStore'
+import { useEffect, useContext, useState } from 'react'
+import { NotionCategories, NotionContext } from '../store/rootStore'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
 import { isDebug, gnbLinkes } from '../constants'
@@ -8,9 +9,17 @@ import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
 
 const Header = () => {
-  const nodes: NotionNode[] = React.useContext(NotionContext).nodes
-  const categories: NotionCategories = React.useContext(NotionContext).categories
-  const [isSnbOpen, setIsSnbOpen] = React.useState(false)
+  const nodes: NotionNode[] = useContext(NotionContext).nodes
+  const categories: NotionCategories = useContext(NotionContext).categories
+  const [isSnbOpen, setIsSnbOpen] = useState(false)
+
+  useEffect(() => {
+    if (isSnbOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isSnbOpen])
   return (
     <React.Fragment>
       <header id="header">
