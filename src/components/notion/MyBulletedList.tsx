@@ -3,33 +3,23 @@ import '../../scss/components.scss'
 import { TextBlock } from '../../types/componentType'
 import Paragraph from './Paragraph'
 import { Children } from '../../types'
+import ContentWrapper from '../../module/ContentWrapper'
 
 interface Props {
-  bulletedList: TextBlock
-  hasChild: boolean
-  childList: Children[]
+  bulletedListItem: Children
 }
 
-const MyBulletedList = ({ bulletedList, hasChild = false, childList = [] }: Props) => {
-  let level = 0
-  const render = (bulletedList: TextBlock, hasChild = false, childList: Children[], level: number) => {
-    level++
-    return (
-      bulletedList && (
-        <ul className={`block-bulleted-list level-${level}`}>
-          <li>
-            <Paragraph paragraph={bulletedList} />
-          </li>
-          {hasChild &&
-            childList?.length > 0 &&
-            childList[0].bulleted_list_item &&
-            render(childList[0].bulleted_list_item, childList[0]?.has_children, childList[0]?.children, level++)}
-        </ul>
-      )
-    )
-  }
+const MyBulletedList = ({ bulletedListItem }: Props) => {
+  const { has_children, children } = bulletedListItem
 
-  return <React.Fragment>{render(bulletedList, hasChild, childList, level)}</React.Fragment>
+  return (
+    <React.Fragment>
+      <li>
+        <Paragraph paragraph={bulletedListItem.bulleted_list_item} />
+        {has_children && children?.length > 0 && <ContentWrapper childrens={children} />}
+      </li>
+    </React.Fragment>
+  )
 }
 
 export default MyBulletedList

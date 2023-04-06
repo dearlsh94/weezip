@@ -36,14 +36,7 @@ const ContentChildren = ({ block }: Props) => {
       case BlockType.QUOTE:
         if (block.quote) return <MyQuote quote={block.quote} />
       case BlockType.BULLETED_LIST_ITEM:
-        if (block.bulleted_list_item)
-          return (
-            <MyBulletedList
-              bulletedList={block.bulleted_list_item}
-              hasChild={block.has_children}
-              childList={block.children}
-            />
-          )
+        if (block.bulleted_list_item) return <MyBulletedList bulletedListItem={block} />
       case BlockType.NUMBERED_LIST_ITEM:
         if (block) return <MyNumberedListItem numberedListItem={block} />
       case BlockType.TODO:
