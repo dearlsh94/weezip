@@ -27,6 +27,12 @@
       "",
       "export default ComponentName"
     ],
-    "description": "Log output to console"
+    "description": "init default react component"
+  },
+  "import React Hook": {
+    "scope": "",
+    "prefix": "impReactHook",
+    "body": ["import { useEffect, useContext, useState } from 'react'"],
+    "description": "import frequently used react hook "
   }
 }
