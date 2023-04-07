@@ -42,6 +42,7 @@
   }
 
   .block-header-index-list.right {
+    opacity: 0;
     position: fixed;
     width: 240px;
     right: 60px;
@@ -53,12 +54,15 @@
     box-sizing: border-box;
     font-size: 11pt;
     line-height: 24px;
+    @include animationFadeOut(300ms);
 
-    @include desktop {
+    @include superDesktop {
       &.hidden {
+        opacity: 0;
         @include animationFadeOut(300ms);
       }
       &.scroll {
+        opacity: 1;
         @include animationFadeIn(300ms);
       }
     }

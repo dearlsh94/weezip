@@ -18,6 +18,12 @@
   }
 }
 
+@mixin superDesktop {
+  @media (min-width: #{$breakpoint-super-desktop}) {
+    @content;
+  }
+}
+
 @mixin animationFadeIn($duration) {
   animation: fadein $duration;
   @keyframes fadein {
