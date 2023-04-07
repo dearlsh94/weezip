@@ -8,11 +8,31 @@ import { isDebug, gnbLinkes } from '../constants'
 import Linker from '../components/Linker'
 import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
+import { throttle } from '../utils/commonUtils'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
   const categories: NotionCategories = useContext(NotionContext).categories
   const [isSnbOpen, setIsSnbOpen] = useState(false)
+  const [status, setStatus] = useState('')
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      if (window.scrollY > window.innerHeight * 0.7) {
+        setStatus('sticky')
+      } else if (window.scrollY > 0) {
+        setStatus('scrolled')
+      } else {
+        setStatus('')
+      }
+    }
+    const throttledScrollHandler = throttle(scrollHandler)
+
+    window.addEventListener('scroll', throttledScrollHandler)
+    return () => {
+      window.removeEventListener('scroll', throttledScrollHandler)
+    }
+  }, [])
 
   useEffect(() => {
     if (isSnbOpen) {
@@ -21,9 +41,10 @@ const Header = () => {
       document.body.style.overflow = 'auto'
     }
   }, [isSnbOpen])
+
   return (
     <React.Fragment>
-      <header id="header">
+      <header id="header" className={`${status}`}>
         <div className="left-box" onClick={() => setIsSnbOpen(!isSnbOpen)}>
           <StaticImage src="../images/icon-hamburger.svg" alt="icon hamburger menu" className="icon hamburger" />
         </div>

@@ -14,6 +14,18 @@ header {
   z-index: 9;
   transition-duration: 0.2s;
 
+  &.scrolled {
+    position: sticky;
+    top: 0;
+    @include animationFadeOut(600ms);
+  }
+
+  &.sticky {
+    position: sticky;
+    top: 0;
+    @include animationFadeIn(600ms);
+  }
+
   @include mobile {
     height: 60px;
   }
