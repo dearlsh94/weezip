@@ -28,7 +28,7 @@ const HeaderIndexList = ({ list }: Props) => {
       if (window.scrollY > window.innerHeight * 1.2) {
         setStatus('scroll')
       } else {
-        setStatus('hidden')
+        setStatus('')
       }
     }
     const throttledScrollHandler = throttle(scrollHandler)
