@@ -18,7 +18,7 @@ const Header = () => {
 
   useEffect(() => {
     const scrollHandler = () => {
-      if (window.scrollY > window.innerHeight * 0.7) {
+      if (window.scrollY > window.innerHeight * 1.2) {
         setStatus('sticky')
       } else if (window.scrollY > 0) {
         setStatus('scrolled')
