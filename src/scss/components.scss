@@ -337,12 +337,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   &.black {
     border: 2px solid $black-color-1;
+    &:hover {
+      border: 2px solid $white-color-1;
+      svg path {
+        fill: $white-color-1;
+      }
+    }
   }
 
   &.white {
     border: 2px solid $white-color-1;
+    &:hover {
+      border: 2px solid $black-color-1;
+      svg path {
+        fill: $black-color-1;
+      }
+    }
   }
 }

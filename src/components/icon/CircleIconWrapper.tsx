@@ -5,9 +5,10 @@ interface Props {
   children: React.ReactNode
   color: 'black' | 'white'
   size?: number
+  handleClick?: Function
 }
 
-const CircleIconWrapper = ({ children, color = 'black', size = 36 }: Props) => {
+const CircleIconWrapper = ({ children, color = 'black', size = 36, handleClick }: Props) => {
   return (
     <div
       className={`circle-icon-wrapper ${color}`}
@@ -15,6 +16,7 @@ const CircleIconWrapper = ({ children, color = 'black', size = 36 }: Props) => {
         width: `${size}px`,
         height: `${size}px`,
       }}
+      onClick={handleClick && handleClick()}
     >
       {children}
     </div>
