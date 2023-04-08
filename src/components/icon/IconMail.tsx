@@ -5,7 +5,8 @@ interface Props {
   fill?: string
 }
 
-const IconMail = ({ size = 24, fill = 'white' }: Props) => {
+// https://icon-sets.iconify.design/ic/outline-email/
+const IconMail = ({ size = 24, fill = 'black' }: Props) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox={`0 0 24 24`}>
       <path

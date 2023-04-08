@@ -1,6 +1,5 @@
 import * as React from 'react'
 import '../../scss/components.scss'
-import { TextBlock } from '../../types/componentType'
 import Paragraph from './Paragraph'
 import { Children } from '../../types'
 import ContentWrapper from '../../module/ContentWrapper'
