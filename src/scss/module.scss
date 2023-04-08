@@ -121,12 +121,26 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .title-box {
+          display: flex;
+          align-items: center;
+
+          svg + span {
+            margin-left: 4px;
+          }
+        }
       }
     }
     li:hover {
       background-color: $secondary-color;
       a {
         color: $white-color-1;
+        .title-box {
+          svg path {
+            fill: $white-color-1;
+          }
+        }
       }
     }
 

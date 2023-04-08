@@ -10,6 +10,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
 import { throttle } from '../utils/commonUtils'
 import IconHamburgerMenu from '../components/icon/IconHamburgerMenu'
+import IconHome from '../components/icon/IconHome'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
@@ -69,7 +70,10 @@ const Header = () => {
                     return (
                       <li key={`gnb-${i}`} className={`nav-item`}>
                         <Linker url={nav.url}>
-                          <span>{nav.title}</span>
+                          <div className="title-box">
+                            {nav.title.toUpperCase() === 'HOME' && <IconHome />}
+                            <span>{nav.title}</span>
+                          </div>
                           {nav.url.includes('/list') && (
                             <div className="count">{categories[nav.title.toLowerCase()]?.length || 0}</div>
                           )}
