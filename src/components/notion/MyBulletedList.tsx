@@ -14,10 +14,8 @@ const MyBulletedList = ({ bulletedListItem }: Props) => {
 
   return (
     <React.Fragment>
-      <li>
-        <Paragraph paragraph={bulletedListItem.bulleted_list_item} />
-        {has_children && children?.length > 0 && <ContentWrapper childrens={children} />}
-      </li>
+      <Paragraph paragraph={bulletedListItem.bulleted_list_item} />
+      {has_children && children?.length > 0 && <ContentWrapper childrens={children} />}
     </React.Fragment>
   )
 }
