@@ -1,9 +1,9 @@
-import { StaticImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import '../../scss/components.scss'
 import { Children, TextBlock } from '../../types'
 import Paragraph from './Paragraph'
 import ContentWrapper from '../../module/ContentWrapper'
+import IconArrow from '../icon/IconArrow'
 
 interface Props {
   toggle: TextBlock
@@ -19,7 +19,7 @@ const MyToggle = ({ toggle, hasChild, childList }: Props) => {
         <div className="block-toggle">
           <div className="toggle-title-box" onClick={() => setIsOpen(!isOpen)}>
             <div className={`icon-box ${isOpen ? 'open' : ''}`}>
-              <StaticImage src={`../../images/icon-arrow-right.svg`} alt={`확장 축소 아이콘`} />
+              <IconArrow direction="right" size={16} />
             </div>
             <Paragraph paragraph={toggle} />
           </div>
