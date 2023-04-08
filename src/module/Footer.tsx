@@ -4,9 +4,7 @@ import Linker from '../components/Linker'
 import IconMail from '../components/icon/IconMail'
 import CircleIconWrapper from '../components/icon/CircleIconWrapper'
 
-interface Props {}
-
-const Footer = ({}: Props) => {
+const Footer = () => {
   return (
     <React.Fragment>
       <footer>
