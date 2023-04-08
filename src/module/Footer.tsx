@@ -1,7 +1,8 @@
 import * as React from 'react'
 import '../scss/module.scss'
 import Linker from '../components/Linker'
-import { StaticImage } from 'gatsby-plugin-image'
+import IconMail from '../components/icon/IconMail'
+import CircleIconWrapper from '../components/icon/CircleIconWrapper'
 
 interface Props {}
 
@@ -11,9 +12,13 @@ const Footer = ({}: Props) => {
       <footer>
         <div className="container">
           <div className="contact-box">
-            <p>Contact Me 👇</p>
+            <p>Contact Me</p>
             <div className="contact-item">
-              mail : <span>dearlsh94@gmail.com</span>
+              <CircleIconWrapper color="white">
+                <Linker url="mailto:dearlsh94@gmail.com">
+                  <IconMail size={24} />
+                </Linker>
+              </CircleIconWrapper>
             </div>
           </div>
           <div className="refer-box">
