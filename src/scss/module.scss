@@ -14,18 +14,35 @@ header {
   z-index: 9;
   transition-duration: 0.2s;
 
+  .left-box {
+    position: absolute;
+    left: 10px;
+    svg {
+      cursor: pointer;
+    }
+  }
+  .logo-box {
+    width: 42px;
+  }
+
   &.scrolled {
     position: sticky;
     top: 0;
     height: 60px;
-    @include animationFadeOut(600ms);
+    @include animationFadeOut(300ms);
+    .left-box {
+      display: none;
+    }
+    .logo-box {
+      display: none;
+    }
   }
 
   &.sticky {
     position: sticky;
     top: 0;
     height: 60px;
-    @include animationFadeIn(600ms);
+    @include animationFadeIn(300ms);
   }
 
   @include mobile {

@@ -9,6 +9,7 @@ import Linker from '../components/Linker'
 import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
 import { throttle } from '../utils/commonUtils'
+import IconHamburgerMenu from '../components/icon/IconHamburgerMenu'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
@@ -46,7 +47,7 @@ const Header = () => {
     <React.Fragment>
       <header id="header" className={`${status}`}>
         <div className="left-box" onClick={() => setIsSnbOpen(!isSnbOpen)}>
-          <StaticImage src="../images/icon-hamburger.svg" alt="icon hamburger menu" className="icon hamburger" />
+          <IconHamburgerMenu size={28} />
         </div>
         <Linker url="/">
           <div className="logo-box">
