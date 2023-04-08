@@ -331,3 +331,18 @@
     }
   }
 }
+
+.circle-icon-wrapper {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.black {
+    border: 2px solid $black-color-1;
+  }
+
+  &.white {
+    border: 2px solid $white-color-1;
+  }
+}
