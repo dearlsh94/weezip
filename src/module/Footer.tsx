@@ -15,7 +15,7 @@ const Footer = ({}: Props) => {
             <p>Contact Me</p>
             <div className="contact-item">
               <CircleIconWrapper color="white">
-                <Linker url="mailto:dearlsh94@gmail.com">
+                <Linker url="mailto:weezip.ethan@gmail.com">
                   <IconMail size={24} fill="white" />
                 </Linker>
               </CircleIconWrapper>
