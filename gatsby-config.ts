@@ -50,7 +50,7 @@ const config: GatsbyConfig = {
         web: [
           {
             name: `Noto Sans Korean`,
-            file: `https://fonts.googleapis.com/css2?family=Noto+Sans+Korean:wght@400;600;700&display=swap`,
+            file: `https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap`,
           },
         ],
       },
