@@ -51,19 +51,6 @@ header {
   @include tablet {
     height: 60px;
   }
-
-  .left-box {
-    position: absolute;
-    left: 10px;
-    img {
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-    }
-  }
-  .logo-box {
-    width: 42px;
-  }
 }
 
 .snb-container {
@@ -174,15 +161,20 @@ footer {
     line-height: 18pt;
     color: $white-color-3;
 
-    a {
-      color: $white-color-5;
+    .contact-box {
+      a {
+        color: $white-color-5;
+        display: flex;
+      }
+      p {
+        margin-bottom: 6px;
+      }
+      .contact-item {
+        display: flex;
+      }
     }
-
-    .contact-box + .refer-box {
+    .item + .item {
       margin-top: 12px;
-    }
-    .refer-box + .copyright-box {
-      margin-top: 18px;
     }
   }
 }

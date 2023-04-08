@@ -11,23 +11,18 @@ const Footer = ({}: Props) => {
     <React.Fragment>
       <footer>
         <div className="container">
-          <div className="contact-box">
+          <div className="item contact-box">
             <p>Contact Me</p>
             <div className="contact-item">
               <CircleIconWrapper color="white">
                 <Linker url="mailto:dearlsh94@gmail.com">
-                  <IconMail size={24} />
+                  <IconMail size={24} fill="white" />
                 </Linker>
               </CircleIconWrapper>
             </div>
           </div>
-          <div className="refer-box">
-            Icon by Flaticon :
-            <Linker url="https://www.flaticon.com/" target="_blank">
-              Go
-            </Linker>
-          </div>
-          <div className="copyright-box">
+          <div className="item refer-box">Icon by iconify</div>
+          <div className="item copyright-box">
             <p className="copyright">Copyright 2023. Ethan.lee all rights reserved.</p>
           </div>
         </div>
