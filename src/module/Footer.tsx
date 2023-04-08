@@ -9,20 +9,22 @@ const Footer = ({}: Props) => {
   return (
     <React.Fragment>
       <footer>
-        <div className="contact-box center-box">
-          <p>Contact Me</p>
-          <div className="contact-item">
-            mail : <span>dearlsh94@gmail.com</span>
+        <div className="container">
+          <div className="contact-box">
+            <p>Contact Me 👇</p>
+            <div className="contact-item">
+              mail : <span>dearlsh94@gmail.com</span>
+            </div>
           </div>
-        </div>
-        <div className="refer-box center-box">
-          Icon by Flaticon :
-          <Linker url="https://www.flaticon.com/" target="_blank">
-            Go
-          </Linker>
-        </div>
-        <div className="copyright-box center-box">
-          <p className="copyright">Copyright 2023. Ethan.lee all rights reserved.</p>
+          <div className="refer-box">
+            Icon by Flaticon :
+            <Linker url="https://www.flaticon.com/" target="_blank">
+              Go
+            </Linker>
+          </div>
+          <div className="copyright-box">
+            <p className="copyright">Copyright 2023. Ethan.lee all rights reserved.</p>
+          </div>
         </div>
       </footer>
     </React.Fragment>
