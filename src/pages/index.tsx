@@ -22,7 +22,7 @@ const IndexPage: React.FC<PageProps> = () => {
   console.log({ content })
   return (
     <NotionContext.Provider value={store}>
-      <MainLayout>{content && <ContentWrapper childrens={content.children} />}</MainLayout>
+      <MainLayout>{content && <ContentWrapper childrens={content.children} align="center" />}</MainLayout>
     </NotionContext.Provider>
   )
 }

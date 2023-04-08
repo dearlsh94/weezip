@@ -18,6 +18,14 @@
       word-wrap: break-word;
       position: relative;
 
+      .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .block-paragraph {
+          text-align: center !important;
+        }
+      }
       @include tablet {
         padding: 6px 20px 20px;
       }
