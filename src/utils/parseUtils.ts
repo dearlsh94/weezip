@@ -17,7 +17,7 @@ export const parseLocationQuery = (search = '') => {
         res[key] = [res[key], value]
       }
     } else {
-      res[key] = value
+      res[key] = decodeURIComponent(value)
     }
   })
   return res
@@ -31,6 +31,7 @@ export const parseContentValue = (content: Children): ContentValue => {
   const last_edited_item = content.properties.edited_date.date.start || ''
   const created_time = content.properties.created_date.date.start || ''
   const notionUrl = content.url || ''
+  const series = content.properties.series.rich_text || ''
   return {
     remark,
     category,
@@ -39,5 +40,6 @@ export const parseContentValue = (content: Children): ContentValue => {
     createdTime: convertDatetimeFormat(created_time),
     notionUrl,
     tag,
+    series,
   }
 }

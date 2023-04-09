@@ -63,4 +63,5 @@ export interface ContentValue {
   lastEditedTime: string
   createdTime: string
   notionUrl: string
+  series: string
 }
