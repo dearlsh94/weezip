@@ -5,9 +5,9 @@
   span.series-title {
     display: flex;
     margin-top: 12px;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 11pt;
-    color: $black-color-6;
+    color: $gray-color;
   }
   p.title {
     font-weight: 700;
@@ -18,7 +18,7 @@
     width: 100%;
     text-align: right;
     span.date {
-      color: $gray-color;
+      color: $gray-color-3;
       line-height: 23px;
     }
     span.date + span.date {

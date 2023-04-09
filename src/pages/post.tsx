@@ -48,7 +48,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
           </div>
           <div className="title-box">
             {content?.properties?.series.rich_text && (
-              <span className={`series-title`}>{content?.properties?.series.rich_text}</span>
+              <span className={`series-title`}>[{content?.properties?.series.rich_text}]</span>
             )}
             <p className="title">{content?.properties?.remark.rich_text || ''}</p>
             <div className="desc-box">
