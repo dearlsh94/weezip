@@ -47,6 +47,9 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
             <TagBadges tag={content?.properties.tag} />
           </div>
           <div className="title-box">
+            {content?.properties?.series.rich_text && (
+              <span className={`series-title`}>{content?.properties?.series.rich_text}</span>
+            )}
             <p className="title">{content?.properties?.remark.rich_text || ''}</p>
             <div className="desc-box">
               <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>

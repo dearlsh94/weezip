@@ -2,6 +2,13 @@
 @import './abstracts/mixin';
 
 .title-box {
+  span.series-title {
+    display: flex;
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 11pt;
+    color: $black-color-6;
+  }
   p.title {
     font-weight: 700;
     font-size: 24pt;
