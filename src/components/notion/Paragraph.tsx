@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { TextBlock, TextItem } from '../../types/componentType'
-import { convertNewLine } from '../../utils/convertUtils'
 import Linker from '../Linker'
 
 interface Props {
@@ -40,16 +39,10 @@ const ContentChildren = ({ paragraph, text, className }: Props) => {
               <React.Fragment key={`block-paragraph-text-${i}`}>
                 {t.href ? (
                   <Linker url={t.href} target="_blank">
-                    <span
-                      className={classNames.join(' ')}
-                      dangerouslySetInnerHTML={{ __html: convertNewLine(t.plain_text) }}
-                    />
+                    <span className={classNames.join(' ')}>{t.plain_text}</span>
                   </Linker>
                 ) : (
-                  <span
-                    className={classNames.join(' ')}
-                    dangerouslySetInnerHTML={{ __html: convertNewLine(t.plain_text) }}
-                  />
+                  <span className={classNames.join(' ')}>{t.plain_text}</span>
                 )}
               </React.Fragment>
             )
