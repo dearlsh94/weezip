@@ -11,9 +11,9 @@ const MyQuote = ({ quote }: Props) => {
   return (
     <React.Fragment>
       {quote && (
-        <div className={`block-quote`}>
+        <blockquote className={`block-quote`}>
           <Paragraph paragraph={quote} />
-        </div>
+        </blockquote>
       )}
     </React.Fragment>
   )
