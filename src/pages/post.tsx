@@ -7,14 +7,12 @@ import { classifyCategory, findContentNode } from '../utils/notionUtils'
 import MainLayout from '../layout/MainLayout'
 import { NotionContext, PageContext } from '../store/rootStore'
 import { INotionContext } from '../types'
-import MyHead from '../components/MyHead'
+import MyHead from '../components/header/MyPostHeader'
 import { parseLocationQuery } from '../utils/parseUtils'
 import { Children } from '../types'
 import ContentWrapper from '../module/ContentWrapper'
 import HeaderIndexList from '../components/HeaderIndexList'
 import TagBadges from '../components/TagBadges'
-
-export const Head: HeadFC = () => <MyHead title="게시글 목록" />
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
@@ -24,6 +22,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   }
   const { id } = parseLocationQuery(props.location.search)
   const content: Children | null = findContentNode(nodes, `/post?id=${id}`)
+  const title = content?.properties?.remark.rich_text || ''
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
 
   useEffect(() => {
@@ -43,6 +42,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
         <MainLayout>
+          <MyHead title={title} />
           <div>
             <TagBadges tag={content?.properties.tag} />
           </div>
@@ -50,7 +50,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
             {content?.properties?.series.rich_text && (
               <span className={`series-title`}>[{content?.properties?.series.rich_text}]</span>
             )}
-            <p className="title">{content?.properties?.remark.rich_text || ''}</p>
+            <p className="title">{title}</p>
             <div className="desc-box">
               <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
               <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
