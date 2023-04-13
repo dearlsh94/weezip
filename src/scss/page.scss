@@ -51,6 +51,7 @@
   .block-header-index-list.right {
     visibility: hidden;
     position: fixed;
+    z-index: 2;
     width: 240px;
     right: 40px;
     top: 120px;
