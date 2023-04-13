@@ -1,8 +1,10 @@
+import type { GatsbyConfig } from 'gatsby'
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const config = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `ethan-web`,
     siteUrl: `https://www.yourdomain.tld`,
