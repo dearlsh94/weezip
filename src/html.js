@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export default function HTML(props) {
   return (
-    <html {...props.htmlAttributes}>
+    <html {...props.htmlAttributes} lang="ko-KR">
       <head>
         <title>WeeZip</title>
         <meta name="description" content="글쓰는 프론트엔드 개발자의 블로그" />
