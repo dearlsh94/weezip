@@ -1,3 +1,5 @@
+@import './abstracts/mixin';
+
 .main-layout {
   main {
     display: flex;
@@ -12,8 +14,25 @@
       width: 100%;
       min-height: calc(100vh - 50px - 12px);
       max-width: 768px;
-      padding: 12px 40px 40px;
+      padding: 32px 40px 80px;
       word-wrap: break-word;
+      position: relative;
+
+      .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .block-paragraph {
+          text-align: center !important;
+        }
+      }
+      @include tablet {
+        padding: 8px 20px 30px;
+      }
+
+      @include mobile {
+        padding: 8px 16px 24px;
+      }
     }
   }
 }

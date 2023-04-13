@@ -53,7 +53,6 @@ export const getNotionQuery = graphql`
 `
 
 export const useGetNotionQuery = () => {
-  console.log('run useGetNotionQuery')
   const res = useStaticQuery(getNotionQuery)
   const rows = res?.allNotion?.edges
   let nodes: NotionNode[] = []
@@ -62,6 +61,5 @@ export const useGetNotionQuery = () => {
   })
   // url 길이 순으로 정렬
   nodes.sort((a, b) => (a.title?.length > b.title?.length ? 1 : -1))
-  console.log({ nodes })
   return nodes
 }

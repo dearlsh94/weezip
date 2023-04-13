@@ -1,18 +1,7 @@
 import React from 'react'
-import { NotionNode } from '../types'
 import { PageProps } from 'gatsby'
+import { INotionContext } from '../types'
 
-export interface INotionContext {
-  nodes: NotionNode[]
-  categories: NotionCategories
-}
-export interface NotionCategories {
-  [key: string]: NotionNode[]
-  write: NotionNode[]
-  explain: NotionNode[]
-  edit: NotionNode[]
-  zip: NotionNode[]
-}
 export const NotionContext = React.createContext<INotionContext>({
   nodes: [],
   categories: {

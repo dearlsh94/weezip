@@ -1,21 +1,54 @@
 import * as React from 'react'
-import { NotionCategories, NotionContext, PageContext } from '../store/rootStore'
+import { useEffect, useContext, useState } from 'react'
+import { NotionContext } from '../store/rootStore'
+import { NotionCategories } from '../types'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
 import { isDebug, gnbLinkes } from '../constants'
 import Linker from '../components/Linker'
 import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
+import { throttle } from '../utils/commonUtils'
+import IconHamburgerMenu from '../components/icon/IconHamburgerMenu'
+import IconHome from '../components/icon/IconHome'
 
 const Header = () => {
-  const nodes: NotionNode[] = React.useContext(NotionContext).nodes
-  const categories: NotionCategories = React.useContext(NotionContext).categories
-  const [isSnbOpen, setIsSnbOpen] = React.useState(false)
+  const nodes: NotionNode[] = useContext(NotionContext).nodes
+  const categories: NotionCategories = useContext(NotionContext).categories
+  const [isSnbOpen, setIsSnbOpen] = useState(false)
+  const [status, setStatus] = useState('')
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      if (window.scrollY > window.innerHeight * 1.2) {
+        setStatus('sticky')
+      } else if (window.scrollY > 0) {
+        setStatus('scrolled')
+      } else {
+        setStatus('')
+      }
+    }
+    const throttledScrollHandler = throttle(scrollHandler)
+
+    window.addEventListener('scroll', throttledScrollHandler)
+    return () => {
+      window.removeEventListener('scroll', throttledScrollHandler)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isSnbOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isSnbOpen])
+
   return (
     <React.Fragment>
-      <header>
+      <header id="header" className={`${status}`}>
         <div className="left-box" onClick={() => setIsSnbOpen(!isSnbOpen)}>
-          <StaticImage src="../images/icon-hamburger.svg" alt="icon hamburger menu" className="icon hamburger" />
+          <IconHamburgerMenu size={28} />
         </div>
         <Linker url="/">
           <div className="logo-box">
@@ -37,7 +70,10 @@ const Header = () => {
                     return (
                       <li key={`gnb-${i}`} className={`nav-item`}>
                         <Linker url={nav.url}>
-                          <span>{nav.title}</span>
+                          <div className="title-box">
+                            {nav.title.toUpperCase() === 'HOME' && <IconHome />}
+                            <span>{nav.title}</span>
+                          </div>
                           {nav.url.includes('/list') && (
                             <div className="count">{categories[nav.title.toLowerCase()]?.length || 0}</div>
                           )}

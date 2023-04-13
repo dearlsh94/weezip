@@ -17,3 +17,48 @@
     @content;
   }
 }
+
+@mixin superDesktop {
+  @media (min-width: #{$breakpoint-super-desktop}) {
+    @content;
+  }
+}
+
+@mixin animationFadeIn($duration) {
+  animation: fadein $duration;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animationFadeOut($duration) {
+  animation: fadeout $duration;
+  animation-fill-mode: forwards;
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin ellipsis($line: 1) {
+  @if ($line == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  }
+}

@@ -1,37 +1,20 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
 import '../scss/components.scss'
-import { BlockType, Children, HeaderIndex } from '../types'
+import { BlockType, Children } from '../types'
 import ContentChildren from '../module/ContentChildren'
-import HeaderIndexList from '../components/HeaderIndexList'
 
 interface Props {
   childrens: Children[]
+  align?: 'center'
 }
 
-const ContentWrapper = ({ childrens }: Props) => {
+const ContentWrapper = ({ childrens = [], align }: Props) => {
   let numberedList: Children[] = []
-  const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
-
-  useEffect(() => {
-    const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')
-    if (elHeaders && elHeaders?.length > 0) {
-      const headers: HTMLHeadingElement[] = []
-      elHeaders.forEach(el => {
-        headers.push(el)
-      })
-      console.log({ elHeaders, headers })
-      setIndexList(headers)
-    }
-  }, [])
-
+  let bulletedList: Children[] = []
   return (
-    <section>
-      {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
+    <section className={`contenxt-wrapper ${align ? align : ''}`}>
       {childrens.map((block, i) => {
-        /** numbered_list 타입의 경우
-         * 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
-         */
+        // NOTE Type number list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
         if (block.type === BlockType.NUMBERED_LIST_ITEM) {
           numberedList.push(block)
 
@@ -50,6 +33,30 @@ const ContentWrapper = ({ childrens }: Props) => {
                   )
                 })}
               </ol>
+            )
+          } else {
+            return
+          }
+        }
+
+        // NOTE Type bullet list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
+        if (block.type === BlockType.BULLETED_LIST_ITEM) {
+          bulletedList.push(block)
+          // 다음 block이 numbered_list가 아닐 경우 렌더링.
+          if (
+            bulletedList?.length > 0 &&
+            childrens[Math.min(i + 1, childrens.length)]?.type !== BlockType.BULLETED_LIST_ITEM
+          ) {
+            return (
+              <ul key={i} className={`block-bulleted-list`}>
+                {bulletedList?.map((item, i) => {
+                  return (
+                    <li key={`bulleted-list-${i}`} className={`bulleted-list-${i}`}>
+                      <ContentChildren block={item} />
+                    </li>
+                  )
+                })}
+              </ul>
             )
           } else {
             return

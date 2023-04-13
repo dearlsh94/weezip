@@ -1,5 +1,76 @@
 @import './abstracts/variables';
 
+.gray {
+  color: $gray-color;
+}
+.gray_background {
+  background-color: $gray-color;
+  color: $black-color-4;
+}
+.brown {
+  color: $brown-color;
+}
+.brown_background {
+  background-color: $brown-color;
+  color: $black-color-4;
+}
+.orange {
+  color: $orange-color;
+}
+.orange_background {
+  background-color: $orange-color;
+  color: $black-color-4;
+}
+.yellow {
+  color: $yellow-color;
+}
+.yellow_background {
+  background-color: $yellow-color;
+  color: $black-color-4;
+}
+.blue {
+  color: $blue-color;
+}
+.blue_background {
+  background-color: $blue-color;
+  color: $black-color-4;
+}
+.pink {
+  color: $pink-color;
+}
+.pink_background {
+  background-color: $pink-color;
+  color: $black-color-4;
+}
+.red {
+  color: $red-color;
+}
+.red_background {
+  background-color: $red-color;
+  color: $black-color-4;
+}
+.green {
+  color: $green-color;
+}
+.green_background {
+  background-color: $green-color;
+  color: $black-color-4;
+}
+.purple {
+  color: $purple-color;
+}
+.purple_background {
+  background-color: $purple-color;
+  color: $black-color-4;
+}
+.black {
+  color: $black-color-4;
+}
+.black_background {
+  background-color: $black-color-4;
+  color: $white-color-1;
+}
+
 .logo {
   display: flex;
 }
@@ -7,70 +78,6 @@
 .block-paragraph {
   line-height: 28px;
   width: fit-content;
-
-  .gray {
-    color: $gray-color;
-  }
-  .gray_background {
-    background-color: $gray-color;
-    color: $black-color;
-  }
-  .brown {
-    color: $brown-color;
-  }
-  .brown_background {
-    background-color: $brown-color;
-    color: $black-color;
-  }
-  .orange {
-    color: $orange-color;
-  }
-  .orange_background {
-    background-color: $orange-color;
-    color: $black-color;
-  }
-  .yellow {
-    color: $yellow-color;
-  }
-  .yellow_background {
-    background-color: $yellow-color;
-    color: $black-color;
-  }
-  .blue {
-    color: $blue-color;
-  }
-  .blue_background {
-    background-color: $blue-color;
-    color: $black-color;
-  }
-  .pink {
-    color: $pink-color;
-  }
-  .pink_background {
-    background-color: $pink-color;
-    color: $black-color;
-  }
-  .red {
-    color: $red-color;
-  }
-  .red_background {
-    background-color: $red-color;
-    color: $black-color;
-  }
-  .purple {
-    color: $purple-color;
-  }
-  .purple_background {
-    background-color: $purple-color;
-    color: $black-color;
-  }
-  .black {
-    color: $black-color;
-  }
-  .black_background {
-    background-color: $black-color;
-    color: $white-color;
-  }
 }
 
 .block-paragraph-text {
@@ -139,10 +146,8 @@
     cursor: pointer;
 
     .icon-box {
-      width: 12px;
-      height: 12px;
+      margin-top: 2px;
       margin-right: 6px;
-      margin-bottom: 2px;
       transform: rotate(0);
       transition-duration: 0.1s;
       &.open {
@@ -175,7 +180,7 @@
   .language {
     color: $gray-color;
     position: absolute;
-    top: 5px;
+    top: 9px;
     left: 12px;
     font-size: 10pt;
   }
@@ -200,8 +205,8 @@
     z-index: 8;
   }
   .dim {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -217,7 +222,7 @@
   margin: 0px;
 
   li {
-    background-color: $white-color;
+    background-color: $white-color-1;
     list-style: none;
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 1px;
@@ -239,19 +244,30 @@
     }
 
     .post-list-item {
+      span.series {
+        display: flex;
+        margin-top: 12px;
+        font-weight: 400;
+        font-size: 9pt;
+        color: #a7a7a7;
+      }
       p {
-        font-size: 14pt;
+        font-size: 15pt;
+        font-weight: 500;
         margin: 8px 0px;
       }
       .info-box {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        span {
+        .tag-box {
+          margin-right: 8px;
+        }
+        span.date {
           color: $gray-color;
           font-size: 10pt;
         }
-        span + span {
+        span.date + span.date {
           margin-left: 8px;
         }
       }
@@ -276,30 +292,76 @@
 }
 
 .block-header-index-list {
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px 0px;
+  width: 80%;
   text-decoration: underline;
-  color: $gray-color;
+  color: #555;
+  line-height: 28px;
+  margin-bottom: 0;
 
   li {
     cursor: pointer;
-    width: 100%;
     list-style: none;
+    &:hover {
+      text-decoration: underline;
+      color: $secondary-color;
+    }
   }
 
-  @mixin desktop {
-    position: fixed;
-    top: 15%;
-    right: -10%;
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 15px;
-    border-radius: 8px;
-  }
-  .tag-h2 {
+  .tag-h1 + .tag-h2,
+  .tag-h2 + .tag-h2,
+  .tag-h1 + .tag-h3 {
     padding-left: 16px;
   }
-  .tag-h3 {
+  .tag-h2 + .tag-h3,
+  .tag-h3 + .tag-h3 {
     padding-left: 32px;
+  }
+}
+
+.badge-box {
+  display: flex;
+  width: fit-content;
+  min-width: 48px;
+
+  .badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 9pt;
+    color: #333;
+
+    & + .badge {
+      margin-left: 8px;
+    }
+  }
+}
+
+.circle-icon-wrapper {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &.black {
+    border: 2px solid $black-color-1;
+    &:hover {
+      border: 2px solid $white-color-1;
+      svg path {
+        fill: $white-color-1;
+      }
+    }
+  }
+
+  &.white {
+    border: 2px solid $white-color-1;
+    &:hover {
+      border: 2px solid $black-color-1;
+      svg path {
+        fill: $black-color-1;
+      }
+    }
   }
 }

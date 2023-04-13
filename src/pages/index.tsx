@@ -5,11 +5,9 @@ import { useGetNotionQuery } from '../services/use-notion'
 import { classifyCategory, findContentNode } from '../utils/notionUtils'
 import { Children } from '../types/contentType'
 import ContentWrapper from '../module/ContentWrapper'
-import { NotionContext, INotionContext } from '../store/rootStore'
+import { NotionContext } from '../store/rootStore'
+import { INotionContext } from '../types'
 import MainLayout from '../layout/MainLayout'
-import MyHead from '../components/MyHead'
-
-export const Head: HeadFC = () => <MyHead title="홈" />
 
 const IndexPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery()
@@ -21,7 +19,7 @@ const IndexPage: React.FC<PageProps> = () => {
   console.log({ content })
   return (
     <NotionContext.Provider value={store}>
-      <MainLayout>{content && <ContentWrapper childrens={content.children} />}</MainLayout>
+      <MainLayout>{content && <ContentWrapper childrens={content.children} align="center" />}</MainLayout>
     </NotionContext.Provider>
   )
 }

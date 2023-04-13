@@ -17,7 +17,7 @@ export const parseLocationQuery = (search = '') => {
         res[key] = [res[key], value]
       }
     } else {
-      res[key] = value
+      res[key] = decodeURIComponent(value)
     }
   })
   return res
@@ -26,10 +26,12 @@ export const parseLocationQuery = (search = '') => {
 export const parseContentValue = (content: Children): ContentValue => {
   const remark = content.properties.remark.rich_text || ''
   const category = content.properties.category.multi_select || []
+  const tag = content.properties.tag.multi_select || []
   const cover = content.cover || []
   const last_edited_item = content.properties.edited_date.date.start || ''
   const created_time = content.properties.created_date.date.start || ''
   const notionUrl = content.url || ''
+  const series = content.properties.series.rich_text || ''
   return {
     remark,
     category,
@@ -37,5 +39,7 @@ export const parseContentValue = (content: Children): ContentValue => {
     lastEditedTime: convertDatetimeFormat(last_edited_item),
     createdTime: convertDatetimeFormat(created_time),
     notionUrl,
+    tag,
+    series,
   }
 }

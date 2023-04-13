@@ -2,40 +2,54 @@
 @import './abstracts/mixin';
 
 header {
-  position: sticky;
-  top: 0;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(247, 247, 247, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 100%;
-  height: 60px;
+  height: 90px;
   box-shadow: 0px 3px 9px #ccc;
   margin-bottom: 12px;
   z-index: 9;
   transition-duration: 0.2s;
+
+  .left-box {
+    position: absolute;
+    left: 10px;
+    svg {
+      cursor: pointer;
+    }
+  }
+  .logo-box {
+    width: 42px;
+  }
+
+  &.scrolled {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    @include animationFadeOut(300ms);
+    .left-box {
+      display: none;
+    }
+    .logo-box {
+      display: none;
+    }
+  }
+
+  &.sticky {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    @include animationFadeIn(300ms);
+  }
 
   @include mobile {
     height: 60px;
   }
   @include tablet {
     height: 60px;
-  }
-  &.scroll {
-    height: 60px;
-  }
-  .left-box {
-    position: absolute;
-    left: 10px;
-    img {
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-    }
-  }
-  .logo-box {
-    width: 42px;
   }
 }
 
@@ -46,10 +60,10 @@ header {
     top: 0;
     left: 0;
     width: 260px;
-    height: 100vh;
+    height: 100%;
     margin-left: -261px;
     overflow-y: auto;
-    background-color: $white-color;
+    background-color: $white-color-1;
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -107,12 +121,26 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .title-box {
+          display: flex;
+          align-items: center;
+
+          svg + span {
+            margin-left: 4px;
+          }
+        }
       }
     }
     li:hover {
       background-color: $secondary-color;
       a {
-        color: $white-color;
+        color: $white-color-1;
+        .title-box {
+          svg path {
+            fill: $white-color-1;
+          }
+        }
       }
     }
 
@@ -121,12 +149,45 @@ header {
       background-color: $third-color;
       border-radius: 45%;
       width: 18px;
-      height: 18px;
+      height: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 10pt;
-      padding-top: 2px;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  height: 100%;
+  background-color: $primary-color;
+  padding: 36px 24px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .container {
+    width: 100%;
+    max-width: 768px;
+    line-height: 18pt;
+    color: $white-color-3;
+
+    .contact-box {
+      a {
+        color: $white-color-5;
+        display: flex;
+      }
+      p {
+        margin-bottom: 6px;
+      }
+      .contact-item {
+        display: flex;
+      }
+    }
+    .item + .item {
+      margin-top: 12px;
     }
   }
 }

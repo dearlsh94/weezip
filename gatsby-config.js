@@ -1,10 +1,8 @@
-import type { GatsbyConfig } from 'gatsby'
-
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const config: GatsbyConfig = {
+const config = {
   siteMetadata: {
     title: `ethan-web`,
     siteUrl: `https://www.yourdomain.tld`,
@@ -40,6 +38,19 @@ const config: GatsbyConfig = {
         databaseId: process.env.NOTION_DB_ID,
         propsToFrontmatter: true,
         lowerTitleLevel: true,
+      },
+    },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Noto Sans Korean`,
+            file: `https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap`,
+          },
+        ],
       },
     },
   ],

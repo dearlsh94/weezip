@@ -1,15 +1,4 @@
-import {
-  WorkBy,
-  Properties,
-  Heading,
-  TextBlock,
-  Todo,
-  Callout,
-  Bookmark,
-  MultiSelect,
-  Code,
-  Image,
-} from './componentType'
+import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, Select, Code, Image } from './componentType'
 
 export interface Children {
   object: 'block'
@@ -68,9 +57,11 @@ export enum BlockType {
 
 export interface ContentValue {
   remark: string
-  category: MultiSelect[]
+  category: Select[]
+  tag: Select[]
   cover: string
   lastEditedTime: string
   createdTime: string
   notionUrl: string
+  series: string
 }
