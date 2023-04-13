@@ -7,13 +7,10 @@ import { classifyCategory } from '../utils/notionUtils'
 import MainLayout from '../layout/MainLayout'
 import { NotionContext, PageContext } from '../store/rootStore'
 import { INotionContext, NotionNode } from '../types'
-import MyHead from '../components/MyHead'
 import { parseLocationQuery } from '../utils/parseUtils'
 import PostList from '../module/PostList'
 import { nodeToJson } from '../utils/notionUtils'
 import { parseContentValue } from '../utils/parseUtils'
-
-export const Head: HeadFC = () => <MyHead title="게시글 목록" />
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()

@@ -8,6 +8,8 @@ export default function HTML(props) {
         <title>WeeZip</title>
         <meta name="description" content="글쓰는 프론트엔드 개발자의 블로그" />
         <meta name="og:description" content="글쓰는 프론트엔드 개발자의 블로그" />
+        <meta property="og:site_name" content="WeeZip" />
+        <meta property="og:type" content="website" />
         <meta name="author" content="WeeZip.Ethan" />
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />

@@ -8,9 +8,6 @@ import ContentWrapper from '../module/ContentWrapper'
 import MainLayout from '../layout/MainLayout'
 import { NotionContext } from '../store/rootStore'
 import { INotionContext } from '../types'
-import MyHead from '../components/MyHead'
-
-export const Head: HeadFC = () => <MyHead title="소개" />
 
 const IntroPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery()

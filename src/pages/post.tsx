@@ -7,7 +7,7 @@ import { classifyCategory, findContentNode } from '../utils/notionUtils'
 import MainLayout from '../layout/MainLayout'
 import { NotionContext, PageContext } from '../store/rootStore'
 import { INotionContext } from '../types'
-import MyHead from '../components/header/MyPostHeader'
+import MyPostHeader from '../components/header/MyPostHeader'
 import { parseLocationQuery } from '../utils/parseUtils'
 import { Children } from '../types'
 import ContentWrapper from '../module/ContentWrapper'
@@ -42,7 +42,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
         <MainLayout>
-          <MyHead title={title} />
+          <MyPostHeader title={title} />
           <div>
             <TagBadges tag={content?.properties.tag} />
           </div>
