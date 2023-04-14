@@ -23,9 +23,11 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
             numberedList?.length > 0 &&
             childrens[Math.min(i + 1, childrens.length)]?.type !== BlockType.NUMBERED_LIST_ITEM
           ) {
+            const renderList = numberedList
+            numberedList = []
             return (
               <ol key={i} className={`block-numbered-list`}>
-                {numberedList?.map((item, i) => {
+                {renderList?.map((item, i) => {
                   return (
                     <li key={`numbered-list-${i}`}>
                       <ContentChildren block={item} />
@@ -47,9 +49,11 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
             bulletedList?.length > 0 &&
             childrens[Math.min(i + 1, childrens.length)]?.type !== BlockType.BULLETED_LIST_ITEM
           ) {
+            const renderList = bulletedList
+            bulletedList = []
             return (
               <ul key={i} className={`block-bulleted-list`}>
-                {bulletedList?.map((item, i) => {
+                {renderList?.map((item, i) => {
                   return (
                     <li key={`bulleted-list-${i}`} className={`bulleted-list-${i}`}>
                       <ContentChildren block={item} />
