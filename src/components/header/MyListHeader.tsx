@@ -11,8 +11,7 @@ const MyListHeader = ({ title, desc }: Props) => {
   return (
     <Helmet>
       <title>{title}</title>
-      {/* TODO Set Canonical URL */}
-      <link rel="canonical" href="" />
+      <link rel="canonical" href={`${location.origin}/list`} />
       <meta name="title" property="og:title" content={title} />
       <meta name="description" property="og:description" content={desc || title} />
       <meta name="author" content="ethan" />
