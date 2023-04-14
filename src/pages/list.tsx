@@ -11,6 +11,7 @@ import { parseLocationQuery } from '../utils/parseUtils'
 import PostList from '../module/PostList'
 import { nodeToJson } from '../utils/notionUtils'
 import { parseContentValue } from '../utils/parseUtils'
+import MyListHeader from '../components/header/MyListHeader'
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
@@ -19,6 +20,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     categories: classifyCategory(nodes),
   }
   const [list, setList] = useState<NotionNode[]>([])
+  const { category, series } = parseLocationQuery(props.location.search)
 
   useEffect(() => {
     const parseList: NotionNode[] = nodes.map(node => {
@@ -27,8 +29,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       node.contentValue = contentValue
       return node
     })
-
-    const { category, series } = parseLocationQuery(props.location.search)
 
     let l: NotionNode[] = []
     if (category) {
@@ -59,6 +59,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
         <MainLayout>
+          <MyListHeader title={`${category ? `${category} 글 목록 ` : '게시글 목록'}`} desc={`어떤 글이 있을까요?`} />
           <PostList list={list} />
         </MainLayout>
       </NotionContext.Provider>

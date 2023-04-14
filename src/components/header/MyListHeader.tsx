@@ -7,7 +7,7 @@ interface Props {
   desc?: string
 }
 
-const MyPostHeader = ({ title, desc }: Props) => {
+const MyListHeader = ({ title, desc }: Props) => {
   return (
     <Helmet>
       <title>{title}</title>
@@ -23,4 +23,4 @@ const MyPostHeader = ({ title, desc }: Props) => {
   )
 }
 
-export default MyPostHeader
+export default MyListHeader
