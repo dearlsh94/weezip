@@ -51,7 +51,7 @@ const ContentChildren = ({ block }: Props) => {
       case BlockType.CODE:
         if (block.code) return <MyCode code={block.code} />
       case BlockType.IMAGE:
-        if (block.image) return <MyImage image={block.image} />
+        if (block.image) return <MyImage imageBlock={block} />
       case BlockType.DIVIDER:
         if (block.divider) return <Divider />
       default:
