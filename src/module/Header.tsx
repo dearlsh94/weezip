@@ -12,6 +12,7 @@ import { throttle } from '../utils/commonUtils'
 import IconHamburgerMenu from '../components/icon/IconHamburgerMenu'
 import IconHome from '../components/icon/IconHome'
 import { mail } from '../constants'
+import IconDoubleArrow from '../components/icon/IconDoubleArrow'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
@@ -61,6 +62,9 @@ const Header = () => {
         <DimWrapper handleClose={() => setIsSnbOpen(false)}>
           <div className="snb-box">
             <div className="sub-header">
+              <div className="close-icon-box" onClick={() => setIsSnbOpen(false)}>
+                <IconDoubleArrow direction="left" size={36} />
+              </div>
               <StaticImage src={`../images/logo-3x.png`} alt="WeeZip Logo" className="logo" />
               <div className="text-box">
                 <p>디자인 관련 도움을 구하고 있어요.</p>
