@@ -1,6 +1,10 @@
 @import './abstracts/variables';
 @import './abstracts/mixin';
 
+html {
+  min-width: 380px;
+}
+
 body {
   margin: 0px;
   min-width: 380px;
