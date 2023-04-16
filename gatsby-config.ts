@@ -17,6 +17,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
