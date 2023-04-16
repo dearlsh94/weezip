@@ -3,6 +3,7 @@ import '../scss/module.scss'
 import Linker from '../components/Linker'
 import IconMail from '../components/icon/IconMail'
 import CircleIconWrapper from '../components/icon/CircleIconWrapper'
+import { mail } from '../constants'
 
 const Footer = () => {
   return (
@@ -13,7 +14,7 @@ const Footer = () => {
             <p>Contact Me</p>
             <div className="contact-item">
               <CircleIconWrapper color="white">
-                <Linker url="mailto:weezip.ethan@gmail.com">
+                <Linker url={`mailto:${mail}`}>
                   <IconMail size={24} fill="white" />
                 </Linker>
               </CircleIconWrapper>

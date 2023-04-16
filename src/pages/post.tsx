@@ -42,7 +42,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
         <MainLayout>
-          <MyPostHeader title={title} />
+          <MyPostHeader title={title} desc={content?.properties?.series.rich_text} />
           <div>
             <TagBadges tag={content?.properties.tag} />
           </div>

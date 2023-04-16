@@ -77,7 +77,7 @@
 
 .block-paragraph {
   line-height: 28px;
-  width: fit-content;
+  width: 100%;
 }
 
 .block-paragraph-text {
@@ -107,6 +107,8 @@
   margin: 12px 0px;
   padding: 8px 12px;
   border-left: 4px solid $primary-color;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .block-todo {
@@ -163,33 +165,31 @@
 .block-code {
   display: flex;
   background-color: #efefef;
-  padding: 16px 24px;
-  margin: 8px 0px;
+  margin: 16px 0px;
   border-radius: 4px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 
-  .code {
+  pre {
     white-space: pre-wrap;
+    width: 100%;
+    margin: 0;
+    padding-top: 1.5em !important;
+    padding-bottom: 1.5em !important;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
-  &.language {
-    padding-top: 28px;
-  }
-  &.caption {
-    margin-bottom: 28px;
-  }
+
   .language {
     color: $gray-color;
-    position: absolute;
-    top: 9px;
-    left: 12px;
-    font-size: 10pt;
+    padding: 8px 12px;
+    font-size: 9pt;
   }
   .caption {
     color: $gray-color;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    font-size: 10pt;
+    padding: 2px 12px;
+    font-size: 9pt;
   }
 }
 
@@ -283,6 +283,7 @@
   width: 100%;
   img {
     width: 100%;
+    border-radius: 4px;
   }
   p {
     top: 100%;
@@ -299,6 +300,7 @@
   margin-bottom: 0;
 
   li {
+    width: 100%;
     cursor: pointer;
     list-style: none;
     &:hover {

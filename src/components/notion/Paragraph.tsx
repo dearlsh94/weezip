@@ -35,6 +35,9 @@ const ContentChildren = ({ paragraph, text, className }: Props) => {
             if (t?.annotations?.color) {
               classNames.push(t?.annotations?.color)
             }
+            if (t?.annotations?.code) {
+              classNames.push('code-word')
+            }
             return (
               <React.Fragment key={`block-paragraph-text-${i}`}>
                 {t.href ? (

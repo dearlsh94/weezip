@@ -7,12 +7,12 @@ interface Props {
   desc?: string
 }
 
-const MyPostHeader = ({ title, desc }: Props) => {
+const MyListHeader = ({ title, desc }: Props) => {
   return (
     <Helmet>
       <title>{title}</title>
       {/* SSR 시 location 참조하지 못해 생기는 오류로 인한 주석처리 */}
-      {/* <link rel="canonical" href={`${location.origin}/post`} /> */}
+      {/* <link rel="canonical" href={`${location.origin}/list`} /> */}
       <meta name="title" property="og:title" content={title} />
       <meta name="description" property="og:description" content={desc || title} />
       <meta name="author" content="ethan" />
@@ -23,4 +23,4 @@ const MyPostHeader = ({ title, desc }: Props) => {
   )
 }
 
-export default MyPostHeader
+export default MyListHeader
