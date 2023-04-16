@@ -65,7 +65,7 @@ const Header = () => {
               <div className="text-box">
                 <p>디자인 관련 도움을 구하고 있어요.</p>
                 <p>
-                  <a href={`mailto:${mail}`}>여기</a>로 연락 주세요 🙇‍♂️
+                  관심 있으시면 <a href={`mailto:${mail}`}>여기</a>로 연락 주세요 🙇‍♂️
                 </p>
               </div>
             </div>
