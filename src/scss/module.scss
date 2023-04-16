@@ -117,18 +117,20 @@ nav.nav-box {
     li.nav-item {
       width: 100%;
       height: 54px;
-      padding: 12px 24px;
       font-size: 13pt;
       box-sizing: border-box;
       cursor: pointer;
       display: flex;
       align-items: center;
       a {
+        padding: 12px 24px;
         width: 100%;
+        height: 100%;
         text-decoration: none;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        box-sizing: border-box;
 
         .title-box {
           display: flex;
