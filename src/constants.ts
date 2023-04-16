@@ -12,3 +12,5 @@ export const gnbLinkes = [
   { url: '/list?category=edit', title: 'Edit' },
   { url: '/list?category=zip', title: 'Zip' },
 ]
+
+export const mail = 'weezip.ethan@gmail.com'

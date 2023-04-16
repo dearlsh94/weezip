@@ -11,6 +11,7 @@ import DimWrapper from '../layout/DimWrapper'
 import { throttle } from '../utils/commonUtils'
 import IconHamburgerMenu from '../components/icon/IconHamburgerMenu'
 import IconHome from '../components/icon/IconHome'
+import { mail } from '../constants'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
@@ -59,9 +60,14 @@ const Header = () => {
       <div className={`snb-container ${isSnbOpen ? 'open' : ''}`}>
         <DimWrapper handleClose={() => setIsSnbOpen(false)}>
           <div className="snb-box">
-            <div className="introduce-box">
+            <div className="sub-header">
               <StaticImage src={`../images/logo-3x.png`} alt="WeeZip Logo" className="logo" />
-              <p>Welcome to WeeZip</p>
+              <div className="text-box">
+                <p>디자인 관련 도움을 구하고 있어요.</p>
+                <p>
+                  <a href={`mailto:${mail}`}>여기</a>로 연락 주세요 🙇‍♂️
+                </p>
+              </div>
             </div>
             <nav className="nav-box">
               <ul>
