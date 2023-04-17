@@ -19,6 +19,7 @@ const Header = () => {
   const categories: NotionCategories = useContext(NotionContext).categories
   const [isSnbOpen, setIsSnbOpen] = useState(false)
   const [status, setStatus] = useState('')
+  const [isMenuHover, setIsMenuHover] = useState(false)
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -49,8 +50,25 @@ const Header = () => {
   return (
     <React.Fragment>
       <header id="header" className={`${status}`}>
-        <div className="left-box" onClick={() => setIsSnbOpen(!isSnbOpen)}>
-          <IconHamburgerMenu size={28} />
+        <div className="left-box">
+          <div
+            className="icon-box"
+            onClick={() => setIsSnbOpen(!isSnbOpen)}
+            onMouseOver={() => setIsMenuHover(true)}
+            onMouseLeave={() => setIsMenuHover(false)}
+            onFocus={() => setIsMenuHover(true)}
+            onBlur={() => setIsMenuHover(false)}
+          >
+            {isMenuHover ? (
+              isSnbOpen ? (
+                <IconDoubleArrow direction="left" size={28} />
+              ) : (
+                <IconDoubleArrow direction="right" size={28} />
+              )
+            ) : (
+              <IconHamburgerMenu size={28} />
+            )}
+          </div>
         </div>
         <Linker url="/">
           <div className="logo-box">
@@ -62,9 +80,6 @@ const Header = () => {
         <DimWrapper handleClose={() => setIsSnbOpen(false)}>
           <div className="snb-box">
             <div className="sub-header">
-              <div className="close-icon-box" onClick={() => setIsSnbOpen(false)}>
-                <IconDoubleArrow direction="left" size={36} />
-              </div>
               <StaticImage src={`../images/logo-3x.png`} alt="WeeZip Logo" className="logo" />
               <div className="text-box">
                 <p>디자인 관련 도움을 구하고 있어요.</p>
