@@ -19,8 +19,9 @@ header {
     left: 10px;
     z-index: 11;
     .icon-box {
-      width: 28px;
-      height: 28px;
+      @include flexCenter;
+      width: 36px;
+      height: 36px;
       cursor: pointer;
       &:hover {
         background-color: $secondary-color;
