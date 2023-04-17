@@ -1,18 +1,24 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
-import '../scss/page.scss'
-import { useGetNotionQuery } from '../services/use-notion'
-import { classifyCategory, findContentNode } from '../utils/notionUtils'
-import MainLayout from '../layout/MainLayout'
-import { NotionContext, PageContext } from '../store/rootStore'
-import { INotionContext } from '../types'
-import MyPostHeader from '../components/header/MyPostHeader'
-import { parseLocationQuery } from '../utils/parseUtils'
-import { Children } from '../types'
-import ContentWrapper from '../module/ContentWrapper'
-import HeaderIndexList from '../components/HeaderIndexList'
-import TagBadges from '../components/TagBadges'
+import '../../scss/page.scss'
+import { useGetNotionQuery } from '../../services/use-notion'
+import { classifyCategory, findContentNode } from '../../utils/notionUtils'
+import MainLayout from '../../layout/MainLayout'
+import { NotionContext, PageContext } from '../../store/rootStore'
+import { INotionContext } from '../../types'
+import MyPostHeader from '../../components/header/MyPostHeader'
+import { Children } from '../../types'
+import ContentWrapper from '../../module/ContentWrapper'
+import HeaderIndexList from '../../components/HeaderIndexList'
+import TagBadges from '../../components/TagBadges'
+
+export const Head: HeadFC = ({ params }) => {
+  const nodes = useGetNotionQuery()
+  const content: Children | null = findContentNode(nodes, `/post/${params?.id}`)
+  const title = content?.properties?.remark.rich_text || ''
+  return <MyPostHeader title={title} desc={content?.properties?.series.rich_text} />
+}
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
@@ -20,8 +26,8 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     nodes: nodes,
     categories: classifyCategory(nodes),
   }
-  const { id } = parseLocationQuery(props.location.search)
-  const content: Children | null = findContentNode(nodes, `/post?id=${id}`)
+  const { id } = props?.params
+  const content: Children | null = findContentNode(nodes, `/post/${id}`)
   const title = content?.properties?.remark.rich_text || ''
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
 
@@ -42,7 +48,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
         <MainLayout>
-          <MyPostHeader title={title} desc={content?.properties?.series.rich_text} />
           <div>
             <TagBadges tag={content?.properties.tag} />
           </div>
