@@ -11,10 +11,10 @@ import { parseLocationQuery } from '../utils/parseUtils'
 import PostList from '../module/PostList'
 import { nodeToJson } from '../utils/notionUtils'
 import { parseContentValue } from '../utils/parseUtils'
-import MyListHeader from '../components/header/MyListHeader'
+import MyListHead from '../components/header/MyListHead'
 
 export const Head: HeadFC = ({ params }) => {
-  return <MyListHeader title={`게시글 목록`} desc={`어떤 글이 있을까요?`} />
+  return <MyListHead title={`게시글 목록`} desc={`어떤 글이 있을까요?`} />
 }
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {

@@ -8,10 +8,10 @@ import ContentWrapper from '../module/ContentWrapper'
 import { NotionContext } from '../store/rootStore'
 import { INotionContext } from '../types'
 import MainLayout from '../layout/MainLayout'
-import MyHeader from '../components/header/MyHeader'
+import MyHead from '../components/header/MyHead'
 
 export const Head: HeadFC = () => {
-  return <MyHeader />
+  return <MyHead />
 }
 
 const IndexPage: React.FC<PageProps> = () => {

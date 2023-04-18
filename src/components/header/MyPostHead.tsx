@@ -2,24 +2,23 @@ import * as React from 'react'
 import '../../scss/components.scss'
 
 interface Props {
-  title?: string
+  title: string
   desc?: string
 }
 
-const MyHeader = ({
-  title = 'Weezip',
-  desc = '글쓰는 프론트엔드 개발자의 블로그. 편하고 예쁜 걸 좋아합니다.',
-}: Props) => {
+const MyPostHead = ({ title, desc }: Props) => {
   return (
     <>
       <title>{title}</title>
-      <link rel="canonical" href={`https://weezip.freefeely.com`} />
-      <meta name="title" property="og:title" content="Weezip" />
+
+      <link rel="canonical" href={`https://weezip.freefeely.com/post`} />
+      <meta name="title" property="og:title" content={title} />
       <meta name="description" property="og:description" content={desc || title} />
+      {/* <meta name="keywords" content={keywords} /> */}
       {/* <meta name="image" property="og:image" content="" /> */}
       {/* <meta name="url" property="og:url" content="" /> */}
     </>
   )
 }
 
-export default MyHeader
+export default MyPostHead

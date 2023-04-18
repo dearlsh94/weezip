@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link, HeadFC, PageProps } from 'gatsby'
-import MyHeader from '../components/header/MyHeader'
+import MyHead from '../components/header/MyHead'
 
 const pageStyles = {
   color: '#232129',
@@ -25,7 +25,7 @@ const codeStyles = {
 }
 
 export const Head: HeadFC = () => {
-  return <MyHeader />
+  return <MyHead />
 }
 
 const NotFoundPage: React.FC<PageProps> = () => {

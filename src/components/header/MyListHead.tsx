@@ -6,7 +6,7 @@ interface Props {
   desc?: string
 }
 
-const MyListHeader = ({ title, desc }: Props) => {
+const MyListHead = ({ title, desc }: Props) => {
   return (
     <>
       <title>{title}</title>
@@ -20,4 +20,4 @@ const MyListHeader = ({ title, desc }: Props) => {
   )
 }
 
-export default MyListHeader
+export default MyListHead
