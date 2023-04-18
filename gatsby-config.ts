@@ -80,9 +80,9 @@ const config: GatsbyConfig = {
           // Avoids sending pageview hits from custom paths
           // exclude: ["/preview/**", "/do-not-track/me/too/"],
           // Defaults to https://www.googletagmanager.com
-          // origin: 'YOUR_SELF_HOSTED_ORIGIN',
+          origin: 'https://weezip.treefeely.com',
           // Delays processing pageview events on route update (in milliseconds)
-          // delayOnRouteUpdate: 0,
+          delayOnRouteUpdate: 1000,
         },
       },
     },
