@@ -31,7 +31,7 @@ const Header = () => {
         setStatus('')
       }
     }
-    const throttledScrollHandler = throttle(scrollHandler)
+    const throttledScrollHandler = throttle(scrollHandler, 3)
 
     window.addEventListener('scroll', throttledScrollHandler)
     return () => {

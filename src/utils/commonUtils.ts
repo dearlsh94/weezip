@@ -15,7 +15,7 @@ export const throttle = (fn: ThrottleFn, delay = 10): ThrottleFn => {
 
 type DebounceFn = (...args: any[]) => void
 
-function debounce(fn: DebounceFn, delay: number): DebounceFn {
+export const debounce = (fn: DebounceFn, delay = 10): DebounceFn => {
   let timerId: number | undefined
 
   return function (...args: any[]) {
