@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link, HeadFC, PageProps } from 'gatsby'
+import MyHeader from '../components/header/MyHeader'
 
 const pageStyles = {
   color: '#232129',
@@ -21,6 +22,10 @@ const codeStyles = {
   backgroundColor: '#FFF4DB',
   fontSize: '1.25rem',
   borderRadius: 4,
+}
+
+export const Head: HeadFC = () => {
+  return <MyHeader />
 }
 
 const NotFoundPage: React.FC<PageProps> = () => {
@@ -45,5 +50,3 @@ const NotFoundPage: React.FC<PageProps> = () => {
 }
 
 export default NotFoundPage
-
-export const Head: HeadFC = () => <title>Not found</title>
