@@ -13,6 +13,10 @@ import { nodeToJson } from '../utils/notionUtils'
 import { parseContentValue } from '../utils/parseUtils'
 import MyListHeader from '../components/header/MyListHeader'
 
+export const Head: HeadFC = ({ params }) => {
+  return <MyListHeader title={`게시글 목록`} desc={`어떤 글이 있을까요?`} />
+}
+
 const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
@@ -59,7 +63,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
         <MainLayout>
-          <MyListHeader title={`${category ? `${category} 글 목록 ` : '게시글 목록'}`} desc={`어떤 글이 있을까요?`} />
           <PostList list={list} />
         </MainLayout>
       </NotionContext.Provider>
