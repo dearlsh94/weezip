@@ -27,6 +27,12 @@
   }
 }
 
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin animationFadeIn($duration) {
   animation: fadein $duration;
   @keyframes fadein {
