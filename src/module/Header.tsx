@@ -12,12 +12,14 @@ import { throttle } from '../utils/commonUtils'
 import IconHamburgerMenu from '../components/icon/IconHamburgerMenu'
 import IconHome from '../components/icon/IconHome'
 import { mail } from '../constants'
+import IconDoubleArrow from '../components/icon/IconDoubleArrow'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
   const categories: NotionCategories = useContext(NotionContext).categories
   const [isSnbOpen, setIsSnbOpen] = useState(false)
   const [status, setStatus] = useState('')
+  const [isMenuHover, setIsMenuHover] = useState(false)
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -48,8 +50,25 @@ const Header = () => {
   return (
     <React.Fragment>
       <header id="header" className={`${status}`}>
-        <div className="left-box" onClick={() => setIsSnbOpen(!isSnbOpen)}>
-          <IconHamburgerMenu size={28} />
+        <div className="left-box">
+          <div
+            className="icon-box"
+            onClick={() => setIsSnbOpen(!isSnbOpen)}
+            onMouseOver={() => setIsMenuHover(true)}
+            onMouseLeave={() => setIsMenuHover(false)}
+            onFocus={() => setIsMenuHover(true)}
+            onBlur={() => setIsMenuHover(false)}
+          >
+            {isMenuHover ? (
+              isSnbOpen ? (
+                <IconDoubleArrow direction="left" size={28} />
+              ) : (
+                <IconDoubleArrow direction="right" size={28} />
+              )
+            ) : (
+              <IconHamburgerMenu size={28} />
+            )}
+          </div>
         </div>
         <Linker url="/">
           <div className="logo-box">
@@ -65,7 +84,7 @@ const Header = () => {
               <div className="text-box">
                 <p>디자인 관련 도움을 구하고 있어요.</p>
                 <p>
-                  <a href={`mailto:${mail}`}>여기</a>로 연락 주세요 🙇‍♂️
+                  관심 있으시면 <a href={`mailto:${mail}`}>여기</a>로 연락 주세요 🙇‍♂️
                 </p>
               </div>
             </div>
