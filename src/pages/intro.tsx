@@ -8,10 +8,10 @@ import ContentWrapper from '../module/ContentWrapper'
 import MainLayout from '../layout/MainLayout'
 import { NotionContext } from '../store/rootStore'
 import { INotionContext } from '../types'
-import MyHead from '../components/header/MyHead'
+import SEO from '../components/header/SEO'
 
 export const Head: HeadFC = () => {
-  return <MyHead />
+  return <SEO />
 }
 
 const IntroPage: React.FC<PageProps> = () => {

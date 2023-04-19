@@ -11,10 +11,14 @@ import { parseLocationQuery } from '../utils/parseUtils'
 import PostList from '../module/PostList'
 import { nodeToJson } from '../utils/notionUtils'
 import { parseContentValue } from '../utils/parseUtils'
-import MyListHead from '../components/header/MyListHead'
+import SEO from '../components/header/SEO'
 
-export const Head: HeadFC = ({ params }) => {
-  return <MyListHead title={`게시글 목록`} desc={`어떤 글이 있을까요?`} />
+export const Head: HeadFC = () => {
+  return (
+    <SEO title={`게시글 목록`} description={`어떤 글이 있을까요?`}>
+      {/* <link rel="canonical" href={`https://weezip.freefeely.com/list`} /> */}
+    </SEO>
+  )
 }
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {

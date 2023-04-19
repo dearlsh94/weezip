@@ -7,7 +7,7 @@ import { classifyCategory, findContentNode } from '../../utils/notionUtils'
 import MainLayout from '../../layout/MainLayout'
 import { NotionContext, PageContext } from '../../store/rootStore'
 import { INotionContext } from '../../types'
-import MyPostHead from '../../components/header/MyPostHead'
+import SEO from '../../components/header/SEO'
 import { Children } from '../../types'
 import ContentWrapper from '../../module/ContentWrapper'
 import HeaderIndexList from '../../components/HeaderIndexList'
@@ -17,7 +17,11 @@ export const Head: HeadFC = ({ params }) => {
   const nodes = useGetNotionQuery()
   const content: Children | null = findContentNode(nodes, `/post/${params?.id}`)
   const title = content?.properties?.remark.rich_text || ''
-  return <MyPostHead title={title} desc={content?.properties?.series.rich_text} />
+  return (
+    <SEO title={title} description={content?.properties?.series.rich_text}>
+      {/* <link rel="canonical" href={`https://weezip.freefeely.com/post`} /> */}
+    </SEO>
+  )
 }
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {

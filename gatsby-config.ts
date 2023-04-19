@@ -6,8 +6,9 @@ require('dotenv').config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `ethan-web`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Weezip`,
+    description: '글쓰는 프론트엔드 개발자의 블로그. 편하고 예쁜 걸 좋아합니다.',
+    siteUrl: `https://weezip.treefeely.com`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
