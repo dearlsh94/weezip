@@ -62,7 +62,6 @@ const config: GatsbyConfig = {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
           'G-P2302ZLGPV', // Google Analytics / GA
-          'ca-pub-1622942491482378',
           // 'AW-CONVERSION_ID', // Google Ads / Adwords / AW
           // 'DC-FLOODIGHT_ID', // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
@@ -86,6 +85,12 @@ const config: GatsbyConfig = {
           // Delays processing pageview events on route update (in milliseconds)
           delayOnRouteUpdate: 1000,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-1622942491482378`,
       },
     },
   ],
