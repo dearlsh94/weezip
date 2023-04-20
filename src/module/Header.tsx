@@ -72,7 +72,7 @@ const Header = () => {
         </div>
         <Linker url="/">
           <div className="logo-box">
-            <StaticImage src={`../images/logo-2x.png`} alt="WeeZip Logo" className="logo" />
+            <StaticImage src={`../images/logo-2x.png`} alt="Weezip Logo" className="logo" />
           </div>
         </Linker>
       </header>
@@ -80,7 +80,7 @@ const Header = () => {
         <DimWrapper handleClose={() => setIsSnbOpen(false)}>
           <div className="snb-box">
             <div className="sub-header">
-              <StaticImage src={`../images/logo-3x.png`} alt="WeeZip Logo" className="logo" />
+              <StaticImage src={`../images/logo-3x.png`} alt="Weezip Logo" className="logo" />
               <div className="text-box">
                 <p>디자인 관련 도움을 구하고 있어요.</p>
                 <p>
