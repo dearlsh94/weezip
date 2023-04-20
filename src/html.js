@@ -9,7 +9,7 @@ export default function HTML(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="author" content="ethan" />
         <meta property="og:locale" content="ko_KR" />
-        <meta property="og:site_name" content="WeeZip" />
+        <meta property="og:site_name" content="Weezip" />
         <meta property="og:type" content="website" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge;chrome=1" />
         {props.headComponents}
