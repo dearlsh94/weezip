@@ -54,6 +54,10 @@ export const getNotionQuery = graphql`
 
 export const useGetNotionQuery = () => {
   const res = useStaticQuery(getNotionQuery)
+  return parseNotion(res)
+}
+
+export const parseNotion = (res: any) => {
   const rows = res?.allNotion?.edges
   let nodes: NotionNode[] = []
   rows.forEach(({ node }: { node: NotionNode }) => {

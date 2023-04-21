@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://weezip.treefeely.com/sitemap-0.xml
