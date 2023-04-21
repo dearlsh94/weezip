@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useEffect, useContext, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { throttle } from '../utils/commonUtils'
 import '../scss/components.scss'
 
@@ -8,6 +8,7 @@ interface Props {}
 const ScrollProgress = ({}: Props) => {
   const [status, setStatus] = useState('')
   const [progress, setProgress] = useState(0)
+
   useEffect(() => {
     const scrollHandler = () => {
       if (window.scrollY > 100) {
@@ -16,8 +17,8 @@ const ScrollProgress = ({}: Props) => {
         setStatus('')
       }
 
-      let windowScroll = document.body.scrollTop || document.documentElement.scrollTop
-      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+      let windowScroll = document?.body.scrollTop || document?.documentElement.scrollTop
+      let height = document?.documentElement.scrollHeight - document?.documentElement.clientHeight
       setProgress((windowScroll / height) * 100)
     }
     const throttledScrollHandler = throttle(scrollHandler, 3)
@@ -28,7 +29,6 @@ const ScrollProgress = ({}: Props) => {
     }
   }, [])
 
-  const el = document.getElementById('header')
   return (
     <React.Fragment>
       <div className={`scroll-progress-container ${status}`}>
