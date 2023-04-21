@@ -12,20 +12,15 @@ import { Children } from '../../types'
 import ContentWrapper from '../../module/ContentWrapper'
 import HeaderIndexList from '../../components/HeaderIndexList'
 import TagBadges from '../../components/TagBadges'
-import { graphql } from 'gatsby'
-import { parseNotion } from '../../services/use-notion'
 
-export const Head: HeadFC = ({ params, data }: any) => {
-  const nodes = parseNotion(data)
+export const Head: HeadFC = ({ params }) => {
+  const nodes = useGetNotionQuery()
   const content: Children | null = findContentNode(nodes, `/post/${params?.id}`)
   const title = content?.properties?.remark.rich_text || ''
-  const description = content?.properties?.series.rich_text || ''
   return (
-    <>
-      <SEO title={title} description={description}>
-        {/* <link rel="canonical" href={`https://weezip.freefeely.com/post`} /> */}
-      </SEO>
-    </>
+    <SEO title={title} description={content?.properties?.series.rich_text}>
+      {/* <link rel="canonical" href={`https://weezip.freefeely.com/post`} /> */}
+    </SEO>
   )
 }
 
@@ -50,6 +45,8 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       setIndexList(headers)
     }
   }, [])
+
+  console.log(content)
 
   return (
     <PageContext.Provider value={props}>
@@ -78,56 +75,5 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     </PageContext.Provider>
   )
 }
-
-export const query = graphql`
-  query {
-    allNotion {
-      edges {
-        node {
-          archived
-          children {
-            id
-          }
-          createdAt
-          id
-          internal {
-            content
-          }
-          json
-          markdownString
-          parent {
-            id
-            internal {
-              content
-            }
-          }
-          raw {
-            archived
-            children {
-              id
-            }
-            created_by {
-              id
-            }
-            created_time
-            id
-            last_edited_by {
-              id
-            }
-            last_edited_time
-            object
-            parent {
-              database_id
-              type
-            }
-            url
-          }
-          title
-          updatedAt
-        }
-      }
-    }
-  }
-`
 
 export default ListPage
