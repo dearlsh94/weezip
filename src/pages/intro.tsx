@@ -11,7 +11,7 @@ import { INotionContext } from '../types'
 import SEO from '../components/header/SEO'
 
 export const Head: HeadFC = () => {
-  return <SEO />
+  return <SEO title={`노션 데이터셋`} description={`노션 컴포넌트 마이그레이션을 위한 데이터셋`} />
 }
 
 const IntroPage: React.FC<PageProps> = () => {

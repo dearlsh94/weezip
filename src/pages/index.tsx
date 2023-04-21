@@ -11,7 +11,7 @@ import MainLayout from '../layout/MainLayout'
 import SEO from '../components/header/SEO'
 
 export const Head: HeadFC = () => {
-  return <SEO />
+  return <SEO title={`Home`} description={`Write, Explain, Edit, Zip.`}></SEO>
 }
 
 const IndexPage: React.FC<PageProps> = () => {
