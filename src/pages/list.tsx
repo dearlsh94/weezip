@@ -90,7 +90,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
                 <span> | </span>
               </strong>
             )}
-            총 <span>{count}</span>개의 검색결과
+            총 <span>{count}</span>건의 검색결과
           </div>
           <Divider color="primary" height={2} />
           <PostList list={list} />
