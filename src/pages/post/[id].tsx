@@ -46,8 +46,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     }
   }, [])
 
-  console.log(content)
-
   return (
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
