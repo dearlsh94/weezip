@@ -199,6 +199,13 @@
   height: 1px;
   background-color: #e5e5e5;
   margin: 16px 0px;
+
+  &.primary {
+    background-color: $primary-color;
+  }
+  &.secondary {
+    background-color: $secondary-color;
+  }
 }
 
 .dim-wrapper {

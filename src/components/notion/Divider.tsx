@@ -1,8 +1,20 @@
 import * as React from 'react'
 import '../../scss/components.scss'
 
-const Divider = () => {
-  return <div className="block-divider" />
+interface Props {
+  color?: string
+  height?: number
+}
+
+const Divider = ({ color, height }: Props) => {
+  return (
+    <div
+      className={`block-divider ${color}`}
+      style={{
+        height: `${height || 1}px`,
+      }}
+    />
+  )
 }
 
 export default Divider
