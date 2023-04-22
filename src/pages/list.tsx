@@ -12,10 +12,12 @@ import PostList from '../module/PostList'
 import { nodeToJson } from '../utils/notionUtils'
 import { parseContentValue } from '../utils/parseUtils'
 import SEO from '../components/header/SEO'
+import ListFilter from '../components/ListFilter'
+import Divider from '../components/notion/Divider'
 
 export const Head: HeadFC = () => {
   return (
-    <SEO title={`게시글 목록`} description={`어떤 글이 있을까요?`}>
+    <SEO title={`글목록`} description={`어떤 글이 있을까요?`}>
       {/* <link rel="canonical" href={`https://weezip.freefeely.com/list`} /> */}
     </SEO>
   )
@@ -27,29 +29,33 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     nodes: nodes,
     categories: classifyCategory(nodes),
   }
+  const parseList: NotionNode[] = nodes.map(node => {
+    const content = nodeToJson(node)
+    const contentValue = parseContentValue(content)
+    node.contentValue = contentValue
+    return node
+  })
   const [list, setList] = useState<NotionNode[]>([])
-  const { category, series } = parseLocationQuery(props.location.search)
 
   useEffect(() => {
-    const parseList: NotionNode[] = nodes.map(node => {
-      const content = nodeToJson(node)
-      const contentValue = parseContentValue(content)
-      node.contentValue = contentValue
-      return node
-    })
-
     let l: NotionNode[] = []
-    if (category) {
-      l = store.categories[category] || parseList
-    }
+    const { series, category } = parseLocationQuery(props.location.search)
 
-    if (series) {
-      l.filter(post => {
-        if (post.contentValue?.series) {
-          return post.contentValue?.series === series
+    l = parseList.filter(post => {
+      if (!post.title.startsWith('/post')) return false
+
+      if (series) {
+        if (post.title.startsWith(`/post/${series}`)) {
+          return true
         }
-      })
-    }
+      }
+
+      if (category) {
+        if (post.title.includes(`-${category}-`)) {
+          return true
+        }
+      }
+    })
 
     l.sort((a, b) => {
       if (a.contentValue?.createdTime && b.contentValue?.createdTime) {
@@ -59,14 +65,15 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       }
     })
 
-    console.log(l)
     setList(l)
-  }, [])
+  }, [props.location.search])
 
   return (
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
         <MainLayout>
+          <ListFilter />
+          <Divider color="primary" height={2} />
           <PostList list={list} />
         </MainLayout>
       </NotionContext.Provider>

@@ -393,3 +393,45 @@
     background-color: $secondary-color;
   }
 }
+
+.list-filter-container {
+  width: 100%;
+  padding: 24px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  .filter-item {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 9.5pt;
+    cursor: pointer;
+
+    &.active {
+      @include animationTada(0.2);
+    }
+  }
+
+  .filter {
+    width: 100%;
+    p.title {
+      margin-bottom: 12px;
+      font-weight: 400;
+      font-size: 11pt;
+      color: $black-color-6;
+    }
+
+    .filter-box {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+    }
+
+    & + .filter {
+      margin-top: 12px;
+    }
+  }
+}
