@@ -39,23 +39,27 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
   useEffect(() => {
     let l: NotionNode[] = []
-    const { series, category } = parseLocationQuery(props.location.search)
+    if (props.location.search) {
+      const { series, category } = parseLocationQuery(props.location.search)
 
-    l = parseList.filter(post => {
-      if (!post.title.startsWith('/post')) return false
+      l = parseList.filter(post => {
+        if (!post.title.startsWith('/post')) return false
 
-      if (series) {
-        if (post.title.startsWith(`/post/${series}`)) {
-          return true
+        if (series) {
+          if (post.title.startsWith(`/post/${series}`)) {
+            return true
+          }
         }
-      }
 
-      if (category) {
-        if (post.title.includes(`-${category}-`)) {
-          return true
+        if (category) {
+          if (post.title.includes(`-${category}-`)) {
+            return true
+          }
         }
-      }
-    })
+      })
+    } else {
+      l = parseList
+    }
 
     l.sort((a, b) => {
       if (a.contentValue?.createdTime && b.contentValue?.createdTime) {
@@ -66,7 +70,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     })
 
     setList(l)
-  }, [props.location.search])
+  }, [props.location])
 
   return (
     <PageContext.Provider value={props}>
