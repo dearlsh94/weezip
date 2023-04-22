@@ -27,7 +27,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
     nodes: nodes,
-    categories: classifyCategory(nodes),
   }
   const parseList: NotionNode[] = nodes.map(node => {
     const content = nodeToJson(node)

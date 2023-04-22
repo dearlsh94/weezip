@@ -28,7 +28,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
     nodes: nodes,
-    categories: classifyCategory(nodes),
   }
   const { id } = props?.params
   const content: Children | null = findContentNode(nodes, `/post/${id}`)

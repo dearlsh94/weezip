@@ -18,7 +18,6 @@ const IndexPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
     nodes: nodes,
-    categories: classifyCategory(nodes),
   }
   const content: Children | null = findContentNode(nodes, '/')
   return (
