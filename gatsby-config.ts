@@ -96,6 +96,13 @@ const config: GatsbyConfig = {
         publisherId: `ca-pub-1622942491482378`,
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://weezip.treefeely.com`,
+        stripQueryString: true,
+      },
+    },
   ],
 }
 

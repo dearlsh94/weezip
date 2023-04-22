@@ -63,7 +63,5 @@ export const parseNotion = (res: any) => {
   rows.forEach(({ node }: { node: NotionNode }) => {
     nodes.push(node)
   })
-  // url 길이 순으로 정렬
-  nodes.sort((a, b) => (a.title?.length > b.title?.length ? 1 : -1))
   return nodes
 }
