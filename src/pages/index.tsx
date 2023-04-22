@@ -11,7 +11,7 @@ import MainLayout from '../layout/MainLayout'
 import SEO from '../components/header/SEO'
 
 export const Head: HeadFC = () => {
-  return <SEO title={`Home`} description={`Write, Explain, Edit, Zip.`}></SEO>
+  return <SEO />
 }
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -21,7 +21,6 @@ const IndexPage: React.FC<PageProps> = () => {
     categories: classifyCategory(nodes),
   }
   const content: Children | null = findContentNode(nodes, '/')
-  console.log({ content })
   return (
     <NotionContext.Provider value={store}>
       <MainLayout>{content && <ContentWrapper childrens={content.children} align="center" />}</MainLayout>

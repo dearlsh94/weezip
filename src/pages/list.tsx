@@ -17,7 +17,7 @@ import Divider from '../components/notion/Divider'
 
 export const Head: HeadFC = () => {
   return (
-    <SEO title={`글목록`} description={`어떤 글이 있을까요?`}>
+    <SEO title={`글목록`} description={`Write, Explain, Edit, Zip`}>
       <link rel="canonical" href={`https://weezip.freefeely.com/list`} />
     </SEO>
   )
