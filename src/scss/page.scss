@@ -75,3 +75,22 @@
     }
   }
 }
+
+.list-layout {
+  .count-box {
+    font-size: 10pt;
+    color: $gray-color;
+    strong {
+      color: $secondary-color;
+      font-weight: 600;
+      span {
+        color: $gray-color;
+        font-weight: 400;
+      }
+    }
+    span {
+      color: $secondary-color;
+      font-weight: 500;
+    }
+  }
+}

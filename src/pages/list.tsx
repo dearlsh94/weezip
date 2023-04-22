@@ -2,8 +2,8 @@ import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
 import '../scss/global.scss'
+import '../scss/page.scss'
 import { useGetNotionQuery } from '../services/use-notion'
-import { classifyCategory } from '../utils/notionUtils'
 import MainLayout from '../layout/MainLayout'
 import { NotionContext, PageContext } from '../store/rootStore'
 import { INotionContext, NotionNode } from '../types'
@@ -14,6 +14,8 @@ import { parseContentValue } from '../utils/parseUtils'
 import SEO from '../components/header/SEO'
 import ListFilter from '../components/ListFilter'
 import Divider from '../components/notion/Divider'
+import { SERIES_FILTERS } from '../constants'
+import { CATEGORY_FILTERS } from '../constants'
 
 export const Head: HeadFC = () => {
   return (
@@ -35,6 +37,8 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     return node
   })
   const [list, setList] = useState<NotionNode[]>([])
+  const [count, setCount] = useState(0)
+  const [filterText, setFilterText] = useState('')
 
   useEffect(() => {
     let l: NotionNode[] = []
@@ -46,12 +50,14 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
         if (series) {
           if (post.title.startsWith(`/post/${series}`)) {
+            setFilterText(SERIES_FILTERS.find(f => f.key === series)?.name || '')
             return true
           }
         }
 
         if (category) {
           if (post.title.includes(`-${category}-`)) {
+            setFilterText(CATEGORY_FILTERS.find(f => f.key === category)?.name || '')
             return true
           }
         }
@@ -68,6 +74,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       }
     })
 
+    setCount(l.length)
     setList(l)
   }, [props.location])
 
@@ -76,6 +83,15 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       <NotionContext.Provider value={store}>
         <MainLayout className="list-layout">
           <ListFilter />
+          <div className="count-box">
+            {filterText && (
+              <strong>
+                {filterText}
+                <span> | </span>
+              </strong>
+            )}
+            총 <span>{count}</span>개의 검색결과
+          </div>
           <Divider color="primary" height={2} />
           <PostList list={list} />
         </MainLayout>
