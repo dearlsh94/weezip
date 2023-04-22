@@ -99,9 +99,9 @@ const Header = () => {
                             {nav.title.toUpperCase() === 'HOME' && <IconHome />}
                             <span>{nav.title}</span>
                           </div>
-                          {nav.url.includes('/list') && (
+                          {/* {nav.url.includes('/list') && (
                             <div className="count">{categories[nav.title.toLowerCase()]?.length || 0}</div>
-                          )}
+                          )} */}
                         </Linker>
                       </li>
                     )
