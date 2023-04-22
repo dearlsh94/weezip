@@ -19,7 +19,7 @@ export const Head: HeadFC = ({ params }) => {
   const title = content?.properties?.remark.rich_text || ''
   return (
     <SEO title={title} description={content?.properties?.series.rich_text}>
-      {/* <link rel="canonical" href={`https://weezip.freefeely.com/post`} /> */}
+      <link rel="canonical" href={`https://weezip.freefeely.com/post/${params?.id}`} />
     </SEO>
   )
 }
