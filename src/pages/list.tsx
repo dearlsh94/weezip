@@ -74,7 +74,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   return (
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
-        <MainLayout>
+        <MainLayout className="list-layout">
           <ListFilter />
           <Divider color="primary" height={2} />
           <PostList list={list} />

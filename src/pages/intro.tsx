@@ -2,7 +2,7 @@ import * as React from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
 import '../scss/global.scss'
 import { useGetNotionQuery } from '../services/use-notion'
-import { classifyCategory, findContentNode } from '../utils/notionUtils'
+import { findContentNode } from '../utils/notionUtils'
 import { Children } from '../types/contentType'
 import ContentWrapper from '../module/ContentWrapper'
 import MainLayout from '../layout/MainLayout'
@@ -23,7 +23,7 @@ const IntroPage: React.FC<PageProps> = () => {
   console.log({ content })
   return (
     <NotionContext.Provider value={store}>
-      <MainLayout>{content && <ContentWrapper childrens={content.children} />}</MainLayout>
+      <MainLayout className="intro-layout">{content && <ContentWrapper childrens={content.children} />}</MainLayout>
     </NotionContext.Provider>
   )
 }

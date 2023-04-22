@@ -6,12 +6,13 @@ import ScrollProgress from '../components/ScrollProgress'
 
 interface Props {
   children: React.ReactNode
+  className: string
 }
 
-const MainLayout = ({ children }: Props) => {
+const MainLayout = ({ children, className }: Props) => {
   return (
     <React.Fragment>
-      <div className="main-layout">
+      <div className={`main-layout ${className}`}>
         <Header />
         <ScrollProgress />
         <main>
