@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
 import '../../scss/page.scss'
 import { useGetNotionQuery } from '../../services/use-notion'
-import { classifyCategory, findContentNode } from '../../utils/notionUtils'
+import { findContentNode } from '../../utils/notionUtils'
 import MainLayout from '../../layout/MainLayout'
 import { NotionContext, PageContext } from '../../store/rootStore'
 import { INotionContext } from '../../types'
@@ -28,7 +28,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
     nodes: nodes,
-    categories: classifyCategory(nodes),
   }
   const { id } = props?.params
   const content: Children | null = findContentNode(nodes, `/post/${id}`)
@@ -49,7 +48,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   return (
     <PageContext.Provider value={props}>
       <NotionContext.Provider value={store}>
-        <MainLayout>
+        <MainLayout className="post-layout">
           <div>
             <TagBadges tag={content?.properties.tag} />
           </div>

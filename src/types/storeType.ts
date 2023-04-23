@@ -2,7 +2,6 @@ import { NotionNode } from './nodeTypes'
 
 export interface INotionContext {
   nodes: NotionNode[]
-  categories: NotionCategories
 }
 
 export interface NotionCategories {

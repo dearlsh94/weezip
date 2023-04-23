@@ -1,10 +1,9 @@
 import * as React from 'react'
 import { useEffect, useContext, useState } from 'react'
 import { NotionContext } from '../store/rootStore'
-import { NotionCategories } from '../types'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
-import { isDebug, gnbLinkes } from '../constants'
+import { isDebug, GNB_MENUS } from '../constants'
 import Linker from '../components/Linker'
 import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
@@ -16,7 +15,6 @@ import IconDoubleArrow from '../components/icon/IconDoubleArrow'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
-  const categories: NotionCategories = useContext(NotionContext).categories
   const [isSnbOpen, setIsSnbOpen] = useState(false)
   const [status, setStatus] = useState('')
   const [isMenuHover, setIsMenuHover] = useState(false)
@@ -90,8 +88,8 @@ const Header = () => {
             </div>
             <nav className="nav-box">
               <ul>
-                {gnbLinkes?.length > 0 &&
-                  gnbLinkes.map((nav, i) => {
+                {GNB_MENUS?.length > 0 &&
+                  GNB_MENUS.map((nav, i) => {
                     return (
                       <li key={`gnb-${i}`} className={`nav-item`}>
                         <Linker url={nav.url}>
@@ -99,9 +97,6 @@ const Header = () => {
                             {nav.title.toUpperCase() === 'HOME' && <IconHome />}
                             <span>{nav.title}</span>
                           </div>
-                          {/* {nav.url.includes('/list') && (
-                            <div className="count">{categories[nav.title.toLowerCase()]?.length || 0}</div>
-                          )} */}
                         </Linker>
                       </li>
                     )
