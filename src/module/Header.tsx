@@ -3,7 +3,7 @@ import { useEffect, useContext, useState } from 'react'
 import { NotionContext } from '../store/rootStore'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
-import { isDebug, gnbLinkes } from '../constants'
+import { isDebug, GNB_MENUS } from '../constants'
 import Linker from '../components/Linker'
 import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
@@ -88,8 +88,8 @@ const Header = () => {
             </div>
             <nav className="nav-box">
               <ul>
-                {gnbLinkes?.length > 0 &&
-                  gnbLinkes.map((nav, i) => {
+                {GNB_MENUS?.length > 0 &&
+                  GNB_MENUS.map((nav, i) => {
                     return (
                       <li key={`gnb-${i}`} className={`nav-item`}>
                         <Linker url={nav.url}>

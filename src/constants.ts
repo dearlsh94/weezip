@@ -1,12 +1,8 @@
 import { Filter } from './types'
 
 export const isDebug = false
-export const urlMap: Map<string, string> = new Map([
-  ['/', 'Home'],
-  ['/intro', 'Intro'],
-])
 
-export const gnbLinkes = [
+export const GNB_MENUS = [
   { url: '/', title: 'Home' },
   { url: '/intro', title: 'Intro' },
   { url: '/list', title: 'List' },
