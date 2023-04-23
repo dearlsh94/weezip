@@ -211,6 +211,10 @@ footer {
       }
       .contact-item {
         display: flex;
+
+        div + div {
+          margin-left: 12px;
+        }
       }
     }
     .item + .item {

@@ -4,6 +4,7 @@ import Linker from '../components/Linker'
 import IconMail from '../components/icon/IconMail'
 import CircleIconWrapper from '../components/icon/CircleIconWrapper'
 import { mail } from '../constants'
+import IconInstagram from '../components/icon/IconInstagram'
 
 const Footer = () => {
   return (
@@ -16,6 +17,11 @@ const Footer = () => {
               <CircleIconWrapper color="white">
                 <Linker url={`mailto:${mail}`}>
                   <IconMail size={24} fill="white" />
+                </Linker>
+              </CircleIconWrapper>
+              <CircleIconWrapper color="white">
+                <Linker url={`https://www.instagram.com/treefeely/`} target="_blank">
+                  <IconInstagram size={24} fill="white" />
                 </Linker>
               </CircleIconWrapper>
             </div>
