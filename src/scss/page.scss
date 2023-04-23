@@ -77,20 +77,37 @@
 }
 
 .list-layout {
-  .count-box {
-    font-size: 10pt;
-    color: $gray-color;
-    strong {
-      color: $secondary-color;
-      font-weight: 600;
-      span {
-        color: $gray-color;
-        font-weight: 400;
+  .info-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    svg {
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    &.loading {
+      svg {
+        @include animationRotate(1s);
       }
     }
-    span {
-      color: $secondary-color;
-      font-weight: 500;
+
+    .count-box {
+      font-size: 10pt;
+      color: $gray-color;
+      @include ellipsis;
+      strong {
+        color: $secondary-color;
+        font-weight: 600;
+        span {
+          color: $gray-color;
+          font-weight: 400;
+        }
+      }
+      span {
+        color: $secondary-color;
+        font-weight: 500;
+      }
     }
   }
 }
