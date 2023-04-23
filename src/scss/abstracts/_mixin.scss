@@ -58,6 +58,18 @@
   }
 }
 
+@mixin animationRotate($duration) {
+  animation: rotate $duration;
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+}
+
 @mixin animationTada($diffScale: 0.1) {
   animation: tada;
   animation-duration: 1.2s;
