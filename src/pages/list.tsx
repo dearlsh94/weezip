@@ -30,13 +30,17 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
     nodes: nodes,
+    tags: classifyTags(nodes),
   }
-  const parseList: NotionNode[] = nodes.map(node => {
-    const content = nodeToJson(node)
-    const contentValue = parseContentValue(content)
-    node.contentValue = contentValue
-    return node
-  })
+  const parseList: NotionNode[] = nodes
+    .map(node => {
+      const content = nodeToJson(node)
+      const contentValue = parseContentValue(content)
+      node.contentValue = contentValue
+      return node
+    })
+    .filter(n => n.title.startsWith('/post'))
+
   const [list, setList] = useState<NotionNode[]>([])
   const [count, setCount] = useState(0)
   const [filterText, setFilterText] = useState('전체')
