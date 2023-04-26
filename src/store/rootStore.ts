@@ -4,12 +4,7 @@ import { INotionContext } from '../types'
 
 export const NotionContext = React.createContext<INotionContext>({
   nodes: [],
-  categories: {
-    write: [],
-    explain: [],
-    edit: [],
-    zip: [],
-  },
+  tags: new Map(),
 })
 
 export const PageContext = React.createContext<PageProps | null>(null)

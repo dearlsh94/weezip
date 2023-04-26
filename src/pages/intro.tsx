@@ -20,7 +20,6 @@ const IntroPage: React.FC<PageProps> = () => {
     nodes: nodes,
   }
   const content: Children | null = findContentNode(nodes, '/intro')
-  console.log({ content })
   return (
     <NotionContext.Provider value={store}>
       <MainLayout className="intro-layout">{content && <ContentWrapper childrens={content.children} />}</MainLayout>

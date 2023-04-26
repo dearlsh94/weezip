@@ -422,6 +422,7 @@
 
   .filter {
     width: 100%;
+
     p.title {
       margin-bottom: 12px;
       font-weight: 400;
@@ -437,6 +438,15 @@
 
     & + .filter {
       margin-top: 12px;
+    }
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      p.title {
+        width: 100px;
+        margin-bottom: 0px;
+      }
     }
   }
 }

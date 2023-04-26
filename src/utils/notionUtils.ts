@@ -15,32 +15,21 @@ export const findMDContentNode = (nodes: NotionNode[], url: string): string => {
   return node ? node.markdownString : ''
 }
 
-export const classifyCategory = (nodes: NotionNode[]) => {
-  let write: NotionNode[] = []
-  let explain: NotionNode[] = []
-  let edit: NotionNode[] = []
-  let zip: NotionNode[] = []
+export const classifyTags = (nodes: NotionNode[]) => {
+  const tagMap = new Map<string, NotionNode[]>()
   nodes.map(node => {
-    // post 경로가 아닌 글들은 제외
-    if (node.title.toUpperCase().includes('POST')) {
+    if (node?.title?.toUpperCase()?.includes('POST')) {
       const json = nodeToJson(node)
-      json.properties?.category?.multi_select?.map(select => {
-        if (select?.name?.toUpperCase().includes('WRITE')) {
-          write.push(node)
-        } else if (select?.name?.toUpperCase().includes('EXPLAIN')) {
-          explain.push(node)
-        } else if (select?.name?.toUpperCase().includes('EDIT')) {
-          edit.push(node)
-        } else if (select?.name?.toUpperCase().includes('ZIP')) {
-          zip.push(node)
+      if (!node.title.startsWith('/post')) return
+      json.properties?.tag?.multi_select?.map(v => {
+        const e = tagMap.get(v.name)
+        if (e && e.length > 0) {
+          tagMap.set(v.name, [...e, node])
+        } else {
+          tagMap.set(v.name, [node])
         }
       })
     }
   })
-  return {
-    write,
-    explain,
-    edit,
-    zip,
-  }
+  return tagMap
 }
