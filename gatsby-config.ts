@@ -4,11 +4,13 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const siteUrl = 'https://weezip.treefeely.com'
+
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Weezip`,
+    title: 'Weezip',
     description: '글쓰는 프론트엔드 개발자의 블로그. 편하고 예쁜 걸 좋아합니다.',
-    siteUrl: `https://weezip.treefeely.com`,
+    siteUrl: 'https://weezip.treefeely.com',
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -20,7 +22,34 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
-    'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `{
+          allNotion {
+            edges {
+              node {
+                id
+                title
+              }
+            }
+          }
+        }`,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({ allNotion: { edges: allPages } }: any) => {
+          return allPages.map((edge: any) => {
+            return { ...edge.node, path: edge.node.title }
+          })
+        },
+        serializer: (props: any) => {
+          return {
+            url: `${props.title}`,
+            changefreq: 'daily',
+            priority: 0.7,
+          }
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
