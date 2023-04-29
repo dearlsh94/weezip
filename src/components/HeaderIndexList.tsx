@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import '@scss/components.scss'
-import { throttle } from '../utils/commonUtils'
+import { throttle } from '@utils/commonUtils'
 
 interface Props {
   list: HTMLHeadingElement[]
