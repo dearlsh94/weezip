@@ -1,17 +1,17 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
-import '../../scss/page.scss'
-import { useGetNotionQuery } from '../../services/use-notion'
-import { findContentNode } from '../../utils/notionUtils'
-import MainLayout from '../../layout/MainLayout'
-import { NotionContext, PageContext } from '../../store/rootStore'
-import { INotionContext } from '../../types'
-import SEO from '../../components/header/SEO'
-import { Children } from '../../types'
-import ContentWrapper from '../../module/ContentWrapper'
-import HeaderIndexList from '../../components/HeaderIndexList'
-import TagBadges from '../../components/TagBadges'
+import '@scss/page.scss'
+import { useGetNotionQuery } from '@services/use-notion'
+import { findContentNode } from '@utils/notionUtils'
+import MainLayout from '@layout/MainLayout'
+import { NotionContext, PageContext } from '@store/rootStore'
+import { INotionContext } from '@types'
+import SEO from '@components/header/SEO'
+import { Children } from '@types'
+import ContentWrapper from '@module/ContentWrapper'
+import HeaderIndexList from '@components/HeaderIndexList'
+import TagBadges from '@components/TagBadges'
 
 export const Head: HeadFC = ({ params }) => {
   const nodes = useGetNotionQuery()
@@ -56,7 +56,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
             {content?.properties?.series.rich_text && (
               <span className={`series-title`}>[{content?.properties?.series.rich_text}]</span>
             )}
-            <p className="title">{title}</p>
+            <h1 className="title">{title}</h1>
             <div className="desc-box">
               <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
               <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>

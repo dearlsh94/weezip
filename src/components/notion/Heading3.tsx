@@ -1,7 +1,7 @@
 import * as React from 'react'
-import '../../scss/components.scss'
-import { TextBlock } from '../../types'
-import Paragraph from './Paragraph'
+import '@scss/components.scss'
+import { TextBlock } from '@types'
+import Paragraph from '@components/notion/Paragraph'
 
 interface Props {
   head3?: TextBlock

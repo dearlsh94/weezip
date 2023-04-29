@@ -1,19 +1,28 @@
 import * as React from 'react'
 import { useContext } from 'react'
-import '../scss/components.scss'
-import { CATEGORY_FILTERS, SERIES_FILTERS } from '../constants'
-import Divider from './notion/Divider'
-import FilterItem from './FilterItem'
-import { NotionContext } from '../store/rootStore'
+import '@scss/components.scss'
+import { CATEGORY_FILTERS, SERIES_FILTERS } from '@src/constants'
+import Divider from '@components/notion/Divider'
+import FilterItem from '@components/FilterItem'
+import { NotionContext } from '@store/rootStore'
+
 const ListFilter = () => {
   const tags = useContext(NotionContext).tags
-  const renderedData: JSX.Element[] = []
+  const renderTags: JSX.Element[] = []
 
   if (tags) {
     tags.forEach((value, key) => {
-      renderedData.push(
+      const [name, color] = key.split('|')
+      renderTags.push(
         <React.Fragment key={`tags-filter-item-${key}`}>
-          {key} : {value.length}
+          <FilterItem
+            filter={{
+              type: 'tag',
+              key: name,
+              name,
+              color: `${color}_background`,
+            }}
+          />
         </React.Fragment>
       )
     })
@@ -48,21 +57,12 @@ const ListFilter = () => {
             })}
           </div>
         </div>
-        {false && renderedData.length > 0 && (
+        {renderTags.length > 0 && (
           <>
             <Divider />
             <div className="tag filter">
               <p className="title">Tag</p>
-              {renderedData}
-              {/* <div className="filter-box">
-            {tags?.forEach((tag, idx) => {
-              return (
-                <React.Fragment key={`tags-filter-item-${idx}`}>
-                  {tag.key}
-                </React.Fragment>
-              )
-            })}
-          </div> */}
+              <div className="badge-box">{renderTags}</div>
             </div>
           </>
         )}

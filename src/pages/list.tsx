@@ -1,22 +1,22 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { HeadFC, PageProps, navigate } from 'gatsby'
-import '../scss/global.scss'
-import '../scss/page.scss'
-import { useGetNotionQuery } from '../services/use-notion'
-import MainLayout from '../layout/MainLayout'
-import { NotionContext, PageContext } from '../store/rootStore'
-import { INotionContext, NotionNode } from '../types'
-import { parseLocationQuery } from '../utils/parseUtils'
-import PostList from '../module/PostList'
-import { nodeToJson, classifyTags } from '../utils/notionUtils'
-import { parseContentValue } from '../utils/parseUtils'
-import SEO from '../components/header/SEO'
-import ListFilter from '../components/ListFilter'
-import Divider from '../components/notion/Divider'
-import { SERIES_FILTERS } from '../constants'
-import { CATEGORY_FILTERS } from '../constants'
-import IconClearAll from '../components/icon/IconClearAll'
+import '@scss/global.scss'
+import '@scss/page.scss'
+import { useGetNotionQuery } from '@services/use-notion'
+import MainLayout from '@layout/MainLayout'
+import { NotionContext, PageContext } from '@store/rootStore'
+import { INotionContext, NotionNode } from '@types'
+import { parseLocationQuery } from '@utils/parseUtils'
+import PostList from '@module/PostList'
+import { nodeToJson, classifyTags } from '@utils/notionUtils'
+import { parseContentValue } from '@utils/parseUtils'
+import SEO from '@components/header/SEO'
+import ListFilter from '@components/ListFilter'
+import Divider from '@components/notion/Divider'
+import { SERIES_FILTERS } from '@src/constants'
+import { CATEGORY_FILTERS } from '@src/constants'
+import IconClearAll from '@components/icon/IconClearAll'
 
 export const Head: HeadFC = () => {
   return (
@@ -49,23 +49,24 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   useEffect(() => {
     let l: NotionNode[] = []
     if (props.location.search) {
-      const { series, category } = parseLocationQuery(props.location.search)
+      const { series, category, tag } = parseLocationQuery(props.location.search)
 
       l = parseList.filter(post => {
         if (!post.title.startsWith('/post')) return false
 
         if (series) {
-          if (post.title.startsWith(`/post/${series}`)) {
-            setFilterText(SERIES_FILTERS.find(f => f.key === series)?.name || '')
-            return true
-          }
+          setFilterText(SERIES_FILTERS.find(f => f.key === series)?.name || '')
+          return post.title.startsWith(`/post/${series}`)
         }
 
         if (category) {
-          if (post.title.includes(`-${category}-`)) {
-            setFilterText(CATEGORY_FILTERS.find(f => f.key === category)?.name || '')
-            return true
-          }
+          setFilterText(CATEGORY_FILTERS.find(f => f.key === category)?.name || '')
+          return post.title.includes(`-${category}-`)
+        }
+
+        if (tag) {
+          setFilterText(`${tag} 태그`)
+          return post?.contentValue?.tag?.find(t => t.name === tag)
         }
       })
     } else {

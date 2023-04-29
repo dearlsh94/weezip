@@ -1,8 +1,8 @@
 import * as React from 'react'
-import '../../scss/components.scss'
-import { Bookmark, TextBlock, TextItem } from '../../types'
-import Linker from '../Linker'
-import Paragraph from './Paragraph'
+import '@scss/components.scss'
+import { Bookmark, TextBlock, TextItem } from '@types'
+import Linker from '@components/Linker'
+import Paragraph from '@components/notion/Paragraph'
 interface Props {
   bookmark: Bookmark
 }

@@ -1,9 +1,11 @@
 import type { GatsbyConfig } from 'gatsby'
 
+// Handle Environment Variables
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+// For Site Metadata
 const siteUrl = 'https://weezip.treefeely.com'
 
 const config: GatsbyConfig = {
@@ -22,6 +24,25 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
+    {
+      resolve: 'gatsby-plugin-alias-imports',
+      options: {
+        alias: {
+          '@components': 'src/components',
+          '@layout': 'src/layout',
+          '@module': 'src/module',
+          '@pages': 'src/pages',
+          '@scss': 'src/scss',
+          '@services': 'src/services',
+          '@store': 'src/store',
+          '@types': 'src/types',
+          '@utils': 'src/utils',
+          '@images': 'src/images',
+          '@src': 'src',
+        },
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
+      },
+    },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

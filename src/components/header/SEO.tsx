@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useSiteMetadata } from '../../services/use-site-metadata'
+import { useSiteMetadata } from '@services/use-site-metadata'
 
 interface Props {
   title?: string

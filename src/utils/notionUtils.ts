@@ -1,5 +1,4 @@
-import { Children } from '../types/contentType'
-import { NotionNode } from '../types/nodeTypes'
+import { Children, NotionNode } from '@types'
 
 export const nodeToJson = (node?: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null
@@ -22,11 +21,12 @@ export const classifyTags = (nodes: NotionNode[]) => {
       const json = nodeToJson(node)
       if (!node.title.startsWith('/post')) return
       json.properties?.tag?.multi_select?.map(v => {
-        const e = tagMap.get(v.name)
+        const key = `${v.name}|${v.color}`
+        const e = tagMap.get(key)
         if (e && e.length > 0) {
-          tagMap.set(v.name, [...e, node])
+          tagMap.set(key, [...e, node])
         } else {
-          tagMap.set(v.name, [node])
+          tagMap.set(key, [node])
         }
       })
     }

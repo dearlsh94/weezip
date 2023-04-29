@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Linker from '../components/Linker'
-import PostListItem from '../components/PostListItem'
-import '../scss/components.scss'
-import { NotionNode } from '../types'
+import Linker from '@components/Linker'
+import PostListItem from '@components/PostListItem'
+import '@scss/components.scss'
+import { NotionNode } from '@types'
 
 interface Props {
   list: NotionNode[]

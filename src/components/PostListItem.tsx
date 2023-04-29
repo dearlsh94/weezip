@@ -1,7 +1,7 @@
 import * as React from 'react'
-import '../scss/components.scss'
-import { NotionNode } from '../types'
-import TagBadges from './TagBadges'
+import '@scss/components.scss'
+import { NotionNode } from '@types'
+import TagBadges from '@components/TagBadges'
 
 interface Props {
   post: NotionNode
@@ -23,8 +23,10 @@ const PostListItem = ({ post }: Props) => {
           <div className="tag-box">
             <TagBadges selectTags={tag} />
           </div>
-          <span className="date">작성일 : {createdTime}</span>
-          <span className="date">수정일 : {lastEditedTime}</span>
+          <div className="date-box">
+            <span className="date">작성일 : {createdTime}</span>
+            <span className="date">수정일 : {lastEditedTime}</span>
+          </div>
         </div>
       </div>
     </React.Fragment>

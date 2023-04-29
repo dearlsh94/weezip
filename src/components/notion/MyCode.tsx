@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Code } from '../../types'
+import { Code } from '@types'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atelierCaveDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-import Paragraph from './Paragraph'
+import Paragraph from '@components/notion/Paragraph'
 
 interface Props {
   code: Code
