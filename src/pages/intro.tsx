@@ -5,7 +5,7 @@ import { useGetNotionQuery } from '@services/use-notion'
 import { findContentNode } from '@utils/notionUtils'
 import { Children, INotionContext } from '@types'
 import ContentWrapper from '../module/ContentWrapper'
-import MainLayout from '../layout/MainLayout'
+import MainLayout from '@layout/MainLayout'
 import { NotionContext } from '@store/rootStore'
 import SEO from '@components/header/SEO'
 
