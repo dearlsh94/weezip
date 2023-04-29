@@ -6,7 +6,7 @@ import { findContentNode } from '@utils/notionUtils'
 import { Children, INotionContext } from '@types'
 import ContentWrapper from '../module/ContentWrapper'
 import MainLayout from '../layout/MainLayout'
-import { NotionContext } from '../store/rootStore'
+import { NotionContext } from '@store/rootStore'
 import SEO from '@components/header/SEO'
 
 export const Head: HeadFC = () => {

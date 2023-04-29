@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useContext, useState } from 'react'
-import { NotionContext } from '../store/rootStore'
+import { NotionContext } from '@store/rootStore'
 import '@scss/module.scss'
 import { NotionNode } from '@types'
 import { isDebug, GNB_MENUS } from '@src/constants'

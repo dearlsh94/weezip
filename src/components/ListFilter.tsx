@@ -4,7 +4,7 @@ import '@scss/components.scss'
 import { CATEGORY_FILTERS, SERIES_FILTERS } from '@src/constants'
 import Divider from '@components/notion/Divider'
 import FilterItem from '@components/FilterItem'
-import { NotionContext } from '../store/rootStore'
+import { NotionContext } from '@store/rootStore'
 
 const ListFilter = () => {
   const tags = useContext(NotionContext).tags
