@@ -23,8 +23,10 @@ const PostListItem = ({ post }: Props) => {
           <div className="tag-box">
             <TagBadges selectTags={tag} />
           </div>
-          <span className="date">작성일 : {createdTime}</span>
-          <span className="date">수정일 : {lastEditedTime}</span>
+          <div className="date-box">
+            <span className="date">작성일 : {createdTime}</span>
+            <span className="date">수정일 : {lastEditedTime}</span>
+          </div>
         </div>
       </div>
     </React.Fragment>

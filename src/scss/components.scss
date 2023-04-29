@@ -259,21 +259,28 @@
       p {
         font-size: 15pt;
         font-weight: 500;
-        margin: 8px 0px;
+        margin-top: 8px;
       }
       .info-box {
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
         .tag-box {
+          margin-top: 8px;
           margin-right: 8px;
         }
-        span.date {
-          color: $gray-color;
-          font-size: 10pt;
-        }
-        span.date + span.date {
-          margin-left: 8px;
+        .date-box {
+          margin-top: 8px;
+          flex-grow: 1;
+          text-align: right;
+          span.date {
+            color: $gray-color;
+            font-size: 10pt;
+          }
+          span.date + span.date {
+            margin-left: 8px;
+          }
         }
       }
     }
