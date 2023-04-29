@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
-import '../../scss/page.scss'
+import '@scss/page.scss'
 import { useGetNotionQuery } from '../../services/use-notion'
 import { findContentNode } from '../../utils/notionUtils'
 import MainLayout from '../../layout/MainLayout'

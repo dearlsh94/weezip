@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useContext } from 'react'
-import '../scss/components.scss'
+import '@scss/components.scss'
 import { CATEGORY_FILTERS, SERIES_FILTERS } from '../constants'
 import Divider from './notion/Divider'
 import FilterItem from './FilterItem'

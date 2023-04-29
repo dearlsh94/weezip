@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '../../scss/components.scss'
+import '@scss/components.scss'
 import { Bookmark, TextBlock, TextItem } from '../../types'
 import Linker from '../Linker'
 import Paragraph from './Paragraph'
