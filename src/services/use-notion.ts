@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby'
-import { NotionNode } from '../types'
+import { NotionNode } from '@types'
 
 export const getNotionQuery = graphql`
   query {

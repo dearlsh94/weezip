@@ -1,6 +1,6 @@
 import * as React from 'react'
 import '@scss/components.scss'
-import { NotionNode } from '../types'
+import { NotionNode } from '@types'
 import TagBadges from './TagBadges'
 
 interface Props {

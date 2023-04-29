@@ -39,7 +39,7 @@
       "@scss/*": ["src/scss/*"],
       "@services/*": ["src/services/*"],
       "@store/*": ["src/store/*"],
-      "@types/*": ["src/types/*"],
+      "@types": ["src/types"],
       "@utils/*": ["src/utils/*"],
       "@images/*": ["src/images/*"],
       "@src/*": ["src"]

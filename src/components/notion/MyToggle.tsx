@@ -1,6 +1,6 @@
 import * as React from 'react'
 import '@scss/components.scss'
-import { Children, TextBlock } from '../../types'
+import { Children, TextBlock } from '../@types'
 import Paragraph from './Paragraph'
 import ContentWrapper from '../../module/ContentWrapper'
 import IconArrow from '../icon/IconArrow'

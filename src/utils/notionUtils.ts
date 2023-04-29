@@ -1,5 +1,4 @@
-import { Children } from '../types/contentType'
-import { NotionNode } from '../types/nodeTypes'
+import { Children, NotionNode } from '@types'
 
 export const nodeToJson = (node?: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null

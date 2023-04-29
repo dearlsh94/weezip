@@ -1,6 +1,6 @@
 import * as React from 'react'
 import '@scss/components.scss'
-import { BlockType, Children } from '../types'
+import { BlockType, Children } from '@types'
 import Paragraph from '@components/notion/Paragraph'
 import Heading1 from '@components/notion/Heading1'
 import Heading2 from '@components/notion/Heading2'

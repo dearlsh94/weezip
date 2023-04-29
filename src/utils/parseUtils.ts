@@ -1,4 +1,4 @@
-import { Children, ContentValue } from '../types'
+import { Children, ContentValue } from '@types'
 import { convertDatetimeFormat } from './convertUtils'
 
 export const parseLocationQuery = (search = '') => {

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TextBlock, TextItem } from '../../types/componentType'
+import { TextBlock, TextItem } from '@types'
 import Linker from '../Linker'
 
 interface Props {

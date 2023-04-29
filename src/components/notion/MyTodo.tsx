@@ -1,6 +1,6 @@
 import * as React from 'react'
 import '@scss/components.scss'
-import { Todo } from '../../types'
+import { Todo } from '../@types'
 import Paragraph from './Paragraph'
 
 interface Props {

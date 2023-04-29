@@ -1,6 +1,6 @@
 import * as React from 'react'
 import '@scss/components.scss'
-import { Property, Select } from '../types'
+import { Property, Select } from '@types'
 
 interface Props {
   tag?: Property | undefined

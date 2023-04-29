@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useLocation } from '@reach/router'
 import '@scss/components.scss'
-import { Filter } from '../types'
+import { Filter } from '@types'
 import { navigate } from 'gatsby'
 
 interface Props {
