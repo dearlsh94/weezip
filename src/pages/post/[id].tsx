@@ -56,7 +56,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
             {content?.properties?.series.rich_text && (
               <span className={`series-title`}>[{content?.properties?.series.rich_text}]</span>
             )}
-            <p className="title">{title}</p>
+            <h1 className="title">{title}</h1>
             <div className="desc-box">
               <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
               <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
