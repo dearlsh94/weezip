@@ -22,11 +22,12 @@ export const classifyTags = (nodes: NotionNode[]) => {
       const json = nodeToJson(node)
       if (!node.title.startsWith('/post')) return
       json.properties?.tag?.multi_select?.map(v => {
-        const e = tagMap.get(v.name)
+        const key = `${v.name}|${v.color}`
+        const e = tagMap.get(key)
         if (e && e.length > 0) {
-          tagMap.set(v.name, [...e, node])
+          tagMap.set(key, [...e, node])
         } else {
-          tagMap.set(v.name, [node])
+          tagMap.set(key, [node])
         }
       })
     }

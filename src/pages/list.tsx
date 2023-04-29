@@ -49,23 +49,24 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   useEffect(() => {
     let l: NotionNode[] = []
     if (props.location.search) {
-      const { series, category } = parseLocationQuery(props.location.search)
+      const { series, category, tag } = parseLocationQuery(props.location.search)
 
       l = parseList.filter(post => {
         if (!post.title.startsWith('/post')) return false
 
         if (series) {
-          if (post.title.startsWith(`/post/${series}`)) {
-            setFilterText(SERIES_FILTERS.find(f => f.key === series)?.name || '')
-            return true
-          }
+          setFilterText(SERIES_FILTERS.find(f => f.key === series)?.name || '')
+          return post.title.startsWith(`/post/${series}`)
         }
 
         if (category) {
-          if (post.title.includes(`-${category}-`)) {
-            setFilterText(CATEGORY_FILTERS.find(f => f.key === category)?.name || '')
-            return true
-          }
+          setFilterText(CATEGORY_FILTERS.find(f => f.key === category)?.name || '')
+          return post.title.includes(`-${category}-`)
+        }
+
+        if (tag) {
+          setFilterText(`${tag} 태그`)
+          return post?.contentValue?.tag?.find(t => t.name === tag)
         }
       })
     } else {
