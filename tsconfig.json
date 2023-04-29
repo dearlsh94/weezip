@@ -33,16 +33,16 @@
     "baseUrl": "." /* Specify the base directory to resolve non-relative module names. */,
     "paths": {
       "@components/*": ["src/components/*"],
-      "@layout": ["src/layout"],
-      "@module": ["src/module"],
-      "@pages": ["src/pages"],
-      "@scss": ["src/scss"],
-      "@services": ["src/services"],
-      "@store": ["src/store"],
-      "@types": ["src/types"],
-      "@utils": ["src/utils"],
-      "@images": ["src/images"],
-      "@src": ["src"]
+      "@layout/*": ["src/layout/*"],
+      "@module/*": ["src/module/*"],
+      "@pages/*": ["src/pages/*"],
+      "@scss/*": ["src/scss/*"],
+      "@services/*": ["src/services/*"],
+      "@store/*": ["src/store/*"],
+      "@types/*": ["src/types/*"],
+      "@utils/*": ["src/utils/*"],
+      "@images/*": ["src/images/*"],
+      "@src/*": ["src"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
