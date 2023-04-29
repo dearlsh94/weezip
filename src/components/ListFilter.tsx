@@ -2,8 +2,8 @@ import * as React from 'react'
 import { useContext } from 'react'
 import '@scss/components.scss'
 import { CATEGORY_FILTERS, SERIES_FILTERS } from '@src/constants'
-import Divider from './notion/Divider'
-import FilterItem from './FilterItem'
+import Divider from '@components/notion/Divider'
+import FilterItem from '@components/FilterItem'
 import { NotionContext } from '../store/rootStore'
 
 const ListFilter = () => {

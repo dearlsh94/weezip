@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { TextBlock, TextItem } from '@types'
-import Linker from '../Linker'
+import Linker from '@components/Linker'
 
 interface Props {
   paragraph?: TextBlock

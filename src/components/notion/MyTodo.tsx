@@ -1,7 +1,7 @@
 import * as React from 'react'
 import '@scss/components.scss'
-import { Todo } from '../@types'
-import Paragraph from './Paragraph'
+import { Todo } from '@types'
+import Paragraph from '@components/notion/Paragraph'
 
 interface Props {
   todo: Todo
