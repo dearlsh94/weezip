@@ -2,7 +2,7 @@ import * as React from 'react'
 import '@scss/components.scss'
 import Paragraph from '@components/notion/Paragraph'
 import { Children } from '@types'
-import ContentWrapper from '../../module/ContentWrapper'
+import ContentWrapper from '@module/ContentWrapper'
 
 interface Props {
   numberedListItem: Children

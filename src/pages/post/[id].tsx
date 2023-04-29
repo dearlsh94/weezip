@@ -9,7 +9,7 @@ import { NotionContext, PageContext } from '@store/rootStore'
 import { INotionContext } from '@types'
 import SEO from '@components/header/SEO'
 import { Children } from '@types'
-import ContentWrapper from '../../module/ContentWrapper'
+import ContentWrapper from '@module/ContentWrapper'
 import HeaderIndexList from '@components/HeaderIndexList'
 import TagBadges from '@components/TagBadges'
 
