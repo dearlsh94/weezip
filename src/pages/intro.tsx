@@ -1,7 +1,7 @@
 import * as React from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
 import '@scss/global.scss'
-import { useGetNotionQuery } from '../services/use-notion'
+import { useGetNotionQuery } from '@services/use-notion'
 import { findContentNode } from '@utils/notionUtils'
 import { Children, INotionContext } from '@types'
 import ContentWrapper from '../module/ContentWrapper'
