@@ -3,7 +3,7 @@ import '@scss/module.scss'
 import Linker from '@components/Linker'
 import IconMail from '@components/icon/IconMail'
 import CircleIconWrapper from '@components/icon/CircleIconWrapper'
-import { mail } from '../constants'
+import { mail } from '@src/constants'
 import IconInstagram from '@components/icon/IconInstagram'
 
 const Footer = () => {

@@ -14,8 +14,8 @@ import { parseContentValue } from '@utils/parseUtils'
 import SEO from '@components/header/SEO'
 import ListFilter from '@components/ListFilter'
 import Divider from '@components/notion/Divider'
-import { SERIES_FILTERS } from '../constants'
-import { CATEGORY_FILTERS } from '../constants'
+import { SERIES_FILTERS } from '@src/constants'
+import { CATEGORY_FILTERS } from '@src/constants'
 import IconClearAll from '@components/icon/IconClearAll'
 
 export const Head: HeadFC = () => {
