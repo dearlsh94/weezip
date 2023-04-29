@@ -4,14 +4,14 @@ import { NotionContext } from '../store/rootStore'
 import '../scss/module.scss'
 import { NotionNode } from '../types'
 import { isDebug, GNB_MENUS } from '../constants'
-import Linker from '../components/Linker'
+import Linker from '@components/Linker'
 import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '../layout/DimWrapper'
 import { throttle } from '../utils/commonUtils'
-import IconHamburgerMenu from '../components/icon/IconHamburgerMenu'
-import IconHome from '../components/icon/IconHome'
+import IconHamburgerMenu from '@components/icon/IconHamburgerMenu'
+import IconHome from '@components/icon/IconHome'
 import { mail } from '../constants'
-import IconDoubleArrow from '../components/icon/IconDoubleArrow'
+import IconDoubleArrow from '@components/icon/IconDoubleArrow'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes

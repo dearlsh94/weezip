@@ -11,12 +11,12 @@ import { parseLocationQuery } from '../utils/parseUtils'
 import PostList from '../module/PostList'
 import { nodeToJson, classifyTags } from '../utils/notionUtils'
 import { parseContentValue } from '../utils/parseUtils'
-import SEO from '../components/header/SEO'
-import ListFilter from '../components/ListFilter'
-import Divider from '../components/notion/Divider'
+import SEO from '@components/header/SEO'
+import ListFilter from '@components/ListFilter'
+import Divider from '@components/notion/Divider'
 import { SERIES_FILTERS } from '../constants'
 import { CATEGORY_FILTERS } from '../constants'
-import IconClearAll from '../components/icon/IconClearAll'
+import IconClearAll from '@components/icon/IconClearAll'
 
 export const Head: HeadFC = () => {
   return (

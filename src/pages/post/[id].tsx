@@ -7,11 +7,11 @@ import { findContentNode } from '../../utils/notionUtils'
 import MainLayout from '../../layout/MainLayout'
 import { NotionContext, PageContext } from '../../store/rootStore'
 import { INotionContext } from '../../types'
-import SEO from '../../components/header/SEO'
+import SEO from '@components/header/SEO'
 import { Children } from '../../types'
 import ContentWrapper from '../../module/ContentWrapper'
-import HeaderIndexList from '../../components/HeaderIndexList'
-import TagBadges from '../../components/TagBadges'
+import HeaderIndexList from '@components/HeaderIndexList'
+import TagBadges from '@components/TagBadges'
 
 export const Head: HeadFC = ({ params }) => {
   const nodes = useGetNotionQuery()

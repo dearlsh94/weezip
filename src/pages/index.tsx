@@ -8,7 +8,7 @@ import ContentWrapper from '../module/ContentWrapper'
 import { NotionContext } from '../store/rootStore'
 import { INotionContext } from '../types'
 import MainLayout from '../layout/MainLayout'
-import SEO from '../components/header/SEO'
+import SEO from '@components/header/SEO'
 
 export const Head: HeadFC = () => {
   return <SEO />

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link, HeadFC, PageProps } from 'gatsby'
-import SEO from '../components/header/SEO'
+import SEO from '@components/header/SEO'
 
 const pageStyles = {
   color: '#232129',
