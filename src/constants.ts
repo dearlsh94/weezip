@@ -42,6 +42,12 @@ export const SERIES_FILTERS: Filter[] = [
     name: '블로그를 만들려는 히치하이커를 위한 안내서',
     color: 'purple_background',
   },
+  {
+    type: 'series',
+    key: '51',
+    name: '삽질견문록',
+    color: 'bluepurple-color_background',
+  },
 ]
 
 export const mail = 'weezip.ethan@gmail.com'
