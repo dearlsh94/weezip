@@ -19,6 +19,7 @@ const PostList = ({ list }: Props) => {
   const LAST_PAGE = Math.ceil(list.length / PER_PAGE)
   const [currentPage, setCurrentPage] = useState<number>(0)
   const [parseList, setParseList] = useState<NotionNode[]>([])
+  const [isLoadded, setIsLoadded] = useState(false)
 
   useEffect(() => {
     const { page } = parseLocationQuery(location.search)
@@ -33,6 +34,9 @@ const PostList = ({ list }: Props) => {
     const indexOfLastPost = currentPage * PER_PAGE
     const indexOfFirstPost = indexOfLastPost - PER_PAGE
     setParseList(list.slice(indexOfFirstPost, indexOfLastPost))
+    setTimeout(() => {
+      setIsLoadded(true)
+    }, 500)
   }, [currentPage])
 
   const handleOlder = () => {
@@ -64,7 +68,7 @@ const PostList = ({ list }: Props) => {
 
   return (
     <React.Fragment>
-      {parseList.length === 0 && (
+      {isLoadded && parseList.length === 0 && (
         <div className="post-list-empty-box">
           <p>검색 결과가 없습니다.</p>
           <p>전체 글들을 둘러보는 건 어떠세요 ?</p>
