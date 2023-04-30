@@ -5,6 +5,8 @@ import PostListItem from '@components/PostListItem'
 import '@scss/components.scss'
 import { NotionNode } from '@types'
 import IconArrow from '@components/icon/IconArrow'
+import IconClearAll from '@components/icon/IconClearAll'
+import { navigate } from 'gatsby'
 
 interface Props {
   list: NotionNode[]
@@ -35,8 +37,22 @@ const PostList = ({ list }: Props) => {
     setCurrentPage(Math.min(currentPage + 1, LAST_PAGE))
   }
 
+  const handleReset = () => {
+    navigate('/list')
+  }
+
   return (
     <React.Fragment>
+      {parseList.length === 0 && (
+        <div className="post-list-empty-box">
+          <p>검색 결과가 없습니다.</p>
+          <p>전체 글들을 둘러보는 건 어떠세요 ?</p>
+          <span onClick={handleReset}>
+            <IconClearAll size={16} />
+            전체글 보러가기
+          </span>
+        </div>
+      )}
       {parseList?.length > 0 && (
         <ul className={`post-list-box`}>
           {parseList.map((post, i) => {
