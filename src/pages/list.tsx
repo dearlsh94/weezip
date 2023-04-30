@@ -105,7 +105,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
         <MainLayout className="list-layout">
           <ListFilter />
           <div className={`info-box ${isLoading ? 'loading' : ''}`}>
-            {filterText && <IconClearAll size={16} handleClick={handleReset} />}
+            <IconClearAll size={16} handleClick={handleReset} />
             <div className="count-box ellipsis">
               {filterText && (
                 <strong>
