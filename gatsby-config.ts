@@ -5,7 +5,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-// For Site Metadata
+// For Sitemap
 const siteUrl = 'https://weezip.treefeely.com'
 
 const config: GatsbyConfig = {
