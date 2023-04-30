@@ -39,7 +39,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     if (elHeaders && elHeaders?.length > 0) {
       const headers: HTMLHeadingElement[] = []
       elHeaders.forEach(el => {
-        headers.push(el)
+        if (!el.className.includes('title')) headers.push(el)
       })
       setIndexList(headers)
     }
