@@ -10,7 +10,7 @@ interface Props {
 }
 
 const PostList = ({ list }: Props) => {
-  const PER_PAGE = 15
+  const PER_PAGE = 10
   const FIRST_PAGE = 1
   const LAST_PAGE = Math.ceil(list.length / PER_PAGE)
   const [currentPage, setCurrentPage] = useState<number>(FIRST_PAGE)
