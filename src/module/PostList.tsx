@@ -1,19 +1,41 @@
 import * as React from 'react'
+import { useEffect, useContext, useState } from 'react'
 import Linker from '@components/Linker'
 import PostListItem from '@components/PostListItem'
 import '@scss/components.scss'
 import { NotionNode } from '@types'
+import { parseLocationQuery } from '@utils/parseUtils'
+import { navigate } from 'gatsby'
 
 interface Props {
   list: NotionNode[]
 }
 
 const PostList = ({ list }: Props) => {
+  const PER_PAGE = 15
+  const FIRST_PAGE = 1
+  const LAST_PAGE = Math.ceil(list.length / PER_PAGE)
+  const [currentPage, setCurrentPage] = useState<number>(FIRST_PAGE)
+  const [parseList, setParseList] = useState<NotionNode[]>(list)
+
+  useEffect(() => {
+    const indexOfLastPost = currentPage * PER_PAGE
+    const indexOfFirstPost = indexOfLastPost - PER_PAGE
+    setParseList(list.slice(indexOfFirstPost, indexOfLastPost))
+  }, [currentPage])
+
+  const handleOlder = () => {
+    setCurrentPage(Math.max(currentPage - 1, FIRST_PAGE))
+  }
+  const handleNewer = () => {
+    setCurrentPage(Math.min(currentPage + 1, LAST_PAGE))
+  }
+
   return (
     <React.Fragment>
-      {list?.length > 0 && (
+      {parseList?.length > 0 && (
         <ul className={`post-list-box`}>
-          {list.map((post, i) => {
+          {parseList.map((post, i) => {
             return (
               <li key={`post-list-${i}`}>
                 <Linker url={post.title}>
@@ -23,6 +45,16 @@ const PostList = ({ list }: Props) => {
             )
           })}
         </ul>
+      )}
+      {parseList?.length > 0 && (
+        <div className="post-list-page-box">
+          <button className={`page-button ${currentPage === 1 ? 'disabled' : 'active'}`} onClick={handleOlder}>
+            Older
+          </button>
+          <button className={`page-button ${currentPage === LAST_PAGE ? 'disabled' : 'active'}`} onClick={handleNewer}>
+            Newer
+          </button>
+        </div>
       )}
     </React.Fragment>
   )
