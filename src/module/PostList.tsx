@@ -7,6 +7,7 @@ import { NotionNode } from '@types'
 import IconArrow from '@components/icon/IconArrow'
 import IconClearAll from '@components/icon/IconClearAll'
 import { navigate } from 'gatsby'
+import { parseLocationQuery } from '@utils/parseUtils'
 
 interface Props {
   list: NotionNode[]
@@ -16,12 +17,16 @@ const PostList = ({ list }: Props) => {
   const PER_PAGE = 10
   const FIRST_PAGE = 1
   const LAST_PAGE = Math.ceil(list.length / PER_PAGE)
-  const [currentPage, setCurrentPage] = useState<number>(FIRST_PAGE)
+  const [currentPage, setCurrentPage] = useState<number>(0)
   const [parseList, setParseList] = useState<NotionNode[]>([])
 
   useEffect(() => {
-    setCurrentPage(1)
-    setParseList(list.slice(0, PER_PAGE))
+    const { page } = parseLocationQuery(location.search)
+    if (page) {
+      setCurrentPage(Math.min(page, LAST_PAGE))
+    } else {
+      setCurrentPage(1)
+    }
   }, [list])
 
   useEffect(() => {
@@ -31,10 +36,26 @@ const PostList = ({ list }: Props) => {
   }, [currentPage])
 
   const handleOlder = () => {
-    setCurrentPage(Math.max(currentPage - 1, FIRST_PAGE))
+    if (currentPage !== FIRST_PAGE) {
+      handleMove(Math.max(currentPage - 1, FIRST_PAGE))
+    }
   }
   const handleNewer = () => {
-    setCurrentPage(Math.min(currentPage + 1, LAST_PAGE))
+    if (currentPage !== LAST_PAGE) {
+      handleMove(Math.min(currentPage + 1, LAST_PAGE))
+    }
+  }
+
+  const handleMove = (page: number) => {
+    const { series, category, tag } = parseLocationQuery(location.search)
+    let url = '/list'
+    let params = []
+    if (series) params.push(`series=${series}`)
+    if (category) params.push(`category=${category}`)
+    if (tag) params.push(`tag=${tag}`)
+    params.push(`page=${page}`)
+    url += `?${params.join('&')}`
+    navigate(url)
   }
 
   const handleReset = () => {
