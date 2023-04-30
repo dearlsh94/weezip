@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Code } from '@types'
+import '@scss/notion.scss'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atelierCaveDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import Paragraph from '@components/notion/Paragraph'
