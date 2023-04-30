@@ -12,6 +12,7 @@ export default function HTML(props) {
         <meta property="og:site_name" content="Weezip" />
         <meta property="og:type" content="website" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge;chrome=1" />
+        <meta name="robots" content="all" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
