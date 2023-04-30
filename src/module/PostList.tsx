@@ -4,6 +4,7 @@ import Linker from '@components/Linker'
 import PostListItem from '@components/PostListItem'
 import '@scss/components.scss'
 import { NotionNode } from '@types'
+import IconArrow from '@components/icon/IconArrow'
 
 interface Props {
   list: NotionNode[]
@@ -55,6 +56,7 @@ const PostList = ({ list }: Props) => {
             className={`page-button prev ${currentPage === FIRST_PAGE ? 'disabled' : 'active'}`}
             onClick={handleOlder}
           >
+            <IconArrow direction="left" size={16} />
             Older
           </button>
           <button
@@ -62,6 +64,7 @@ const PostList = ({ list }: Props) => {
             onClick={handleNewer}
           >
             Newer
+            <IconArrow direction="right" size={16} />
           </button>
         </div>
       )}
