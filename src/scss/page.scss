@@ -85,6 +85,9 @@
     svg {
       cursor: pointer;
       margin-right: 8px;
+      &:hover {
+        @include animationRotate(1s);
+      }
     }
     &.loading {
       svg {
