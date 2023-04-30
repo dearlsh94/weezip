@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import '@scss/components.scss'
+import '@scss/components/HeaderIndexList.scss'
 import { throttle } from '@utils/commonUtils'
 
 interface Props {

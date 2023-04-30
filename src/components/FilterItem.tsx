@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useLocation } from '@reach/router'
-import '@scss/components.scss'
+import '@scss/components/FilterItem.scss'
 import { Filter } from '@types'
 import { navigate } from 'gatsby'
 

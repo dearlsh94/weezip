@@ -40,7 +40,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       return node
     })
     .filter(n => n.title.startsWith('/post'))
-
   const [list, setList] = useState<NotionNode[]>([])
   const [count, setCount] = useState(0)
   const [filterText, setFilterText] = useState('전체')
@@ -68,6 +67,8 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
           setFilterText(`${tag} 태그`)
           return post?.contentValue?.tag?.find(t => t.name === tag)
         }
+
+        return true
       })
     } else {
       l = parseList
@@ -105,7 +106,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
         <MainLayout className="list-layout">
           <ListFilter />
           <div className={`info-box ${isLoading ? 'loading' : ''}`}>
-            {filterText && <IconClearAll size={16} handleClick={handleReset} />}
+            <IconClearAll size={16} handleClick={handleReset} />
             <div className="count-box ellipsis">
               {filterText && (
                 <strong>

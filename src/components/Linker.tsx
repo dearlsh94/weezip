@@ -1,5 +1,4 @@
 import * as React from 'react'
-import '@scss/components.scss'
 
 interface Props {
   url: string

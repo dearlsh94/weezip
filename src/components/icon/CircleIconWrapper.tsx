@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '@scss/components.scss'
+import '@scss/icon.scss'
 
 interface Props {
   children: React.ReactNode

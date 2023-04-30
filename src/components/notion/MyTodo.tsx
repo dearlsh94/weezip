@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '@scss/components.scss'
+import '@scss/notion.scss'
 import { Todo } from '@types'
 import Paragraph from '@components/notion/Paragraph'
 

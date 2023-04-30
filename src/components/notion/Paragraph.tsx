@@ -1,4 +1,5 @@
 import * as React from 'react'
+import '@scss/notion.scss'
 import { TextBlock, TextItem } from '@types'
 import Linker from '@components/Linker'
 

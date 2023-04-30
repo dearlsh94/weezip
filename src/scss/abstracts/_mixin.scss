@@ -70,6 +70,37 @@
   }
 }
 
+@mixin animationMotionLeft($distance) {
+  animation: motionLeft;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-direction: alternate;
+  @keyframes motionLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX($distance);
+    }
+  }
+}
+@mixin animationMotionRight($distance) {
+  animation: motionRight;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-direction: alternate;
+  @keyframes motionRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX($distance);
+    }
+  }
+}
+
 @mixin animationTada($diffScale: 0.1) {
   animation: tada;
   animation-duration: 1.2s;
