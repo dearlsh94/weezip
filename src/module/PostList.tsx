@@ -51,10 +51,16 @@ const PostList = ({ list }: Props) => {
       )}
       {parseList?.length > 0 && (
         <div className="post-list-page-box">
-          <button className={`page-button ${currentPage === 1 ? 'disabled' : 'active'}`} onClick={handleOlder}>
+          <button
+            className={`page-button prev ${currentPage === FIRST_PAGE ? 'disabled' : 'active'}`}
+            onClick={handleOlder}
+          >
             Older
           </button>
-          <button className={`page-button ${currentPage === LAST_PAGE ? 'disabled' : 'active'}`} onClick={handleNewer}>
+          <button
+            className={`page-button next ${currentPage === LAST_PAGE ? 'disabled' : 'active'}`}
+            onClick={handleNewer}
+          >
             Newer
           </button>
         </div>

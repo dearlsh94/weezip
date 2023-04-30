@@ -299,7 +299,7 @@
   height: 54px;
   margin-top: 36px;
 
-  button {
+  button.page-button {
     width: 120px;
     height: 100%;
     border: 1px solid $base-color;
@@ -309,6 +309,17 @@
     font-weight: 400;
     color: $black-color-6;
     cursor: pointer;
+
+    &.active.prev {
+      &:hover {
+        @include animationMotionLeft($distance: -10px);
+      }
+    }
+    &.active.next {
+      &:hover {
+        @include animationMotionRight($distance: 10px);
+      }
+    }
 
     &.disabled {
       background-color: $gray-color-7;
