@@ -28,16 +28,17 @@ const PostList = ({ list }: Props) => {
     } else {
       setCurrentPage(1)
     }
+    parsingList()
   }, [list])
 
-  useEffect(() => {
+  const parsingList = () => {
     const indexOfLastPost = currentPage * PER_PAGE
     const indexOfFirstPost = indexOfLastPost - PER_PAGE
     setParseList(list.slice(indexOfFirstPost, indexOfLastPost))
     setTimeout(() => {
       setIsLoadded(true)
     }, 500)
-  }, [currentPage])
+  }
 
   const handleOlder = () => {
     if (currentPage !== FIRST_PAGE) {
