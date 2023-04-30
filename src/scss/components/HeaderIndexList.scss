@@ -1,0 +1,57 @@
+@import '@scss/abstracts/mixin';
+@import '@scss/abstracts/variables';
+
+.block-header-index-list {
+  width: 80%;
+  text-decoration: underline;
+  color: #555;
+  line-height: 28px;
+  margin-bottom: 0;
+
+  li {
+    width: 100%;
+    cursor: pointer;
+    list-style: none;
+    &:hover {
+      text-decoration: underline;
+      color: $secondary-color;
+    }
+  }
+
+  .tag-h1 + .tag-h2,
+  .tag-h2 + .tag-h2,
+  .tag-h1 + .tag-h3 {
+    padding-left: 16px;
+  }
+  .tag-h2 + .tag-h3,
+  .tag-h3 + .tag-h3 {
+    padding-left: 32px;
+  }
+
+  &.right {
+    visibility: hidden;
+    position: fixed;
+    z-index: 2;
+    width: 240px;
+    right: 40px;
+    top: 120px;
+    background-color: #e5e5e5;
+    border-radius: 12px;
+    padding: 12px;
+    padding-left: 24px;
+    box-sizing: border-box;
+    font-size: 11pt;
+    line-height: 24px;
+
+    @include superDesktop {
+      &.scroll {
+        visibility: visible;
+        @include animationFadeIn(300ms);
+      }
+    }
+
+    li {
+      width: 140px;
+    }
+  }
+}

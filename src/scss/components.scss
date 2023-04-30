@@ -223,25 +223,6 @@
   align-items: center;
   box-sizing: border-box;
 
-  .filter-item {
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 9.5pt;
-    cursor: pointer;
-    transition: all 0.2s;
-    transform: scale(1);
-
-    &:hover {
-      transform: scale(1.1);
-    }
-    &.active {
-      @include animationTada(0.2);
-    }
-    + .filter-item {
-      margin-left: 12px;
-    }
-  }
-
   .filter {
     width: 100%;
 
