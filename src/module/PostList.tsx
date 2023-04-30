@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { useEffect, useContext, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Linker from '@components/Linker'
 import PostListItem from '@components/PostListItem'
 import '@scss/components.scss'
 import { NotionNode } from '@types'
-import { parseLocationQuery } from '@utils/parseUtils'
-import { navigate } from 'gatsby'
 
 interface Props {
   list: NotionNode[]
@@ -16,7 +14,12 @@ const PostList = ({ list }: Props) => {
   const FIRST_PAGE = 1
   const LAST_PAGE = Math.ceil(list.length / PER_PAGE)
   const [currentPage, setCurrentPage] = useState<number>(FIRST_PAGE)
-  const [parseList, setParseList] = useState<NotionNode[]>(list)
+  const [parseList, setParseList] = useState<NotionNode[]>([])
+
+  useEffect(() => {
+    setCurrentPage(1)
+    setParseList(list.slice(0, PER_PAGE))
+  }, [list])
 
   useEffect(() => {
     const indexOfLastPost = currentPage * PER_PAGE
