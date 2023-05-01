@@ -17,11 +17,7 @@ export const Head: HeadFC = ({ params }) => {
   const nodes = useGetNotionQuery()
   const content: Children | null = findContentNode(nodes, `/post/${params?.id}`)
   const title = content?.properties?.remark.rich_text || ''
-  return (
-    <SEO title={title} description={content?.properties?.series.rich_text}>
-      <link rel="canonical" href={`https://weezip.freefeely.com/post/${params?.id}`} />
-    </SEO>
-  )
+  return <SEO title={title} description={content?.properties?.series.rich_text}></SEO>
 }
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {
