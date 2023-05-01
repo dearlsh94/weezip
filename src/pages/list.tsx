@@ -40,15 +40,21 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       return node
     })
     .filter(n => n.title.startsWith('/post'))
+  const PER_PAGE = 10
+
   const [list, setList] = useState<NotionNode[]>([])
   const [count, setCount] = useState(0)
   const [filterText, setFilterText] = useState('전체')
   const [isLoading, setIsLoading] = useState(false)
+  const [currentPage, setCurrentPage] = useState(0)
+  const [lastPage, setLastPage] = useState(0)
 
   useEffect(() => {
     let l: NotionNode[] = []
+    let p = 1
+    let lp = 1
     if (props.location.search) {
-      const { series, category, tag } = parseLocationQuery(props.location.search)
+      const { series, category, tag, page } = parseLocationQuery(props.location.search)
 
       l = parseList.filter(post => {
         if (!post.title.startsWith('/post')) return false
@@ -70,8 +76,14 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
         return true
       })
+
+      lp = Math.ceil(l.length / PER_PAGE)
+      if (page) {
+        p = Math.min(page, lp)
+      }
     } else {
       l = parseList
+      lp = Math.ceil(l.length / PER_PAGE)
     }
 
     l.sort((a, b) => {
@@ -84,7 +96,12 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
     loading()
     setCount(l.length)
-    setList(l)
+    setCurrentPage(p)
+    setLastPage(lp)
+
+    const indexOfLastPost = p * PER_PAGE
+    const indexOfFirstPost = indexOfLastPost - PER_PAGE
+    setList(l.slice(indexOfFirstPost, indexOfLastPost))
   }, [props.location])
 
   const handleReset = () => {
@@ -118,7 +135,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
             </div>
           </div>
           <Divider color="primary" height={2} />
-          <PostList list={list} />
+          <PostList list={list} currentPage={currentPage} lastPage={lastPage} />
         </MainLayout>
       </NotionContext.Provider>
     </PageContext.Provider>

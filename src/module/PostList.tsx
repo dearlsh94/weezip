@@ -11,34 +11,12 @@ import { parseLocationQuery } from '@utils/parseUtils'
 
 interface Props {
   list: NotionNode[]
+  currentPage: number
+  lastPage: number
 }
 
-const PostList = ({ list }: Props) => {
-  const PER_PAGE = 10
+const PostList = ({ list, currentPage, lastPage }: Props) => {
   const FIRST_PAGE = 1
-  const LAST_PAGE = Math.ceil(list.length / PER_PAGE)
-  const [currentPage, setCurrentPage] = useState<number>(0)
-  const [parseList, setParseList] = useState<NotionNode[]>([])
-  const [isLoadded, setIsLoadded] = useState(false)
-
-  useEffect(() => {
-    const { page } = parseLocationQuery(location.search)
-    if (page) {
-      setCurrentPage(Math.min(page, LAST_PAGE))
-    } else {
-      setCurrentPage(1)
-    }
-    parsingList()
-  }, [list])
-
-  const parsingList = () => {
-    const indexOfLastPost = currentPage * PER_PAGE
-    const indexOfFirstPost = indexOfLastPost - PER_PAGE
-    setParseList(list.slice(indexOfFirstPost, indexOfLastPost))
-    setTimeout(() => {
-      setIsLoadded(true)
-    }, 500)
-  }
 
   const handleOlder = () => {
     if (currentPage !== FIRST_PAGE) {
@@ -46,8 +24,8 @@ const PostList = ({ list }: Props) => {
     }
   }
   const handleNewer = () => {
-    if (currentPage !== LAST_PAGE) {
-      handleMove(Math.min(currentPage + 1, LAST_PAGE))
+    if (currentPage !== lastPage) {
+      handleMove(Math.min(currentPage + 1, lastPage))
     }
   }
 
@@ -69,7 +47,7 @@ const PostList = ({ list }: Props) => {
 
   return (
     <React.Fragment>
-      {isLoadded && parseList.length === 0 && (
+      {list.length === 0 && (
         <div className="post-list-empty-box">
           <p>검색 결과가 없습니다.</p>
           <p>전체 글들을 둘러보는 건 어떠세요 ?</p>
@@ -79,9 +57,9 @@ const PostList = ({ list }: Props) => {
           </span>
         </div>
       )}
-      {parseList?.length > 0 && (
+      {list?.length > 0 && (
         <ul className={`post-list-box`}>
-          {parseList.map((post, i) => {
+          {list.map((post, i) => {
             return (
               <li key={`post-list-${i}`}>
                 <Linker url={post.title}>
@@ -92,7 +70,7 @@ const PostList = ({ list }: Props) => {
           })}
         </ul>
       )}
-      {parseList?.length > 0 && (
+      {list?.length > 0 && (
         <div className="post-list-page-box">
           <button
             className={`page-button prev ${currentPage === FIRST_PAGE ? 'disabled' : 'active'}`}
@@ -102,7 +80,7 @@ const PostList = ({ list }: Props) => {
             Older
           </button>
           <button
-            className={`page-button next ${currentPage === LAST_PAGE ? 'disabled' : 'active'}`}
+            className={`page-button next ${currentPage === lastPage ? 'disabled' : 'active'}`}
             onClick={handleNewer}
           >
             Newer
