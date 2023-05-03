@@ -73,43 +73,6 @@
     a {
       text-decoration: none;
     }
-
-    .post-list-item {
-      span.series {
-        display: flex;
-        margin-top: 12px;
-        font-weight: 400;
-        font-size: 9pt;
-        color: #a7a7a7;
-      }
-      p {
-        font-size: 15pt;
-        font-weight: 500;
-        margin-top: 8px;
-      }
-      .info-box {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        align-items: center;
-        .tag-box {
-          margin-top: 8px;
-          margin-right: 8px;
-        }
-        .date-box {
-          margin-top: 8px;
-          flex-grow: 1;
-          text-align: right;
-          span.date {
-            color: $gray-color;
-            font-size: 10pt;
-          }
-          span.date + span.date {
-            margin-left: 8px;
-          }
-        }
-      }
-    }
   }
 
   li + li {
@@ -189,26 +152,5 @@
     & + .badge {
       margin-left: 8px;
     }
-  }
-}
-
-.scroll-progress-container {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 4px;
-  z-index: 12;
-
-  visibility: hidden;
-
-  &.visible {
-    @include animationFadeIn(400ms);
-    visibility: visible;
-  }
-
-  .scroll-progress {
-    height: 4px;
-    border-radius: 8px;
-    background-color: $secondary-color;
   }
 }
