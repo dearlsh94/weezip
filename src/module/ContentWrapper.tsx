@@ -1,5 +1,4 @@
 import * as React from 'react'
-import '@scss/components.scss'
 import { BlockType, Children } from '@types'
 import ContentChildren from '@module/ContentChildren'
 
@@ -12,7 +11,7 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
   let numberedList: Children[] = []
   let bulletedList: Children[] = []
   return (
-    <section className={`contenxt-wrapper ${align ? align : ''}`}>
+    <section className={`content-wrapper ${align ? align : ''}`}>
       {childrens.map((block, i) => {
         // NOTE Type number list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
         if (block.type === BlockType.NUMBERED_LIST_ITEM) {

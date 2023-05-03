@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '@scss/module.scss'
+import '@scss/module/Footer.scss'
 import Linker from '@components/Linker'
 import IconMail from '@components/icon/IconMail'
 import CircleIconWrapper from '@components/icon/CircleIconWrapper'
