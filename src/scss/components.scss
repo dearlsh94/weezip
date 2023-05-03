@@ -1,5 +1,5 @@
-@import './abstracts/variables';
-@import './abstracts/mixin';
+@import '@scss/abstracts/variables';
+@import '@scss/abstracts/mixin';
 
 .logo {
   display: flex;
@@ -210,45 +210,5 @@
     height: 4px;
     border-radius: 8px;
     background-color: $secondary-color;
-  }
-}
-
-.list-filter-container {
-  width: 100%;
-  padding: 0px 24px 24px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-
-  .filter {
-    width: 100%;
-
-    p.title {
-      margin-bottom: 12px;
-      font-weight: 400;
-      font-size: 11pt;
-      color: $black-color-6;
-    }
-
-    .filter-box {
-      display: flex;
-      width: 100%;
-    }
-
-    & + .filter {
-      margin-top: 12px;
-    }
-
-    @include desktop {
-      display: flex;
-      align-items: center;
-      p.title {
-        width: 100px;
-        margin-bottom: 0px;
-      }
-    }
   }
 }
