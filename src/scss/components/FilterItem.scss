@@ -7,14 +7,14 @@
   cursor: pointer;
   transition: all 0.2s;
   transform: scale(1);
+  white-space: nowrap;
+  margin-top: 4px;
+  margin-right: 12px;
 
   &:hover {
     transform: scale(1.1);
   }
   &.active {
     @include animationTada(0.2);
-  }
-  + .filter-item {
-    margin-left: 12px;
   }
 }

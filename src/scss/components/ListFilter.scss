@@ -15,14 +15,17 @@
     width: 100%;
 
     p.title {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       font-weight: 400;
       font-size: 11pt;
       color: $black-color-6;
     }
 
     .filter-box {
+      width: 100%;
       display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
       width: 100%;
     }
 
