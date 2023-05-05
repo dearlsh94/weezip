@@ -68,6 +68,6 @@ export const getNotionNodeAll = (res: any) => {
 
 export const getNotionNodeByUrl = (res: any, url: string) => {
   return res?.allNotion?.edges?.find(({ node }: { node: NotionNode }) => {
-    return node.title === url
+    return node.title.startsWith(url)
   })?.node
 }
