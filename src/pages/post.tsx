@@ -12,18 +12,22 @@ import TagBadges from '@components/TagBadges'
 import { graphql } from 'gatsby'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
 
-export const Head: HeadFC = ({ data, params }) => {
-  const content = notionNodeToJson(getNotionNodeByUrl(data, `/post/${params?.id}`))
+export const Head: HeadFC = ({ data, pageContext }: any) => {
+  const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
   const title = content?.properties?.remark.rich_text || ''
   return <SEO title={title} description={content?.properties?.series.rich_text}></SEO>
 }
 
-const ListPage: React.FC<PageProps> = ({ data, params }) => {
-  const content = notionNodeToJson(getNotionNodeByUrl(data, `/post/${params?.id}`))
+const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
+  const { slug } = pageContext
+  const content = notionNodeToJson(getNotionNodeByUrl(data, slug))
   const title = content?.properties?.remark.rich_text || ''
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
 
   useEffect(() => {
+    if (!slug) {
+      moveToList()
+    }
     const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')
     if (elHeaders && elHeaders?.length > 0) {
       const headers: HTMLHeadingElement[] = []
@@ -123,4 +127,4 @@ export const postQuery = graphql`
   }
 `
 
-export default ListPage
+export default PostPage
