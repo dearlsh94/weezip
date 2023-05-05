@@ -32,7 +32,7 @@ const Footer = () => {
               </CircleIconWrapper>
             </div>
           </div>
-          <div className="item refer-box">Icon by iconify</div>
+          <div className="item refer-box">All Icons by iconify</div>
           <div className="item copyright-box">
             <p className="copyright">Copyright 2023. Ethan.lee all rights reserved.</p>
           </div>
