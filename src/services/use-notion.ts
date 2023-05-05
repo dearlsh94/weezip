@@ -65,3 +65,9 @@ export const parseNotion = (res: any) => {
   })
   return nodes
 }
+
+export const getNotionByTitle = (res: any, title: string) => {
+  return res?.allNotion?.edges?.find(({ node }: { node: NotionNode }) => {
+    return node.title === title
+  })?.node
+}
