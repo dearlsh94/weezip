@@ -2,26 +2,25 @@ import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
 import '@scss/page.scss'
-import { parseNotion, getNotionByTitle } from '@services/use-notion'
-import { findContentNode, nodeToJson } from '@utils/notionUtils'
+import { getNotionNodeAll, getNotionNodeByUrl } from '@services/use-notion'
+import { getNodeJsonByUrl, notionNodeToJson } from '@utils/notionUtils'
 import MainLayout from '@layout/MainLayout'
 import { NotionContext } from '@store/rootStore'
 import { INotionContext } from '@types'
 import SEO from '@components/header/SEO'
-import { Children } from '@types'
 import ContentWrapper from '@module/ContentWrapper'
 import HeaderIndexList from '@components/HeaderIndexList'
 import TagBadges from '@components/TagBadges'
 import { graphql } from 'gatsby'
 
 export const Head: HeadFC = ({ data, params }) => {
-  const content = nodeToJson(getNotionByTitle(data, `/post/${params?.id}`))
+  const content = notionNodeToJson(getNotionNodeByUrl(data, `/post/${params?.id}`))
   const title = content?.properties?.remark.rich_text || ''
   return <SEO title={title} description={content?.properties?.series.rich_text}></SEO>
 }
 
 const ListPage: React.FC<PageProps> = ({ data, params }) => {
-  const content = nodeToJson(getNotionByTitle(data, `/post/${params?.id}`))
+  const content = notionNodeToJson(getNotionNodeByUrl(data, `/post/${params?.id}`))
   const title = content?.properties?.remark.rich_text || ''
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
 
