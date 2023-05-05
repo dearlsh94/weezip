@@ -1,17 +1,16 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import type { HeadFC, PageProps } from 'gatsby'
+import { HeadFC, PageProps, navigate } from 'gatsby'
 import '@scss/page.scss'
-import { getNotionNodeAll, getNotionNodeByUrl } from '@services/use-notion'
-import { getNodeJsonByUrl, notionNodeToJson } from '@utils/notionUtils'
+import { getNotionNodeByUrl } from '@services/use-notion'
+import { notionNodeToJson } from '@utils/notionUtils'
 import MainLayout from '@layout/MainLayout'
-import { NotionContext } from '@store/rootStore'
-import { INotionContext } from '@types'
 import SEO from '@components/header/SEO'
 import ContentWrapper from '@module/ContentWrapper'
 import HeaderIndexList from '@components/HeaderIndexList'
 import TagBadges from '@components/TagBadges'
 import { graphql } from 'gatsby'
+import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
 
 export const Head: HeadFC = ({ data, params }) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, `/post/${params?.id}`))
@@ -35,6 +34,10 @@ const ListPage: React.FC<PageProps> = ({ data, params }) => {
     }
   }, [])
 
+  const moveToList = () => {
+    navigate('/list')
+  }
+
   return (
     <MainLayout className="post-layout">
       <div>
@@ -55,6 +58,16 @@ const ListPage: React.FC<PageProps> = ({ data, params }) => {
         {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
       </div>
       {content && <ContentWrapper childrens={content.children} />}
+      <div className="bottom-box">
+        <MyButton
+          size={ButtonSize.PRIMARY}
+          color={ButtonColor.PRIMARY}
+          type={ButtonType.BORDER}
+          text={'전체 목록 보기'}
+          width={'100%'}
+          handleClick={moveToList}
+        />
+      </div>
     </MainLayout>
   )
 }
