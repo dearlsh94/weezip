@@ -18,13 +18,17 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
+  // For to check not available during SSR
   flags: {
     DEV_SSR: true,
   },
   plugins: [
+    // For use sass
     'gatsby-plugin-sass',
+    // For use StaticImage
     'gatsby-plugin-image',
     {
+      // For use alias imports
       resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
@@ -43,7 +47,9 @@ const config: GatsbyConfig = {
         extensions: ['js', 'jsx', 'ts', 'tsx'],
       },
     },
+
     {
+      // For create dynamic sitemap
       resolve: `gatsby-plugin-sitemap`,
       options: {
         query: `{
@@ -77,8 +83,6 @@ const config: GatsbyConfig = {
         icon: 'src/images/logo-bg-1x.png',
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -88,6 +92,7 @@ const config: GatsbyConfig = {
       __key: 'images',
     },
     {
+      // For use notion API
       resolve: 'gatsby-source-notion-api',
       options: {
         token: process.env.NOTION_INTEGRATION_TOKEN,
@@ -96,7 +101,10 @@ const config: GatsbyConfig = {
         lowerTitleLevel: true,
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
+      // For use Web Font
       resolve: `gatsby-omni-font-loader`,
       options: {
         enableListener: true,
@@ -110,6 +118,7 @@ const config: GatsbyConfig = {
       },
     },
     {
+      // For use GA
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
@@ -140,13 +149,14 @@ const config: GatsbyConfig = {
         },
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-google-adsense`,
+    //   options: {
+    //     publisherId: `ca-pub-1622942491482378`,
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: `ca-pub-1622942491482378`,
-      },
-    },
-    {
+      // For canonical url
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://weezip.treefeely.com`,
