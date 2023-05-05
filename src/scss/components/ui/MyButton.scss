@@ -1,0 +1,66 @@
+@import '@scss/abstracts/variables';
+
+.my-button {
+  border-radius: 8px;
+  letter-spacing: -0.05px;
+  cursor: pointer;
+
+  &.SIZE-PRIMARY {
+    padding: 10px;
+    font-size: 12pt;
+    height: 48px;
+  }
+  &.SIZE-SECONDARY {
+    padding: 8px;
+    height: 40px;
+  }
+  &.SIZE-THIRD {
+    padding: 6px;
+    height: 32px;
+  }
+  &.SIZE-FOURTH {
+    padding: 4px;
+    height: 24px;
+  }
+
+  &.COLOR-PRIMARY.TYPE-BORDER {
+    background-color: $white-color-2;
+    border: 1px solid $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      border: 1px solid $white-color-2;
+      color: $white-color-2;
+    }
+  }
+  &.COLOR-SECONDARY.TYPE-BORDER {
+    background-color: $white-color-2;
+    border: 1px solid $secondary-color;
+
+    &:hover {
+      background-color: $secondary-color;
+      border: 1px solid $white-color-2;
+      color: $white-color-2;
+    }
+  }
+  &.COLOR-THIRD.TYPE-BORDER {
+    background-color: $white-color-2;
+    border: 1px solid $third-color;
+
+    &:hover {
+      background-color: $third-color;
+      border: 1px solid $white-color-2;
+      color: $white-color-2;
+    }
+  }
+
+  &.COLOR-PRIMARY.TYPE-BG {
+    background-color: $primary-color;
+  }
+  &.COLOR-SECONDARY.TYPE-BG {
+    background-color: $secondary-color;
+  }
+  &.COLOR-THIRD.TYPE-BG {
+    background-color: $third-color;
+  }
+}

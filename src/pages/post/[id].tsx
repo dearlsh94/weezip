@@ -1,33 +1,25 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import type { HeadFC, PageProps } from 'gatsby'
+import { HeadFC, PageProps, navigate } from 'gatsby'
 import '@scss/page.scss'
-import { parseNotion } from '@services/use-notion'
-import { findContentNode } from '@utils/notionUtils'
+import { getNotionNodeByUrl } from '@services/use-notion'
+import { notionNodeToJson } from '@utils/notionUtils'
 import MainLayout from '@layout/MainLayout'
-import { NotionContext } from '@store/rootStore'
-import { INotionContext } from '@types'
 import SEO from '@components/header/SEO'
-import { Children } from '@types'
 import ContentWrapper from '@module/ContentWrapper'
 import HeaderIndexList from '@components/HeaderIndexList'
 import TagBadges from '@components/TagBadges'
 import { graphql } from 'gatsby'
+import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
 
 export const Head: HeadFC = ({ data, params }) => {
-  const nodes = parseNotion(data)
-  const content: Children | null = findContentNode(nodes, `/post/${params?.id}`)
+  const content = notionNodeToJson(getNotionNodeByUrl(data, `/post/${params?.id}`))
   const title = content?.properties?.remark.rich_text || ''
   return <SEO title={title} description={content?.properties?.series.rich_text}></SEO>
 }
 
 const ListPage: React.FC<PageProps> = ({ data, params }) => {
-  const { id } = params
-  const nodes = parseNotion(data)
-  const store: INotionContext = {
-    nodes: nodes,
-  }
-  const content: Children | null = findContentNode(nodes, `/post/${id}`)
+  const content = notionNodeToJson(getNotionNodeByUrl(data, `/post/${params?.id}`))
   const title = content?.properties?.remark.rich_text || ''
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
 
@@ -42,29 +34,41 @@ const ListPage: React.FC<PageProps> = ({ data, params }) => {
     }
   }, [])
 
+  const moveToList = () => {
+    navigate('/list')
+  }
+
   return (
-    <NotionContext.Provider value={store}>
-      <MainLayout className="post-layout">
-        <div>
-          <TagBadges tag={content?.properties.tag} />
+    <MainLayout className="post-layout">
+      <div>
+        <TagBadges tag={content?.properties.tag} />
+      </div>
+      <div className="title-box">
+        {content?.properties?.series.rich_text && (
+          <span className={`series-title`}>[{content?.properties?.series.rich_text}]</span>
+        )}
+        <h1 className="title">{title}</h1>
+        <div className="desc-box">
+          <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
+          <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
         </div>
-        <div className="title-box">
-          {content?.properties?.series.rich_text && (
-            <span className={`series-title`}>[{content?.properties?.series.rich_text}]</span>
-          )}
-          <h1 className="title">{title}</h1>
-          <div className="desc-box">
-            <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
-            <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
-          </div>
-        </div>
-        <div className="index-box">
-          <p>목차</p>
-          {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
-        </div>
-        {content && <ContentWrapper childrens={content.children} />}
-      </MainLayout>
-    </NotionContext.Provider>
+      </div>
+      <div className="index-box">
+        <p>목차</p>
+        {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
+      </div>
+      {content && <ContentWrapper childrens={content.children} />}
+      <div className="bottom-box">
+        <MyButton
+          size={ButtonSize.PRIMARY}
+          color={ButtonColor.PRIMARY}
+          type={ButtonType.BORDER}
+          text={'전체 목록 보기'}
+          width={'100%'}
+          handleClick={moveToList}
+        />
+      </div>
+    </MainLayout>
   )
 }
 

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '@scss/components.scss'
+import '@scss/components/PostListItem.scss'
 import { NotionNode } from '@types'
 import TagBadges from '@components/TagBadges'
 

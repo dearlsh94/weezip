@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useEffect, useContext, useState } from 'react'
 import { NotionContext } from '@store/rootStore'
-import '@scss/module.scss'
+import '@scss/module/Header.scss'
 import { NotionNode } from '@types'
 import { isDebug, GNB_MENUS } from '@src/constants'
 import Linker from '@components/Linker'
