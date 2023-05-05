@@ -5,12 +5,12 @@ export const notionNodeToJson = (node?: NotionNode): Children => {
 }
 
 export const getNodeJsonByUrl = (nodes: NotionNode[], url: string): Children | null => {
-  const node = nodes.find(n => n.title.startsWith(url))
+  const node = nodes.find(n => n.title === url)
   return notionNodeToJson(node)
 }
 
 export const getNodeMarkdownByUrl = (nodes: NotionNode[], url: string): string => {
-  const node = nodes.find(n => n.title.startsWith(url))
+  const node = nodes.find(n => n.title === url)
   return node ? node.markdownString : ''
 }
 
