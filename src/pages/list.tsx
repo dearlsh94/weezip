@@ -17,6 +17,7 @@ import Divider from '@components/notion/Divider'
 import { SERIES_FILTERS } from '@src/constants'
 import { CATEGORY_FILTERS } from '@src/constants'
 import IconClearAll from '@components/icon/IconClearAll'
+import CircleProgress from '@components/ui/CircleProgress'
 
 export const Head: HeadFC = () => {
   return (
@@ -45,7 +46,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const [list, setList] = useState<NotionNode[]>([])
   const [count, setCount] = useState(0)
   const [filterText, setFilterText] = useState('전체')
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [currentPage, setCurrentPage] = useState(0)
   const [lastPage, setLastPage] = useState(0)
 
@@ -114,7 +115,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
-    }, 1000)
+    }, 500)
   }
 
   return (
@@ -123,7 +124,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
         <MainLayout className="list-layout">
           <ListFilter />
           <div className={`info-box ${isLoading ? 'loading' : ''}`}>
-            <IconClearAll size={16} handleClick={handleReset} />
+            <IconClearAll size={24} handleClick={handleReset} />
             <div className="count-box ellipsis">
               {filterText && (
                 <strong>
@@ -135,7 +136,11 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
             </div>
           </div>
           <Divider color="primary" height={2} />
-          <PostList list={list} currentPage={currentPage} lastPage={lastPage} />
+          {isLoading ? (
+            <CircleProgress height={180} />
+          ) : (
+            <PostList list={list} currentPage={currentPage} lastPage={lastPage} />
+          )}
         </MainLayout>
       </NotionContext.Provider>
     </PageContext.Provider>
