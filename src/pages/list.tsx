@@ -115,7 +115,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
-    }, 500)
+    }, 600)
   }
 
   return (
