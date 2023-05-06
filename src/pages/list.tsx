@@ -51,6 +51,8 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const [lastPage, setLastPage] = useState(0)
 
   useEffect(() => {
+    filterReset()
+
     let l: NotionNode[] = []
     let p = 1
     let lp = 1
@@ -105,9 +107,13 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     setList(l.slice(indexOfFirstPost, indexOfLastPost))
   }, [props.location])
 
-  const handleReset = () => {
+  const filterReset = () => {
     loading()
     setFilterText('전체')
+  }
+
+  const handleClearAll = () => {
+    filterReset()
     navigate('/list')
   }
 
@@ -124,7 +130,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
         <MainLayout className="list-layout">
           <ListFilter />
           <div className={`info-box ${isLoading ? 'loading' : ''}`}>
-            <IconClearAll size={24} handleClick={handleReset} />
+            <IconClearAll size={24} handleClick={handleClearAll} />
             <div className="count-box ellipsis">
               {filterText && (
                 <strong>
