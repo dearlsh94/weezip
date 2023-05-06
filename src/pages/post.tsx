@@ -67,10 +67,11 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           size={ButtonSize.PRIMARY}
           color={ButtonColor.PRIMARY}
           type={ButtonType.BORDER}
-          text={'전체 목록 보기'}
           width={'100%'}
           handleClick={moveToList}
-        />
+        >
+          전체 목록 보기
+        </MyButton>
       </div>
     </MainLayout>
   )

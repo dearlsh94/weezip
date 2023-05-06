@@ -23,12 +23,12 @@ interface Props {
   size: ButtonSize
   color: ButtonColor
   type: ButtonType
-  text: string
   handleClick: Function
   width: number | '100%'
+  children?: React.ReactNode
 }
 
-const MyButton = ({ size, color, type, text, handleClick, width }: Props) => {
+const MyButton = ({ size, color, type, handleClick, width, children }: Props) => {
   return (
     <button
       className={`my-button ${size} ${color} ${type}`}
@@ -37,7 +37,7 @@ const MyButton = ({ size, color, type, text, handleClick, width }: Props) => {
       }}
       onClick={() => handleClick()}
     >
-      {text}
+      {children}
     </button>
   )
 }
