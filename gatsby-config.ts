@@ -21,6 +21,7 @@ const config: GatsbyConfig = {
   // For to check not available during SSR
   flags: {
     DEV_SSR: true,
+    FAST_DEV: true,
   },
   plugins: [
     // For use sass
