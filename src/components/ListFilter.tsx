@@ -44,7 +44,6 @@ const ListFilter = () => {
             })}
           </div>
         </div>
-
         <Divider />
         <div className="category filter">
           <p className="title">Category</p>

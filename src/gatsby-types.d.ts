@@ -3378,21 +3378,109 @@ type NotionRawChildrenChildrenChildrenSortInput = {
 };
 
 type NotionRawChildrenChildrenCode = {
+  readonly caption: Maybe<ReadonlyArray<Maybe<NotionRawChildrenChildrenCodeCaption>>>;
   readonly language: Maybe<Scalars['String']>;
   readonly text: Maybe<ReadonlyArray<Maybe<NotionRawChildrenChildrenCodeText>>>;
 };
 
+type NotionRawChildrenChildrenCodeCaption = {
+  readonly annotations: Maybe<NotionRawChildrenChildrenCodeCaptionAnnotations>;
+  readonly plain_text: Maybe<Scalars['String']>;
+  readonly text: Maybe<NotionRawChildrenChildrenCodeCaptionText>;
+  readonly type: Maybe<Scalars['String']>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionAnnotations = {
+  readonly bold: Maybe<Scalars['Boolean']>;
+  readonly code: Maybe<Scalars['Boolean']>;
+  readonly color: Maybe<Scalars['String']>;
+  readonly italic: Maybe<Scalars['Boolean']>;
+  readonly strikethrough: Maybe<Scalars['Boolean']>;
+  readonly underline: Maybe<Scalars['Boolean']>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionAnnotationsFieldSelector = {
+  readonly bold: InputMaybe<FieldSelectorEnum>;
+  readonly code: InputMaybe<FieldSelectorEnum>;
+  readonly color: InputMaybe<FieldSelectorEnum>;
+  readonly italic: InputMaybe<FieldSelectorEnum>;
+  readonly strikethrough: InputMaybe<FieldSelectorEnum>;
+  readonly underline: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionAnnotationsFilterInput = {
+  readonly bold: InputMaybe<BooleanQueryOperatorInput>;
+  readonly code: InputMaybe<BooleanQueryOperatorInput>;
+  readonly color: InputMaybe<StringQueryOperatorInput>;
+  readonly italic: InputMaybe<BooleanQueryOperatorInput>;
+  readonly strikethrough: InputMaybe<BooleanQueryOperatorInput>;
+  readonly underline: InputMaybe<BooleanQueryOperatorInput>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionAnnotationsSortInput = {
+  readonly bold: InputMaybe<SortOrderEnum>;
+  readonly code: InputMaybe<SortOrderEnum>;
+  readonly color: InputMaybe<SortOrderEnum>;
+  readonly italic: InputMaybe<SortOrderEnum>;
+  readonly strikethrough: InputMaybe<SortOrderEnum>;
+  readonly underline: InputMaybe<SortOrderEnum>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionFieldSelector = {
+  readonly annotations: InputMaybe<NotionRawChildrenChildrenCodeCaptionAnnotationsFieldSelector>;
+  readonly plain_text: InputMaybe<FieldSelectorEnum>;
+  readonly text: InputMaybe<NotionRawChildrenChildrenCodeCaptionTextFieldSelector>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionFilterInput = {
+  readonly annotations: InputMaybe<NotionRawChildrenChildrenCodeCaptionAnnotationsFilterInput>;
+  readonly plain_text: InputMaybe<StringQueryOperatorInput>;
+  readonly text: InputMaybe<NotionRawChildrenChildrenCodeCaptionTextFilterInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionFilterListInput = {
+  readonly elemMatch: InputMaybe<NotionRawChildrenChildrenCodeCaptionFilterInput>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionSortInput = {
+  readonly annotations: InputMaybe<NotionRawChildrenChildrenCodeCaptionAnnotationsSortInput>;
+  readonly plain_text: InputMaybe<SortOrderEnum>;
+  readonly text: InputMaybe<NotionRawChildrenChildrenCodeCaptionTextSortInput>;
+  readonly type: InputMaybe<SortOrderEnum>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionText = {
+  readonly content: Maybe<Scalars['String']>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionTextFieldSelector = {
+  readonly content: InputMaybe<FieldSelectorEnum>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionTextFilterInput = {
+  readonly content: InputMaybe<StringQueryOperatorInput>;
+};
+
+type NotionRawChildrenChildrenCodeCaptionTextSortInput = {
+  readonly content: InputMaybe<SortOrderEnum>;
+};
+
 type NotionRawChildrenChildrenCodeFieldSelector = {
+  readonly caption: InputMaybe<NotionRawChildrenChildrenCodeCaptionFieldSelector>;
   readonly language: InputMaybe<FieldSelectorEnum>;
   readonly text: InputMaybe<NotionRawChildrenChildrenCodeTextFieldSelector>;
 };
 
 type NotionRawChildrenChildrenCodeFilterInput = {
+  readonly caption: InputMaybe<NotionRawChildrenChildrenCodeCaptionFilterListInput>;
   readonly language: InputMaybe<StringQueryOperatorInput>;
   readonly text: InputMaybe<NotionRawChildrenChildrenCodeTextFilterListInput>;
 };
 
 type NotionRawChildrenChildrenCodeSortInput = {
+  readonly caption: InputMaybe<NotionRawChildrenChildrenCodeCaptionSortInput>;
   readonly language: InputMaybe<SortOrderEnum>;
   readonly text: InputMaybe<NotionRawChildrenChildrenCodeTextSortInput>;
 };
@@ -6398,6 +6486,7 @@ type Query_notionArgs = {
 type Query_siteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
+  flags: InputMaybe<SiteFlagsFilterInput>;
   graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   host: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
@@ -6470,6 +6559,7 @@ type Query_sitePluginArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly children: ReadonlyArray<Node>;
+  readonly flags: Maybe<SiteFlags>;
   readonly graphqlTypegen: Maybe<SiteGraphqlTypegen>;
   readonly host: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
@@ -6665,6 +6755,7 @@ type SiteEdge = {
 type SiteFieldSelector = {
   readonly buildTime: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
+  readonly flags: InputMaybe<SiteFlagsFieldSelector>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFieldSelector>;
   readonly host: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
@@ -6681,6 +6772,7 @@ type SiteFieldSelector = {
 type SiteFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
+  readonly flags: InputMaybe<SiteFlagsFilterInput>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   readonly host: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
@@ -6692,6 +6784,22 @@ type SiteFilterInput = {
   readonly port: InputMaybe<IntQueryOperatorInput>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
   readonly trailingSlash: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteFlags = {
+  readonly DEV_SSR: Maybe<Scalars['Boolean']>;
+};
+
+type SiteFlagsFieldSelector = {
+  readonly DEV_SSR: InputMaybe<FieldSelectorEnum>;
+};
+
+type SiteFlagsFilterInput = {
+  readonly DEV_SSR: InputMaybe<BooleanQueryOperatorInput>;
+};
+
+type SiteFlagsSortInput = {
+  readonly DEV_SSR: InputMaybe<SortOrderEnum>;
 };
 
 type SiteFunction = Node & {
@@ -7220,6 +7328,7 @@ type SiteSiteMetadataSortInput = {
 type SiteSortInput = {
   readonly buildTime: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
+  readonly flags: InputMaybe<SiteFlagsSortInput>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenSortInput>;
   readonly host: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
