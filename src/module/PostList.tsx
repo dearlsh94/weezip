@@ -7,6 +7,7 @@ import IconArrow from '@components/icon/IconArrow'
 import IconClearAll from '@components/icon/IconClearAll'
 import { navigate } from 'gatsby'
 import { parseLocationQuery } from '@utils/parseUtils'
+import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
 
 interface Props {
   list: NotionNode[]
@@ -71,20 +72,28 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
       )}
       {list?.length > 0 && (
         <div className="post-list-page-box">
-          <button
+          <MyButton
             className={`page-button prev ${currentPage === FIRST_PAGE ? 'disabled' : 'active'}`}
-            onClick={handleOlder}
+            size={ButtonSize.PRIMARY}
+            color={ButtonColor.PRIMARY}
+            type={ButtonType.BORDER}
+            width={120}
+            handleClick={handleOlder}
           >
             <IconArrow direction="left" size={16} />
             Older
-          </button>
-          <button
+          </MyButton>
+          <MyButton
             className={`page-button next ${currentPage === lastPage ? 'disabled' : 'active'}`}
-            onClick={handleNewer}
+            size={ButtonSize.PRIMARY}
+            color={ButtonColor.PRIMARY}
+            type={ButtonType.BORDER}
+            width={120}
+            handleClick={handleNewer}
           >
             Newer
             <IconArrow direction="right" size={16} />
-          </button>
+          </MyButton>
         </div>
       )}
     </React.Fragment>

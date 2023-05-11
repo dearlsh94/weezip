@@ -74,7 +74,7 @@ const Header = () => {
           </div>
         </Linker>
       </header>
-      <div className={`snb-container ${isSnbOpen ? 'open' : ''}`}>
+      <nav className={`snb-container ${isSnbOpen ? 'open' : ''}`}>
         <DimWrapper handleClose={() => setIsSnbOpen(false)}>
           <div className="snb-box">
             <div className="sub-header">
@@ -86,7 +86,7 @@ const Header = () => {
                 </p>
               </div>
             </div>
-            <nav className="nav-box">
+            <div className="nav-box">
               <ul>
                 {GNB_MENUS?.length > 0 &&
                   GNB_MENUS.map((nav, i) => {
@@ -102,10 +102,10 @@ const Header = () => {
                     )
                   })}
               </ul>
-            </nav>
+            </div>
           </div>
         </DimWrapper>
-      </div>
+      </nav>
 
       {isDebug && (
         <section>

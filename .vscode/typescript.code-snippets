@@ -34,5 +34,26 @@
     "prefix": "impReactHook",
     "body": ["import { useEffect, useContext, useState } from 'react'"],
     "description": "import frequently used react hook "
+  },
+  "import MyButton": {
+    "scope": "",
+    "prefix": "impMyButton",
+    "body": "import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'",
+    "description": "import for to use MyButton component"
+  },
+  "Write MyButton": {
+    "scope": "",
+    "prefix": "writeMyButton",
+    "body": [
+      "<MyButton",
+      "size={ButtonSize.PRIMARY}",
+      "color={ButtonColor.PRIMARY}",
+      "type={ButtonType.BORDER}",
+      "text={'$1'}",
+      "width={'100%'}",
+      "handleClick={() => {}}",
+      "/>"
+    ],
+    "description": "to use MyButton component"
   }
 }
