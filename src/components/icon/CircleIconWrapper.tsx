@@ -3,7 +3,7 @@ import '@scss/icon.scss'
 
 interface Props {
   children: React.ReactNode
-  color: 'black' | 'white'
+  color: 'black' | 'white' | 'secondary'
   size?: number
 }
 
