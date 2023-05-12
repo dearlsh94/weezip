@@ -18,7 +18,7 @@ const IntroPage: React.FC<PageProps> = () => {
   const store: INotionContext = {
     nodes: nodes,
   }
-  const content: Children | null = getNodeJsonByUrl(nodes, '/intro')
+  const content: Children | null = getNodeJsonByUrl(nodes, '/intro/')
   return (
     <NotionContext.Provider value={store}>
       <MainLayout className="intro-layout">{content && <ContentWrapper childrens={content.children} />}</MainLayout>
