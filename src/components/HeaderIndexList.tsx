@@ -11,7 +11,7 @@ const HeaderIndexList = ({ list }: Props) => {
   const move = (item: HTMLHeadingElement) => {
     const elHeader = document.getElementById('header')
     window.scrollTo({
-      top: item.offsetTop - ((elHeader?.clientHeight || 0) + 12), // minus header height + margin
+      top: item.offsetTop,
       behavior: 'smooth',
     })
   }
