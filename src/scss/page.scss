@@ -95,6 +95,25 @@
   }
   .bottom-box {
     margin-top: 60px;
+    button + button {
+      margin-top: 12px;
+    }
+    .series-button {
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      span {
+        color: $primary-color;
+        margin-right: 4px;
+      }
+      &:hover {
+        span {
+          color: $white-color-1;
+        }
+      }
+    }
   }
   .float-box {
     @include superDesktop {
