@@ -7,6 +7,7 @@
   color: #555;
   line-height: 28px;
   margin-bottom: 0;
+  padding-left: 16px;
 
   li {
     width: 100%;
@@ -18,13 +19,10 @@
     }
   }
 
-  .tag-h1 + .tag-h2,
-  .tag-h2 + .tag-h2,
-  .tag-h1 + .tag-h3 {
+  .tag-h2 {
     padding-left: 16px;
   }
-  .tag-h2 + .tag-h3,
-  .tag-h3 + .tag-h3 {
+  .tag-h3 {
     padding-left: 32px;
   }
 
