@@ -13,6 +13,7 @@ export default function HTML(props) {
         <meta property="og:type" content="website" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge;chrome=1" />
         <meta name="robots" content="all" />
+        <meta name="naver-site-verification" content="f51d65952b7df29d7c83ce742d8b9285921a0508" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
