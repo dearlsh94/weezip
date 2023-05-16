@@ -95,19 +95,23 @@
   }
   .bottom-box {
     margin-top: 60px;
-  }
-  .float-box {
-    @include superDesktop {
-      display: none;
+    button + button {
+      margin-top: 12px;
     }
-    position: fixed;
-    z-index: 8;
-    bottom: 24px;
-    right: 18px;
-    .top-button-box {
-      cursor: pointer;
-      &.circle-icon-wrapper {
-        background-color: #fff;
+    .series-button {
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      span {
+        color: $primary-color;
+        margin-right: 4px;
+      }
+      &:hover {
+        span {
+          color: $white-color-1;
+        }
       }
     }
   }

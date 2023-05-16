@@ -43,3 +43,17 @@ export const parseContentValue = (content: Children): ContentValue => {
     series,
   }
 }
+
+/**
+ * @param url : /post/{id} 형태의 URL. id는 series-type-number로 되어 있다.
+ * @returns series code
+ */
+export const getSeriesCodeByURL = (url: string) => {
+  const pattern = /\b\d{2}(?=-\d{2}-\d+)/
+  const match = url.match(pattern)
+  if (match) {
+    return match[0] // seriesCode
+  } else {
+    return 0
+  }
+}

@@ -1,0 +1,18 @@
+@import '@scss/abstracts/variables';
+@import '@scss/abstracts/mixin';
+
+.float-box {
+  @include superDesktop {
+    display: none;
+  }
+  position: fixed;
+  z-index: 8;
+  bottom: 24px;
+  right: 18px;
+  .top-button-box {
+    cursor: pointer;
+    & .circle-icon-wrapper {
+      background-color: #fff;
+    }
+  }
+}

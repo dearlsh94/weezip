@@ -11,8 +11,10 @@ import HeaderIndexList from '@components/HeaderIndexList'
 import TagBadges from '@components/TagBadges'
 import { graphql } from 'gatsby'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
-import IconDoubleArrow from '@components/icon/IconDoubleArrow'
-import CircleIconWrapper from '@components/icon/CircleIconWrapper'
+import { SERIES_FILTERS } from '@src/constants'
+import { getSeriesCodeByURL } from '@utils/parseUtils'
+import { Filter } from '@types'
+import FloatBox from '@components/FloatBox'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
@@ -25,6 +27,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, slug))
   const title = content?.properties?.remark.rich_text || ''
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
+  const [series, setSeries] = useState<Filter>()
 
   useEffect(() => {
     if (!slug) {
@@ -38,18 +41,23 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
       })
       setIndexList(headers)
     }
+
+    const _series = SERIES_FILTERS.find(f => f.key === getSeriesCodeByURL(slug))
+    setSeries(_series)
   }, [])
 
   const moveToList = () => {
     navigate('/list')
   }
 
-  const moveTop = () => {
-    scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
+  const moveToSeriesList = () => {
+    if (series) {
+      navigate(`/list?series=${series.key}`)
+    } else {
+      moveToList()
+    }
   }
+
   return (
     <MainLayout className="post-layout">
       <div>
@@ -71,6 +79,19 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
       </div>
       {content && <ContentWrapper childrens={content.children} />}
       <div className="bottom-box">
+        {series && (
+          <MyButton
+            className="series-button"
+            size={ButtonSize.PRIMARY}
+            color={ButtonColor.PRIMARY}
+            type={ButtonType.BORDER}
+            width={'100%'}
+            handleClick={moveToSeriesList}
+          >
+            <span>{series.name}</span>
+            시리즈 전체보기
+          </MyButton>
+        )}
         <MyButton
           size={ButtonSize.PRIMARY}
           color={ButtonColor.PRIMARY}
@@ -81,13 +102,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           전체 목록 보기
         </MyButton>
       </div>
-      <div className="float-box">
-        <div className="top-button-box" onClick={moveTop}>
-          <CircleIconWrapper color="secondary">
-            <IconDoubleArrow direction="top" size={36} />
-          </CircleIconWrapper>
-        </div>
-      </div>
+      <FloatBox useTop={true} />
     </MainLayout>
   )
 }
