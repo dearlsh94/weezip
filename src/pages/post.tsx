@@ -11,11 +11,10 @@ import HeaderIndexList from '@components/HeaderIndexList'
 import TagBadges from '@components/TagBadges'
 import { graphql } from 'gatsby'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
-import IconDoubleArrow from '@components/icon/IconDoubleArrow'
-import CircleIconWrapper from '@components/icon/CircleIconWrapper'
 import { SERIES_FILTERS } from '@src/constants'
 import { getSeriesCodeByURL } from '@utils/parseUtils'
 import { Filter } from '@types'
+import FloatBox from '@components/FloatBox'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
@@ -59,12 +58,6 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     }
   }
 
-  const moveTop = () => {
-    scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
-  }
   return (
     <MainLayout className="post-layout">
       <div>
@@ -109,13 +102,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           전체 목록 보기
         </MyButton>
       </div>
-      <div className="float-box">
-        <div className="top-button-box" onClick={moveTop}>
-          <CircleIconWrapper color="secondary">
-            <IconDoubleArrow direction="top" size={36} />
-          </CircleIconWrapper>
-        </div>
-      </div>
+      <FloatBox useTop={true} />
     </MainLayout>
   )
 }
