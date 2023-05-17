@@ -14,7 +14,7 @@ import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/My
 import { SERIES_FILTERS } from '@src/constants'
 import { getSeriesCodeByURL } from '@utils/parseUtils'
 import { Filter } from '@types'
-import FloatBox from '@components/FloatBox'
+import FloatBox from '@components/ui/FloatBox'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))

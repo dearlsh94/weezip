@@ -1,7 +1,7 @@
 import * as React from 'react'
 import '@scss/notion.scss'
 import { TextBlock, TextItem } from '@types'
-import Linker from '@components/Linker'
+import Linker from '@components/ui/Linker'
 
 interface Props {
   paragraph?: TextBlock

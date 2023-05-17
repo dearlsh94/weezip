@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Linker from '@components/Linker'
+import Linker from '@components/ui/Linker'
 import PostListItem from '@components/PostListItem'
 import '@scss/module/PostList.scss'
 import { NotionNode } from '@types'
