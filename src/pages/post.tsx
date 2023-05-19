@@ -19,7 +19,7 @@ import FloatBox from '@components/ui/FloatBox'
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
   const title = content?.properties?.remark.rich_text || ''
-  return <SEO title={title} description={content?.properties?.series.rich_text}></SEO>
+  return <SEO title={title} description={content?.properties?.series.rich_text} pathname={pageContext.slug}></SEO>
 }
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {

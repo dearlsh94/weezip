@@ -21,7 +21,7 @@ import CircleProgress from '@components/ui/CircleProgress'
 
 export const Head: HeadFC = () => {
   return (
-    <SEO title={`글목록`} description={`Write, Explain, Edit, Zip`}>
+    <SEO title={`글목록`} description={`Write, Explain, Edit, Zip`} pathname="/list/">
       <link rel="canonical" href={`https://weezip.freefeely.com/list`} />
     </SEO>
   )
