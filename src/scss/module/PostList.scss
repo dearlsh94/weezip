@@ -73,15 +73,6 @@
   margin-top: 36px;
 
   .page-button {
-    width: 120px;
-    height: 100%;
-    border: 1px solid $base-color;
-    border-radius: 8px;
-    background-color: $third-color;
-    font-size: 12pt;
-    font-weight: 400;
-    color: $black-color-6;
-    cursor: pointer;
     position: relative;
 
     &.prev {
