@@ -18,7 +18,7 @@ type DebounceFn = (...args: any[]) => void
 export const debounce = (fn: DebounceFn, delay = 10): DebounceFn => {
   let timerId: number | undefined
 
-  return function (...args: any[]) {
+  return (...args: any[]) => {
     if (timerId) {
       clearTimeout(timerId)
     }
