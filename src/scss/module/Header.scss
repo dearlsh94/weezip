@@ -35,6 +35,24 @@ header {
   .logo-box {
     width: 42px;
   }
+  .right-box {
+    position: absolute;
+    right: 10px;
+    z-index: 11;
+    .icon-box {
+      @include flexCenter;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      &:hover {
+        background-color: $secondary-color;
+        border-radius: 4px;
+      }
+    }
+    svg {
+      cursor: pointer;
+    }
+  }
 
   &.scrolled {
     position: sticky;

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import '@scss/notion.scss'
 import { TextBlock, TextItem } from '@types'
-import Linker from '@components/Linker'
+import Linker from '@components/ui/Linker'
 
 interface Props {
   paragraph?: TextBlock
@@ -43,10 +43,16 @@ const ContentChildren = ({ paragraph, text, className }: Props) => {
               <React.Fragment key={`block-paragraph-text-${i}`}>
                 {t.href ? (
                   <Linker url={t.href} target="_blank">
-                    <span className={classNames.join(' ')}>{t.plain_text}</span>
+                    <span
+                      className={classNames.join(' ')}
+                      dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
+                    />
                   </Linker>
                 ) : (
-                  <span className={classNames.join(' ')}>{t.plain_text}</span>
+                  <span
+                    className={classNames.join(' ')}
+                    dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
+                  />
                 )}
               </React.Fragment>
             )

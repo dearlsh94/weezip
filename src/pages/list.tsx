@@ -21,7 +21,7 @@ import CircleProgress from '@components/ui/CircleProgress'
 
 export const Head: HeadFC = () => {
   return (
-    <SEO title={`글목록`} description={`Write, Explain, Edit, Zip`}>
+    <SEO title={`글목록`} description={`Write, Explain, Edit, Zip`} pathname="/list/">
       <link rel="canonical" href={`https://weezip.freefeely.com/list`} />
     </SEO>
   )
@@ -57,7 +57,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     let p = 1
     let lp = 1
     if (props.location.search) {
-      const { series, category, tag, page } = parseLocationQuery(props.location.search)
+      const { series, category, tag, page, keyword } = parseLocationQuery(props.location.search)
 
       l = parseList.filter(post => {
         if (!post.title.startsWith('/post')) return false
@@ -75,6 +75,12 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
         if (tag) {
           setFilterText(`${tag} 태그`)
           return post?.contentValue?.tag?.find(t => t.name === tag)
+        }
+
+        if (keyword) {
+          const searchText = decodeURIComponent(keyword).replaceAll(/ /g, '').toUpperCase()
+          setFilterText(`'${searchText}' 포함된 제목`)
+          return post.contentValue?.remark?.replaceAll(/ /g, '').toUpperCase().includes(searchText)
         }
 
         return true

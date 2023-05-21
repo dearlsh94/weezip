@@ -13,7 +13,7 @@ export const CATEGORY_FILTERS: Filter[] = [
     type: 'category',
     key: '10',
     name: 'Write',
-    color: 'brown_background',
+    color: 'brown-3_background',
   },
   {
     type: 'category',
@@ -40,7 +40,7 @@ export const SERIES_FILTERS: Filter[] = [
     type: 'series',
     key: '50',
     name: '블로그를 만들려는 히치하이커를 위한 안내서',
-    color: 'lightpink-color_background',
+    color: 'pink-5_background',
   },
   {
     type: 'series',
