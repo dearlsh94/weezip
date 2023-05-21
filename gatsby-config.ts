@@ -65,9 +65,11 @@ const config: GatsbyConfig = {
         }`,
         resolveSiteUrl: () => siteUrl,
         resolvePages: ({ allNotion: { edges: allPages } }: any) => {
-          return allPages.map((edge: any) => {
-            return { ...edge.node, path: edge.node.title }
-          })
+          return allPages
+            .filter((edge: any) => edge.node.title)
+            .map((edge: any) => {
+              return { ...edge.node, path: edge.node.title }
+            })
         },
         serializer: (props: any) => {
           return {

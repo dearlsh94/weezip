@@ -13,11 +13,13 @@ exports.createPages = async ({ actions, graphql }) => {
   `)
   data.allNotion.edges.forEach(({ node }) => {
     const { id, title } = node
-    actions.createPage({
-      path: title,
-      component: require.resolve(`./src/pages/post.tsx`),
-      context: { id, slug: title },
-    })
+    if (title) {
+      actions.createPage({
+        path: title,
+        component: require.resolve(`./src/pages/post.tsx`),
+        context: { id, slug: title },
+      })
+    }
   })
 }
 
