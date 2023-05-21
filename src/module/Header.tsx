@@ -12,6 +12,8 @@ import IconHamburgerMenu from '@components/icon/IconHamburgerMenu'
 import IconHome from '@components/icon/IconHome'
 import { mail } from '@src/constants'
 import IconDoubleArrow from '@components/icon/IconDoubleArrow'
+import IconSearch from '@components/icon/IconSearch'
+import PostSearch from '@components/ui/PostSearch'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
@@ -73,6 +75,13 @@ const Header = () => {
             <StaticImage src={`../images/logo-2x.png`} alt="Weezip Logo" className="logo" />
           </div>
         </Linker>
+        <div className="right-box">
+          <PostSearch>
+            <div className="icon-box">
+              <IconSearch />
+            </div>
+          </PostSearch>
+        </div>
       </header>
       <nav className={`snb-container ${isSnbOpen ? 'open' : ''}`}>
         <DimWrapper handleClose={() => setIsSnbOpen(false)}>
