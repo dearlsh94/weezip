@@ -13,6 +13,10 @@ Write Explain Edit Zip<br/> byproducts of the process of living with imagination
 
 ## Posts
 
+<br/>
+### Write
+- 23.05.21 | 내가 매일 업무일지를 작성하는 4가지 이유.
+
 ### Edit
 
 - 21.03.25 | 성장하는 프론트엔드 개발자 되기 - 원티드 온라인 Live Talk #20 후기
