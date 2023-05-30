@@ -1,19 +1,29 @@
-# 안녕하세요.<br/>
+# 안녕하세요.
+<br/>
 
-## WeeZip
-
-Write Explain Edit Zip<br/> byproducts of the process of living with imagination and curiosity <br/><br/>
+## WeeZip  
+Write Explain Edit Zip  
+byproducts of the process of living with imagination and curiosity  
+<br/>
 
 ## ☀️
-
-상상과 호기심을 원동력으로 살아내는 과정에서의 부산물들을 꾸준히 정리하고 싶어 만들었어요.<br/> 개발, 인사이트, 에세이,
-생각, 회고 등 제 삶에 대한 다양한 글을 쓰고 싶어요. <br/><br/>
-
-놀러가기(https://weezip.treefeely.com) <br/><br/>
-
-## Posts
-
+상상과 호기심을 원동력으로 살아내는 과정에서의 부산물들을 꾸준히 정리하고 싶어 만들었어요.  
+개발, 인사이트, 에세이, 생각, 회고 등 제 삶에 대한 다양한 글을 쓰고 싶어요.  
 <br/>
+놀러가기(https://weezip.treefeely.com)  
+<br/>
+
+## Using
+- React(18.2.0)
+- Gatsby(v5.7.0)
+- Typescript
+- Sass
+- Gatsby Cloud Platform
+- Google Analytics
+- Notion  
+<br/>  
+
+## Posts  
 ### Write
 - 23.05.21 | 내가 매일 업무일지를 작성하는 4가지 이유.
 
@@ -63,4 +73,5 @@ Write Explain Edit Zip<br/> byproducts of the process of living with imagination
 
 ### 삽질견문록
 
-- 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기. <br/>
+- 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기.  
+<br/>
