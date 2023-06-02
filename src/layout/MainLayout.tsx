@@ -12,14 +12,14 @@ interface Props {
 const MainLayout = ({ children, className }: Props) => {
   return (
     <React.Fragment>
-      <div className={`main-layout ${className}`}>
+      <main className={`main-layout ${className}`}>
         <Header />
         <ScrollProgress />
-        <main>
+        <article>
           <div className="content">{children}</div>
-        </main>
+        </article>
         <Footer />
-      </div>
+      </main>
     </React.Fragment>
   )
 }
