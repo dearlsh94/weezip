@@ -14,6 +14,8 @@ import { mail } from '@src/constants'
 import IconDoubleArrow from '@components/icon/IconDoubleArrow'
 import IconSearch from '@components/icon/IconSearch'
 import PostSearch from '@components/ui/PostSearch'
+import IconOutLink from '@components/icon/IconOutLink'
+import IconList from '@components/icon/IconList'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
@@ -101,9 +103,11 @@ const Header = () => {
                   GNB_MENUS.map((nav, i) => {
                     return (
                       <li key={`gnb-${i}`} className={`nav-item`}>
-                        <Linker url={nav.url}>
+                        <Linker url={nav.url} target={nav.isOutLink ? '_blank' : '_parent'}>
                           <div className="title-box">
                             {nav.title.toUpperCase() === 'HOME' && <IconHome />}
+                            {nav.title.toUpperCase() === 'LIST' && <IconList />}
+                            {nav.isOutLink && <IconOutLink />}
                             <span>{nav.title}</span>
                           </div>
                         </Linker>
