@@ -4,7 +4,6 @@ export const isDebug = false
 
 export const GNB_MENUS = [
   { url: '/', title: 'Home' },
-  { url: '/intro', title: 'Intro' },
   { url: '/list', title: 'List' },
 ]
 
