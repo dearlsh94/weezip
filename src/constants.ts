@@ -3,9 +3,9 @@ import { Filter } from './types'
 export const isDebug = false
 
 export const GNB_MENUS = [
-  { url: '/', title: 'Home' },
-  { url: '/intro', title: 'Intro' },
-  { url: '/list', title: 'List' },
+  { url: '/', title: 'Home', isOutLink: false },
+  { url: '/list', title: 'List', isOutLink: false },
+  { url: 'https://treefeely.com', title: 'Treefeely', isOutLink: true },
 ]
 
 export const CATEGORY_FILTERS: Filter[] = [
