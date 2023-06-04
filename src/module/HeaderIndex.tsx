@@ -18,7 +18,7 @@ const HeaderIndex = ({ list }: Props) => {
       <div className="index-box">
         <div className="title-box" onClick={handleShowIndex}>
           <p>목차 {isShowIndex ? '숨기기' : '보기'}</p>
-          <div className={`icon-box ${isShowIndex ? 'open' : ''}`}>
+          <div className={`icon-box ${isShowIndex ? '' : 'hide'}`}>
             <IconArrow direction={'top'} size={20} />
           </div>
         </div>
