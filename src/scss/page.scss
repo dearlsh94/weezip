@@ -2,7 +2,6 @@
 @import '@scss/abstracts/mixin';
 
 .title-box {
-  margin-top: 4px;
   span.series-title {
     display: flex;
     margin-top: 12px;
@@ -91,7 +90,7 @@
 
 .post-layout {
   .title {
-    margin-top: 0px;
+    margin-top: 4px;
     margin-bottom: 6px;
   }
   .bottom-box {
