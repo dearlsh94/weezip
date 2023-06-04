@@ -1,0 +1,50 @@
+@import '@scss/abstracts/variables';
+@import '@scss/abstracts/mixin';
+
+.index-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 24px 0px 48px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #e5e5e5;
+
+  .title-box {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    p {
+      font-size: 13pt;
+      font-weight: 500;
+      padding-top: 4px;
+      padding-left: 6px;
+      margin-bottom: 4px;
+    }
+
+    .icon-box {
+      display: flex;
+      align-items: center;
+      transform: rotate(0);
+      transition-duration: 0.2s;
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      p {
+        color: $secondary-color;
+      }
+      svg path {
+        fill: $secondary-color;
+      }
+    }
+  }
+
+  li {
+    width: 600px;
+    @include ellipsis(1);
+  }
+}

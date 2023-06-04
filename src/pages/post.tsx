@@ -15,6 +15,7 @@ import { SERIES_FILTERS } from '@src/constants'
 import { getSeriesCodeByURL } from '@utils/parseUtils'
 import { Filter } from '@types'
 import FloatBox from '@components/ui/FloatBox'
+import HeaderIndex from '@module/HeaderIndex'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
@@ -73,10 +74,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
         </div>
       </div>
-      <div className="index-box">
-        <p>목차</p>
-        {indexList && indexList?.length > 0 && <HeaderIndexList list={indexList} />}
-      </div>
+      <HeaderIndex list={indexList} />
       {content && <ContentWrapper childrens={content.children} />}
       <div className="bottom-box">
         {series && (

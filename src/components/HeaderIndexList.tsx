@@ -51,6 +51,7 @@ const HeaderIndexList = ({ list }: Props) => {
           )
         })}
       </ul>
+      {/* NOTE 1280px 이상 해상도에서 스크롤 내릴 경우, 글 우측에 목차 생성 */}
       <ul className={`block-header-index-list right ${status}`}>
         <li onClick={() => moveTop()}>처음으로</li>
         {list.map((item, i) => {
