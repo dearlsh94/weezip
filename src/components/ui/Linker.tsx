@@ -1,4 +1,5 @@
 import * as React from 'react'
+import '@scss/components/ui/Linker.scss'
 
 interface Props {
   url: string
@@ -9,7 +10,7 @@ interface Props {
 
 const Linker = ({ url, target, children, className }: Props) => {
   return (
-    <a href={url} target={target} rel="noopener noreferrer" className={className}>
+    <a href={url} target={target} rel="noopener noreferrer" className={`my-linker ${className}`}>
       {children}
     </a>
   )

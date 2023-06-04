@@ -1,0 +1,7 @@
+@import '@scss/abstracts/variables';
+
+a.my-linker {
+  &:hover {
+    color: $gray-color-1;
+  }
+}
