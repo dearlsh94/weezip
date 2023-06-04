@@ -17,13 +17,14 @@ const HeaderIndex = ({ list }: Props) => {
     <React.Fragment>
       <div className="index-box">
         <div className="title-box" onClick={handleShowIndex}>
-          <p>목차</p>
-          {/* <p>목차 {isShowIndex ? '숨기기' : '보기'}</p> */}
-          {/* <div className={`icon-box ${isShowIndex ? 'open' : ''}`}>
+          <p>목차 {isShowIndex ? '숨기기' : '보기'}</p>
+          <div className={`icon-box ${isShowIndex ? 'open' : ''}`}>
             <IconArrow direction={'top'} size={20} />
-          </div> */}
+          </div>
         </div>
-        {list && list?.length > 0 && <HeaderIndexList list={list} />}
+        <div className={`header-index-box ${isShowIndex ? '' : 'hide'}`}>
+          {list && list?.length > 0 && <HeaderIndexList list={list} />}
+        </div>
       </div>
     </React.Fragment>
   )

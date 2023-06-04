@@ -43,8 +43,17 @@
     }
   }
 
-  li {
-    width: 600px;
-    @include ellipsis(1);
+  .header-index-box {
+    margin-top: 8px;
+    &.hide {
+      display: none;
+    }
+    ul {
+      margin: 0;
+      li {
+        width: 600px;
+        @include ellipsis(1);
+      }
+    }
   }
 }
