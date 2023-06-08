@@ -26,6 +26,7 @@ byproducts of the process of living with imagination and curiosity
 ## Posts  
 ### Write
 - 23.05.21 | 내가 매일 업무일지를 작성하는 4가지 이유.
+- 23.06.08 | 내가 동료에게 피드백을 요청하기까지.
 <br/>
 
 ### Edit
