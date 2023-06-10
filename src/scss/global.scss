@@ -12,7 +12,7 @@ body {
   font-family: 'Noto Sans Korean', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   ::selection {
-    background: $secondary-color;
+    background: $base-color;
     color: $white-color-2;
   }
 }
@@ -78,84 +78,84 @@ img.icon {
   color: $gray-color;
 }
 .gray_background {
-  background-color: $gray-color;
+  border: 1px solid $gray-color;
   color: $black-color-4;
 }
 .brown {
   color: $brown-color;
 }
 .brown_background {
-  background-color: $brown-color;
+  border: 1px solid $brown-color;
   color: $black-color-4;
 }
 .orange {
   color: $orange-color;
 }
 .orange_background {
-  background-color: $orange-color;
+  border: 1px solid $orange-color;
   color: $black-color-4;
 }
 .yellow {
   color: $yellow-color;
 }
 .yellow_background {
-  background-color: $yellow-color;
+  border: 1px solid $yellow-color;
   color: $black-color-4;
 }
 .blue {
   color: $blue-color;
 }
 .blue_background {
-  background-color: $blue-color;
+  border: 1px solid $blue-color;
   color: $black-color-4;
 }
 .pink {
   color: $pink-color;
 }
 .pink_background {
-  background-color: $pink-color;
+  border: 1px solid $pink-color;
   color: $black-color-4;
 }
 .red {
   color: $red-color;
 }
 .red_background {
-  background-color: $red-color;
+  border: 1px solid $red-color;
   color: $black-color-4;
 }
 .green {
   color: $green-color;
 }
 .green_background {
-  background-color: $green-color;
+  border: 1px solid $green-color;
   color: $black-color-4;
 }
 .purple {
   color: $purple-color;
 }
 .purple_background {
-  background-color: $purple-color;
+  border: 1px solid $purple-color;
   color: $black-color-4;
 }
 .black {
   color: $black-color-4;
 }
 .black_background {
-  background-color: $black-color-4;
+  border: 1px solid $black-color-4;
   color: $white-color-1;
 }
 
 .bluepurple-color_background {
-  background-color: $bluepurple-color;
+  border: 1px solid $bluepurple-color;
   color: $black-color-3;
 }
 
 .brown-3_background {
-  background-color: $brown-color-3;
+  border: 1px solid $brown-color-3;
   color: $black-color-3;
 }
 
 .pink-5_background {
-  background-color: $pink-color-5;
+  border: 1px solid $pink-color-5;
   color: $black-color-3;
 }

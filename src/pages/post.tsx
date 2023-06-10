@@ -61,17 +61,19 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
 
   return (
     <MainLayout className="post-layout">
-      <div>
-        <TagBadges tag={content?.properties.tag} />
-      </div>
       <div className="title-box">
         {content?.properties?.series.rich_text && (
           <span className={`series-title`}>[{content?.properties?.series.rich_text}]</span>
         )}
         <h1 className="title">{title}</h1>
         <div className="desc-box">
-          <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
-          <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
+          <div>
+            <TagBadges tag={content?.properties.tag} />
+          </div>
+          <div className="date-box">
+            <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
+            <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
+          </div>
         </div>
       </div>
       <HeaderIndex list={indexList} />
