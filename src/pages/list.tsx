@@ -149,7 +149,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
           </div>
           <Divider color="primary" height={2} />
           {isLoading ? (
-            <CircleProgress height={180} />
+            <CircleProgress height={360} />
           ) : (
             <PostList list={list} currentPage={currentPage} lastPage={lastPage} />
           )}
