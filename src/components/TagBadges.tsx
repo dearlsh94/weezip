@@ -14,7 +14,7 @@ const TagBadges = ({ tag, selectTags }: Props) => {
         <div className="badge-box">
           {tag.multi_select?.map((t, i) => {
             return (
-              <span className={`badge ${t.color}_background`} key={`t-badge-${i}`}>
+              <span className={`badge ${t.color}_border`} key={`t-badge-${i}`}>
                 {t.name}
               </span>
             )
@@ -25,7 +25,7 @@ const TagBadges = ({ tag, selectTags }: Props) => {
         <div className="badge-box">
           {selectTags.map((t, i) => {
             return (
-              <span className={`badge ${t.color}_background`} key={`t-badge-${i}`}>
+              <span className={`badge ${t.color}_border`} key={`t-badge-${i}`}>
                 {t.name}
               </span>
             )
