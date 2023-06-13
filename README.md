@@ -28,12 +28,6 @@ byproducts of the process of living with imagination and curiosity
 - 23.05.21 | 내가 매일 업무일지를 작성하는 4가지 이유.
 - 23.06.08 | 내가 동료에게 피드백을 요청하기까지.
 <br/>
-
-### Edit
-- 21.03.25 | 성장하는 프론트엔드 개발자 되기 - 원티드 온라인 Live Talk #20 후기
-- 22.11.29 | robots.txt 작성하기
-- 23.05.18 | 1분 만에 VSCode 동기화하기. 내 VSCode는 어디서든 동일해야하니까.
-<br/>
  
 ### Explain
 - 23.01.12 | 더 나은 에러 메시지를 써 보자
@@ -43,6 +37,12 @@ byproducts of the process of living with imagination and curiosity
 - 23.05.09 | Semantic Versioning과 각 배포환경에서의 버전 관리에 대한 고민.
 - 23.06.03 | 좋은 동료와 함께 성장하기 위한 피드백은 어떻게 해야할까?
 - 23.06.13 | MSW를 활용하여 웹 브라우저에서 Mockup 사용하기. API 의존으로부터의 해방.
+<br/>
+
+### Edit
+- 21.03.25 | 성장하는 프론트엔드 개발자 되기 - 원티드 온라인 Live Talk #20 후기
+- 22.11.29 | robots.txt 작성하기
+- 23.05.18 | 1분 만에 VSCode 동기화하기. 내 VSCode는 어디서든 동일해야하니까.
 <br/>
 
 ### Zip
