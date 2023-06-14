@@ -15,6 +15,7 @@ import { getSeriesCodeByURL } from '@utils/parseUtils'
 import { Filter } from '@types'
 import FloatBox from '@components/ui/FloatBox'
 import HeaderIndex from '@module/HeaderIndex'
+import IconCopyLink from '@components/icon/IconCopyLink'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
@@ -58,6 +59,18 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     }
   }
 
+  const handleCopy = () => {
+    var url = ''
+    var textarea = document.createElement('textarea')
+    document.body.appendChild(textarea)
+    url = window.location.href
+    textarea.value = url
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+    alert('현재 게시글 주소가 복사되었습니다.')
+  }
+
   return (
     <MainLayout className="post-layout">
       <div className="title-box">
@@ -69,9 +82,14 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           <div>
             <TagBadges tag={content?.properties.tag} />
           </div>
-          <div className="date-box">
-            <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
-            <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
+          <div className="right-box">
+            <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
+              <IconCopyLink size={18} fill="#a7c4bc" />
+            </div>
+            <div className="date-box">
+              <span className="date">작성일 : {content?.properties?.created_date?.date.start}</span>
+              <span className="date">수정일 : {content?.properties?.edited_date?.date.start}</span>
+            </div>
           </div>
         </div>
       </div>
