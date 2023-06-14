@@ -31,7 +31,7 @@
   &.secondary {
     border: 2px solid $secondary-color;
     &:hover {
-      border: 2px solid $black-color-1;
+      border: 2px solid $primary-color;
       svg path {
         fill: $black-color-1;
       }
