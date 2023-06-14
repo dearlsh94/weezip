@@ -40,7 +40,7 @@ const FloatBox = ({ useTop }: Props) => {
       {useTop && (
         <div className={`top-button-box ${status}`} onClick={moveTop}>
           <CircleIconWrapper color="secondary">
-            <IconDoubleArrow direction="top" size={36} />
+            <IconDoubleArrow direction="top" size={36} fill={'#a7c4bc'} />
           </CircleIconWrapper>
         </div>
       )}
