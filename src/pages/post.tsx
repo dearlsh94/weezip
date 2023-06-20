@@ -16,6 +16,7 @@ import { Filter } from '@types'
 import FloatBox from '@components/ui/FloatBox'
 import HeaderIndex from '@module/HeaderIndex'
 import IconCopyLink from '@components/icon/IconCopyLink'
+import CircleIconWrapper from '@components/icon/CircleIconWrapper'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
@@ -96,6 +97,13 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
       <HeaderIndex list={indexList} />
       {content && <ContentWrapper childrens={content.children} />}
       <div className="bottom-box">
+        <div className="share-box">
+          <div className="copy" onClick={handleCopy}>
+            <CircleIconWrapper color={'secondary'}>
+              <IconCopyLink />
+            </CircleIconWrapper>
+          </div>
+        </div>
         {series && (
           <MyButton
             className="series-button"
