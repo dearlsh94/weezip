@@ -14,7 +14,7 @@ export default function HTML(props) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge;chrome=1" />
         <meta name="robots" content="all" />
         <meta name="naver-site-verification" content="f51d65952b7df29d7c83ce742d8b9285921a0508" />
-        <script src="https://developers.kakao.com/sdk/js/kakao.js" />
+        {/* <script src="https://developers.kakao.com/sdk/js/kakao.js" /> */}
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
