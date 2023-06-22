@@ -58,7 +58,8 @@ byproducts of the process of living with imagination and curiosity
 - 23.04.17 | Gatsby Cloud로 배포하고 Google Domains로 웹 이름 지어주기.
 - 23.04.20 | Gatsby Head API로 메타 태그 적용하기. 아아, 부르다 죽을 그 이름 SEO.
 - 23.04.29 | Gatsby-plugin-sitemap으로 동적 sitemap 생성하기. robots.txt도 만들자.
-- 23.04.20 | 몇 명이나 보러 올까? Gatsby gtag plugin으로 GA 연동하기. <br/>
+- 23.04.20 | 몇 명이나 보러 올까? Gatsby gtag plugin으로 GA 연동하기.
+<br/>
 
 ### 살다가 한 번쯤은 Clean Code를 읽어보자.
 - 21.04.01 | Clean Code 책 주행하기. 프롤로그
