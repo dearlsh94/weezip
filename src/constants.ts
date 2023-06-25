@@ -5,6 +5,7 @@ export const isDebug = false
 export const GNB_MENUS = [
   { url: '/', title: 'Home', isOutLink: false },
   { url: '/list', title: 'List', isOutLink: false },
+  { url: '/list?series=60', title: '문화소비자시점', isOutLink: false },
   { url: 'https://treefeely.com', title: 'Treefeely', isOutLink: true },
 ]
 

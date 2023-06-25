@@ -16,6 +16,7 @@ import IconSearch from '@components/icon/IconSearch'
 import PostSearch from '@components/ui/PostSearch'
 import IconOutLink from '@components/icon/IconOutLink'
 import IconList from '@components/icon/IconList'
+import IconStar from '@components/icon/IconStar'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
@@ -107,6 +108,7 @@ const Header = () => {
                           <div className="title-box">
                             {nav.title.toUpperCase() === 'HOME' && <IconHome />}
                             {nav.title.toUpperCase() === 'LIST' && <IconList />}
+                            {nav.title.toUpperCase() === '문화소비자시점' && <IconStar />}
                             {nav.isOutLink && <IconOutLink />}
                             <span>{nav.title}</span>
                           </div>

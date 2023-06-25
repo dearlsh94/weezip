@@ -1,7 +1,6 @@
 @import '@scss/abstracts/mixin';
 
 .filter-item {
-  margin-top: 6px;
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 9.5pt;
@@ -10,6 +9,7 @@
   transform: scale(1);
   white-space: nowrap;
   margin-top: 4px;
+  margin-bottom: 4px;
   margin-right: 12px;
   background-color: $white-color;
 
