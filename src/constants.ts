@@ -54,6 +54,12 @@ export const SERIES_FILTERS: Filter[] = [
     name: '살다가 한 번쯤은 Clean Code를 읽어보자.',
     color: 'purple_border',
   },
+  {
+    type: 'series',
+    key: '60',
+    name: '문화 소비자 시점',
+    color: 'blue_border',
+  },
 ]
 
 export const mail = 'weezip.ethan@gmail.com'
