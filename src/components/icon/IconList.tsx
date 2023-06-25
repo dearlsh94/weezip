@@ -12,9 +12,9 @@ const IconList = ({ size = 24, fill = 'black' }: Props) => {
       <path
         fill={fill}
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="48"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="48"
         d="M160 144h288M160 256h288M160 368h288"
       />
       <circle
@@ -23,9 +23,9 @@ const IconList = ({ size = 24, fill = 'black' }: Props) => {
         r="16"
         fill={fill}
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="32"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
       />
       <circle
         cx="80"
@@ -33,9 +33,9 @@ const IconList = ({ size = 24, fill = 'black' }: Props) => {
         r="16"
         fill={fill}
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="32"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
       />
       <circle
         cx="80"
@@ -43,9 +43,9 @@ const IconList = ({ size = 24, fill = 'black' }: Props) => {
         r="16"
         fill={fill}
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="32"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
       />
     </svg>
   )

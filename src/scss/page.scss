@@ -87,6 +87,17 @@
   }
   .bottom-box {
     margin-top: 60px;
+    div.share-box {
+      display: flex;
+      justify-content: center;
+      margin: 36px 0px;
+      .item + .item {
+        margin-left: 8px;
+      }
+      .copy {
+        width: fit-content;
+      }
+    }
     button + button {
       margin-top: 12px;
     }
