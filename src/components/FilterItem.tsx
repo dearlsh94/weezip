@@ -13,7 +13,7 @@ const FilterItem = ({ filter }: Props) => {
   const [isActive, setIsActive] = React.useState(false)
 
   React.useEffect(() => {
-    if (location.search.includes(`${filter.type}=${filter.key}`)) {
+    if (location.search.includes(`${filter.type}=${encodeURIComponent(filter.key)}`)) {
       setIsActive(true)
     } else {
       setIsActive(false)
@@ -21,7 +21,7 @@ const FilterItem = ({ filter }: Props) => {
   }, [location])
 
   const handelFilter = () => {
-    navigate(`/list?${filter.type}=${filter.key}`)
+    navigate(`/list?${filter.type}=${encodeURIComponent(filter.key)}`)
   }
   return (
     <React.Fragment>

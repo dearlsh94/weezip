@@ -74,7 +74,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
         if (tag) {
           setFilterText(`${tag} 태그`)
-          return post?.contentValue?.tag?.find(t => t.name === tag)
+          return post?.contentValue?.tag?.find(t => t.name === decodeURIComponent(tag))
         }
 
         if (keyword) {
