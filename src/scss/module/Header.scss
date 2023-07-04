@@ -56,7 +56,7 @@ header {
 
   &.scrolled {
     position: sticky;
-    top: 0;
+    top: -60px;
     height: 60px;
     @include animationFadeOut(300ms);
     .left-box {
