@@ -107,6 +107,19 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
               <IconArrow direction="left" size={12} />
             </MyButton>
           </div>
+          <div className="center-box">
+            {currentPage !== 1 && (
+              <span className="prev" onClick={handleOlder}>
+                {Math.max(currentPage - 1, 1)}
+              </span>
+            )}
+            <span className="current">{currentPage}</span>
+            {currentPage !== lastPage && (
+              <span className="next" onClick={handleNewer}>
+                {Math.min(currentPage + 1, lastPage)}
+              </span>
+            )}
+          </div>
           <div className="right-box">
             <MyButton
               className={`page-button next ${currentPage === lastPage ? 'disabled' : 'active'}`}

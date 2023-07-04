@@ -82,6 +82,26 @@
     }
   }
 
+  .center-box {
+    color: $primary-color;
+    & span + span {
+      margin-left: 8px;
+    }
+
+    span.current {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    span.prev,
+    span.next {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   .page-button {
     position: relative;
 
