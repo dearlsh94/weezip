@@ -72,11 +72,20 @@
   align-items: center;
   width: 100%;
   height: 54px;
-  margin-top: 36px;
+  margin-top: 24px;
+
+  .left-box,
+  .right-box {
+    display: flex;
+    & .page-button + .page-button {
+      margin-left: 8px;
+    }
+  }
 
   .page-button {
     position: relative;
 
+    &.first,
     &.prev {
       svg {
         position: absolute;
@@ -90,6 +99,7 @@
       }
     }
 
+    &.last,
     &.next {
       svg {
         position: absolute;
@@ -103,6 +113,9 @@
       }
     }
 
+    &.first svg {
+      padding-right: 2px;
+    }
     &.disabled {
       background-color: $gray-color-7;
       opacity: 0.3;

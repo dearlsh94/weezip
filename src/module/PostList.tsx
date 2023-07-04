@@ -8,6 +8,7 @@ import IconClearAll from '@components/icon/IconClearAll'
 import { navigate } from 'gatsby'
 import { parseLocationQuery } from '@utils/parseUtils'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
+import IconDoubleArrow from '@components/icon/IconDoubleArrow'
 
 interface Props {
   list: NotionNode[]
@@ -26,6 +27,16 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
   const handleNewer = () => {
     if (currentPage !== lastPage) {
       handleMove(Math.min(currentPage + 1, lastPage))
+    }
+  }
+  const handleFirst = () => {
+    if (currentPage !== FIRST_PAGE) {
+      handleMove(FIRST_PAGE)
+    }
+  }
+  const handleLast = () => {
+    if (currentPage !== lastPage) {
+      handleMove(lastPage)
     }
   }
 
@@ -72,28 +83,54 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
       )}
       {list?.length > 0 && (
         <div className="post-list-page-box">
-          <MyButton
-            className={`page-button prev ${currentPage === FIRST_PAGE ? 'disabled' : 'active'}`}
-            size={ButtonSize.PRIMARY}
-            color={ButtonColor.PRIMARY}
-            type={ButtonType.BORDER}
-            width={120}
-            handleClick={handleOlder}
-          >
-            <IconArrow direction="left" size={16} />
-            Older
-          </MyButton>
-          <MyButton
-            className={`page-button next ${currentPage === lastPage ? 'disabled' : 'active'}`}
-            size={ButtonSize.PRIMARY}
-            color={ButtonColor.PRIMARY}
-            type={ButtonType.BORDER}
-            width={120}
-            handleClick={handleNewer}
-          >
-            Newer
-            <IconArrow direction="right" size={16} />
-          </MyButton>
+          <div className="left-box">
+            {lastPage > 2 && (
+              <MyButton
+                className={`page-button first ${currentPage === FIRST_PAGE ? 'disabled' : 'active'}`}
+                size={ButtonSize.THIRD}
+                color={ButtonColor.PRIMARY}
+                type={ButtonType.BORDER}
+                width={45}
+                handleClick={handleFirst}
+              >
+                <IconDoubleArrow direction="left" size={18} />
+              </MyButton>
+            )}
+            <MyButton
+              className={`page-button prev ${currentPage === FIRST_PAGE ? 'disabled' : 'active'}`}
+              size={ButtonSize.THIRD}
+              color={ButtonColor.PRIMARY}
+              type={ButtonType.BORDER}
+              width={45}
+              handleClick={handleOlder}
+            >
+              <IconArrow direction="left" size={12} />
+            </MyButton>
+          </div>
+          <div className="right-box">
+            <MyButton
+              className={`page-button next ${currentPage === lastPage ? 'disabled' : 'active'}`}
+              size={ButtonSize.THIRD}
+              color={ButtonColor.PRIMARY}
+              type={ButtonType.BORDER}
+              width={45}
+              handleClick={handleNewer}
+            >
+              <IconArrow direction="right" size={12} />
+            </MyButton>
+            {lastPage > 2 && (
+              <MyButton
+                className={`page-button last ${currentPage === lastPage ? 'disabled' : 'active'}`}
+                size={ButtonSize.THIRD}
+                color={ButtonColor.PRIMARY}
+                type={ButtonType.BORDER}
+                width={45}
+                handleClick={handleLast}
+              >
+                <IconDoubleArrow direction="right" size={18} />
+              </MyButton>
+            )}
+          </div>
         </div>
       )}
     </React.Fragment>
