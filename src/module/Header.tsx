@@ -92,10 +92,8 @@ const Header = () => {
             <div className="sub-header">
               <StaticImage src={`../images/logo-3x.png`} alt="Weezip Logo" className="logo" />
               <div className="text-box">
-                <p>디자인 관련 도움을 구하고 있어요.</p>
-                <p>
-                  관심 있으시면 <a href={`mailto:${mail}`}>여기</a>로 연락 주세요 🙇‍♂️
-                </p>
+                {/* TODO 무슨 문구를 써놓을까 */}
+                <p></p>
               </div>
             </div>
             <nav className="nav-box">
