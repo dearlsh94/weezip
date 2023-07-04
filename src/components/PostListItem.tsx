@@ -17,7 +17,7 @@ const PostListItem = ({ post }: Props) => {
   return (
     <React.Fragment>
       <div className={`post-list-item`}>
-        {series && <span className="series">[{series}]</span>}
+        {series && <span className="series">시리즈 [{series}]</span>}
         <p>{remark}</p>
         <div className="info-box">
           <div className="tag-box">
