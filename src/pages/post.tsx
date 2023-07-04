@@ -76,7 +76,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     <MainLayout className="post-layout">
       <div className="title-box">
         {content?.properties?.series.rich_text && (
-          <span className={`series-title`}>[{content?.properties?.series.rich_text}]</span>
+          <span className={`series-title`}>시리즈 [{content?.properties?.series.rich_text}]</span>
         )}
         <h1 className="title">{title}</h1>
         <div className="desc-box">
