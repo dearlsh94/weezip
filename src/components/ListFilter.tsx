@@ -33,7 +33,7 @@ const ListFilter = () => {
     <React.Fragment>
       <div className="list-filter-container">
         <div className="series filter">
-          <p className="title">Series</p>
+          <p className="title">시리즈</p>
           <div className="filter-box">
             {SERIES_FILTERS.map((filter, idx) => {
               return (
@@ -46,7 +46,7 @@ const ListFilter = () => {
         </div>
         <Divider />
         <div className="category filter">
-          <p className="title">Category</p>
+          <p className="title">카테고리</p>
           <div className="filter-box">
             {CATEGORY_FILTERS.map((filter, idx) => {
               return (
@@ -61,7 +61,7 @@ const ListFilter = () => {
           <>
             <Divider />
             <div className="tag filter">
-              <p className="title">Tag</p>
+              <p className="title">태그</p>
               <div className="badge-box">{renderTags}</div>
             </div>
           </>
