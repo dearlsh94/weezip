@@ -80,7 +80,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
         )}
         <h1 className="title">{title}</h1>
         <div className="desc-box">
-          <div>
+          <div className="left-box">
             <TagBadges tag={content?.properties.tag} />
           </div>
           <div className="right-box">
