@@ -1,9 +1,12 @@
 @import '@scss/abstracts/variables';
 
 .my-button {
-  border-radius: 12px;
+  border-radius: 8px;
   letter-spacing: -0.05px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &.SIZE-PRIMARY {
     padding: 10px;
