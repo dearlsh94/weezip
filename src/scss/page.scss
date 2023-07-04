@@ -19,9 +19,15 @@
     text-align: right;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    .left-box {
+      margin-top: 6px;
+    }
     .right-box {
       display: flex;
       align-items: center;
+      margin-top: 6px;
+
       .copy-box {
         display: flex;
         align-items: center;
