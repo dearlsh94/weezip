@@ -30,11 +30,11 @@
 
   &.secondary {
     border: 2px solid $secondary-color;
+    svg path {
+      fill: $base-color;
+    }
     &:hover {
       border: 2px solid $base-color;
-      svg path {
-        fill: $base-color;
-      }
     }
   }
 }
