@@ -52,7 +52,7 @@ export const SERIES_FILTERS: Filter[] = [
   {
     type: 'series',
     key: '52',
-    name: '살다가 한 번쯤은 Clean Code를 읽어보자.',
+    name: '본업으로 하는 독서',
     color: 'purple_border',
   },
   {

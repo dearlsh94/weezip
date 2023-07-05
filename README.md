@@ -65,7 +65,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.04.29 | Gatsby-plugin-sitemap으로 동적 sitemap 생성하기. robots.txt도 만들자.
 - 23.04.20 | 몇 명이나 보러 올까? Gatsby gtag plugin으로 GA 연동하기. <br/>
 
-### 살다가 한 번쯤은 Clean Code를 읽어보자.
+### 본업으로 하는 독서
 
 - 21.04.01 | Clean Code 책 주행하기. 프롤로그
 - 21.04.01 | Clean Code 책 주행하기. 챕터 1 - 깨끗한 코드
@@ -77,7 +77,8 @@ byproducts of the process of living with imagination and curiosity
 - 21.04.10 | Clean Code 책 주행하기. 챕터 7 - 오류 처리
 - 21.04.10 | Clean Code 책 주행하기. 챕터 8 - 경계
 - 21.04.15 | Clean Code 책 주행하기. 챕터 9 - 단위 테스트
-- 21.04.17 | Clean Code 책 주행하기. 챕터 10 - 클래스 <br/>
+- 21.04.17 | Clean Code 책 주행하기. 챕터 10 - 클래스
+- 23.07.05 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리 <br/>
 
 ### 삽질견문록
 
