@@ -127,8 +127,8 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           전체 목록 보기
         </MyButton>
         <div className="feedback-box">
-          <p>피드백은 언제나 환영이에요!</p>
-          <p>👇👇 Contact Me 👇👇</p>
+          <p>피드백은 언제나 환영이에요! 연락 방법은 페이지 제일 하단을 확인해주세요.</p>
+          <p>👇👇 Contact Me (메일 또는 DM)👇👇</p>
         </div>
       </div>
       <FloatBox useTop={true} />
