@@ -1,0 +1,7 @@
+.content-wrapper {
+  .content-children-box {
+    & + .content-children-box {
+      margin-top: 8px;
+    }
+  }
+}

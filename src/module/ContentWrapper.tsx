@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { BlockType, Children } from '@types'
 import ContentChildren from '@module/ContentChildren'
+import '@scss/module/ContentWrapper.scss'
 
 interface Props {
   childrens: Children[]
@@ -67,7 +68,7 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
         }
 
         return (
-          <div key={i} className={`content-wrapper`}>
+          <div key={i} className={`content-children-box`}>
             <ContentChildren block={block} />
           </div>
         )
