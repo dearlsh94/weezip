@@ -126,6 +126,10 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
         >
           전체 목록 보기
         </MyButton>
+        <div className="feedback-box">
+          <p>피드백은 언제나 환영이에요!</p>
+          <p>👇👇 Contact Me 👇👇</p>
+        </div>
       </div>
       <FloatBox useTop={true} />
     </MainLayout>
