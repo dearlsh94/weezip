@@ -21,7 +21,7 @@ const ListFilter = () => {
               type: 'tag',
               key: name,
               name,
-              color: `${color}_border`,
+              color: `${color}-border`,
             }}
           />
         </React.Fragment>
