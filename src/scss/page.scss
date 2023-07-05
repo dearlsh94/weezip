@@ -125,5 +125,17 @@
         }
       }
     }
+
+    div.feedback-box {
+      margin-top: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      & p + p {
+        margin-top: 8px;
+      }
+    }
   }
 }
