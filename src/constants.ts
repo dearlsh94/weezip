@@ -14,25 +14,25 @@ export const CATEGORY_FILTERS: Filter[] = [
     type: 'category',
     key: '10',
     name: 'Write',
-    color: 'brown-3_border',
+    color: 'brown-3-border',
   },
   {
     type: 'category',
     key: '20',
     name: 'Explain',
-    color: 'orange_border',
+    color: 'orange-border',
   },
   {
     type: 'category',
     key: '30',
     name: 'Edit',
-    color: 'yellow_border',
+    color: 'yellow-border',
   },
   {
     type: 'category',
     key: '40',
     name: 'Zip',
-    color: 'blue_border',
+    color: 'blue-border',
   },
 ]
 
@@ -41,25 +41,25 @@ export const SERIES_FILTERS: Filter[] = [
     type: 'series',
     key: '60',
     name: '문화 소비자 시점',
-    color: 'blue_border',
+    color: 'blue-border',
   },
   {
     type: 'series',
     key: '50',
     name: '블로그를 만들려는 히치하이커를 위한 안내서',
-    color: 'pink-5_border',
+    color: 'pink-5-border',
   },
   {
     type: 'series',
     key: '52',
     name: '본업으로 하는 독서',
-    color: 'purple_border',
+    color: 'purple-border',
   },
   {
     type: 'series',
     key: '51',
     name: '삽질견문록',
-    color: 'bluepurple-color_border',
+    color: 'bluepurple-border',
   },
 ]
 
