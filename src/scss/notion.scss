@@ -51,6 +51,7 @@
 
 .block-callout {
   display: flex;
+  flex-direction: column;
   background-color: #e5e5e5;
   padding: 12px 4px;
   padding-left: 40px;
