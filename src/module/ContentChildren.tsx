@@ -41,7 +41,7 @@ const ContentChildren = ({ block }: Props) => {
       case BlockType.TODO:
         if (block.to_do) return <MyTodo todo={block.to_do} />
       case BlockType.CALLOUT:
-        if (block.callout) return <MyCallout callout={block.callout} />
+        if (block.callout) return <MyCallout callout={block.callout} children={block.children} />
       case BlockType.TOGGLE:
         if (block.toggle)
           return <MyToggle toggle={block.toggle} hasChild={block.has_children} childList={block.children} />
