@@ -6,6 +6,7 @@ import CircleIconWrapper from '@components/icon/CircleIconWrapper'
 import { mail } from '@src/constants'
 import IconInstagram from '@components/icon/IconInstagram'
 import IconGithub from '@components/icon/IconGithub'
+import IconKakao from '@components/icon/IconKakao'
 
 const Footer = () => {
   return (
@@ -28,6 +29,11 @@ const Footer = () => {
               <CircleIconWrapper color="white">
                 <Linker url={`https://github.com/dearlsh94`} target="_blank">
                   <IconGithub size={24} fill="white" />
+                </Linker>
+              </CircleIconWrapper>
+              <CircleIconWrapper color="white">
+                <Linker url={`https://github.com/dearlsh94`} target="_blank">
+                  <IconKakao size={24} fill="white" />
                 </Linker>
               </CircleIconWrapper>
             </div>
