@@ -27,13 +27,13 @@ const Footer = () => {
                 </Linker>
               </CircleIconWrapper>
               <CircleIconWrapper color="white">
-                <Linker url={`https://github.com/dearlsh94`} target="_blank">
-                  <IconGithub size={24} fill="white" />
+                <Linker url={`https://open.kakao.com/me/treefeely`} target="_blank">
+                  <IconKakao size={24} fill="white" />
                 </Linker>
               </CircleIconWrapper>
               <CircleIconWrapper color="white">
                 <Linker url={`https://github.com/dearlsh94`} target="_blank">
-                  <IconKakao size={24} fill="white" />
+                  <IconGithub size={24} fill="white" />
                 </Linker>
               </CircleIconWrapper>
             </div>
