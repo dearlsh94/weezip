@@ -7,6 +7,7 @@ import { mail } from '@src/constants'
 import IconInstagram from '@components/icon/IconInstagram'
 import IconGithub from '@components/icon/IconGithub'
 import IconKakao from '@components/icon/IconKakao'
+import IconThreads from '@components/icon/IconThreads'
 
 const Footer = () => {
   return (
@@ -24,6 +25,11 @@ const Footer = () => {
               <CircleIconWrapper color="white">
                 <Linker url={`https://www.instagram.com/treefeely/`} target="_blank">
                   <IconInstagram size={24} fill="white" />
+                </Linker>
+              </CircleIconWrapper>
+              <CircleIconWrapper color="white">
+                <Linker url={`https://www.threads.net/@moment.______`} target="_blank">
+                  <IconThreads size={24} fill="white" />
                 </Linker>
               </CircleIconWrapper>
               <CircleIconWrapper color="white">
