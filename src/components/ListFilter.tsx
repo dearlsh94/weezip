@@ -62,7 +62,7 @@ const ListFilter = () => {
             <Divider />
             <div className="tag filter">
               <p className="title">태그</p>
-              <div className="badge-box">{renderTags}</div>
+              <div className="filter-box">{renderTags}</div>
             </div>
           </>
         )}
