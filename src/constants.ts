@@ -45,12 +45,6 @@ export const SERIES_FILTERS: Filter[] = [
   },
   {
     type: 'series',
-    key: '50',
-    name: '블로그를 만들려는 히치하이커를 위한 안내서',
-    color: 'pink-5-border',
-  },
-  {
-    type: 'series',
     key: '52',
     name: '본업으로 하는 독서',
     color: 'purple-border',
@@ -60,6 +54,12 @@ export const SERIES_FILTERS: Filter[] = [
     key: '51',
     name: '삽질견문록',
     color: 'bluepurple-border',
+  },
+  {
+    type: 'series',
+    key: '50',
+    name: '블로그를 만들려는 히치하이커를 위한 안내서',
+    color: 'pink-5-border',
   },
 ]
 
