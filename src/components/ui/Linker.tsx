@@ -10,7 +10,7 @@ interface Props {
 
 const Linker = ({ url, target, children, className }: Props) => {
   return (
-    <a href={url} target={target} rel="noopener noreferrer" className={`my-linker ${className}`}>
+    <a href={url} target={target} rel="noopener noreferrer" className={`my-linker ${className || ''}`}>
       {children}
     </a>
   )
