@@ -6,8 +6,8 @@ import { throttle } from '@utils/commonUtils'
 import IconClose from '@components/icon/IconClose'
 import IconSearch from '@components/icon/IconSearch'
 import { navigate } from 'gatsby'
-import FilterItem from '@components/FilterItem'
-import Linker from './Linker'
+import HelpText from '@components/ui/HelpText'
+import Linker from '@components/ui/Linker'
 
 interface Props {
   children?: React.ReactNode
@@ -88,7 +88,7 @@ const PostSearch = ({ children }: Props) => {
               <IconClose size={32} />
             </div> */}
             <div className="recommend-box">
-              <strong>🧚 이런 건 어때요?</strong>
+              <HelpText text={'이런 건 어때요?'} />
               <Linker url={`/list/?series=60`} className="item">
                 #문화소비자시점
               </Linker>
