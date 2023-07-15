@@ -33,6 +33,12 @@ footer {
         }
       }
     }
+
+    .item.refer-box a {
+      margin-left: 8px;
+      color: $white-color-3;
+    }
+
     .item + .item {
       margin-top: 12px;
     }

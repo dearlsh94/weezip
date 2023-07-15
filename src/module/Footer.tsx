@@ -8,6 +8,7 @@ import IconInstagram from '@components/icon/IconInstagram'
 import IconGithub from '@components/icon/IconGithub'
 import IconKakao from '@components/icon/IconKakao'
 import IconThreads from '@components/icon/IconThreads'
+import { Link } from 'gatsby'
 
 const Footer = () => {
   return (
@@ -44,7 +45,12 @@ const Footer = () => {
               </CircleIconWrapper>
             </div>
           </div>
-          <div className="item refer-box">All Icons by iconify</div>
+          <div className="item refer-box">
+            <span>All Icons by</span>
+            <Linker url={`https://icon-sets.iconify.design/`} target={'_blank'}>
+              iconiFy
+            </Linker>
+          </div>
           <div className="item copyright-box">
             <p className="copyright">Copyright 2023. Ethan.lee all rights reserved.</p>
           </div>
