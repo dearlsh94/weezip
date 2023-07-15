@@ -6,6 +6,8 @@ import { throttle } from '@utils/commonUtils'
 import IconClose from '@components/icon/IconClose'
 import IconSearch from '@components/icon/IconSearch'
 import { navigate } from 'gatsby'
+import FilterItem from '@components/FilterItem'
+import Linker from './Linker'
 
 interface Props {
   children?: React.ReactNode
@@ -85,6 +87,18 @@ const PostSearch = ({ children }: Props) => {
             {/* <div className="icon-close-box" onClick={handleClose}>
               <IconClose size={32} />
             </div> */}
+            <div className="recommend-box">
+              <strong>🧚 이런 건 어때요?</strong>
+              <Linker url={`/list/?series=60`} className="item">
+                #문화소비자시점
+              </Linker>
+              <Linker url={`/list/?tag=Dev`} className="item">
+                #Dev
+              </Linker>
+              <Linker url={`/list/?tag=Essay`} className="item">
+                #Essay
+              </Linker>
+            </div>
           </div>
         </DimWrapper>
       </div>

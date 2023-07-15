@@ -5,7 +5,7 @@ interface Props {
   url: string
   children?: React.ReactNode
   target?: '_blank' | '_parent' | '_self' | '_top'
-  className?: ''
+  className?: string
 }
 
 const Linker = ({ url, target, children, className }: Props) => {
