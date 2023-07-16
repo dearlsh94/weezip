@@ -24,7 +24,7 @@ interface Props {
   color: ButtonColor
   type: ButtonType
   handleClick: Function
-  width: number | '100%'
+  width?: number | '100%'
   className?: string
   children?: React.ReactNode
 }
