@@ -49,10 +49,11 @@
       "size={ButtonSize.PRIMARY}",
       "color={ButtonColor.PRIMARY}",
       "type={ButtonType.BORDER}",
-      "text={'$1'}",
       "width={'100%'}",
       "handleClick={() => {}}",
-      "/>"
+      ">",
+      "$1",
+      "</MyButton>"
     ],
     "description": "to use MyButton component"
   }
