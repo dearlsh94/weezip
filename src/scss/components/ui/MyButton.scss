@@ -29,6 +29,7 @@
   &.COLOR-PRIMARY.TYPE-BORDER {
     background-color: $white-color-1;
     border: 1.5px solid $primary-color;
+    color: $base-color;
 
     &:hover {
       background-color: $primary-color;
@@ -39,6 +40,7 @@
   &.COLOR-SECONDARY.TYPE-BORDER {
     background-color: $white-color-1;
     border: 1.5px solid $secondary-color;
+    color: $primary-color;
 
     &:hover {
       background-color: $secondary-color;
@@ -49,6 +51,7 @@
   &.COLOR-THIRD.TYPE-BORDER {
     background-color: $white-color-1;
     border: 1.5px solid $third-color;
+    color: $secondary-color;
 
     &:hover {
       background-color: $third-color;
