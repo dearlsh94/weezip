@@ -20,10 +20,13 @@
   &.SIZE-THIRD {
     padding: 6px;
     height: 32px;
+    border-radius: 4px;
   }
   &.SIZE-FOURTH {
     padding: 4px;
     height: 24px;
+    border-radius: 4px;
+    font-size: 12px;
   }
 
   &.COLOR-PRIMARY.TYPE-BORDER {
