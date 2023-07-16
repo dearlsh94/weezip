@@ -6,8 +6,7 @@ import { throttle } from '@utils/commonUtils'
 import IconClose from '@components/icon/IconClose'
 import IconSearch from '@components/icon/IconSearch'
 import { navigate } from 'gatsby'
-import HelpText from '@components/ui/HelpText'
-import Linker from '@components/ui/Linker'
+import RecommendTag from '../RecommendTag'
 
 interface Props {
   children?: React.ReactNode
@@ -87,18 +86,7 @@ const PostSearch = ({ children }: Props) => {
             {/* <div className="icon-close-box" onClick={handleClose}>
               <IconClose size={32} />
             </div> */}
-            <div className="recommend-box">
-              <HelpText text={'이런 건 어때요?'} />
-              <Linker url={`/list/?series=60`} className="item">
-                #문화소비자시점
-              </Linker>
-              <Linker url={`/list/?tag=Dev`} className="item">
-                #Dev
-              </Linker>
-              <Linker url={`/list/?tag=Essay`} className="item">
-                #Essay
-              </Linker>
-            </div>
+            <RecommendTag />
           </div>
         </DimWrapper>
       </div>
