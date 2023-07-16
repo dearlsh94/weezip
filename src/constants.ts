@@ -63,4 +63,19 @@ export const SERIES_FILTERS: Filter[] = [
   },
 ]
 
+export const RECOMMEND_TAGS = [
+  {
+    url: 'list/?series=60',
+    name: '문화소비자시점',
+  },
+  {
+    url: 'list/?tag=Dev',
+    name: 'Dev',
+  },
+  {
+    url: 'list/?tag=Essay',
+    name: 'Essay',
+  },
+]
+
 export const mail = 'weezip.ethan@gmail.com'
