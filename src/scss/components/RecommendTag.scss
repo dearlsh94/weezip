@@ -1,0 +1,23 @@
+@import '@scss/abstracts/variables';
+
+.recommend-box {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+
+  strong {
+    font-size: 12px;
+    color: $base-color;
+  }
+
+  .item {
+    font-size: 13px;
+    line-height: 12px;
+
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
