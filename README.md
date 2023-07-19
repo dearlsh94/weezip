@@ -48,7 +48,8 @@ byproducts of the process of living with imagination and curiosity
 
 - 21.03.25 | 성장하는 프론트엔드 개발자 되기 - 원티드 온라인 Live Talk #20 후기
 - 22.11.29 | robots.txt 작성하기
-- 23.05.18 | 1분 만에 VSCode 동기화하기. 내 VSCode는 어디서든 동일해야하니까. <br/>
+- 23.05.18 | 1분 만에 VSCode 동기화하기. 내 VSCode는 어디서든 동일해야하니까.
+- 23.07.19 | 자주 쓰이고 헷갈리는 함수 네이밍을 위한 동사 비교 총정리. <br/>
 
 ### Zip
 
