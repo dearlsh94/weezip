@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import '@scss/components/FloatBox.scss'
 import CircleIconWrapper from '@components/icon/CircleIconWrapper'
 import { throttle } from '@utils/commonUtils'
-import IconMoveTop from '@components/icon/IconMoveTop'
+import IconMoveEnd from '@components/icon/IconMoveEnd'
 
 interface Props {
   useTop: boolean
@@ -40,7 +40,7 @@ const FloatBox = ({ useTop }: Props) => {
       {useTop && (
         <div className={`top-button-box ${status}`} onClick={moveTop}>
           <CircleIconWrapper color="secondary">
-            <IconMoveTop direction="top" size={24} fill={'#a7c4bc'} />
+            <IconMoveEnd direction="top" size={24} fill={'#a7c4bc'} />
           </CircleIconWrapper>
         </div>
       )}

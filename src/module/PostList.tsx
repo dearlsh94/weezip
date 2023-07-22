@@ -9,6 +9,7 @@ import { navigate } from 'gatsby'
 import { parseLocationQuery } from '@utils/parseUtils'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
 import IconDoubleArrow from '@components/icon/IconDoubleArrow'
+import IconMoveEnd from '@components/icon/IconMoveEnd'
 
 interface Props {
   list: NotionNode[]
@@ -93,7 +94,7 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
                 width={45}
                 handleClick={handleFirst}
               >
-                <IconDoubleArrow direction="left" size={18} />
+                <IconMoveEnd direction="left" size={18} />
               </MyButton>
             )}
             <MyButton
@@ -140,7 +141,7 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
                 width={45}
                 handleClick={handleLast}
               >
-                <IconDoubleArrow direction="right" size={18} />
+                <IconMoveEnd direction="right" size={18} />
               </MyButton>
             )}
           </div>
