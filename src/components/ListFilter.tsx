@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useContext } from 'react'
 import '@scss/components/ListFilter.scss'
-import '@scss/components/BadgeBox.scss'
+import '@scss/components/TagBadge.scss'
 import { CATEGORY_FILTERS, SERIES_FILTERS } from '@src/constants'
 import Divider from '@components/notion/Divider'
 import FilterItem from '@components/FilterItem'

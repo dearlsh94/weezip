@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '@scss/components/BadgeBox.scss'
+import '@scss/components/TagBadge.scss'
 import { Property, Select } from '@types'
 
 interface Props {
