@@ -12,6 +12,7 @@ export interface Children {
   parent: Parent
   archived: boolean
   properties: Properties
+  public_url: string
   url: string
   children: Children[]
   has_children: boolean

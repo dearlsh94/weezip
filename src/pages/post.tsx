@@ -60,6 +60,10 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     }
   }
 
+  const moveToPublicLink = () => {
+    window.open(content.public_url, '_blank')
+  }
+
   const handleCopy = () => {
     var url = ''
     var textarea = document.createElement('textarea')
@@ -104,6 +108,15 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
             </CircleIconWrapper>
           </div>
         </div>
+        <MyButton
+          size={ButtonSize.PRIMARY}
+          color={ButtonColor.PRIMARY}
+          type={ButtonType.BORDER}
+          width={'100%'}
+          handleClick={moveToPublicLink}
+        >
+          노션으로 댓글달기
+        </MyButton>
         {series && (
           <MyButton
             className="series-button"
@@ -124,7 +137,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           width={'100%'}
           handleClick={moveToList}
         >
-          전체 목록 보기
+          포스트 전체보기
         </MyButton>
         <div className="feedback-box">
           <p>피드백은 언제나 환영이에요! 연락 방법은 페이지 제일 하단을 확인해주세요.</p>
