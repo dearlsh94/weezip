@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { useEffect, useState } from 'react'
 
 interface Props {
   direction: 'top' | 'right' | 'left' | 'bottom'
