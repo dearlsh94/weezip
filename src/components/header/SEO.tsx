@@ -12,7 +12,7 @@ const SEO = ({ title, description, pathname, children }: Props) => {
   const { title: defaultTitle, description: defaultDescription, image, siteUrl } = useSiteMetadata()
 
   const seo = {
-    title: title || defaultTitle,
+    title: `${defaultTitle}${title ? ` | ${title}` : ''}`,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
