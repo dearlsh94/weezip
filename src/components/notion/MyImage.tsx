@@ -1,6 +1,6 @@
 import * as React from 'react'
 import '@scss/notion.scss'
-import { Children, Image } from '@types'
+import { Children } from '@types'
 
 interface Props {
   imageBlock: Children

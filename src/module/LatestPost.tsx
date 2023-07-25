@@ -41,9 +41,9 @@ const LatestPost = ({}: Props) => {
         </span>
       </div>
       <ul>
-        {parseList.slice(0, 5).map(post => {
+        {parseList.slice(0, 5).map((post, index) => {
           return (
-            <li className="post-item">
+            <li className="post-item" key={`latest-post-${index}`}>
               <Linker url={post.title}>{post.contentValue?.remark}</Linker>
             </li>
           )
