@@ -10,53 +10,66 @@
   &.open {
     visibility: visible;
   }
-  .post-search-box {
+
+  .post-search-box-wrapper {
     position: relative;
     z-index: 10;
     width: 100%;
-    height: 130px;
+    height: 230px;
     background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11),
       0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
 
-    .search-box {
-      position: relative;
-      width: 60%;
-      height: 60px;
+    .post-search-box {
+      width: 100%;
+      max-width: $breakpoint-tablet;
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      height: 100%;
 
-      .search {
+      .search-box {
+        position: relative;
+        width: calc(100% - 80px);
+        height: 60px;
+        display: flex;
+        align-items: center;
+
+        .search {
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          border: 0px;
+          border-radius: 50px;
+          padding: 12px 24px;
+          box-sizing: border-box;
+          font-size: 13pt;
+          color: $black-color-3;
+          border: 2px solid $secondary-color;
+        }
+
+        .icon-clear-box {
+          position: absolute;
+          right: 14px;
+        }
+
+        .icon-search-box {
+          position: absolute;
+          right: -40px;
+        }
+      }
+
+      .icon-close-box {
+        position: relative;
         width: 100%;
-        height: 100%;
-        background-color: #fff;
-        border: 0px;
-        border-radius: 50px;
-        padding: 12px 24px;
-        box-sizing: border-box;
-        font-size: 13pt;
-        color: $black-color-3;
-        border: 2px solid $secondary-color;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 40px;
       }
-
-      .icon-clear-box {
-        position: absolute;
-        right: 14px;
-      }
-
-      .icon-search-box {
-        position: absolute;
-        right: -40px;
-      }
-    }
-
-    .icon-close-box {
-      position: absolute;
-      right: 12px;
     }
   }
 }

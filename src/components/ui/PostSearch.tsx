@@ -62,31 +62,32 @@ const PostSearch = ({ children }: Props) => {
       <div onClick={handleOpen}>{children}</div>
       <div className={`post-search-container ${isShowSearch ? 'open' : ''}`}>
         <DimWrapper handleClose={handleClose}>
-          <div className="post-search-box">
-            <div className="search-box">
-              <input
-                ref={inputRef}
-                className="search"
-                type="text"
-                placeholder="검색어를 입력하세요."
-                value={searchText}
-                onChange={e => setSearchText(e.target.value)}
-                onKeyDown={handleKeyDown}
-              />
-              {searchText && (
-                <div className="icon-clear-box" onClick={handleClear}>
-                  <IconClose size={28} />
-                </div>
-              )}
-              <div className="icon-search-box" onClick={handleSearch}>
-                <IconSearch size={28} />
+          <div className="post-search-box-wrapper">
+            <div className="post-search-box">
+              <div className="icon-close-box">
+                <IconClose size={32} handleClick={handleClose} />
               </div>
+              <div className="search-box">
+                <input
+                  ref={inputRef}
+                  className="search"
+                  type="text"
+                  placeholder="검색어를 입력하세요."
+                  value={searchText}
+                  onChange={e => setSearchText(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                />
+                {searchText && (
+                  <div className="icon-clear-box" onClick={handleClear}>
+                    <IconClose size={28} />
+                  </div>
+                )}
+                <div className="icon-search-box" onClick={handleSearch}>
+                  <IconSearch size={28} />
+                </div>
+              </div>
+              <RecommendTag />
             </div>
-            {/* 검색창 닫기 버튼의 위치를 못잡겠어서 우선 주석처리 */}
-            {/* <div className="icon-close-box" onClick={handleClose}>
-              <IconClose size={32} />
-            </div> */}
-            <RecommendTag />
           </div>
         </DimWrapper>
       </div>
