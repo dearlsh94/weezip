@@ -1,19 +1,21 @@
 import * as React from 'react'
 import { BlockType, Children } from '@types'
-import NParagraph from '@components/notion/NParagraph'
-import NHeading1 from '@components/notion/NHeading1'
-import NHeading2 from '@components/notion/NHeading2'
-import NHeading3 from '@components/notion/NHeading3'
-import NBulletedList from '@components/notion/NBulletedList'
-import NNumberedListItem from '@components/notion/NNumberedListItem'
-import NQuote from '@components/notion/NQuote'
-import NTodo from '@components/notion/NTodo'
-import NCallout from '@components/notion/NCallout'
-import NToggle from '@components/notion/NToggle'
-import NBookmark from '@components/notion/NBookmark'
-import NCode from '@components/notion/NCode'
-import MyImage from '@components/notion/MyImage'
-import Divider from '@components/notion/Divider'
+import {
+  NHeading1,
+  NHeading2,
+  NHeading3,
+  NBookmark,
+  NBulletedList,
+  NCallout,
+  NCode,
+  NNumberedListItem,
+  NParagraph,
+  NQuote,
+  NTodo,
+  NToggle,
+} from '@components/notion'
+import MyImage from '@components/ui/MyImage'
+import Divider from '@components/ui/Divider'
 
 interface Props {
   block: Children
