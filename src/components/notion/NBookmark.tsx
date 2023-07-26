@@ -2,7 +2,7 @@ import * as React from 'react'
 import '@scss/notion.scss'
 import { Bookmark, TextBlock, TextItem } from '@types'
 import Linker from '@components/ui/Linker'
-import NParagraph from '@components/notion/NParagraph'
+import { NParagraph } from '@components/notion'
 interface Props {
   bookmark: Bookmark
 }
