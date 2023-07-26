@@ -1,7 +1,7 @@
 import * as React from 'react'
 import '@scss/notion.scss'
 import { Callout, Children } from '@types'
-import NParagraph from '@components/notion/NParagraph'
+import { NParagraph } from '@components/notion'
 import ContentWrapper from '@module/ContentWrapper'
 interface Props {
   callout: Callout
