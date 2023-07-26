@@ -5,7 +5,7 @@ import { NotionNode } from '@types'
 import { notionNodeToJson } from '@utils/notionUtils'
 import { parseContentValue } from '@utils/parseUtils'
 import Linker from '@components/ui/Linker'
-import IconArrow from '@components/icon/IconArrow'
+import { IconArrow } from '@components/icon'
 
 interface Props {}
 

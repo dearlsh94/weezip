@@ -1,14 +1,8 @@
 import * as React from 'react'
 import '@scss/module/Footer.scss'
 import Linker from '@components/ui/Linker'
-import IconMail from '@components/icon/IconMail'
-import CircleIconWrapper from '@components/icon/CircleIconWrapper'
 import { mail } from '@src/constants'
-import IconInstagram from '@components/icon/IconInstagram'
-import IconGithub from '@components/icon/IconGithub'
-import IconKakao from '@components/icon/IconKakao'
-import IconThreads from '@components/icon/IconThreads'
-import { Link } from 'gatsby'
+import { IconMail, CircleIconWrapper, IconInstagram, IconGithub, IconKakao, IconThreads } from '@components/icon'
 
 const Footer = () => {
   return (

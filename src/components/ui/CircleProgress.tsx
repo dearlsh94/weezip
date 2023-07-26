@@ -1,6 +1,6 @@
 import * as React from 'react'
 import '@scss/components/ui/CircleProgress.scss'
-import IconCircleProgress from '@components/icon/IconCircleProgress'
+import { IconCircleProgress } from '@components/icon'
 
 interface Props {
   height?: number
