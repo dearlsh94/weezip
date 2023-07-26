@@ -16,7 +16,7 @@ import ListFilter from '@components/ListFilter'
 import Divider from '@components/ui/Divider'
 import { SERIES_FILTERS } from '@src/constants'
 import { CATEGORY_FILTERS } from '@src/constants'
-import IconClearAll from '@components/icon/IconClearAll'
+import { IconClearAll } from '@components/icon'
 import CircleProgress from '@components/ui/CircleProgress'
 
 export const Head: HeadFC = () => {

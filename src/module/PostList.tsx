@@ -3,13 +3,10 @@ import Linker from '@components/ui/Linker'
 import PostListItem from '@components/PostListItem'
 import '@scss/module/PostList.scss'
 import { NotionNode } from '@types'
-import IconArrow from '@components/icon/IconArrow'
-import IconClearAll from '@components/icon/IconClearAll'
 import { navigate } from 'gatsby'
 import { parseLocationQuery } from '@utils/parseUtils'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
-import IconDoubleArrow from '@components/icon/IconDoubleArrow'
-import IconMoveEnd from '@components/icon/IconMoveEnd'
+import { IconArrow, IconClearAll, IconMoveEnd } from '@components/icon'
 
 interface Props {
   list: NotionNode[]

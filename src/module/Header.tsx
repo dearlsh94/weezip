@@ -8,15 +8,16 @@ import Linker from '@components/ui/Linker'
 import { StaticImage } from 'gatsby-plugin-image'
 import DimWrapper from '@layout/DimWrapper'
 import { throttle } from '@utils/commonUtils'
-import IconHamburgerMenu from '@components/icon/IconHamburgerMenu'
-import IconHome from '@components/icon/IconHome'
-import { mail } from '@src/constants'
-import IconDoubleArrow from '@components/icon/IconDoubleArrow'
-import IconSearch from '@components/icon/IconSearch'
 import PostSearch from '@components/ui/PostSearch'
-import IconOutLink from '@components/icon/IconOutLink'
-import IconList from '@components/icon/IconList'
-import IconStar from '@components/icon/IconStar'
+import {
+  IconHamburgerMenu,
+  IconHome,
+  IconDoubleArrow,
+  IconSearch,
+  IconOutLink,
+  IconList,
+  IconStar,
+} from '@components/icon'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes

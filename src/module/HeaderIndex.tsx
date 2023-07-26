@@ -1,7 +1,7 @@
 import * as React from 'react'
 import '@scss/module/HeaderIndex.scss'
 import HeaderIndexList from '@components/HeaderIndexList'
-import IconArrow from '@components/icon/IconArrow'
+import { IconArrow } from '@components/icon'
 
 interface Props {
   list: HTMLHeadingElement[]

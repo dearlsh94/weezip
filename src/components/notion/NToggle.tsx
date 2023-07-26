@@ -3,7 +3,7 @@ import '@scss/notion.scss'
 import { Children, TextBlock } from '@types'
 import { NParagraph } from '@components/notion'
 import ContentWrapper from '@module/ContentWrapper'
-import IconArrow from '@components/icon/IconArrow'
+import { IconArrow } from '@components/icon'
 
 interface Props {
   toggle: TextBlock

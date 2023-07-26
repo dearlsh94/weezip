@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import '@scss/components/FloatBox.scss'
-import CircleIconWrapper from '@components/icon/CircleIconWrapper'
+import { CircleIconWrapper, IconMoveEnd } from '@components/icon'
 import { throttle } from '@utils/commonUtils'
-import IconMoveEnd from '@components/icon/IconMoveEnd'
 
 interface Props {
   useTop: boolean

@@ -15,8 +15,7 @@ import { getSeriesCodeByURL } from '@utils/parseUtils'
 import { Filter } from '@types'
 import FloatBox from '@components/ui/FloatBox'
 import HeaderIndex from '@module/HeaderIndex'
-import IconCopyLink from '@components/icon/IconCopyLink'
-import CircleIconWrapper from '@components/icon/CircleIconWrapper'
+import { IconCopyLink, CircleIconWrapper } from '@components/icon'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
