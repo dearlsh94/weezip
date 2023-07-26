@@ -10,7 +10,7 @@ import MainLayout from '@layout/MainLayout'
 import SEO from '@components/header/SEO'
 
 import LatestPost from '@module/LatestPost'
-import Divider from '@components/notion/Divider'
+import Divider from '@components/ui/Divider'
 
 export const Head: HeadFC = () => {
   return <SEO />
