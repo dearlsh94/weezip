@@ -9,7 +9,7 @@ import { NotionContext, PageContext } from '@store/rootStore'
 import { INotionContext, NotionNode } from '@types'
 import { parseLocationQuery } from '@utils/parseUtils'
 import PostList from '@module/PostList'
-import { notionNodeToJson, classifyTags } from '@utils/notionUtils'
+import { notionNodeToJson, classifyByTags } from '@utils/notionUtils'
 import { parseContentValue } from '@utils/parseUtils'
 import SEO from '@components/header/SEO'
 import ListFilter from '@components/ListFilter'
@@ -31,7 +31,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
     nodes: nodes,
-    tags: classifyTags(nodes),
+    tags: classifyByTags(nodes),
   }
   const parseList: NotionNode[] = nodes
     .map(node => {

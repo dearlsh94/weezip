@@ -1,5 +1,24 @@
 import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, Select, Code, Image } from './componentType'
 
+// NOTE enum zone ====
+export enum BlockType {
+  PARAGRAPH = 'paragraph',
+  HEADING_1 = 'heading_1',
+  HEADING_2 = 'heading_2',
+  HEADING_3 = 'heading_3',
+  QUOTE = 'quote',
+  BULLETED_LIST_ITEM = 'bulleted_list_item',
+  NUMBERED_LIST_ITEM = 'numbered_list_item',
+  TODO = 'to_do',
+  CALLOUT = 'callout',
+  TOGGLE = 'toggle',
+  BOOKMARK = 'bookmark',
+  CODE = 'code',
+  IMAGE = 'image',
+  DIVIDER = 'divider',
+}
+
+// NOTE interface zone ====
 export interface Children {
   object: 'block'
   id: string
@@ -38,27 +57,9 @@ export interface Parent {
   database_id: string
 }
 
-// NOTE Block Types
-export enum BlockType {
-  PARAGRAPH = 'paragraph',
-  HEADING_1 = 'heading_1',
-  HEADING_2 = 'heading_2',
-  HEADING_3 = 'heading_3',
-  QUOTE = 'quote',
-  BULLETED_LIST_ITEM = 'bulleted_list_item',
-  NUMBERED_LIST_ITEM = 'numbered_list_item',
-  TODO = 'to_do',
-  CALLOUT = 'callout',
-  TOGGLE = 'toggle',
-  BOOKMARK = 'bookmark',
-  CODE = 'code',
-  IMAGE = 'image',
-  DIVIDER = 'divider',
-}
-
 export interface ContentValue {
   remark: string
-  category: Select[]
+  category: Select
   tag: Select[]
   cover: string
   lastEditedTime: string

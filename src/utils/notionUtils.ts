@@ -1,4 +1,4 @@
-import { Children, NotionNode } from '@types'
+import { Children, NotionNode, Select } from '@types'
 
 export const notionNodeToJson = (node?: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null
@@ -14,13 +14,13 @@ export const getNodeMarkdownByUrl = (nodes: NotionNode[], url: string): string =
   return node ? node.markdownString : ''
 }
 
-export const classifyTags = (nodes: NotionNode[]) => {
+export const classifyByTags = (nodes: NotionNode[]) => {
   const tagMap = new Map<string, NotionNode[]>()
   nodes.map(node => {
     if (node?.title?.toUpperCase()?.includes('POST')) {
       const json = notionNodeToJson(node)
       if (!node.title.startsWith('/post')) return
-      json.properties?.tag?.multi_select?.map(v => {
+      json.properties?.tag?.multi_select?.map((v: Select) => {
         const key = `${v.name}|${v.color}`
         const e = tagMap.get(key)
         if (e && e.length > 0) {

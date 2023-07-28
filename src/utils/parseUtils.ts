@@ -25,7 +25,7 @@ export const parseLocationQuery = (search = '') => {
 
 export const parseContentValue = (content: Children): ContentValue => {
   const remark = content.properties.remark.rich_text || ''
-  const category = content.properties.category.multi_select || []
+  const category = content.properties.category.select || {}
   const tag = content.properties.tag.multi_select || []
   const cover = content.cover || []
   const last_edited_item = content.properties.edited_date.date.start || ''
