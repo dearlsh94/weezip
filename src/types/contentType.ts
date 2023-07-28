@@ -1,4 +1,4 @@
-import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, Select, Code, Image } from './componentType'
+import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, Select, Code, Image } from '@types'
 
 // NOTE enum zone ====
 export enum BlockType {
