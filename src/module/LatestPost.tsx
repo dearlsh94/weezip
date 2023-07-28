@@ -15,15 +15,15 @@ const LatestPost = ({}: Props) => {
   const parseList: NotionNode[] = nodes
     .map(node => {
       const content = notionNodeToJson(node)
-      const contentValue = parseContentValue(content)
-      node.contentValue = contentValue
+      const notionColumn = parseContentValue(content)
+      node.notionColumn = notionColumn
       return node
     })
     .filter(n => n.title.startsWith('/post'))
 
   parseList.sort((a, b) => {
-    if (a.contentValue?.createdTime && b.contentValue?.createdTime) {
-      return a.contentValue?.createdTime > b.contentValue?.createdTime ? -1 : 1
+    if (a.notionColumn?.createdTime && b.notionColumn?.createdTime) {
+      return a.notionColumn?.createdTime > b.notionColumn?.createdTime ? -1 : 1
     } else {
       return 0
     }
@@ -44,7 +44,7 @@ const LatestPost = ({}: Props) => {
         {parseList.slice(0, 5).map((post, index) => {
           return (
             <li className="post-item" key={`latest-post-${index}`}>
-              <Linker url={post.title}>{post.contentValue?.remark}</Linker>
+              <Linker url={post.title}>{post.notionColumn?.remark}</Linker>
             </li>
           )
         })}

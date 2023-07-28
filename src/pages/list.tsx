@@ -36,8 +36,8 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const parseList: NotionNode[] = nodes
     .map(node => {
       const content = notionNodeToJson(node)
-      const contentValue = parseContentValue(content)
-      node.contentValue = contentValue
+      const notionColumn = parseContentValue(content)
+      node.notionColumn = notionColumn
       return node
     })
     .filter(n => n.title.startsWith('/post'))
@@ -74,13 +74,13 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
         if (tag) {
           setFilterText(`${tag} 태그`)
-          return post?.contentValue?.tag?.find(t => t.name === decodeURIComponent(tag))
+          return post?.notionColumn?.tag?.find(t => t.name === decodeURIComponent(tag))
         }
 
         if (keyword) {
           const searchText = decodeURIComponent(keyword).replaceAll(/ /g, '').toUpperCase()
           setFilterText(`'${searchText}' 포함된 제목`)
-          return post.contentValue?.remark?.replaceAll(/ /g, '').toUpperCase().includes(searchText)
+          return post.notionColumn?.remark?.replaceAll(/ /g, '').toUpperCase().includes(searchText)
         }
 
         return true
@@ -96,8 +96,8 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     }
 
     l.sort((a, b) => {
-      if (a.contentValue?.createdTime && b.contentValue?.createdTime) {
-        return a.contentValue?.createdTime > b.contentValue?.createdTime ? -1 : 1
+      if (a.notionColumn?.createdTime && b.notionColumn?.createdTime) {
+        return a.notionColumn?.createdTime > b.notionColumn?.createdTime ? -1 : 1
       } else {
         return 0
       }

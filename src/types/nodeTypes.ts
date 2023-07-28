@@ -1,4 +1,4 @@
-import { ContentValue } from './contentType'
+import { NotionColumn } from './contentType'
 
 export interface NotionNode {
   id: string
@@ -13,7 +13,7 @@ export interface NotionNode {
   markdownString: string
   parent?: NotionNode
   raw: Raw
-  contentValue?: ContentValue
+  notionColumn?: NotionColumn
 }
 
 export interface Raw {

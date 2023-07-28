@@ -8,12 +8,12 @@ interface Props {
 }
 
 const PostListItem = ({ post }: Props) => {
-  const { contentValue } = post
-  const remark = contentValue?.remark || ''
-  const lastEditedTime = contentValue?.lastEditedTime || ''
-  const createdTime = contentValue?.createdTime || ''
-  const tag = contentValue?.tag || []
-  const series = contentValue?.series || ''
+  const { notionColumn } = post
+  const remark = notionColumn?.remark || ''
+  const lastEditedTime = notionColumn?.lastEditedTime || ''
+  const createdTime = notionColumn?.createdTime || ''
+  const tag = notionColumn?.tag || []
+  const series = notionColumn?.series || ''
   return (
     <React.Fragment>
       <div className={`post-list-item`}>

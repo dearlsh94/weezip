@@ -1,4 +1,4 @@
-import { Children, ContentValue } from '@types'
+import { Children, NotionColumn } from '@types'
 import { convertDatetimeFormat } from './convertUtils'
 
 export const parseLocationQuery = (search = '') => {
@@ -23,7 +23,7 @@ export const parseLocationQuery = (search = '') => {
   return res
 }
 
-export const parseContentValue = (content: Children): ContentValue => {
+export const parseContentValue = (content: Children): NotionColumn => {
   const remark = content.properties.remark.rich_text || ''
   const category = content.properties.category.select || {}
   const tag = content.properties.tag.multi_select || []

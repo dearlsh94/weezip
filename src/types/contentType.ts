@@ -57,7 +57,7 @@ export interface Parent {
   database_id: string
 }
 
-export interface ContentValue {
+export interface NotionColumn {
   remark: string
   category: Select
   tag: Select[]
