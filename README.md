@@ -42,7 +42,8 @@ byproducts of the process of living with imagination and curiosity
 - 23.03.30 | 스마트택배 API로 배송 정보 조회 기능 만들기
 - 23.05.09 | Semantic Versioning과 각 배포환경에서의 버전 관리에 대한 고민.
 - 23.06.03 | 좋은 동료와 함께 성장하기 위한 피드백은 어떻게 해야할까?
-- 23.06.13 | MSW를 활용하여 웹 브라우저에서 Mockup 사용하기. API 의존으로부터의 해방. <br/>
+- 23.06.13 | MSW를 활용하여 웹 브라우저에서 Mockup 사용하기. API 의존으로부터의 해방.
+- 23.07.27 | MAC 로컬 서버에 SSL 인증된 https 도메인 Nginx로 10분만에 적용하기 <br/>
 
 ### Edit
 
