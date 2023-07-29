@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '@scss/notion.scss'
+import '@scss/components/ui/Divider.scss'
 
 interface Props {
   color?: string
