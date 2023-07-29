@@ -13,11 +13,11 @@ const PostListItem = ({ post }: Props) => {
   const lastEditedTime = contentValue?.lastEditedTime || ''
   const createdTime = contentValue?.createdTime || ''
   const tag = contentValue?.tag || []
-  const series = contentValue?.series || ''
+  const series = contentValue?.series
   return (
     <React.Fragment>
       <div className={`post-list-item`}>
-        {series && <span className="series">시리즈 [{series}]</span>}
+        {series && <span className="series">시리즈 [{series?.name}]</span>}
         <p>{remark}</p>
         <div className="info-box">
           <div className="tag-box">

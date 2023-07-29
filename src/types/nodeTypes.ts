@@ -13,7 +13,7 @@ export interface NotionNode {
   markdownString: string
   parent?: NotionNode
   raw: Raw
-  contentValue?: ContentValue
+  contentValue: ContentValue
 }
 
 export interface Raw {

@@ -24,15 +24,18 @@ export const parseLocationQuery = (search = '') => {
 }
 
 export const parseContentValue = (content: Children): ContentValue => {
-  const remark = content.properties.remark.rich_text || ''
-  const category = content.properties.category.multi_select || []
-  const tag = content.properties.tag.multi_select || []
-  const cover = content.cover || []
-  const last_edited_item = content.properties.edited_date.date.start || ''
-  const created_time = content.properties.created_date.date.start || ''
-  const notionUrl = content.url || ''
-  const series = content.properties.series.rich_text || ''
+  const idx = content?.properties?.idx?.number || -1
+  const remark = content?.properties?.remark?.rich_text || ''
+  const cover = content?.cover || []
+  const last_edited_item = content?.properties?.edited_date?.date?.start || ''
+  const created_time = content?.properties?.created_date?.date?.start || ''
+  const notionUrl = content?.url || ''
+  const category = content?.properties?.category?.select
+  const tag = content?.properties?.tag?.multi_select || []
+  const series = content?.properties?.series?.select
+
   return {
+    idx,
     remark,
     category,
     cover,
@@ -41,19 +44,5 @@ export const parseContentValue = (content: Children): ContentValue => {
     notionUrl,
     tag,
     series,
-  }
-}
-
-/**
- * @param url : /post/{id} 형태의 URL. id는 series-type-number로 되어 있다.
- * @returns series code
- */
-export const getSeriesCodeByURL = (url: string) => {
-  const pattern = /\b\d{2}(?=-\d{2}-\d+)/
-  const match = url.match(pattern)
-  if (match) {
-    return match[0] // seriesCode
-  } else {
-    return 0
   }
 }

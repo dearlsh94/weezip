@@ -5,12 +5,13 @@ export interface WorkBy {
 
 // NOTE Notion Database Column
 export interface Properties {
+  idx: Property
   title: Property
   url: Property
   remark: Property
-  category: Property
   created_date: Property
   edited_date: Property
+  category: Property
   series: Property
   tag: Property
 }
@@ -18,12 +19,13 @@ export interface Properties {
 // NOTE 노션 DB 테이블의 컬럼
 export interface Property {
   id: string
-  type: 'title' | 'multi_select' | 'rich_text' | 'date' | 'select'
+  type: 'title' | 'multi_select' | 'rich_text' | 'date' | 'select' | 'number'
   title?: TextItem // type === title
   rich_text?: string // type === rich_text
-  multi_select?: Select[]
-  date: PropDate
-  select: Select
+  multi_select?: Select[] // type === multi_select
+  date?: PropDate // type === date
+  select?: Select // type === select
+  number?: number // type === 'number
 }
 
 export interface Select {
