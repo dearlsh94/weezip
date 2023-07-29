@@ -81,7 +81,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
         <h1 className="title">{title}</h1>
         <div className="desc-box">
           <div className="left-box">
-            <TagBadges tag={content?.properties.tag} />
+            <TagBadges postItemTags={content?.properties.tag?.multi_select} />
           </div>
           <div className="right-box">
             <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
