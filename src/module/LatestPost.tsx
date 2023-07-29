@@ -7,9 +7,7 @@ import { parseContentValue } from '@utils/parseUtils'
 import Linker from '@components/ui/Linker'
 import { IconArrow } from '@components/icon'
 
-interface Props {}
-
-const LatestPost = ({}: Props) => {
+const LatestPost = () => {
   const nodes = useGetNotionQuery()
 
   const parseList: NotionNode[] = nodes
