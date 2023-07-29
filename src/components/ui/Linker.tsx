@@ -12,7 +12,7 @@ interface Props {
 
 const Linker = ({ url, target, children, className, isUnderline = false }: Props) => {
   return (
-    <>
+    <React.Fragment>
       {url.startsWith('https://') && !url.startsWith('https://weezip.treefeely.com') ? (
         <a
           href={url}
@@ -27,7 +27,7 @@ const Linker = ({ url, target, children, className, isUnderline = false }: Props
           {children}
         </Link>
       )}
-    </>
+    </React.Fragment>
   )
 }
 

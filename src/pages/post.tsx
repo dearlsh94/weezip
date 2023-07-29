@@ -91,11 +91,13 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           </div>
         </div>
         <div className="button-box">
-          <Linker url={content.public_url} target="_blank">
-            <MyButton size={ButtonSize.PRIMARY} color={ButtonColor.PRIMARY} type={ButtonType.BORDER} width={'100%'}>
-              노션으로 댓글달기
-            </MyButton>
-          </Linker>
+          {content?.public_url && (
+            <Linker url={content.public_url} target="_blank">
+              <MyButton size={ButtonSize.PRIMARY} color={ButtonColor.PRIMARY} type={ButtonType.BORDER} width={'100%'}>
+                노션으로 댓글달기
+              </MyButton>
+            </Linker>
+          )}
           {series && (
             <Linker url={`/list?series=${series.key}`}>
               <MyButton
