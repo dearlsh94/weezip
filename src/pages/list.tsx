@@ -31,7 +31,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
     nodes: nodes,
-    tags: classifyTags(nodes),
+    postTags: classifyTags(nodes),
   }
   const parseList: NotionNode[] = nodes
     .map(node => {

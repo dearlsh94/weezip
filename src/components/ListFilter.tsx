@@ -6,28 +6,10 @@ import { CATEGORY_FILTERS, SERIES_FILTERS } from '@src/constants'
 import Divider from '@components/ui/Divider'
 import FilterItem from '@components/FilterItem'
 import { NotionContext } from '@store/rootStore'
+import TagBadges from './TagBadges'
 
 const ListFilter = () => {
-  const tags = useContext(NotionContext).tags
-  const renderTags: JSX.Element[] = []
-
-  if (tags) {
-    tags.forEach((value, key) => {
-      const [name, color] = key.split('|')
-      renderTags.push(
-        <React.Fragment key={`tags-filter-item-${key}`}>
-          <FilterItem
-            filter={{
-              type: 'tag',
-              key: name,
-              name,
-              color: `${color}-border`,
-            }}
-          />
-        </React.Fragment>
-      )
-    })
-  }
+  const postTags = useContext(NotionContext).postTags
 
   return (
     <React.Fragment>
@@ -57,15 +39,11 @@ const ListFilter = () => {
             })}
           </div>
         </div>
-        {renderTags.length > 0 && (
-          <>
-            <Divider />
-            <div className="tag filter">
-              <p className="title">태그</p>
-              <div className="filter-box">{renderTags}</div>
-            </div>
-          </>
-        )}
+        <Divider />
+        <div className="tag filter">
+          <p className="title">태그</p>
+          <TagBadges postItemTags={postTags} isLink={true} />
+        </div>
       </div>
     </React.Fragment>
   )

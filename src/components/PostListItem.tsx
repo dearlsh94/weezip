@@ -21,7 +21,7 @@ const PostListItem = ({ post }: Props) => {
         <p>{remark}</p>
         <div className="info-box">
           <div className="tag-box">
-            <TagBadges postItemTags={tag} />
+            <TagBadges postItemTags={tag} isLink={false} />
           </div>
           <div className="date-box">
             <span className="date">작성 : {createdTime}</span>
