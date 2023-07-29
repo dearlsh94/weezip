@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '@scss/notion.scss'
+import '@scss/components/ui/MyImage.scss'
 import { Children } from '@types'
 
 interface Props {
