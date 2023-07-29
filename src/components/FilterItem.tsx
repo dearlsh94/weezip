@@ -2,7 +2,6 @@ import * as React from 'react'
 import { useLocation } from '@reach/router'
 import '@scss/components/FilterItem.scss'
 import { Filter } from '@types'
-import { navigate } from 'gatsby'
 import Linker from './ui/Linker'
 
 interface Props {
