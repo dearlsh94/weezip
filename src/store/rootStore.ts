@@ -4,7 +4,7 @@ import { INotionContext } from '@types'
 
 export const NotionContext = React.createContext<INotionContext>({
   nodes: [],
-  tags: new Map(),
+  postTags: [],
 })
 
 export const PageContext = React.createContext<PageProps | null>(null)
