@@ -78,8 +78,8 @@ const PostSearch = ({ children }: Props) => {
                     onKeyDown={handleKeyDown}
                   />
                   {searchText && (
-                    <div className="icon-clear-box" onClick={handleClear}>
-                      <IconClose size={28} />
+                    <div className="icon-clear-box">
+                      <IconClose size={28} handleClick={handleClear} />
                     </div>
                   )}
                 </div>

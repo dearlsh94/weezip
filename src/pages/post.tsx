@@ -46,10 +46,6 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     setSeries(getFilterItemSeriesByName(content?.properties?.series?.select?.name))
   }, [])
 
-  const moveToPublicLink = () => {
-    window.open(content.public_url, '_blank')
-  }
-
   const handleCopy = () => {
     var url = ''
     var textarea = document.createElement('textarea')
