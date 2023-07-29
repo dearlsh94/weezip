@@ -105,9 +105,13 @@
         width: fit-content;
       }
     }
-    button + button {
-      margin-top: 12px;
+
+    div.button-box {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
     }
+
     .series-button {
       height: auto;
       display: flex;

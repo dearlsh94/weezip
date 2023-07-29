@@ -14,6 +14,7 @@ import { Filter } from '@types'
 import FloatBox from '@components/ui/FloatBox'
 import HeaderIndex from '@module/HeaderIndex'
 import { IconCopyLink, CircleIconWrapper } from '@components/icon'
+import Linker from '@components/ui/Linker'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
@@ -30,8 +31,9 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
 
   useEffect(() => {
     if (!slug) {
-      moveToList()
+      navigate('/list')
     }
+
     const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')
     if (elHeaders && elHeaders?.length > 0) {
       const headers: HTMLHeadingElement[] = []
@@ -43,18 +45,6 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
 
     setSeries(getFilterItemSeriesByName(content?.properties?.series?.select?.name))
   }, [])
-
-  const moveToList = () => {
-    navigate('/list')
-  }
-
-  const moveToSeriesList = () => {
-    if (series) {
-      navigate(`/list?series=${series.key}`)
-    } else {
-      moveToList()
-    }
-  }
 
   const moveToPublicLink = () => {
     window.open(content.public_url, '_blank')
@@ -104,37 +94,32 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
             </CircleIconWrapper>
           </div>
         </div>
-        <MyButton
-          size={ButtonSize.PRIMARY}
-          color={ButtonColor.PRIMARY}
-          type={ButtonType.BORDER}
-          width={'100%'}
-          handleClick={moveToPublicLink}
-        >
-          노션으로 댓글달기
-        </MyButton>
-        {series && (
-          <MyButton
-            className="series-button"
-            size={ButtonSize.PRIMARY}
-            color={ButtonColor.PRIMARY}
-            type={ButtonType.BORDER}
-            width={'100%'}
-            handleClick={moveToSeriesList}
-          >
-            <span>{series.name}</span>
-            시리즈 전체보기
-          </MyButton>
-        )}
-        <MyButton
-          size={ButtonSize.PRIMARY}
-          color={ButtonColor.PRIMARY}
-          type={ButtonType.BORDER}
-          width={'100%'}
-          handleClick={moveToList}
-        >
-          포스트 전체보기
-        </MyButton>
+        <div className="button-box">
+          <Linker url={content.public_url} target="_blank">
+            <MyButton size={ButtonSize.PRIMARY} color={ButtonColor.PRIMARY} type={ButtonType.BORDER} width={'100%'}>
+              노션으로 댓글달기
+            </MyButton>
+          </Linker>
+          {series && (
+            <Linker url={`/list?series=${series.key}`}>
+              <MyButton
+                className="series-button"
+                size={ButtonSize.PRIMARY}
+                color={ButtonColor.PRIMARY}
+                type={ButtonType.BORDER}
+                width={'100%'}
+              >
+                <span>{series.name}</span>
+                시리즈 전체보기
+              </MyButton>
+            </Linker>
+          )}
+          <Linker url={`/list`}>
+            <MyButton size={ButtonSize.PRIMARY} color={ButtonColor.PRIMARY} type={ButtonType.BORDER} width={'100%'}>
+              포스트 전체보기
+            </MyButton>
+          </Linker>
+        </div>
         <div className="feedback-box">
           <p>피드백은 언제나 환영이에요! 연락 방법은 페이지 제일 하단을 확인해주세요.</p>
           <p>👇👇 Contact Me (메일 또는 DM)👇👇</p>
