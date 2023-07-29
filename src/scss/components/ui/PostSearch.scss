@@ -38,6 +38,7 @@
         height: 60px;
         display: flex;
         align-items: center;
+        column-gap: 12px;
 
         .search {
           width: 100%;
@@ -52,20 +53,22 @@
           border: 2px solid $secondary-color;
         }
 
-        .icon-clear-box {
-          position: absolute;
-          right: 14px;
-        }
+        .input-box {
+          display: flex;
+          align-items: center;
+          position: relative;
+          flex: 1;
 
-        .icon-search-box {
-          position: absolute;
-          right: -40px;
+          .icon-clear-box {
+            position: absolute;
+            right: 14px;
+          }
         }
       }
 
       .icon-close-box {
+        width: calc(100% - 80px);
         position: relative;
-        width: 100%;
         display: flex;
         justify-content: flex-end;
         margin-bottom: 40px;
