@@ -103,7 +103,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
     _list.sort((a, b) => {
       if (a.contentValue?.idx && b.contentValue?.idx) {
-        return a.contentValue?.idx > b.contentValue?.idx ? 1 : -1
+        return a.contentValue?.idx > b.contentValue?.idx ? -1 : 1
       } else {
         return 0
       }
