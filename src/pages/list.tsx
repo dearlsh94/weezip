@@ -74,7 +74,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
           const filter = CATEGORY_FILTERS.find(f => f.name.toUpperCase() === category.toUpperCase())
           if (!filter) return false
 
-          console.log({ category, filter, name: post?.contentValue?.category?.name })
           setFilterText(filter?.name || '')
           return post?.contentValue?.category?.name.toUpperCase() === filter?.name.toUpperCase()
         }

@@ -21,6 +21,7 @@ export const classifyTags = (nodes: NotionNode[]) => {
     if (node?.title?.toUpperCase()?.includes('POST')) {
       const json = notionNodeToJson(node)
       if (!node.title.startsWith('/post')) return
+
       json.properties?.tag?.multi_select?.map(v => {
         const key = `${v.name}|${v.color}`
         const e = tagMap.get(key)
