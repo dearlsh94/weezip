@@ -67,20 +67,22 @@ const PostSearch = ({ children }: Props) => {
                 <IconClose size={32} handleClick={handleClose} />
               </div>
               <div className="search-box">
-                <input
-                  ref={inputRef}
-                  className="search"
-                  type="text"
-                  placeholder="검색어를 입력하세요."
-                  value={searchText}
-                  onChange={e => setSearchText(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                />
-                {searchText && (
-                  <div className="icon-clear-box" onClick={handleClear}>
-                    <IconClose size={28} />
-                  </div>
-                )}
+                <div className="input-box">
+                  <input
+                    ref={inputRef}
+                    className="search"
+                    type="text"
+                    placeholder="검색어를 입력하세요."
+                    value={searchText}
+                    onChange={e => setSearchText(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                  />
+                  {searchText && (
+                    <div className="icon-clear-box" onClick={handleClear}>
+                      <IconClose size={28} />
+                    </div>
+                  )}
+                </div>
                 <div className="icon-search-box" onClick={handleSearch}>
                   <IconSearch size={28} />
                 </div>
