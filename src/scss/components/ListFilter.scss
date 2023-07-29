@@ -13,34 +13,29 @@
 
   .filter {
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 2px;
 
     p.title {
-      margin-bottom: 2px;
       font-weight: 400;
       font-size: 10pt;
       color: $black-color-6;
+      min-width: 48px;
     }
 
     .filter-box {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
       column-gap: 12px;
       row-gap: 4px;
-      width: 100%;
     }
 
     & + .filter {
       margin-top: 12px;
-    }
-
-    @include desktop {
-      display: flex;
-      align-items: center;
-      p.title {
-        width: 100px;
-        margin-bottom: 0px;
-      }
     }
   }
 }
