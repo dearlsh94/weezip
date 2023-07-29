@@ -13,7 +13,7 @@ exports.createPages = async ({ actions, graphql }) => {
   `)
   data.allNotion.edges.forEach(({ node }) => {
     const { id, title } = node
-    if (title) {
+    if (title && title.toUpperCase().startsWith('/POST')) {
       actions.createPage({
         path: title,
         component: require.resolve(`./src/pages/post.tsx`),

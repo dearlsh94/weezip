@@ -3,15 +3,13 @@ import { useEffect, useState } from 'react'
 import { HeadFC, PageProps, navigate } from 'gatsby'
 import '@scss/page.scss'
 import { getNotionNodeByUrl } from '@services/use-notion'
-import { notionNodeToJson } from '@utils/notionUtils'
+import { getFilterItemSeriesByName, notionNodeToJson } from '@utils/notionUtils'
 import MainLayout from '@layout/MainLayout'
 import SEO from '@components/header/SEO'
 import ContentWrapper from '@module/ContentWrapper'
 import TagBadges from '@components/TagBadges'
 import { graphql } from 'gatsby'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
-import { SERIES_FILTERS } from '@src/constants'
-import { getSeriesCodeByURL } from '@utils/parseUtils'
 import { Filter } from '@types'
 import FloatBox from '@components/ui/FloatBox'
 import HeaderIndex from '@module/HeaderIndex'
@@ -20,7 +18,7 @@ import { IconCopyLink, CircleIconWrapper } from '@components/icon'
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
   const title = content?.properties?.remark.rich_text || ''
-  return <SEO title={title} description={content?.properties?.series.rich_text} pathname={pageContext.slug}></SEO>
+  return <SEO title={title} description={content?.properties?.series?.select?.name} pathname={pageContext.slug}></SEO>
 }
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
@@ -43,8 +41,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
       setIndexList(headers)
     }
 
-    const _series = SERIES_FILTERS.find(f => f.key === getSeriesCodeByURL(slug))
-    setSeries(_series)
+    setSeries(getFilterItemSeriesByName(content?.properties?.series?.select?.name))
   }, [])
 
   const moveToList = () => {
@@ -78,8 +75,8 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   return (
     <MainLayout className="post-layout">
       <div className="title-box">
-        {content?.properties?.series.rich_text && (
-          <span className={`series-title`}>시리즈 [{content?.properties?.series.rich_text}]</span>
+        {content?.properties?.series?.select?.name && (
+          <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
         )}
         <h1 className="title">{title}</h1>
         <div className="desc-box">
@@ -91,8 +88,8 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
               <IconCopyLink size={18} fill="#a7c4bc" />
             </div>
             <div className="date-box">
-              <span className="date">작성 : {content?.properties?.created_date?.date.start}</span>
-              <span className="date">수정 : {content?.properties?.edited_date?.date.start}</span>
+              <span className="date">작성 : {content?.properties?.created_date?.date?.start || ''}</span>
+              <span className="date">수정 : {content?.properties?.edited_date?.date?.start || ''}</span>
             </div>
           </div>
         </div>

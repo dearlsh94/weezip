@@ -57,12 +57,13 @@ export enum BlockType {
 }
 
 export interface ContentValue {
+  idx: number
   remark: string
-  category: Select[]
-  tag: Select[]
   cover: string
   lastEditedTime: string
   createdTime: string
   notionUrl: string
-  series: string
+  category?: Select
+  tag?: Select[]
+  series?: Select
 }

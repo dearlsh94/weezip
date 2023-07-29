@@ -15,8 +15,7 @@ const LatestPost = ({}: Props) => {
   const parseList: NotionNode[] = nodes
     .map(node => {
       const content = notionNodeToJson(node)
-      const contentValue = parseContentValue(content)
-      node.contentValue = contentValue
+      node.contentValue = parseContentValue(content)
       return node
     })
     .filter(n => n.title.startsWith('/post'))

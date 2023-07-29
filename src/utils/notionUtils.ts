@@ -1,4 +1,5 @@
-import { Children, NotionNode } from '@types'
+import { SERIES_FILTERS } from '@src/constants'
+import { Children, Filter, NotionNode } from '@types'
 
 export const notionNodeToJson = (node?: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null
@@ -32,4 +33,8 @@ export const classifyTags = (nodes: NotionNode[]) => {
     }
   })
   return tagMap
+}
+
+export const getFilterItemSeriesByName = (key = ''): Filter | undefined => {
+  return SERIES_FILTERS.find(f => f.name === key)
 }
