@@ -13,9 +13,9 @@ const Footer = () => {
             <p>Contact Me</p>
             <div className="contact-item">
               <CircleIconWrapper color="white">
-                <Linker url={`mailto:${mail}`}>
+                <a href={`mailto:${mail}`}>
                   <IconMail size={24} fill="white" />
-                </Linker>
+                </a>
               </CircleIconWrapper>
               <CircleIconWrapper color="white">
                 <Linker url={`https://www.instagram.com/treefeely/`} target="_blank">
