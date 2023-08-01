@@ -123,9 +123,9 @@ const Header = () => {
 
       {isDebug && (
         <section>
-          {nodes.map((node: NotionNode, i: number) => {
+          {nodes.map((node: NotionNode) => {
             return (
-              <div key={`node-${i}`}>
+              <div key={`node-${node.id}`}>
                 <a href={`${node.title || location.pathname}`}>
                   <p>
                     <span>id: {node.id}</span>

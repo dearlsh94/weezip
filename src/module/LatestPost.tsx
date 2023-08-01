@@ -38,9 +38,9 @@ const LatestPost = () => {
         </span>
       </div>
       <ul>
-        {parseList.slice(0, 5).map((post, index) => {
+        {parseList.slice(0, 5).map(post => {
           return (
-            <li className="post-item" key={`latest-post-${index}`}>
+            <li className="post-item" key={`latest-post-${post.id}`}>
               <Linker url={post.title}>{post.notionColumn?.remark}</Linker>
             </li>
           )

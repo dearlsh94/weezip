@@ -68,9 +68,9 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
       )}
       {list?.length > 0 && (
         <ul className={`post-list-box`}>
-          {list.map((post, i) => {
+          {list.map(post => {
             return (
-              <li key={`post-list-${i}`}>
+              <li key={`post-list-${post.id}`}>
                 <Linker url={post.title}>
                   <PostListItem post={post} />
                 </Linker>

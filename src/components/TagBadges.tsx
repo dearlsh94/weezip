@@ -15,13 +15,13 @@ const TagBadges = ({ postItemTags, isLink = true }: Props) => {
         <div className="badge-box">
           {postItemTags.map((tag, i) =>
             isLink ? (
-              <span key={`tag-badge-${i}`}>
+              <span key={`tag-badge-${tag.id}`}>
                 <Linker url={`/list?tag=${tag.name}`} isUnderline={true}>
                   <span className={`badge linked`}>#{tag.name}</span>
                 </Linker>
               </span>
             ) : (
-              <span className={`badge`} key={`tag-badge-${i}`}>
+              <span className={`badge`} key={`tag-badge-${tag.id}`}>
                 #{tag.name}
               </span>
             )

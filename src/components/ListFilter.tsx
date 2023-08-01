@@ -16,9 +16,9 @@ const ListFilter = () => {
         <div className="series filter">
           <p className="title">시리즈</p>
           <div className="filter-box">
-            {SERIES_FILTERS.map((filter, idx) => {
+            {SERIES_FILTERS.map(filter => {
               return (
-                <React.Fragment key={`series-filter-item-${idx}`}>
+                <React.Fragment key={`series-filter-item-${filter.key}`}>
                   <FilterItem filter={filter} />
                 </React.Fragment>
               )
@@ -29,9 +29,9 @@ const ListFilter = () => {
         <div className="category filter">
           <p className="title">카테고리</p>
           <div className="filter-box">
-            {CATEGORY_FILTERS.map((filter, idx) => {
+            {CATEGORY_FILTERS.map(filter => {
               return (
-                <React.Fragment key={`category-filter-item-${idx}`}>
+                <React.Fragment key={`category-filter-item-${filter.key}`}>
                   <FilterItem filter={filter} />
                 </React.Fragment>
               )

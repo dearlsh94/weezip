@@ -55,7 +55,7 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
               <ul key={i} className={`block-bulleted-list`}>
                 {renderList?.map((item, i) => {
                   return (
-                    <li key={`bulleted-list-${i}`} className={`bulleted-list-${i}`}>
+                    <li key={`bulleted-list-${item.id}`} className={`bulleted-list-${i}`}>
                       <ContentChildren block={item} />
                     </li>
                   )

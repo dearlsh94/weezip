@@ -8,8 +8,8 @@ const RecommendTag = () => {
   return (
     <div className="recommend-box">
       <HelpText text={'이런 건 어때요?'} />
-      {RECOMMEND_TAGS.map((tag, index) => (
-        <Linker key={`recommend-item-${index}`} url={tag.url} className="item">
+      {RECOMMEND_TAGS.map(tag => (
+        <Linker key={`recommend-item-${tag.name}`} url={tag.url} className="item">
           #{tag.name}
         </Linker>
       ))}
