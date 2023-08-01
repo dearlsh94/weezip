@@ -3,20 +3,17 @@ import '@scss/module/LatestPost.scss'
 import { useGetNotionQuery } from '@services/use-notion'
 import { NotionNode } from '@types'
 import { notionNodeToJson } from '@utils/notionUtils'
-import { parseContentValue } from '@utils/parseUtils'
+import { parseNotionColumn } from '@utils/parseUtils'
 import Linker from '@components/ui/Linker'
 import { IconArrow } from '@components/icon'
 
-interface Props {}
-
-const LatestPost = ({}: Props) => {
+const LatestPost = () => {
   const nodes = useGetNotionQuery()
 
   const parseList: NotionNode[] = nodes
     .map(node => {
       const content = notionNodeToJson(node)
-      const notionColumn = parseContentValue(content)
-      node.notionColumn = notionColumn
+      node.notionColumn = parseNotionColumn(content)
       return node
     })
     .filter(n => n.title.startsWith('/post'))

@@ -90,6 +90,7 @@ export interface PropDate {
 
 // NOTE Notion Database Column
 export interface Properties {
+  idx: Property
   title: Property
   url: Property
   remark: Property

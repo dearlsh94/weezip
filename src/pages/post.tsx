@@ -3,23 +3,23 @@ import { useEffect, useState } from 'react'
 import { HeadFC, PageProps, navigate } from 'gatsby'
 import '@scss/page.scss'
 import { getNotionNodeByUrl } from '@services/use-notion'
-import { notionNodeToJson, getSeriesCodeByURL } from '@utils/notionUtils'
+import { getFilterItemSeriesByName, notionNodeToJson } from '@utils/notionUtils'
 import MainLayout from '@layout/MainLayout'
 import SEO from '@components/header/SEO'
 import ContentWrapper from '@module/ContentWrapper'
 import TagBadges from '@components/TagBadges'
 import { graphql } from 'gatsby'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
-import { SERIES_FILTERS } from '@src/constants'
 import { Filter } from '@types'
 import FloatBox from '@components/ui/FloatBox'
 import HeaderIndex from '@module/HeaderIndex'
 import { IconCopyLink, CircleIconWrapper } from '@components/icon'
+import Linker from '@components/ui/Linker'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
   const title = content?.properties?.remark.rich_text || ''
-  return <SEO title={title} description={content?.properties?.series.rich_text} pathname={pageContext.slug}></SEO>
+  return <SEO title={title} description={content?.properties?.series?.select?.name} pathname={pageContext.slug}></SEO>
 }
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
@@ -31,8 +31,9 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
 
   useEffect(() => {
     if (!slug) {
-      moveToList()
+      navigate('/list')
     }
+
     const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')
     if (elHeaders && elHeaders?.length > 0) {
       const headers: HTMLHeadingElement[] = []
@@ -42,25 +43,8 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
       setIndexList(headers)
     }
 
-    const _series = SERIES_FILTERS.find(f => f.key === getSeriesCodeByURL(slug))
-    setSeries(_series)
+    setSeries(getFilterItemSeriesByName(content?.properties?.series?.select?.name))
   }, [])
-
-  const moveToList = () => {
-    navigate('/list')
-  }
-
-  const moveToSeriesList = () => {
-    if (series) {
-      navigate(`/list?series=${series.key}`)
-    } else {
-      moveToList()
-    }
-  }
-
-  const moveToPublicLink = () => {
-    window.open(content.public_url, '_blank')
-  }
 
   const handleCopy = () => {
     var url = ''
@@ -77,21 +61,21 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   return (
     <MainLayout className="post-layout">
       <div className="title-box">
-        {content?.properties?.series.rich_text && (
-          <span className={`series-title`}>시리즈 [{content?.properties?.series.rich_text}]</span>
+        {content?.properties?.series?.select?.name && (
+          <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
         )}
         <h1 className="title">{title}</h1>
         <div className="desc-box">
           <div className="left-box">
-            <TagBadges tag={content?.properties.tag} />
+            <TagBadges postItemTags={content?.properties.tag?.multi_select} />
           </div>
           <div className="right-box">
             <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
               <IconCopyLink size={18} fill="#a7c4bc" />
             </div>
             <div className="date-box">
-              <span className="date">작성 : {content?.properties?.created_date?.date.start}</span>
-              <span className="date">수정 : {content?.properties?.edited_date?.date.start}</span>
+              <span className="date">작성 : {content?.properties?.created_date?.date?.start || ''}</span>
+              <span className="date">수정 : {content?.properties?.edited_date?.date?.start || ''}</span>
             </div>
           </div>
         </div>
@@ -106,37 +90,34 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
             </CircleIconWrapper>
           </div>
         </div>
-        <MyButton
-          size={ButtonSize.PRIMARY}
-          color={ButtonColor.PRIMARY}
-          type={ButtonType.BORDER}
-          width={'100%'}
-          handleClick={moveToPublicLink}
-        >
-          노션으로 댓글달기
-        </MyButton>
-        {series && (
-          <MyButton
-            className="series-button"
-            size={ButtonSize.PRIMARY}
-            color={ButtonColor.PRIMARY}
-            type={ButtonType.BORDER}
-            width={'100%'}
-            handleClick={moveToSeriesList}
-          >
-            <span>{series.name}</span>
-            시리즈 전체보기
-          </MyButton>
-        )}
-        <MyButton
-          size={ButtonSize.PRIMARY}
-          color={ButtonColor.PRIMARY}
-          type={ButtonType.BORDER}
-          width={'100%'}
-          handleClick={moveToList}
-        >
-          포스트 전체보기
-        </MyButton>
+        <div className="button-box">
+          {content?.public_url && (
+            <Linker url={content.public_url} target="_blank">
+              <MyButton size={ButtonSize.PRIMARY} color={ButtonColor.PRIMARY} type={ButtonType.BORDER} width={'100%'}>
+                노션으로 댓글달기
+              </MyButton>
+            </Linker>
+          )}
+          {series && (
+            <Linker url={`/list?series=${series.key}`}>
+              <MyButton
+                className="series-button"
+                size={ButtonSize.PRIMARY}
+                color={ButtonColor.PRIMARY}
+                type={ButtonType.BORDER}
+                width={'100%'}
+              >
+                <span>{series.name}</span>
+                시리즈 전체보기
+              </MyButton>
+            </Linker>
+          )}
+          <Linker url={`/list`}>
+            <MyButton size={ButtonSize.PRIMARY} color={ButtonColor.PRIMARY} type={ButtonType.BORDER} width={'100%'}>
+              포스트 전체보기
+            </MyButton>
+          </Linker>
+        </div>
         <div className="feedback-box">
           <p>피드백은 언제나 환영이에요! 연락 방법은 페이지 제일 하단을 확인해주세요.</p>
           <p>👇👇 Contact Me (메일 또는 DM)👇👇</p>

@@ -1,6 +1,7 @@
+import { Select } from './componentType'
 import { NotionNode } from './nodeTypes'
 
 export interface INotionContext {
   nodes: NotionNode[]
-  tags?: Map<string, NotionNode[]>
+  postTags?: Select[]
 }

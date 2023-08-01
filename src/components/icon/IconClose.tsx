@@ -3,7 +3,7 @@ import * as React from 'react'
 interface Props {
   size?: number
   fill?: string
-  handleClick?: Function
+  handleClick: React.MouseEventHandler<SVGSVGElement>
 }
 
 // https://icon-sets.iconify.design/ion/close/

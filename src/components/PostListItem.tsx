@@ -13,15 +13,15 @@ const PostListItem = ({ post }: Props) => {
   const lastEditedTime = notionColumn?.lastEditedTime || ''
   const createdTime = notionColumn?.createdTime || ''
   const tag = notionColumn?.tag || []
-  const series = notionColumn?.series || ''
+  const series = notionColumn?.series
   return (
     <React.Fragment>
       <div className={`post-list-item`}>
-        {series && <span className="series">시리즈 [{series}]</span>}
+        {series && <span className="series">시리즈 [{series?.name}]</span>}
         <p>{remark}</p>
         <div className="info-box">
           <div className="tag-box">
-            <TagBadges selectTags={tag} />
+            <TagBadges postItemTags={tag} isLink={false} />
           </div>
           <div className="date-box">
             <span className="date">작성 : {createdTime}</span>

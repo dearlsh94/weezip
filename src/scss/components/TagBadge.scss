@@ -2,21 +2,20 @@
 
 .badge-box {
   display: flex;
-  width: 100%;
-  min-width: 48px;
+  flex-wrap: wrap;
+  column-gap: 4px;
+  row-gap: 4px;
 
   .badge {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4px 8px;
-    border-radius: 12px;
+    padding: 4px;
     font-size: 9pt;
-    color: #333;
-    background-color: $white-color;
+    color: $primary-color;
 
-    & + .badge {
-      margin-left: 8px;
+    &.linked:hover {
+      color: $secondary-color;
     }
   }
 }

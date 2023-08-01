@@ -1,4 +1,5 @@
-import { Children, NotionNode, Select } from '@types'
+import { SERIES_FILTERS } from '@src/constants'
+import { Children, Filter, NotionNode, Select } from '@types'
 
 export const notionNodeToJson = (node?: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null
@@ -14,24 +15,29 @@ export const getNodeMarkdownByUrl = (nodes: NotionNode[], url: string): string =
   return node ? node.markdownString : ''
 }
 
-export const classifyByTags = (nodes: NotionNode[]) => {
-  const tagMap = new Map<string, NotionNode[]>()
+export const classifyTags = (nodes: NotionNode[]) => {
+  const postTags: Select[] = []
+  const includeTagNameList: string[] = []
+
   nodes.map(node => {
     if (node?.title?.toUpperCase()?.includes('POST')) {
       const json = notionNodeToJson(node)
       if (!node.title.startsWith('/post')) return
-      json.properties?.tag?.multi_select?.map((v: Select) => {
-        const key = `${v.name}|${v.color}`
-        const e = tagMap.get(key)
-        if (e && e.length > 0) {
-          tagMap.set(key, [...e, node])
-        } else {
-          tagMap.set(key, [node])
+
+      json.properties?.tag?.multi_select?.map(v => {
+        if (!includeTagNameList.includes(v.name)) {
+          postTags.push(v)
+          includeTagNameList.push(v.name)
         }
       })
     }
   })
-  return tagMap
+
+  return postTags
+}
+
+export const getFilterItemSeriesByName = (key = ''): Filter | undefined => {
+  return SERIES_FILTERS.find(f => f.name === key)
 }
 
 /**

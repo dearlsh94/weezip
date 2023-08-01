@@ -1,35 +1,31 @@
 import * as React from 'react'
 import '@scss/components/TagBadge.scss'
-import { Property, Select } from '@types'
+import { Select } from '@types'
+import Linker from './ui/Linker'
 
 interface Props {
-  tag?: Property | undefined
-  selectTags?: Select[]
+  postItemTags?: Select[]
+  isLink?: boolean
 }
 
-const TagBadges = ({ tag, selectTags }: Props) => {
+const TagBadges = ({ postItemTags, isLink = true }: Props) => {
   return (
     <React.Fragment>
-      {tag && (
+      {postItemTags && (
         <div className="badge-box">
-          {tag.multi_select?.map((t, i) => {
-            return (
-              <span className={`badge ${t.color}-border`} key={`t-badge-${i}`}>
-                {t.name}
+          {postItemTags.map((tag, i) =>
+            isLink ? (
+              <span key={`tag-badge-${i}`}>
+                <Linker url={`/list?tag=${tag.name}`} isUnderline={true}>
+                  <span className={`badge linked`}>#{tag.name}</span>
+                </Linker>
+              </span>
+            ) : (
+              <span className={`badge`} key={`tag-badge-${i}`}>
+                #{tag.name}
               </span>
             )
-          })}
-        </div>
-      )}
-      {selectTags && (
-        <div className="badge-box">
-          {selectTags.map((t, i) => {
-            return (
-              <span className={`badge ${t.color}-border`} key={`t-badge-${i}`}>
-                {t.name}
-              </span>
-            )
-          })}
+          )}
         </div>
       )}
     </React.Fragment>

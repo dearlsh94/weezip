@@ -9,8 +9,8 @@ import { NotionContext, PageContext } from '@store/rootStore'
 import { INotionContext, NotionNode } from '@types'
 import { parseLocationQuery } from '@utils/parseUtils'
 import PostList from '@module/PostList'
-import { notionNodeToJson, classifyByTags } from '@utils/notionUtils'
-import { parseContentValue } from '@utils/parseUtils'
+import { notionNodeToJson, classifyTags } from '@utils/notionUtils'
+import { parseNotionColumn } from '@utils/parseUtils'
 import SEO from '@components/header/SEO'
 import ListFilter from '@components/ListFilter'
 import Divider from '@components/ui/Divider'
@@ -31,13 +31,12 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery()
   const store: INotionContext = {
     nodes: nodes,
-    tags: classifyByTags(nodes),
+    postTags: classifyTags(nodes),
   }
   const parseList: NotionNode[] = nodes
     .map(node => {
       const content = notionNodeToJson(node)
-      const notionColumn = parseContentValue(content)
-      node.notionColumn = notionColumn
+      node.notionColumn = parseNotionColumn(content)
       return node
     })
     .filter(n => n.title.startsWith('/post'))
@@ -53,28 +52,35 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   useEffect(() => {
     filterReset()
 
-    let l: NotionNode[] = []
-    let p = 1
-    let lp = 1
+    let _list: NotionNode[] = []
+    let _page = 1
+    let _lastPage = 1
+
     if (props.location.search) {
       const { series, category, tag, page, keyword } = parseLocationQuery(props.location.search)
 
-      l = parseList.filter(post => {
+      _list = parseList.filter(post => {
         if (!post.title.startsWith('/post')) return false
 
         if (series) {
-          setFilterText(SERIES_FILTERS.find(f => f.key === series)?.name || '')
-          return post.title.startsWith(`/post/${series}`)
+          const filter = SERIES_FILTERS.find(f => f.key.toUpperCase() === series.toUpperCase())
+          if (!filter) return false
+
+          setFilterText(filter?.name || '')
+          return post?.notionColumn?.series?.name === filter?.name
         }
 
         if (category) {
-          setFilterText(CATEGORY_FILTERS.find(f => f.key === category)?.name || '')
-          return post.title.includes(`-${category}-`)
+          const filter = CATEGORY_FILTERS.find(f => f.name.toUpperCase() === category.toUpperCase())
+          if (!filter) return false
+
+          setFilterText(filter?.name || '')
+          return post?.notionColumn?.category?.name.toUpperCase() === filter?.name.toUpperCase()
         }
 
         if (tag) {
           setFilterText(`${tag} 태그`)
-          return post?.notionColumn?.tag?.find(t => t.name === decodeURIComponent(tag))
+          return post?.notionColumn?.tag?.find(t => t.name.toUpperCase() === decodeURIComponent(tag).toUpperCase())
         }
 
         if (keyword) {
@@ -86,31 +92,31 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
         return true
       })
 
-      lp = Math.ceil(l.length / PER_PAGE)
+      _lastPage = Math.ceil(_list.length / PER_PAGE)
       if (page) {
-        p = Math.min(page, lp)
+        _page = Math.min(page, _lastPage)
       }
     } else {
-      l = parseList
-      lp = Math.ceil(l.length / PER_PAGE)
+      _list = parseList
+      _lastPage = Math.ceil(_list.length / PER_PAGE)
     }
 
-    l.sort((a, b) => {
-      if (a.notionColumn?.createdTime && b.notionColumn?.createdTime) {
-        return a.notionColumn?.createdTime > b.notionColumn?.createdTime ? -1 : 1
+    _list.sort((a, b) => {
+      if (a.notionColumn?.idx && b.notionColumn?.idx) {
+        return a.notionColumn?.idx > b.notionColumn?.idx ? -1 : 1
       } else {
         return 0
       }
     })
 
     loading()
-    setCount(l.length)
-    setCurrentPage(p)
-    setLastPage(lp)
+    setCount(_list.length)
+    setCurrentPage(_page)
+    setLastPage(_lastPage)
 
-    const indexOfLastPost = p * PER_PAGE
+    const indexOfLastPost = _page * PER_PAGE
     const indexOfFirstPost = indexOfLastPost - PER_PAGE
-    setList(l.slice(indexOfFirstPost, indexOfLastPost))
+    setList(_list.slice(indexOfFirstPost, indexOfLastPost))
   }, [props.location])
 
   const filterReset = () => {

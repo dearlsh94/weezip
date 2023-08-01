@@ -58,12 +58,13 @@ export interface Parent {
 }
 
 export interface NotionColumn {
+  idx: number
   remark: string
-  category: Select
-  tag: Select[]
   cover: string
   lastEditedTime: string
   createdTime: string
   notionUrl: string
-  series: string
+  category?: Select
+  tag?: Select[]
+  series?: Select
 }
