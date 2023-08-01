@@ -43,7 +43,8 @@ byproducts of the process of living with imagination and curiosity
 - 23.05.09 | Semantic Versioning과 각 배포환경에서의 버전 관리에 대한 고민.
 - 23.06.03 | 좋은 동료와 함께 성장하기 위한 피드백은 어떻게 해야할까?
 - 23.06.13 | MSW를 활용하여 웹 브라우저에서 Mockup 사용하기. API 의존으로부터의 해방.
-- 23.07.27 | MAC 로컬 서버에 SSL 인증된 https 도메인 Nginx로 10분만에 적용하기 <br/>
+- 23.07.27 | MAC 로컬 서버에 SSL 인증된 https 도메인 Nginx로 10분만에 적용하기
+- 23.07.31 | 코드 오타 방지 위원회 : Code Spell Checker 플러그인 사용하기. (VSCode) <br/>
 
 ### Edit
 
