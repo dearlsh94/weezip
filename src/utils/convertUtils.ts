@@ -6,8 +6,8 @@ export const convertTab = (text: string) => {
   return text.replaceAll('	', '&emsp;')
 }
 
-export const convertDatetimeFormat = (datetimeString: string, format = 'YYYY-MM-DD'): string => {
-  const date = new Date(datetimeString)
+export const convertDatetimeFormat = (dateTimeString: string, format = 'YYYY-MM-DD'): string => {
+  const date = new Date(dateTimeString)
   const year = date.getFullYear()
   const month = (date.getMonth() + 1).toString().padStart(2, '0')
   const day = date.getDate().toString().padStart(2, '0')
