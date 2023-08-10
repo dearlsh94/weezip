@@ -2,7 +2,6 @@ import * as React from 'react'
 import '@scss/components/Pagination.scss'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
 import { IconArrow, IconMoveEnd } from '@components/icon'
-import { parseLocationQuery } from '@utils/parseUtils'
 import { navigate } from 'gatsby'
 
 interface IProps {
@@ -35,15 +34,12 @@ const Pagination = ({ lastPage, currentPage }: IProps) => {
   }
 
   const handleMove = (page: number) => {
-    const { series, category, tag } = parseLocationQuery(location.search)
-    let url = '/list'
-    let params = []
-    if (series) params.push(`series=${series}`)
-    if (category) params.push(`category=${category}`)
-    if (tag) params.push(`tag=${tag}`)
-    params.push(`page=${page}`)
-    url += `?${params.join('&')}`
-    navigate(url)
+    const search = new URLSearchParams(location.search)
+    if (search.has('page')) {
+      search.delete('page')
+    }
+    search.append('page', page.toString())
+    navigate(`${location.pathname}?${search.toString()}`)
   }
 
   return (
