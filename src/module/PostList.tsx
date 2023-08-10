@@ -24,8 +24,8 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
         <div className="post-list-empty-box">
           <p>검색 결과가 없습니다.</p>
           <p>전체 글들을 둘러보는 건 어떠세요 ?</p>
-          <span>
-            <IconClearAll size={16} handleClick={handleReset} />
+          <span onClick={handleReset}>
+            <IconClearAll size={16} />
             전체글 보러가기
           </span>
         </div>
