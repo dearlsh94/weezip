@@ -51,7 +51,6 @@
     ul {
       margin: 0;
       li {
-        width: 600px;
         @include ellipsis(1);
       }
     }
