@@ -39,6 +39,8 @@ header {
     position: absolute;
     right: 10px;
     z-index: 11;
+    display: flex;
+    align-items: center;
     .icon-box {
       @include flexCenter;
       width: 36px;

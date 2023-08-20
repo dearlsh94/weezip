@@ -1,0 +1,13 @@
+@import '@scss/abstracts/variables';
+
+html[weezip-theme='light'] {
+  --color-background: #f7f7f7;
+  --color-background-opacity: rgba(247, 247, 247, 0, 0.95);
+  --color-font: #333;
+}
+
+html[weezip-theme='dark'] {
+  --color-background: #090909;
+  --color-background-opacity: rgba(8, 8, 8, 0, 0.95);
+  --color-font: #ccc;
+}
