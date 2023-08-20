@@ -1,4 +1,4 @@
-import { Select } from './componentType'
+import { Select } from '@types'
 import { NotionNode } from './nodeTypes'
 
 export interface INotionContext {
