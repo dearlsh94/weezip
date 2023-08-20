@@ -18,6 +18,7 @@ import {
   IconList,
   IconStar,
 } from '@components/icon'
+import ThemeController from '@components/ThemeController'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
@@ -80,6 +81,9 @@ const Header = () => {
           </div>
         </Linker>
         <div className="right-box">
+          <div className="icon-box">
+            <ThemeController />
+          </div>
           <PostSearch>
             <div className="icon-box">
               <IconSearch />
