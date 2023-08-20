@@ -10,7 +10,7 @@ import { NotionContext } from '@store/rootStore'
 import SEO from '@components/header/SEO'
 
 export const Head: HeadFC = () => {
-  return <SEO pathname="/intro/" />
+  return <SEO pathname="/intro/" title={'노션 컴포넌트셋'} />
 }
 
 const IntroPage: React.FC<PageProps> = () => {
