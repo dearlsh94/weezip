@@ -26,6 +26,7 @@
     padding-left: 32px;
   }
 
+  // TODO 우측에 뜨는 목차 고도화하기
   &.right {
     visibility: hidden;
     position: fixed;
@@ -45,7 +46,7 @@
 
     @include superDesktop {
       &.scroll {
-        visibility: visible;
+        // visibility: visible;
         @include animationFadeIn(300ms);
       }
     }
