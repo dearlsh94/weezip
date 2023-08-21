@@ -8,7 +8,8 @@
   transition: all 0.2s;
   transform: scale(1);
   white-space: nowrap;
-  background-color: $white-color;
+  background-color: var(--color-background);
+  color: var(--color-font);
 
   &:hover {
     transform: scale(1.1);
