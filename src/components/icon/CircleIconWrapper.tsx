@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '@scss/icon.scss'
+import '@scss/CircleIconWrapper.scss'
 
 interface Props {
   children: React.ReactNode
