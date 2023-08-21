@@ -1,18 +1,24 @@
+@import '@scss/abstracts/theme';
 @import '@scss/abstracts/variables';
 
 svg.weezip {
   &.mono {
-    path {
+    &.path {
       fill: var(--color-icon-mono);
     }
   }
+  &.reverse-mono {
+    &.path {
+      fill: var(--color-icon-reverse-mono);
+    }
+  }
   &.primary {
-    path {
+    &.path {
       fill: $primary-color;
     }
   }
   &.secondary {
-    path {
+    &.path {
       fill: $secondary-color;
     }
   }

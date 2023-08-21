@@ -15,7 +15,7 @@ footer {
     width: 100%;
     max-width: 768px;
     line-height: 18pt;
-    color: $white-color-3;
+    color: var(--color-font-reverse);
 
     .contact-box {
       a {
@@ -36,7 +36,7 @@ footer {
 
     .item.refer-box a {
       margin-left: 8px;
-      color: $white-color-3;
+      color: var(--color-font-reverse);
     }
 
     .item + .item {

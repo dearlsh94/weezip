@@ -1,23 +1,14 @@
 import * as React from 'react'
+import { SVGIcon } from '@types'
+import SvgBox from './SvgBox'
+import '@scss/components/Icon.scss'
 
-interface Props {
-  size?: number
-  fill?: string
-}
-
-// https://icon-sets.iconify.design/lucide/menu/
-const IconHamburgerMenu = ({ size = 24, fill = 'black' }: Props) => {
+// https://icon-sets.iconify.design/gg/menu/
+const IconHamburgerMenu = (props: SVGIcon) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24">
-      <path
-        fill="none"
-        stroke={fill}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M4 12h16M4 6h16M4 18h16"
-      />
-    </svg>
+    <SvgBox {...props}>
+      <path d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm0 6.032a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm1 5.032a1 1 0 1 0 0 2h18a1 1 0 0 0 0-2H3Z" />
+    </SvgBox>
   )
 }
 

@@ -6,8 +6,8 @@ export interface Filter {
 }
 
 export interface SVGIcon {
-  size: number
-  color: 'mono' | 'primary' | 'secondary'
+  size?: number
+  color?: 'mono' | 'reverse-mono' | 'primary' | 'secondary'
   direction?: 'top' | 'right' | 'left' | 'bottom'
   handleClick?: React.MouseEventHandler<SVGSVGElement>
 }

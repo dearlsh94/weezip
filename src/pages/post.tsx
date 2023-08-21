@@ -71,7 +71,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           </div>
           <div className="right-box">
             <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
-              <IconCopyLink size={18} fill="#a7c4bc" />
+              <IconCopyLink size={18} color="secondary" />
             </div>
             <div className="date-box">
               <span className="date">작성 : {content?.properties?.created_date?.date?.start || ''}</span>

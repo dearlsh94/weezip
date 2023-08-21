@@ -14,27 +14,27 @@ const Footer = () => {
             <div className="contact-item">
               <CircleIconWrapper color="white">
                 <a href={`mailto:${mail}`}>
-                  <IconMail size={24} fill="white" />
+                  <IconMail color="reverse-mono" />
                 </a>
               </CircleIconWrapper>
               <CircleIconWrapper color="white">
                 <Linker url={`https://www.instagram.com/treefeely/`} target="_blank">
-                  <IconInstagram size={24} fill="white" />
+                  <IconInstagram color="reverse-mono" />
                 </Linker>
               </CircleIconWrapper>
               <CircleIconWrapper color="white">
                 <Linker url={`https://www.threads.net/@moment.______`} target="_blank">
-                  <IconThreads size={24} fill="white" />
+                  <IconThreads color="reverse-mono" />
                 </Linker>
               </CircleIconWrapper>
               <CircleIconWrapper color="white">
                 <Linker url={`https://open.kakao.com/me/treefeely`} target="_blank">
-                  <IconKakao size={24} fill="white" />
+                  <IconKakao color="reverse-mono" />
                 </Linker>
               </CircleIconWrapper>
               <CircleIconWrapper color="white">
                 <Linker url={`https://github.com/dearlsh94`} target="_blank">
-                  <IconGithub size={24} fill="white" />
+                  <IconGithub color="reverse-mono" />
                 </Linker>
               </CircleIconWrapper>
             </div>
