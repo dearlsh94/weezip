@@ -12,7 +12,7 @@ import { graphql } from 'gatsby'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
 import { Filter } from '@types'
 import FloatBox from '@components/ui/FloatBox'
-import HeaderIndex from '@module/HeaderIndex'
+import PostIndex from '@module/PostIndex'
 import { IconCopyLink, CircleIconWrapper } from '@components/icon'
 import Linker from '@components/ui/Linker'
 
@@ -80,7 +80,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           </div>
         </div>
       </div>
-      <HeaderIndex list={indexList} />
+      <PostIndex list={indexList} />
       {content && <ContentWrapper childrens={content.children} />}
       <div className="bottom-box">
         <div className="share-box">

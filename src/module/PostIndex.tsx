@@ -1,13 +1,13 @@
 import * as React from 'react'
-import '@scss/module/HeaderIndex.scss'
-import HeaderIndexList from '@components/HeaderIndexList'
+import '@scss/module/PostIndex.scss'
+import PostIndexList from '@components/PostIndexList'
 import { IconArrow } from '@components/icon'
 
 interface Props {
   list: HTMLHeadingElement[]
 }
 
-const HeaderIndex = ({ list }: Props) => {
+const PostIndex = ({ list }: Props) => {
   const [isShowIndex, setIsShowIndex] = React.useState(false)
 
   const handleShowIndex = () => {
@@ -22,12 +22,12 @@ const HeaderIndex = ({ list }: Props) => {
             <IconArrow direction={'top'} size={20} />
           </div>
         </div>
-        <div className={`header-index-box ${isShowIndex ? '' : 'hide'}`}>
-          {list && list?.length > 0 && <HeaderIndexList list={list} />}
+        <div className={`post-index-box ${isShowIndex ? '' : 'hide'}`}>
+          {list && list?.length > 0 && <PostIndexList list={list} />}
         </div>
       </div>
     </>
   )
 }
 
-export default HeaderIndex
+export default PostIndex

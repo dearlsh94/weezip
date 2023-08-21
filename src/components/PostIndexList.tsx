@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import '@scss/components/HeaderIndexList.scss'
+import '@scss/components/PostIndexList.scss'
 import { throttle } from '@utils/commonUtils'
 
 interface Props {
   list: HTMLHeadingElement[]
 }
 
-const HeaderIndexList = ({ list }: Props) => {
+const PostIndexList = ({ list }: Props) => {
   const move = (item: HTMLHeadingElement) => {
     window.scrollTo({
       top: item.offsetTop,
@@ -68,4 +68,4 @@ const HeaderIndexList = ({ list }: Props) => {
   )
 }
 
-export default HeaderIndexList
+export default PostIndexList
