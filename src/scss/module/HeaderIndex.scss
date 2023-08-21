@@ -2,7 +2,8 @@
 @import '@scss/abstracts/mixin';
 
 .index-box {
-  background-color: #fff;
+  background-color: var(--color-background-opacity);
+  color: var(--color-font);
   border-radius: 12px;
   padding: 12px;
   margin: 24px 0px 48px;
@@ -51,6 +52,7 @@
     ul {
       margin: 0;
       li {
+        color: var(--color-font);
         @include ellipsis(1);
       }
     }
