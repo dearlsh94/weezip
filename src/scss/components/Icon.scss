@@ -1,0 +1,19 @@
+@import '@scss/abstracts/variables';
+
+svg.weezip {
+  &.mono {
+    path {
+      fill: var(--color-icon-mono);
+    }
+  }
+  &.primary {
+    path {
+      fill: $primary-color;
+    }
+  }
+  &.secondary {
+    path {
+      fill: $secondary-color;
+    }
+  }
+}
