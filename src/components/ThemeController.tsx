@@ -1,7 +1,7 @@
 import * as React from 'react'
 // import '@scss/components.scss'
-import IconLightMode from './icon/IconLightMode'
-import IconDarkMode from './icon/IconDarkMode'
+import IconLightTheme from './icon/IconLightTheme'
+import IconDarkTheme from './icon/IconDarkTheme'
 
 enum THEME_MODE {
   LIGHT = 'light',
@@ -41,7 +41,7 @@ const StyleMode = () => {
   }
   return (
     <>
-      {theme === 'light' ? <IconLightMode handleClick={handleChange} /> : <IconDarkMode handleClick={handleChange} />}
+      {theme === 'light' ? <IconLightTheme handleClick={handleChange} /> : <IconDarkTheme handleClick={handleChange} />}
     </>
   )
 }

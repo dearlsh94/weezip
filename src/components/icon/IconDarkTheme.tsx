@@ -7,7 +7,7 @@ interface Props {
 }
 
 // https://icon-sets.iconify.design/ic/round-dark-mode/
-const IconDarkMode = ({ size = 24, fill = 'black', handleClick }: Props) => {
+const IconDarkTheme = ({ size = 24, fill = 'black', handleClick }: Props) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" onClick={handleClick}>
       <path
@@ -18,4 +18,4 @@ const IconDarkMode = ({ size = 24, fill = 'black', handleClick }: Props) => {
   )
 }
 
-export default IconDarkMode
+export default IconDarkTheme
