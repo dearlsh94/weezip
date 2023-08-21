@@ -14,7 +14,7 @@ interface Props {
 const NToggle = ({ toggle, hasChild, childList }: Props) => {
   const [isOpen, setIsOpen] = React.useState(false)
   return (
-    <React.Fragment>
+    <>
       {toggle && (
         <div className="block-toggle">
           <div className="toggle-title-box" onClick={() => setIsOpen(!isOpen)}>
@@ -28,7 +28,7 @@ const NToggle = ({ toggle, hasChild, childList }: Props) => {
           </div>
         </div>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

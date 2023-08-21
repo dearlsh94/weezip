@@ -11,12 +11,12 @@ interface Props {
 const NNumberedListItem = ({ numberedListItem }: Props) => {
   const { has_children, children } = numberedListItem
   return (
-    <React.Fragment>
+    <>
       <div className={`block-numbered-list-item`}>
         <NParagraph paragraph={numberedListItem.numbered_list_item} />
         {has_children && children?.length > 0 && <ContentWrapper childrens={children} />}
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

@@ -6,7 +6,7 @@ import { IconMail, CircleIconWrapper, IconInstagram, IconGithub, IconKakao, Icon
 
 const Footer = () => {
   return (
-    <React.Fragment>
+    <>
       <footer>
         <div className="container">
           <div className="item contact-box">
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-    </React.Fragment>
+    </>
   )
 }
 

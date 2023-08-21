@@ -11,7 +11,7 @@ const ListFilter = () => {
   const postTags = useContext(NotionContext).postTags
 
   return (
-    <React.Fragment>
+    <>
       <div className="list-filter-container">
         <div className="series filter">
           <p className="title">시리즈</p>
@@ -44,7 +44,7 @@ const ListFilter = () => {
           <TagBadges postItemTags={postTags} isLink={true} />
         </div>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

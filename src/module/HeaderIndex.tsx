@@ -14,7 +14,7 @@ const HeaderIndex = ({ list }: Props) => {
     setIsShowIndex(!isShowIndex)
   }
   return (
-    <React.Fragment>
+    <>
       <div className="index-box">
         <div className="title-box" onClick={handleShowIndex}>
           <p>목차 {isShowIndex ? '숨기기' : '보기'}</p>
@@ -26,7 +26,7 @@ const HeaderIndex = ({ list }: Props) => {
           {list && list?.length > 0 && <HeaderIndexList list={list} />}
         </div>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

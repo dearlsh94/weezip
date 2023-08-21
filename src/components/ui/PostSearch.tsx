@@ -57,7 +57,7 @@ const PostSearch = ({ children }: Props) => {
   }
 
   return (
-    <React.Fragment>
+    <>
       <div onClick={handleOpen}>{children}</div>
       <div className={`post-search-container ${isShowSearch ? 'open' : ''}`}>
         <DimWrapper handleClose={handleClose}>
@@ -92,7 +92,7 @@ const PostSearch = ({ children }: Props) => {
           </div>
         </DimWrapper>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

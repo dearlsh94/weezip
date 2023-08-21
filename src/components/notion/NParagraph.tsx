@@ -12,7 +12,7 @@ interface Props {
 const NParagraph = ({ paragraph, text, className }: Props) => {
   let blockTexts = paragraph?.text || text || []
   return (
-    <React.Fragment>
+    <>
       {blockTexts && (
         <div className="block-paragraph">
           {blockTexts.length === 0 && <br />}
@@ -59,7 +59,7 @@ const NParagraph = ({ paragraph, text, className }: Props) => {
           })}
         </div>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

@@ -19,7 +19,7 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
   }
 
   return (
-    <React.Fragment>
+    <>
       {list.length === 0 && (
         <div className="post-list-empty-box">
           <p>검색 결과가 없습니다.</p>
@@ -44,7 +44,7 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
         </ul>
       )}
       {list?.length > 0 && <Pagination lastPage={lastPage} currentPage={currentPage} />}
-    </React.Fragment>
+    </>
   )
 }
 

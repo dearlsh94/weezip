@@ -39,7 +39,7 @@ const HeaderIndexList = ({ list }: Props) => {
   }, [])
 
   return (
-    <React.Fragment>
+    <>
       <ul className={`block-header-index-list`}>
         {list.map((item, i) => {
           const tag = item.tagName.toLowerCase()
@@ -64,7 +64,7 @@ const HeaderIndexList = ({ list }: Props) => {
           )
         })}
       </ul>
-    </React.Fragment>
+    </>
   )
 }
 

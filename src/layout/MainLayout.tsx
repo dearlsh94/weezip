@@ -11,7 +11,7 @@ interface Props {
 
 const MainLayout = ({ children, className }: Props) => {
   return (
-    <React.Fragment>
+    <>
       <main className={`main-layout ${className}`}>
         <Header />
         <ScrollProgress />
@@ -20,7 +20,7 @@ const MainLayout = ({ children, className }: Props) => {
         </article>
         <Footer />
       </main>
-    </React.Fragment>
+    </>
   )
 }
 

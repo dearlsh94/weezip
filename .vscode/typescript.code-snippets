@@ -22,7 +22,7 @@
       "interface Props {}",
       "",
       "const ComponentName = ({}: Props) => {",
-      "return <React.Fragment></React.Fragment>",
+      "return <></>",
       "}",
       "",
       "export default ComponentName"

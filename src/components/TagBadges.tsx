@@ -10,7 +10,7 @@ interface Props {
 
 const TagBadges = ({ postItemTags, isLink = true }: Props) => {
   return (
-    <React.Fragment>
+    <>
       {postItemTags && (
         <div className="badge-box">
           {postItemTags.map((tag, i) =>
@@ -28,7 +28,7 @@ const TagBadges = ({ postItemTags, isLink = true }: Props) => {
           )}
         </div>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

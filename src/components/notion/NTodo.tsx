@@ -9,7 +9,7 @@ interface Props {
 
 const NTodo = ({ todo }: Props) => {
   return (
-    <React.Fragment>
+    <>
       {todo && (
         <div className="block-todo">
           <input type="checkbox" checked={todo.checked} onChange={() => {}} />
@@ -18,7 +18,7 @@ const NTodo = ({ todo }: Props) => {
           </label>
         </div>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

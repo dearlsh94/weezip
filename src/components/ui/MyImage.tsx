@@ -12,7 +12,7 @@ const MyImage = ({ imageBlock }: Props) => {
     ? `https://squary.notion.site/image/${encodeURIComponent(image.file.url)}?table=block&id=${id}&cache=v2`
     : ``
   return (
-    <React.Fragment>
+    <>
       {id && image && (
         <div className={`block-image`}>
           <img
@@ -26,7 +26,7 @@ const MyImage = ({ imageBlock }: Props) => {
           <p>{image.caption?.length > 0 ? image.caption[0]?.plain_text : ''}</p>
         </div>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

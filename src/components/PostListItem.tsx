@@ -15,7 +15,7 @@ const PostListItem = ({ post }: Props) => {
   const tag = notionColumn?.tag || []
   const series = notionColumn?.series
   return (
-    <React.Fragment>
+    <>
       <div className={`post-list-item`}>
         {series && <span className="series">시리즈 [{series?.name}]</span>}
         <p>{remark}</p>
@@ -29,7 +29,7 @@ const PostListItem = ({ post }: Props) => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

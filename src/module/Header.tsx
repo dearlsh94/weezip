@@ -53,7 +53,7 @@ const Header = () => {
   }, [isSnbOpen])
 
   return (
-    <React.Fragment>
+    <>
       <header id="header" className={`${status}`}>
         <div className="left-box">
           <div
@@ -142,7 +142,7 @@ const Header = () => {
           })}
         </section>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

@@ -12,7 +12,7 @@ const NCallout = ({ callout, children = [] }: Props) => {
   const icon = callout?.icon?.emoji
 
   return (
-    <React.Fragment>
+    <>
       {callout && (
         <div className={`block-callout`}>
           {icon && <div className="icon-box">{icon}</div>}
@@ -20,7 +20,7 @@ const NCallout = ({ callout, children = [] }: Props) => {
           {children && children?.length > 0 && <ContentWrapper childrens={children} />}
         </div>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

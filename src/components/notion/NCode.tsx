@@ -12,7 +12,7 @@ interface Props {
 const NCode = ({ code }: Props) => {
   const codeString = code.text?.reduce((codeString, text) => (codeString += text.plain_text), '')
   return (
-    <React.Fragment>
+    <>
       <div className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
         {code.language && <div className="language">{code.language}</div>}
         <SyntaxHighlighter language={'HTML'} style={atelierCaveDark} showLineNumbers={true}>
@@ -24,7 +24,7 @@ const NCode = ({ code }: Props) => {
           </div>
         )}
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

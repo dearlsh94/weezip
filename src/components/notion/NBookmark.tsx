@@ -9,7 +9,7 @@ interface Props {
 
 const NBookmark = ({ bookmark }: Props) => {
   return (
-    <React.Fragment>
+    <>
       {bookmark && (
         <Linker url={bookmark.url} target="_blank">
           {bookmark.caption?.length > 0 ? (
@@ -29,7 +29,7 @@ const NBookmark = ({ bookmark }: Props) => {
           )}
         </Linker>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

@@ -21,11 +21,11 @@ const FilterItem = ({ filter }: Props) => {
   }, [location])
 
   return (
-    <React.Fragment>
+    <>
       <Linker url={`/list?${filter.type}=${encodeURIComponent(filter.key)}`}>
         <div className={`filter-item ${filter.color} ${isActive ? 'active' : ''}`}>{filter.name}</div>
       </Linker>
-    </React.Fragment>
+    </>
   )
 }
 

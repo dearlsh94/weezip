@@ -9,13 +9,13 @@ interface Props {
 
 const NQuote = ({ quote }: Props) => {
   return (
-    <React.Fragment>
+    <>
       {quote && (
         <blockquote className={`block-quote`}>
           <NParagraph paragraph={quote} />
         </blockquote>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

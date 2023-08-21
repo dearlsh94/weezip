@@ -8,7 +8,7 @@ interface Props {
 
 const CircleProgress = ({ height }: Props) => {
   return (
-    <React.Fragment>
+    <>
       <div
         className="circle-progress-box"
         style={{
@@ -17,7 +17,7 @@ const CircleProgress = ({ height }: Props) => {
       >
         <IconCircleProgress />
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

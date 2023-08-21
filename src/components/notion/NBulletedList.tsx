@@ -12,10 +12,10 @@ const NBulletedList = ({ bulletedListItem }: Props) => {
   const { has_children, children } = bulletedListItem
 
   return (
-    <React.Fragment>
+    <>
       <NParagraph paragraph={bulletedListItem.bulleted_list_item} />
       {has_children && children?.length > 0 && <ContentWrapper childrens={children} />}
-    </React.Fragment>
+    </>
   )
 }
 

@@ -9,13 +9,13 @@ interface Props {
 
 const NHeading3 = ({ head3 }: Props) => {
   return (
-    <React.Fragment>
+    <>
       {head3 && (
         <h3>
           <NParagraph paragraph={head3} />
         </h3>
       )}
-    </React.Fragment>
+    </>
   )
 }
 

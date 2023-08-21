@@ -30,7 +30,7 @@ const ScrollProgress = ({}: Props) => {
   }, [])
 
   return (
-    <React.Fragment>
+    <>
       <div className={`scroll-progress-container ${status}`}>
         <div
           className="scroll-progress"
@@ -39,7 +39,7 @@ const ScrollProgress = ({}: Props) => {
           }}
         />
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

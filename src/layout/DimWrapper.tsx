@@ -11,12 +11,12 @@ const DimWrapper = ({ children, handleClose }: Props) => {
     handleClose && handleClose()
   }
   return (
-    <React.Fragment>
+    <>
       <div className="dim-wrapper">
         <div className="content">{children}</div>
         <div className="dim" onClick={handleDimClick} />
       </div>
-    </React.Fragment>
+    </>
   )
 }
 
