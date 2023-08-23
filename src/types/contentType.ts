@@ -1,6 +1,6 @@
 import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, Select, Code, Image } from '@types'
 
-// NOTE enum zone ====
+// SECTION enum zone ====
 export enum BlockType {
   PARAGRAPH = 'paragraph',
   HEADING_1 = 'heading_1',
@@ -18,7 +18,7 @@ export enum BlockType {
   DIVIDER = 'divider',
 }
 
-// NOTE interface zone ====
+// SECTION interface zone ====
 export interface Children {
   object: 'block'
   id: string

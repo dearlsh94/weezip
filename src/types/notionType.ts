@@ -1,3 +1,28 @@
+// 노션 DB 컬럼 목록
+export interface Properties {
+  idx: Property
+  title: Property
+  url: Property
+  remark: Property
+  category: Property
+  created_date: Property
+  edited_date: Property
+  series: Property
+  tag: Property
+}
+
+// 노션 DB 테이블 컬럼 속성
+export interface Property {
+  id: string
+  type: 'title' | 'multi_select' | 'rich_text' | 'date' | 'select' | 'number'
+  title?: TextItem
+  multi_select?: Select[]
+  rich_text?: string
+  date: PropDate
+  select: Select
+  number: number
+}
+
 export interface WorkBy {
   object: string
   id: string
@@ -86,29 +111,4 @@ export interface PropDate {
   end: string
   start: string
   time_zone?: string
-}
-
-// NOTE Notion Database Column
-export interface Properties {
-  idx: Property
-  title: Property
-  url: Property
-  remark: Property
-  category: Property
-  created_date: Property
-  edited_date: Property
-  series: Property
-  tag: Property
-}
-
-// NOTE 노션 DB 테이블의 컬럼
-export interface Property {
-  id: string
-  type: 'title' | 'multi_select' | 'rich_text' | 'date' | 'select' | 'number'
-  title?: TextItem // type === title
-  rich_text?: string // type === rich_text
-  multi_select?: Select[]
-  date: PropDate
-  select: Select
-  number: number
 }

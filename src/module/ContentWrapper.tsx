@@ -14,7 +14,7 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
   return (
     <section className={`content-wrapper ${align ? align : ''}`}>
       {childrens.map((block, i) => {
-        // NOTE Type number list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
+        // Type number list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
         if (block.type === BlockType.NUMBERED_LIST_ITEM) {
           numberedList.push(block)
 
@@ -41,7 +41,7 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
           }
         }
 
-        // NOTE Type bullet list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
+        // Type bullet list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
         if (block.type === BlockType.BULLETED_LIST_ITEM) {
           bulletedList.push(block)
           // 다음 block이 numbered_list가 아닐 경우 렌더링.
