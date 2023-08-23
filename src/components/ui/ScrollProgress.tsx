@@ -3,9 +3,7 @@ import { useEffect, useState } from 'react'
 import { throttle } from '@utils/commonUtils'
 import '@scss/components/ScrollProgress.scss'
 
-interface Props {}
-
-const ScrollProgress = ({}: Props) => {
+const ScrollProgress = () => {
   const [status, setStatus] = useState('')
   const [progress, setProgress] = useState(0)
 
@@ -20,8 +18,9 @@ const ScrollProgress = ({}: Props) => {
       let windowScroll = document?.body.scrollTop || document?.documentElement.scrollTop
       let height = document?.documentElement.scrollHeight - document?.documentElement.clientHeight
       setProgress((windowScroll / height) * 100)
+      console.log('run setProgress')
     }
-    const throttledScrollHandler = throttle(scrollHandler, 3)
+    const throttledScrollHandler = throttle(scrollHandler, 10)
 
     window.addEventListener('scroll', throttledScrollHandler)
     return () => {
