@@ -62,7 +62,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.03.28 | 개인 블로그 개발의 서막. 코드 네임 : WeeZip.
 - 23.03.28 | Gatsby 프로젝트 개발환경 생성부터 alias, git 설정까지.
 - 23.03.29 | 개츠비에 노션의 등장이라… Gatsby에 Notion API 연동하기.
-- 23.04.14 | 내 Gatsby 사이트에 Font, Color Pallete, Icon Set 적용하기.
+- 23.04.14 | 내 Gatsby 사이트에 Font, Color Palette, Icon Set 적용하기.
 - 23.04.15 | 노션에 첨부된 이미지 URL 만료 없이 사용하기
 - 23.04.17 | Gatsby Cloud로 배포하고 Google Domains로 웹 이름 지어주기.
 - 23.04.20 | Gatsby Head API로 메타 태그 적용하기. 아아, 부르다 죽을 그 이름 SEO.
@@ -87,8 +87,7 @@ byproducts of the process of living with imagination and curiosity
 
 ### 삽질견문록
 
-- 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기.  
-  <br/>
+- 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기. <br/>
 
 ### 문화 소비자 시점
 
