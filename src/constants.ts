@@ -73,3 +73,4 @@ export const RECOMMEND_TAGS = [
 ]
 
 export const mail = 'weezip.ethan@gmail.com'
+export const CONFIG_THEME_KEY = 'weezip-theme'
