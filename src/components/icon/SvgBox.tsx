@@ -7,11 +7,11 @@ interface Props extends SVGIcon {
   children: React.ReactNode
 }
 
-const SvgBox = ({ size = 24, color = 'mono', handleClick, children, viewBox = '0 0 24 24', type = 'path' }: Props) => {
+const SvgBox = ({ size = 24, color = 'mono', handleClick, children, viewBox = '0 0 24 24' }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={`weezip ${color} ${type}`}
+      className={`weezip ${color}`}
       width={size}
       height={size}
       viewBox={viewBox}
