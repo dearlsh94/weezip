@@ -2,24 +2,53 @@
 @import '@scss/abstracts/variables';
 
 svg.weezip {
-  &.mono {
-    &.path {
-      fill: var(--color-icon-mono);
+  &.black {
+    path {
+      fill: #090909;
     }
   }
-  &.reverse-mono {
-    &.path {
-      fill: var(--color-icon-reverse-mono);
+  &.white {
+    path {
+      fill: #f7f7f7;
     }
   }
   &.primary {
-    &.path {
-      fill: $primary-color;
+    path {
+      fill: #5e8b7e;
     }
   }
   &.secondary {
-    &.path {
-      fill: $secondary-color;
+    path {
+      fill: #a7c4bc;
+    }
+  }
+}
+html[weezip-theme='light'] {
+  svg.weezip {
+    &.mono {
+      path {
+        fill: #090909;
+      }
+    }
+    &.reverse-mono {
+      path {
+        fill: #f7f7f7;
+      }
+    }
+  }
+}
+
+html[weezip-theme='dark'] {
+  svg.weezip {
+    &.mono {
+      path {
+        fill: #f7f7f7;
+      }
+    }
+    &.reverse-mono {
+      path {
+        fill: #090909;
+      }
     }
   }
 }
