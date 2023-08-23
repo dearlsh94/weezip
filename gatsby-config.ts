@@ -5,7 +5,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-// For Sitemap
 const siteUrl = 'https://weezip.treefeely.com'
 
 const config: GatsbyConfig = {
@@ -14,9 +13,6 @@ const config: GatsbyConfig = {
     description: '글쓰는 프론트엔드 개발자의 블로그. 편하고 예쁜 걸 좋아합니다.',
     siteUrl: 'https://weezip.treefeely.com',
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   // For to check not available during SSR
   flags: {
@@ -24,12 +20,9 @@ const config: GatsbyConfig = {
     FAST_DEV: true,
   },
   plugins: [
-    // For use sass
     'gatsby-plugin-sass',
-    // For use StaticImage
     'gatsby-plugin-image',
     {
-      // For use alias imports
       resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
@@ -48,9 +41,7 @@ const config: GatsbyConfig = {
         extensions: ['js', 'jsx', 'ts', 'tsx'],
       },
     },
-
     {
-      // For create dynamic sitemap
       resolve: `gatsby-plugin-sitemap`,
       options: {
         query: `{
@@ -95,7 +86,6 @@ const config: GatsbyConfig = {
       __key: 'images',
     },
     {
-      // For use notion API
       resolve: 'gatsby-source-notion-api',
       options: {
         token: process.env.NOTION_INTEGRATION_TOKEN,
@@ -107,7 +97,6 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      // For use Web Font
       resolve: `gatsby-omni-font-loader`,
       options: {
         enableListener: true,
@@ -121,7 +110,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      // For use GA
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
@@ -159,7 +147,6 @@ const config: GatsbyConfig = {
     //   },
     // },
     {
-      // For canonical url
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://weezip.treefeely.com`,
