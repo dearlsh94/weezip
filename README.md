@@ -32,7 +32,8 @@ byproducts of the process of living with imagination and curiosity
 
 - 23.05.21 | 내가 매일 업무일지를 작성하는 4가지 이유.
 - 23.06.08 | 내가 동료에게 피드백을 요청하기까지.
-- 23.07.15 | 처음으로 회사에 피드백을 요청해보았다. <br/>
+- 23.07.15 | 처음으로 회사에 피드백을 요청해보았다.
+- 23.08.24 | 상용 서비스 script, API 오류 처리 개선 작업 회고. 이렇게나 오류가 있었다고? <br/>
 
 ### Explain
 
