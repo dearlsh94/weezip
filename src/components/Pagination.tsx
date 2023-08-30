@@ -54,7 +54,7 @@ const Pagination = ({ lastPage, currentPage }: IProps) => {
             width={45}
             handleClick={handleFirst}
           >
-            <IconMoveEnd direction="left" size={18} color="primary" />
+            <IconMoveEnd direction="left" size={18} color="base" />
           </MyButton>
         )}
         <MyButton
@@ -65,7 +65,7 @@ const Pagination = ({ lastPage, currentPage }: IProps) => {
           width={45}
           handleClick={handleOlder}
         >
-          <IconArrow direction="left" size={12} color="primary" />
+          <IconArrow direction="left" size={12} color="base" />
         </MyButton>
       </div>
       <div className="center-box">
@@ -90,7 +90,7 @@ const Pagination = ({ lastPage, currentPage }: IProps) => {
           width={45}
           handleClick={handleNewer}
         >
-          <IconArrow direction="right" size={12} color="primary" />
+          <IconArrow direction="right" size={12} color="base" />
         </MyButton>
         {lastPage > 2 && (
           <MyButton
@@ -101,7 +101,7 @@ const Pagination = ({ lastPage, currentPage }: IProps) => {
             width={45}
             handleClick={handleLast}
           >
-            <IconMoveEnd direction="right" size={18} color="primary" />
+            <IconMoveEnd direction="right" size={18} color="base" />
           </MyButton>
         )}
       </div>
