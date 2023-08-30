@@ -10,7 +10,7 @@ const siteUrl = 'https://weezip.treefeely.com'
 const config: GatsbyConfig = {
   siteMetadata: {
     title: 'Weezip',
-    description: '글쓰는 프론트엔드 개발자의 블로그. 편하고 예쁜 걸 좋아합니다.',
+    description: '글 쓰는 프론트엔드 개발자의 블로그. 편하고 예쁜 걸 좋아합니다.',
     siteUrl: 'https://weezip.treefeely.com',
   },
   graphqlTypegen: true,
