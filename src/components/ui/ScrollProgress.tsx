@@ -18,7 +18,6 @@ const ScrollProgress = () => {
       let windowScroll = document?.body.scrollTop || document?.documentElement.scrollTop
       let height = document?.documentElement.scrollHeight - document?.documentElement.clientHeight
       setProgress((windowScroll / height) * 100)
-      console.log('run setProgress')
     }
     const throttledScrollHandler = throttle(scrollHandler, 10)
 

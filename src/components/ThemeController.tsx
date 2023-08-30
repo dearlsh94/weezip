@@ -24,7 +24,6 @@ const StyleMode = () => {
   }
   React.useEffect(() => {
     const theme = getConfig(CONFIG_THEME_KEY)
-    console.log(theme)
     if (theme === THEME_MODE.DARK) {
       setDarkMode()
       setTheme(THEME_MODE.DARK)
