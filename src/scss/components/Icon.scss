@@ -12,6 +12,11 @@ svg.weezip {
       fill: #f7f7f7;
     }
   }
+  &.base {
+    path {
+      fill: #2f5d62;
+    }
+  }
   &.primary {
     path {
       fill: #5e8b7e;
