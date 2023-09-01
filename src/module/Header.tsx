@@ -13,6 +13,7 @@ import useOverlay from '@src/hooks/useOverlay'
 const Header = () => {
   const overlaySNB = useOverlay()
   const overlaySearch = useOverlay()
+
   const [status, setStatus] = useState('')
   const [isMenuHover, setIsMenuHover] = useState(false)
 
