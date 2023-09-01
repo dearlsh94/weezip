@@ -19,6 +19,7 @@ import {
   IconStar,
 } from '@components/icon'
 import ThemeController from '@components/ThemeController'
+import { GlobalPortal } from '@components/GlobalPortal'
 
 const Header = () => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes
@@ -91,39 +92,41 @@ const Header = () => {
           </PostSearch>
         </div>
       </header>
-      <aside className={`snb-container ${isSnbOpen ? 'open' : ''}`}>
-        <DimWrapper handleClose={() => setIsSnbOpen(false)}>
-          <div className="snb-box">
-            <div className="sub-header">
-              <StaticImage src={`../images/logo-3x.png`} alt="Weezip Logo" className="logo" />
-              <div className="text-box">
-                {/* TODO 무슨 문구를 써놓을까 */}
-                <p></p>
+      <GlobalPortal.Consumer>
+        <aside className={`snb-container ${isSnbOpen ? 'open' : ''}`}>
+          <DimWrapper handleClose={() => setIsSnbOpen(false)}>
+            <div className="snb-box">
+              <div className="sub-header">
+                <StaticImage src={`../images/logo-3x.png`} alt="Weezip Logo" className="logo" />
+                <div className="text-box">
+                  {/* TODO 무슨 문구를 써놓을까 */}
+                  <p></p>
+                </div>
               </div>
+              <nav className="nav-box">
+                <ul>
+                  {GNB_MENUS?.length > 0 &&
+                    GNB_MENUS.map((nav, i) => {
+                      return (
+                        <li key={`gnb-${i}`} className={`nav-item`}>
+                          <Linker url={nav.url} target={nav.isOutLink ? '_blank' : '_parent'}>
+                            <div className="title-box">
+                              {nav.title.toUpperCase() === 'HOME' && <IconHome />}
+                              {nav.title.toUpperCase() === 'LIST' && <IconList />}
+                              {nav.title.toUpperCase() === '문화소비자시점' && <IconStar />}
+                              {nav.isOutLink && <IconOutLink />}
+                              <span>{nav.title}</span>
+                            </div>
+                          </Linker>
+                        </li>
+                      )
+                    })}
+                </ul>
+              </nav>
             </div>
-            <nav className="nav-box">
-              <ul>
-                {GNB_MENUS?.length > 0 &&
-                  GNB_MENUS.map((nav, i) => {
-                    return (
-                      <li key={`gnb-${i}`} className={`nav-item`}>
-                        <Linker url={nav.url} target={nav.isOutLink ? '_blank' : '_parent'}>
-                          <div className="title-box">
-                            {nav.title.toUpperCase() === 'HOME' && <IconHome />}
-                            {nav.title.toUpperCase() === 'LIST' && <IconList />}
-                            {nav.title.toUpperCase() === '문화소비자시점' && <IconStar />}
-                            {nav.isOutLink && <IconOutLink />}
-                            <span>{nav.title}</span>
-                          </div>
-                        </Linker>
-                      </li>
-                    )
-                  })}
-              </ul>
-            </nav>
-          </div>
-        </DimWrapper>
-      </aside>
+          </DimWrapper>
+        </aside>
+      </GlobalPortal.Consumer>
 
       {isDebug && (
         <section>
