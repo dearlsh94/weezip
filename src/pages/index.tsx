@@ -11,6 +11,7 @@ import SEO from '@components/header/SEO'
 
 import LatestPost from '@module/LatestPost'
 import Divider from '@components/ui/Divider'
+import { GlobalPortal } from '@components/GlobalPortal'
 
 export const Head: HeadFC = () => {
   return <SEO />
@@ -24,13 +25,15 @@ const IndexPage: React.FC<PageProps> = () => {
   const content: Children | null = getNodeJsonByUrl(nodes, '/')
 
   return (
-    <NotionContext.Provider value={store}>
-      <MainLayout className="index-layout">
-        <LatestPost />
-        <Divider />
-        {content && <ContentWrapper childrens={content.children} align="center" />}
-      </MainLayout>
-    </NotionContext.Provider>
+    <GlobalPortal.Provider>
+      <NotionContext.Provider value={store}>
+        <MainLayout className="index-layout">
+          <LatestPost />
+          <Divider />
+          {content && <ContentWrapper childrens={content.children} align="center" />}
+        </MainLayout>
+      </NotionContext.Provider>
+    </GlobalPortal.Provider>
   )
 }
 
