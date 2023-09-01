@@ -30,7 +30,7 @@ const SideBarNavigation = ({ handleClose }: SideBarNavigationProps) => {
           {GNB_MENUS?.length > 0 &&
             GNB_MENUS.map((nav, i) => {
               return (
-                <li key={`gnb-${i}`} className={`nav-item`}>
+                <li key={`gnb-${i}`} className={`nav-item`} onClick={handleClose}>
                   <Linker url={nav.url} target={nav.isOutLink ? '_blank' : '_parent'}>
                     <div className="title-box">
                       {nav.title.toUpperCase() === 'HOME' && <IconHome />}
