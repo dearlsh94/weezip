@@ -4,7 +4,7 @@ import '@scss/module/Header.scss'
 import Linker from '@components/ui/Linker'
 import { StaticImage } from 'gatsby-plugin-image'
 import { throttle } from '@utils/commonUtils'
-import PostSearch from '@components/ui/PostSearch'
+import PostSearchLayer from '@module/PostSearchLayer'
 import { IconHamburgerMenu, IconDoubleArrow, IconSearch } from '@components/icon'
 import ThemeController from '@components/ThemeController'
 import SideBarNavigation from './SideBarNavigation'
@@ -12,6 +12,7 @@ import useOverlay from '@src/hooks/useOverlay'
 
 const Header = () => {
   const overlaySNB = useOverlay()
+  const overlaySearch = useOverlay()
   const [status, setStatus] = useState('')
   const [isMenuHover, setIsMenuHover] = useState(false)
 
@@ -65,14 +66,13 @@ const Header = () => {
           <div className="icon-box">
             <ThemeController />
           </div>
-          <PostSearch>
-            <div className="icon-box">
-              <IconSearch />
-            </div>
-          </PostSearch>
+          <div className="icon-box" onClick={overlaySearch.open}>
+            <IconSearch />
+          </div>
         </div>
       </header>
 
+      {overlaySearch.isOpen && <PostSearchLayer handleClose={overlaySearch.close} />}
       {overlaySNB.isOpen && <SideBarNavigation handleClose={overlaySNB.close} />}
     </>
   )
