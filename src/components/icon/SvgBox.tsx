@@ -11,7 +11,7 @@ const SvgBox = ({ size = 24, color = 'mono', handleClick, children, viewBox = '0
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={`weezip ${color}`}
+      className={`weezip ${color} ${handleClick ? 'pointer' : ''}`}
       width={size}
       height={size}
       viewBox={viewBox}
