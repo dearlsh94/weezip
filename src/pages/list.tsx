@@ -18,6 +18,7 @@ import { SERIES_FILTERS } from '@src/constants'
 import { CATEGORY_FILTERS } from '@src/constants'
 import { IconClearAll } from '@components/icon'
 import CircleProgress from '@components/ui/CircleProgress'
+import { GlobalPortal } from '@components/GlobalPortal'
 
 export const Head: HeadFC = () => {
   return (
@@ -137,31 +138,33 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   }
 
   return (
-    <PageContext.Provider value={props}>
-      <NotionContext.Provider value={store}>
-        <MainLayout className="list-layout">
-          <ListFilter />
-          <div className={`info-box ${isLoading ? 'loading' : ''}`}>
-            <IconClearAll handleClick={handleClearAll} fill={'#5e8b7e'} />
-            <div className="count-box ellipsis">
-              {filterText && (
-                <strong>
-                  {filterText}
-                  <span> | </span>
-                </strong>
-              )}
-              총 <span>{count}</span>건{filterText !== '전체' && '의 검색결과'}
+    <GlobalPortal.Provider>
+      <PageContext.Provider value={props}>
+        <NotionContext.Provider value={store}>
+          <MainLayout className="list-layout">
+            <ListFilter />
+            <div className={`info-box ${isLoading ? 'loading' : ''}`}>
+              <IconClearAll handleClick={handleClearAll} fill={'#5e8b7e'} />
+              <div className="count-box ellipsis">
+                {filterText && (
+                  <strong>
+                    {filterText}
+                    <span> | </span>
+                  </strong>
+                )}
+                총 <span>{count}</span>건{filterText !== '전체' && '의 검색결과'}
+              </div>
             </div>
-          </div>
-          <Divider color="primary" height={2} />
-          {isLoading ? (
-            <CircleProgress height={360} />
-          ) : (
-            <PostList list={list} currentPage={currentPage} lastPage={lastPage} />
-          )}
-        </MainLayout>
-      </NotionContext.Provider>
-    </PageContext.Provider>
+            <Divider color="primary" height={2} />
+            {isLoading ? (
+              <CircleProgress height={360} />
+            ) : (
+              <PostList list={list} currentPage={currentPage} lastPage={lastPage} />
+            )}
+          </MainLayout>
+        </NotionContext.Provider>
+      </PageContext.Provider>
+    </GlobalPortal.Provider>
   )
 }
 
