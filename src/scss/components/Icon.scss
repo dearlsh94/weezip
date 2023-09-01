@@ -2,6 +2,10 @@
 @import '@scss/abstracts/variables';
 
 svg.weezip {
+  &.pointer {
+    cursor: pointer;
+  }
+
   &.black {
     path {
       fill: #090909;
