@@ -17,7 +17,7 @@ header {
   .left-box {
     position: absolute;
     left: 10px;
-    z-index: 11;
+    z-index: 12;
     .icon-box {
       @include flexCenter;
       width: 36px;
@@ -35,6 +35,7 @@ header {
   .logo-box {
     width: 42px;
   }
+
   .right-box {
     position: absolute;
     right: 10px;
@@ -81,127 +82,5 @@ header {
   }
   @include tablet {
     height: 60px;
-  }
-}
-
-.snb-container {
-  visibility: hidden;
-  .snb-box {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 260px;
-    height: 100%;
-    margin-left: -261px;
-    overflow-y: auto;
-    background-color: var(--color-background);
-    color: var(--color-font);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    transition-duration: 0.25s;
-    transition-timing-function: ease-in;
-    box-shadow: 6px 0px 18px -5px var(--color-shadow);
-
-    .sub-header {
-      width: 100%;
-      height: 280px;
-      padding: 64px 0px 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      box-sizing: border-box;
-      img {
-        width: 80px;
-        height: 80px;
-      }
-      .text-box {
-        margin-top: 24px;
-        text-align: center;
-        p {
-          color: var(--color-font);
-          font-size: 10pt;
-        }
-      }
-    }
-  }
-  &.open {
-    visibility: visible;
-    .snb-box {
-      margin-left: 0px;
-    }
-  }
-}
-
-.nav-box {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 100%;
-  margin-top: 12px;
-
-  ul {
-    padding: 0px;
-    width: 100%;
-    li.nav-item {
-      width: 100%;
-      height: 54px;
-      font-size: 13pt;
-      box-sizing: border-box;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      a {
-        padding: 12px 24px;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-sizing: border-box;
-        color: var(--color-font);
-
-        .title-box {
-          display: flex;
-          align-items: center;
-
-          svg + span {
-            margin-left: 8px;
-          }
-        }
-      }
-      &:hover {
-        background-color: $secondary-color;
-        a {
-          color: $white-color-1;
-          .title-box {
-            svg path {
-              fill: $white-color-1;
-            }
-          }
-        }
-      }
-      & + li {
-        margin-top: 2px;
-      }
-    }
-
-    .count {
-      color: $base-color;
-      background-color: $third-color;
-      border-radius: 45%;
-      width: 18px;
-      height: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 10pt;
-    }
   }
 }
