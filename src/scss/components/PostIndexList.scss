@@ -1,7 +1,7 @@
 @import '@scss/abstracts/mixin';
 @import '@scss/abstracts/variables';
 
-.block-header-index-list {
+ul.block-header-index-list {
   width: 80%;
   text-decoration: underline;
   color: #555;
@@ -13,6 +13,7 @@
     width: 100%;
     cursor: pointer;
     list-style: none;
+
     &:hover {
       text-decoration: underline;
       color: $primary-color;
