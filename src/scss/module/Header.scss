@@ -77,11 +77,4 @@ header {
     height: 60px;
     @include animationFadeIn(300ms);
   }
-
-  @include mobile {
-    height: 60px;
-  }
-  @include tablet {
-    height: 60px;
-  }
 }
