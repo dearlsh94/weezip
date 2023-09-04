@@ -3,7 +3,6 @@ import { useContext } from 'react'
 import '@scss/module/SideBarNavigation.scss'
 import { NotionContext } from '@store/rootStore'
 import SideBarLayout from '@layout/SideBarLayout'
-import { StaticImage } from 'gatsby-plugin-image'
 import { isDebug, GNB_MENUS } from '@src/constants'
 import Linker from '@components/ui/Linker'
 import { IconHome, IconOutLink, IconList, IconStar } from '@components/icon'
@@ -18,13 +17,6 @@ const SideBarNavigation = ({ handleClose }: SideBarNavigationProps) => {
 
   return (
     <SideBarLayout handleClose={handleClose}>
-      <div className="snb-header">
-        <StaticImage src={`../images/logo-3x.png`} alt="Weezip Logo" className="logo" />
-        <div className="text-box">
-          {/* TODO 무슨 문구를 써놓을까 */}
-          <p></p>
-        </div>
-      </div>
       <nav className="snb-box">
         <ul>
           {GNB_MENUS?.length > 0 &&
