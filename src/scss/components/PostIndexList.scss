@@ -25,34 +25,4 @@
   .tag-h3 {
     padding-left: 32px;
   }
-
-  // TODO 우측에 뜨는 목차 고도화하기
-  &.right {
-    visibility: hidden;
-    position: fixed;
-    z-index: 2;
-    width: 240px;
-    max-height: 60vh;
-    overflow-y: auto;
-    right: 40px;
-    top: 120px;
-    background-color: #e5e5e5;
-    border-radius: 12px;
-    padding: 12px;
-    padding-left: 24px;
-    box-sizing: border-box;
-    font-size: 11pt;
-    line-height: 24px;
-
-    @include superDesktop {
-      &.scroll {
-        // visibility: visible;
-        @include animationFadeIn(300ms);
-      }
-    }
-
-    li {
-      width: 140px;
-    }
-  }
 }

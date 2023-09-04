@@ -2,31 +2,30 @@ import * as React from 'react'
 import '@scss/module/PostIndex.scss'
 import PostIndexList from '@components/PostIndexList'
 import { IconArrow } from '@components/icon'
+import useShow from '@src/hooks/useShow'
 
-interface Props {
+interface PostIndexProps {
   list: HTMLHeadingElement[]
 }
 
-const PostIndex = ({ list }: Props) => {
-  const [isShowIndex, setIsShowIndex] = React.useState(false)
+const PostIndex = ({ list }: PostIndexProps) => {
+  const showIndex = useShow()
 
   const handleShowIndex = () => {
-    setIsShowIndex(!isShowIndex)
+    showIndex.change()
   }
   return (
-    <>
-      <div className="index-box">
-        <div className="title-box" onClick={handleShowIndex}>
-          <p>목차 {isShowIndex ? '숨기기' : '보기'}</p>
-          <div className={`icon-box ${isShowIndex ? '' : 'hide'}`}>
-            <IconArrow direction={'top'} size={20} />
-          </div>
-        </div>
-        <div className={`post-index-box ${isShowIndex ? '' : 'hide'}`}>
-          {list && list?.length > 0 && <PostIndexList list={list} />}
+    <div className="post-index-container">
+      <div className="title-box" onClick={handleShowIndex}>
+        <p>목차 {showIndex.isShow ? '숨기기' : '보기'}</p>
+        <div className={`icon-box ${showIndex.isShow ? '' : 'hide'}`}>
+          <IconArrow direction={'top'} size={20} />
         </div>
       </div>
-    </>
+      <div className={`post-index-box ${showIndex.isShow ? '' : 'hide'}`}>
+        {list && list?.length > 0 && <PostIndexList list={list} />}
+      </div>
+    </div>
   )
 }
 
