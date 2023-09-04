@@ -84,7 +84,8 @@ byproducts of the process of living with imagination and curiosity
 - 21.04.15 | Clean Code 책 주행하기. 챕터 9 - 단위 테스트
 - 21.04.17 | Clean Code 책 주행하기. 챕터 10 - 클래스
 - 23.07.05 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리
-- 23.08.17 | 김철수의 책 '개발자의 글쓰기'를 읽고. <br/>
+- 23.08.17 | 김철수의 책 '개발자의 글쓰기'를 읽고.
+- 23.09.04 | 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리 <br/>
 
 ### 삽질견문록
 
