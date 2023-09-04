@@ -41,7 +41,7 @@ const Header = () => {
         <div className="left-box">
           <div
             className="icon-box"
-            onClick={overlaySNB.isOpen ? overlaySNB.close : overlaySNB.open}
+            onClick={overlaySNB.change}
             onMouseOver={() => setIsMenuHover(true)}
             onMouseLeave={() => setIsMenuHover(false)}
             onFocus={() => setIsMenuHover(true)}
