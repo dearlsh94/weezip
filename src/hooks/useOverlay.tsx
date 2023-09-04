@@ -15,6 +15,7 @@ const useOverlay = () => {
     isOpen,
     open: () => setIsOpen(true),
     close: () => setIsOpen(false),
+    change: () => setIsOpen(!isOpen),
   }
 }
 
