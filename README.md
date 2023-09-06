@@ -106,3 +106,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.08.26 | [영화] 에드거 라이트 - 라스트 나잇 인 소호 리뷰 시점
 - 23.08.26 | [공연] 서울시립교향악단 파크콘서트 리뷰 시점
 - 23.08.29 | [영화] 오펜하이머 - 크리스토퍼 놀란 리뷰 시점 <br/>
+
+### 웹 개발자 개념 정리
+
+- 23.09.05 | JavaScript 이벤트 루프, 호이스팅, 클로저 개념 요약 정리 <br/>
