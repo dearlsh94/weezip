@@ -63,8 +63,10 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     <GlobalPortal.Provider>
       <MainLayout className="post-layout">
         <div className="title-box">
-          {content?.properties?.series?.select?.name && (
-            <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
+          {series && (
+            <Linker url={`/list?series=${series.key}`}>
+              <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
+            </Linker>
           )}
           <h1 className="title">{title}</h1>
           <div className="desc-box">
