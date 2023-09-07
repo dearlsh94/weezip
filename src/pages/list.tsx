@@ -14,7 +14,6 @@ import { parseNotionColumn } from '@utils/parseUtils'
 import SEO from '@components/header/SEO'
 import ListFilter from '@components/ListFilter'
 import Divider from '@components/ui/Divider'
-import { SERIES_FILTERS } from '@src/constants'
 import { CATEGORY_FILTERS } from '@src/constants'
 import { IconClearAll } from '@components/icon'
 import CircleProgress from '@components/ui/CircleProgress'
@@ -66,7 +65,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
         if (!post.title.startsWith('/post')) return false
 
         if (series) {
-          const filter = SERIES_FILTERS.find(f => f.key.toUpperCase() === series.toUpperCase())
+          const filter = postSeries.find(f => f.name.toUpperCase() === series.toUpperCase())
           if (!filter) return false
 
           setFilterText(filter?.name || '')
@@ -146,7 +145,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
           <MainLayout className="list-layout">
             <ListFilter />
             <div className={`info-box ${isLoading ? 'loading' : ''}`}>
-              <IconClearAll handleClick={handleClearAll} fill={'#5e8b7e'} />
+              <IconClearAll handleClick={handleClearAll} />
               <div className="count-box ellipsis">
                 {filterText && (
                   <strong>

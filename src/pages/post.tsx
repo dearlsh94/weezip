@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react'
 import { HeadFC, PageProps, navigate } from 'gatsby'
 import '@scss/page.scss'
 import { getNotionNodeByUrl } from '@services/use-notion'
-import { getFilterItemSeriesByName, notionNodeToJson } from '@utils/notionUtils'
+import { notionNodeToJson } from '@utils/notionUtils'
 import MainLayout from '@layout/MainLayout'
 import SEO from '@components/header/SEO'
 import ContentWrapper from '@module/ContentWrapper'
 import TagBadges from '@components/TagBadges'
 import { graphql } from 'gatsby'
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
-import { Filter } from '@types'
+import { Select } from '@types'
 import FloatBox from '@components/ui/FloatBox'
 import PostIndex from '@module/PostIndex'
 import { IconCopyLink, CircleIconWrapper } from '@components/icon'
@@ -28,7 +28,8 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, slug))
   const title = content?.properties?.remark.rich_text || ''
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
-  const [series, setSeries] = useState<Filter>()
+  const [series, setSeries] = useState<Select>()
+  const tagNames = content?.properties.tag?.multi_select?.map(t => t.name)
 
   useEffect(() => {
     if (!slug) {
@@ -44,7 +45,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
       setIndexList(headers)
     }
 
-    setSeries(getFilterItemSeriesByName(content?.properties?.series?.select?.name))
+    setSeries(content?.properties?.series?.select)
   }, [])
 
   const handleCopy = () => {
@@ -64,15 +65,13 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
       <MainLayout className="post-layout">
         <div className="title-box">
           {series && (
-            <Linker url={`/list?series=${series.key}`}>
+            <Linker url={`/list?series=${series.name}`}>
               <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
             </Linker>
           )}
           <h1 className="title">{title}</h1>
           <div className="desc-box">
-            <div className="left-box">
-              <TagBadges postItemTags={content?.properties.tag?.multi_select} />
-            </div>
+            <div className="left-box">{tagNames && <TagBadges tagNames={tagNames} />}</div>
             <div className="right-box">
               <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
                 <IconCopyLink size={18} color="secondary" />
@@ -103,7 +102,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
               </Linker>
             )}
             {series && (
-              <Linker url={`/list?series=${series.key}`}>
+              <Linker url={`/list?series=${series.name}`}>
                 <MyButton
                   className="series-button"
                   size={ButtonSize.PRIMARY}

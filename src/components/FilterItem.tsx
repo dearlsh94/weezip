@@ -1,30 +1,42 @@
 import * as React from 'react'
 import { useLocation } from '@reach/router'
 import '@scss/components/FilterItem.scss'
-import { Filter } from '@types'
+import { Filter, Select } from '@types'
 import Linker from './ui/Linker'
 
 interface Props {
-  filter: Filter
+  filter?: Filter
+  select?: Select
+  type?: 'series'
 }
 
-const FilterItem = ({ filter }: Props) => {
+const FilterItem = ({ filter, select, type }: Props) => {
   const location = useLocation()
   const [isActive, setIsActive] = React.useState(false)
 
   React.useEffect(() => {
-    if (location.search.includes(`${filter.type}=${encodeURIComponent(filter.key)}`)) {
-      setIsActive(true)
-    } else {
-      setIsActive(false)
+    if (filter) {
+      if (location.search.includes(`${filter.type}=${encodeURIComponent(filter.key)}`)) {
+        setIsActive(true)
+      } else {
+        setIsActive(false)
+      }
     }
   }, [location])
 
   return (
     <>
-      <Linker url={`/list?${filter.type}=${encodeURIComponent(filter.key)}`}>
-        <div className={`filter-item ${filter.color} ${isActive ? 'active' : ''}`}>{filter.name}</div>
-      </Linker>
+      {select ? (
+        <Linker url={`/list?${type}=${encodeURIComponent(select.name)}`}>
+          <div className={`filter-item ${select.color}-border ${isActive ? 'active' : ''}`}>{select.name}</div>
+        </Linker>
+      ) : filter ? (
+        <Linker url={`/list?${filter.type}=${encodeURIComponent(filter.key)}`}>
+          <div className={`filter-item ${filter.color} ${isActive ? 'active' : ''}`}>{filter.name}</div>
+        </Linker>
+      ) : (
+        <></>
+      )}
     </>
   )
 }

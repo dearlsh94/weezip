@@ -1,5 +1,4 @@
-import { SERIES_FILTERS } from '@src/constants'
-import { Children, Filter, NotionNode, Select } from '@types'
+import { Children, NotionNode, Select } from '@types'
 
 export const notionNodeToJson = (node?: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null
@@ -22,7 +21,8 @@ export const classifyPost = (
   postSeries: Select[]
 } => {
   const postTagSet = new Set()
-  const postSeriesSet = new Set()
+  const postSeries: Select[] = []
+  const includeSeriesName: string[] = []
 
   nodes.map(node => {
     if (node?.title?.toUpperCase()?.includes('POST')) {
@@ -33,20 +33,19 @@ export const classifyPost = (
         postTagSet.add(v.name)
       })
 
-      json.properties?.series?.multi_select?.map(v => {
-        postSeriesSet.add(v.name)
-      })
+      if (json.properties?.series?.select) {
+        if (!includeSeriesName.includes(json.properties?.series?.select.name)) {
+          includeSeriesName.push(json.properties?.series?.select.name)
+          postSeries.push(json.properties?.series?.select)
+        }
+      }
     }
   })
 
   return {
     postTags: Array.from(postTagSet) as string[],
-    postSeries: Array.from(postSeriesSet) as Select[],
+    postSeries,
   }
-}
-
-export const getFilterItemSeriesByName = (key = ''): Filter | undefined => {
-  return SERIES_FILTERS.find(f => f.name === key)
 }
 
 /**
