@@ -4,6 +4,7 @@ html[weezip-theme='light'] {
   --color-background: #f7f7f7;
   --color-background-lightly: #eee;
   --color-background-opacity: rgba(247, 247, 247, 0.95);
+  --color-dim: rgba(105, 105, 105, 0.4);
   --color-font: #333;
   --color-font-reverse: #eee;
   --color-shadow: #ccc;
@@ -13,6 +14,7 @@ html[weezip-theme='dark'] {
   --color-background: #090909;
   --color-background-lightly: #222;
   --color-background-opacity: rgba(51, 51, 51, 0.95);
+  --color-dim: rgba(105, 105, 105, 0.85);
   --color-font: #eee;
   --color-font-reverse: #333;
   --color-shadow: #222;
