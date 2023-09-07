@@ -12,8 +12,9 @@ const PostListItem = ({ post }: Props) => {
   const remark = notionColumn?.remark || ''
   const lastEditedTime = notionColumn?.lastEditedTime || ''
   const createdTime = notionColumn?.createdTime || ''
-  const tag = notionColumn?.tag || []
+  const tagNames = notionColumn?.tag?.map(t => t.name) || []
   const series = notionColumn?.series
+
   return (
     <>
       <div className={`post-list-item`}>
@@ -21,7 +22,7 @@ const PostListItem = ({ post }: Props) => {
         <p>{remark}</p>
         <div className="info-box">
           <div className="tag-box">
-            <TagBadges postItemTags={tag} isLink={false} />
+            <TagBadges tagNames={tagNames} isLink={false} />
           </div>
           <div className="date-box">
             <span className="date">작성 : {createdTime}</span>
