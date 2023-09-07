@@ -22,6 +22,14 @@ const FilterItem = ({ filter, select, type }: Props) => {
         setIsActive(false)
       }
     }
+
+    if (select) {
+      if (location.search.includes(`${type}=${encodeURIComponent(select.name)}`)) {
+        setIsActive(true)
+      } else {
+        setIsActive(false)
+      }
+    }
   }, [location])
 
   return (
