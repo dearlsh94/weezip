@@ -1,14 +1,14 @@
 import * as React from 'react'
 import { useContext } from 'react'
 import '@scss/components/ListFilter.scss'
-import { CATEGORY_FILTERS, SERIES_FILTERS } from '@src/constants'
+import { CATEGORY_FILTERS } from '@src/constants'
 import Divider from '@components/ui/Divider'
 import FilterItem from '@components/FilterItem'
 import { NotionContext } from '@store/rootStore'
 import TagBadges from './TagBadges'
 
 const ListFilter = () => {
-  const postTags = useContext(NotionContext).postTags
+  const { postTags, postSeries } = useContext(NotionContext)
 
   return (
     <>
@@ -16,10 +16,10 @@ const ListFilter = () => {
         <div className="series filter">
           <p className="title">시리즈</p>
           <div className="filter-box">
-            {SERIES_FILTERS.map(filter => {
+            {postSeries?.map(series => {
               return (
-                <React.Fragment key={`series-filter-item-${filter.key}`}>
-                  <FilterItem filter={filter} />
+                <React.Fragment key={`series-filter-item-${series.name}`}>
+                  <FilterItem select={series} type="series" />
                 </React.Fragment>
               )
             })}
