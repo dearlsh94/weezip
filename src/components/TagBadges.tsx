@@ -1,28 +1,27 @@
 import * as React from 'react'
 import '@scss/components/TagBadge.scss'
-import { Select } from '@types'
 import Linker from './ui/Linker'
 
 interface Props {
-  postItemTags?: Select[]
+  tagNames: string[]
   isLink?: boolean
 }
 
-const TagBadges = ({ postItemTags, isLink = true }: Props) => {
+const TagBadges = ({ tagNames, isLink = true }: Props) => {
   return (
     <>
-      {postItemTags && (
+      {tagNames && (
         <div className="badge-box">
-          {postItemTags.map((tag, i) =>
+          {tagNames.map(tag =>
             isLink ? (
-              <span key={`tag-badge-${tag.id}`}>
-                <Linker url={`/list?tag=${tag.name}`} isUnderline={true}>
-                  <span className={`badge linked`}>#{tag.name}</span>
+              <span key={`tag-badge-${tag}`}>
+                <Linker url={`/list?tag=${tag}`} isUnderline={true}>
+                  <span className={`badge linked`}>#{tag}</span>
                 </Linker>
               </span>
             ) : (
-              <span className={`badge`} key={`tag-badge-${tag.id}`}>
-                #{tag.name}
+              <span className={`badge`} key={`tag-badge-${tag}`}>
+                #{tag}
               </span>
             )
           )}

@@ -15,9 +15,14 @@ export const getNodeMarkdownByUrl = (nodes: NotionNode[], url: string): string =
   return node ? node.markdownString : ''
 }
 
-export const classifyTags = (nodes: NotionNode[]) => {
-  const postTags: Select[] = []
-  const includeTagNameList: string[] = []
+export const classifyPost = (
+  nodes: NotionNode[]
+): {
+  postTags: string[]
+  postSeries: Select[]
+} => {
+  const postTagSet = new Set()
+  const postSeriesSet = new Set()
 
   nodes.map(node => {
     if (node?.title?.toUpperCase()?.includes('POST')) {
@@ -25,15 +30,19 @@ export const classifyTags = (nodes: NotionNode[]) => {
       if (!node.title.startsWith('/post')) return
 
       json.properties?.tag?.multi_select?.map(v => {
-        if (!includeTagNameList.includes(v.name)) {
-          postTags.push(v)
-          includeTagNameList.push(v.name)
-        }
+        postTagSet.add(v.name)
+      })
+
+      json.properties?.series?.multi_select?.map(v => {
+        postSeriesSet.add(v.name)
       })
     }
   })
 
-  return postTags
+  return {
+    postTags: Array.from(postTagSet) as string[],
+    postSeries: Array.from(postSeriesSet) as Select[],
+  }
 }
 
 export const getFilterItemSeriesByName = (key = ''): Filter | undefined => {

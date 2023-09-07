@@ -41,7 +41,7 @@ const ListFilter = () => {
         <Divider />
         <div className="tag filter">
           <p className="title">태그</p>
-          <TagBadges postItemTags={postTags} isLink={true} />
+          <TagBadges tagNames={postTags} isLink={true} />
         </div>
       </div>
     </>
