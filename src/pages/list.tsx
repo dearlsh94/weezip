@@ -21,7 +21,7 @@ import { GlobalPortal } from '@components/GlobalPortal'
 
 export const Head: HeadFC = () => {
   return (
-    <SEO title={`글목록`} description={`Write, Explain, Edit, Zip`} pathname="/list/">
+    <SEO title={`글 목록`} description={`Write, Explain, Edit, Zip`} pathname="/list/">
       <link rel="canonical" href={`https://weezip.freefeely.com/list/`} />
     </SEO>
   )
