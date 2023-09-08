@@ -8,16 +8,14 @@ interface Props {
 
 const CircleProgress = ({ height }: Props) => {
   return (
-    <>
-      <div
-        className="circle-progress-box"
-        style={{
-          height: height ? `${height}px` : 'auto',
-        }}
-      >
-        <IconCircleProgress />
-      </div>
-    </>
+    <div
+      className="circle-progress-box"
+      style={{
+        height: height ? `${height}px` : 'auto',
+      }}
+    >
+      <IconCircleProgress />
+    </div>
   )
 }
 

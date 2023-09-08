@@ -28,16 +28,14 @@ const ScrollProgress = () => {
   }, [])
 
   return (
-    <>
-      <div className={`scroll-progress-container ${status}`}>
-        <div
-          className="scroll-progress"
-          style={{
-            width: `${progress}%`,
-          }}
-        />
-      </div>
-    </>
+    <div className={`scroll-progress-container ${status}`}>
+      <div
+        className="scroll-progress"
+        style={{
+          width: `${progress}%`,
+        }}
+      />
+    </div>
   )
 }
 

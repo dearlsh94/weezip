@@ -16,21 +16,19 @@ const PostListItem = ({ post }: Props) => {
   const series = notionColumn?.series
 
   return (
-    <>
-      <div className={`post-list-item`}>
-        {series && <span className="series">시리즈 [{series?.name}]</span>}
-        <p>{remark}</p>
-        <div className="info-box">
-          <div className="tag-box">
-            <TagBadges tagNames={tagNames} isLink={false} />
-          </div>
-          <div className="date-box">
-            <span className="date">작성 : {createdTime}</span>
-            <span className="date">수정 : {lastEditedTime}</span>
-          </div>
+    <div className={`post-list-item`}>
+      {series && <span className="series">시리즈 [{series?.name}]</span>}
+      <p>{remark}</p>
+      <div className="info-box">
+        <div className="tag-box">
+          <TagBadges tagNames={tagNames} isLink={false} />
+        </div>
+        <div className="date-box">
+          <span className="date">작성 : {createdTime}</span>
+          <span className="date">수정 : {lastEditedTime}</span>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

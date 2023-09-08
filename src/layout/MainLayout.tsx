@@ -11,16 +11,14 @@ interface Props {
 
 const MainLayout = ({ children, className }: Props) => {
   return (
-    <>
-      <main className={`main-layout ${className}`}>
-        <Header />
-        <ScrollProgress />
-        <article>
-          <div className="content">{children}</div>
-        </article>
-        <Footer />
-      </main>
-    </>
+    <main className={`main-layout ${className}`}>
+      <Header />
+      <ScrollProgress />
+      <article>
+        <div className="content">{children}</div>
+      </article>
+      <Footer />
+    </main>
   )
 }
 
