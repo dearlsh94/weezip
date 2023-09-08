@@ -12,19 +12,19 @@ byproducts of the process of living with imagination and curiosity
 
 상상과 호기심을 원동력으로 살아내는 과정에서의 부산물들을 꾸준히 정리하고 싶어 만들었어요.  
 개발, 인사이트, 에세이, 생각, 회고 등 제 삶에 대한 다양한 글을 쓰고 싶어요.  
-<br/> 놀러가기(https://weezip.treefeely.com)  
-<br/>
+<br/> 놀러가기(https://weezip.treefeely.com) <br/>
 
 ## Using
 
-- React(18.2.0)
+- React(v18.2.0)
 - Gatsby(v5.7.0)
 - Typescript
 - Sass
 - Gatsby Cloud Platform
 - Google Analytics
-- Notion  
-  <br/>
+- Notion
+- gatsby-source-notion-api(v0.12.0) 
+<br/>
 
 ## Posts
 
@@ -33,7 +33,8 @@ byproducts of the process of living with imagination and curiosity
 - 23.05.21 | 내가 매일 업무일지를 작성하는 4가지 이유.
 - 23.06.08 | 내가 동료에게 피드백을 요청하기까지.
 - 23.07.15 | 처음으로 회사에 피드백을 요청해보았다.
-- 23.08.24 | 상용 서비스 script, API 오류 처리 개선 작업 회고. 이렇게나 오류가 많았다고? <br/>
+- 23.08.24 | 상용 서비스 script, API 오류 처리 개선 작업 회고. 이렇게나 오류가 많았다고?
+<br/>
 
 ### Explain
 
@@ -45,18 +46,21 @@ byproducts of the process of living with imagination and curiosity
 - 23.06.03 | 좋은 동료와 함께 성장하기 위한 피드백은 어떻게 해야할까?
 - 23.06.13 | MSW를 활용하여 웹 브라우저에서 Mockup 사용하기. API 의존으로부터의 해방.
 - 23.07.27 | MAC 로컬 서버에 SSL 인증된 https 도메인 Nginx로 10분만에 적용하기
-- 23.07.31 | 코드 오타 방지 위원회 : Code Spell Checker 플러그인 사용하기. (VSCode) <br/>
+- 23.07.31 | 코드 오타 방지 위원회 : Code Spell Checker 플러그인 사용하기. (VSCode)
+<br/>
 
 ### Edit
 
 - 21.03.25 | 성장하는 프론트엔드 개발자 되기 - 원티드 온라인 Live Talk #20 후기
 - 22.11.29 | robots.txt 작성하기
 - 23.05.18 | 1분 만에 VSCode 동기화하기. 내 VSCode는 어디서든 동일해야하니까.
-- 23.07.19 | 함수 네이밍을 위한 자주 쓰는 동사 비교 총정리. <br/>
+- 23.07.19 | 함수 네이밍을 위한 자주 쓰는 동사 비교 총정리.
+<br/>
 
 ### Zip
 
-- 22.03.23 | SEO를 위한 Semantic Tag 모음 <br/>
+- 22.03.23 | SEO를 위한 Semantic Tag 모음
+<br/>
 
 ### 블로그를 만들려는 히치하이커를 위한 안내서
 
@@ -68,7 +72,8 @@ byproducts of the process of living with imagination and curiosity
 - 23.04.17 | Gatsby Cloud로 배포하고 Google Domains로 웹 이름 지어주기.
 - 23.04.20 | Gatsby Head API로 메타 태그 적용하기. 아아, 부르다 죽을 그 이름 SEO.
 - 23.04.29 | Gatsby-plugin-sitemap으로 동적 sitemap 생성하기. robots.txt도 만들자.
-- 23.04.20 | 몇 명이나 보러 올까? Gatsby gtag plugin으로 GA 연동하기. <br/>
+- 23.04.20 | 몇 명이나 보러 올까? Gatsby gtag plugin으로 GA 연동하기.
+<br/>
 
 ### 본업으로 하는 독서
 
@@ -85,11 +90,13 @@ byproducts of the process of living with imagination and curiosity
 - 21.04.17 | Clean Code 책 주행하기. 챕터 10 - 클래스
 - 23.07.05 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리
 - 23.08.17 | 김철수의 책 '개발자의 글쓰기'를 읽고.
-- 23.09.04 | 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리 <br/>
+- 23.09.04 | 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리
+<br/>
 
 ### 삽질견문록
 
-- 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기. <br/>
+- 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기.
+<br/>
 
 ### 문화 소비자 시점
 
@@ -105,8 +112,10 @@ byproducts of the process of living with imagination and curiosity
 - 23.08.09 | [공연] 2023 펜타포트 락 페스티벌 후기. 내 인생에 새겨진 청춘이라는 소인이자 헌시.
 - 23.08.26 | [영화] 에드거 라이트 - 라스트 나잇 인 소호 리뷰 시점
 - 23.08.26 | [공연] 서울시립교향악단 파크콘서트 리뷰 시점
-- 23.08.29 | [영화] 오펜하이머 - 크리스토퍼 놀란 리뷰 시점 <br/>
+- 23.08.29 | [영화] 오펜하이머 - 크리스토퍼 놀란 리뷰 시점
+<br/>
 
 ### 웹 개발자 개념 정리
 
-- 23.09.05 | JavaScript 이벤트 루프, 호이스팅, 클로저 개념 요약 정리 <br/>
+- 23.09.05 | JavaScript 이벤트 루프, 호이스팅, 클로저 개념 요약 정리
+<br/>
