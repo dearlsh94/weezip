@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { HeadFC, PageProps, navigate } from 'gatsby'
+import '@scss/global.scss'
 import '@scss/page.scss'
 import { getNotionNodeByUrl } from '@services/use-notion'
 import { notionNodeToJson } from '@utils/notionUtils'
@@ -49,8 +50,8 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   }, [])
 
   const handleCopy = () => {
-    var url = ''
-    var textarea = document.createElement('textarea')
+    let url = ''
+    let textarea = document.createElement('textarea')
     document.body.appendChild(textarea)
     url = window.location.href
     textarea.value = url
