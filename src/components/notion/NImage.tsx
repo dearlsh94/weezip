@@ -2,11 +2,11 @@ import * as React from 'react'
 import '@scss/components/ui/MyImage.scss'
 import { Children } from '@types'
 
-interface Props {
+interface NImageProps {
   imageBlock: Children
 }
 
-const MyImage = ({ imageBlock }: Props) => {
+const MyImage = ({ imageBlock }: NImageProps) => {
   const { id, image } = imageBlock
   const url = image
     ? `https://squary.notion.site/image/${encodeURIComponent(image.file.url)}?table=block&id=${id}&cache=v2`

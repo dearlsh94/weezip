@@ -14,7 +14,7 @@ import {
   NTodo,
   NToggle,
 } from '@components/notion'
-import MyImage from '@components/ui/MyImage'
+import NImage from '@components/notion/NImage'
 import Divider from '@components/ui/Divider'
 
 interface Props {
@@ -52,7 +52,7 @@ const ContentChildren = ({ block }: Props) => {
       case BlockType.CODE:
         if (block.code) return <NCode code={block.code} />
       case BlockType.IMAGE:
-        if (block.image) return <MyImage imageBlock={block} />
+        if (block.image) return <NImage imageBlock={block} />
       case BlockType.DIVIDER:
         if (block.divider) return <Divider />
       default:
