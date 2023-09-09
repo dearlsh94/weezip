@@ -64,28 +64,30 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   return (
     <GlobalPortal.Provider>
       <MainLayout className="post-layout">
-        <div className="title-box">
-          {series && (
-            <Linker url={`/list?series=${series.name}`}>
-              <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
-            </Linker>
-          )}
-          <h1 className="title">{title}</h1>
-          <div className="desc-box">
-            <div className="left-box">{tagNames && <TagBadges tagNames={tagNames} />}</div>
-            <div className="right-box">
-              <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
-                <IconCopyLink size={18} color="secondary" />
-              </div>
-              <div className="date-box">
-                <span className="date">작성 : {content?.properties?.created_date?.date?.start || ''}</span>
-                <span className="date">수정 : {content?.properties?.edited_date?.date?.start || ''}</span>
+        <article>
+          <div className="title-box">
+            {series && (
+              <Linker url={`/list?series=${series.name}`}>
+                <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
+              </Linker>
+            )}
+            <h1 className="title">{title}</h1>
+            <div className="desc-box">
+              <div className="left-box">{tagNames && <TagBadges tagNames={tagNames} />}</div>
+              <div className="right-box">
+                <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
+                  <IconCopyLink size={18} color="secondary" />
+                </div>
+                <div className="date-box">
+                  <span className="date">작성 : {content?.properties?.created_date?.date?.start || ''}</span>
+                  <span className="date">수정 : {content?.properties?.edited_date?.date?.start || ''}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <PostIndex list={indexList} />
-        {content && <ContentWrapper childrens={content.children} />}
+          <PostIndex list={indexList} />
+          {content && <ContentWrapper childrens={content.children} />}
+        </article>
         <div className="bottom-box">
           <div className="share-box">
             <div className="copy" onClick={handleCopy}>
