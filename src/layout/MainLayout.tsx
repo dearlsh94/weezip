@@ -14,9 +14,7 @@ const MainLayout = ({ children, className }: Props) => {
     <main className={`main-layout ${className}`}>
       <Header />
       <ScrollProgress />
-      <article>
-        <div className="content">{children}</div>
-      </article>
+      <div className="content">{children}</div>
       <Footer />
     </main>
   )
