@@ -7,15 +7,16 @@ import { GlobalPortal } from '@components/GlobalPortal'
 interface SideBarLayoutProps {
   children: ReactNode
   handleClose: () => void
+  useDim?: boolean
 }
 
-const SideBarLayout = ({ handleClose, children }: SideBarLayoutProps) => {
+const SideBarLayout = ({ handleClose, children, useDim = true }: SideBarLayoutProps) => {
   return (
     <GlobalPortal.Consumer>
       <aside className={`sidebar-layout`}>
         <div className="content">{children}</div>
       </aside>
-      <Dim handleClose={handleClose} />
+      {useDim && <Dim handleClose={handleClose} />}
     </GlobalPortal.Consumer>
   )
 }
