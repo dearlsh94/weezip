@@ -10,6 +10,7 @@ footer {
   display: flex;
   justify-content: center;
   position: relative;
+  z-index: 11;
 
   .container {
     width: 100%;
