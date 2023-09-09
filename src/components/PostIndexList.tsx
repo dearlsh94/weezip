@@ -3,9 +3,10 @@ import '@scss/components/PostIndexList.scss'
 
 interface PostIndexListProps {
   list: HTMLHeadingElement[]
+  useMoveTop?: boolean
 }
 
-const PostIndexList = ({ list }: PostIndexListProps) => {
+const PostIndexList = ({ list, useMoveTop = false }: PostIndexListProps) => {
   const move = (item: HTMLHeadingElement) => {
     window.scrollTo({
       top: item.offsetTop,
@@ -13,8 +14,20 @@ const PostIndexList = ({ list }: PostIndexListProps) => {
     })
   }
 
+  const moveTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <ul className={`block-header-index-list`}>
+      {useMoveTop && (
+        <li className="tag-top" onClick={moveTop}>
+          맨위로
+        </li>
+      )}
       {list.map((item, i) => {
         const tag = item.tagName.toLowerCase()
         const text = item.outerText
