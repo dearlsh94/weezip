@@ -21,6 +21,11 @@ ul.block-header-index-list {
       text-decoration: underline;
       color: $primary-color;
     }
+
+    &.active {
+      font-weight: 700;
+      color: $base-color;
+    }
   }
 
   .tag-top,
