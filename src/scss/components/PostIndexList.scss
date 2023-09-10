@@ -12,6 +12,7 @@ ul.block-header-index-list {
     width: 100%;
     cursor: pointer;
     list-style: none;
+    letter-spacing: -0.8px;
 
     + li {
       margin-top: 8px;
@@ -25,6 +26,7 @@ ul.block-header-index-list {
     &.active {
       font-weight: 700;
       color: $base-color;
+      letter-spacing: normal;
     }
   }
 
