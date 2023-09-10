@@ -3,9 +3,8 @@
 
 ul.block-header-index-list {
   width: 80%;
-  text-decoration: underline;
   color: #555;
-  line-height: 28px;
+  line-height: 24px;
   margin-bottom: 0;
   padding-left: 0px;
 
@@ -13,6 +12,10 @@ ul.block-header-index-list {
     width: 100%;
     cursor: pointer;
     list-style: none;
+
+    + li {
+      margin-top: 8px;
+    }
 
     &:hover {
       text-decoration: underline;
