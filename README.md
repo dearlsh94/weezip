@@ -62,7 +62,7 @@ byproducts of the process of living with imagination and curiosity
 - 22.03.23 | SEO를 위한 Semantic Tag 모음
 <br/>
 
-### 블로그를 만들려는 히치하이커를 위한 안내서
+### 위대한 개츠비
 
 - 23.03.28 | 개인 블로그 개발의 서막. 코드 네임 : WeeZip.
 - 23.03.28 | Gatsby 프로젝트 개발환경 생성부터 alias, git 설정까지.
@@ -73,9 +73,10 @@ byproducts of the process of living with imagination and curiosity
 - 23.04.20 | Gatsby Head API로 메타 태그 적용하기. 아아, 부르다 죽을 그 이름 SEO.
 - 23.04.29 | Gatsby-plugin-sitemap으로 동적 sitemap 생성하기. robots.txt도 만들자.
 - 23.04.20 | 몇 명이나 보러 올까? Gatsby gtag plugin으로 GA 연동하기.
+- 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기.
 <br/>
 
-### 본업으로 하는 독서
+### 개발자 도서관
 
 - 21.04.01 | Clean Code 책 주행하기. 프롤로그
 - 21.04.01 | Clean Code 책 주행하기. 챕터 1 - 깨끗한 코드
@@ -93,9 +94,9 @@ byproducts of the process of living with imagination and curiosity
 - 23.09.04 | 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리
 <br/>
 
-### 삽질견문록
+### 웹개개
 
-- 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기.
+- 23.09.05 | [JavaScript] 이벤트 루프, 호이스팅, 클로저 개념 요약 정리
 <br/>
 
 ### 문화 소비자 시점
@@ -113,9 +114,4 @@ byproducts of the process of living with imagination and curiosity
 - 23.08.26 | [영화] 에드거 라이트 - 라스트 나잇 인 소호 리뷰 시점
 - 23.08.26 | [공연] 서울시립교향악단 파크콘서트 리뷰 시점
 - 23.08.29 | [영화] 오펜하이머 - 크리스토퍼 놀란 리뷰 시점
-<br/>
-
-### 웹 개발자 개념 정리
-
-- 23.09.05 | JavaScript 이벤트 루프, 호이스팅, 클로저 개념 요약 정리
 <br/>
