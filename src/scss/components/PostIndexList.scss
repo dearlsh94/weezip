@@ -2,14 +2,12 @@
 @import '@scss/abstracts/variables';
 
 ul.block-header-index-list {
-  width: 80%;
   color: #555;
   line-height: 24px;
   margin-bottom: 0;
   padding-left: 0px;
 
   li {
-    width: 100%;
     cursor: pointer;
     list-style: none;
     letter-spacing: -0.8px;
@@ -33,8 +31,10 @@ ul.block-header-index-list {
   .tag-top,
   .tag-h2 {
     padding-left: 16px;
+    padding-right: 16px;
   }
   .tag-h3 {
     padding-left: 32px;
+    padding-right: 16px;
   }
 }
