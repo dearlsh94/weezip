@@ -1,22 +1,13 @@
 @import '@scss/abstracts/variables';
 @import '@scss/abstracts/mixin';
 
-.snb-header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  box-sizing: border-box;
-}
-
 nav.snb-box {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
+  padding-top: 50px;
 
   ul {
     padding: 0px;
