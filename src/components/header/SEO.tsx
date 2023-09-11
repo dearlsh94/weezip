@@ -1,14 +1,15 @@
 import * as React from 'react'
 import { useSiteMetadata } from '@services/use-site-metadata'
 
-interface Props {
+interface SEOProps {
   title?: string
   description?: string
   pathname?: string
   children?: React.ReactNode
+  keywords?: string[]
 }
 
-const SEO = ({ title, description, pathname, children }: Props) => {
+const SEO = ({ title, description, pathname, children, keywords = [] }: SEOProps) => {
   const { title: defaultTitle, description: defaultDescription, image, siteUrl } = useSiteMetadata()
 
   const seo = {
@@ -35,7 +36,7 @@ const SEO = ({ title, description, pathname, children }: Props) => {
       <meta property="twitter:description" content={seo.description} />
       <meta property="twitter:url" content={seo.url} />
 
-      {/* <meta name="keywords" content={keywords} /> */}
+      <meta name="keywords" content={['treefeely', 'weezip', ...keywords]?.join(', ')} />
       {/* <meta name="image" content={seo.image} /> */}
       {/* <meta name="twitter:card" content="summary_large_image" /> */}
       {/* <meta name="twitter:image" content={seo.image} /> */}
