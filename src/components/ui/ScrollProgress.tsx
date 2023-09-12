@@ -1,31 +1,26 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { throttle } from '@utils/commonUtils'
 import '@scss/components/ScrollProgress.scss'
+import useScroll from '@src/hooks/useScroll'
 
 const ScrollProgress = () => {
+  const { scrollY } = useScroll(10)
+
   const [status, setStatus] = useState('')
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    const scrollHandler = () => {
-      if (window.scrollY > 100) {
-        setStatus('visible')
-      } else {
-        setStatus('')
-      }
-
-      let windowScroll = document?.body.scrollTop || document?.documentElement.scrollTop
-      let height = document?.documentElement.scrollHeight - document?.documentElement.clientHeight
-      setProgress((windowScroll / height) * 100)
+    if (scrollY > 100) {
+      setStatus('visible')
+    } else {
+      setStatus('')
     }
-    const throttledScrollHandler = throttle(scrollHandler, 10)
 
-    window.addEventListener('scroll', throttledScrollHandler)
-    return () => {
-      window.removeEventListener('scroll', throttledScrollHandler)
-    }
-  }, [])
+    let windowScroll = document?.body.scrollTop || document?.documentElement.scrollTop
+    let height = document?.documentElement.scrollHeight - document?.documentElement.clientHeight
+
+    setProgress((windowScroll / height) * 100)
+  }, [scrollY])
 
   return (
     <div className={`scroll-progress-container ${status}`}>
