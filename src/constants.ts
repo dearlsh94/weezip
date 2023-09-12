@@ -32,7 +32,7 @@ export const CATEGORY_FILTERS: Filter[] = [
     type: 'category',
     key: 'zip',
     name: 'Zip',
-    color: 'blue-border',
+    color: 'blue',
   },
 ]
 
