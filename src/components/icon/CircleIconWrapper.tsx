@@ -1,13 +1,13 @@
 import * as React from 'react'
 import '@scss/CircleIconWrapper.scss'
 
-interface Props {
+interface CircleIconWrapperProps {
   children: React.ReactNode
-  color: 'black' | 'white' | 'secondary'
+  color: 'mono' | 'reverse-mono' | 'secondary'
   size?: number
 }
 
-const CircleIconWrapper = ({ children, color = 'black', size = 36 }: Props) => {
+const CircleIconWrapper = ({ children, color = 'mono', size = 36 }: CircleIconWrapperProps) => {
   return (
     <div
       className={`circle-icon-wrapper ${color}`}
