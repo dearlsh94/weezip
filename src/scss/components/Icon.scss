@@ -31,33 +31,15 @@ svg.weezip {
       fill: #a7c4bc;
     }
   }
-}
-html[weezip-theme='light'] {
-  svg.weezip {
-    &.mono {
-      path {
-        fill: #090909;
-      }
-    }
-    &.reverse-mono {
-      path {
-        fill: #f7f7f7;
-      }
+
+  &.mono {
+    path {
+      fill: var(--color-mono);
     }
   }
-}
-
-html[weezip-theme='dark'] {
-  svg.weezip {
-    &.mono {
-      path {
-        fill: #f7f7f7;
-      }
-    }
-    &.reverse-mono {
-      path {
-        fill: #090909;
-      }
+  &.reverse-mono {
+    path {
+      fill: var(--color-reverse-mono);
     }
   }
 }
