@@ -22,11 +22,6 @@ const Footer = () => {
               </Linker>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://www.threads.net/@moment.______`} target="_blank">
-                <IconThreads color="reverse-mono" />
-              </Linker>
-            </CircleIconWrapper>
-            <CircleIconWrapper color="reverse-mono">
               <Linker url={`https://open.kakao.com/me/treefeely`} target="_blank">
                 <IconKakao color="reverse-mono" />
               </Linker>
