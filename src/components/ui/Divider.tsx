@@ -8,7 +8,7 @@ interface Props {
 
 const Divider = ({ color, height }: Props) => {
   return (
-    <div
+    <hr
       className={`block-divider ${color}`}
       style={{
         height: `${height || 1}px`,
