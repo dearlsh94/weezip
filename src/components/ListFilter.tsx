@@ -25,18 +25,24 @@ const ListFilter = () => {
           })}
         </div>
       </div>
-      <Divider />
       {postSeries && postSeries?.length > 0 && (
-        <div className="series filter">
-          <p className="title">시리즈</p>
-          <SeriesBadges series={postSeries} />
-        </div>
+        <>
+          <Divider />
+          <div className="series filter">
+            <p className="title">시리즈</p>
+            <SeriesBadges series={postSeries} />
+          </div>
+        </>
       )}
-      <Divider />
-      <div className="tag filter">
-        <p className="title">태그</p>
-        <TagBadges tagNames={postTags} isLink={true} />
-      </div>
+      {postTags && postTags?.length > 0 && (
+        <>
+          <Divider />
+          <div className="tag filter">
+            <p className="title">태그</p>
+            <TagBadges tagNames={postTags} />
+          </div>
+        </>
+      )}
     </div>
   )
 }
