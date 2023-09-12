@@ -6,6 +6,7 @@ import Divider from '@components/ui/Divider'
 import { NotionContext } from '@store/rootStore'
 import TagBadges from './TagBadges'
 import FilterLinker from './FilterLinker'
+import SeriesBadges from './SeriesBadges'
 
 const ListFilter = () => {
   const { postTags, postSeries } = useContext(NotionContext)
@@ -25,18 +26,12 @@ const ListFilter = () => {
         </div>
       </div>
       <Divider />
-      <div className="series filter">
-        <p className="title">시리즈</p>
-        <div className="filter-box">
-          {postSeries?.map(series => {
-            return (
-              <React.Fragment key={`series-filter-item-${series.name}`}>
-                <FilterLinker type="series" name={series.name} color={series.color} />
-              </React.Fragment>
-            )
-          })}
+      {postSeries && postSeries?.length > 0 && (
+        <div className="series filter">
+          <p className="title">시리즈</p>
+          <SeriesBadges series={postSeries} />
         </div>
-      </div>
+      )}
       <Divider />
       <div className="tag filter">
         <p className="title">태그</p>
