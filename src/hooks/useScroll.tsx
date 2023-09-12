@@ -1,12 +1,12 @@
 import { throttle } from '@utils/commonUtils'
 import { useEffect, useState } from 'react'
 
-const useScroll = () => {
+const useScroll = (delay = 30) => {
   const [scrollY, setScrollY] = useState(0)
 
   const handleScroll = throttle(() => {
     setScrollY(window.scrollY)
-  }, 30)
+  }, delay)
 
   useEffect(() => {
     handleScroll()
