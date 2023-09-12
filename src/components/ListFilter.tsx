@@ -3,9 +3,9 @@ import { useContext } from 'react'
 import '@scss/components/ListFilter.scss'
 import { CATEGORY_FILTERS } from '@src/constants'
 import Divider from '@components/ui/Divider'
-import FilterItem from '@components/FilterItem'
 import { NotionContext } from '@store/rootStore'
 import TagBadges from './TagBadges'
+import FilterLinker from './FilterLinker'
 
 const ListFilter = () => {
   const { postTags, postSeries } = useContext(NotionContext)
@@ -18,7 +18,7 @@ const ListFilter = () => {
           {postSeries?.map(series => {
             return (
               <React.Fragment key={`series-filter-item-${series.name}`}>
-                <FilterItem select={series} type="series" />
+                <FilterLinker type="series" name={series.name} color={series.color} />
               </React.Fragment>
             )
           })}
@@ -31,7 +31,7 @@ const ListFilter = () => {
           {CATEGORY_FILTERS.map(filter => {
             return (
               <React.Fragment key={`category-filter-item-${filter.key}`}>
-                <FilterItem filter={filter} />
+                <FilterLinker type={filter.type} name={filter.name} color={filter.color} />
               </React.Fragment>
             )
           })}
