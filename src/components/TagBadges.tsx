@@ -15,7 +15,7 @@ const TagBadges = ({ tagNames, isLink = true }: Props) => {
           {tagNames.map(tag =>
             isLink ? (
               <span key={`tag-badge-${tag}`}>
-                <Linker url={`/list?tag=${tag}`} isUnderline={true}>
+                <Linker url={`/list?tag=${tag}`} isUnderline={false}>
                   <span className={`badge linked`}>#{tag}</span>
                 </Linker>
               </span>

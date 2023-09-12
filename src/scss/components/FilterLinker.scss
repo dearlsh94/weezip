@@ -14,8 +14,4 @@
   &:hover {
     transform: scale(1.1);
   }
-  &.active {
-    z-index: 2;
-    @include animationTada(0.2);
-  }
 }

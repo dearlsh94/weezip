@@ -14,19 +14,19 @@ export const CATEGORY_FILTERS: Filter[] = [
     type: 'category',
     key: 'write',
     name: 'Write',
-    color: 'brown-3-border',
+    color: 'brown-3',
   },
   {
     type: 'category',
     key: 'explain',
     name: 'Explain',
-    color: 'orange-border',
+    color: 'orange',
   },
   {
     type: 'category',
     key: 'edit',
     name: 'Edit',
-    color: 'yellow-border',
+    color: 'yellow',
   },
   {
     type: 'category',

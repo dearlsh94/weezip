@@ -21,7 +21,16 @@ import { GlobalPortal } from '@components/GlobalPortal'
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
   const title = content?.properties?.remark.rich_text || ''
-  return <SEO title={title} description={content?.properties?.series?.select?.name} pathname={pageContext.slug} />
+  const tagNames = content?.properties.tag?.multi_select?.map(t => t.name)
+
+  return (
+    <SEO
+      title={title}
+      description={content?.properties?.series?.select?.name}
+      pathname={pageContext.slug}
+      keywords={tagNames}
+    />
+  )
 }
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
