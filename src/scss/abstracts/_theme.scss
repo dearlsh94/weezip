@@ -8,6 +8,8 @@ html[weezip-theme='light'] {
   --color-font: #333;
   --color-font-reverse: #eee;
   --color-shadow: #ccc;
+  --color-mono: #090909;
+  --color-reverse-mono: #f7f7f7;
 }
 
 html[weezip-theme='dark'] {
@@ -18,4 +20,6 @@ html[weezip-theme='dark'] {
   --color-font: #eee;
   --color-font-reverse: #333;
   --color-shadow: #222;
+  --color-mono: #f7f7f7;
+  --color-reverse-mono: #090909;
 }
