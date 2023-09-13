@@ -97,6 +97,8 @@ byproducts of the process of living with imagination and curiosity
 ### 웹개개
 
 - 23.09.05 | [JavaScript] 이벤트 루프, 호이스팅, 클로저 개념 요약 정리
+- 23.09.10 | [WEB] 브라우저 렌더링과 웹 렌더링 방식들 개념 요약 정리
+- 23.09.11 | [WEB] 크로스 브라우징과 바벨, 그리고 폴리필 개념 요약 정리
 <br/>
 
 ### 문화 소비자 시점
