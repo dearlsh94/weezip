@@ -1,14 +1,14 @@
 import { throttle } from '@utils/commonUtils'
 import { useEffect, useState } from 'react'
 
-const useResize = () => {
+const useResize = (delay = 30) => {
   const [resizedInnerWidth, setResizedInnerWidth] = useState(0)
   const [resizedInnerHeight, setResizedInnerHeight] = useState(0)
 
   const handleResize = throttle(() => {
     setResizedInnerWidth(window.innerWidth)
     setResizedInnerHeight(window.innerHeight)
-  }, 30)
+  }, delay)
 
   useEffect(() => {
     handleResize()
