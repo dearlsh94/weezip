@@ -42,10 +42,10 @@ nav.snb-box {
       &:hover {
         background-color: var(--color-secondary);
         a {
-          color: $white-color-1;
+          color: var(--color-white-1);
           .title-box {
             svg path {
-              fill: $white-color-1;
+              fill: var(--color-white-1);
             }
           }
         }

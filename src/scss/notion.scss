@@ -109,12 +109,12 @@
   }
 
   .language {
-    color: $gray-color;
+    color: var(--color-grey);
     padding: 8px 12px;
     font-size: 9pt;
   }
   .caption {
-    color: $gray-color;
+    color: var(--color-grey);
     padding: 2px 12px;
     font-size: 9pt;
   }

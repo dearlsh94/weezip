@@ -14,7 +14,7 @@ body {
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   ::selection {
     background: var(--color-base);
-    color: $white-color-2;
+    color: var(--color-white-2);
   }
 }
 
@@ -63,7 +63,7 @@ p {
 }
 
 .code-word {
-  background-color: $gray-color-7;
+  background-color: var(--color-grey-6);
   color: var(--color-red);
   padding: 2px 6px;
   border-radius: 4px;
@@ -76,19 +76,19 @@ img.icon {
 }
 
 .black {
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .black-border {
-  border: 1px solid $black-color-4;
-  color: $white-color-1;
+  border: 1px solid var(--color-black-4);
+  color: var(--color-white-1);
 }
 
 .gray {
-  color: $gray-color;
+  color: var(--color-grey);
 }
 .gray-border {
-  border: 1px solid $gray-color;
-  color: $black-color-4;
+  border: 1px solid var(--color-grey);
+  color: var(--color-black-4);
 }
 
 .brown {
@@ -96,7 +96,7 @@ img.icon {
 }
 .brown-border {
   border: 1px solid var(--color-brown);
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .brown_background {
   background-color: var(--color-brown);
@@ -107,7 +107,7 @@ img.icon {
 }
 .orange-border {
   border: 1px solid var(--color-orange);
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .orange_background {
   background-color: var(--color-orange);
@@ -118,7 +118,7 @@ img.icon {
 }
 .yellow-border {
   border: 1px solid var(--color-yellow);
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .yellow_background {
   background-color: var(--color-yellow);
@@ -129,7 +129,7 @@ img.icon {
 }
 .blue-border {
   border: 1px solid var(--color-blue);
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .blue_background {
   background-color: var(--color-blue);
@@ -140,7 +140,7 @@ img.icon {
 }
 .pink-border {
   border: 1px solid var(--color-pink);
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .pink_background {
   background-color: var(--color-pink);
@@ -151,7 +151,7 @@ img.icon {
 }
 .red-border {
   border: 1px solid var(--color-red);
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .red_background {
   background-color: var(--color-red);
@@ -162,7 +162,7 @@ img.icon {
 }
 .green-border {
   border: 1px solid var(--color-green);
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .green_background {
   background-color: var(--color-green);
@@ -173,7 +173,7 @@ img.icon {
 }
 .purple-border {
   border: 1px solid var(--color-purple);
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .purple_background {
   background-color: var(--color-purple);
@@ -184,7 +184,7 @@ img.icon {
 }
 .indigo-border {
   border: 1px solid var(--color-indigo);
-  color: $black-color-3;
+  color: var(--color-black-3);
 }
 .indigo_background {
   background-color: var(--color-indigo);

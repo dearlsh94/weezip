@@ -30,36 +30,36 @@
   }
 
   &.COLOR-PRIMARY.TYPE-BORDER {
-    background-color: $white-color-1;
+    background-color: var(--color-white-1);
     border: 1.5px solid var(--color-primary);
     color: var(--color-base);
 
     &:hover {
       background-color: var(--color-primary);
-      border: 1.5px solid $white-color-1;
-      color: $white-color-1;
+      border: 1.5px solid var(--color-white-1);
+      color: var(--color-white-1);
     }
   }
   &.COLOR-SECONDARY.TYPE-BORDER {
-    background-color: $white-color-1;
+    background-color: var(--color-white-1);
     border: 1.5px solid var(--color-secondary);
     color: var(--color-primary);
 
     &:hover {
       background-color: var(--color-secondary);
-      border: 1.5px solid $white-color-1;
-      color: $white-color-1;
+      border: 1.5px solid var(--color-white-1);
+      color: var(--color-white-1);
     }
   }
   &.COLOR-THIRD.TYPE-BORDER {
-    background-color: $white-color-1;
+    background-color: var(--color-white-1);
     border: 1.5px solid var(--color-third);
     color: var(--color-secondary);
 
     &:hover {
       background-color: var(--color-third);
-      border: 1.5px solid $white-color-1;
-      color: $white-color-1;
+      border: 1.5px solid var(--color-white-1);
+      color: var(--color-white-1);
     }
   }
 

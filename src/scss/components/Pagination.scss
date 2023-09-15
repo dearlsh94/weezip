@@ -71,9 +71,9 @@
       padding-right: 2px;
     }
     &.disabled {
-      background-color: $gray-color-7;
+      background-color: var(--color-grey-6);
       opacity: 0.3;
-      color: $black-color-6;
+      color: var(--color-black-6);
       cursor: default;
     }
   }
