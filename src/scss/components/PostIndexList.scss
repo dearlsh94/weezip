@@ -18,12 +18,12 @@ ul.block-header-index-list {
 
     &:hover {
       text-decoration: underline;
-      color: $primary-color;
+      color: var(--color-primary);
     }
 
     &.active {
       font-weight: 700;
-      color: $base-color;
+      color: var(--color-base);
       letter-spacing: normal;
     }
   }

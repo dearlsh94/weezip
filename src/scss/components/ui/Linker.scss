@@ -6,6 +6,6 @@ a.my-linker {
     text-decoration: underline;
   }
   &:hover {
-    color: $primary-color;
+    color: var(--color-primary);
   }
 }

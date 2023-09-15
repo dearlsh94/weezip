@@ -36,10 +36,10 @@
 
     &:hover {
       p {
-        color: $primary-color;
+        color: var(--color-primary);
       }
       svg path {
-        fill: $primary-color;
+        fill: var(--color-primary);
       }
     }
   }
