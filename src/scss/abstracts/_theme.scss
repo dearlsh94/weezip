@@ -10,6 +10,33 @@ html[weezip-theme='light'] {
   --color-shadow: #ccc;
   --color-mono: #090909;
   --color-reverse-mono: #f7f7f7;
+
+  --color-base: #2f5d62;
+  --color-primary: #5e8b7e;
+  --color-secondary: #a7c4bc;
+  --color-third: #dfeeea;
+
+  // IOS15 Color Palette
+  --color-black: #000;
+  --color-white: #fff;
+  --color-grey: #8e8e93;
+  --color-grey2: #aeaeb2;
+  --color-grey3: #c7c7cc;
+  --color-grey4: #d1d1d6;
+  --color-grey5: #e5e5ea;
+  --color-grey6: #f2f2f7;
+  --color-red: #ff3b30;
+  --color-orange: #ff9500;
+  --color-yellow: #ffd60a;
+  --color-green: #30d158;
+  --color-mint: #63e6e2;
+  --color-teal: #40cbe0;
+  --color-cyan: #64d2ff;
+  --color-blue: #0a84ff;
+  --color-indigo: #5e5ce6;
+  --color-purple: #bf5af2;
+  --color-pink: #ff375f;
+  --color-brown: #ac8e68;
 }
 
 html[weezip-theme='dark'] {
@@ -22,4 +49,32 @@ html[weezip-theme='dark'] {
   --color-shadow: #222;
   --color-mono: #f7f7f7;
   --color-reverse-mono: #090909;
+
+  // Weezip Brand Color Palette
+  --color-base: #2f5d62;
+  --color-primary: #5e8b7e;
+  --color-secondary: #a7c4bc;
+  --color-third: #dfeeea;
+
+  // IOS15 Color Palette
+  --color-black: #000;
+  --color-white: #fff;
+  --color-grey: #8e8e93;
+  --color-grey2: #636366;
+  --color-grey3: #48484a;
+  --color-grey4: #3a3a3c;
+  --color-grey5: #2c2c2e;
+  --color-grey6: #1c1c1e;
+  --color-red: #ff453a;
+  --color-orange: #ff9f0a;
+  --color-yellow: #ffcc00;
+  --color-green: #34c759;
+  --color-mint: #00c7be;
+  --color-teal: #30b0c7;
+  --color-cyan: #32ade6;
+  --color-blue: #007aff;
+  --color-indigo: #5856d6;
+  --color-purple: #af52de;
+  --color-pink: #ff2d55;
+  --color-brown: #a2845e;
 }
