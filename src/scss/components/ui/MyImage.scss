@@ -1,5 +1,3 @@
-@import '@scss/abstracts/variables';
-
 .block-image {
   width: 100%;
   img {
@@ -8,7 +6,7 @@
   }
   p {
     top: 100%;
-    color: $gray-color;
+    color: var(--color-grey);
     font-size: 10pt;
   }
 }
