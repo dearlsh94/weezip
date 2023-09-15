@@ -3,12 +3,12 @@ import '@scss/notion.scss'
 import { Callout, Children } from '@types'
 import { NParagraph } from '@components/notion'
 import ContentWrapper from '@module/ContentWrapper'
-interface Props {
+interface NCalloutProps {
   callout: Callout
   children: Children[]
 }
 
-const NCallout = ({ callout, children = [] }: Props) => {
+const NCallout = ({ callout, children = [] }: NCalloutProps) => {
   const icon = callout?.icon?.emoji
 
   return (
