@@ -1,5 +1,4 @@
 @import '@scss/abstracts/mixin';
-@import '@scss/abstracts/variables';
 
 ul.block-header-index-list {
   color: #555;
@@ -16,14 +15,15 @@ ul.block-header-index-list {
       margin-top: 8px;
     }
 
+    transition: color 0.2s;
     &:hover {
       text-decoration: underline;
-      color: $primary-color;
+      color: var(--color-primary);
     }
 
     &.active {
       font-weight: 700;
-      color: $base-color;
+      color: var(--color-base);
       letter-spacing: normal;
     }
   }

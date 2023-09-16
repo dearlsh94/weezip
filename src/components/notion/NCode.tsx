@@ -4,16 +4,27 @@ import '@scss/notion.scss'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atelierCaveDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { NParagraph } from '@components/notion'
+// import { IconCopyLink } from '@components/icon'
+// import useClipboard from '@src/hooks/useClipboard'
 
-interface Props {
+interface NCodeProps {
   code: Code
 }
 
-const NCode = ({ code }: Props) => {
+const NCode = ({ code }: NCodeProps) => {
   const codeString = code.text?.reduce((codeString, text) => (codeString += text.plain_text), '')
+
+  // const { copyToClipboard } = useClipboard()
+  // const handleCodeCopy = () => {
+  //   copyToClipboard(codeString)
+  // }
+
   return (
     <div className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
-      {code.language && <div className="language">{code.language}</div>}
+      <div className="header">
+        <div className="language">{code.language}</div>
+        {/* <IconCopyLink size={20} color={'primary'} handleClick={handleCodeCopy} /> */}
+      </div>
       <SyntaxHighlighter language={'HTML'} style={atelierCaveDark} showLineNumbers={true}>
         {codeString}
       </SyntaxHighlighter>

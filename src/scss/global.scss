@@ -1,4 +1,3 @@
-@import '@scss/abstracts/variables';
 @import '@scss/abstracts/mixin';
 @import '@scss/abstracts/theme';
 
@@ -14,8 +13,8 @@ body {
   font-family: 'Noto Sans Korean', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   ::selection {
-    background: $base-color;
-    color: $white-color-2;
+    background: var(--color-base);
+    color: var(--color-white-2);
   }
 }
 
@@ -24,23 +23,23 @@ main {
 }
 
 a {
-  color: $base-color;
+  color: var(--color-base);
   text-underline-position: under;
 }
 
 h1 {
   font-size: 2em;
-  color: $base-color;
+  color: var(--color-base);
 }
 
 h2 {
   font-size: 1.5em;
-  color: $base-color;
+  color: var(--color-base);
 }
 
 h3 {
   font-size: 1.2em;
-  color: $base-color;
+  color: var(--color-base);
 }
 
 p {
@@ -64,8 +63,8 @@ p {
 }
 
 .code-word {
-  background-color: $gray-color-7;
-  color: $red-color;
+  background-color: var(--color-grey-6);
+  color: var(--color-red);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 11pt;
@@ -76,88 +75,117 @@ img.icon {
   height: 28px;
 }
 
-.gray {
-  color: $gray-color;
-}
-.gray-border {
-  border: 1px solid $gray-color;
-  color: $black-color-4;
-}
-.brown {
-  color: $brown-color;
-}
-.brown-border {
-  border: 1px solid $brown-color;
-  color: $black-color-4;
-}
-.orange {
-  color: $orange-color;
-}
-.orange-border {
-  border: 1px solid $orange-color;
-  color: $black-color-4;
-}
-.yellow {
-  color: $yellow-color;
-}
-.yellow-border {
-  border: 1px solid $yellow-color;
-  color: $black-color-4;
-}
-.blue {
-  color: $blue-color;
-}
-.blue-border {
-  border: 1px solid $blue-color;
-  color: $black-color-4;
-}
-.pink {
-  color: $pink-color;
-}
-.pink-border {
-  border: 1px solid $pink-color;
-  color: $black-color-4;
-}
-.red {
-  color: $red-color;
-}
-.red-border {
-  border: 1px solid $red-color;
-  color: $black-color-4;
-}
-.green {
-  color: $green-color;
-}
-.green-border {
-  border: 1px solid $green-color;
-  color: $black-color-4;
-}
-.purple {
-  color: $purple-color;
-}
-.purple-border {
-  border: 1px solid $purple-color;
-  color: $black-color-4;
-}
 .black {
-  color: $black-color-4;
+  color: var(--color-black-4);
 }
 .black-border {
-  border: 1px solid $black-color-4;
-  color: $white-color-1;
+  border: 1px solid var(--color-black-4);
+  color: var(--color-white-1);
 }
 
-.bluepurple-border {
-  border: 1px solid $bluepurple-color;
-  color: $black-color-3;
+.gray {
+  color: var(--color-grey);
+}
+.gray-border {
+  border: 1px solid var(--color-grey);
+  color: var(--color-black-4);
 }
 
-.brown-3-border {
-  border: 1px solid $brown-color-3;
-  color: $black-color-3;
+.brown {
+  color: var(--color-brown);
+}
+.brown-border {
+  border: 1px solid var(--color-brown);
+  color: var(--color-black-4);
+}
+.brown_background {
+  background-color: var(--color-brown);
 }
 
-.pink-5-border {
-  border: 1px solid $pink-color-5;
-  color: $black-color-3;
+.orange {
+  color: var(--color-orange);
+}
+.orange-border {
+  border: 1px solid var(--color-orange);
+  color: var(--color-black-4);
+}
+.orange_background {
+  background-color: var(--color-orange);
+}
+
+.yellow {
+  color: var(--color-yellow);
+}
+.yellow-border {
+  border: 1px solid var(--color-yellow);
+  color: var(--color-black-4);
+}
+.yellow_background {
+  background-color: var(--color-yellow);
+}
+
+.blue {
+  color: var(--color-blue);
+}
+.blue-border {
+  border: 1px solid var(--color-blue);
+  color: var(--color-black-4);
+}
+.blue_background {
+  background-color: var(--color-blue);
+}
+
+.pink {
+  color: var(--color-pink);
+}
+.pink-border {
+  border: 1px solid var(--color-pink);
+  color: var(--color-black-4);
+}
+.pink_background {
+  background-color: var(--color-pink);
+}
+
+.red {
+  color: var(--color-red);
+}
+.red-border {
+  border: 1px solid var(--color-red);
+  color: var(--color-black-4);
+}
+.red_background {
+  background-color: var(--color-red);
+}
+
+.green {
+  color: var(--color-green);
+}
+.green-border {
+  border: 1px solid var(--color-green);
+  color: var(--color-black-4);
+}
+.green_background {
+  background-color: var(--color-green);
+}
+
+.purple {
+  color: var(--color-purple);
+}
+.purple-border {
+  border: 1px solid var(--color-purple);
+  color: var(--color-black-4);
+}
+.purple_background {
+  background-color: var(--color-purple);
+}
+
+.indigo {
+  color: var(--color-indigo);
+}
+.indigo-border {
+  border: 1px solid var(--color-indigo);
+  color: var(--color-black-3);
+}
+.indigo_background {
+  background-color: var(--color-indigo);
 }

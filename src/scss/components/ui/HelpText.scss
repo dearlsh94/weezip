@@ -1,6 +1,4 @@
-@import '@scss/abstracts/variables';
-
 strong.my-help-text {
   font-size: 12px;
-  color: $base-color;
+  color: var(--color-base);
 }

@@ -1,11 +1,10 @@
-@import '@scss/abstracts/variables';
-
 a.my-linker {
   text-decoration: none;
+  transition: color 0.2s;
   &.underline {
     text-decoration: underline;
   }
   &:hover {
-    color: $primary-color;
+    color: var(--color-primary);
   }
 }

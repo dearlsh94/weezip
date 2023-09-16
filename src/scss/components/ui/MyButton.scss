@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.2s;
 
   &.SIZE-PRIMARY {
     padding: 10px;
@@ -30,46 +31,46 @@
   }
 
   &.COLOR-PRIMARY.TYPE-BORDER {
-    background-color: $white-color-1;
-    border: 1.5px solid $primary-color;
-    color: $base-color;
+    background-color: var(--color-white-1);
+    border: 1.5px solid var(--color-primary);
+    color: var(--color-base);
 
     &:hover {
-      background-color: $primary-color;
-      border: 1.5px solid $white-color-1;
-      color: $white-color-1;
+      background-color: var(--color-primary);
+      border: 1.5px solid var(--color-white-1);
+      color: var(--color-white-1);
     }
   }
   &.COLOR-SECONDARY.TYPE-BORDER {
-    background-color: $white-color-1;
-    border: 1.5px solid $secondary-color;
-    color: $primary-color;
+    background-color: var(--color-white-1);
+    border: 1.5px solid var(--color-secondary);
+    color: var(--color-primary);
 
     &:hover {
-      background-color: $secondary-color;
-      border: 1.5px solid $white-color-1;
-      color: $white-color-1;
+      background-color: var(--color-secondary);
+      border: 1.5px solid var(--color-white-1);
+      color: var(--color-white-1);
     }
   }
   &.COLOR-THIRD.TYPE-BORDER {
-    background-color: $white-color-1;
-    border: 1.5px solid $third-color;
-    color: $secondary-color;
+    background-color: var(--color-white-1);
+    border: 1.5px solid var(--color-third);
+    color: var(--color-secondary);
 
     &:hover {
-      background-color: $third-color;
-      border: 1.5px solid $white-color-1;
-      color: $white-color-1;
+      background-color: var(--color-third);
+      border: 1.5px solid var(--color-white-1);
+      color: var(--color-white-1);
     }
   }
 
   &.COLOR-PRIMARY.TYPE-BG {
-    background-color: $primary-color;
+    background-color: var(--color-primary);
   }
   &.COLOR-SECONDARY.TYPE-BG {
-    background-color: $secondary-color;
+    background-color: var(--color-secondary);
   }
   &.COLOR-THIRD.TYPE-BG {
-    background-color: $third-color;
+    background-color: var(--color-third);
   }
 }

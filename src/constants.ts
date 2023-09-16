@@ -14,7 +14,7 @@ export const CATEGORY_FILTERS: Filter[] = [
     type: 'category',
     key: 'write',
     name: 'Write',
-    color: 'brown-3',
+    color: 'brown',
   },
   {
     type: 'category',

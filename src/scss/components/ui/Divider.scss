@@ -1,5 +1,3 @@
-@import '@scss/abstracts/variables';
-
 .block-divider {
   width: 100%;
   background-color: #e5e5e5;
@@ -7,9 +5,9 @@
   border-width: 0px;
 
   &.primary {
-    background-color: $primary-color;
+    background-color: var(--color-primary);
   }
   &.secondary {
-    background-color: $secondary-color;
+    background-color: var(--color-secondary);
   }
 }

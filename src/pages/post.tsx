@@ -17,6 +17,7 @@ import PostIndex from '@module/PostIndex'
 import { IconCopyLink, CircleIconWrapper } from '@components/icon'
 import Linker from '@components/ui/Linker'
 import { GlobalPortal } from '@components/GlobalPortal'
+import useClipboard from '@src/hooks/useClipboard'
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
@@ -35,6 +36,7 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const { slug } = pageContext
+  const { copyToClipboard } = useClipboard()
   const content = notionNodeToJson(getNotionNodeByUrl(data, slug))
   const title = content?.properties?.remark.rich_text || ''
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
@@ -59,15 +61,11 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   }, [])
 
   const handleCopy = () => {
-    let url = ''
-    let textarea = document.createElement('textarea')
-    document.body.appendChild(textarea)
-    url = window.location.href
-    textarea.value = url
-    textarea.select()
-    document.execCommand('copy')
-    document.body.removeChild(textarea)
-    alert('현재 게시글 주소가 복사되었습니다.')
+    if (copyToClipboard(window.location.href)) {
+      alert('현재 게시글 주소가 복사되었습니다.')
+    } else {
+      alert('주소를 복사하는 중 오류가 발생했습니다.')
+    }
   }
 
   return (
@@ -88,8 +86,12 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
                   <IconCopyLink size={18} color="secondary" />
                 </div>
                 <div className="date-box">
-                  <span className="date">작성 : {content?.properties?.created_date?.date?.start || ''}</span>
-                  <span className="date">수정 : {content?.properties?.edited_date?.date?.start || ''}</span>
+                  {content?.properties?.created_date?.date?.start && (
+                    <span className="date">작성 : {content?.properties?.created_date?.date?.start}</span>
+                  )}
+                  {content?.properties?.edited_date?.date?.start && (
+                    <span className="date">수정 : {content?.properties?.edited_date?.date?.start}</span>
+                  )}
                 </div>
               </div>
             </div>

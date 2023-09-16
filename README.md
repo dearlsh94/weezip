@@ -24,6 +24,7 @@ byproducts of the process of living with imagination and curiosity
 - Google Analytics
 - Notion
 - gatsby-source-notion-api(v0.12.0) 
+- iOS 17 Color Palette
 <br/>
 
 ## Posts
@@ -97,6 +98,9 @@ byproducts of the process of living with imagination and curiosity
 ### 웹개개
 
 - 23.09.05 | [JavaScript] 이벤트 루프, 호이스팅, 클로저 개념 요약 정리
+- 23.09.10 | [WEB] 브라우저 렌더링과 웹 렌더링 방식들 개념 요약 정리
+- 23.09.11 | [WEB] 크로스 브라우징과 바벨, 그리고 폴리필 개념 요약 정리
+- 23.09.13 | 컴파일러, 인터프리터, 트랜스파일러 개념 요약 정리
 <br/>
 
 ### 문화 소비자 시점
@@ -113,5 +117,6 @@ byproducts of the process of living with imagination and curiosity
 - 23.08.09 | [공연] 2023 펜타포트 락 페스티벌 후기. 내 인생에 새겨진 청춘이라는 소인이자 헌시.
 - 23.08.26 | [영화] 에드거 라이트 - 라스트 나잇 인 소호 리뷰 시점
 - 23.08.26 | [공연] 서울시립교향악단 파크콘서트 리뷰 시점
-- 23.08.29 | [영화] 오펜하이머 - 크리스토퍼 놀란 리뷰 시점
+- 23.08.29 | [영화] 크리스토퍼 놀란 - 오펜하이머 리뷰 시점
+- 23.09.16 | [영화] 쥬세페 토르나토레 - 시네마천국 리뷰 시점
 <br/>
