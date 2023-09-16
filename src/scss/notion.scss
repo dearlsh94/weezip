@@ -108,11 +108,18 @@
     box-sizing: border-box;
   }
 
-  .language {
-    color: var(--color-grey);
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 8px 12px;
-    font-size: 9pt;
+
+    .language {
+      color: $gray-color;
+      font-size: 9pt;
+    }
   }
+
   .caption {
     color: var(--color-grey);
     padding: 2px 12px;
