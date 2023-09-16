@@ -47,6 +47,7 @@ header {
       width: 36px;
       height: 36px;
       cursor: pointer;
+      transition: background-color 0.2s;
       &:hover {
         background-color: var(--color-secondary);
         border-radius: 4px;
