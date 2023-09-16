@@ -24,6 +24,7 @@ byproducts of the process of living with imagination and curiosity
 - Google Analytics
 - Notion
 - gatsby-source-notion-api(v0.12.0) 
+- iOS 17 Color Palette
 <br/>
 
 ## Posts
