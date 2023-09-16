@@ -24,8 +24,8 @@ const PostListItem = ({ post }: Props) => {
           <TagBadges tagNames={tagNames} isLink={false} />
         </div>
         <div className="date-box">
-          <span className="date">작성 : {createdTime}</span>
-          <span className="date">수정 : {lastEditedTime}</span>
+          {createdTime && <span className="date">작성 : {createdTime}</span>}
+          {lastEditedTime && <span className="date">수정 : {lastEditedTime}</span>}
         </div>
       </div>
     </div>

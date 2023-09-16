@@ -86,8 +86,12 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
                   <IconCopyLink size={18} color="secondary" />
                 </div>
                 <div className="date-box">
-                  <span className="date">작성 : {content?.properties?.created_date?.date?.start || ''}</span>
-                  <span className="date">수정 : {content?.properties?.edited_date?.date?.start || ''}</span>
+                  {content?.properties?.created_date?.date?.start && (
+                    <span className="date">작성 : {content?.properties?.created_date?.date?.start}</span>
+                  )}
+                  {content?.properties?.edited_date?.date?.start && (
+                    <span className="date">수정 : {content?.properties?.edited_date?.date?.start}</span>
+                  )}
                 </div>
               </div>
             </div>
