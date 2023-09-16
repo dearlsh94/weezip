@@ -43,6 +43,7 @@
     border-radius: 4px;
     box-sizing: content-box;
     cursor: pointer;
+    transition: color 0.2s;
 
     &:hover {
       border-bottom: 2px solid var(--color-third);

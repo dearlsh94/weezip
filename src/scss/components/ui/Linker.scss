@@ -1,5 +1,6 @@
 a.my-linker {
   text-decoration: none;
+  transition: color 0.2s;
   &.underline {
     text-decoration: underline;
   }

@@ -15,6 +15,7 @@ ul.block-header-index-list {
       margin-top: 8px;
     }
 
+    transition: color 0.2s;
     &:hover {
       text-decoration: underline;
       color: var(--color-primary);
