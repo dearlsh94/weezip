@@ -93,6 +93,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.07.05 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리
 - 23.08.17 | 김철수의 책 '개발자의 글쓰기'를 읽고.
 - 23.09.04 | 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리
+- 23.09.18 | 피플웨어(Peopleware) 2부. ‘사무실 환경’ 요약 정리
 <br/>
 
 ### 웹개개
