@@ -1,7 +1,6 @@
 import * as React from 'react'
-import '@scss/components/ui/MyImage.scss'
+import '@scss/notion.scss'
 import { Children } from '@types'
-import Linker from '@components/ui/Linker'
 import NParagraph from './NParagraph'
 
 interface NImageProps {
