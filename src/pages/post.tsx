@@ -71,7 +71,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   return (
     <GlobalPortal.Provider>
       <MainLayout className="post-layout">
-        <article>
+        <article className="post">
           <div className="title-box">
             {series && (
               <Linker url={`/list?series=${series.name}`}>
