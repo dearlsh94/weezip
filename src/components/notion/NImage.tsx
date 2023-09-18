@@ -1,6 +1,7 @@
 import * as React from 'react'
 import '@scss/components/ui/MyImage.scss'
 import { Children } from '@types'
+import Linker from '@components/ui/Linker'
 
 interface NImageProps {
   imageBlock: Children
@@ -27,7 +28,12 @@ const MyImage = ({ imageBlock }: NImageProps) => {
             src={`${url}`}
             alt={captionText}
           />
-          <p>{image.caption?.length > 0 ? image.caption[0]?.plain_text : ''}</p>
+          <p>
+            {image?.caption?.length > 0 &&
+              image.caption.map(c =>
+                c.href ? <Linker url={c.href}>{c.plain_text}</Linker> : <span>{c.plain_text}</span>
+              )}
+          </p>
         </div>
       )}
     </>
