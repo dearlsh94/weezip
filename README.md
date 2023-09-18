@@ -93,6 +93,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.07.05 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리
 - 23.08.17 | 김철수의 책 '개발자의 글쓰기'를 읽고.
 - 23.09.04 | 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리
+- 23.09.18 | 피플웨어(Peopleware) 2부. ‘사무실 환경’ 요약 정리
 <br/>
 
 ### 웹개개
@@ -101,6 +102,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.09.10 | [WEB] 브라우저 렌더링과 웹 렌더링 방식들 개념 요약 정리
 - 23.09.11 | [WEB] 크로스 브라우징과 바벨, 그리고 폴리필 개념 요약 정리
 - 23.09.13 | 컴파일러, 인터프리터, 트랜스파일러 개념 요약 정리
+- 23.09.16 | JavaScript 모듈로 이야기하는 번들러와 웹팩, 롤업, 비트에 대한 요약 정리
 <br/>
 
 ### 문화 소비자 시점
