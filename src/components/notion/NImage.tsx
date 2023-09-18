@@ -11,6 +11,10 @@ const MyImage = ({ imageBlock }: NImageProps) => {
   const url = image
     ? `https://squary.notion.site/image/${encodeURIComponent(image.file.url)}?table=block&id=${id}&cache=v2`
     : ``
+  const captionText = image?.caption.reduce((acc, item) => {
+    return acc + ` ${item.plain_text}`
+  }, '')
+
   return (
     <>
       {id && image && (
@@ -21,7 +25,7 @@ const MyImage = ({ imageBlock }: NImageProps) => {
             ${url}&width=1536 1024w,`}
             sizes="100vw"
             src={`${url}`}
-            alt={image.caption?.length > 0 ? image.caption[0]?.plain_text : ''}
+            alt={captionText}
           />
           <p>{image.caption?.length > 0 ? image.caption[0]?.plain_text : ''}</p>
         </div>
