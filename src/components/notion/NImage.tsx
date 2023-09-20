@@ -7,7 +7,7 @@ interface NImageProps {
   imageBlock: Children
 }
 
-const MyImage = ({ imageBlock }: NImageProps) => {
+export default function MyImage({ imageBlock }: NImageProps) {
   const { id, image } = imageBlock
   const url = image
     ? `https://squary.notion.site/image/${encodeURIComponent(image.file.url)}?table=block&id=${id}&cache=v2`
@@ -36,5 +36,3 @@ const MyImage = ({ imageBlock }: NImageProps) => {
     </>
   )
 }
-
-export default MyImage

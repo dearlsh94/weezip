@@ -3,11 +3,11 @@ import '@scss/notion.scss'
 import { TextBlock } from '@types'
 import { NParagraph } from '@components/notion'
 
-interface Props {
+interface NHeading1Props {
   head1?: TextBlock
 }
 
-const NHeading1 = ({ head1 }: Props) => {
+export default function NHeading1({ head1 }: NHeading1Props) {
   return (
     <>
       {head1 && (
@@ -18,5 +18,3 @@ const NHeading1 = ({ head1 }: Props) => {
     </>
   )
 }
-
-export default NHeading1

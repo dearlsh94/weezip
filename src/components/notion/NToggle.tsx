@@ -5,13 +5,13 @@ import { NParagraph } from '@components/notion'
 import ContentWrapper from '@module/ContentWrapper'
 import { IconArrow } from '@components/icon'
 
-interface Props {
+interface NToggleProps {
   toggle: TextBlock
   hasChild: boolean
   childList: Children[]
 }
 
-const NToggle = ({ toggle, hasChild, childList }: Props) => {
+export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
   const [isOpen, setIsOpen] = React.useState(false)
   return (
     <>
@@ -31,5 +31,3 @@ const NToggle = ({ toggle, hasChild, childList }: Props) => {
     </>
   )
 }
-
-export default NToggle

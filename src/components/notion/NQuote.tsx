@@ -3,11 +3,11 @@ import '@scss/notion.scss'
 import { TextBlock } from '@types'
 import { NParagraph } from '@components/notion'
 
-interface Props {
+interface NQuoteProps {
   quote?: TextBlock
 }
 
-const NQuote = ({ quote }: Props) => {
+export default function NQuote({ quote }: NQuoteProps) {
   return (
     <>
       {quote && (
@@ -18,5 +18,3 @@ const NQuote = ({ quote }: Props) => {
     </>
   )
 }
-
-export default NQuote
