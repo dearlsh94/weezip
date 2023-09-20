@@ -22,9 +22,9 @@ const useTheme = () => {
     } else {
       const preferDark = window.matchMedia('(prefers-color-scheme: dark')
       if (preferDark?.matches) {
-        changeLight()
-      } else {
         changeDark()
+      } else {
+        changeLight()
       }
     }
   }, [])
