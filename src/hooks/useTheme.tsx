@@ -2,42 +2,49 @@ import { useEffect, useState } from 'react'
 import { getConfig, setConfig } from '@utils/configUtils'
 import { CONFIG_THEME_KEY } from '@src/constants'
 
-enum THEME_MODE {
-  LIGHT = 'light',
-  DARK = 'dark',
+const themes = {
+  LIGHT: 'light',
+  DARK: 'dark',
 }
+type ThemesType = (typeof themes)[keyof typeof themes]
 
 const useTheme = () => {
-  const [theme, setTheme] = useState<THEME_MODE>()
+  const [theme, setTheme] = useState<ThemesType>()
 
   useEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY)
     if (configTheme) {
-      if (configTheme === THEME_MODE.DARK) {
+      if (configTheme === themes.DARK) {
         setDark()
       } else {
         setLight()
       }
     } else {
       const preferDark = window.matchMedia('(prefers-color-scheme: dark')
-      if (preferDark) {
-        setDark()
+      if (preferDark?.matches) {
+        changeLight()
       } else {
-        setLight()
+        changeDark()
       }
     }
   }, [])
 
+  const changeLight = () => {
+    document.documentElement.setAttribute(CONFIG_THEME_KEY, themes.LIGHT)
+    setTheme(themes.LIGHT)
+  }
   const setLight = () => {
-    document.documentElement.setAttribute(CONFIG_THEME_KEY, THEME_MODE.LIGHT)
-    setConfig(CONFIG_THEME_KEY, THEME_MODE.LIGHT)
-    setTheme(THEME_MODE.LIGHT)
+    changeLight()
+    setConfig(CONFIG_THEME_KEY, themes.LIGHT)
   }
 
+  const changeDark = () => {
+    document.documentElement.setAttribute(CONFIG_THEME_KEY, themes.DARK)
+    setTheme(themes.DARK)
+  }
   const setDark = () => {
-    document.documentElement.setAttribute(CONFIG_THEME_KEY, THEME_MODE.DARK)
-    setConfig(CONFIG_THEME_KEY, THEME_MODE.DARK)
-    setTheme(THEME_MODE.DARK)
+    changeDark()
+    setConfig(CONFIG_THEME_KEY, themes.DARK)
   }
 
   return { theme, setLight, setDark }
