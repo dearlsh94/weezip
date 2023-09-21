@@ -60,12 +60,9 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     setSeries(content?.properties?.series?.select)
   }, [])
 
-  const handleCopy = () => {
-    if (copyToClipboard(window.location.href)) {
-      alert('현재 게시글 주소가 복사되었습니다.')
-    } else {
-      alert('주소를 복사하는 중 오류가 발생했습니다.')
-    }
+  const handleCopy = async () => {
+    await copyToClipboard(window.location.href)
+    alert('현재 게시글 주소가 복사되었습니다.')
   }
 
   return (
