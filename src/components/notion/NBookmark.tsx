@@ -3,11 +3,11 @@ import '@scss/notion.scss'
 import { Bookmark, TextBlock, TextItem } from '@types'
 import Linker from '@components/ui/Linker'
 import { NParagraph } from '@components/notion'
-interface Props {
+interface NBookmarkProps {
   bookmark: Bookmark
 }
 
-const NBookmark = ({ bookmark }: Props) => {
+export default function NBookmark({ bookmark }: NBookmarkProps) {
   return (
     <>
       {bookmark && (
@@ -32,5 +32,3 @@ const NBookmark = ({ bookmark }: Props) => {
     </>
   )
 }
-
-export default NBookmark

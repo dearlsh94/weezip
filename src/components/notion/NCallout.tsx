@@ -8,7 +8,7 @@ interface NCalloutProps {
   children: Children[]
 }
 
-const NCallout = ({ callout, children = [] }: NCalloutProps) => {
+export default function NCallout({ callout, children = [] }: NCalloutProps) {
   const icon = callout?.icon?.emoji
 
   return (
@@ -23,5 +23,3 @@ const NCallout = ({ callout, children = [] }: NCalloutProps) => {
     </>
   )
 }
-
-export default NCallout

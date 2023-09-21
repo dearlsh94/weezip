@@ -36,6 +36,7 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const { slug } = pageContext
+  console.log({ slug })
   const { copyToClipboard } = useClipboard()
   const content = notionNodeToJson(getNotionNodeByUrl(data, slug))
   const title = content?.properties?.remark.rich_text || ''
@@ -60,12 +61,9 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     setSeries(content?.properties?.series?.select)
   }, [])
 
-  const handleCopy = () => {
-    if (copyToClipboard(window.location.href)) {
-      alert('현재 게시글 주소가 복사되었습니다.')
-    } else {
-      alert('주소를 복사하는 중 오류가 발생했습니다.')
-    }
+  const handleCopy = async () => {
+    await copyToClipboard(location.href)
+    alert('현재 게시글 주소가 복사되었습니다.')
   }
 
   return (
@@ -78,7 +76,9 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
                 <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
               </Linker>
             )}
-            <h1 className="title">{title}</h1>
+            <h1 className="title">
+              <Linker url={slug}>{title}</Linker>
+            </h1>
             <div className="desc-box">
               <div className="left-box">{tagNames && <TagBadges tagNames={tagNames} />}</div>
               <div className="right-box">

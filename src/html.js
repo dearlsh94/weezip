@@ -1,9 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 export default function HTML(props) {
+  const scriptTheme = `
+    var storage = localStorage.getItem('WEEZIP_CONFIG');
+    if (storage) {
+      var storageTheme = JSON.parse(storage)['weezip-theme'];
+      if (storageTheme === 'dark') {
+        document.documentElement.setAttribute('weezip-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('weezip-theme', 'light');
+      }
+    } else {
+      var preferDark = window.matchMedia('(prefers-color-scheme: dark');
+      if (preferDark?.matches) {
+        document.documentElement.setAttribute('weezip-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('weezip-theme', 'light');
+      }
+    }
+  `
   return (
     <html {...props.htmlAttributes} lang="ko-KR">
+      <script dangerouslySetInnerHTML={{ __html: scriptTheme }} />
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />

@@ -4,11 +4,11 @@ import { NParagraph } from '@components/notion'
 import { Children } from '@types'
 import ContentWrapper from '@module/ContentWrapper'
 
-interface Props {
+interface NBulltedListProps {
   bulletedListItem: Children
 }
 
-const NBulletedList = ({ bulletedListItem }: Props) => {
+export default function NBulletedList({ bulletedListItem }: NBulltedListProps) {
   const { has_children, children } = bulletedListItem
 
   return (
@@ -18,5 +18,3 @@ const NBulletedList = ({ bulletedListItem }: Props) => {
     </>
   )
 }
-
-export default NBulletedList

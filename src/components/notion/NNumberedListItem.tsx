@@ -4,11 +4,11 @@ import { NParagraph } from '@components/notion'
 import { Children } from '@types'
 import ContentWrapper from '@module/ContentWrapper'
 
-interface Props {
+interface NNumberedListItemProps {
   numberedListItem: Children
 }
 
-const NNumberedListItem = ({ numberedListItem }: Props) => {
+export default function NNumberedListItem({ numberedListItem }: NNumberedListItemProps) {
   const { has_children, children } = numberedListItem
   return (
     <div className={`block-numbered-list-item`}>
@@ -17,5 +17,3 @@ const NNumberedListItem = ({ numberedListItem }: Props) => {
     </div>
   )
 }
-
-export default NNumberedListItem

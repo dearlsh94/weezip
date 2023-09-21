@@ -3,13 +3,13 @@ import '@scss/notion.scss'
 import { TextBlock, TextItem } from '@types'
 import Linker from '@components/ui/Linker'
 
-interface Props {
+interface NParagraphProps {
   paragraph?: TextBlock
   text?: TextItem[]
   className?: string
 }
 
-const NParagraph = ({ paragraph, text, className }: Props) => {
+export default function NParagraph({ paragraph, text, className }: NParagraphProps) {
   let blockTexts = paragraph?.text || text || []
   return (
     <>
@@ -62,5 +62,3 @@ const NParagraph = ({ paragraph, text, className }: Props) => {
     </>
   )
 }
-
-export default NParagraph

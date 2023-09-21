@@ -11,7 +11,7 @@ interface NCodeProps {
   code: Code
 }
 
-const NCode = ({ code }: NCodeProps) => {
+export default function NCode({ code }: NCodeProps) {
   const codeString = code.text?.reduce((codeString, text) => (codeString += text.plain_text), '')
 
   // const { copyToClipboard } = useClipboard()
@@ -36,5 +36,3 @@ const NCode = ({ code }: NCodeProps) => {
     </div>
   )
 }
-
-export default NCode

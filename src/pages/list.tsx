@@ -14,10 +14,10 @@ import { parseNotionColumn } from '@utils/parseUtils'
 import SEO from '@components/header/SEO'
 import ListFilter from '@components/ListFilter'
 import Divider from '@components/ui/Divider'
-import { CATEGORY_FILTERS } from '@src/constants'
 import { IconClearAll } from '@components/icon'
 import CircleProgress from '@components/ui/CircleProgress'
 import { GlobalPortal } from '@components/GlobalPortal'
+import { compareString } from '@utils/commonUtils'
 
 export const Head: HeadFC = () => {
   return (
@@ -64,30 +64,17 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       _list = parseList.filter(post => {
         if (!post.title.startsWith('/post')) return false
 
-        if (series) {
-          const filter = postSeries.find(f => f.name.toUpperCase() === series.toUpperCase())
-          if (!filter) return false
-
-          setFilterText(filter?.name || '')
-          return post?.notionColumn?.series?.name === filter?.name
-        }
-
         if (category) {
-          const filter = CATEGORY_FILTERS.find(f => f.name.toUpperCase() === category.toUpperCase())
-          if (!filter) return false
-
-          setFilterText(filter?.name || '')
-          return post?.notionColumn?.category?.name.toUpperCase() === filter?.name.toUpperCase()
-        }
-
-        if (tag) {
+          setFilterText(category || '')
+          return compareString(post?.notionColumn?.category?.name, decodeURIComponent(category))
+        } else if (series) {
+          setFilterText(series || '')
+          return compareString(post?.notionColumn?.series?.name, decodeURIComponent(series))
+        } else if (tag) {
           setFilterText(`${tag} 태그`)
-          return post?.notionColumn?.tag?.find(t => t.name.toUpperCase() === decodeURIComponent(tag).toUpperCase())
-        }
-
-        if (keyword) {
+          return post?.notionColumn?.tag?.find(t => compareString(t.name, decodeURIComponent(tag)))
+        } else if (keyword) {
           const searchText = decodeURIComponent(keyword).replaceAll(/ /g, '').toUpperCase()
-          setFilterText(`'${searchText}' 포함된 제목`)
           return post.notionColumn?.remark?.replaceAll(/ /g, '').toUpperCase().includes(searchText)
         }
 

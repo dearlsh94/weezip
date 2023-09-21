@@ -3,11 +3,11 @@ import '@scss/notion.scss'
 import { Todo } from '@types'
 import { NParagraph } from '@components/notion'
 
-interface Props {
+interface NTodoProps {
   todo: Todo
 }
 
-const NTodo = ({ todo }: Props) => {
+export default function NTodo({ todo }: NTodoProps) {
   return (
     <>
       {todo && (
@@ -21,5 +21,3 @@ const NTodo = ({ todo }: Props) => {
     </>
   )
 }
-
-export default NTodo
