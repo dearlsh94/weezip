@@ -36,7 +36,6 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const { slug } = pageContext
-  console.log({ slug })
   const { copyToClipboard } = useClipboard()
   const content = notionNodeToJson(getNotionNodeByUrl(data, slug))
   const title = content?.properties?.remark.rich_text || ''
@@ -76,9 +75,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
                 <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
               </Linker>
             )}
-            <h1 className="title">
-              <Linker url={slug}>{title}</Linker>
-            </h1>
+            <h1 className="title">{title}</h1>
             <div className="desc-box">
               <div className="left-box">{tagNames && <TagBadges tagNames={tagNames} />}</div>
               <div className="right-box">
