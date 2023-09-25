@@ -20,6 +20,7 @@ const config: GatsbyConfig = {
     FAST_DEV: true,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     {
