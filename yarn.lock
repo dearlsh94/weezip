@@ -5350,10 +5350,9 @@ gatsby-source-filesystem@^5.7.0:
     valid-url "^1.0.9"
     xstate "^4.35.3"
 
-gatsby-source-notion-api@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-notion-api/-/gatsby-source-notion-api-0.12.0.tgz#7552b0c343116e7d4a913cd822203145771183c0"
-  integrity sha512-PdiKrsod9ZwMhbqLT/hcWnqtAjEaAntTBKuUX1U0dQiDvFj9wbW8vzZnH7Ua0VZ+Qrh0Mn2f+yeuMB0J9greuw==
+"gatsby-source-notion-api@github:dearlsh94/gatsby-source-notion-api":
+  version "0.0.0"
+  resolved "https://codeload.github.com/dearlsh94/gatsby-source-notion-api/tar.gz/17bc23259c44215c55a04c22c4e6b59dff687a54"
   dependencies:
     node-fetch "^2.6.1"
     or-pipets "^1.0.1"
@@ -7191,7 +7190,14 @@ node-fetch@2.6.7:
   dependencies:
     whatwg-url "^5.0.0"
 
-node-fetch@^2.6.1, node-fetch@^2.6.8:
+node-fetch@^2.6.1:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.7.0.tgz#d0f0fa6e3e2dc1d27efcd8ad99d550bda94d187d"
+  integrity sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==
+  dependencies:
+    whatwg-url "^5.0.0"
+
+node-fetch@^2.6.8:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.9.tgz#7c7f744b5cc6eb5fd404e0c7a9fec630a55657e6"
   integrity sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==
