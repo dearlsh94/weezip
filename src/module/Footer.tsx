@@ -12,22 +12,22 @@ const Footer = () => {
           <p>Contact Me</p>
           <div className="contact-item">
             <CircleIconWrapper color="reverse-mono">
-              <a href={`mailto:${OWNER_EMAIL}`}>
+              <a href={`mailto:${OWNER_EMAIL}`} aria-label={`메일 주소 ${OWNER_EMAIL}`}>
                 <IconMail color="reverse-mono" />
               </a>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://www.instagram.com/treefeely/`} target="_blank">
+              <Linker url={`https://www.instagram.com/treefeely/`} target="_blank" aria-label="인스타그램 이동">
                 <IconInstagram color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://open.kakao.com/me/treefeely`} target="_blank">
+              <Linker url={`https://open.kakao.com/me/treefeely`} target="_blank" aria-label="오픈 카카오톡 이동">
                 <IconKakao color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://github.com/dearlsh94`} target="_blank">
+              <Linker url={`https://github.com/dearlsh94`} target="_blank" aria-label="Github 이동">
                 <IconGithub color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
