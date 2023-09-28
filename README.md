@@ -70,27 +70,22 @@ byproducts of the process of living with imagination and curiosity
 - 23.03.28 | Gatsby 프로젝트 개발환경 생성부터 alias, git 설정까지.
 - 23.03.29 | 개츠비에 노션의 등장이라… Gatsby에 Notion API 연동하기.
 - 23.04.14 | 내 Gatsby 사이트에 Font, Color Palette, Icon Set 적용하기.
-- 23.04.15 | 노션에 첨부된 이미지 URL 만료 없이 사용하기
+- 23.04.15 | 노션에 첨부된 이미지 URL 만료 없이 사용하기.
 - 23.04.17 | Gatsby Cloud로 배포하고 Google Domains로 웹 이름 지어주기.
 - 23.04.20 | Gatsby Head API로 메타 태그 적용하기. 아아, 부르다 죽을 그 이름 SEO.
 - 23.04.29 | Gatsby-plugin-sitemap으로 동적 sitemap 생성하기. robots.txt도 만들자.
 - 23.04.20 | 몇 명이나 보러 올까? Gatsby gtag plugin으로 GA 연동하기.
 - 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기.
+- 23.09.28 | Github 리포지토리 Netlify로 배포하고 커스텀 도메인 연결하기.
 <br/>
 
 ### 개발자 도서관
 
-- 21.04.01 | Clean Code 책 주행하기. 프롤로그
-- 21.04.01 | Clean Code 책 주행하기. 챕터 1 - 깨끗한 코드
-- 21.04.03 | Clean Code 책 주행하기. 챕터 2 - 의미있는 이름
-- 21.04.03 | Clean Code 책 주행하기. 챕터 3 - 함수
-- 21.04.04 | Clean Code 책 주행하기. 챕터 4 - 주석
-- 21.04.07 | Clean Code 책 주행하기. 챕터 5 - 형식 맞추기
-- 21.04.07 | Clean Code 책 주행하기. 챕터 6 - 객체와 자료구조
-- 21.04.10 | Clean Code 책 주행하기. 챕터 7 - 오류 처리
-- 21.04.10 | Clean Code 책 주행하기. 챕터 8 - 경계
-- 21.04.15 | Clean Code 책 주행하기. 챕터 9 - 단위 테스트
-- 21.04.17 | Clean Code 책 주행하기. 챕터 10 - 클래스
+- 21.04.01 | Clean Code 책 요약. 프롤로그  
+- 21.04.01 | Clean Code 책 요약. 챕터 1~3 : 깨끗한 코드, 의미있는 이름, 함수  
+- 21.04.01 | Clean Code 책 요약. 챕터 4~6 : 주석, 형식 맞추기, 객체와 자료구조
+- 21.04.01 | Clean Code 책 요약. 챕터 7~9 : 오류 처리, 경계, 단위 테스트
+- 21.04.17 | Clean Code 책 요약. 챕터 10 : 클래스
 - 23.07.05 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리 Part.1
 - 23.08.17 | 김철수의 책 '개발자의 글쓰기'를 읽고.
 - 23.09.04 | 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리
