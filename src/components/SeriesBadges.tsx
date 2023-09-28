@@ -16,7 +16,11 @@ const SeriesBadges = ({ series, isLink = true }: SeriesBadgesProps) => {
           {series.map(s =>
             isLink ? (
               <span key={`series-badge-${s.id}`}>
-                <Linker url={`/list?series=${s.name}`} isUnderline={false}>
+                <Linker
+                  url={`/list?series=${s.name}`}
+                  isUnderline={false}
+                  aria-label={`${s.name} 시리즈 목록으로 이동`}
+                >
                   <span className={`badge linked`}>[{s.name}]</span>
                 </Linker>
               </span>

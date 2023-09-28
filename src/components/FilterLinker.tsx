@@ -10,7 +10,10 @@ interface FilterLinkerProps {
 
 const FilterLinker = ({ type, name, color }: FilterLinkerProps) => {
   return (
-    <Linker url={`/list?${type}=${encodeURIComponent(name)}`}>
+    <Linker
+      url={`/list?${type}=${encodeURIComponent(name)}`}
+      aria-label={`${type} ${encodeURIComponent(name)} 목록으로 이동`}
+    >
       <div className={`filter-item ${color}-border`}>{name}</div>
     </Linker>
   )

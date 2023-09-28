@@ -35,7 +35,7 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
           {list.map(post => {
             return (
               <li key={`post-list-${post.id}`}>
-                <Linker url={post.title}>
+                <Linker url={post.title} aria-label={`${post.title} 글 보기`}>
                   <PostListItem post={post} />
                 </Linker>
               </li>

@@ -35,11 +35,17 @@ const FilterItem = ({ filter, select, type }: Props) => {
   return (
     <>
       {select ? (
-        <Linker url={`/list?${type}=${encodeURIComponent(select.name)}`}>
+        <Linker
+          url={`/list?${type}=${encodeURIComponent(select.name)}`}
+          aria-label={`${type} ${encodeURIComponent(select.name)} 목록으로 이동`}
+        >
           <div className={`filter-item ${select.color}-border ${isActive ? 'active' : ''}`}>{select.name}</div>
         </Linker>
       ) : filter ? (
-        <Linker url={`/list?${filter.type}=${encodeURIComponent(filter.key)}`}>
+        <Linker
+          url={`/list?${filter.type}=${encodeURIComponent(filter.key)}`}
+          aria-label={`${filter.type} ${encodeURIComponent(filter.key)} 목록으로 이동`}
+        >
           <div className={`filter-item ${filter.color} ${isActive ? 'active' : ''}`}>{filter.name}</div>
         </Linker>
       ) : (
