@@ -76,7 +76,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.04.29 | Gatsby-plugin-sitemap으로 동적 sitemap 생성하기. robots.txt도 만들자.
 - 23.04.20 | 몇 명이나 보러 올까? Gatsby gtag plugin으로 GA 연동하기.
 - 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기.
-- 23.09.28 | Github 리포지토리 Netlify로 배포하고 커스텀 도메인 연결하기.
+- 23.09.28 | Github 리포지토리 Netlify로 배포하고 커스텀 도메인 연결하기 (feat. Gatsby Cloud 종료)
 <br/>
 
 ### 개발자 도서관
