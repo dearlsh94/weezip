@@ -11,7 +11,7 @@ export default function NBookmark({ bookmark }: NBookmarkProps) {
   return (
     <>
       {bookmark && (
-        <Linker url={bookmark.url} target="_blank">
+        <Linker url={bookmark.url} target="_blank" aria-label={`${bookmark.url} 위치로 이동`}>
           {bookmark.caption?.length > 0 ? (
             bookmark.caption.map((c: TextItem, i) => {
               const captionParagraph: TextBlock = {

@@ -9,7 +9,12 @@ const RecommendTag = () => {
     <div className="recommend-box">
       <HelpText text={'이런 건 어때요?'} />
       {RECOMMEND_TAGS.map(tag => (
-        <Linker key={`recommend-item-${tag.name}`} url={tag.url} className="item">
+        <Linker
+          key={`recommend-item-${tag.name}`}
+          url={tag.url}
+          className="item"
+          aria-label={`${tag.name} 목록으로 이동`}
+        >
           #{tag.name}
         </Linker>
       ))}

@@ -23,7 +23,7 @@ const SideBarNavigation = ({ handleClose }: SideBarNavigationProps) => {
             GNB_MENUS.map((nav, i) => {
               return (
                 <li key={`gnb-${i}`} className={`nav-item`} onClick={handleClose}>
-                  <Linker url={nav.url} target={nav.isOutLink ? '_blank' : '_parent'}>
+                  <Linker url={nav.url} target={nav.isOutLink ? '_blank' : '_parent'} aria-label={`${nav.title} 이동`}>
                     <div className="title-box">
                       {nav.title.toUpperCase() === 'HOME' && <IconHome />}
                       {nav.title.toUpperCase() === 'LIST' && <IconList />}

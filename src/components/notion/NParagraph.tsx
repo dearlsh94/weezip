@@ -42,7 +42,7 @@ export default function NParagraph({ paragraph, text, className }: NParagraphPro
             return (
               <React.Fragment key={`block-paragraph-text-${i}`}>
                 {t.href ? (
-                  <Linker url={t.href} target="_blank">
+                  <Linker url={t.href} target="_blank" aria-label={`링크 텍스트`}>
                     <span
                       className={classNames.join(' ')}
                       dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
