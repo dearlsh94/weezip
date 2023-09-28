@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getConfig, setConfig } from '@utils/configUtils'
 import { CONFIG_THEME_KEY } from '@src/constants'
+import { useLocalStorage } from './useLocalStorage'
 
 const themes = {
   LIGHT: 'light',
@@ -9,6 +9,7 @@ const themes = {
 type ThemesType = (typeof themes)[keyof typeof themes]
 
 const useTheme = () => {
+  const { setConfig, getConfig } = useLocalStorage()
   const [theme, setTheme] = useState<ThemesType>()
 
   useEffect(() => {
