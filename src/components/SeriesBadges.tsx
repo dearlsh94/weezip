@@ -1,11 +1,11 @@
-import * as React from 'react'
-import '@scss/components/SeriesBadge.scss'
-import Linker from './ui/Linker'
-import { Select } from '@types'
+import * as React from 'react';
+import '@scss/components/SeriesBadge.scss';
+import Linker from './ui/Linker';
+import { Select } from '@types';
 
 interface SeriesBadgesProps {
-  series: Select[]
-  isLink?: boolean
+  series: Select[];
+  isLink?: boolean;
 }
 
 const SeriesBadges = ({ series, isLink = true }: SeriesBadgesProps) => {
@@ -33,7 +33,7 @@ const SeriesBadges = ({ series, isLink = true }: SeriesBadgesProps) => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default SeriesBadges
+export default SeriesBadges;

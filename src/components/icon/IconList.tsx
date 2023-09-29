@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { SVGIcon } from '@types'
-import SvgBox from './SvgBox'
-import '@scss/components/Icon.scss'
+import * as React from 'react';
+import { SVGIcon } from '@types';
+import SvgBox from './SvgBox';
+import '@scss/components/Icon.scss';
 
 // https://icon-sets.iconify.design/ion/list/
 const IconList = (props: SVGIcon) => {
@@ -42,7 +42,7 @@ const IconList = (props: SVGIcon) => {
         strokeWidth="32"
       />
     </SvgBox>
-  )
-}
+  );
+};
 
-export default IconList
+export default IconList;

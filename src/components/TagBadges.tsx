@@ -1,10 +1,10 @@
-import * as React from 'react'
-import '@scss/components/TagBadge.scss'
-import Linker from './ui/Linker'
+import * as React from 'react';
+import '@scss/components/TagBadge.scss';
+import Linker from './ui/Linker';
 
 interface Props {
-  tagNames: string[]
-  isLink?: boolean
+  tagNames: string[];
+  isLink?: boolean;
 }
 
 const TagBadges = ({ tagNames, isLink = true }: Props) => {
@@ -28,7 +28,7 @@ const TagBadges = ({ tagNames, isLink = true }: Props) => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default TagBadges
+export default TagBadges;

@@ -1,19 +1,19 @@
-import * as React from 'react'
-import '@scss/components/PostListItem.scss'
-import { NotionNode } from '@types'
-import TagBadges from '@components/TagBadges'
+import * as React from 'react';
+import '@scss/components/PostListItem.scss';
+import { NotionNode } from '@types';
+import TagBadges from '@components/TagBadges';
 
 interface Props {
-  post: NotionNode
+  post: NotionNode;
 }
 
 const PostListItem = ({ post }: Props) => {
-  const { notionColumn } = post
-  const remark = notionColumn?.remark || ''
-  const lastEditedTime = notionColumn?.lastEditedTime || ''
-  const createdTime = notionColumn?.createdTime || ''
-  const tagNames = notionColumn?.tag?.map(t => t.name) || []
-  const series = notionColumn?.series
+  const { notionColumn } = post;
+  const remark = notionColumn?.remark || '';
+  const lastEditedTime = notionColumn?.lastEditedTime || '';
+  const createdTime = notionColumn?.createdTime || '';
+  const tagNames = notionColumn?.tag?.map(t => t.name) || [];
+  const series = notionColumn?.series;
 
   return (
     <div className={`post-list-item`}>
@@ -29,7 +29,7 @@ const PostListItem = ({ post }: Props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PostListItem
+export default PostListItem;

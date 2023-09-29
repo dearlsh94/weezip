@@ -1,19 +1,19 @@
-import * as React from 'react'
-import { HeadFC, PageProps } from 'gatsby'
-import SEO from '@components/header/SEO'
-import Linker from '@components/ui/Linker'
-import { GlobalPortal } from '@components/GlobalPortal'
+import * as React from 'react';
+import { HeadFC, PageProps } from 'gatsby';
+import SEO from '@components/header/SEO';
+import Linker from '@components/ui/Linker';
+import { GlobalPortal } from '@components/GlobalPortal';
 
 const mainStyles = {
   padding: '40px',
-}
+};
 const contentStyles = {
   margin: '20px 0px',
-}
+};
 
 export const Head: HeadFC = () => {
-  return <SEO />
-}
+  return <SEO />;
+};
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
@@ -31,7 +31,7 @@ const NotFoundPage: React.FC<PageProps> = () => {
         </div>
       </main>
     </GlobalPortal.Provider>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

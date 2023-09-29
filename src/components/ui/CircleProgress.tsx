@@ -1,9 +1,9 @@
-import * as React from 'react'
-import '@scss/components/ui/CircleProgress.scss'
-import { IconCircleProgress } from '@components/icon'
+import * as React from 'react';
+import '@scss/components/ui/CircleProgress.scss';
+import { IconCircleProgress } from '@components/icon';
 
 interface Props {
-  height?: number
+  height?: number;
 }
 
 const CircleProgress = ({ height }: Props) => {
@@ -16,7 +16,7 @@ const CircleProgress = ({ height }: Props) => {
     >
       <IconCircleProgress />
     </div>
-  )
-}
+  );
+};
 
-export default CircleProgress
+export default CircleProgress;

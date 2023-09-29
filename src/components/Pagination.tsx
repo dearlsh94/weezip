@@ -1,46 +1,46 @@
-import * as React from 'react'
-import '@scss/components/Pagination.scss'
-import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
-import { IconArrow, IconMoveEnd } from '@components/icon'
-import { navigate } from 'gatsby'
+import * as React from 'react';
+import '@scss/components/Pagination.scss';
+import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton';
+import { IconArrow, IconMoveEnd } from '@components/icon';
+import { navigate } from 'gatsby';
 
 interface IProps {
-  lastPage: number
-  currentPage: number
+  lastPage: number;
+  currentPage: number;
 }
 
 const Pagination = ({ lastPage, currentPage }: IProps) => {
-  const FIRST_PAGE = 1
+  const FIRST_PAGE = 1;
 
   const handleOlder = () => {
     if (currentPage !== FIRST_PAGE) {
-      handleMove(Math.max(currentPage - 1, FIRST_PAGE))
+      handleMove(Math.max(currentPage - 1, FIRST_PAGE));
     }
-  }
+  };
   const handleNewer = () => {
     if (currentPage !== lastPage) {
-      handleMove(Math.min(currentPage + 1, lastPage))
+      handleMove(Math.min(currentPage + 1, lastPage));
     }
-  }
+  };
   const handleFirst = () => {
     if (currentPage !== FIRST_PAGE) {
-      handleMove(FIRST_PAGE)
+      handleMove(FIRST_PAGE);
     }
-  }
+  };
   const handleLast = () => {
     if (currentPage !== lastPage) {
-      handleMove(lastPage)
+      handleMove(lastPage);
     }
-  }
+  };
 
   const handleMove = (page: number) => {
-    const search = new URLSearchParams(location.search)
+    const search = new URLSearchParams(location.search);
     if (search.has('page')) {
-      search.delete('page')
+      search.delete('page');
     }
-    search.append('page', page.toString())
-    navigate(`${location.pathname}?${search.toString()}`)
-  }
+    search.append('page', page.toString());
+    navigate(`${location.pathname}?${search.toString()}`);
+  };
 
   return (
     <div className="post-list-page-box">
@@ -106,7 +106,7 @@ const Pagination = ({ lastPage, currentPage }: IProps) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;

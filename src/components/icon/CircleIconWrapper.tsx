@@ -1,10 +1,10 @@
-import * as React from 'react'
-import '@scss/CircleIconWrapper.scss'
+import * as React from 'react';
+import '@scss/CircleIconWrapper.scss';
 
 interface CircleIconWrapperProps {
-  children: React.ReactNode
-  color: 'mono' | 'reverse-mono' | 'secondary'
-  size?: number
+  children: React.ReactNode;
+  color: 'mono' | 'reverse-mono' | 'secondary';
+  size?: number;
 }
 
 const CircleIconWrapper = ({ children, color = 'mono', size = 36 }: CircleIconWrapperProps) => {
@@ -18,7 +18,7 @@ const CircleIconWrapper = ({ children, color = 'mono', size = 36 }: CircleIconWr
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default CircleIconWrapper
+export default CircleIconWrapper;

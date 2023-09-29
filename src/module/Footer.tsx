@@ -1,8 +1,8 @@
-import * as React from 'react'
-import '@scss/module/Footer.scss'
-import Linker from '@components/ui/Linker'
-import { OWNER_EMAIL } from '@src/constants'
-import { IconMail, CircleIconWrapper, IconInstagram, IconGithub, IconKakao } from '@components/icon'
+import * as React from 'react';
+import '@scss/module/Footer.scss';
+import Linker from '@components/ui/Linker';
+import { OWNER_EMAIL } from '@src/constants';
+import { IconMail, CircleIconWrapper, IconInstagram, IconGithub, IconKakao } from '@components/icon';
 
 const Footer = () => {
   return (
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

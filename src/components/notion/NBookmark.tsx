@@ -1,10 +1,10 @@
-import * as React from 'react'
-import '@scss/notion.scss'
-import { Bookmark, TextBlock, TextItem } from '@types'
-import Linker from '@components/ui/Linker'
-import { NParagraph } from '@components/notion'
+import * as React from 'react';
+import '@scss/notion.scss';
+import { Bookmark, TextBlock, TextItem } from '@types';
+import Linker from '@components/ui/Linker';
+import { NParagraph } from '@components/notion';
 interface NBookmarkProps {
-  bookmark: Bookmark
+  bookmark: Bookmark;
 }
 
 export default function NBookmark({ bookmark }: NBookmarkProps) {
@@ -17,12 +17,12 @@ export default function NBookmark({ bookmark }: NBookmarkProps) {
               const captionParagraph: TextBlock = {
                 color: 'gray',
                 text: [c],
-              }
+              };
               return (
                 <span key={`bookmark-caption-${i}`}>
                   <NParagraph paragraph={captionParagraph} />
                 </span>
-              )
+              );
             })
           ) : (
             <span>{bookmark.url}</span>
@@ -30,5 +30,5 @@ export default function NBookmark({ bookmark }: NBookmarkProps) {
         </Linker>
       )}
     </>
-  )
+  );
 }

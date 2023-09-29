@@ -1,8 +1,8 @@
-import * as React from 'react'
-import '@scss/components/RecommendTag.scss'
-import HelpText from '@components/ui/HelpText'
-import Linker from '@components/ui/Linker'
-import { RECOMMEND_TAGS } from '@src/constants'
+import * as React from 'react';
+import '@scss/components/RecommendTag.scss';
+import HelpText from '@components/ui/HelpText';
+import Linker from '@components/ui/Linker';
+import { RECOMMEND_TAGS } from '@src/constants';
 
 const RecommendTag = () => {
   return (
@@ -19,7 +19,7 @@ const RecommendTag = () => {
         </Linker>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default RecommendTag
+export default RecommendTag;

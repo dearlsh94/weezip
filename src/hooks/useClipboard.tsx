@@ -1,27 +1,27 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 const useClipboard = () => {
-  const [copied, setCopied] = useState<boolean>(false)
+  const [copied, setCopied] = useState<boolean>(false);
 
   const copyToClipboard = async (textToCopy: string) => {
     try {
       if (navigator.clipboard) {
-        await navigator.clipboard.writeText(window.location.href)
+        await navigator.clipboard.writeText(window.location.href);
       } else {
-        const textField = document.createElement('textarea')
-        textField.innerText = textToCopy
-        document.body.appendChild(textField)
-        textField.select()
-        document.execCommand('copy')
-        textField.remove()
+        const textField = document.createElement('textarea');
+        textField.innerText = textToCopy;
+        document.body.appendChild(textField);
+        textField.select();
+        document.execCommand('copy');
+        textField.remove();
       }
-      setCopied(true)
+      setCopied(true);
     } catch (error) {
-      setCopied(false)
+      setCopied(false);
     }
-  }
+  };
 
-  return { copied, copyToClipboard }
-}
+  return { copied, copyToClipboard };
+};
 
-export default useClipboard
+export default useClipboard;

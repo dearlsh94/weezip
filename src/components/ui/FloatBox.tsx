@@ -1,38 +1,38 @@
-import * as React from 'react'
-import { useEffect, useState } from 'react'
-import '@scss/components/FloatBox.scss'
-import { CircleIconWrapper, IconMoveEnd } from '@components/icon'
-import { throttle } from '@utils/commonUtils'
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import '@scss/components/FloatBox.scss';
+import { CircleIconWrapper, IconMoveEnd } from '@components/icon';
+import { throttle } from '@utils/commonUtils';
 
 interface Props {
-  useTop: boolean
+  useTop: boolean;
 }
 
 const FloatBox = ({ useTop }: Props) => {
-  const [status, setStatus] = useState('')
+  const [status, setStatus] = useState('');
 
   const moveTop = () => {
     scrollTo({
       top: 0,
       behavior: 'smooth',
-    })
-  }
+    });
+  };
 
   useEffect(() => {
     const scrollHandler = () => {
       if (window.scrollY > window.innerHeight) {
-        setStatus('scroll')
+        setStatus('scroll');
       } else {
-        setStatus('')
+        setStatus('');
       }
-    }
-    const throttledScrollHandler = throttle(scrollHandler)
+    };
+    const throttledScrollHandler = throttle(scrollHandler);
 
-    window.addEventListener('scroll', throttledScrollHandler)
+    window.addEventListener('scroll', throttledScrollHandler);
     return () => {
-      window.removeEventListener('scroll', throttledScrollHandler)
-    }
-  }, [])
+      window.removeEventListener('scroll', throttledScrollHandler);
+    };
+  }, []);
 
   return (
     <div className={`float-box`}>
@@ -44,7 +44,7 @@ const FloatBox = ({ useTop }: Props) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default FloatBox
+export default FloatBox;

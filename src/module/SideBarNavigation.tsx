@@ -1,19 +1,19 @@
-import * as React from 'react'
-import { useContext } from 'react'
-import '@scss/module/SideBarNavigation.scss'
-import { NotionContext } from '@store/rootStore'
-import SideBarLayout from '@layout/SideBarLayout'
-import { isDebug, GNB_MENUS } from '@src/constants'
-import Linker from '@components/ui/Linker'
-import { IconHome, IconOutLink, IconList, IconStar } from '@components/icon'
-import { NotionNode } from '@types'
+import * as React from 'react';
+import { useContext } from 'react';
+import '@scss/module/SideBarNavigation.scss';
+import { NotionContext } from '@store/rootStore';
+import SideBarLayout from '@layout/SideBarLayout';
+import { isDebug, GNB_MENUS } from '@src/constants';
+import Linker from '@components/ui/Linker';
+import { IconHome, IconOutLink, IconList, IconStar } from '@components/icon';
+import { NotionNode } from '@types';
 
 interface SideBarNavigationProps {
-  handleClose: () => void
+  handleClose: () => void;
 }
 
 const SideBarNavigation = ({ handleClose }: SideBarNavigationProps) => {
-  const nodes: NotionNode[] = useContext(NotionContext).nodes
+  const nodes: NotionNode[] = useContext(NotionContext).nodes;
 
   return (
     <SideBarLayout handleClose={handleClose}>
@@ -33,7 +33,7 @@ const SideBarNavigation = ({ handleClose }: SideBarNavigationProps) => {
                     </div>
                   </Linker>
                 </li>
-              )
+              );
             })}
         </ul>
       </nav>
@@ -50,12 +50,12 @@ const SideBarNavigation = ({ handleClose }: SideBarNavigationProps) => {
                   </p>
                 </a>
               </div>
-            )
+            );
           })}
         </section>
       )}
     </SideBarLayout>
-  )
-}
+  );
+};
 
-export default SideBarNavigation
+export default SideBarNavigation;

@@ -1,10 +1,10 @@
-import * as React from 'react'
-import { SVGIcon } from '@types'
-import '@scss/components/Icon.scss'
+import * as React from 'react';
+import { SVGIcon } from '@types';
+import '@scss/components/Icon.scss';
 
 interface Props extends SVGIcon {
-  viewBox?: string
-  children: React.ReactNode
+  viewBox?: string;
+  children: React.ReactNode;
 }
 
 const SvgBox = ({ size = 24, color = 'mono', handleClick, children, viewBox = '0 0 24 24' }: Props) => {
@@ -19,7 +19,7 @@ const SvgBox = ({ size = 24, color = 'mono', handleClick, children, viewBox = '0
     >
       {children}
     </svg>
-  )
-}
+  );
+};
 
-export default SvgBox
+export default SvgBox;

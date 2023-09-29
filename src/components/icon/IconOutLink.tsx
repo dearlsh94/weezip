@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { SVGIcon } from '@types'
-import SvgBox from './SvgBox'
-import '@scss/components/Icon.scss'
+import * as React from 'react';
+import { SVGIcon } from '@types';
+import SvgBox from './SvgBox';
+import '@scss/components/Icon.scss';
 
 // https://icon-sets.iconify.design/eva/external-link-outline/
 const IconOutLink = (props: SVGIcon) => {
@@ -16,7 +16,7 @@ const IconOutLink = (props: SVGIcon) => {
         </g>
       </g>
     </SvgBox>
-  )
-}
+  );
+};
 
-export default IconOutLink
+export default IconOutLink;

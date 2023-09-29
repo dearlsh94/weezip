@@ -1,18 +1,18 @@
-import * as React from 'react'
-import '@scss/notion.scss'
-import { Children, TextBlock } from '@types'
-import { NParagraph } from '@components/notion'
-import ContentWrapper from '@module/ContentWrapper'
-import { IconArrow } from '@components/icon'
+import * as React from 'react';
+import '@scss/notion.scss';
+import { Children, TextBlock } from '@types';
+import { NParagraph } from '@components/notion';
+import ContentWrapper from '@module/ContentWrapper';
+import { IconArrow } from '@components/icon';
 
 interface NToggleProps {
-  toggle: TextBlock
-  hasChild: boolean
-  childList: Children[]
+  toggle: TextBlock;
+  hasChild: boolean;
+  childList: Children[];
 }
 
 export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <>
       {toggle && (
@@ -29,5 +29,5 @@ export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
         </div>
       )}
     </>
-  )
+  );
 }

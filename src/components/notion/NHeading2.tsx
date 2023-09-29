@@ -1,10 +1,10 @@
-import * as React from 'react'
-import '@scss/notion.scss'
-import { TextBlock } from '@types'
-import { NParagraph } from '@components/notion'
+import * as React from 'react';
+import '@scss/notion.scss';
+import { TextBlock } from '@types';
+import { NParagraph } from '@components/notion';
 
 interface NHeading2Props {
-  head2?: TextBlock
+  head2?: TextBlock;
 }
 
 export default function NHeading2({ head2 }: NHeading2Props) {
@@ -16,5 +16,5 @@ export default function NHeading2({ head2 }: NHeading2Props) {
         </h2>
       )}
     </>
-  )
+  );
 }

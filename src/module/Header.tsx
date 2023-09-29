@@ -1,39 +1,39 @@
-import * as React from 'react'
-import { useEffect, useState } from 'react'
-import '@scss/module/Header.scss'
-import Linker from '@components/ui/Linker'
-import { StaticImage } from 'gatsby-plugin-image'
-import { throttle } from '@utils/commonUtils'
-import PostSearchLayer from '@module/PostSearchLayer'
-import { IconHamburgerMenu, IconDoubleArrow, IconSearch } from '@components/icon'
-import ThemeController from '@components/ThemeController'
-import SideBarNavigation from './SideBarNavigation'
-import useOverlay from '@src/hooks/useOverlay'
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import '@scss/module/Header.scss';
+import Linker from '@components/ui/Linker';
+import { StaticImage } from 'gatsby-plugin-image';
+import { throttle } from '@utils/commonUtils';
+import PostSearchLayer from '@module/PostSearchLayer';
+import { IconHamburgerMenu, IconDoubleArrow, IconSearch } from '@components/icon';
+import ThemeController from '@components/ThemeController';
+import SideBarNavigation from './SideBarNavigation';
+import useOverlay from '@src/hooks/useOverlay';
 
 const Header = () => {
-  const overlaySNB = useOverlay()
-  const overlaySearch = useOverlay()
+  const overlaySNB = useOverlay();
+  const overlaySearch = useOverlay();
 
-  const [status, setStatus] = useState('')
-  const [isMenuHover, setIsMenuHover] = useState(false)
+  const [status, setStatus] = useState('');
+  const [isMenuHover, setIsMenuHover] = useState(false);
 
   useEffect(() => {
     const scrollHandler = () => {
       if (window.scrollY > window.innerHeight * 1.2) {
-        setStatus('sticky')
+        setStatus('sticky');
       } else if (window.scrollY > 0) {
-        setStatus('scrolled')
+        setStatus('scrolled');
       } else {
-        setStatus('')
+        setStatus('');
       }
-    }
-    const throttledScrollHandler = throttle(scrollHandler, 3)
+    };
+    const throttledScrollHandler = throttle(scrollHandler, 3);
 
-    window.addEventListener('scroll', throttledScrollHandler)
+    window.addEventListener('scroll', throttledScrollHandler);
     return () => {
-      window.removeEventListener('scroll', throttledScrollHandler)
-    }
-  }, [])
+      window.removeEventListener('scroll', throttledScrollHandler);
+    };
+  }, []);
 
   return (
     <>
@@ -76,7 +76,7 @@ const Header = () => {
       {overlaySearch.isOpen && <PostSearchLayer handleClose={overlaySearch.close} />}
       {overlaySNB.isOpen && <SideBarNavigation handleClose={overlaySNB.close} />}
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

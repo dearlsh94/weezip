@@ -1,23 +1,23 @@
-import * as React from 'react'
-import { useSiteMetadata } from '@services/use-site-metadata'
+import * as React from 'react';
+import { useSiteMetadata } from '@services/use-site-metadata';
 
 interface SEOProps {
-  title?: string
-  description?: string
-  pathname?: string
-  children?: React.ReactNode
-  keywords?: string[]
+  title?: string;
+  description?: string;
+  pathname?: string;
+  children?: React.ReactNode;
+  keywords?: string[];
 }
 
 const SEO = ({ title, description, pathname, children, keywords = [] }: SEOProps) => {
-  const { title: defaultTitle, description: defaultDescription, image, siteUrl } = useSiteMetadata()
+  const { title: defaultTitle, description: defaultDescription, image, siteUrl } = useSiteMetadata();
 
   const seo = {
     title: `${title ? `${title} | ` : ``}${defaultTitle}`,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
-  }
+  };
 
   return (
     <>
@@ -47,7 +47,7 @@ const SEO = ({ title, description, pathname, children, keywords = [] }: SEOProps
       /> */}
       {children}
     </>
-  )
-}
+  );
+};
 
-export default SEO
+export default SEO;

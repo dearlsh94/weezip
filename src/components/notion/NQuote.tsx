@@ -1,10 +1,10 @@
-import * as React from 'react'
-import '@scss/notion.scss'
-import { TextBlock } from '@types'
-import { NParagraph } from '@components/notion'
+import * as React from 'react';
+import '@scss/notion.scss';
+import { TextBlock } from '@types';
+import { NParagraph } from '@components/notion';
 
 interface NQuoteProps {
-  quote?: TextBlock
+  quote?: TextBlock;
 }
 
 export default function NQuote({ quote }: NQuoteProps) {
@@ -16,5 +16,5 @@ export default function NQuote({ quote }: NQuoteProps) {
         </blockquote>
       )}
     </>
-  )
+  );
 }

@@ -1,28 +1,28 @@
-import * as React from 'react'
-import { useEffect, useState } from 'react'
-import { HeadFC, PageProps, navigate } from 'gatsby'
-import '@scss/global.scss'
-import '@scss/page.scss'
-import { getNotionNodeByUrl } from '@services/use-notion'
-import { notionNodeToJson } from '@utils/notionUtils'
-import MainLayout from '@layout/MainLayout'
-import SEO from '@components/header/SEO'
-import ContentWrapper from '@module/ContentWrapper'
-import TagBadges from '@components/TagBadges'
-import { graphql } from 'gatsby'
-import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton'
-import { Select } from '@types'
-import FloatBox from '@components/ui/FloatBox'
-import PostIndex from '@module/PostIndex'
-import { IconCopyLink, CircleIconWrapper } from '@components/icon'
-import Linker from '@components/ui/Linker'
-import { GlobalPortal } from '@components/GlobalPortal'
-import useClipboard from '@src/hooks/useClipboard'
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { HeadFC, PageProps, navigate } from 'gatsby';
+import '@scss/global.scss';
+import '@scss/page.scss';
+import { getNotionNodeByUrl } from '@services/use-notion';
+import { notionNodeToJson } from '@utils/notionUtils';
+import MainLayout from '@layout/MainLayout';
+import SEO from '@components/header/SEO';
+import ContentWrapper from '@module/ContentWrapper';
+import TagBadges from '@components/TagBadges';
+import { graphql } from 'gatsby';
+import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton';
+import { Select } from '@types';
+import FloatBox from '@components/ui/FloatBox';
+import PostIndex from '@module/PostIndex';
+import { IconCopyLink, CircleIconWrapper } from '@components/icon';
+import Linker from '@components/ui/Linker';
+import { GlobalPortal } from '@components/GlobalPortal';
+import useClipboard from '@src/hooks/useClipboard';
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
-  const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug))
-  const title = content?.properties?.remark.rich_text || ''
-  const tagNames = content?.properties.tag?.multi_select?.map(t => t.name)
+  const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));
+  const title = content?.properties?.remark.rich_text || '';
+  const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
 
   return (
     <SEO
@@ -31,39 +31,39 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
       pathname={pageContext.slug}
       keywords={tagNames}
     />
-  )
-}
+  );
+};
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
-  const { slug } = pageContext
-  const { copyToClipboard } = useClipboard()
-  const content = notionNodeToJson(getNotionNodeByUrl(data, slug))
-  const title = content?.properties?.remark.rich_text || ''
-  const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([])
-  const [series, setSeries] = useState<Select>()
-  const tagNames = content?.properties.tag?.multi_select?.map(t => t.name)
+  const { slug } = pageContext;
+  const { copyToClipboard } = useClipboard();
+  const content = notionNodeToJson(getNotionNodeByUrl(data, slug));
+  const title = content?.properties?.remark.rich_text || '';
+  const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([]);
+  const [series, setSeries] = useState<Select>();
+  const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
 
   useEffect(() => {
     if (!slug) {
-      navigate('/list')
+      navigate('/list');
     }
 
-    const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')
+    const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3');
     if (elHeaders && elHeaders?.length > 0) {
-      const headers: HTMLHeadingElement[] = []
+      const headers: HTMLHeadingElement[] = [];
       elHeaders.forEach(el => {
-        if (!el.className.includes('title')) headers.push(el)
-      })
-      setIndexList(headers)
+        if (!el.className.includes('title')) headers.push(el);
+      });
+      setIndexList(headers);
     }
 
-    setSeries(content?.properties?.series?.select)
-  }, [])
+    setSeries(content?.properties?.series?.select);
+  }, []);
 
   const handleCopy = async () => {
-    await copyToClipboard(location.href)
-    alert('현재 게시글 주소가 복사되었습니다.')
-  }
+    await copyToClipboard(location.href);
+    alert('현재 게시글 주소가 복사되었습니다.');
+  };
 
   return (
     <GlobalPortal.Provider>
@@ -140,8 +140,8 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
         <FloatBox useTop={true} />
       </MainLayout>
     </GlobalPortal.Provider>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   query {
@@ -192,6 +192,6 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default PostPage
+export default PostPage;

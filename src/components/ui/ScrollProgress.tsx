@@ -1,26 +1,26 @@
-import * as React from 'react'
-import { useEffect, useState } from 'react'
-import '@scss/components/ScrollProgress.scss'
-import useScroll from '@src/hooks/useScroll'
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import '@scss/components/ScrollProgress.scss';
+import useScroll from '@src/hooks/useScroll';
 
 const ScrollProgress = () => {
-  const { scrollY } = useScroll(10)
+  const { scrollY } = useScroll(10);
 
-  const [status, setStatus] = useState('')
-  const [progress, setProgress] = useState(0)
+  const [status, setStatus] = useState('');
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     if (scrollY > 100) {
-      setStatus('visible')
+      setStatus('visible');
     } else {
-      setStatus('')
+      setStatus('');
     }
 
-    let windowScroll = document?.body.scrollTop || document?.documentElement.scrollTop
-    let height = document?.documentElement.scrollHeight - document?.documentElement.clientHeight
+    let windowScroll = document?.body.scrollTop || document?.documentElement.scrollTop;
+    let height = document?.documentElement.scrollHeight - document?.documentElement.clientHeight;
 
-    setProgress((windowScroll / height) * 100)
-  }, [scrollY])
+    setProgress((windowScroll / height) * 100);
+  }, [scrollY]);
 
   return (
     <div className={`scroll-progress-container ${status}`}>
@@ -31,7 +31,7 @@ const ScrollProgress = () => {
         }}
       />
     </div>
-  )
-}
+  );
+};
 
-export default ScrollProgress
+export default ScrollProgress;
