@@ -1,8 +1,8 @@
-import { Select } from '@types'
-import { NotionNode } from './nodeTypes'
+import { Select } from '@types';
+import { NotionNode } from './nodeTypes';
 
 export interface INotionContext {
-  nodes: NotionNode[]
-  postTags?: string[]
-  postSeries?: Select[]
+  nodes: NotionNode[];
+  postTags?: string[];
+  postSeries?: Select[];
 }

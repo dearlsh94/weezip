@@ -1,14 +1,14 @@
-import * as React from 'react'
-import { AnchorHTMLAttributes } from 'react'
-import '@scss/components/ui/Linker.scss'
-import { Link } from 'gatsby'
+import * as React from 'react';
+import { AnchorHTMLAttributes } from 'react';
+import '@scss/components/ui/Linker.scss';
+import { Link } from 'gatsby';
 
 interface LinkerProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  url: string
-  children?: React.ReactNode
-  target?: '_blank' | '_parent' | '_self' | '_top'
-  className?: string
-  isUnderline?: boolean
+  url: string;
+  children?: React.ReactNode;
+  target?: '_blank' | '_parent' | '_self' | '_top';
+  className?: string;
+  isUnderline?: boolean;
 }
 
 const Linker = ({ url, target, children, className, isUnderline = false, ...rest }: LinkerProps) => {
@@ -30,7 +30,7 @@ const Linker = ({ url, target, children, className, isUnderline = false, ...rest
         </Link>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Linker
+export default Linker;

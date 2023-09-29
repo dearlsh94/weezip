@@ -1,9 +1,9 @@
-import * as React from 'react'
-import '@scss/components/ui/Divider.scss'
+import * as React from 'react';
+import '@scss/components/ui/Divider.scss';
 
 interface Props {
-  color?: string
-  height?: number
+  color?: string;
+  height?: number;
 }
 
 const Divider = ({ color, height }: Props) => {
@@ -14,7 +14,7 @@ const Divider = ({ color, height }: Props) => {
         height: `${height || 1}px`,
       }}
     />
-  )
-}
+  );
+};
 
-export default Divider
+export default Divider;

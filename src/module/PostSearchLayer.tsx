@@ -1,43 +1,43 @@
-import * as React from 'react'
-import { useRef, useState } from 'react'
-import '@scss/module/PostSearchLayer.scss'
-import { throttle } from '@utils/commonUtils'
-import { IconClose, IconSearch } from '@components/icon'
-import { navigate } from 'gatsby'
-import RecommendTag from '../components/RecommendTag'
-import Dim from '@layout/Dim'
-import { GlobalPortal } from '@components/GlobalPortal'
+import * as React from 'react';
+import { useRef, useState } from 'react';
+import '@scss/module/PostSearchLayer.scss';
+import { throttle } from '@utils/commonUtils';
+import { IconClose, IconSearch } from '@components/icon';
+import { navigate } from 'gatsby';
+import RecommendTag from '../components/RecommendTag';
+import Dim from '@layout/Dim';
+import { GlobalPortal } from '@components/GlobalPortal';
 
 interface PostSearchLayerProps {
-  handleClose: () => void
+  handleClose: () => void;
 }
 
 const PostSearchLayer = ({ handleClose }: PostSearchLayerProps) => {
-  const inputRef = useRef<HTMLInputElement | null>(null)
-  const [searchText, setSearchText] = useState('')
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const [searchText, setSearchText] = useState('');
 
   React.useEffect(() => {
-    inputRef?.current?.focus()
-  }, [])
+    inputRef?.current?.focus();
+  }, []);
 
   const clear = () => {
-    setSearchText('')
-  }
+    setSearchText('');
+  };
 
   const search = throttle(() => {
-    navigate(`/list?keyword=${encodeURIComponent(searchText)}`)
-    handleClose()
-  }, 300)
+    navigate(`/list?keyword=${encodeURIComponent(searchText)}`);
+    handleClose();
+  }, 300);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      e.preventDefault()
-      search()
+      e.preventDefault();
+      search();
     } else if (e.key === 'Escape') {
-      e.preventDefault()
-      clear()
+      e.preventDefault();
+      clear();
     }
-  }
+  };
 
   return (
     <GlobalPortal.Consumer>
@@ -72,7 +72,7 @@ const PostSearchLayer = ({ handleClose }: PostSearchLayerProps) => {
       </div>
       <Dim handleClose={handleClose} />
     </GlobalPortal.Consumer>
-  )
-}
+  );
+};
 
-export default PostSearchLayer
+export default PostSearchLayer;

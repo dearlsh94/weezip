@@ -1,23 +1,23 @@
-const STORAGE_CONFIG_KEY = 'WEEZIP_CONFIG'
+const STORAGE_CONFIG_KEY = 'WEEZIP_CONFIG';
 
 export const useLocalStorage = () => {
   const setConfig = (key = '', value = '') => {
-    const storage = localStorage.getItem(STORAGE_CONFIG_KEY)
-    const config = JSON.parse(storage || '{}')
+    const storage = localStorage.getItem(STORAGE_CONFIG_KEY);
+    const config = JSON.parse(storage || '{}');
     if (key) {
-      config[key] = value
+      config[key] = value;
     }
-    localStorage.setItem(STORAGE_CONFIG_KEY, JSON.stringify(config))
-  }
+    localStorage.setItem(STORAGE_CONFIG_KEY, JSON.stringify(config));
+  };
 
   const getConfig = (key = ''): string => {
-    const storage = localStorage.getItem(STORAGE_CONFIG_KEY)
-    const config = JSON.parse(storage || '{}')
-    return config[key] || ''
-  }
+    const storage = localStorage.getItem(STORAGE_CONFIG_KEY);
+    const config = JSON.parse(storage || '{}');
+    return config[key] || '';
+  };
 
   return {
     setConfig,
     getConfig,
-  }
-}
+  };
+};

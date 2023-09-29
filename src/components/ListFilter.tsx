@@ -1,15 +1,15 @@
-import * as React from 'react'
-import { useContext } from 'react'
-import '@scss/components/ListFilter.scss'
-import { CATEGORY_FILTERS } from '@src/constants'
-import Divider from '@components/ui/Divider'
-import { NotionContext } from '@store/rootStore'
-import TagBadges from './TagBadges'
-import FilterLinker from './FilterLinker'
-import SeriesBadges from './SeriesBadges'
+import * as React from 'react';
+import { useContext } from 'react';
+import '@scss/components/ListFilter.scss';
+import { CATEGORY_FILTERS } from '@src/constants';
+import Divider from '@components/ui/Divider';
+import { NotionContext } from '@store/rootStore';
+import TagBadges from './TagBadges';
+import FilterLinker from './FilterLinker';
+import SeriesBadges from './SeriesBadges';
 
 const ListFilter = () => {
-  const { postTags, postSeries } = useContext(NotionContext)
+  const { postTags, postSeries } = useContext(NotionContext);
 
   return (
     <div className="list-filter-container">
@@ -21,7 +21,7 @@ const ListFilter = () => {
               <React.Fragment key={`category-filter-item-${filter.key}`}>
                 <FilterLinker type={filter.type} name={filter.name} color={filter.color} />
               </React.Fragment>
-            )
+            );
           })}
         </div>
       </div>
@@ -44,7 +44,7 @@ const ListFilter = () => {
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ListFilter
+export default ListFilter;

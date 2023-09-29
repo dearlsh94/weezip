@@ -1,17 +1,17 @@
-import * as React from 'react'
-import '@scss/module/PostIndex.scss'
-import PostIndexList from '@components/PostIndexList'
-import { IconArrow } from '@components/icon'
-import useShow from '@src/hooks/useShow'
-import SideBarLayout from '@layout/SideBarLayout'
-import useResize from '@src/hooks/useResize'
+import * as React from 'react';
+import '@scss/module/PostIndex.scss';
+import PostIndexList from '@components/PostIndexList';
+import { IconArrow } from '@components/icon';
+import useShow from '@src/hooks/useShow';
+import SideBarLayout from '@layout/SideBarLayout';
+import useResize from '@src/hooks/useResize';
 interface PostIndexProps {
-  list: HTMLHeadingElement[]
+  list: HTMLHeadingElement[];
 }
 
 const PostIndex = ({ list }: PostIndexProps) => {
-  const showPostIndex = useShow()
-  const { resizedInnerWidth } = useResize()
+  const showPostIndex = useShow();
+  const { resizedInnerWidth } = useResize();
 
   return (
     <section className="post-index-container">
@@ -32,7 +32,7 @@ const PostIndex = ({ list }: PostIndexProps) => {
         </SideBarLayout>
       )}
     </section>
-  )
-}
+  );
+};
 
-export default PostIndex
+export default PostIndex;

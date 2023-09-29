@@ -1,5 +1,5 @@
-import * as React from 'react'
-import '@scss/components/ui/MyButton.scss'
+import * as React from 'react';
+import '@scss/components/ui/MyButton.scss';
 
 export enum ButtonSize {
   PRIMARY = 'SIZE-PRIMARY',
@@ -20,19 +20,19 @@ export enum ButtonType {
 }
 
 interface Props {
-  size: ButtonSize
-  color: ButtonColor
-  type: ButtonType
-  handleClick?: Function
-  width?: number | '100%'
-  className?: string
-  children?: React.ReactNode
+  size: ButtonSize;
+  color: ButtonColor;
+  type: ButtonType;
+  handleClick?: Function;
+  width?: number | '100%';
+  className?: string;
+  children?: React.ReactNode;
 }
 
 const MyButton = ({ size, color, type, handleClick, width, className, children }: Props) => {
   const click = () => {
-    handleClick && handleClick()
-  }
+    handleClick && handleClick();
+  };
   return (
     <button
       className={`my-button ${size} ${color} ${type} ${className}`}
@@ -43,7 +43,7 @@ const MyButton = ({ size, color, type, handleClick, width, className, children }
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default MyButton
+export default MyButton;

@@ -1,22 +1,22 @@
-import * as React from 'react'
-import Linker from '@components/ui/Linker'
-import PostListItem from '@components/PostListItem'
-import '@scss/module/PostList.scss'
-import { NotionNode } from '@types'
-import { navigate } from 'gatsby'
-import { IconClearAll } from '@components/icon'
-import Pagination from '@components/Pagination'
+import * as React from 'react';
+import Linker from '@components/ui/Linker';
+import PostListItem from '@components/PostListItem';
+import '@scss/module/PostList.scss';
+import { NotionNode } from '@types';
+import { navigate } from 'gatsby';
+import { IconClearAll } from '@components/icon';
+import Pagination from '@components/Pagination';
 
 interface Props {
-  list: NotionNode[]
-  currentPage: number
-  lastPage: number
+  list: NotionNode[];
+  currentPage: number;
+  lastPage: number;
 }
 
 const PostList = ({ list, currentPage, lastPage }: Props) => {
   const handleReset = () => {
-    navigate('/list')
-  }
+    navigate('/list');
+  };
 
   return (
     <>
@@ -39,13 +39,13 @@ const PostList = ({ list, currentPage, lastPage }: Props) => {
                   <PostListItem post={post} />
                 </Linker>
               </li>
-            )
+            );
           })}
         </ul>
       )}
       {list?.length > 0 && <Pagination lastPage={lastPage} currentPage={currentPage} />}
     </>
-  )
-}
+  );
+};
 
-export default PostList
+export default PostList;

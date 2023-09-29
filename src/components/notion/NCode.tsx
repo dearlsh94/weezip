@@ -1,18 +1,18 @@
-import * as React from 'react'
-import { Code } from '@types'
-import '@scss/notion.scss'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { atelierCaveDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-import { NParagraph } from '@components/notion'
+import * as React from 'react';
+import { Code } from '@types';
+import '@scss/notion.scss';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atelierCaveDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { NParagraph } from '@components/notion';
 // import { IconCopyLink } from '@components/icon'
 // import useClipboard from '@src/hooks/useClipboard'
 
 interface NCodeProps {
-  code: Code
+  code: Code;
 }
 
 export default function NCode({ code }: NCodeProps) {
-  const codeString = code.text?.reduce((codeString, text) => (codeString += text.plain_text), '')
+  const codeString = code.text?.reduce((codeString, text) => (codeString += text.plain_text), '');
 
   // const { copyToClipboard } = useClipboard()
   // const handleCodeCopy = () => {
@@ -34,5 +34,5 @@ export default function NCode({ code }: NCodeProps) {
         </div>
       )}
     </div>
-  )
+  );
 }

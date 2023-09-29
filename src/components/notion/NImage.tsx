@@ -1,20 +1,20 @@
-import * as React from 'react'
-import '@scss/notion.scss'
-import { Children } from '@types'
-import NParagraph from './NParagraph'
+import * as React from 'react';
+import '@scss/notion.scss';
+import { Children } from '@types';
+import NParagraph from './NParagraph';
 
 interface NImageProps {
-  imageBlock: Children
+  imageBlock: Children;
 }
 
 export default function MyImage({ imageBlock }: NImageProps) {
-  const { id, image } = imageBlock
+  const { id, image } = imageBlock;
   const url = image
     ? `https://squary.notion.site/image/${encodeURIComponent(image.file.url)}?table=block&id=${id}&cache=v2`
-    : ``
+    : ``;
   const captionText = image?.caption.reduce((acc, item) => {
-    return acc + ` ${item.plain_text}`
-  }, '')
+    return acc + ` ${item.plain_text}`;
+  }, '');
 
   return (
     <>
@@ -34,5 +34,5 @@ export default function MyImage({ imageBlock }: NImageProps) {
         </div>
       )}
     </>
-  )
+  );
 }

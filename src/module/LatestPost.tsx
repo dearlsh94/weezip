@@ -1,30 +1,30 @@
-import * as React from 'react'
-import '@scss/module/LatestPost.scss'
-import { useGetNotionQuery } from '@services/use-notion'
-import { NotionNode } from '@types'
-import { notionNodeToJson } from '@utils/notionUtils'
-import { parseNotionColumn } from '@utils/parseUtils'
-import Linker from '@components/ui/Linker'
-import { IconArrow } from '@components/icon'
+import * as React from 'react';
+import '@scss/module/LatestPost.scss';
+import { useGetNotionQuery } from '@services/use-notion';
+import { NotionNode } from '@types';
+import { notionNodeToJson } from '@utils/notionUtils';
+import { parseNotionColumn } from '@utils/parseUtils';
+import Linker from '@components/ui/Linker';
+import { IconArrow } from '@components/icon';
 
 const LatestPost = () => {
-  const nodes = useGetNotionQuery()
+  const nodes = useGetNotionQuery();
 
   const parseList: NotionNode[] = nodes
     .map(node => {
-      const content = notionNodeToJson(node)
-      node.notionColumn = parseNotionColumn(content)
-      return node
+      const content = notionNodeToJson(node);
+      node.notionColumn = parseNotionColumn(content);
+      return node;
     })
-    .filter(n => n.title.startsWith('/post'))
+    .filter(n => n.title.startsWith('/post'));
 
   parseList.sort((a, b) => {
     if (a.notionColumn?.createdTime && b.notionColumn?.createdTime) {
-      return a.notionColumn?.createdTime > b.notionColumn?.createdTime ? -1 : 1
+      return a.notionColumn?.createdTime > b.notionColumn?.createdTime ? -1 : 1;
     } else {
-      return 0
+      return 0;
     }
-  })
+  });
 
   return (
     <section id="latest-post">
@@ -45,11 +45,11 @@ const LatestPost = () => {
                 {post.notionColumn?.remark}
               </Linker>
             </li>
-          )
+          );
         })}
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default LatestPost
+export default LatestPost;

@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 export default function HTML(props) {
   const scriptTheme = `
     var storage = localStorage.getItem('WEEZIP_CONFIG');
@@ -18,7 +18,7 @@ export default function HTML(props) {
         document.documentElement.setAttribute('weezip-theme', 'light');
       }
     }
-  `
+  `;
   return (
     <html {...props.htmlAttributes} lang="ko-KR">
       <script dangerouslySetInnerHTML={{ __html: scriptTheme }} />
@@ -51,7 +51,7 @@ export default function HTML(props) {
         {props.postBodyComponents}
       </body>
     </html>
-  )
+  );
 }
 
 HTML.propTypes = {
@@ -61,4 +61,4 @@ HTML.propTypes = {
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
-}
+};

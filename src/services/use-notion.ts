@@ -1,5 +1,5 @@
-import { useStaticQuery, graphql } from 'gatsby'
-import { NotionNode } from '@types'
+import { useStaticQuery, graphql } from 'gatsby';
+import { NotionNode } from '@types';
 
 export const getNotionQuery = graphql`
   query {
@@ -50,24 +50,24 @@ export const getNotionQuery = graphql`
       }
     }
   }
-`
+`;
 
 export const useGetNotionQuery = () => {
-  const res = useStaticQuery(getNotionQuery)
-  return getNotionNodeAll(res)
-}
+  const res = useStaticQuery(getNotionQuery);
+  return getNotionNodeAll(res);
+};
 
 export const getNotionNodeAll = (res: any) => {
-  const rows = res?.allNotion?.edges
-  let nodes: NotionNode[] = []
+  const rows = res?.allNotion?.edges;
+  let nodes: NotionNode[] = [];
   rows.forEach(({ node }: { node: NotionNode }) => {
-    nodes.push(node)
-  })
-  return nodes
-}
+    nodes.push(node);
+  });
+  return nodes;
+};
 
 export const getNotionNodeByUrl = (res: any, url: string) => {
   return res?.allNotion?.edges?.find(({ node }: { node: NotionNode }) => {
-    return node.title === url
-  })?.node
-}
+    return node.title === url;
+  })?.node;
+};

@@ -1,10 +1,10 @@
-import * as React from 'react'
-import '@scss/notion.scss'
-import { Todo } from '@types'
-import { NParagraph } from '@components/notion'
+import * as React from 'react';
+import '@scss/notion.scss';
+import { Todo } from '@types';
+import { NParagraph } from '@components/notion';
 
 interface NTodoProps {
-  todo: Todo
+  todo: Todo;
 }
 
 export default function NTodo({ todo }: NTodoProps) {
@@ -19,5 +19,5 @@ export default function NTodo({ todo }: NTodoProps) {
         </div>
       )}
     </>
-  )
+  );
 }

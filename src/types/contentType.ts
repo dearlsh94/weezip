@@ -1,4 +1,4 @@
-import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, Select, Code, Image } from '@types'
+import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, Select, Code, Image } from '@types';
 
 // SECTION enum zone ====
 export enum BlockType {
@@ -20,51 +20,51 @@ export enum BlockType {
 
 // SECTION interface zone ====
 export interface Children {
-  object: 'block'
-  id: string
-  created_time: string
-  last_edited_time: string
-  created_by: WorkBy
-  last_edited_by: WorkBy
-  cover: any
-  icon: any
-  parent: Parent
-  archived: boolean
-  properties: Properties
-  public_url: string
-  url: string
-  children: Children[]
-  has_children: boolean
-  type: BlockType
-  paragraph?: TextBlock
-  bulleted_list_item?: TextBlock
-  numbered_list_item?: TextBlock
-  heading_1?: Heading
-  heading_2?: Heading
-  heading_3?: Heading
-  quote?: TextBlock
-  to_do?: Todo
-  callout?: Callout
-  toggle?: TextBlock
-  bookmark?: Bookmark
-  code?: Code
-  image?: Image
-  divider?: {}
+  object: 'block';
+  id: string;
+  created_time: string;
+  last_edited_time: string;
+  created_by: WorkBy;
+  last_edited_by: WorkBy;
+  cover: any;
+  icon: any;
+  parent: Parent;
+  archived: boolean;
+  properties: Properties;
+  public_url: string;
+  url: string;
+  children: Children[];
+  has_children: boolean;
+  type: BlockType;
+  paragraph?: TextBlock;
+  bulleted_list_item?: TextBlock;
+  numbered_list_item?: TextBlock;
+  heading_1?: Heading;
+  heading_2?: Heading;
+  heading_3?: Heading;
+  quote?: TextBlock;
+  to_do?: Todo;
+  callout?: Callout;
+  toggle?: TextBlock;
+  bookmark?: Bookmark;
+  code?: Code;
+  image?: Image;
+  divider?: {};
 }
 
 export interface Parent {
-  type: string
-  database_id: string
+  type: string;
+  database_id: string;
 }
 
 export interface NotionColumn {
-  idx: number
-  remark: string
-  cover: string
-  lastEditedTime: string
-  createdTime: string
-  notionUrl: string
-  category?: Select
-  tag?: Select[]
-  series?: Select
+  idx: number;
+  remark: string;
+  cover: string;
+  lastEditedTime: string;
+  createdTime: string;
+  notionUrl: string;
+  category?: Select;
+  tag?: Select[];
+  series?: Select;
 }

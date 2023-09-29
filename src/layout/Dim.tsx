@@ -1,12 +1,12 @@
-import * as React from 'react'
-import '@scss/layout/Dim.scss'
+import * as React from 'react';
+import '@scss/layout/Dim.scss';
 
 interface DimProps {
-  handleClose: () => void
+  handleClose: () => void;
 }
 
 const Dim = ({ handleClose }: DimProps) => {
-  return <div className="dim" onClick={handleClose} />
-}
+  return <div className="dim" onClick={handleClose} />;
+};
 
-export default Dim
+export default Dim;

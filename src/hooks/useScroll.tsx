@@ -1,24 +1,24 @@
-import { throttle } from '@utils/commonUtils'
-import { useEffect, useState } from 'react'
+import { throttle } from '@utils/commonUtils';
+import { useEffect, useState } from 'react';
 
 const useScroll = (delay = 30) => {
-  const [scrollY, setScrollY] = useState(0)
+  const [scrollY, setScrollY] = useState(0);
 
   const handleScroll = throttle(() => {
-    setScrollY(window.scrollY)
-  }, delay)
+    setScrollY(window.scrollY);
+  }, delay);
 
   useEffect(() => {
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return {
     scrollY,
-  }
-}
+  };
+};
 
-export default useScroll
+export default useScroll;
