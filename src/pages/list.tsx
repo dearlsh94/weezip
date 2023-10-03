@@ -15,9 +15,9 @@ import SEO from '@components/header/SEO';
 import ListFilter from '@components/ListFilter';
 import Divider from '@components/ui/Divider';
 import { IconClearAll } from '@components/icon';
-import CircleProgress from '@components/ui/CircleProgress';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { compareString } from '@utils/commonUtils';
+import LoadSection from '@module/LoadSection';
 
 export const Head: HeadFC = () => {
   return (
@@ -137,11 +137,9 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
               </div>
             </div>
             <Divider color="primary" height={2} />
-            {isLoading ? (
-              <CircleProgress height={360} />
-            ) : (
+            <LoadSection isLoading={isLoading} isError={false}>
               <PostList list={list} currentPage={currentPage} lastPage={lastPage} />
-            )}
+            </LoadSection>
           </MainLayout>
         </NotionContext.Provider>
       </PageContext.Provider>

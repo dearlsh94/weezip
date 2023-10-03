@@ -62,11 +62,6 @@ article.post {
         @include animationRotate(1s);
       }
     }
-    &.loading {
-      svg {
-        @include animationRotate(1s);
-      }
-    }
 
     .count-box {
       font-size: 10pt;
