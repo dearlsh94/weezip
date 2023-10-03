@@ -42,8 +42,8 @@
 }
 
 @mixin animationFadeIn($duration) {
-  animation: fadein $duration;
-  @keyframes fadein {
+  animation: fadeIn $duration;
+  @keyframes fadeIn {
     from {
       opacity: 0;
     }
@@ -54,9 +54,9 @@
 }
 
 @mixin animationFadeOut($duration) {
-  animation: fadeout $duration;
+  animation: fadeOut $duration;
   animation-fill-mode: forwards;
-  @keyframes fadeout {
+  @keyframes fadeOut {
     from {
       opacity: 1;
     }
