@@ -58,7 +58,7 @@ article.post {
     svg {
       cursor: pointer;
       margin-right: 8px;
-      &:hover {
+      @include hoverFine {
         @include animationRotate(1s);
       }
     }
@@ -124,7 +124,7 @@ article.post {
         margin-right: 4px;
         font-weight: 500;
       }
-      &:hover {
+      @include hoverFine {
         span {
           color: var(--color-white-1);
         }

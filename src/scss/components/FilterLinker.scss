@@ -11,7 +11,7 @@
   background-color: var(--color-background);
   color: var(--color-font);
 
-  &:hover {
+  @include hoverFine {
     transform: scale(1.1);
   }
 }

@@ -1,10 +1,12 @@
+@import '@scss/abstracts/mixin';
+
 a.my-linker {
   text-decoration: none;
   transition: color 0.2s;
   &.underline {
     text-decoration: underline;
   }
-  &:hover {
+  @include hoverFine {
     color: var(--color-primary);
   }
 }

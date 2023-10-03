@@ -18,11 +18,12 @@
     font-size: 13pt;
     color: var(--color-primary);
 
-    &:hover {
+    @include hoverFine {
       svg {
         @include animationRotate(1s);
       }
     }
+
     svg {
       margin-right: 4px;
     }
@@ -45,7 +46,7 @@
     cursor: pointer;
     transition: color 0.2s;
 
-    &:hover {
+    @include hoverFine {
       border-bottom: 2px solid var(--color-third);
       margin-bottom: 0px;
       p {

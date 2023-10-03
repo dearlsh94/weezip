@@ -16,7 +16,7 @@ ul.block-header-index-list {
     }
 
     transition: color 0.2s;
-    &:hover {
+    @include hoverFine {
       text-decoration: underline;
       color: var(--color-primary);
     }
