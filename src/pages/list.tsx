@@ -41,7 +41,8 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       node.notionColumn = parseNotionColumn(content);
       return node;
     })
-    .filter(n => n.title.startsWith('/post'));
+    .filter(n => n.title.startsWith('/post'))
+    .sort((a, b) => (a.notionColumn?.idx && b.notionColumn?.idx ? b.notionColumn?.idx - a.notionColumn?.idx : 0));
   const PER_PAGE = 10;
 
   const [list, setList] = useState<NotionNode[]>([]);
@@ -89,14 +90,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
       _list = parseList;
       _lastPage = Math.ceil(_list.length / PER_PAGE);
     }
-
-    _list.sort((a, b) => {
-      if (a.notionColumn?.idx && b.notionColumn?.idx) {
-        return a.notionColumn?.idx > b.notionColumn?.idx ? -1 : 1;
-      } else {
-        return 0;
-      }
-    });
 
     loading();
     setCount(_list.length);
