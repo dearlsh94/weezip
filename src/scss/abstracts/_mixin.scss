@@ -27,6 +27,14 @@
   }
 }
 
+@mixin hoverFine {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
 @mixin flexCenter {
   display: flex;
   justify-content: center;
