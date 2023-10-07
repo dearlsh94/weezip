@@ -22,7 +22,11 @@ const SEO = ({ title, description, pathname, children, keywords = [] }: SEOProps
   return (
     <>
       <title>{seo.title}</title>
+      <meta name="robots" content="index,follow" />
+      <meta name="content-language" content="kr" />
       <meta name="description" content={seo.description} />
+      <meta name="keywords" content={['treefeely', 'weezip', ...keywords]?.join(', ')} />
+
       <meta property="og:type" content={'website'} />
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
@@ -32,11 +36,11 @@ const SEO = ({ title, description, pathname, children, keywords = [] }: SEOProps
       {/* <meta property="og:image" content={''} /> */}
       {/* <meta property="og:image:width" content={''} /> */}
       {/* <meta property="og:image:height" content={''} /> */}
+
       <meta property="twitter:title" content={seo.title} />
       <meta property="twitter:description" content={seo.description} />
       <meta property="twitter:url" content={seo.url} />
 
-      <meta name="keywords" content={['treefeely', 'weezip', ...keywords]?.join(', ')} />
       {/* <meta name="image" content={seo.image} /> */}
       {/* <meta name="twitter:card" content="summary_large_image" /> */}
       {/* <meta name="twitter:image" content={seo.image} /> */}
