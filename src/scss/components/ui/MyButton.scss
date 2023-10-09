@@ -1,4 +1,5 @@
 @import '@scss/abstracts/variables';
+@import '@scss/abstracts/mixin';
 
 .my-button {
   border-radius: 8px;
@@ -35,7 +36,7 @@
     border: 1.5px solid var(--color-primary);
     color: var(--color-base);
 
-    &:hover {
+    @include hoverFine {
       background-color: var(--color-primary);
       border: 1.5px solid var(--color-white-1);
       color: var(--color-white-1);
@@ -46,7 +47,7 @@
     border: 1.5px solid var(--color-secondary);
     color: var(--color-primary);
 
-    &:hover {
+    @include hoverFine {
       background-color: var(--color-secondary);
       border: 1.5px solid var(--color-white-1);
       color: var(--color-white-1);
@@ -57,7 +58,7 @@
     border: 1.5px solid var(--color-third);
     color: var(--color-secondary);
 
-    &:hover {
+    @include hoverFine {
       background-color: var(--color-third);
       border: 1.5px solid var(--color-white-1);
       color: var(--color-white-1);

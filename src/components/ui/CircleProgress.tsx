@@ -14,7 +14,7 @@ const CircleProgress = ({ height }: Props) => {
         height: height ? `${height}px` : 'auto',
       }}
     >
-      <IconCircleProgress />
+      <IconCircleProgress color={'primary'} viewBox={'0 0 2048 2048'} />
     </div>
   );
 };

@@ -9,5 +9,6 @@ export interface SVGIcon {
   size?: number;
   color?: 'mono' | 'reverse-mono' | 'base' | 'primary' | 'secondary' | 'black' | 'white';
   direction?: 'top' | 'right' | 'left' | 'bottom';
+  viewBox?: string;
   handleClick?: React.MouseEventHandler<SVGSVGElement>;
 }

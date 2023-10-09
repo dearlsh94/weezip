@@ -23,7 +23,7 @@ header {
       width: 36px;
       height: 36px;
       cursor: pointer;
-      &:hover {
+      @include hoverFine {
         background-color: var(--color-secondary);
         border-radius: 4px;
       }
@@ -48,7 +48,7 @@ header {
       height: 36px;
       cursor: pointer;
       transition: background-color 0.2s;
-      &:hover {
+      @include hoverFine {
         background-color: var(--color-secondary);
         border-radius: 4px;
       }

@@ -9,7 +9,7 @@
 
   &.mono {
     border: 2px solid var(--color-mono);
-    &:hover {
+    @include hoverFine {
       border: 2px solid var(--color-reverse-mono);
       svg path {
         fill: var(--color-reverse-mono);
@@ -19,7 +19,7 @@
 
   &.reverse-mono {
     border: 2px solid var(--color-reverse-mono);
-    &:hover {
+    @include hoverFine {
       border: 2px solid var(--color-mono);
       svg path {
         fill: var(--color-mono);
@@ -32,7 +32,7 @@
     svg path {
       fill: var(--color-base);
     }
-    &:hover {
+    @include hoverFine {
       border: 2px solid var(--color-base);
     }
   }

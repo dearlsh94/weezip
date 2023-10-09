@@ -30,7 +30,7 @@
     span.prev,
     span.next {
       cursor: pointer;
-      &:hover {
+      @include hoverFine {
         text-decoration: underline;
       }
     }
@@ -45,11 +45,13 @@
         position: absolute;
         left: 12px;
       }
-      &.active:hover {
-        svg {
-          @include animationMotionLeft($distance: -8px);
+      &.active {
+        @include hoverFine {
+          svg {
+            @include animationMotionLeft($distance: -8px);
+          }
+          text-decoration: underline;
         }
-        text-decoration: underline;
       }
     }
 
@@ -59,11 +61,13 @@
         position: absolute;
         right: 12px;
       }
-      &.active:hover {
-        svg {
-          @include animationMotionRight($distance: 8px);
+      &.active {
+        @include hoverFine {
+          svg {
+            @include animationMotionRight($distance: 8px);
+          }
+          text-decoration: underline;
         }
-        text-decoration: underline;
       }
     }
 

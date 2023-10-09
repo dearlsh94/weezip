@@ -58,12 +58,7 @@ article.post {
     svg {
       cursor: pointer;
       margin-right: 8px;
-      &:hover {
-        @include animationRotate(1s);
-      }
-    }
-    &.loading {
-      svg {
+      @include hoverFine {
         @include animationRotate(1s);
       }
     }
@@ -107,6 +102,10 @@ article.post {
       }
     }
 
+    div.comment-box {
+      margin: 30px 0px;
+    }
+
     div.button-box {
       display: flex;
       flex-direction: column;
@@ -124,7 +123,7 @@ article.post {
         margin-right: 4px;
         font-weight: 500;
       }
-      &:hover {
+      @include hoverFine {
         span {
           color: var(--color-white-1);
         }

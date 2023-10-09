@@ -18,6 +18,7 @@ import { IconCopyLink, CircleIconWrapper } from '@components/icon';
 import Linker from '@components/ui/Linker';
 import { GlobalPortal } from '@components/GlobalPortal';
 import useClipboard from '@src/hooks/useClipboard';
+import Utterance from '@components/Utterance';
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));
@@ -103,6 +104,9 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
                 <IconCopyLink />
               </CircleIconWrapper>
             </div>
+          </div>
+          <div className="comment-box">
+            <Utterance />
           </div>
           <div className="button-box">
             {content?.public_url && (

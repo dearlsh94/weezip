@@ -33,7 +33,7 @@
       }
     }
 
-    &:hover {
+    @include hoverFine {
       p {
         color: var(--color-primary);
       }
