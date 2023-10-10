@@ -1,10 +1,15 @@
+import { CONFIG_THEME_KEY } from '@src/constants';
+import { useLocalStorage } from '@src/hooks/useLocalStorage';
 import * as React from 'react';
 import { useRef, useEffect } from 'react';
 
 const Giscus = () => {
+  const { getConfig } = useLocalStorage();
   const utteranceRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const configTheme = getConfig(CONFIG_THEME_KEY);
+
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
     script.setAttribute('data-repo', 'dearlsh94/WeeZip');
@@ -16,7 +21,7 @@ const Giscus = () => {
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
-    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-theme', configTheme && configTheme === 'dark' ? 'dark' : 'light');
     script.setAttribute('data-lang', 'ko');
     script.setAttribute('cross-origin', 'anonymous');
     script.async = true;
@@ -34,3 +39,6 @@ const Giscus = () => {
 };
 
 export default Giscus;
+function getConfig(CONFIG_THEME_KEY: string) {
+  throw new Error('Function not implemented.');
+}
