@@ -5,7 +5,7 @@ import { useRef, useEffect } from 'react';
 
 const Giscus = () => {
   const { getConfig } = useLocalStorage();
-  const utteranceRef = useRef<HTMLDivElement>(null);
+  const giscusRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY);
@@ -26,14 +26,14 @@ const Giscus = () => {
     script.setAttribute('cross-origin', 'anonymous');
     script.async = true;
 
-    if (utteranceRef.current) {
-      utteranceRef.current.appendChild(script);
+    if (giscusRef.current) {
+      giscusRef.current.appendChild(script);
     }
   }, []);
 
   return (
-    <div id="utterance-box">
-      <div ref={utteranceRef} />
+    <div id="giscus-box">
+      <div ref={giscusRef} />
     </div>
   );
 };
