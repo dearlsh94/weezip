@@ -39,6 +39,3 @@ const Giscus = () => {
 };
 
 export default Giscus;
-function getConfig(CONFIG_THEME_KEY: string) {
-  throw new Error('Function not implemented.');
-}
