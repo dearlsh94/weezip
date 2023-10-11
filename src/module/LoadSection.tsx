@@ -1,17 +1,17 @@
 import * as React from 'react';
-import '@scss/layout/LoadLayout.scss';
+import '@scss/layout/LoadSection.scss';
 import CircleProgress from '@components/ui/CircleProgress';
 
-interface LoadLayoutProps {
+interface LoadSectionProps {
   children: React.ReactNode;
   isLoading: boolean;
   isError: boolean;
 }
 
-const LoadSection = ({ children, isLoading, isError }: LoadLayoutProps) => {
+const LoadSection = ({ children, isLoading, isError }: LoadSectionProps) => {
   return (
     <section className="load-section">
-      {isLoading ? <CircleProgress height={360} /> : isError ? <div>Error</div> : children}
+      {isLoading ? <CircleProgress className="spinner" height={360} /> : isError ? <div>Error</div> : children}
     </section>
   );
 };
