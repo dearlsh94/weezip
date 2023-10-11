@@ -41,8 +41,6 @@ byproducts of the process of living with imagination and curiosity
 ### Explain
 
 - 23.01.12 | 더 나은 에러 메시지를 써 보자
-- 21.03.18 | MicroInteraction에 대해서
-- 21.03.26 | 적응형 웹과 반응형 웹, 짚고 넘어가기.
 - 23.03.30 | 스마트택배 API로 배송 정보 조회 기능 만들기
 - 23.05.09 | Semantic Versioning과 각 배포환경에서의 버전 관리에 대한 고민.
 - 23.06.03 | 좋은 동료와 함께 성장하기 위한 피드백은 어떻게 해야할까?
@@ -61,7 +59,6 @@ byproducts of the process of living with imagination and curiosity
 
 ### Zip
 
-- 22.03.23 | SEO를 위한 Semantic Tag 모음
 <br/>
 
 ### 위대한 개츠비
@@ -77,6 +74,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.04.20 | 몇 명이나 보러 올까? Gatsby gtag plugin으로 GA 연동하기.
 - 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기.
 - 23.09.28 | Github 리포지토리 Netlify로 배포하고 커스텀 도메인 연결하기 (feat. Gatsby Cloud 종료)
+- 23.10.10 | Gatsby 블로그에 Github 댓글 적용하기. 하루만에 Utterances에서 Giscus로. (다크 테마 적용)
 <br/>
 
 ### 개발자 도서관
@@ -88,9 +86,10 @@ byproducts of the process of living with imagination and curiosity
 - 21.04.17 | Clean Code 책 요약. 챕터 10 : 클래스
 - 23.07.05 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리 Part.1
 - 23.08.17 | 김철수의 책 '개발자의 글쓰기'를 읽고.
-- 23.09.04 | 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리
-- 23.09.18 | 피플웨어(Peopleware) 2부. ‘사무실 환경’ 요약 정리
+- 23.09.04 | 책 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리
+- 23.09.18 | 책 피플웨어(Peopleware) 2부. ‘사무실 환경’ 요약 정리
 - 23.09.19 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리 Part.2
+- 23.10.11 | 책 피플웨어(Peopleware) 3부.  우수한 인재를 확보하라.
 <br/>
 
 ### 웹개개
