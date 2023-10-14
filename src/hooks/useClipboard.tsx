@@ -1,12 +1,8 @@
-import { useState } from 'react';
-
 const useClipboard = () => {
-  const [copied, setCopied] = useState<boolean>(false);
-
   const copyToClipboard = async (textToCopy: string) => {
     try {
       if (navigator.clipboard) {
-        await navigator.clipboard.writeText(window.location.href);
+        await navigator.clipboard.writeText(textToCopy);
       } else {
         const textField = document.createElement('textarea');
         textField.innerText = textToCopy;
@@ -15,13 +11,13 @@ const useClipboard = () => {
         document.execCommand('copy');
         textField.remove();
       }
-      setCopied(true);
+      return true;
     } catch (error) {
-      setCopied(false);
+      return false;
     }
   };
 
-  return { copied, copyToClipboard };
+  return { copyToClipboard };
 };
 
 export default useClipboard;

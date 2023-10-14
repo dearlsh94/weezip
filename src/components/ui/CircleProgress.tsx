@@ -2,11 +2,11 @@ import * as React from 'react';
 import '@scss/components/ui/CircleProgress.scss';
 import { IconCircleProgress } from '@components/icon';
 
-interface Props {
+interface CircleProgressProps extends React.HTMLAttributes<HTMLDivElement> {
   height?: number;
 }
 
-const CircleProgress = ({ height }: Props) => {
+const CircleProgress = ({ height }: CircleProgressProps) => {
   return (
     <div
       className="circle-progress-box"
