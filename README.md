@@ -89,7 +89,8 @@ byproducts of the process of living with imagination and curiosity
 - 23.09.04 | 책 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리
 - 23.09.18 | 책 피플웨어(Peopleware) 2부. ‘사무실 환경’ 요약 정리
 - 23.09.19 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리 Part.2
-- 23.10.11 | 책 피플웨어(Peopleware) 3부.  우수한 인재를 확보하라.
+- 23.10.11 | 책 피플웨어(Peopleware) 3부. 우수한 인재를 확보하라.
+- 23.10.17 | 책 피플웨어(Peopleware) 4부. 생산성 높은 팀으로 양성하기.
 <br/>
 
 ### 웹개개
