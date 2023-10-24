@@ -10,7 +10,7 @@ interface NParagraphProps {
 }
 
 export default function NParagraph({ paragraph, text, className }: NParagraphProps) {
-  let blockTexts = paragraph?.text || text || [];
+  let blockTexts = paragraph?.rich_text || text || [];
   return (
     <>
       {blockTexts && (

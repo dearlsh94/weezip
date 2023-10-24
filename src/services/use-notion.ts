@@ -16,7 +16,6 @@ export const getNotionQuery = graphql`
             content
           }
           json
-          markdownString
           parent {
             id
             internal {

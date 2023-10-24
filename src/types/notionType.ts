@@ -65,12 +65,13 @@ export interface Text {
 export interface Heading {
   color: string;
   is_toggleable: boolean;
-  text: TextItem[];
+  rich_text: TextItem[];
 }
 
 export interface TextBlock {
   color: string;
-  text: TextItem[];
+  is_toggleable: boolean;
+  rich_text: TextItem[];
 }
 
 export interface Todo extends TextBlock {

@@ -9,11 +9,6 @@ export const getNodeJsonByUrl = (nodes: NotionNode[], url: string): Children | n
   return notionNodeToJson(node);
 };
 
-export const getNodeMarkdownByUrl = (nodes: NotionNode[], url: string): string => {
-  const node = nodes.find(n => n.title === url);
-  return node ? node.markdownString : '';
-};
-
 export const classifyPost = (
   nodes: NotionNode[]
 ): {

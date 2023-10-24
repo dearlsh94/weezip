@@ -88,10 +88,12 @@ const config: GatsbyConfig = {
       __key: 'images',
     },
     {
-      resolve: 'gatsby-source-notion-api',
+      resolve: 'gatsby-source-notion-feely',
       options: {
         token: process.env.NOTION_INTEGRATION_TOKEN,
-        databaseId: process.env.NOTION_DB_ID,
+        databaseIds: [process.env.NOTION_DB_ID],
+        aliases: ['Weezip'],
+        checkPublish: [true],
       },
     },
     'gatsby-plugin-sharp',

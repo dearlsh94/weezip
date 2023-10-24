@@ -162,7 +162,6 @@ export const postQuery = graphql`
             content
           }
           json
-          markdownString
           parent {
             id
             internal {
