@@ -92,8 +92,6 @@ const config: GatsbyConfig = {
       options: {
         token: process.env.NOTION_INTEGRATION_TOKEN,
         databaseId: process.env.NOTION_DB_ID,
-        propsToFrontmatter: true,
-        lowerTitleLevel: true,
       },
     },
     'gatsby-plugin-sharp',
