@@ -2,6 +2,7 @@ import { NotionColumn } from './contentType';
 
 export interface NotionNode {
   id: string;
+  alias: string;
   title: string;
   archived: boolean;
   createdAt: string;

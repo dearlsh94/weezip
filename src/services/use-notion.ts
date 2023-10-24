@@ -6,6 +6,7 @@ export const getNotionQuery = graphql`
     allNotion {
       edges {
         node {
+          alias
           archived
           children {
             id
@@ -60,7 +61,9 @@ export const getNotionNodeAll = (res: any) => {
   const rows = res?.allNotion?.edges;
   let nodes: NotionNode[] = [];
   rows.forEach(({ node }: { node: NotionNode }) => {
-    nodes.push(node);
+    if (node.alias === 'Weezip') {
+      nodes.push(node);
+    }
   });
   return nodes;
 };
