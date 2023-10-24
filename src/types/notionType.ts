@@ -94,7 +94,7 @@ export interface Bookmark {
 export interface Code {
   caption: TextItem[];
   language: string;
-  text: TextItem[];
+  rich_text: TextItem[];
 }
 
 export interface Image {

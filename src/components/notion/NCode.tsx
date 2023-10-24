@@ -12,8 +12,7 @@ interface NCodeProps {
 }
 
 export default function NCode({ code }: NCodeProps) {
-  const codeString = code.text?.reduce((codeString, text) => (codeString += text.plain_text), '');
-
+  const codeString = code.rich_text?.reduce((codeString, text) => (codeString += text.plain_text), '');
   const { copyToClipboard } = useClipboard();
   const handleCodeCopy = async () => {
     await copyToClipboard(codeString);
