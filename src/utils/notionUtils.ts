@@ -2,7 +2,7 @@ import { Children, MultiSelect, NotionColumn, NotionNode, RichText } from '@type
 import { convertDatetimeFormat } from './convertUtils';
 
 export const notionNodeToJson = (node: NotionNode): Children => {
-  return JSON.parse(node?.json);
+  return node ? JSON.parse(node?.json) : null;
 };
 
 export const getNodeJsonByUrl = (nodes: NotionNode[], url: string): Children | null => {
