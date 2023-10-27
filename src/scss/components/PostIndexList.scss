@@ -1,7 +1,7 @@
 @import '@scss/abstracts/mixin';
 
 ul.block-header-index-list {
-  color: #555;
+  color: var(--color-grey);
   line-height: 24px;
   margin-bottom: 0;
   padding-left: 0px;
