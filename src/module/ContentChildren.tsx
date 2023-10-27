@@ -17,11 +17,11 @@ import {
 import NImage from '@components/notion/NImage';
 import Divider from '@components/ui/Divider';
 
-interface Props {
+interface ContentChildrenProps {
   block: Children;
 }
 
-const ContentChildren = ({ block }: Props) => {
+const ContentChildren = ({ block }: ContentChildrenProps) => {
   const { type } = block;
 
   const render = () => {

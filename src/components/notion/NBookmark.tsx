@@ -16,7 +16,7 @@ export default function NBookmark({ bookmark }: NBookmarkProps) {
             bookmark.caption.map((c: TextItem, i) => {
               const captionParagraph: TextBlock = {
                 color: 'gray',
-                text: [c],
+                rich_text: [c],
               };
               return (
                 <span key={`bookmark-caption-${i}`}>

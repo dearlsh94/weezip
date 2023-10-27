@@ -29,7 +29,7 @@ export default function MyImage({ imageBlock }: NImageProps) {
             alt={captionText}
           />
           <div className="caption-box">
-            <NParagraph text={image.caption} />
+            <NParagraph richText={image.caption} />
           </div>
         </div>
       )}

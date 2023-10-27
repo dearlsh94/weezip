@@ -1,4 +1,16 @@
-import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, Select, Code, Image, RichText } from '@types';
+import {
+  WorkBy,
+  Properties,
+  Heading,
+  TextBlock,
+  Todo,
+  Callout,
+  Bookmark,
+  Select,
+  Code,
+  Image,
+  MultiSelect,
+} from '@types';
 
 // SECTION enum zone ====
 export enum BlockType {
@@ -64,6 +76,6 @@ export interface NotionColumn {
   createdTime: string;
   notionUrl: string;
   category?: Select;
-  tag?: Select[];
+  tag?: MultiSelect;
   series?: Select;
 }

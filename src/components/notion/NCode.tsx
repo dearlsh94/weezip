@@ -31,7 +31,7 @@ export default function NCode({ code }: NCodeProps) {
       </SyntaxHighlighter>
       {code.caption && (
         <div className="caption">
-          <NParagraph text={code.caption} />
+          <NParagraph richText={code.caption} />
         </div>
       )}
     </div>

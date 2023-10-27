@@ -1,16 +1,16 @@
 import * as React from 'react';
 import '@scss/notion.scss';
-import { TextBlock, TextItem } from '@types';
+import { Caption, RichText, TextBlock, TextItem } from '@types';
 import Linker from '@components/ui/Linker';
 
 interface NParagraphProps {
   paragraph?: TextBlock;
-  text?: TextItem[];
+  richText?: RichText | Caption;
   className?: string;
 }
 
-export default function NParagraph({ paragraph, text, className }: NParagraphProps) {
-  let blockTexts = paragraph?.rich_text || text || [];
+export default function NParagraph({ paragraph, richText, className }: NParagraphProps) {
+  let blockTexts = paragraph?.rich_text || richText || [];
   return (
     <>
       {blockTexts && (
