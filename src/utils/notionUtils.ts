@@ -1,4 +1,5 @@
-import { Children, NotionNode, Select } from '@types';
+import { Children, NotionNode, RichText, Select } from '@types';
+import { parseNotionColumn } from './parseUtils';
 
 export const notionNodeToJson = (node?: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null;
@@ -7,6 +8,16 @@ export const notionNodeToJson = (node?: NotionNode): Children => {
 export const getNodeJsonByUrl = (nodes: NotionNode[], url: string): Children | null => {
   const node = nodes.find(n => n.title === url);
   return notionNodeToJson(node);
+};
+
+export const getParseListByNodes = (nodes: NotionNode[]): NotionNode[] => {
+  return nodes
+    .map((node: NotionNode) => {
+      const content = notionNodeToJson(node);
+      node.notionColumn = parseNotionColumn(content);
+      return node;
+    })
+    .filter((node: NotionNode) => node.title.startsWith('/post'));
 };
 
 export const classifyPost = (
@@ -55,4 +66,8 @@ export const getSeriesCodeByURL = (url: string) => {
   } else {
     return 0;
   }
+};
+
+export const getPlainTextByRichText = (richText?: RichText): string => {
+  return richText?.reduce((str, cur) => (str += cur.plain_text), '') || '';
 };

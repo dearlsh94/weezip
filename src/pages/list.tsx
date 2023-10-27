@@ -9,7 +9,7 @@ import { NotionContext, PageContext } from '@store/rootStore';
 import { INotionContext, NotionNode } from '@types';
 import { parseLocationQuery } from '@utils/parseUtils';
 import PostList from '@module/PostList';
-import { notionNodeToJson, classifyPost } from '@utils/notionUtils';
+import { notionNodeToJson, classifyPost, getParseListByNodes } from '@utils/notionUtils';
 import { parseNotionColumn } from '@utils/parseUtils';
 import SEO from '@components/header/SEO';
 import ListFilter from '@components/ListFilter';
@@ -29,20 +29,15 @@ export const Head: HeadFC = () => {
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery();
-  const { postTags, postSeries } = classifyPost(nodes);
+  const parseList: NotionNode[] = getParseListByNodes(nodes).sort((a, b) =>
+    a.notionColumn?.idx && b.notionColumn?.idx ? b.notionColumn?.idx - a.notionColumn?.idx : 0
+  );
+  const { postTags, postSeries } = classifyPost(parseList);
   const store: INotionContext = {
     nodes: nodes,
     postTags: postTags,
     postSeries: postSeries,
   };
-  const parseList: NotionNode[] = nodes
-    .map(node => {
-      const content = notionNodeToJson(node);
-      node.notionColumn = parseNotionColumn(content);
-      return node;
-    })
-    .filter(n => n.title.startsWith('/post'))
-    .sort((a, b) => (a.notionColumn?.idx && b.notionColumn?.idx ? b.notionColumn?.idx - a.notionColumn?.idx : 0));
   const PER_PAGE = 10;
 
   const [list, setList] = useState<NotionNode[]>([]);

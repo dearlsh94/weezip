@@ -1,5 +1,6 @@
 import { Children, NotionColumn } from '@types';
 import { convertDatetimeFormat } from './convertUtils';
+import { getPlainTextByRichText } from './notionUtils';
 
 export const parseLocationQuery = (search = '') => {
   let params = search.replace('?', '').split('&');
@@ -25,8 +26,7 @@ export const parseLocationQuery = (search = '') => {
 
 export const parseNotionColumn = (content: Children): NotionColumn => {
   const idx = content?.properties?.idx?.number || -1;
-  const remark = content?.properties?.remark?.rich_text || '';
-  const cover = content?.cover || [];
+  const remark = getPlainTextByRichText(content?.properties?.remark?.rich_text);
   const last_edited_item = content?.properties?.edited_date?.date?.start || '';
   const created_time = content?.properties?.created_date?.date?.start || '';
   const notionUrl = content?.url || '';
@@ -38,7 +38,6 @@ export const parseNotionColumn = (content: Children): NotionColumn => {
     idx,
     remark,
     category,
-    cover,
     lastEditedTime: convertDatetimeFormat(last_edited_item),
     createdTime: convertDatetimeFormat(created_time),
     notionUrl,

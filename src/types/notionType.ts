@@ -17,12 +17,13 @@ export interface Property {
   type: 'title' | 'multi_select' | 'rich_text' | 'date' | 'select' | 'number';
   title?: TextItem;
   multi_select?: Select[];
-  rich_text?: string;
+  rich_text?: RichText;
   date: PropDate;
   select: Select;
   number: number;
 }
 
+export type RichText = TextItem[];
 export interface WorkBy {
   object: string;
   id: string;

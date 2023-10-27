@@ -91,9 +91,13 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-notion-feely',
       options: {
         token: process.env.NOTION_INTEGRATION_TOKEN,
-        databaseIds: [process.env.NOTION_DB_ID],
-        aliases: ['Weezip'],
-        checkPublish: [true],
+        databases: [
+          {
+            id: process.env.NOTION_DB_ID,
+            name: 'Weezip',
+            isCheckPublish: true,
+          },
+        ],
       },
     },
     'gatsby-plugin-sharp',
