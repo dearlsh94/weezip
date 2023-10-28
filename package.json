@@ -1,6 +1,6 @@
 {
   "name": "ethan-web",
-  "version": "1.3.3",
+  "version": "1.5.1",
   "private": true,
   "description": "ethan-web",
   "author": "Seunghwan Ethan Lee",
@@ -13,6 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "hosting": "yarn clean && yarn && yarn build",
     "typecheck": "tsc --noEmit",
     "pull": "git fetch && git pull",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'"
