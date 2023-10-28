@@ -17,11 +17,11 @@ import {
 import NImage from '@components/notion/NImage';
 import Divider from '@components/ui/Divider';
 
-interface Props {
+interface ContentChildrenProps {
   block: Children;
 }
 
-const ContentChildren = ({ block }: Props) => {
+const ContentChildren = ({ block }: ContentChildrenProps) => {
   const { type } = block;
 
   const render = () => {
@@ -35,7 +35,7 @@ const ContentChildren = ({ block }: Props) => {
       case BlockType.HEADING_3:
         if (block.heading_3) return <NHeading3 head3={block.heading_3} />;
       case BlockType.QUOTE:
-        if (block.quote) return <NQuote quote={block.quote} />;
+        if (block.quote) return <NQuote quote={block.quote} children={block.children} />;
       case BlockType.BULLETED_LIST_ITEM:
         if (block.bulleted_list_item) return <NBulletedList bulletedListItem={block} />;
       case BlockType.NUMBERED_LIST_ITEM:

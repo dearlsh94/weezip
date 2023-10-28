@@ -10,7 +10,7 @@ interface NImageProps {
 export default function MyImage({ imageBlock }: NImageProps) {
   const { id, image } = imageBlock;
   const url = image
-    ? `https://squary.notion.site/image/${encodeURIComponent(image.file.url)}?table=block&id=${id}&cache=v2`
+    ? `https://treefeely.notion.site/image/${encodeURIComponent(image.file.url)}?table=block&id=${id}&cache=v2`
     : ``;
   const captionText = image?.caption.reduce((acc, item) => {
     return acc + ` ${item.plain_text}`;
@@ -29,7 +29,7 @@ export default function MyImage({ imageBlock }: NImageProps) {
             alt={captionText}
           />
           <div className="caption-box">
-            <NParagraph text={image.caption} />
+            <NParagraph richText={image.caption} />
           </div>
         </div>
       )}

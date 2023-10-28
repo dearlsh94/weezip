@@ -1,27 +1,54 @@
-import { Children, NotionNode, Select } from '@types';
+import { Children, MultiSelect, NotionColumn, NotionNode, RichText } from '@types';
+import { convertDatetimeFormat } from './convertUtils';
 
-export const notionNodeToJson = (node?: NotionNode): Children => {
+export const notionNodeToJson = (node: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null;
 };
 
 export const getNodeJsonByUrl = (nodes: NotionNode[], url: string): Children | null => {
   const node = nodes.find(n => n.title === url);
-  return notionNodeToJson(node);
+  return node ? notionNodeToJson(node) : null;
 };
 
-export const getNodeMarkdownByUrl = (nodes: NotionNode[], url: string): string => {
-  const node = nodes.find(n => n.title === url);
-  return node ? node.markdownString : '';
+const parseNotionColumn = (content: Children): NotionColumn => {
+  const idx = content?.properties?.idx?.number || -1;
+  const remark = getPlainTextByRichText(content?.properties?.remark?.rich_text);
+  const last_edited_item = content?.properties?.edited_date?.date?.start || '';
+  const created_time = content?.properties?.created_date?.date?.start || '';
+  const notionUrl = content?.url || '';
+  const category = content?.properties?.category?.select;
+  const tag = content?.properties?.tag?.multi_select || [];
+  const series = content?.properties?.series?.select;
+
+  return {
+    idx,
+    remark,
+    category,
+    lastEditedTime: convertDatetimeFormat(last_edited_item),
+    createdTime: convertDatetimeFormat(created_time),
+    notionUrl,
+    tag,
+    series,
+  };
+};
+
+export const getParseListByNodes = (nodes: NotionNode[]): NotionNode[] => {
+  return nodes
+    .filter((node: NotionNode) => node.title.startsWith('/post'))
+    .map((node: NotionNode) => {
+      node.notionColumn = parseNotionColumn(notionNodeToJson(node));
+      return node;
+    });
 };
 
 export const classifyPost = (
   nodes: NotionNode[]
 ): {
   postTags: string[];
-  postSeries: Select[];
+  postSeries: MultiSelect;
 } => {
   const postTagSet = new Set();
-  const postSeries: Select[] = [];
+  const postSeries: MultiSelect = [];
   const includeSeriesName: string[] = [];
 
   nodes.map(node => {
@@ -48,16 +75,6 @@ export const classifyPost = (
   };
 };
 
-/**
- * @param url : /post/{id} 형태의 URL. id는 series-type-number로 되어 있다.
- * @returns series code
- */
-export const getSeriesCodeByURL = (url: string) => {
-  const pattern = /\b\d{2}(?=-\d{2}-\d+)/;
-  const match = url.match(pattern);
-  if (match) {
-    return match[0]; // seriesCode
-  } else {
-    return 0;
-  }
+export const getPlainTextByRichText = (richText?: RichText): string => {
+  return richText?.reduce((str, cur) => (str += cur.plain_text), '') || '';
 };

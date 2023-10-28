@@ -36,6 +36,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.07.15 | 처음으로 회사에 피드백을 요청해보았다.
 - 23.08.24 | 상용 서비스 script, API 오류 처리 개선 작업 회고. 이렇게나 오류가 많았다고?
 - 23.09.20 | 광고 노출 수를 측정해주세요! Svelte로 만드는 컴포넌트 노출 트래킹 작업기.
+- 23.10.14 | 시대의 변화로 보는 요즘 과학이 인기있는 이유
 <br/>
 
 ### Explain
@@ -89,7 +90,9 @@ byproducts of the process of living with imagination and curiosity
 - 23.09.04 | 책 피플웨어(Peopleware) 1부. ‘인적 자원 관리’ 요약 정리
 - 23.09.18 | 책 피플웨어(Peopleware) 2부. ‘사무실 환경’ 요약 정리
 - 23.09.19 | 대체 뭐가 문제야? 제럴드 와인버그의 책 ‘Are Your Lights On?’ 내용 요약 정리 Part.2
-- 23.10.11 | 책 피플웨어(Peopleware) 3부.  우수한 인재를 확보하라.
+- 23.10.11 | 책 피플웨어(Peopleware) 3부. 우수한 인재를 확보하라.
+- 23.10.17 | 책 피플웨어(Peopleware) 4부. 생산성 높은 팀으로 양성하기.
+- 23.10.19 | 책 피플웨어(Peopleware) 5부. 비옥한 토양.
 <br/>
 
 ### 웹개개

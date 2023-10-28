@@ -1,4 +1,16 @@
-import { WorkBy, Properties, Heading, TextBlock, Todo, Callout, Bookmark, Select, Code, Image } from '@types';
+import {
+  WorkBy,
+  Properties,
+  Heading,
+  TextBlock,
+  Todo,
+  Callout,
+  Bookmark,
+  Select,
+  Code,
+  Image,
+  MultiSelect,
+} from '@types';
 
 // SECTION enum zone ====
 export enum BlockType {
@@ -60,11 +72,10 @@ export interface Parent {
 export interface NotionColumn {
   idx: number;
   remark: string;
-  cover: string;
   lastEditedTime: string;
   createdTime: string;
   notionUrl: string;
   category?: Select;
-  tag?: Select[];
+  tag?: MultiSelect;
   series?: Select;
 }

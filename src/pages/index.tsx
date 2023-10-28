@@ -8,7 +8,6 @@ import ContentWrapper from '@module/ContentWrapper';
 import { NotionContext } from '@store/rootStore';
 import MainLayout from '@layout/MainLayout';
 import SEO from '@components/header/SEO';
-
 import LatestPost from '@module/LatestPost';
 import Divider from '@components/ui/Divider';
 import { GlobalPortal } from '@components/GlobalPortal';
@@ -22,8 +21,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const store: INotionContext = {
     nodes: nodes,
   };
-  const content: Children | null = getNodeJsonByUrl(nodes, '/');
-
+  const content: Children | null = getNodeJsonByUrl(nodes, '/home');
   return (
     <GlobalPortal.Provider>
       <NotionContext.Provider value={store}>

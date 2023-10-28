@@ -2,21 +2,14 @@ import * as React from 'react';
 import '@scss/module/LatestPost.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { NotionNode } from '@types';
-import { notionNodeToJson } from '@utils/notionUtils';
-import { parseNotionColumn } from '@utils/parseUtils';
+import { getParseListByNodes } from '@utils/notionUtils';
 import Linker from '@components/ui/Linker';
 import { IconArrow } from '@components/icon';
 
 const LatestPost = () => {
   const nodes = useGetNotionQuery();
 
-  const parseList: NotionNode[] = nodes
-    .map(node => {
-      const content = notionNodeToJson(node);
-      node.notionColumn = parseNotionColumn(content);
-      return node;
-    })
-    .filter(n => n.title.startsWith('/post'));
+  const parseList: NotionNode[] = getParseListByNodes(nodes);
 
   parseList.sort((a, b) => {
     if (a.notionColumn?.createdTime && b.notionColumn?.createdTime) {

@@ -1,11 +1,12 @@
 @import '@scss/abstracts/mixin';
 
 .block-paragraph {
-  line-height: 28px;
+  line-height: 1.75rem;
   width: 100%;
 }
 
 .block-paragraph-text {
+  line-height: 1.75rem;
   width: fit-content;
 }
 
@@ -29,6 +30,7 @@
 }
 
 .block-quote {
+  line-height: 1.75rem;
   margin: 12px 0px;
   padding: 8px 12px;
   border-left: 4px solid var(--color-primary);
@@ -37,6 +39,7 @@
 }
 
 .block-todo {
+  line-height: 1.75rem;
   display: flex;
   align-items: center;
 
@@ -49,6 +52,7 @@
 }
 
 .block-callout {
+  line-height: 1.75rem;
   display: flex;
   flex-direction: column;
   background-color: #e5e5e5;
@@ -67,6 +71,7 @@
 }
 
 .block-toggle {
+  line-height: 1.5rem;
   margin: 8px 0px 8px 4px;
 
   .toggle-title-box {
@@ -90,6 +95,7 @@
 }
 
 .block-code {
+  line-height: 1.75rem;
   display: flex;
   background-color: #efefef;
   margin: 16px 0px;
@@ -106,6 +112,7 @@
     padding-bottom: 1.5em !important;
     border-radius: 4px;
     box-sizing: border-box;
+    // color: var(--color-base);
   }
 
   span.linenumber {

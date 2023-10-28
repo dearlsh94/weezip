@@ -1,10 +1,10 @@
 import * as React from 'react';
 import '@scss/components/SeriesBadge.scss';
 import Linker from './ui/Linker';
-import { Select } from '@types';
+import { MultiSelect } from '@types';
 
 interface SeriesBadgesProps {
-  series: Select[];
+  series: MultiSelect;
   isLink?: boolean;
 }
 

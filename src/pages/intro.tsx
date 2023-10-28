@@ -11,7 +11,7 @@ import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
 
 export const Head: HeadFC = () => {
-  return <SEO pathname="/intro/" title={'노션 컴포넌트셋'} />;
+  return <SEO pathname="/intro" title={'노션 컴포넌트셋'} />;
 };
 
 const IntroPage: React.FC<PageProps> = () => {
@@ -19,7 +19,7 @@ const IntroPage: React.FC<PageProps> = () => {
   const store: INotionContext = {
     nodes: nodes,
   };
-  const content: Children | null = getNodeJsonByUrl(nodes, '/intro/');
+  const content: Children | null = getNodeJsonByUrl(nodes, '/intro');
   return (
     <GlobalPortal.Provider>
       <NotionContext.Provider value={store}>

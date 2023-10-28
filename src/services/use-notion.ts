@@ -6,45 +6,11 @@ export const getNotionQuery = graphql`
     allNotion {
       edges {
         node {
-          archived
-          children {
-            id
-          }
-          createdAt
           id
-          internal {
-            content
-          }
-          json
-          markdownString
-          parent {
-            id
-            internal {
-              content
-            }
-          }
-          raw {
-            archived
-            children {
-              id
-            }
-            created_by {
-              id
-            }
-            created_time
-            id
-            last_edited_by {
-              id
-            }
-            last_edited_time
-            object
-            parent {
-              database_id
-              type
-            }
-            url
-          }
+          databaseName
           title
+          json
+          createdAt
           updatedAt
         }
       }
@@ -59,11 +25,11 @@ export const useGetNotionQuery = () => {
 
 export const getNotionNodeAll = (res: any) => {
   const rows = res?.allNotion?.edges;
-  let nodes: NotionNode[] = [];
-  rows.forEach(({ node }: { node: NotionNode }) => {
-    nodes.push(node);
+  return rows.map(({ node }: { node: NotionNode }) => {
+    if (node.databaseName === 'Weezip') {
+      return node;
+    }
   });
-  return nodes;
 };
 
 export const getNotionNodeByUrl = (res: any, url: string) => {

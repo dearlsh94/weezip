@@ -11,8 +11,8 @@ import SideBarNavigation from './SideBarNavigation';
 import useOverlay from '@src/hooks/useOverlay';
 
 const Header = () => {
-  const overlaySNB = useOverlay();
-  const overlaySearch = useOverlay();
+  const SNBOverlay = useOverlay();
+  const searchOverlay = useOverlay();
 
   const [status, setStatus] = useState('');
   const [isMenuHover, setIsMenuHover] = useState(false);
@@ -41,14 +41,14 @@ const Header = () => {
         <div className="left-box">
           <div
             className="icon-box"
-            onClick={overlaySNB.change}
+            onClick={SNBOverlay.change}
             onMouseOver={() => setIsMenuHover(true)}
             onMouseLeave={() => setIsMenuHover(false)}
             onFocus={() => setIsMenuHover(true)}
             onBlur={() => setIsMenuHover(false)}
           >
             {isMenuHover ? (
-              overlaySNB.isOpen ? (
+              SNBOverlay.isOpen ? (
                 <IconDoubleArrow direction="left" size={28} />
               ) : (
                 <IconDoubleArrow direction="right" size={28} />
@@ -67,14 +67,14 @@ const Header = () => {
           <div className="icon-box">
             <ThemeController />
           </div>
-          <div className="icon-box" onClick={overlaySearch.open}>
+          <div className="icon-box" onClick={searchOverlay.open}>
             <IconSearch />
           </div>
         </div>
       </header>
 
-      {overlaySearch.isOpen && <PostSearchLayer handleClose={overlaySearch.close} />}
-      {overlaySNB.isOpen && <SideBarNavigation handleClose={overlaySNB.close} />}
+      {searchOverlay.isOpen && <PostSearchLayer handleClose={searchOverlay.close} />}
+      {SNBOverlay.isOpen && <SideBarNavigation handleClose={SNBOverlay.close} />}
     </>
   );
 };

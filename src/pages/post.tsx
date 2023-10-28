@@ -4,7 +4,7 @@ import { HeadFC, PageProps, navigate } from 'gatsby';
 import '@scss/global.scss';
 import '@scss/page.scss';
 import { getNotionNodeByUrl } from '@services/use-notion';
-import { notionNodeToJson } from '@utils/notionUtils';
+import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
 import MainLayout from '@layout/MainLayout';
 import SEO from '@components/header/SEO';
 import ContentWrapper from '@module/ContentWrapper';
@@ -22,7 +22,7 @@ import Giscus from '@components/Giscus';
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));
-  const title = content?.properties?.remark.rich_text || '';
+  const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
   const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
 
   return (
@@ -39,7 +39,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const { slug } = pageContext;
   const { copyToClipboard } = useClipboard();
   const content = notionNodeToJson(getNotionNodeByUrl(data, slug));
-  const title = content?.properties?.remark.rich_text || '';
+  const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
   const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([]);
   const [series, setSeries] = useState<Select>();
   const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
@@ -152,45 +152,11 @@ export const postQuery = graphql`
     allNotion {
       edges {
         node {
-          archived
-          children {
-            id
-          }
-          createdAt
           id
-          internal {
-            content
-          }
-          json
-          markdownString
-          parent {
-            id
-            internal {
-              content
-            }
-          }
-          raw {
-            archived
-            children {
-              id
-            }
-            created_by {
-              id
-            }
-            created_time
-            id
-            last_edited_by {
-              id
-            }
-            last_edited_time
-            object
-            parent {
-              database_id
-              type
-            }
-            url
-          }
+          databaseName
           title
+          json
+          createdAt
           updatedAt
         }
       }

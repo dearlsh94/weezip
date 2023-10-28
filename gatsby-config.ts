@@ -1,11 +1,11 @@
-import type { GatsbyConfig } from 'gatsby'
+import type { GatsbyConfig } from 'gatsby';
 
 // Handle Environment Variables
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
-const siteUrl = 'https://weezip.treefeely.com'
+const siteUrl = 'https://weezip.treefeely.com';
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -19,6 +19,7 @@ const config: GatsbyConfig = {
     DEV_SSR: true,
     FAST_DEV: true,
   },
+  trailingSlash: 'never',
   plugins: [
     `gatsby-plugin-netlify`,
     'gatsby-plugin-sass',
@@ -60,15 +61,15 @@ const config: GatsbyConfig = {
           return allPages
             .filter((edge: any) => edge.node.title)
             .map((edge: any) => {
-              return { ...edge.node, path: edge.node.title }
-            })
+              return { ...edge.node, path: edge.node.title };
+            });
         },
         serializer: (props: any) => {
           return {
             url: `${props.title}`,
             changefreq: 'daily',
             priority: 0.7,
-          }
+          };
         },
       },
     },
@@ -87,12 +88,16 @@ const config: GatsbyConfig = {
       __key: 'images',
     },
     {
-      resolve: 'gatsby-source-notion-api',
+      resolve: 'gatsby-source-notion-feely',
       options: {
         token: process.env.NOTION_INTEGRATION_TOKEN,
-        databaseId: process.env.NOTION_DB_ID,
-        propsToFrontmatter: true,
-        lowerTitleLevel: true,
+        databases: [
+          {
+            id: process.env.NOTION_DB_ID,
+            name: 'Weezip',
+            isCheckPublish: true,
+          },
+        ],
       },
     },
     'gatsby-plugin-sharp',
@@ -155,6 +160,6 @@ const config: GatsbyConfig = {
       },
     },
   ],
-}
+};
 
-export default config
+export default config;

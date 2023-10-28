@@ -1,4 +1,3 @@
-// 노션 DB 컬럼 목록
 export interface Properties {
   idx: Property;
   title: Property;
@@ -11,17 +10,20 @@ export interface Properties {
   tag: Property;
 }
 
-// 노션 DB 테이블 컬럼 속성
 export interface Property {
   id: string;
   type: 'title' | 'multi_select' | 'rich_text' | 'date' | 'select' | 'number';
   title?: TextItem;
-  multi_select?: Select[];
-  rich_text?: string;
+  multi_select?: MultiSelect;
+  rich_text?: RichText;
   date: PropDate;
   select: Select;
   number: number;
 }
+
+export type MultiSelect = Select[];
+export type RichText = TextItem[];
+export type Caption = TextItem[];
 
 export interface WorkBy {
   object: string;
@@ -39,7 +41,7 @@ export interface TextItem {
   text: Text;
   annotations: Annotations;
   plain_text: string;
-  href: any;
+  href?: string;
 }
 
 export interface Annotations {
@@ -64,13 +66,12 @@ export interface Text {
 
 export interface Heading {
   color: string;
-  is_toggleable: boolean;
-  text: TextItem[];
+  rich_text: RichText;
 }
 
 export interface TextBlock {
   color: string;
-  text: TextItem[];
+  rich_text: RichText;
 }
 
 export interface Todo extends TextBlock {
@@ -86,18 +87,18 @@ export interface Callout extends TextBlock {
 }
 
 export interface Bookmark {
-  caption: TextItem[];
+  caption: Caption;
   url: string;
 }
 
 export interface Code {
-  caption: TextItem[];
+  caption: Caption;
   language: string;
-  text: TextItem[];
+  rich_text: RichText;
 }
 
 export interface Image {
-  caption: TextItem[];
+  caption: Caption;
   file: ImageFile;
   type: 'file';
 }
