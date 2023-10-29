@@ -119,14 +119,9 @@ article.post {
       justify-content: center;
       align-items: center;
       span {
-        color: var(--color-primary);
+        color: var(--color-base);
         margin-right: 4px;
         font-weight: 500;
-      }
-      @include hoverFine {
-        span {
-          color: var(--color-white-1);
-        }
       }
     }
 

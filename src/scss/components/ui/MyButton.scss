@@ -31,38 +31,22 @@
     font-size: 12px;
   }
 
-  &.COLOR-PRIMARY.TYPE-BORDER {
-    background-color: var(--color-white-1);
-    border: 1.5px solid var(--color-primary);
-    color: var(--color-base);
-
+  &.TYPE-BORDER {
+    background-color: var(--color-reverse-mono);
     @include hoverFine {
-      background-color: var(--color-primary);
-      border: 1.5px solid var(--color-white-1);
-      color: var(--color-white-1);
+      border: 1.5px solid var(--color-third);
+      background-color: var(--color-third);
+      color: var(--color-base);
     }
+  }
+
+  &.COLOR-PRIMARY.TYPE-BORDER {
+    border: 1.5px solid var(--color-primary);
+    color: var(--color-font);
   }
   &.COLOR-SECONDARY.TYPE-BORDER {
-    background-color: var(--color-white-1);
     border: 1.5px solid var(--color-secondary);
-    color: var(--color-primary);
-
-    @include hoverFine {
-      background-color: var(--color-secondary);
-      border: 1.5px solid var(--color-white-1);
-      color: var(--color-white-1);
-    }
-  }
-  &.COLOR-THIRD.TYPE-BORDER {
-    background-color: var(--color-white-1);
-    border: 1.5px solid var(--color-third);
-    color: var(--color-secondary);
-
-    @include hoverFine {
-      background-color: var(--color-third);
-      border: 1.5px solid var(--color-white-1);
-      color: var(--color-white-1);
-    }
+    color: var(--color-font);
   }
 
   &.COLOR-PRIMARY.TYPE-BG {
@@ -70,8 +54,5 @@
   }
   &.COLOR-SECONDARY.TYPE-BG {
     background-color: var(--color-secondary);
-  }
-  &.COLOR-THIRD.TYPE-BG {
-    background-color: var(--color-third);
   }
 }
