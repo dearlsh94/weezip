@@ -5507,9 +5507,10 @@ gatsby-source-filesystem@^5.7.0:
     valid-url "^1.0.9"
     xstate "^4.38.0"
 
-"gatsby-source-notion-feely@github:dearlsh94/gatsby-source-notion-feely":
-  version "0.0.2"
-  resolved "https://codeload.github.com/dearlsh94/gatsby-source-notion-feely/tar.gz/3607b740140692d1f9b97aeccd19c19bacae15d2"
+gatsby-source-notion-feely@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-notion-feely/-/gatsby-source-notion-feely-1.0.0.tgz#a57d6d9cd4ddf5ef97e83469aa2d5e66b4feea25"
+  integrity sha512-Taxm0f9uxeaTNBia4gQYcHWhfhDEa93JAMDtqUDB3ChR38gd9Nj3zf86HU0SpkD87998KHxuOJHsT84lOIghpQ==
   dependencies:
     node-fetch "^2.6.1"
     or-pipets "^1.0.1"
