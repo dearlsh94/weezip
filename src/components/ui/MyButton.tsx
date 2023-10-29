@@ -11,7 +11,6 @@ export enum ButtonSize {
 export enum ButtonColor {
   PRIMARY = 'COLOR-PRIMARY',
   SECONDARY = 'COLOR-SECONDARY',
-  THIRD = 'COLOR-THIRD',
 }
 
 export enum ButtonType {
