@@ -37,6 +37,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.08.24 | 상용 서비스 script, API 오류 처리 개선 작업 회고. 이렇게나 오류가 많았다고?
 - 23.09.20 | 광고 노출 수를 측정해주세요! Svelte로 만드는 컴포넌트 노출 트래킹 작업기.
 - 23.10.14 | 시대의 변화로 보는 요즘 과학이 인기있는 이유
+- 23.10.30 | Svelte 개발 환경에 Prettier 설정 더하기 (prettier-plugin-svelte)
 <br/>
 
 ### Explain
@@ -76,6 +77,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.04.30 | Gatsby가 생성해준 LightHouse의 SEO Page is blocked from indexing 에러에 대한 삽질기.
 - 23.09.28 | Github 리포지토리 Netlify로 배포하고 커스텀 도메인 연결하기 (feat. Gatsby Cloud 종료)
 - 23.10.10 | Gatsby 블로그에 Github 댓글 적용하기. 하루만에 Utterances에서 Giscus로. (다크 테마 적용)
+- 23.10.25 | Gatsby+Notion API 플러그인(gatsby-source-notion-feely) 작업기.
 <br/>
 
 ### 개발자 도서관
@@ -93,6 +95,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.10.11 | 책 피플웨어(Peopleware) 3부. 우수한 인재를 확보하라.
 - 23.10.17 | 책 피플웨어(Peopleware) 4부. 생산성 높은 팀으로 양성하기.
 - 23.10.19 | 책 피플웨어(Peopleware) 5부. 비옥한 토양.
+- 23.10.20 | 책 피플웨어(Peopleware) 6부. 여기서는 일이 재미있어야 한다.
 <br/>
 
 ### 웹개개
@@ -121,4 +124,5 @@ byproducts of the process of living with imagination and curiosity
 - 23.08.29 | [영화] 크리스토퍼 놀란 - 오펜하이머 리뷰 시점
 - 23.09.16 | [영화] 쥬세페 토르나토레 - 시네마천국 리뷰 시점
 - 23.09.29 | [책] 유현준 - 도시는 무엇으로 사는가 리뷰 시점
+- 23.10.29 | [책] 미셸 푸코 - 감옥의 대안 리뷰 시점
 <br/>
