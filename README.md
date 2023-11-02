@@ -105,7 +105,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.09.11 | WEB 크로스 브라우징과 바벨, 그리고 폴리필 개념 요약 정리
 - 23.09.13 | 컴파일러, 인터프리터, 트랜스파일러 개념 요약 정리
 - 23.09.16 | JavaScript 모듈로 이야기하는 번들러와 웹팩, 롤업, 비트에 대한 요약 정리
-- 23.11.01 | JavaScript 스코프(Scope)와 렉시컬환경(Lexical Environment), 그리고 실행 컨텍스트(Execution Context) 개념 정리
+- 23.11.01 | JavaScript 스코프, 렉시컬 환경, 실행 컨텍스트 개념 요약 정리
 <br/>
 
 ### 문화 소비자 시점
