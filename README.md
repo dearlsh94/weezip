@@ -37,6 +37,7 @@ byproducts of the process of living with imagination and curiosity
 - 23.08.24 | 상용 서비스 script, API 오류 처리 개선 작업 회고. 이렇게나 오류가 많았다고?
 - 23.09.20 | 광고 노출 수를 측정해주세요! Svelte로 만드는 컴포넌트 노출 트래킹 작업기.
 - 23.10.14 | 시대의 변화로 보는 요즘 과학이 인기있는 이유
+- 23.11.04 | 프론트엔드 개발자를 위한 FEConf 2023 후기, 우리는 거인의 어깨 위에 있는 난쟁이다.
 <br/>
 
 ### Explain
