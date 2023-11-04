@@ -9,15 +9,15 @@ export const GNB_MENUS = Object.freeze([
 
 export const RECOMMEND_TAGS = Object.freeze([
   {
-    url: 'list/?series=review',
+    url: `/list/?series=${encodeURIComponent('문화소비자시점')}`,
     name: '문화소비자시점',
   },
   {
-    url: 'list/?tag=dev',
-    name: 'Dev',
+    url: `/list/?tag=${encodeURIComponent('개발')}`,
+    name: '개발',
   },
   {
-    url: 'list/?tag=essay',
+    url: '/list/?tag=essay',
     name: 'Essay',
   },
 ]);
