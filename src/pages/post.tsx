@@ -109,13 +109,6 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
             <Giscus />
           </div>
           <div className="button-box">
-            {content?.public_url && (
-              <Linker url={content.public_url} target="_blank" aria-label={`노션으로 열기`}>
-                <MyButton size={ButtonSize.PRIMARY} color={ButtonColor.PRIMARY} type={ButtonType.BORDER} width={'100%'}>
-                  노션으로 댓글달기
-                </MyButton>
-              </Linker>
-            )}
             {series && (
               <Linker url={`/list?series=${series.name}`} aria-label={`${series.name} 시리즈 목록으로 이동`}>
                 <MyButton
