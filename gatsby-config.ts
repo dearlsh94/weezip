@@ -76,14 +76,14 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/Tesseract-Logo-BG-32x32.png',
+        icon: './static/images/Tesseract-Logo-BG-128x128.png',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/',
+        path: './static/images/',
       },
       __key: 'images',
     },
