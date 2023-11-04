@@ -80,14 +80,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: './static/images/',
-      },
-      __key: 'images',
-    },
-    {
       resolve: 'gatsby-source-notion-feely',
       options: {
         token: process.env.NOTION_INTEGRATION_TOKEN,
@@ -100,8 +92,6 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-omni-font-loader`,
       options: {
