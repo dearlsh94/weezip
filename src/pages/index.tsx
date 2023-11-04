@@ -29,6 +29,9 @@ const IndexPage: React.FC<PageProps> = () => {
           <LatestPost />
           <Divider />
           {content && <ContentWrapper childrens={content.children} align="center" />}
+          <div className="logo-box">
+            <img src="/static/images/Tesseract-Logo-128x128.png" alt="Weezip Logo" />
+          </div>
         </MainLayout>
       </NotionContext.Provider>
     </GlobalPortal.Provider>
