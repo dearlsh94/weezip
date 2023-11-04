@@ -18,23 +18,9 @@ header {
     position: absolute;
     left: 10px;
     z-index: 12;
-    .icon-box {
-      @include flexCenter;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      @include hoverFine {
-        background-color: var(--color-secondary);
-        border-radius: 4px;
-      }
-    }
     svg {
       cursor: pointer;
     }
-  }
-
-  .logo-box {
-    width: 42px;
   }
 
   .right-box {
@@ -42,19 +28,20 @@ header {
     right: 10px;
     display: flex;
     align-items: center;
-    .icon-box {
-      @include flexCenter;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-      @include hoverFine {
-        background-color: var(--color-secondary);
-        border-radius: 4px;
-      }
-    }
     svg {
       cursor: pointer;
+    }
+  }
+
+  .icon-box {
+    @include flexCenter;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    @include hoverFine {
+      background-color: var(--color-secondary);
+      border-radius: 4px;
     }
   }
 

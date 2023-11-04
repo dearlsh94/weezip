@@ -76,7 +76,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/logo-bg-1x.png',
+        icon: 'src/images/Tesseract-Logo-BG-32x32.png',
       },
     },
     {
