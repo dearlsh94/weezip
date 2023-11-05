@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "hosting": "yarn clean && yarn && yarn build",
+    "hosting": "yarn && yarn build",
     "typecheck": "tsc --noEmit",
     "pull": "git fetch && git pull",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'"
