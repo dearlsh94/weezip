@@ -76,16 +76,8 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/Tesseract-Logo-BG-32x32.png',
+        icon: './static/images/Tesseract-Logo-BG-128x128.png',
       },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: './src/images/',
-      },
-      __key: 'images',
     },
     {
       resolve: 'gatsby-source-notion-feely',
@@ -100,8 +92,6 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-omni-font-loader`,
       options: {

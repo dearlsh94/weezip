@@ -49,6 +49,15 @@ article.post {
   }
 }
 
+.index-layout {
+  .logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0px;
+  }
+}
+
 .list-layout {
   .info-box {
     display: flex;
