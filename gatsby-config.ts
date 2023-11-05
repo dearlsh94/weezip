@@ -24,6 +24,7 @@ const config: GatsbyConfig = {
     `gatsby-plugin-netlify`,
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
+    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
