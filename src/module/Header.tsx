@@ -60,7 +60,7 @@ const Header = () => {
         </div>
         <Linker url="/" aria-label="홈으로 이동">
           <div className="icon-box">
-            <img src="/static/images/Tesseract-Logo-64x64.png" alt="Weezip Logo" className="logo" width={32} />
+            <StaticImage src="../images/Tesseract-Logo-64x64.png" alt="Weezip Logo" className="logo" width={32} />
           </div>
         </Linker>
         <div className="right-box">

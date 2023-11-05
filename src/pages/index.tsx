@@ -11,6 +11,7 @@ import SEO from '@components/header/SEO';
 import LatestPost from '@module/LatestPost';
 import Divider from '@components/ui/Divider';
 import { GlobalPortal } from '@components/GlobalPortal';
+import { StaticImage } from 'gatsby-plugin-image';
 
 export const Head: HeadFC = () => {
   return <SEO />;
@@ -30,7 +31,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <Divider />
           {content && <ContentWrapper childrens={content.children} align="center" />}
           <div className="logo-box">
-            <img src="/static/images/Tesseract-Logo-128x128.png" alt="Weezip Logo" />
+            <StaticImage src="../images/Tesseract-Logo-256x256.png" alt="Weezip Logo" width={128} />
           </div>
         </MainLayout>
       </NotionContext.Provider>
