@@ -75,7 +75,6 @@ export interface NotionColumn {
   lastEditedTime: string;
   createdTime: string;
   notionUrl: string;
-  category?: Select;
   tag?: MultiSelect;
   series?: Select;
 }

@@ -3,7 +3,6 @@ export interface Properties {
   title: Property;
   url: Property;
   remark: Property;
-  category: Property;
   created_date: Property;
   edited_date: Property;
   series: Property;

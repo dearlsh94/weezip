@@ -16,14 +16,12 @@ const parseNotionColumn = (content: Children): NotionColumn => {
   const last_edited_item = content?.properties?.edited_date?.date?.start || '';
   const created_time = content?.properties?.created_date?.date?.start || '';
   const notionUrl = content?.url || '';
-  const category = content?.properties?.category?.select;
   const tag = content?.properties?.tag?.multi_select || [];
   const series = content?.properties?.series?.select;
 
   return {
     idx,
     remark,
-    category,
     lastEditedTime: convertDatetimeFormat(last_edited_item),
     createdTime: convertDatetimeFormat(created_time),
     notionUrl,
