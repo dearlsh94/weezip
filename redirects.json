@@ -1,0 +1,18 @@
+[
+  {
+    "from": "/post/write/*",
+    "to": "/post/:splat"
+  },
+  {
+    "from": "/post/explain/*",
+    "to": "/post/:splat"
+  },
+  {
+    "from": "/post/edit/*",
+    "to": "/post/:splat"
+  },
+  {
+    "from": "/post/zip/*",
+    "to": "/post/:splat"
+  }
+]

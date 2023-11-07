@@ -5377,7 +5377,7 @@ gatsby-plugin-manifest@^5.7.0:
     semver "^7.5.3"
     sharp "^0.32.6"
 
-gatsby-plugin-netlify@^5.1.0:
+gatsby-plugin-netlify@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-5.1.1.tgz#c9497133fca784900df7a80c31c47853fabdcae7"
   integrity sha512-CembvYjbP7NJvVIdffqWaBKXMHIxYBKBEoXFGvCKX+8phRNkfmjnvoljoOakv0ypHBpgjgtpa7Nvc3PI+IjB1A==
