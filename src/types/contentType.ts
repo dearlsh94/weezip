@@ -70,7 +70,7 @@ export interface Parent {
 }
 
 export interface NotionColumn {
-  idx: number;
+  id: number;
   remark: string;
   lastEditedTime: string;
   createdTime: string;

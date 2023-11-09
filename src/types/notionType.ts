@@ -1,5 +1,5 @@
 export interface Properties {
-  idx: Property;
+  id: Property;
   title: Property;
   url: Property;
   remark: Property;
@@ -10,8 +10,8 @@ export interface Properties {
 }
 
 export interface Property {
-  id: string;
-  type: 'title' | 'multi_select' | 'rich_text' | 'date' | 'select' | 'number';
+  type: 'unique_id' | 'title' | 'multi_select' | 'rich_text' | 'date' | 'select' | 'number';
+  unique_id?: UniqueId;
   title?: TextItem;
   multi_select?: MultiSelect;
   rich_text?: RichText;
@@ -27,6 +27,11 @@ export type Caption = TextItem[];
 export interface WorkBy {
   object: string;
   id: string;
+}
+
+export interface UniqueId {
+  prefix: string;
+  number: number;
 }
 
 export interface Select {
