@@ -28,8 +28,8 @@ export const Head: HeadFC = () => {
 const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const nodes = useGetNotionQuery();
   const params = new URLSearchParams(props.location.search);
-  const parseList: NotionNode[] = getParseListByNodes(nodes).sort((a, b) =>
-    a.notionColumn?.idx && b.notionColumn?.idx ? b.notionColumn?.idx - a.notionColumn?.idx : 0
+  const parseList: NotionNode[] = getParseListByNodes(nodes).sort(
+    (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt)
   );
   const { postTags, postSeries } = classifyPost(parseList);
   const store: INotionContext = {
