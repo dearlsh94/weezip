@@ -20,6 +20,41 @@ export interface Property {
   number: number;
 }
 
+export interface UniqueIdProperty {
+  type: 'unique_id';
+  unique_id: UniqueId;
+}
+
+export interface TitleProperty {
+  type: 'title';
+  title: TextItem;
+}
+
+export interface MultiSelectProperty {
+  type: 'multi_select';
+  multi_select: MultiSelect;
+}
+
+export interface RichTextProperty {
+  type: 'rich_text';
+  rich_text: RichText;
+}
+
+export interface DateProperty {
+  type: 'date';
+  date: PropDate;
+}
+
+export interface SelectProperty {
+  type: 'select';
+  select: Select;
+}
+
+export interface NumberProperty {
+  type: 'number';
+  number: number;
+}
+
 export type MultiSelect = Select[];
 export type RichText = TextItem[];
 export type Caption = TextItem[];
