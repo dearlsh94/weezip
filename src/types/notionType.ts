@@ -1,23 +1,11 @@
 export interface Properties {
-  id: Property;
-  title: Property;
-  url: Property;
-  remark: Property;
-  created_date: Property;
-  edited_date: Property;
-  series: Property;
-  tag: Property;
-}
-
-export interface Property {
-  type: 'unique_id' | 'title' | 'multi_select' | 'rich_text' | 'date' | 'select' | 'number';
-  unique_id?: UniqueId;
-  title?: TextItem;
-  multi_select?: MultiSelect;
-  rich_text?: RichText;
-  date: PropDate;
-  select: Select;
-  number: number;
+  id: UniqueIdProperty;
+  url: TitleProperty;
+  remark: RichTextProperty;
+  created_date: DateProperty;
+  edited_date: DateProperty;
+  series: SelectProperty;
+  tag: MultiSelectProperty;
 }
 
 export interface UniqueIdProperty {
