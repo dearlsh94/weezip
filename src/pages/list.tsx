@@ -54,11 +54,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     let _lastPage = 1;
 
     if (props.location.search) {
-      console.log({ params });
-      for (let [key, value] of params) {
-        console.log({ key, value });
-      }
-
       _list = parseList.filter(post => {
         if (!post.title.startsWith('/post')) return false;
 
