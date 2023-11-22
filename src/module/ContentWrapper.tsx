@@ -12,7 +12,7 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
   let numberedList: Children[] = [];
   let bulletedList: Children[] = [];
   return (
-    <section className={`content-wrapper ${align ? align : ''}`}>
+    <div className={`content-wrapper ${align ? align : ''}`}>
       {childrens.map((block, i) => {
         // Type number list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
         if (block.type === BlockType.NUMBERED_LIST_ITEM) {
@@ -73,7 +73,7 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
           </div>
         );
       })}
-    </section>
+    </div>
   );
 };
 
