@@ -2,81 +2,50 @@ import * as React from 'react';
 import '@scss/components/Pagination.scss';
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton';
 import { IconArrow, IconMoveEnd } from '@components/icon';
-import { navigate } from 'gatsby';
+import { paginationController } from '@src/hooks/usePagination';
 
-interface IProps {
-  lastPage: number;
-  currentPage: number;
+interface PostPaginationProps {
+  pagination: paginationController;
 }
 
-const Pagination = ({ lastPage, currentPage }: IProps) => {
-  const FIRST_PAGE = 1;
-
-  const handleOlder = () => {
-    if (currentPage !== FIRST_PAGE) {
-      handleMove(Math.max(currentPage - 1, FIRST_PAGE));
-    }
-  };
-  const handleNewer = () => {
-    if (currentPage !== lastPage) {
-      handleMove(Math.min(currentPage + 1, lastPage));
-    }
-  };
-  const handleFirst = () => {
-    if (currentPage !== FIRST_PAGE) {
-      handleMove(FIRST_PAGE);
-    }
-  };
-  const handleLast = () => {
-    if (currentPage !== lastPage) {
-      handleMove(lastPage);
-    }
-  };
-
-  const handleMove = (page: number) => {
-    const search = new URLSearchParams(location.search);
-    if (search.has('page')) {
-      search.delete('page');
-    }
-    search.append('page', page.toString());
-    navigate(`${location.pathname}?${search.toString()}`);
-  };
+const PostPagination = ({ pagination }: PostPaginationProps) => {
+  const { lastPage, currentPage } = pagination;
 
   return (
     <div className="post-list-page-box">
       <div className="left-box">
         {lastPage > 2 && (
           <MyButton
-            className={`page-button first ${currentPage === FIRST_PAGE ? 'disabled' : 'active'}`}
+            className={`page-button first ${currentPage === 1 ? 'disabled' : 'active'}`}
             size={ButtonSize.THIRD}
             color={ButtonColor.PRIMARY}
             type={ButtonType.BORDER}
             width={45}
-            handleClick={handleFirst}
+            handleClick={pagination.first}
           >
             <IconMoveEnd direction="left" size={18} color="base" />
           </MyButton>
         )}
         <MyButton
-          className={`page-button prev ${currentPage === FIRST_PAGE ? 'disabled' : 'active'}`}
+          className={`page-button prev ${currentPage === 1 ? 'disabled' : 'active'}`}
           size={ButtonSize.THIRD}
           color={ButtonColor.PRIMARY}
           type={ButtonType.BORDER}
           width={45}
-          handleClick={handleOlder}
+          handleClick={pagination.prev}
         >
           <IconArrow direction="left" size={12} color="base" />
         </MyButton>
       </div>
       <div className="center-box">
         {currentPage !== 1 && (
-          <span className="prev" onClick={handleOlder}>
+          <span className="prev" onClick={pagination.prev}>
             {Math.max(currentPage - 1, 1)}
           </span>
         )}
         <span className="current">{currentPage}</span>
         {currentPage !== lastPage && (
-          <span className="next" onClick={handleNewer}>
+          <span className="next" onClick={pagination.next}>
             {Math.min(currentPage + 1, lastPage)}
           </span>
         )}
@@ -88,7 +57,7 @@ const Pagination = ({ lastPage, currentPage }: IProps) => {
           color={ButtonColor.PRIMARY}
           type={ButtonType.BORDER}
           width={45}
-          handleClick={handleNewer}
+          handleClick={pagination.next}
         >
           <IconArrow direction="right" size={12} color="base" />
         </MyButton>
@@ -99,7 +68,7 @@ const Pagination = ({ lastPage, currentPage }: IProps) => {
             color={ButtonColor.PRIMARY}
             type={ButtonType.BORDER}
             width={45}
-            handleClick={handleLast}
+            handleClick={pagination.last}
           >
             <IconMoveEnd direction="right" size={18} color="base" />
           </MyButton>
@@ -109,4 +78,4 @@ const Pagination = ({ lastPage, currentPage }: IProps) => {
   );
 };
 
-export default Pagination;
+export default PostPagination;

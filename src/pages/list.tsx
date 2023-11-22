@@ -26,8 +26,8 @@ export const Head: HeadFC = () => {
 };
 
 const ListPage: React.FC<PageProps> = (props: PageProps) => {
-  const nodes = useGetNotionQuery();
   const params = new URLSearchParams(props.location.search);
+  const nodes = useGetNotionQuery();
   const parseList: NotionNode[] = getParseListByNodes(nodes).sort(
     (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt)
   );
@@ -37,21 +37,16 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     postTags: postTags,
     postSeries: postSeries,
   };
-  const PER_PAGE = 10;
 
   const [list, setList] = useState<NotionNode[]>([]);
   const [count, setCount] = useState(0);
   const [filterText, setFilterText] = useState('전체');
   const [isLoading, setIsLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [lastPage, setLastPage] = useState(0);
 
   useEffect(() => {
     filterReset();
 
     let _list: NotionNode[] = [];
-    let _page = 1;
-    let _lastPage = 1;
 
     if (props.location.search) {
       _list = parseList.filter(post => {
@@ -73,25 +68,13 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
         return true;
       });
-
-      _lastPage = Math.ceil(_list.length / PER_PAGE);
-      if (params.has('page')) {
-        const page = Number(params.get('page')) || 1;
-        _page = Math.min(page, _lastPage);
-      }
     } else {
       _list = parseList;
-      _lastPage = Math.ceil(_list.length / PER_PAGE);
     }
 
     loading();
     setCount(_list.length);
-    setCurrentPage(_page);
-    setLastPage(_lastPage);
-
-    const indexOfLastPost = _page * PER_PAGE;
-    const indexOfFirstPost = indexOfLastPost - PER_PAGE;
-    setList(_list.slice(indexOfFirstPost, indexOfLastPost));
+    setList(_list);
   }, [props.location]);
 
   const filterReset = () => {
@@ -131,7 +114,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
             </div>
             <Divider color="primary" height={2} />
             <LoadSection isLoading={isLoading} isError={false}>
-              <PostList list={list} currentPage={currentPage} lastPage={lastPage} />
+              <PostList list={list} />
             </LoadSection>
           </MainLayout>
         </NotionContext.Provider>
