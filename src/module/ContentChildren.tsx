@@ -23,7 +23,6 @@ interface ContentChildrenProps {
 
 const ContentChildren = ({ block }: ContentChildrenProps) => {
   const { type } = block;
-
   const render = () => {
     switch (type) {
       case BlockType.PARAGRAPH:
@@ -60,7 +59,7 @@ const ContentChildren = ({ block }: ContentChildrenProps) => {
     }
     return;
   };
-  return <div className={`content-children ${type}`}>{render()}</div>;
+  return <div className={`${type}`}>{render()}</div>;
 };
 
 export default ContentChildren;

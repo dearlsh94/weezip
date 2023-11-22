@@ -29,7 +29,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <MainLayout className="index-layout">
           <LatestPost />
           <Divider />
-          {content && <ContentWrapper childrens={content.children} align="center" />}
+          <div className="introduce">{content && <ContentWrapper childrens={content.children} />}</div>
           <div className="logo-box">
             <StaticImage src="../images/Tesseract-Logo-256x256.png" alt="Weezip Logo" width={128} />
           </div>
