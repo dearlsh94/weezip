@@ -38,7 +38,7 @@ const ContentChildren = ({ block }: ContentChildrenProps) => {
       case BlockType.BULLETED_LIST_ITEM:
         if (block.bulleted_list_item) return <NBulletedList bulletedListItem={block} />;
       case BlockType.NUMBERED_LIST_ITEM:
-        if (block) return <NNumberedListItem numberedListItem={block} />;
+        if (block.numbered_list_item) return <NNumberedListItem numberedListItem={block} />;
       case BlockType.TODO:
         if (block.to_do) return <NTodo todo={block.to_do} />;
       case BlockType.CALLOUT:
