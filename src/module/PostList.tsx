@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Linker from '@components/ui/Linker';
-import PostListItem from '@components/PostListItem';
+import PostListItem from '@components/post/PostListItem';
 import '@scss/module/PostList.scss';
 import { NotionNode } from '@types';
 import { navigate } from 'gatsby';
 import { IconClearAll } from '@components/icon';
-import PostPagination from '@components/PostPagination';
+import PostPagination from '@components/post/PostPagination';
 import usePagination from '@src/hooks/usePagination';
 
 interface PostListProps {

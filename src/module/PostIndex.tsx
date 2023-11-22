@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '@scss/module/PostIndex.scss';
-import PostIndexList from '@components/PostIndexList';
+import PostIndexList from '@components/post/PostIndexList';
 import { IconArrow } from '@components/icon';
 import useShow from '@src/hooks/useShow';
 import SideBarLayout from '@layout/SideBarLayout';

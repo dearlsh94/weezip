@@ -8,7 +8,7 @@ import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
 import MainLayout from '@layout/MainLayout';
 import SEO from '@components/header/SEO';
 import ContentWrapper from '@module/ContentWrapper';
-import TagBadges from '@components/TagBadges';
+import TagBadges from '@components/post/TagBadges';
 import { graphql } from 'gatsby';
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton';
 import { Select } from '@types';

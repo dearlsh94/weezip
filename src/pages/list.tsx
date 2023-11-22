@@ -10,7 +10,7 @@ import { INotionContext, NotionNode } from '@types';
 import PostList from '@module/PostList';
 import { classifyPost, getParseListByNodes } from '@utils/notionUtils';
 import SEO from '@components/header/SEO';
-import ListFilter from '@components/ListFilter';
+import ListFilter from '@components/post/ListFilter';
 import Divider from '@components/ui/Divider';
 import { IconClearAll } from '@components/icon';
 import { GlobalPortal } from '@components/GlobalPortal';

@@ -4,7 +4,7 @@ import '@scss/module/PostSearchLayer.scss';
 import { throttle } from '@utils/commonUtils';
 import { IconClose, IconSearch } from '@components/icon';
 import { navigate } from 'gatsby';
-import RecommendTag from '../components/RecommendTag';
+import RecommendTag from '../components/post/RecommendTag';
 import Dim from '@layout/Dim';
 import { GlobalPortal } from '@components/GlobalPortal';
 
