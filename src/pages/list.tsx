@@ -5,7 +5,7 @@ import '@scss/global.scss';
 import '@scss/page.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import MainLayout from '@layout/MainLayout';
-import { NotionContext, PageContext } from '@store/rootStore';
+import { NotionContext } from '@store/rootStore';
 import { INotionContext, NotionNode } from '@types';
 import PostList from '@module/PostList';
 import { classifyPost, getParseListByNodes } from '@utils/notionUtils';
@@ -96,29 +96,27 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
   return (
     <GlobalPortal.Provider>
-      <PageContext.Provider value={props}>
-        <NotionContext.Provider value={store}>
-          <MainLayout className="list-layout">
-            <ListFilter />
-            <div className={`info-box ${isLoading ? 'loading' : ''}`}>
-              <IconClearAll handleClick={handleClearAll} />
-              <div className="count-box ellipsis">
-                {filterText && (
-                  <strong>
-                    {filterText}
-                    <span> | </span>
-                  </strong>
-                )}
-                총 <span>{count}</span>건{filterText !== '전체' && '의 검색결과'}
-              </div>
+      <NotionContext.Provider value={store}>
+        <MainLayout className="list-layout">
+          <ListFilter />
+          <div className={`info-box ${isLoading ? 'loading' : ''}`}>
+            <IconClearAll handleClick={handleClearAll} />
+            <div className="count-box ellipsis">
+              {filterText && (
+                <strong>
+                  {filterText}
+                  <span> | </span>
+                </strong>
+              )}
+              총 <span>{count}</span>건{filterText !== '전체' && '의 검색결과'}
             </div>
-            <Divider color="primary" height={2} />
-            <LoadSection isLoading={isLoading} isError={false}>
-              <PostList list={list} />
-            </LoadSection>
-          </MainLayout>
-        </NotionContext.Provider>
-      </PageContext.Provider>
+          </div>
+          <Divider color="primary" height={2} />
+          <LoadSection isLoading={isLoading} isError={false}>
+            <PostList list={list} />
+          </LoadSection>
+        </MainLayout>
+      </NotionContext.Provider>
     </GlobalPortal.Provider>
   );
 };
