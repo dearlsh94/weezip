@@ -57,14 +57,12 @@ nav.snb-box {
     }
 
     .count {
+      @include flexCenter;
       color: var(--color-base);
       background-color: var(--color-third);
       border-radius: 45%;
       width: 18px;
       height: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-size: 10pt;
     }
   }
