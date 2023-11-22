@@ -43,51 +43,48 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    filterReset();
+    setIsLoading(true);
 
     let _list: NotionNode[] = [];
 
     if (props.location.search) {
+      const value = getFilterValue();
+      setFilterText(value);
+
       _list = parseList.filter(post => {
         if (params.has('series')) {
-          const series = params.get('series') || '';
-          setFilterText(series);
-          return compareString(post?.notionColumn?.series?.name, series);
+          return compareString(post?.notionColumn?.series?.name, value);
         } else if (params.has('tag')) {
-          const tag = params.get('tag') || '';
-          setFilterText(`${tag} 태그`);
-          return post?.notionColumn?.tag?.find(t => compareString(t.name, decodeURIComponent(tag)));
+          return post?.notionColumn?.tag?.find(t => compareString(t.name, decodeURIComponent(value)));
         } else if (params.has('keyword')) {
-          const keyword = params.get('keyword') || '';
-          const searchText = decodeURIComponent(keyword).replaceAll(/ /g, '').toUpperCase();
-          return post.notionColumn?.remark?.replaceAll(/ /g, '').toUpperCase().includes(searchText);
+          return post.notionColumn?.remark?.replaceAll(/ /g, '').toUpperCase().includes(value);
         }
-
         return true;
       });
     } else {
+      setFilterText('전체');
       _list = parseList;
     }
 
-    loading();
     setList(_list);
+    setIsLoading(false);
   }, [props.location]);
 
-  const filterReset = () => {
-    loading();
-    setFilterText('전체');
-  };
-
-  const handleClearAll = () => {
-    filterReset();
+  const moveInit = () => {
     navigate('/list');
   };
 
-  const loading = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 250);
+  const getFilterValue = () => {
+    let value = '';
+    if (params.has('series')) {
+      value = params.get('series') || '';
+    } else if (params.has('tag')) {
+      value = params.get('tag') || '';
+    } else if (params.has('keyword')) {
+      const keyword = params.get('keyword') || '';
+      value = decodeURIComponent(keyword).replaceAll(/ /g, '').toUpperCase();
+    }
+    return value;
   };
 
   return (
@@ -96,7 +93,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
         <MainLayout className="list-layout">
           <ListFilter />
           <div className={`info-box ${isLoading ? 'loading' : ''}`}>
-            <IconClearAll handleClick={handleClearAll} />
+            <IconClearAll handleClick={moveInit} />
             <div className="count-box ellipsis">
               {filterText && (
                 <strong>
