@@ -39,7 +39,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
   };
 
   const [list, setList] = useState<NotionNode[]>([]);
-  const [count, setCount] = useState(0);
   const [filterText, setFilterText] = useState('전체');
   const [isLoading, setIsLoading] = useState(true);
 
@@ -50,8 +49,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
 
     if (props.location.search) {
       _list = parseList.filter(post => {
-        if (!post.title.startsWith('/post')) return false;
-
         if (params.has('series')) {
           const series = params.get('series') || '';
           setFilterText(series);
@@ -73,7 +70,6 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
     }
 
     loading();
-    setCount(_list.length);
     setList(_list);
   }, [props.location]);
 
@@ -108,7 +104,7 @@ const ListPage: React.FC<PageProps> = (props: PageProps) => {
                   <span> | </span>
                 </strong>
               )}
-              총 <span>{count}</span>건{filterText !== '전체' && '의 검색결과'}
+              총 <span>{list.length}</span>건{filterText !== '전체' && '의 검색결과'}
             </div>
           </div>
           <Divider color="primary" height={2} />
