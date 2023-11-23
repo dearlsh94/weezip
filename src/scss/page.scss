@@ -50,10 +50,12 @@ article.post {
 }
 
 .index-layout {
+  .introduce {
+    text-align: center;
+    margin-top: 4rem;
+  }
   .logo-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter;
     margin: 24px 0px;
   }
 }
@@ -122,11 +124,9 @@ article.post {
     }
 
     .series-button {
+      @include flexCenter;
       height: auto;
-      display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
       span {
         color: var(--color-base);
         margin-right: 4px;

@@ -11,22 +11,16 @@ export const getNodeJsonByUrl = (nodes: NotionNode[], url: string): Children | n
 };
 
 const parseNotionColumn = (content: Children): NotionColumn => {
-  const id = content?.properties?.id.unique_id?.number || -1;
-  const remark = getPlainTextByRichText(content?.properties?.remark?.rich_text);
-  const last_edited_item = content?.properties?.edited_date?.date?.start || '';
-  const created_time = content?.properties?.created_date?.date?.start || '';
-  const notionUrl = content?.url || '';
-  const tag = content?.properties?.tag?.multi_select || [];
-  const series = content?.properties?.series?.select;
+  const { id, url, remark, created_date, edited_date, series, tag } = content.properties;
 
   return {
-    id,
-    remark,
-    lastEditedTime: convertDatetimeFormat(last_edited_item),
-    createdTime: convertDatetimeFormat(created_time),
-    notionUrl,
-    tag,
-    series,
+    id: id.unique_id.number || -1,
+    remark: getPlainTextByRichText(remark.rich_text),
+    lastEditedTime: convertDatetimeFormat(edited_date.date.start || ''),
+    createdTime: convertDatetimeFormat(created_date.date.start || ''),
+    notionUrl: url.title.plain_text || '',
+    tag: tag.multi_select || [],
+    series: series.select,
   };
 };
 

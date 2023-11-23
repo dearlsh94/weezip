@@ -1,22 +1,45 @@
 export interface Properties {
-  id: Property;
-  title: Property;
-  url: Property;
-  remark: Property;
-  created_date: Property;
-  edited_date: Property;
-  series: Property;
-  tag: Property;
+  id: UniqueIdProperty;
+  url: TitleProperty;
+  remark: RichTextProperty;
+  created_date: DateProperty;
+  edited_date: DateProperty;
+  series: SelectProperty;
+  tag: MultiSelectProperty;
 }
 
-export interface Property {
-  type: 'unique_id' | 'title' | 'multi_select' | 'rich_text' | 'date' | 'select' | 'number';
-  unique_id?: UniqueId;
-  title?: TextItem;
-  multi_select?: MultiSelect;
-  rich_text?: RichText;
+export interface UniqueIdProperty {
+  type: 'unique_id';
+  unique_id: UniqueId;
+}
+
+export interface TitleProperty {
+  type: 'title';
+  title: TextItem;
+}
+
+export interface MultiSelectProperty {
+  type: 'multi_select';
+  multi_select: MultiSelect;
+}
+
+export interface RichTextProperty {
+  type: 'rich_text';
+  rich_text: RichText;
+}
+
+export interface DateProperty {
+  type: 'date';
   date: PropDate;
+}
+
+export interface SelectProperty {
+  type: 'select';
   select: Select;
+}
+
+export interface NumberProperty {
+  type: 'number';
   number: number;
 }
 

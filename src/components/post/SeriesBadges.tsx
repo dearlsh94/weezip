@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '@scss/components/SeriesBadge.scss';
-import Linker from './ui/Linker';
+import Linker from '../ui/Linker';
 import { MultiSelect } from '@types';
 
 interface SeriesBadgesProps {

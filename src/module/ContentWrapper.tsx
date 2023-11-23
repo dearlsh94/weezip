@@ -1,18 +1,16 @@
 import * as React from 'react';
 import { BlockType, Children } from '@types';
 import ContentChildren from '@module/ContentChildren';
-import '@scss/module/ContentWrapper.scss';
 
-interface Props {
+interface ContentWrapperProps {
   childrens: Children[];
-  align?: 'center';
 }
 
-const ContentWrapper = ({ childrens = [], align }: Props) => {
+const ContentWrapper = ({ childrens = [] }: ContentWrapperProps) => {
   let numberedList: Children[] = [];
   let bulletedList: Children[] = [];
   return (
-    <section className={`content-wrapper ${align ? align : ''}`}>
+    <>
       {childrens.map((block, i) => {
         // Type number list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
         if (block.type === BlockType.NUMBERED_LIST_ITEM) {
@@ -43,6 +41,7 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
 
         // Type bullet list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
         if (block.type === BlockType.BULLETED_LIST_ITEM) {
+          console.log('block: ', block);
           bulletedList.push(block);
           // 다음 block이 numbered_list가 아닐 경우 렌더링.
           if (
@@ -67,13 +66,9 @@ const ContentWrapper = ({ childrens = [], align }: Props) => {
           }
         }
 
-        return (
-          <div key={i} className={`content-children-box`}>
-            <ContentChildren block={block} />
-          </div>
-        );
+        return <ContentChildren block={block} key={block.id} />;
       })}
-    </section>
+    </>
   );
 };
 

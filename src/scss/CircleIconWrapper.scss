@@ -1,10 +1,8 @@
 @import '@scss/abstracts/mixin';
 
 .circle-icon-wrapper {
+  @include flexCenter;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 
   &.mono {

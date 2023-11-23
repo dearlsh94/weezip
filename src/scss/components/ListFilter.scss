@@ -1,13 +1,11 @@
 @import '@scss/abstracts/mixin';
 
 .list-filter-container {
+  @include flexCenter;
   width: 100%;
   padding: 0px 0px 24px;
   margin: 0 auto;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   box-sizing: border-box;
 
   .filter {

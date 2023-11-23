@@ -7,9 +7,7 @@
   row-gap: 4px;
 
   .badge {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter;
     padding: 4px;
     font-size: 11pt;
     color: var(--color-primary);
