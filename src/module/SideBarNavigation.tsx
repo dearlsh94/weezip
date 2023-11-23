@@ -27,7 +27,7 @@ const SideBarNavigation = ({ handleClose }: SideBarNavigationProps) => {
                     <div className="title-box">
                       {nav.title.toUpperCase() === 'HOME' && <IconHome />}
                       {nav.title.toUpperCase() === 'LIST' && <IconList />}
-                      {nav.title.toUpperCase() === '문화소비자시점' && <IconStar />}
+                      {nav.title.toUpperCase() === '트리피디아' && <IconStar />}
                       {nav.isOutLink && <IconOutLink />}
                       <span>{nav.title}</span>
                     </div>
