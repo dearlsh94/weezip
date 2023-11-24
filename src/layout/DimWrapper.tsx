@@ -1,19 +1,16 @@
 import * as React from 'react';
 import '@scss/layout/DimWrapper.scss';
 
-interface Props {
+interface DimWrapperProps {
   children: React.ReactNode;
-  handleClose?: Function;
+  handleClose?: () => void;
 }
 
-const DimWrapper = ({ children, handleClose }: Props) => {
-  const handleDimClick = () => {
-    handleClose && handleClose();
-  };
+const DimWrapper = ({ children, handleClose }: DimWrapperProps) => {
   return (
     <>
       {children}
-      <div className="dim" onClick={handleDimClick} />
+      <div className="dim" onClick={handleClose} />
     </>
   );
 };

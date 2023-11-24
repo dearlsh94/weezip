@@ -41,7 +41,7 @@ const PostSearchLayer = ({ handleClose }: PostSearchLayerProps) => {
   };
 
   return (
-    <DimWrapper>
+    <DimWrapper handleClose={handleClose}>
       <GlobalPortal.Consumer>
         <div className="post-search-container">
           <div className="post-search-box">
