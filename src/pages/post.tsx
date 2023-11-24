@@ -23,14 +23,34 @@ import Giscus from '@components/Giscus';
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));
   const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
+  const series = content?.properties?.series?.select?.name;
   const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
-
+  let desc = '';
+  switch (series) {
+    case '트리피디아':
+    case '문화 소비자 시점':
+      const h2ReviewIndex = content.children.findIndex(
+        c => c.type === 'heading_2' && c.heading_2?.rich_text[0]?.plain_text === '한줄평'
+      );
+      if (h2ReviewIndex) {
+        desc += content.children[h2ReviewIndex + 1]?.paragraph?.rich_text[0]?.plain_text;
+      }
+      break;
+    default:
+      const h2PrefaceIndex = content.children.findIndex(
+        c => c.type === 'heading_2' && c.heading_2?.rich_text[0]?.plain_text === '머리말'
+      );
+      if (h2PrefaceIndex) {
+        desc += content.children[h2PrefaceIndex + 1]?.paragraph?.rich_text.reduce((cur, t) => cur + t.plain_text, '');
+      }
+      break;
+  }
   return (
     <SEO
       title={title}
-      description={content?.properties?.series?.select?.name}
+      description={`저자: Ethan, 작성일: ${content.properties.created_date.date.start}, 수정일: ${content.properties.edited_date.date.start}, ${desc}`}
       pathname={pageContext.slug}
-      keywords={tagNames}
+      keywords={[content?.properties?.series?.select?.name, ...tagNames]}
     />
   );
 };
