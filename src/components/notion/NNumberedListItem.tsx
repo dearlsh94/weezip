@@ -11,9 +11,9 @@ interface NNumberedListItemProps {
 export default function NNumberedListItem({ numberedListItem }: NNumberedListItemProps) {
   const { has_children, children } = numberedListItem;
   return (
-    <div className={`block-numbered-list-item`}>
+    <>
       <NParagraph paragraph={numberedListItem.numbered_list_item} />
       {has_children && children?.length > 0 && <ContentWrapper childrens={children} />}
-    </div>
+    </>
   );
 }
