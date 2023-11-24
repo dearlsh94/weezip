@@ -5,17 +5,17 @@ interface SEOProps {
   title?: string;
   description?: string;
   pathname?: string;
+  thumbnail?: string;
   children?: React.ReactNode;
   keywords?: string[];
 }
 
-const SEO = ({ title, description, pathname, children, keywords = [] }: SEOProps) => {
-  const { title: defaultTitle, description: defaultDescription, image, siteUrl } = useSiteMetadata();
+const SEO = ({ title, description, pathname, thumbnail, children, keywords = [] }: SEOProps) => {
+  const { title: defaultTitle, description: defaultDescription, siteUrl } = useSiteMetadata();
 
   const seo = {
     title: `${title ? `${title} | ` : ``}${defaultTitle}`,
     description: description || defaultDescription,
-    image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
   };
 
@@ -33,25 +33,27 @@ const SEO = ({ title, description, pathname, children, keywords = [] }: SEOProps
       <meta property="og:url" content={seo.url} />
       <meta property="og:site_name" content={'Weezip'} />
       <meta property="og:locale" content={'ko_KR'} />
-      {/* <meta property="og:image" content={''} /> */}
-      {/* <meta property="og:image:width" content={''} /> */}
-      {/* <meta property="og:image:height" content={''} /> */}
 
       <meta property="twitter:title" content={seo.title} />
       <meta property="twitter:description" content={seo.description} />
       <meta property="twitter:url" content={seo.url} />
 
-      {/* <meta name="image" content={seo.image} /> */}
-      {/* <meta name="twitter:card" content="summary_large_image" /> */}
-      {/* <meta name="twitter:image" content={seo.image} /> */}
-      {/* <meta name="twitter:creator" content={seo.twitterUsername} /> */}
+      <meta name="facebook:title" content={seo.title} />
+      <meta name="facebook:description" content={seo.description} />
+
       {/* <link
         rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
       /> */}
 
-      <meta name="facebook:title" content={seo.title} />
-      <meta name="facebook:description" content={seo.description} />
+      {thumbnail && (
+        <>
+          <meta name="image" content={thumbnail} />
+          <meta property="og:image" content={thumbnail} />
+          <meta property="og:image:width" content={'1200'} />
+          <meta name="twitter:image" content={thumbnail} />
+        </>
+      )}
       {children}
     </>
   );

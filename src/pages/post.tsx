@@ -11,7 +11,7 @@ import ContentWrapper from '@module/ContentWrapper';
 import TagBadges from '@components/post/TagBadges';
 import { graphql } from 'gatsby';
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton';
-import { Select } from '@types';
+import { BlockType, Select } from '@types';
 import FloatBox from '@components/ui/FloatBox';
 import PostIndex from '@module/PostIndex';
 import { IconCopyLink, CircleIconWrapper } from '@components/icon';
@@ -25,6 +25,14 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
   const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
   const series = content?.properties?.series?.select?.name;
   const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
+
+  const imageBlock = content.children.find(c => c.type === BlockType.IMAGE);
+  const thumbnailUrl = imageBlock?.image
+    ? `https://treefeely.notion.site/image/${encodeURIComponent(imageBlock.image?.file.url)}?table=block&id=${
+        imageBlock.id
+      }&cache=v2&width=1200`
+    : '';
+
   let desc = '';
   switch (series) {
     case '트리피디아':
@@ -51,6 +59,7 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
       description={`저자: Ethan, 작성일: ${content.properties.created_date.date.start}, 수정일: ${content.properties.edited_date.date.start}, ${desc}`}
       pathname={pageContext.slug}
       keywords={[content?.properties?.series?.select?.name, ...tagNames]}
+      thumbnail={thumbnailUrl}
     />
   );
 };
