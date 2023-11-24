@@ -11,86 +11,94 @@ interface NParagraphProps {
 
 export default function NParagraph({ paragraph, richText, className }: NParagraphProps) {
   let blockTexts = paragraph?.rich_text || richText || [];
+  if (blockTexts.length === 0) {
+    return <br />;
+  }
   return (
     <>
-      {blockTexts && (
-        <div className="block-paragraph">
-          {blockTexts.length === 0 && <br />}
-          {blockTexts.map((t: TextItem, i: number) => {
-            let classNames = ['block-paragraph-text'];
-            if (className) {
-              classNames.push(className);
-            }
-            if (t?.href) {
+      {blockTexts &&
+        (blockTexts.length === 1 ? (
+          <p
+            className="block-paragraph"
+            dangerouslySetInnerHTML={{ __html: blockTexts[0].plain_text.replaceAll('\n', '<br/>') }}
+          />
+        ) : (
+          <div className="block-paragraph">
+            {blockTexts.map((t: TextItem, i: number) => {
+              let classNames = ['block-paragraph-text'];
+              if (className) {
+                classNames.push(className);
+              }
+              if (t?.href) {
+                return (
+                  <Linker key={`block-paragraph-text-${i}`} url={t.href} target="_blank" aria-label={`링크 텍스트`}>
+                    <span
+                      className={classNames.join(' ')}
+                      dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
+                    />
+                  </Linker>
+                );
+              }
+              if (t?.annotations?.bold) {
+                return (
+                  <b
+                    key={`block-paragraph-text-${i}`}
+                    className={classNames.join(' ')}
+                    dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
+                  />
+                );
+              }
+              if (t?.annotations?.italic) {
+                return (
+                  <i
+                    key={`block-paragraph-text-${i}`}
+                    className={classNames.join(' ')}
+                    dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
+                  />
+                );
+              }
+              if (t?.annotations?.strikethrough) {
+                return (
+                  <s
+                    key={`block-paragraph-text-${i}`}
+                    className={classNames.join(' ')}
+                    dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
+                  />
+                );
+              }
+              if (t?.annotations?.underline) {
+                return (
+                  <u
+                    key={`block-paragraph-text-${i}`}
+                    className={classNames.join(' ')}
+                    dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
+                  />
+                );
+              }
+              if (t?.annotations?.code) {
+                classNames.push('code-word');
+                return (
+                  <code
+                    key={`block-paragraph-text-${i}`}
+                    className={classNames.join(' ')}
+                    dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
+                  />
+                );
+              }
+              if (t?.annotations?.color) {
+                classNames.push(t?.annotations?.color);
+              }
               return (
-                <Linker key={i} url={t.href} target="_blank" aria-label={`링크 텍스트`}>
+                <React.Fragment key={`block-paragraph-text-${i}`}>
                   <span
                     className={classNames.join(' ')}
                     dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
                   />
-                </Linker>
+                </React.Fragment>
               );
-            }
-            if (t?.annotations?.bold) {
-              return (
-                <b
-                  key={i}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
-              );
-            }
-            if (t?.annotations?.italic) {
-              return (
-                <i
-                  key={i}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
-              );
-            }
-            if (t?.annotations?.strikethrough) {
-              return (
-                <s
-                  key={i}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
-              );
-            }
-            if (t?.annotations?.underline) {
-              return (
-                <u
-                  key={i}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
-              );
-            }
-            if (t?.annotations?.code) {
-              classNames.push('code-word');
-              return (
-                <code
-                  key={i}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
-              );
-            }
-            if (t?.annotations?.color) {
-              classNames.push(t?.annotations?.color);
-            }
-            return (
-              <React.Fragment key={`block-paragraph-text-${i}`}>
-                <span
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
-              </React.Fragment>
-            );
-          })}
-        </div>
-      )}
+            })}
+          </div>
+        ))}
     </>
   );
 }
