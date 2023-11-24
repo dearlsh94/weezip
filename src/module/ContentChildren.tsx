@@ -59,7 +59,7 @@ const ContentChildren = ({ block }: ContentChildrenProps) => {
     }
     return;
   };
-  return <div className={`${type}`}>{render()}</div>;
+  return <>{render()}</>;
 };
 
 export default ContentChildren;
