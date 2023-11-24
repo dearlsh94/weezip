@@ -1,19 +1,19 @@
 html[weezip-theme='light'] {
   --color-background: #f7f7f7;
-  --color-background-lightly: #eee;
   --color-background-opacity: rgba(247, 247, 247, 0.95);
   --color-dim: rgba(105, 105, 105, 0.4);
-  --color-font: #333;
-  --color-font-reverse: #eee;
   --color-shadow: #e5e5e5;
   --color-mono: #090909;
   --color-reverse-mono: #f7f7f7;
 
+  --color-font: #333;
+  --color-font-reverse: #eee;
   --color-base: #2f5d62;
   --color-primary: #5e8b7e;
   --color-secondary: #a7c4bc;
   --color-third: #dfeeea;
 
+  --color-black: #000;
   --color-black-1: #090909;
   --color-black-2: #111;
   --color-black-3: #1a1a1a;
@@ -29,7 +29,7 @@ html[weezip-theme='light'] {
   --color-white-5: #d5d5d5;
   --color-white-6: #ccc;
 
-  // iOS 17 Color Palette
+  // iOS 17 Light Mode Color Palette
   --color-black: #000;
   --color-white: #fff;
   --color-grey: #8e8e93;
@@ -54,21 +54,20 @@ html[weezip-theme='light'] {
 
 html[weezip-theme='dark'] {
   --color-background: #090909;
-  --color-background-lightly: #222;
   --color-background-opacity: rgba(51, 51, 51, 0.95);
   --color-dim: rgba(105, 105, 105, 0.85);
-  --color-font: #eee;
-  --color-font-reverse: #333;
   --color-shadow: #222;
   --color-mono: #f7f7f7;
   --color-reverse-mono: #090909;
 
-  // Weezip Brand Color Palette
+  --color-font: #eee;
+  --color-font-reverse: #333;
   --color-base: #def5e5;
   --color-primary: #bcead5;
   --color-secondary: #9ed5c5;
   --color-third: #8ec3b0;
 
+  --color-black: #000;
   --color-black-1: #090909;
   --color-black-2: #111;
   --color-black-3: #1a1a1a;
@@ -84,7 +83,7 @@ html[weezip-theme='dark'] {
   --color-white-5: #d5d5d5;
   --color-white-6: #ccc;
 
-  // iOS 17 Color Palette
+  // iOS 17 Dark Mode Color Palette
   --color-black: #000;
   --color-white: #fff;
   --color-grey: #8e8e93;
