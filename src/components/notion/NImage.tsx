@@ -19,7 +19,7 @@ export default function MyImage({ imageBlock }: NImageProps) {
   return (
     <>
       {id && image && (
-        <div className={`block-image`}>
+        <figure className={`block-image`}>
           <img
             srcSet={`${url}&width=540 380w,
             ${url}&width=1140 760w,
@@ -28,10 +28,10 @@ export default function MyImage({ imageBlock }: NImageProps) {
             src={`${url}`}
             alt={captionText}
           />
-          <div className="caption-box">
+          <figcaption className="caption-box">
             <NParagraph richText={image.caption} />
-          </div>
-        </div>
+          </figcaption>
+        </figure>
       )}
     </>
   );
