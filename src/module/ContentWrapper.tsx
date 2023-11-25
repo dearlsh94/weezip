@@ -41,7 +41,6 @@ const ContentWrapper = ({ childrens = [] }: ContentWrapperProps) => {
 
         // Type bullet list : 항목별 별도의 block으로 나뉘어져 응답이 와서 별도 처리로 합쳐준다.
         if (block.type === BlockType.BULLETED_LIST_ITEM) {
-          console.log('block: ', block);
           bulletedList.push(block);
           // 다음 block이 numbered_list가 아닐 경우 렌더링.
           if (

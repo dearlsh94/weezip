@@ -25,7 +25,7 @@ const PostIndex = ({ list }: PostIndexProps) => {
         {list && list?.length > 0 && <PostIndexList list={list} />}
       </div>
       {resizedInnerWidth > 1280 && (
-        <SideBarLayout handleClose={() => {}} useDim={false}>
+        <SideBarLayout>
           <div className="side-post-index">
             <PostIndexList list={list} useMoveTop={true} useActive={true} />
           </div>

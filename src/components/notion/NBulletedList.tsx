@@ -4,11 +4,11 @@ import { NParagraph } from '@components/notion';
 import { Children } from '@types';
 import ContentWrapper from '@module/ContentWrapper';
 
-interface NBulltedListProps {
+interface NBulletedListProps {
   bulletedListItem: Children;
 }
 
-export default function NBulletedList({ bulletedListItem }: NBulltedListProps) {
+export default function NBulletedList({ bulletedListItem }: NBulletedListProps) {
   const { has_children, children } = bulletedListItem;
 
   return (

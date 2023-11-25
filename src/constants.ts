@@ -3,14 +3,14 @@ export const isDebug = false;
 export const GNB_MENUS = Object.freeze([
   { url: '/', title: 'Home', isOutLink: false },
   { url: '/list', title: 'List', isOutLink: false },
-  { url: '/list?series=review', title: '문화소비자시점', isOutLink: false },
+  { url: '/list?series=review', title: '트리피디아', isOutLink: false },
   { url: 'https://treefeely.com', title: 'Treefeely', isOutLink: true },
 ]);
 
 export const RECOMMEND_TAGS = Object.freeze([
   {
-    url: `/list/?series=${encodeURIComponent('문화소비자시점')}`,
-    name: '문화소비자시점',
+    url: `/list/?series=${encodeURIComponent('트리피디아')}`,
+    name: '트리피디아',
   },
   {
     url: `/list/?tag=${encodeURIComponent('개발')}`,

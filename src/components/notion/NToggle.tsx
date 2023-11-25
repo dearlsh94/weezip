@@ -16,17 +16,17 @@ export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
   return (
     <>
       {toggle && (
-        <div className="block-toggle">
-          <div className="toggle-title-box" onClick={() => setIsOpen(!isOpen)}>
+        <details className="block-toggle">
+          <summary className="toggle-title-box" onClick={() => setIsOpen(!isOpen)}>
             <div className={`icon-box ${isOpen ? 'open' : ''}`}>
               <IconArrow direction="right" size={16} />
             </div>
             <NParagraph paragraph={toggle} />
-          </div>
-          <div className="toggle-content-box">
+          </summary>
+          <section className="toggle-content-box">
             {isOpen && hasChild && childList?.length > 0 && <ContentWrapper childrens={childList} />}
-          </div>
-        </div>
+          </section>
+        </details>
       )}
     </>
   );

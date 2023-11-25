@@ -1,23 +1,33 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
-import Dim from '@layout/Dim';
 import '@scss/layout/SideBarLayout.scss';
 import { GlobalPortal } from '@components/GlobalPortal';
+import DimWrapper from './DimWrapper';
 
 interface SideBarLayoutProps {
   children: ReactNode;
   handleClose: () => void;
-  useDim?: boolean;
 }
 
-const SideBarLayout = ({ handleClose, children, useDim = true }: SideBarLayoutProps) => {
+const SideBarLayout = ({ handleClose, children }: SideBarLayoutProps) => {
   return (
-    <GlobalPortal.Consumer>
-      <aside className={`sidebar-layout`}>
-        <div className="content">{children}</div>
-      </aside>
-      {useDim && <Dim handleClose={handleClose} />}
-    </GlobalPortal.Consumer>
+    <>
+      {handleClose ? (
+        <DimWrapper handleClose={handleClose}>
+          <GlobalPortal.Consumer>
+            <aside className={`sidebar-layout`}>
+              <div className="content">{children}</div>
+            </aside>
+          </GlobalPortal.Consumer>
+        </DimWrapper>
+      ) : (
+        <GlobalPortal.Consumer>
+          <aside className={`sidebar-layout`}>
+            <div className="content">{children}</div>
+          </aside>
+        </GlobalPortal.Consumer>
+      )}
+    </>
   );
 };
 

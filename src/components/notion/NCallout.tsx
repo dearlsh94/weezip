@@ -14,11 +14,11 @@ export default function NCallout({ callout, children = [] }: NCalloutProps) {
   return (
     <>
       {callout && (
-        <div className={`block-callout`}>
+        <aside className={`block-callout`}>
           {icon && <div className="icon-box">{icon}</div>}
           <NParagraph paragraph={callout} />
           {children && children?.length > 0 && <ContentWrapper childrens={children} />}
-        </div>
+        </aside>
       )}
     </>
   );

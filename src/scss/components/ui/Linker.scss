@@ -1,6 +1,6 @@
 @import '@scss/abstracts/mixin';
 
-a.my-linker {
+a {
   text-decoration: none;
   transition: color 0.2s;
   &.underline {

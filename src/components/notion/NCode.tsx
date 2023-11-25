@@ -21,19 +21,19 @@ export default function NCode({ code }: NCodeProps) {
   };
 
   return (
-    <div className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
-      <div className="header">
-        <div className="language">{code.language}</div>
+    <figure className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
+      <div className="code-header">
+        <small className="language">{code.language}</small>
         <IconCopyLink size={20} color={'primary'} handleClick={handleCodeCopy} />
       </div>
       <SyntaxHighlighter language={code.language} style={dark} showLineNumbers={true}>
         {codeString}
       </SyntaxHighlighter>
       {code.caption && (
-        <div className="caption">
+        <figcaption className="caption">
           <NParagraph richText={code.caption} />
-        </div>
+        </figcaption>
       )}
-    </div>
+    </figure>
   );
 }

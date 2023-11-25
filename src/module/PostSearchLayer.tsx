@@ -7,6 +7,7 @@ import { navigate } from 'gatsby';
 import RecommendTag from '../components/post/RecommendTag';
 import Dim from '@layout/Dim';
 import { GlobalPortal } from '@components/GlobalPortal';
+import DimWrapper from '@layout/DimWrapper';
 
 interface PostSearchLayerProps {
   handleClose: () => void;
@@ -40,38 +41,39 @@ const PostSearchLayer = ({ handleClose }: PostSearchLayerProps) => {
   };
 
   return (
-    <GlobalPortal.Consumer>
-      <div className="post-search-container">
-        <div className="post-search-box">
-          <div className="icon-close-box">
-            <IconClose size={32} handleClick={handleClose} />
-          </div>
-          <div className="search-box">
-            <div className="input-box">
-              <input
-                ref={inputRef}
-                className="search"
-                type="text"
-                placeholder="검색어를 입력하세요."
-                value={searchText}
-                onChange={e => setSearchText(e.target.value)}
-                onKeyDown={handleKeyDown}
-              />
-              {searchText && (
-                <div className="icon-clear-box">
-                  <IconClose size={28} handleClick={clear} />
-                </div>
-              )}
+    <DimWrapper handleClose={handleClose}>
+      <GlobalPortal.Consumer>
+        <div className="post-search-container">
+          <div className="post-search-box">
+            <div className="icon-close-box">
+              <IconClose size={32} handleClick={handleClose} />
             </div>
-            <div className="icon-search-box">
-              <IconSearch size={28} handleClick={search} />
+            <div className="search-box">
+              <div className="input-box">
+                <input
+                  ref={inputRef}
+                  className="search"
+                  type="text"
+                  placeholder="검색어를 입력하세요."
+                  value={searchText}
+                  onChange={e => setSearchText(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                />
+                {searchText && (
+                  <div className="icon-clear-box">
+                    <IconClose size={28} handleClick={clear} />
+                  </div>
+                )}
+              </div>
+              <div className="icon-search-box">
+                <IconSearch size={28} handleClick={search} />
+              </div>
             </div>
+            <RecommendTag />
           </div>
-          <RecommendTag />
         </div>
-      </div>
-      <Dim handleClose={handleClose} />
-    </GlobalPortal.Consumer>
+      </GlobalPortal.Consumer>
+    </DimWrapper>
   );
 };
 

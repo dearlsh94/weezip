@@ -5,18 +5,17 @@ import { NParagraph } from '@components/notion';
 
 interface NTodoProps {
   todo: Todo;
+  blockId: string;
 }
 
-export default function NTodo({ todo }: NTodoProps) {
+export default function NTodo({ todo, blockId }: NTodoProps) {
   return (
     <>
       {todo && (
-        <div className="block-todo">
-          <input type="checkbox" checked={todo.checked} onChange={() => {}} />
-          <label>
-            <NParagraph paragraph={todo} />
-          </label>
-        </div>
+        <label className="block-todo" htmlFor={blockId}>
+          <input id={blockId} type="checkbox" checked={todo.checked} onChange={() => {}} />
+          <NParagraph paragraph={todo} />
+        </label>
       )}
     </>
   );
