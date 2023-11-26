@@ -75,10 +75,6 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const { slug } = pageContext;
-  if (!slug) {
-    navigate('/list');
-  }
-
   const { copyToClipboard } = useClipboard();
   const content = notionNodeToJson(getNotionNodeByUrl(data, slug));
   const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
@@ -87,6 +83,10 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
 
   useEffect(() => {
+    if (!slug) {
+      navigate('/list');
+    }
+
     const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3');
     if (elHeaders && elHeaders?.length > 0) {
       const headers: HTMLHeadingElement[] = [];
