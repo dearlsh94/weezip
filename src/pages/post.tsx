@@ -188,8 +188,8 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
             </Linker>
           </div>
           <div className="feedback-box">
-            <p>피드백은 언제나 환영이에요! 연락 방법은 페이지 제일 하단을 확인해주세요.</p>
-            <p>👇👇 Contact Me (메일 또는 DM)👇👇</p>
+            <p>피드백을 기다리고 있어요! 연락 방법은 페이지 제일 하단을 확인해주세요.</p>
+            <p>👇👇 Contact Me👇👇</p>
           </div>
         </div>
         <FloatBox useTop={true} />
