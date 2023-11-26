@@ -23,12 +23,10 @@ const LatestPost = () => {
     <section id="latest-post">
       <div className="title-box">
         <h2>최근 포스트</h2>
-        <span className="link">
-          <Linker url={'/list'} aria-label="전체 목록 보기">
-            전체보기
-            <IconArrow direction="right" size={8} color={'primary'} />
-          </Linker>
-        </span>
+        <Linker url={'/list'} aria-label="전체 목록 보기">
+          전체보기
+          <IconArrow direction="right" size={14} color={'primary'} />
+        </Linker>
       </div>
       <ul>
         {parseList.slice(0, 5).map(post => {

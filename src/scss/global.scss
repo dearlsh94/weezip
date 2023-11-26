@@ -34,12 +34,13 @@ main {
 }
 
 a {
-  color: var(--color-base);
+  color: var(--color-primary);
+  font-weight: 500;
   transition: color 0.3s;
   text-decoration: none;
   text-underline-position: under;
   @include hoverFine {
-    color: var(--color-third);
+    color: var(--color-base);
   }
 }
 
