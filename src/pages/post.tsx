@@ -107,13 +107,29 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   return (
     <GlobalPortal.Provider>
       <MainLayout className="post-layout">
+        <nav className="breadcrumb">
+          <ul>
+            <li>
+              <Linker url="/" aria-label={`첫 페이지로 이동`}>
+                홈
+              </Linker>
+            </li>
+            <li>
+              <Linker url="/list" aria-label={`게시글 목록 페이지로 이동`}>
+                글 목록
+              </Linker>
+            </li>
+            {series && (
+              <li>
+                <Linker url={`/list?series=${series.name}`} aria-label={`${series.name} 시리즈 목록으로 이동`}>
+                  {content?.properties?.series?.select?.name} 시리즈
+                </Linker>
+              </li>
+            )}
+          </ul>
+        </nav>
         <article className="post">
           <div className="title-box">
-            {series && (
-              <Linker url={`/list?series=${series.name}`} aria-label={`${series.name} 시리즈 목록으로 이동`}>
-                <span className={`series-title`}>시리즈 [{content?.properties?.series?.select?.name}]</span>
-              </Linker>
-            )}
             <h1 className="title">{title}</h1>
             <div className="desc-box">
               <div className="left-box">{tagNames && <TagBadges tagNames={tagNames} />}</div>
@@ -133,7 +149,11 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
             </div>
           </div>
           <PostIndex list={indexList} />
-          {content && <ContentWrapper childrens={content.children} />}
+          {content && (
+            <div className="post__content">
+              <ContentWrapper childrens={content.children} />
+            </div>
+          )}
         </article>
         <div className="bottom-box">
           <div className="share-box">

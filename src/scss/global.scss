@@ -35,7 +35,12 @@ main {
 
 a {
   color: var(--color-base);
+  transition: color 0.3s;
+  text-decoration: none;
   text-underline-position: under;
+  @include hoverFine {
+    color: var(--color-third);
+  }
 }
 
 h1 {
