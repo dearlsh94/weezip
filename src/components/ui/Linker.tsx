@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { AnchorHTMLAttributes } from 'react';
-import '@scss/components/ui/Linker.scss';
 import { Link } from 'gatsby';
 
 interface LinkerProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
