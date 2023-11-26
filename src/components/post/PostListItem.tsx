@@ -17,7 +17,7 @@ const PostListItem = ({ post }: Props) => {
 
   return (
     <div className={`post-list-item`}>
-      {series && <span className="series">시리즈 [{series?.name}]</span>}
+      {series && <span className="series">[{series?.name}] 시리즈</span>}
       <p>{remark}</p>
       <div className="info-box">
         <div className="tag-box">

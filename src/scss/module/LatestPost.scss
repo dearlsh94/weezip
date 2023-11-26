@@ -16,7 +16,7 @@ section#latest-post {
     }
 
     a {
-      font-size: 12px;
+      font-size: 1rem;
       text-decoration: none;
     }
   }
@@ -26,11 +26,11 @@ section#latest-post {
     padding-inline-start: 20px;
 
     li {
-      font-size: 14px;
+      font-size: 1.05rem;
     }
 
     li + li {
-      margin-top: 8px;
+      margin-top: 0.7rem;
     }
   }
 }
