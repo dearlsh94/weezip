@@ -108,7 +108,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     <GlobalPortal.Provider>
       <MainLayout className="post-layout">
         <nav className="breadcrumb">
-          <ul>
+          <ol>
             <li>
               <Linker url="/" aria-label={`첫 페이지로 이동`}>
                 홈
@@ -126,7 +126,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
                 </Linker>
               </li>
             )}
-          </ul>
+          </ol>
         </nav>
         <article className="post">
           <div className="title-box">
