@@ -34,12 +34,10 @@ const SEO = ({ title, description, pathname, thumbnail, children, keywords = [] 
       <meta property="og:site_name" content={'Weezip'} />
       <meta property="og:locale" content={'ko_KR'} />
 
+      <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:title" content={seo.title} />
       <meta property="twitter:description" content={seo.description} />
       <meta property="twitter:url" content={seo.url} />
-
-      <meta name="facebook:title" content={seo.title} />
-      <meta name="facebook:description" content={seo.description} />
 
       {/* <link
         rel="icon"
@@ -51,7 +49,7 @@ const SEO = ({ title, description, pathname, thumbnail, children, keywords = [] 
           <meta name="image" content={thumbnail} />
           <meta property="og:image" content={thumbnail} />
           <meta property="og:image:width" content={'1200'} />
-          <meta name="twitter:image" content={thumbnail} />
+          <meta property="twitter:image" content={thumbnail} />
         </>
       )}
       {children}
