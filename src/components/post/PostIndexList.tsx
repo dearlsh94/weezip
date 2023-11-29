@@ -47,7 +47,7 @@ const PostIndexList = ({ list, useMoveTop = false, useActive = false }: PostInde
   };
 
   return (
-    <ul className={`block-header-index-list`}>
+    <ol className={`block-header-index-list`}>
       {useMoveTop && (
         <li id={`index-top`} className="tag-top" onClick={moveTop}>
           맨위로
@@ -67,7 +67,7 @@ const PostIndexList = ({ list, useMoveTop = false, useActive = false }: PostInde
           </li>
         );
       })}
-    </ul>
+    </ol>
   );
 };
 

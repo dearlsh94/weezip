@@ -6,7 +6,7 @@ import DimWrapper from './DimWrapper';
 
 interface SideBarLayoutProps {
   children: ReactNode;
-  handleClose: () => void;
+  handleClose?: () => void;
 }
 
 const SideBarLayout = ({ handleClose, children }: SideBarLayoutProps) => {
