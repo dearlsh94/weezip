@@ -23,71 +23,55 @@ export default function NParagraph({ paragraph, richText, className }: NParagrap
             if (className) {
               classNames.push(className);
             }
+            if (t?.annotations?.color) {
+              classNames.push(t?.annotations?.color);
+            }
             if (t?.href) {
               return (
                 <Linker key={`block-paragraph-text-${i}`} url={t.href} target="_blank" aria-label={`링크 텍스트`}>
-                  <span
-                    className={classNames.join(' ')}
-                    dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                  />
+                  {t.plain_text}
                 </Linker>
               );
             }
             if (t?.annotations?.bold) {
               return (
-                <b
-                  key={`block-paragraph-text-${i}`}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
+                <b key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
+                  {t.plain_text}
+                </b>
               );
             }
             if (t?.annotations?.italic) {
               return (
-                <i
-                  key={`block-paragraph-text-${i}`}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
+                <i key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
+                  {t.plain_text}
+                </i>
               );
             }
             if (t?.annotations?.strikethrough) {
               return (
-                <s
-                  key={`block-paragraph-text-${i}`}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
+                <s key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
+                  {t.plain_text}
+                </s>
               );
             }
             if (t?.annotations?.underline) {
               return (
-                <u
-                  key={`block-paragraph-text-${i}`}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
+                <u key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
+                  {t.plain_text}
+                </u>
               );
             }
             if (t?.annotations?.code) {
-              classNames.push('code-word');
               return (
-                <code
-                  key={`block-paragraph-text-${i}`}
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
+                <code key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
+                  {t.plain_text}
+                </code>
               );
             }
-            if (t?.annotations?.color) {
-              classNames.push(t?.annotations?.color);
-            }
+            const text = t.plain_text.replaceAll('\n', '<br/>');
             return (
               <React.Fragment key={`block-paragraph-text-${i}`}>
-                <span
-                  className={classNames.join(' ')}
-                  dangerouslySetInnerHTML={{ __html: t.plain_text.replaceAll('\n', '<br/>') }}
-                />
+                <p className={classNames.join(' ')} dangerouslySetInnerHTML={{ __html: text }} />
               </React.Fragment>
             );
           })}
