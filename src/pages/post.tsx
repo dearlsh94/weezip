@@ -130,11 +130,11 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           </ol>
         </nav>
         <article className="post">
-          <div className="title-box">
-            <h1 className="title">{title}</h1>
-            <div className="desc-box">
-              <div className="left-box">{tagNames && <TagBadges tagNames={tagNames} />}</div>
-              <div className="right-box">
+          <div className="post__title">
+            <h1>{title}</h1>
+            <div className="post__title__desc">
+              <div>{tagNames && <TagBadges tagNames={tagNames} />}</div>
+              <div className="post__title__desc__right">
                 <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
                   <IconCopyLink size={18} color="secondary" />
                 </div>
