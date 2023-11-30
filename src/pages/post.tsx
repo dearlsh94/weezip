@@ -19,6 +19,7 @@ import Linker from '@components/ui/Linker';
 import { GlobalPortal } from '@components/GlobalPortal';
 import useClipboard from '@src/hooks/useClipboard';
 import Giscus from '@components/Giscus';
+import PostCaution from '@module/PostCaution';
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));
@@ -148,6 +149,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
               </div>
             </div>
           </div>
+          <PostCaution lastEditedDate={new Date(content?.properties?.edited_date?.date?.start)} />
           <PostIndex list={indexList} />
           {content && (
             <div className="post__content">
