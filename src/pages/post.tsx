@@ -131,7 +131,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
         </nav>
         <article className="post">
           <div className="post__title">
-            <h1>{title}</h1>
+            <h1 className="title">{title}</h1>
             <div className="post__title__desc">
               <div>{tagNames && <TagBadges tagNames={tagNames} />}</div>
               <div className="post__title__desc__right">
