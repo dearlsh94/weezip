@@ -1,51 +1,5 @@
 @import '@scss/abstracts/mixin';
 
-.title-box {
-  span.series-title {
-    display: inline-flex;
-    font-weight: 400;
-    font-size: 11pt;
-    color: var(--color-grey);
-  }
-  p.title {
-    font-weight: 700;
-    font-size: 24pt;
-    margin: 4px 0px 12px;
-  }
-  .desc-box {
-    width: 100%;
-    text-align: right;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    .left-box {
-      margin-top: 6px;
-    }
-    .right-box {
-      display: flex;
-      align-items: center;
-      margin-top: 6px;
-
-      .copy-box {
-        display: flex;
-        align-items: center;
-        margin-right: 8px;
-        cursor: pointer;
-      }
-      .date-box {
-        font-size: 12px;
-        span.date {
-          color: var(--color-grey-3);
-          line-height: 23px;
-        }
-        span.date + span.date {
-          margin-left: 12px;
-        }
-      }
-    }
-  }
-}
-
 .index-layout {
   .introduce {
     text-align: center;
@@ -158,10 +112,42 @@
     margin-top: 0.5rem;
   }
 
-  article.post {
-    .title {
-      margin: 0px 0px 6px;
+  .post {
+    &__title {
+      h1 {
+        margin: 0;
+      }
+      &__desc {
+        width: 100%;
+        text-align: right;
+        display: flex;
+        justify-content: space-between;
+        row-gap: 4px;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+        &__right {
+          display: flex;
+          align-items: center;
+          .copy-box {
+            display: flex;
+            align-items: center;
+            margin-right: 8px;
+            cursor: pointer;
+          }
+          .date-box {
+            font-size: 12px;
+            .date {
+              color: var(--color-grey-3);
+              line-height: 23px;
+            }
+            .date + .date {
+              margin-left: 12px;
+            }
+          }
+        }
+      }
     }
+
     &__content {
       a {
         &:visited {
@@ -177,7 +163,7 @@
 
   .bottom-box {
     margin-top: 60px;
-    div.share-box {
+    .share-box {
       display: flex;
       justify-content: center;
       margin: 60px 0px;
@@ -189,11 +175,11 @@
       }
     }
 
-    div.comment-box {
+    .comment-box {
       margin: 30px 0px;
     }
 
-    div.button-box {
+    .button-box {
       display: flex;
       flex-direction: column;
       row-gap: 12px;
@@ -210,7 +196,7 @@
       }
     }
 
-    div.feedback-box {
+    .feedback-box {
       margin-top: 60px;
       display: flex;
       justify-content: center;

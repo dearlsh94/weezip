@@ -19,6 +19,7 @@ import Linker from '@components/ui/Linker';
 import { GlobalPortal } from '@components/GlobalPortal';
 import useClipboard from '@src/hooks/useClipboard';
 import Giscus from '@components/Giscus';
+import PostCaution from '@module/PostCaution';
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));
@@ -129,11 +130,11 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
           </ol>
         </nav>
         <article className="post">
-          <div className="title-box">
+          <div className="post__title">
             <h1 className="title">{title}</h1>
-            <div className="desc-box">
-              <div className="left-box">{tagNames && <TagBadges tagNames={tagNames} />}</div>
-              <div className="right-box">
+            <div className="post__title__desc">
+              <div>{tagNames && <TagBadges tagNames={tagNames} />}</div>
+              <div className="post__title__desc__right">
                 <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
                   <IconCopyLink size={18} color="secondary" />
                 </div>
@@ -148,6 +149,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
               </div>
             </div>
           </div>
+          <PostCaution lastEditedDate={new Date(content?.properties?.edited_date?.date?.start)} />
           <PostIndex list={indexList} />
           {content && (
             <div className="post__content">

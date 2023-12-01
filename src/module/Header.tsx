@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <>
-      <header id="header" className={`${status}`}>
+      <header className={`${status}`}>
         <div className="left-box">
           <div
             className="icon-box"
