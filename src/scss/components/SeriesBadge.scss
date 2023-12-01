@@ -10,12 +10,5 @@
     @include flexCenter;
     padding: 4px;
     font-size: 11pt;
-    color: var(--color-primary);
-    transition: color 0.2s;
-    &.linked {
-      @include hoverFine {
-        color: var(--color-secondary);
-      }
-    }
   }
 }
