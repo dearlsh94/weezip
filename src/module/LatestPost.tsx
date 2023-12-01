@@ -32,7 +32,7 @@ export default function LatestPost() {
         {parseList.slice(0, 6).map(post => {
           return (
             <li key={`latest-post-${post.id}`}>
-              <Linker url={post.title} aria-label={`${post.title} 글 보기`}>
+              <Linker url={post.title} aria-label={`${post.notionColumn.remark} 글 보기`}>
                 <p>{post.notionColumn?.remark}</p>
                 {post.notionColumn.tag && (
                   <TagBadges tagNames={post.notionColumn.tag.map(t => t.name)} isLink={false} />
