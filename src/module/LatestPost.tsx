@@ -7,7 +7,7 @@ import Linker from '@components/ui/Linker';
 import { IconArrow } from '@components/icon';
 import TagBadges from '@components/post/TagBadges';
 
-const LatestPost = () => {
+export default function LatestPost() {
   const nodes = useGetNotionQuery();
 
   const parseList: NotionNode[] = getParseListByNodes(nodes);
@@ -31,7 +31,7 @@ const LatestPost = () => {
       <ul>
         {parseList.slice(0, 6).map(post => {
           return (
-            <li className="post-item" key={`latest-post-${post.id}`}>
+            <li key={`latest-post-${post.id}`}>
               <Linker url={post.title} aria-label={`${post.title} 글 보기`}>
                 <p>{post.notionColumn?.remark}</p>
                 {post.notionColumn.tag && (
@@ -46,6 +46,4 @@ const LatestPost = () => {
       </ul>
     </section>
   );
-};
-
-export default LatestPost;
+}
