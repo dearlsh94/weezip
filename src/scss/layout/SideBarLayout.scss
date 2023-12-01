@@ -21,4 +21,8 @@
     flex: 1;
     overflow: auto;
   }
+
+  &.dim {
+    z-index: 100;
+  }
 }
