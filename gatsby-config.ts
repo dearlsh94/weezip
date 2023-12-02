@@ -88,7 +88,12 @@ const config: GatsbyConfig = {
           {
             id: process.env.NOTION_DB_ID,
             name: 'Weezip',
-            isCheckPublish: true,
+            pageFilter: {
+              property: 'is_published',
+              checkbox: {
+                equals: true,
+              },
+            },
           },
         ],
       },
