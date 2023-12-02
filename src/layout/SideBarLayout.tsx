@@ -15,7 +15,7 @@ const SideBarLayout = ({ handleClose, children }: SideBarLayoutProps) => {
       {handleClose ? (
         <DimWrapper handleClose={handleClose}>
           <GlobalPortal.Consumer>
-            <aside className={`sidebar-layout`}>
+            <aside className={`sidebar-layout dim`}>
               <div className="content">{children}</div>
             </aside>
           </GlobalPortal.Consumer>
