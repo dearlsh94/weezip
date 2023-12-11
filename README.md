@@ -89,6 +89,7 @@
 
 ### 트리피디아
 
+- 23.12.11 | [[책] 한병철 <서사의 위기> 후기. 우리는 언어를 박탈당했다.](https://weezip.treefeely.com/post/review-die-krise-der-narration)<br/>
 - 23.12.02 | [[영화] 픽사의 23번째 장편 영화, 피트 닥터 - 소울 후기](https://weezip.treefeely.com/post/review-pixar-soul)<br/>
 - 23.11.19 | [[영화] 미야자키 하야오 - 그대들은 어떻게 살 것인가 후기](https://weezip.treefeely.com/post/review-the-boy-and-the-heron)<br/>
 - 23.10.29 | [[책] 미셸 푸코 - 감옥의 대안 후기](https://weezip.treefeely.com/post/review-alternatives-a-la-prison)<br/>
