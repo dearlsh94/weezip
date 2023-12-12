@@ -46,14 +46,8 @@
     transition: color 0.2s;
 
     @include hoverFine {
-      border-bottom: 2px solid var(--color-third);
+      border-bottom: 2px solid var(--color-primary);
       margin-bottom: 0px;
-      p {
-        text-decoration: underline;
-      }
-      a {
-        color: var(--color-primary);
-      }
     }
 
     a {
