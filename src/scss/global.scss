@@ -24,8 +24,8 @@ body {
     'Helvetica Neue',
     sans-serif;
   ::selection {
-    background: var(--color-base);
-    color: var(--color-reverse-mono);
+    color: var(--color-selection);
+    background: var(--color-selection-bg);
   }
 }
 
@@ -34,30 +34,30 @@ main {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-link);
   font-weight: 500;
   transition: color 0.3s;
   text-decoration: none;
   text-underline-position: under;
   transition: color 0.3s;
   @include hoverFine {
-    color: var(--color-base);
+    color: var(--color-link-hover);
   }
 }
 
 h1 {
   font-size: 2em;
-  color: var(--color-base);
+  color: var(--color-header);
 }
 
 h2 {
   font-size: 1.5em;
-  color: var(--color-base);
+  color: var(--color-header);
 }
 
 h3 {
   font-size: 1.2em;
-  color: var(--color-base);
+  color: var(--color-header);
 }
 
 p {
