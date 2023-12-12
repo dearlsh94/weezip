@@ -22,12 +22,12 @@ svg.weezip {
   }
   &.primary {
     path {
-      fill: #5e8b7e;
+      fill: var(--color-primary);
     }
   }
   &.secondary {
     path {
-      fill: #a7c4bc;
+      fill: var(--color-secondary);
     }
   }
 
