@@ -58,6 +58,7 @@ html[weezip-theme='light'] {
 
   --color-background: var(--color-white-1);
   --color-shadow: var(--color-white-3);
+  --color-corner: var(--color-third);
 
   --color-mono: var(--color-black-1);
   --color-reverse-mono: var(--color-white-1);
@@ -116,13 +117,14 @@ html[weezip-theme='dark'] {
   --color-font-reverse: var(--color-black-6);
 
   --color-link: var(--color-base);
-  --color-link-hover: var(--color-primary);
+  --color-link-hover: var(--color-third);
   --color-header: var(--color-base);
   --color-selection-bg: var(--color-base);
   --color-selection: var(--color-reverse-mono);
 
   --color-background: var(--color-black-1);
   --color-shadow: var(--color-black-4);
+  --color-corner: var(--color-base);
 
   --color-mono: var(--color-white-1);
   --color-reverse-mono: var(--color-black-1);
