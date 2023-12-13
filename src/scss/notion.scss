@@ -115,11 +115,8 @@
     white-space: pre-wrap;
     width: 100%;
     margin: 0;
-    padding-top: 1.5em !important;
-    padding-bottom: 1.5em !important;
     border-radius: 4px;
     box-sizing: border-box;
-    // color: var(--color-base);
   }
 
   span.linenumber {
@@ -131,7 +128,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 12px;
+    padding: 8px 12px 0px;
 
     .language {
       color: var(--color-grey);
