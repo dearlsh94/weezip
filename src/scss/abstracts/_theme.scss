@@ -58,6 +58,7 @@ html[weezip-theme='light'] {
   --color-selection: var(--color-reverse-mono);
 
   --color-background: var(--color-white-1);
+  --color-breadcrumb-bg: var(--color-secondary);
   --color-shadow: var(--color-white-3);
   --color-corner: var(--color-third);
 
@@ -106,8 +107,8 @@ html[weezip-theme='dark'] {
   --color-selection-bg: var(--color-base);
   --color-selection: var(--color-reverse-mono);
 
-  --color-background: var(--color-black-1);
   --color-background: var(--color-deep-navy);
+  --color-breadcrumb-bg: var(--color-primary);
   --color-shadow: var(--color-black-4);
   --color-corner: var(--color-base);
 
