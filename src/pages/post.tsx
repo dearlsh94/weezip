@@ -84,10 +84,6 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
 
   useEffect(() => {
-    if (!slug) {
-      navigate('/list');
-    }
-
     const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3');
     if (elHeaders && elHeaders?.length > 0) {
       const headers: HTMLHeadingElement[] = [];
