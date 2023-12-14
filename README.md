@@ -103,7 +103,7 @@
 - [[영화] 하마구치 류스케 - 드라이브 마이 카 후기](https://weezip.treefeely.com/post/review-drive-my-car)<br/>
 - [[책] 올더스 헉슬리 - 멋진 신세계 후기](https://weezip.treefeely.com/post/review-brave-new-world)<br/>
 - [[영화] 배리 레빈슨 - 굿모닝 베트남 후기](https://weezip.treefeely.com/post/review-good-morning-vietnam)<br/>
-- [[애니메이션] 기생슈 후기](https://weezip.treefeely.com/post/review-parasyte)<br/>
+- [[애니메이션] 기생수 후기](https://weezip.treefeely.com/post/review-parasyte)<br/>
 - [[영화] 변성현 - 길복순 후기](https://weezip.treefeely.com/post/review-kill-boksoon)<br/>
 - [[책] 룰루 밀러 - 물고기는 존재하지 않는다 후기](https://weezip.treefeely.com/post/review-why-fish-dont-exist)<br/>
 - [[영화] 스탠리 큐브릭 - 시계태엽오렌지 후기](https://weezip.treefeely.com/post/review-a-clockwork-orange)<br/>
