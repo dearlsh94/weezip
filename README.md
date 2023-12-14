@@ -78,6 +78,7 @@
 
 ### 웹개개
 
+- [JavaScript 커링(Currying) 이해하기: 6가지 실전 활용 사례](https://weezip.treefeely.com/post/learn-js-currying-with-6-examples)<br/>
 - [JavaScript 프로토타입, 클래스 개념 요약 정리](https://weezip.treefeely.com/post/javascript-prototype-class)<br/>
 - [JavaScript 스코프, 렉시컬 환경, 실행 컨텍스트 개념 요약 정리](https://weezip.treefeely.com/post/javascript-scope-and-lexical-environment-and-execution-context)<br/>
 - [JavaScript 모듈로 이야기하는 번들러와 웹팩, 롤업, 비트에 대한 요약 정리](https://weezip.treefeely.com/post/module-bundler-webpack-rollup-vite)<br/>
