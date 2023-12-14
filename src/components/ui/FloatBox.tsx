@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import '@scss/components/FloatBox.scss';
 import { CircleIconWrapper, IconMoveEnd } from '@components/icon';
-import { throttle } from '@utils/commonUtils';
+import useScroll from '@src/hooks/useScroll';
 
 interface Props {
   useTop: boolean;
@@ -10,6 +10,11 @@ interface Props {
 
 const FloatBox = ({ useTop }: Props) => {
   const [status, setStatus] = useState('');
+  const { scrollY } = useScroll();
+
+  useEffect(() => {
+    setStatus(scrollY > 0 ? 'scroll' : '');
+  }, [scrollY]);
 
   const moveTop = () => {
     scrollTo({
@@ -18,27 +23,11 @@ const FloatBox = ({ useTop }: Props) => {
     });
   };
 
-  useEffect(() => {
-    const scrollHandler = () => {
-      if (window.scrollY > window.innerHeight) {
-        setStatus('scroll');
-      } else {
-        setStatus('');
-      }
-    };
-    const throttledScrollHandler = throttle(scrollHandler);
-
-    window.addEventListener('scroll', throttledScrollHandler);
-    return () => {
-      window.removeEventListener('scroll', throttledScrollHandler);
-    };
-  }, []);
-
   return (
     <div className={`float-box`}>
       {useTop && (
         <div className={`top-button-box ${status}`} onClick={moveTop}>
-          <CircleIconWrapper color="secondary">
+          <CircleIconWrapper color="secondary" size={44}>
             <IconMoveEnd direction="top" color="primary" />
           </CircleIconWrapper>
         </div>

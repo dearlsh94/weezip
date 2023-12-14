@@ -6,7 +6,7 @@ import { IconCopyLink } from '@components/icon';
 import useClipboard from '@src/hooks/useClipboard';
 import { getPlainTextByRichText } from '@utils/notionUtils';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/light';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface NCodeProps {
   code: Code;
@@ -26,10 +26,10 @@ export default function NCode({ code }: NCodeProps) {
         <small className="language">{code.language}</small>
         <IconCopyLink size={20} color={'primary'} handleClick={handleCodeCopy} />
       </div>
-      <SyntaxHighlighter language={code.language} style={dark} showLineNumbers={true}>
+      <SyntaxHighlighter language={code.language} style={vscDarkPlus} showLineNumbers={true}>
         {codeString}
       </SyntaxHighlighter>
-      {code.caption && (
+      {code.caption.length > 0 && (
         <figcaption className="caption">
           <NParagraph richText={code.caption} />
         </figcaption>

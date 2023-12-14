@@ -1,13 +1,4 @@
-html[weezip-theme='light'] {
-  --color-base: #2f5d62;
-  --color-primary: #5e8b7e;
-  --color-secondary: #a7c4bc;
-  --color-third: #dfeeea;
-
-  --color-background-opacity: rgba(247, 247, 247, 0.95);
-  --color-dim: rgba(105, 105, 105, 0.4);
-
-  --color-black: #000;
+html {
   --color-black-1: #090909;
   --color-black-2: #111;
   --color-black-3: #1a1a1a;
@@ -15,13 +6,21 @@ html[weezip-theme='light'] {
   --color-black-5: #2b2b2b;
   --color-black-6: #333;
 
-  --color-white: #fff;
   --color-white-1: #f7f7f7;
   --color-white-2: #eee;
   --color-white-3: #e6e6e6;
   --color-white-4: #ddd;
   --color-white-5: #d5d5d5;
   --color-white-6: #ccc;
+
+  --color-deep-navy: #0a1128;
+}
+
+html[weezip-theme='light'] {
+  --color-base: #2f5d62;
+  --color-primary: #5e8b7e;
+  --color-secondary: #a7c4bc;
+  --color-third: #dfeeea;
 
   // iOS 17 Light Mode Color Palette
   --color-black: #000;
@@ -57,11 +56,14 @@ html[weezip-theme='light'] {
   --color-selection: var(--color-reverse-mono);
 
   --color-background: var(--color-white-1);
+  --color-breadcrumb-bg: var(--color-secondary);
   --color-shadow: var(--color-white-3);
   --color-corner: var(--color-third);
 
   --color-mono: var(--color-black-1);
   --color-reverse-mono: var(--color-white-1);
+
+  --color-background-opacity: rgba(247, 247, 247, 0.95);
 }
 
 html[weezip-theme='dark'] {
@@ -69,25 +71,6 @@ html[weezip-theme='dark'] {
   --color-primary: #9ab3f5;
   --color-secondary: #a3d8f4;
   --color-third: #b9fffc;
-
-  --color-background-opacity: rgba(51, 51, 51, 0.95);
-  --color-dim: rgba(105, 105, 105, 0.85);
-
-  --color-black: #000;
-  --color-black-1: #090909;
-  --color-black-2: #111;
-  --color-black-3: #1a1a1a;
-  --color-black-4: #222;
-  --color-black-5: #2b2b2b;
-  --color-black-6: #333;
-
-  --color-white: #fff;
-  --color-white-1: #f7f7f7;
-  --color-white-2: #eee;
-  --color-white-3: #e6e6e6;
-  --color-white-4: #ddd;
-  --color-white-5: #d5d5d5;
-  --color-white-6: #ccc;
 
   // iOS 17 Dark Mode Color Palette
   --color-black: #000;
@@ -122,10 +105,13 @@ html[weezip-theme='dark'] {
   --color-selection-bg: var(--color-base);
   --color-selection: var(--color-reverse-mono);
 
-  --color-background: var(--color-black-1);
+  --color-background: var(--color-deep-navy);
+  --color-breadcrumb-bg: var(--color-primary);
   --color-shadow: var(--color-black-4);
   --color-corner: var(--color-base);
 
   --color-mono: var(--color-white-1);
   --color-reverse-mono: var(--color-black-1);
+
+  --color-background-opacity: rgba(10, 17, 40, 0.95);
 }

@@ -17,7 +17,6 @@ export default function PostCaution({ lastEditedDate }: PostCautionProps) {
           <p>
             <em>{diff}</em>일 전에 마지막으로 수정된 글입니다.
           </p>
-          <p>부족하거나 오류가 있을 수 있으니 약간의 주의를 부탁드립니다.</p>
         </aside>
       )}
     </>
