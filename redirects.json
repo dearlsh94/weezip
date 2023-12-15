@@ -14,5 +14,9 @@
   {
     "from": "/post/zip/*",
     "to": "/post/:splat"
+  },
+  {
+    "from": "/post/svelte-viewport-tracker-component",
+    "to": "/post/development-viewport-tracker-component"
   }
 ]
