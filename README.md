@@ -60,6 +60,7 @@
 
 ### 개발자 도서관
 
+- [웹 개발자의 역량을 고민하다 책 <더 나은 웹 개발을 위한 가이드>를 읽었다.](https://weezip.treefeely.com/post/guide-to-better-web-development-review)<br/>
 - [책 피플웨어(Peopleware) 6부. 여기서는 일이 재미있어야 한다.](https://weezip.treefeely.com/post/peopleware-6-fun-to-work-here)<br/>
 - [책 피플웨어(Peopleware) 5부. 비옥한 토양.](https://weezip.treefeely.com/post/peopleware-5-fertile-soil)<br/>
 - [책 피플웨어(Peopleware) 4부. 생산성 높은 팀으로 양성하기.](https://weezip.treefeely.com/post/peopleware-4-growing-productive-teams)<br/>
