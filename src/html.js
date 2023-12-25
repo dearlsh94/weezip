@@ -34,6 +34,12 @@ export default function HTML(props) {
         <meta name="naver-site-verification" content="f51d65952b7df29d7c83ce742d8b9285921a0508" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#5e8b7e" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#bcead5" />
+        <link
+          rel="stylesheet"
+          as="style"
+          crossOrigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+        />
         {/* <script src="https://developers.kakao.com/sdk/js/kakao.js" /> */}
         {props.headComponents}
       </head>
