@@ -10,8 +10,8 @@ export default function RotateWrapper({ className, children }: PropsWithChildren
         const x = e.clientX - left - width / 2;
         const y = e.clientY - top - height / 2;
 
-        const rotateX = (y / height) * 60 * -1; // Y축을 중심으로 회전
-        const rotateY = (x / width) * -60 * -1; // X축을 중심으로 회전
+        const rotateX = (y / height) * -60; // Y축을 중심으로 회전
+        const rotateY = (x / width) * 60; // X축을 중심으로 회전
 
         el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       }
@@ -39,7 +39,7 @@ export default function RotateWrapper({ className, children }: PropsWithChildren
     <div
       className={`rotate-wrapper ${className}`}
       style={{
-        transition: `transform 0.2s`,
+        transition: `transform 0.1s`,
         transformStyle: `preserve-3d`,
       }}
     >
