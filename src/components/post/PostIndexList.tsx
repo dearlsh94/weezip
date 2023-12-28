@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import '@scss/components/PostIndexList.scss';
 import useScroll from '@src/hooks/useScroll';
 
@@ -20,7 +21,7 @@ const PostIndexList = ({ list, useMoveTop = false, useActive = false }: PostInde
       };
     });
 
-    React.useEffect(() => {
+    useEffect(() => {
       setActiveIndexText(
         offsetTopPositions.find((item, i) => {
           const activeLine = item.offsetTop - 300;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '@scss/module/Header.scss';
 import Linker from '@components/ui/Linker';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -15,8 +15,8 @@ const Header = () => {
   const [status, setStatus] = useState('');
   const { scrollY } = useScroll();
 
-  useLayoutEffect(() => {
-    setStatus(scrollY > 10 && scrollY < document.body.scrollHeight * 0.35 ? 'invisible' : 'visible');
+  useEffect(() => {
+    setStatus(scrollY > 50 && scrollY < document.body.scrollHeight * 0.35 ? 'invisible' : 'visible');
   }, [scrollY]);
 
   return (
