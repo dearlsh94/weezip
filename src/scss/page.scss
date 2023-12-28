@@ -114,6 +114,9 @@
 
   .post {
     &__title {
+      #post-title-link {
+        cursor: text;
+      }
       h1 {
         margin: 0;
       }
