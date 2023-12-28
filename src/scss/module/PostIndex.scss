@@ -3,56 +3,80 @@
 .post-index-container {
   background-color: var(--color-background-opacity);
   border-radius: 12px;
-  padding: 0.75rem;
   margin: 1rem 0rem 2rem;
   width: 100%;
   box-sizing: border-box;
-  border: 2px solid #e5e5e5;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  place-content: center;
+  place-items: center;
 
-  .title-box {
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    color: var(--color-font);
-
-    p {
-      font-size: 13pt;
-      font-weight: 500;
-      padding-top: 4px;
-      padding-left: 6px;
-      margin-bottom: 4px;
-    }
-
-    .icon-box {
-      display: flex;
-      align-items: center;
-      transform: rotate(0);
-      transition-duration: 0.2s;
-      &.hide {
-        transform: rotate(180deg);
-      }
-    }
-
-    @include hoverFine {
-      p {
-        color: var(--color-primary);
-      }
-      svg path {
-        fill: var(--color-primary);
-      }
-    }
+  &::before {
+    content: '';
+    border-radius: 12px;
+    position: absolute;
+    z-index: 0;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(75deg, var(--color-primary), var(--color-base), var(--color-third));
+    background-size: 800% 800%;
+    animation: steam 5s ease-in-out infinite;
   }
 
-  .post-index-box {
-    margin-top: 8px;
-    &.hide {
-      display: none;
+  &__wrapper {
+    border-radius: 12px;
+    padding: 0.75rem;
+    position: relative;
+    z-index: 1;
+    margin: 2px;
+    background-color: var(--color-background);
+
+    .title-box {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      color: var(--color-font);
+
+      p {
+        font-size: 13pt;
+        font-weight: 500;
+        padding-top: 4px;
+        padding-left: 6px;
+        margin-bottom: 4px;
+      }
+
+      .icon-box {
+        display: flex;
+        align-items: center;
+        transform: rotate(0);
+        transition-duration: 0.2s;
+        &.hide {
+          transform: rotate(180deg);
+        }
+      }
+
+      @include hoverFine {
+        p {
+          color: var(--color-primary);
+        }
+        svg path {
+          fill: var(--color-primary);
+        }
+      }
     }
-    ul {
-      margin: 0;
-      li {
-        color: var(--color-font);
-        @include ellipsis(1);
+
+    .post-index-box {
+      margin-top: 8px;
+      &.hide {
+        display: none;
+      }
+      ul {
+        margin: 0;
+        li {
+          color: var(--color-font);
+          @include ellipsis(1);
+        }
       }
     }
   }
