@@ -5,7 +5,6 @@ import useScroll from '@src/hooks/useScroll';
 
 const ScrollProgress = () => {
   const { scrollY } = useScroll(10);
-
   const [status, setStatus] = useState('');
   const [progress, setProgress] = useState(0);
 

@@ -13,7 +13,7 @@ const FloatBox = ({ useTop }: Props) => {
   const { scrollY } = useScroll();
 
   useEffect(() => {
-    setStatus(scrollY > 0 ? 'scroll' : '');
+    setStatus(scrollY > 10 ? 'scroll' : '');
   }, [scrollY]);
 
   const moveTop = () => {

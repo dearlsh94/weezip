@@ -9,57 +9,45 @@ header {
   box-shadow: 0px 3px 9px var(--color-shadow);
   margin-bottom: 12px;
   position: relative;
-  z-index: 11;
+  z-index: 200;
   transition-duration: 0.2s;
-
-  .left-box {
-    position: absolute;
-    left: 10px;
-    z-index: 12;
-    svg {
-      cursor: pointer;
-    }
-  }
 
   .right-box {
     position: absolute;
     right: 10px;
     display: flex;
     align-items: center;
+    column-gap: 12px;
+
+    .icon-box {
+      @include flexCenter;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      @include hoverFine {
+        background-color: var(--color-secondary);
+        border-radius: 4px;
+      }
+    }
+
     svg {
       cursor: pointer;
     }
   }
 
-  .icon-box {
-    @include flexCenter;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    @include hoverFine {
-      background-color: var(--color-secondary);
-      border-radius: 4px;
-    }
-  }
+  position: sticky;
+  top: 0;
+  height: 60px;
+  @include animationFadeIn(300ms);
 
-  &.scrolled {
+  &.invisible {
     position: sticky;
     top: -60px;
     height: 60px;
     @include animationFadeOut(300ms);
-    .left-box {
-      display: none;
-    }
     .logo-box {
       display: none;
     }
-  }
-
-  &.sticky {
-    position: sticky;
-    top: 0;
-    height: 60px;
-    @include animationFadeIn(300ms);
   }
 }

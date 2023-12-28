@@ -84,6 +84,14 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
 
   useEffect(() => {
+    const elTitleLink = document.getElementById('post-title-link');
+    const onClickTitleLink = (event: MouseEvent) => {
+      event.preventDefault();
+    };
+    if (elTitleLink) {
+      elTitleLink.addEventListener('click', onClickTitleLink);
+    }
+
     const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3');
     if (elHeaders && elHeaders?.length > 0) {
       const headers: HTMLHeadingElement[] = [];
@@ -94,6 +102,12 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     }
 
     setSeries(content?.properties?.series?.select);
+
+    return () => {
+      if (elTitleLink) {
+        elTitleLink.removeEventListener('click', onClickTitleLink);
+      }
+    };
   }, []);
 
   const handleCopy = async () => {
@@ -127,7 +141,9 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
         </nav>
         <article className="post">
           <div className="post__title">
-            <h1 className="title">{title}</h1>
+            <a id="post-title-link" href={`https://weezip.treefeely.com${slug}`}>
+              <h1 className="title">{title}</h1>
+            </a>
             <div className="post__title__desc">
               <div>{tagNames && <TagBadges tagNames={tagNames} />}</div>
               <div className="post__title__desc__right">

@@ -24,8 +24,7 @@ export default function LatestPost() {
       <div className="latest-post__title">
         <h2>최근 포스트</h2>
         <Linker url={'/list'} aria-label="전체 목록 보기">
-          전체보기
-          <IconArrow direction="right" size={14} color={'primary'} />
+          전체 보기
         </Linker>
       </div>
       <ul>

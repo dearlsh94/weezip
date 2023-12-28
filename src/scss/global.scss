@@ -11,7 +11,7 @@ body {
   min-width: 320px;
   background-color: var(--color-background);
   font-family:
-    'Noto Sans Korean',
+    Pretendard,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -53,11 +53,20 @@ h1 {
 h2 {
   font-size: 1.5em;
   color: var(--color-header);
+  margin-block-start: 1em;
+  margin-block-end: 0.5em;
 }
 
 h3 {
   font-size: 1.2em;
   color: var(--color-header);
+  margin-block-start: 0.8em;
+  margin-block-end: 0.5em;
+}
+
+h2,
+h3 {
+  @include textGradient;
 }
 
 p {

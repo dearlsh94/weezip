@@ -18,15 +18,13 @@ ol.block-header-index-list {
       margin-top: 8px;
     }
 
-    transition: color 0.2s;
     @include hoverFine {
-      text-decoration: underline;
-      color: var(--color-primary);
+      @include textGradient;
     }
 
     &.active {
       font-weight: 700;
-      color: var(--color-base);
+      @include textGradient;
     }
   }
 
