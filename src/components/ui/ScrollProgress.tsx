@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import '@scss/components/ScrollProgress.scss';
 import useScroll from '@src/hooks/useScroll';
 
@@ -9,7 +9,7 @@ const ScrollProgress = () => {
   const [status, setStatus] = useState('');
   const [progress, setProgress] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (scrollY > 100) {
       setStatus('visible');
     } else {
