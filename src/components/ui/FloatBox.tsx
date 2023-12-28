@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import '@scss/components/FloatBox.scss';
 import { CircleIconWrapper, IconMoveEnd } from '@components/icon';
 import useScroll from '@src/hooks/useScroll';
@@ -12,8 +12,8 @@ const FloatBox = ({ useTop }: Props) => {
   const [status, setStatus] = useState('');
   const { scrollY } = useScroll();
 
-  useEffect(() => {
-    setStatus(scrollY > 0 ? 'scroll' : '');
+  useLayoutEffect(() => {
+    setStatus(scrollY > 10 ? 'scroll' : '');
   }, [scrollY]);
 
   const moveTop = () => {

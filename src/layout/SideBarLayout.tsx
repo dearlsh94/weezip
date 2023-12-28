@@ -13,13 +13,13 @@ const SideBarLayout = ({ handleClose, children }: SideBarLayoutProps) => {
   return (
     <>
       {handleClose ? (
-        <DimWrapper handleClose={handleClose}>
-          <GlobalPortal.Consumer>
+        <GlobalPortal.Consumer>
+          <DimWrapper handleClose={handleClose}>
             <aside className={`sidebar-layout dim`}>
               <div className="content">{children}</div>
             </aside>
-          </GlobalPortal.Consumer>
-        </DimWrapper>
+          </DimWrapper>
+        </GlobalPortal.Consumer>
       ) : (
         <GlobalPortal.Consumer>
           <aside className={`sidebar-layout`}>

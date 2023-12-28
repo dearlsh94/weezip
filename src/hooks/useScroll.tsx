@@ -1,5 +1,5 @@
 import { throttle } from '@utils/commonUtils';
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 const useScroll = (delay = 30) => {
   const [scrollY, setScrollY] = useState(0);
@@ -8,7 +8,7 @@ const useScroll = (delay = 30) => {
     setScrollY(window.scrollY);
   }, delay);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => {
