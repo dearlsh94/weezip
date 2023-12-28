@@ -16,7 +16,7 @@ const Header = () => {
   const { scrollY } = useScroll();
 
   useLayoutEffect(() => {
-    setStatus(scrollY > 10 && scrollY < window.innerHeight * 0.8 ? 'invisible' : 'visible');
+    setStatus(scrollY > 10 && scrollY < document.body.scrollHeight * 0.35 ? 'invisible' : 'visible');
   }, [scrollY]);
 
   return (
