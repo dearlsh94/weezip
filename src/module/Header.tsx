@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import '@scss/module/Header.scss';
 import Linker from '@components/ui/Linker';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -17,7 +17,7 @@ const Header = () => {
   const [status, setStatus] = useState('');
   const [isMenuHover, setIsMenuHover] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const scrollHandler = () => {
       if (window.scrollY > window.innerHeight * 1.2) {
         setStatus('sticky');
