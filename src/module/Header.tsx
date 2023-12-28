@@ -10,13 +10,13 @@ import useOverlay from '@src/hooks/useOverlay';
 import SNBOpenIcon from '@components/ui/SNBOpenIcon';
 import useScroll from '@src/hooks/useScroll';
 
-const Header = () => {
+export default function Header() {
   const searchOverlay = useOverlay();
   const [status, setStatus] = useState('');
   const { scrollY } = useScroll();
 
   useEffect(() => {
-    setStatus(scrollY > 50 && scrollY < document.body.scrollHeight * 0.35 ? 'invisible' : 'visible');
+    setStatus(50 < scrollY && scrollY < document.body.scrollHeight * 0.35 ? 'invisible' : '');
   }, [scrollY]);
 
   return (
@@ -40,6 +40,4 @@ const Header = () => {
       {searchOverlay.isOpen && <PostSearchLayer handleClose={searchOverlay.close} />}
     </>
   );
-};
-
-export default Header;
+}
