@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, useEffect } from 'react';
 import '@scss/components/Snowflakes.scss';
 import IconSnow from './icon/IconSnow';
 import { useSnowflakeStore } from '@store/configStore';
