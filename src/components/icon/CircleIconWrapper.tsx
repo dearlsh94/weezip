@@ -1,13 +1,13 @@
 import * as React from 'react';
 import '@scss/CircleIconWrapper.scss';
 
-interface CircleIconWrapperProps {
+interface CircleIconWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   color: 'mono' | 'reverse-mono' | 'secondary';
   size?: number;
 }
 
-const CircleIconWrapper = ({ children, color = 'mono', size = 36 }: CircleIconWrapperProps) => {
+const CircleIconWrapper = ({ children, color = 'mono', size = 36, ...rest }: CircleIconWrapperProps) => {
   return (
     <div
       className={`circle-icon-wrapper ${color}`}
@@ -15,6 +15,7 @@ const CircleIconWrapper = ({ children, color = 'mono', size = 36 }: CircleIconWr
         width: `${size}px`,
         height: `${size}px`,
       }}
+      {...rest}
     >
       {children}
     </div>

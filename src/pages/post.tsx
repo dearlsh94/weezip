@@ -1,25 +1,27 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { HeadFC, PageProps, navigate } from 'gatsby';
+import { HeadFC, PageProps } from 'gatsby';
 import '@scss/global.scss';
-import '@scss/page.scss';
+import '@scss/pages/PostPage.scss';
 import { getNotionNodeByUrl } from '@services/use-notion';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
 import MainLayout from '@layout/MainLayout';
 import SEO from '@components/header/SEO';
 import ContentWrapper from '@module/ContentWrapper';
-import TagBadges from '@components/post/TagBadges';
 import { graphql } from 'gatsby';
-import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton';
-import { BlockType, Select } from '@types';
+import { BlockType } from '@types';
 import FloatBox from '@components/ui/FloatBox';
 import PostIndex from '@module/PostIndex';
-import { IconCopyLink, CircleIconWrapper } from '@components/icon';
-import Linker from '@components/ui/Linker';
 import { GlobalPortal } from '@components/GlobalPortal';
-import useClipboard from '@src/hooks/useClipboard';
 import Giscus from '@components/Giscus';
 import PostCaution from '@module/PostCaution';
+import Breadcrumb, { BreadcrumbStep } from '@components/post/breadcrumb';
+import Feedback from '@components/post/feedback';
+import Share from '@components/post/share';
+import OutLink from '@components/post/outLink';
+import Title from '@components/post/title';
+import TitleDescription from '@components/post/title/description';
+import TableOfContents from '@components/post/tableOfContents';
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));
@@ -76,135 +78,51 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
 
 const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
   const { slug } = pageContext;
-  const { copyToClipboard } = useClipboard();
   const content = notionNodeToJson(getNotionNodeByUrl(data, slug));
   const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
-  const [indexList, setIndexList] = useState<HTMLHeadingElement[]>([]);
-  const [series, setSeries] = useState<Select>();
-  const tagNames = content?.properties.tag?.multi_select?.map(t => t.name);
+  const series = content?.properties?.series?.select;
 
-  useEffect(() => {
-    const elTitleLink = document.getElementById('post-title-link');
-    const onClickTitleLink = (event: MouseEvent) => {
-      event.preventDefault();
-    };
-    if (elTitleLink) {
-      elTitleLink.addEventListener('click', onClickTitleLink);
-    }
+  const [tableOfContents, setTableOfContents] = useState<HTMLHeadingElement[]>([]);
 
+  const breadcrumbSteps: BreadcrumbStep[] = [
+    { name: '홈', url: '/' },
+    { name: '글 목록', url: '/list' },
+  ];
+  if (series) {
+    breadcrumbSteps.push({ name: `[${series.name}] 시리즈`, url: `/list?series=${series.name}` });
+  }
+
+  React.useLayoutEffect(() => {
     const elHeaders = document.querySelectorAll<HTMLHeadingElement>('h1, h2, h3');
     if (elHeaders && elHeaders?.length > 0) {
       const headers: HTMLHeadingElement[] = [];
       elHeaders.forEach(el => {
         if (!el.className.includes('title')) headers.push(el);
       });
-      setIndexList(headers);
+      setTableOfContents(headers);
     }
-
-    setSeries(content?.properties?.series?.select);
-
-    return () => {
-      if (elTitleLink) {
-        elTitleLink.removeEventListener('click', onClickTitleLink);
-      }
-    };
   }, []);
-
-  const handleCopy = async () => {
-    await copyToClipboard(location.href);
-    alert('현재 게시글 주소가 복사되었습니다.');
-  };
 
   return (
     <GlobalPortal.Provider>
-      <MainLayout className="post-layout">
-        <nav className="breadcrumb">
-          <ol>
-            <li>
-              <Linker url="/" aria-label={`첫 페이지로 이동`}>
-                홈
-              </Linker>
-            </li>
-            <li>
-              <Linker url="/list" aria-label={`게시글 목록 페이지로 이동`}>
-                글 목록
-              </Linker>
-            </li>
-            {series && (
-              <li>
-                <Linker url={`/list?series=${series.name}`} aria-label={`${series.name} 시리즈 목록으로 이동`}>
-                  [{content?.properties?.series?.select?.name}] 시리즈
-                </Linker>
-              </li>
-            )}
-          </ol>
-        </nav>
-        <article className="post">
-          <div className="post__title">
-            <a id="post-title-link" href={`https://weezip.treefeely.com${slug}`}>
-              <h1 className="title">{title}</h1>
-            </a>
-            <div className="post__title__desc">
-              <div>{tagNames && <TagBadges tagNames={tagNames} />}</div>
-              <div className="post__title__desc__right">
-                <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
-                  <IconCopyLink size={18} color="secondary" />
-                </div>
-                <div className="date-box">
-                  {content?.properties?.created_date?.date?.start && (
-                    <span className="date">작성 : {content?.properties?.created_date?.date?.start}</span>
-                  )}
-                  {content?.properties?.edited_date?.date?.start && (
-                    <span className="date">수정 : {content?.properties?.edited_date?.date?.start}</span>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
+      <MainLayout className="post">
+        <Breadcrumb steps={breadcrumbSteps} />
+        <article>
+          <Title title={title} slug={slug} />
+          <TitleDescription
+            tag={content?.properties?.tag}
+            createdDate={content?.properties?.created_date}
+            editedDate={content?.properties?.edited_date}
+          />
           <PostCaution lastEditedDate={new Date(content?.properties?.edited_date?.date?.start)} />
-          <PostIndex list={indexList} />
-          {content && (
-            <div className="post__content">
-              <ContentWrapper childrens={content.children} />
-            </div>
-          )}
+          <TableOfContents tableOfContents={tableOfContents} />
+          <ContentWrapper childrens={content.children} />
         </article>
-        <div className="bottom-box">
-          <div className="share-box">
-            <div className="copy" onClick={handleCopy}>
-              <CircleIconWrapper color={'secondary'}>
-                <IconCopyLink />
-              </CircleIconWrapper>
-            </div>
-          </div>
-          <div className="comment-box">
-            <Giscus />
-          </div>
-          <div className="button-box">
-            {series && (
-              <Linker url={`/list?series=${series.name}`} aria-label={`${series.name} 시리즈 목록으로 이동`}>
-                <MyButton
-                  className="series-button"
-                  size={ButtonSize.PRIMARY}
-                  color={ButtonColor.PRIMARY}
-                  type={ButtonType.BORDER}
-                  width={'100%'}
-                >
-                  <span>{series.name}</span>
-                  시리즈 전체보기
-                </MyButton>
-              </Linker>
-            )}
-            <Linker url={`/list`} aria-label="전체 목록 보기">
-              <MyButton size={ButtonSize.PRIMARY} color={ButtonColor.PRIMARY} type={ButtonType.BORDER} width={'100%'}>
-                포스트 전체보기
-              </MyButton>
-            </Linker>
-          </div>
-          <div className="feedback-box">
-            <p>피드백을 기다리고 있어요! 연락 방법은 페이지 제일 하단을 확인해주세요.</p>
-            <p>👇👇 Contact Me👇👇</p>
-          </div>
+        <div className="post__footer">
+          <Share />
+          <Giscus />
+          <OutLink series={series} />
+          <Feedback />
         </div>
         <FloatBox useTop={true} />
       </MainLayout>

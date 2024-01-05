@@ -1,0 +1,24 @@
+.post__description {
+  width: 100%;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  row-gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  &__right {
+    display: flex;
+    align-items: center;
+    .copy-box {
+      display: flex;
+      align-items: center;
+      margin-right: 8px;
+      cursor: pointer;
+    }
+
+    .date-box {
+      display: flex;
+      column-gap: 12px;
+    }
+  }
+}

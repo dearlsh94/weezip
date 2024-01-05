@@ -1,6 +1,6 @@
 @import '@scss/abstracts/mixin';
 
-.post-index-container {
+.table-of-contents-block {
   background-color: var(--color-background-opacity);
   border-radius: 12px;
   margin: 1rem 0rem 2rem;
@@ -32,7 +32,7 @@
     margin: 2px;
     background-color: var(--color-background);
 
-    .title-box {
+    &__header {
       display: flex;
       justify-content: space-between;
       cursor: pointer;
@@ -66,28 +66,24 @@
       }
     }
 
-    .post-index-box {
-      margin-top: 8px;
-      &.hide {
-        display: none;
+    &__list {
+      margin: 0;
+      color: var(--color-grey);
+      line-height: 24px;
+      padding-left: 0px;
+      max-height: 65vh;
+      overflow-y: auto;
+      margin-top: 24px;
+
+      .tag-top,
+      .tag-h2 {
+        padding-left: 16px;
+        padding-right: 16px;
       }
-      ul {
-        margin: 0;
-        li {
-          color: var(--color-font);
-          @include ellipsis(1);
-        }
+      .tag-h3 {
+        padding-left: 32px;
+        padding-right: 16px;
       }
     }
   }
-}
-
-.side-post-index {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex: 1;
-  width: 100%;
-  padding: 50px 0;
-  overflow-y: auto;
 }

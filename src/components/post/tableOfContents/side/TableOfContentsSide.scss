@@ -1,6 +1,6 @@
 @import '@scss/abstracts/mixin';
 
-ol.block-header-index-list {
+.table-of-contents-side {
   color: var(--color-grey);
   line-height: 24px;
   margin-bottom: 0;
@@ -8,25 +8,6 @@ ol.block-header-index-list {
   max-height: 65vh;
   overflow-y: auto;
   margin-top: 24px;
-
-  li {
-    cursor: pointer;
-    list-style: none;
-    letter-spacing: -0.8px;
-
-    + li {
-      margin-top: 8px;
-    }
-
-    @include hoverFine {
-      @include textGradient;
-    }
-
-    &.active {
-      font-weight: 700;
-      @include textGradient;
-    }
-  }
 
   .tag-top,
   .tag-h2 {
