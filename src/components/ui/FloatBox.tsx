@@ -1,37 +1,18 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
 import '@scss/components/FloatBox.scss';
-import { CircleIconWrapper, IconMoveEnd } from '@components/icon';
-import useScroll from '@src/hooks/useScroll';
+import MoveTopButton from '@components/float/MoveTopButton';
+import SnowflakeHandler from '@components/float/SnowflakeHandler';
 
 interface Props {
-  useTop: boolean;
+  useTop?: boolean;
+  useSnowflake?: boolean;
 }
 
-const FloatBox = ({ useTop }: Props) => {
-  const [status, setStatus] = useState('');
-  const { scrollY } = useScroll();
-
-  useEffect(() => {
-    setStatus(scrollY > 10 ? 'scroll' : '');
-  }, [scrollY]);
-
-  const moveTop = () => {
-    scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
+const FloatBox = ({ useTop, useSnowflake }: Props) => {
   return (
     <div className={`float-box`}>
-      {useTop && (
-        <div className={`top-button-box ${status}`} onClick={moveTop}>
-          <CircleIconWrapper color="secondary" size={44}>
-            <IconMoveEnd direction="top" color="primary" />
-          </CircleIconWrapper>
-        </div>
-      )}
+      {useTop && <MoveTopButton />}
+      {useSnowflake && <SnowflakeHandler />}
     </div>
   );
 };

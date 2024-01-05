@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import '@scss/components/SnowEffect.scss';
+import React, { useState, useEffect, memo } from 'react';
+import '@scss/components/Snowflakes.scss';
 import IconSnow from './icon/IconSnow';
-interface SnowFlake {
+import { useSnowflakeStore } from '@store/configStore';
+
+interface Snowflake {
   left: number;
   fallDelay: string;
   shakeDelay: number;
@@ -12,7 +14,8 @@ interface SnowFlake {
 
 const Snowflakes = () => {
   const SNOW_COUNT = 18;
-  const [snowflakes, setSnowflakes] = useState<SnowFlake[]>([]);
+  const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
+  const { isShow } = useSnowflakeStore();
 
   useEffect(() => {
     const newSnowflakes = Array.from({ length: SNOW_COUNT }).map(() => {
@@ -30,7 +33,7 @@ const Snowflakes = () => {
   }, []);
 
   return (
-    <div className="snowflakes" aria-hidden="true">
+    <div className={`snowflakes ${isShow ? 'visible' : 'hidden'}`} aria-hidden="true">
       {snowflakes.map((flake, index) => (
         <div
           key={index}

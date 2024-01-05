@@ -12,7 +12,8 @@ import LatestPost from '@module/LatestPost';
 import Divider from '@components/ui/Divider';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { StaticImage } from 'gatsby-plugin-image';
-import Snowflakes from '@components/SnowEffect';
+import Snowflakes from '@components/Snowflakes';
+import FloatBox from '@components/ui/FloatBox';
 
 export const Head: HeadFC = () => {
   return <SEO />;
@@ -35,8 +36,9 @@ const IndexPage: React.FC<PageProps> = () => {
             <StaticImage src="../images/Tesseract-Logo-256x256.png" alt="Weezip Logo" width={128} />
           </div>
         </MainLayout>
-        <Snowflakes />
       </NotionContext.Provider>
+      <Snowflakes />
+      <FloatBox useSnowflake />
     </GlobalPortal.Provider>
   );
 };

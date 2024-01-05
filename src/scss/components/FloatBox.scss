@@ -5,17 +5,21 @@
   z-index: 30;
   bottom: 24px;
   right: 18px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
   .top-button-box {
     cursor: pointer;
-    visibility: hidden;
     & .circle-icon-wrapper {
       background-color: #fff;
     }
-    &.scroll {
-      visibility: visible;
-    }
   }
-  @include superDesktop {
-    display: none;
+
+  .snowflake-button-box {
+    cursor: pointer;
+    & .circle-icon-wrapper {
+      background-color: #fff;
+    }
   }
 }
