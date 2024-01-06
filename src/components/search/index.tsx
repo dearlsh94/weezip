@@ -2,11 +2,11 @@ import * as React from 'react';
 import { useRef, useState } from 'react';
 import './index.scss';
 import { throttle } from '@utils/common';
-import { navigate } from 'gatsby';
 import RecommendTag from './recommend';
 import { GlobalPortal } from '@components/GlobalPortal';
 import DimLayout from '@layout/dim';
 import { IconClose, IconSearch } from '@components/icon';
+import { moveToPostsPage } from '@utils/url';
 
 interface PostSearchLayerProps {
   handleClose: () => void;
@@ -25,7 +25,7 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
   };
 
   const search = throttle(() => {
-    navigate(`/list?keyword=${encodeURIComponent(searchText)}`);
+    moveToPostsPage({ keyword: searchText });
     handleClose();
   }, 300);
 

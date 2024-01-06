@@ -1,7 +1,7 @@
-import { navigate } from 'gatsby';
 import React from 'react';
 import './index.scss';
 import { IconClearAll } from '@components/icon';
+import { moveToPostsPage } from '@utils/url';
 
 interface PostsDescriptionProps {
   isLoading: boolean;
@@ -10,12 +10,9 @@ interface PostsDescriptionProps {
 }
 
 export default function PostsDescription({ isLoading, length, filteredText }: PostsDescriptionProps) {
-  const moveInit = () => {
-    navigate('/list');
-  };
   return (
     <div className={`posts-description ${isLoading ? 'loading' : ''}`}>
-      <IconClearAll onClick={moveInit} />
+      <IconClearAll onClick={moveToPostsPage} />
       <div className="count-box ellipsis">
         {filteredText && (
           <strong>
