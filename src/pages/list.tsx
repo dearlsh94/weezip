@@ -1,21 +1,22 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { HeadFC, PageProps, navigate } from 'gatsby';
+import { HeadFC, PageProps, graphql } from 'gatsby';
 import '@scss/global.scss';
-import '@scss/page.scss';
-import { useGetNotionQuery } from '@services/use-notion';
+import '@scss/pages/PostsPage.scss';
+import { getNotionNodeAll } from '@services/use-notion';
 import MainLayout from '@layout/MainLayout';
 import { NotionContext } from '@store/rootStore';
 import { INotionContext, NotionNode } from '@types';
-import PostList from '@module/PostList';
 import { classifyPost, getParseListByNodes } from '@utils/notionUtils';
 import SEO from '@components/header/SEO';
-import ListFilter from '@components/post/ListFilter';
 import Divider from '@components/ui/Divider';
-import { IconClearAll } from '@components/icon';
 import { GlobalPortal } from '@components/GlobalPortal';
-import LoadSection from '@module/LoadSection';
 import { compareString } from '@utils/commonUtils';
+import PostsFilter from '@components/post/list/filter';
+import LoadSection from '@components/ui/loadSection';
+import Posts from '@components/post/list';
+import PostsDescription from '@components/post/list/description';
+import { getParamValue } from '@utils/url';
 
 export const Head: HeadFC = () => {
   return (
@@ -25,93 +26,91 @@ export const Head: HeadFC = () => {
   );
 };
 
-const ListPage: React.FC<PageProps> = (props: PageProps) => {
-  const params = new URLSearchParams(props.location.search);
-  const nodes = useGetNotionQuery();
+const ListPage: React.FC<PageProps> = ({ data, location }) => {
+  const params = new URLSearchParams(location.search);
+  const nodes = getNotionNodeAll(data);
   const parseList: NotionNode[] = getParseListByNodes(nodes).sort(
     (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt)
   );
-  const { postTags, postSeries } = classifyPost(parseList);
+  const { everyPostsTags, everyPostsSeries } = classifyPost(parseList);
   const store: INotionContext = {
     nodes: nodes,
-    postTags: postTags,
-    postSeries: postSeries,
+    everyPostsTags: everyPostsTags,
+    everyPostsSeries: everyPostsSeries,
   };
 
   const [list, setList] = useState<NotionNode[]>([]);
   const [filterText, setFilterText] = useState('전체');
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setIsLoading(true);
+  const series = getParamValue(params, 'series');
+  const tag = getParamValue(params, 'tag');
+  const keyword = getParamValue(params, 'keyword');
 
+  useEffect(() => {
+    checkFilter();
+    checkFilteredList();
+    setIsLoading(false);
+  }, [location]);
+
+  const checkFilteredList = () => {
     let _list: NotionNode[] = [];
 
-    if (props.location.search) {
-      const value = getFilterValue();
-      setFilterText(value);
-
+    if (location.search) {
       _list = parseList.filter(post => {
-        if (params.has('series')) {
-          return compareString(post?.notionColumn?.series?.name, value);
-        } else if (params.has('tag')) {
-          return post?.notionColumn?.tag?.find(t => compareString(t.name, decodeURIComponent(value)));
-        } else if (params.has('keyword')) {
-          return post.notionColumn?.remark?.replaceAll(/ /g, '').toUpperCase().includes(value);
+        if (series) {
+          return compareString(post?.notionColumn?.series?.name, series);
+        } else if (tag) {
+          return post?.notionColumn?.tag?.find(t => compareString(t.name, decodeURIComponent(tag)));
+        } else if (keyword) {
+          return post.notionColumn?.remark?.replaceAll(/ /g, '').toUpperCase().includes(keyword);
         }
         return true;
       });
     } else {
-      setFilterText('전체');
       _list = parseList;
     }
 
     setList(_list);
-    setIsLoading(false);
-  }, [props.location]);
-
-  const moveInit = () => {
-    navigate('/list');
   };
 
-  const getFilterValue = () => {
-    let value = '';
-    if (params.has('series')) {
-      value = params.get('series') || '';
-    } else if (params.has('tag')) {
-      value = params.get('tag') || '';
-    } else if (params.has('keyword')) {
-      const keyword = params.get('keyword') || '';
-      value = decodeURIComponent(keyword).replaceAll(/ /g, '').toUpperCase();
-    }
-    return value;
+  const checkFilter = () => {
+    setFilterText(series || tag || decodeURIComponent(keyword).replaceAll(/ /g, '').toUpperCase() || '전체');
   };
 
   return (
     <GlobalPortal.Provider>
       <NotionContext.Provider value={store}>
-        <MainLayout className="list-layout">
-          <ListFilter />
-          <div className={`info-box ${isLoading ? 'loading' : ''}`}>
-            <IconClearAll handleClick={moveInit} />
-            <div className="count-box ellipsis">
-              {filterText && (
-                <strong>
-                  {filterText}
-                  <span> | </span>
-                </strong>
-              )}
-              총 <span>{list.length}</span>건{filterText !== '전체' && '의 검색결과'}
-            </div>
+        <MainLayout className="posts-layout">
+          <div className="posts-layout__header">
+            <PostsFilter />
+            <PostsDescription isLoading={isLoading} length={list.length} filteredText={filterText} />
           </div>
           <Divider color="primary" height={2} />
           <LoadSection isLoading={isLoading} isError={false}>
-            <PostList list={list} />
+            <Posts list={list} />
           </LoadSection>
         </MainLayout>
       </NotionContext.Provider>
     </GlobalPortal.Provider>
   );
 };
+
+export const postQuery = graphql`
+  query {
+    allNotion {
+      edges {
+        node {
+          id
+          databaseName
+          title
+          json
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  }
+`;
 
 export default ListPage;

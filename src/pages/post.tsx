@@ -99,7 +99,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
         <article>
           <Title title={title} slug={slug} />
           <TitleDescription
-            tag={content?.properties?.tag}
+            tag={content?.properties?.tag?.multi_select}
             createdDate={content?.properties?.created_date}
             editedDate={content?.properties?.edited_date}
           />

@@ -1,0 +1,12 @@
+@import '@scss/abstracts/mixin';
+
+.index-layout {
+  .introduce {
+    text-align: center;
+    margin-top: 4rem;
+  }
+  .logo-box {
+    @include flexCenter;
+    margin: 24px 0px;
+  }
+}

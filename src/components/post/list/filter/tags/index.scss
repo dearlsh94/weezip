@@ -1,0 +1,16 @@
+.filter {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 2px;
+
+  p.title {
+    font-weight: 400;
+    font-size: 11pt;
+    color: var(--color-font);
+    min-width: 48px;
+  }
+}

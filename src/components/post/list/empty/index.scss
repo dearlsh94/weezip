@@ -1,0 +1,29 @@
+@import '@scss/abstracts/mixin';
+
+.posts-empty {
+  @include flexCenter;
+  width: 100%;
+  height: 300px;
+  flex-direction: column;
+
+  span {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 13pt;
+    color: var(--color-primary);
+
+    @include hoverFine {
+      svg {
+        @include animationRotate(1s);
+      }
+    }
+
+    svg {
+      margin-right: 4px;
+    }
+  }
+}

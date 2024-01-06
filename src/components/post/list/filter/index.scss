@@ -1,0 +1,10 @@
+@import '@scss/abstracts/mixin';
+
+.post-filter {
+  @include flexCenter;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  box-sizing: border-box;
+  row-gap: 16px;
+}

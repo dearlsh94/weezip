@@ -1,17 +1,18 @@
 import { IconCopyLink } from '@components/icon';
 import { CreatedDate, EditedDate } from '@components/post/date';
 import useClipboard from '@src/hooks/useClipboard';
-import { DateProperty, MultiSelectProperty } from '@types';
+import { DateProperty, MultiSelect } from '@types';
 import React from 'react';
 import './index.scss';
 import Tags from '@components/post/tags';
 
 interface TitleDescriptionProps {
-  tag: MultiSelectProperty;
+  tag: MultiSelect;
   createdDate: DateProperty;
   editedDate: DateProperty;
+  useCopy?: boolean;
 }
-export default function TitleDescription({ tag, createdDate, editedDate }: TitleDescriptionProps) {
+export default function TitleDescription({ tag, createdDate, editedDate, useCopy = true }: TitleDescriptionProps) {
   const { copyToClipboard } = useClipboard();
 
   const handleCopy = async () => {
@@ -20,9 +21,9 @@ export default function TitleDescription({ tag, createdDate, editedDate }: Title
   };
   return (
     <div className="post__description">
-      <Tags tag={tag} />
+      <Tags tag={tag} useLink />
       <div className="post__description__right">
-        <IconCopyLink size={18} color="secondary" handleClick={handleCopy} />
+        {useCopy && <IconCopyLink size={18} color="secondary" handleClick={handleCopy} />}
         <CreatedDate strDate={createdDate?.date?.start} />
         <EditedDate strDate={editedDate?.date?.start} />
       </div>

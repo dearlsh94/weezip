@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { type HeadFC, type PageProps } from 'gatsby';
 import '@scss/global.scss';
+import '@scss/pages/IndexPage.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { getNodeJsonByUrl } from '@utils/notionUtils';
 import { Children, INotionContext } from '@types';
