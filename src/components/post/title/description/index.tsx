@@ -11,8 +11,15 @@ interface TitleDescriptionProps {
   createdDate: DateProperty;
   editedDate: DateProperty;
   useCopy?: boolean;
+  useTagLink?: boolean;
 }
-export default function TitleDescription({ tag, createdDate, editedDate, useCopy = true }: TitleDescriptionProps) {
+export default function TitleDescription({
+  tag,
+  createdDate,
+  editedDate,
+  useCopy = true,
+  useTagLink = false,
+}: TitleDescriptionProps) {
   const { copyToClipboard } = useClipboard();
 
   const handleCopy = async () => {
@@ -21,7 +28,7 @@ export default function TitleDescription({ tag, createdDate, editedDate, useCopy
   };
   return (
     <div className="post__description">
-      <Tags tag={tag} useLink />
+      <Tags tag={tag} useLink={useTagLink} />
       <div className="post__description__right">
         {useCopy && <IconCopyLink size={18} color="secondary" handleClick={handleCopy} />}
         <CreatedDate strDate={createdDate?.date?.start} />

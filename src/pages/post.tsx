@@ -102,6 +102,7 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
             tag={content?.properties?.tag?.multi_select}
             createdDate={content?.properties?.created_date}
             editedDate={content?.properties?.edited_date}
+            useTagLink={true}
           />
           <LastEditedCaution lastEditedDate={new Date(content?.properties?.edited_date?.date?.start)} />
           <TableOfContents target={['h1', 'h2', 'h3']} />

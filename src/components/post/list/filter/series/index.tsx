@@ -1,4 +1,4 @@
-import SeriesBadges from '@components/post/SeriesBadges';
+import SeriesBadges from '@components/post/series';
 import React, { useContext } from 'react';
 import './index.scss';
 import { NotionContext } from '@store/rootStore';
@@ -8,12 +8,12 @@ export default function SeriesFilter() {
   return (
     <>
       {everyPostsSeries && everyPostsSeries?.length > 0 && (
-        <>
-          <div className="series filter">
-            <p className="title">시리즈</p>
-            <SeriesBadges series={everyPostsSeries} />
-          </div>
-        </>
+        <div className="filter">
+          <p className="title">시리즈</p>
+          {everyPostsSeries.map(series => (
+            <SeriesBadges key={series.id} series={series} useLink />
+          ))}
+        </div>
       )}
     </>
   );
