@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Code } from '@types';
-import '@scss/notion.scss';
+import './index.scss';
 import { NParagraph } from '@components/notion';
 import { IconCopyLink } from '@components/icon';
 import useClipboard from '@src/hooks/useClipboard';

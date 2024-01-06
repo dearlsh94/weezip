@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '@scss/notion.scss';
+import './index.scss';
 import { Todo } from '@types';
 import { NParagraph } from '@components/notion';
 

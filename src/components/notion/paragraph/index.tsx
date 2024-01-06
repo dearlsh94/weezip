@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '@scss/notion.scss';
+import './index.scss';
 import { Caption, RichText, TextBlock, TextItem } from '@types';
 import Linker from '@components/ui/linker';
 

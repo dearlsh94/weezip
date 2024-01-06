@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '@scss/notion.scss';
+import './index.scss';
 import { Children, TextBlock } from '@types';
 import { NParagraph } from '@components/notion';
 import ContentWrapper from '@components/post/contents';

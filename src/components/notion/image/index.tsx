@@ -1,7 +1,7 @@
 import * as React from 'react';
-import '@scss/notion.scss';
+import './index.scss';
 import { Children } from '@types';
-import NParagraph from './NParagraph';
+import NParagraph from '../paragraph';
 
 interface NImageProps {
   imageBlock: Children;

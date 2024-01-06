@@ -14,7 +14,7 @@ import {
   NTodo,
   NToggle,
 } from '@components/notion';
-import NImage from '@components/notion/NImage';
+import NImage from '@components/notion/image';
 import Divider from '@components/ui/divider';
 
 interface ContentBlockRenderProps {
