@@ -13,7 +13,7 @@ export function SvgController({
   size = 24,
   color = 'mono',
   direction,
-  rotate,
+  rotate = 0,
   children,
   viewBox = '0 0 24 24',
   ...rest
