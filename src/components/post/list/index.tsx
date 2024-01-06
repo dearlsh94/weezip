@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './index.scss';
 import { NotionNode } from '@types';
-import PostPagination from '@components/post/PostPagination';
+import PostPagination from '@components/post/pagination';
 import usePagination from '@src/hooks/usePagination';
 import PostsItem from './item';
 import PostsEmpty from './empty';

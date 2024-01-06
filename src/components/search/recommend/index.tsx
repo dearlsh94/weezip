@@ -1,12 +1,12 @@
 import * as React from 'react';
-import '@scss/components/RecommendTag.scss';
+import './index.scss';
 import { HelpText } from '@components/ui/text';
 import Linker from '@components/ui/linker';
 import { RECOMMEND_TAGS } from '@src/constants';
 
-const RecommendTag = () => {
+export default function RecommendTag() {
   return (
-    <div className="recommend-box">
+    <div className="recommend-post-tag">
       <HelpText text={'이런 건 어때요?'} />
       {RECOMMEND_TAGS.map(tag => (
         <Linker
@@ -20,6 +20,4 @@ const RecommendTag = () => {
       ))}
     </div>
   );
-};
-
-export default RecommendTag;
+}

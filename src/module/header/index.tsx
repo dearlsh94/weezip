@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import './index.scss';
 import Linker from '@components/ui/linker';
 import { StaticImage } from 'gatsby-plugin-image';
-import PostSearchLayer from '@module/PostSearchLayer';
+import PostSearchLayer from '@components/search';
 import { IconSearch } from '@components/icon';
 import ThemeController from '@components/ThemeController';
 import useOverlay from '@src/hooks/useOverlay';

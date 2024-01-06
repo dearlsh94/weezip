@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useRef, useState } from 'react';
-import '@scss/module/PostSearchLayer.scss';
+import './index.scss';
 import { throttle } from '@utils/common';
 import { IconClose, IconSearch } from '@components/icon';
 import { navigate } from 'gatsby';
-import RecommendTag from '../components/post/RecommendTag';
+import RecommendTag from './recommend';
 import { GlobalPortal } from '@components/GlobalPortal';
 import DimLayout from '@layout/dim';
 
@@ -12,7 +12,7 @@ interface PostSearchLayerProps {
   handleClose: () => void;
 }
 
-const PostSearchLayer = ({ handleClose }: PostSearchLayerProps) => {
+export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchText, setSearchText] = useState('');
 
@@ -74,6 +74,4 @@ const PostSearchLayer = ({ handleClose }: PostSearchLayerProps) => {
       </GlobalPortal.Consumer>
     </DimLayout>
   );
-};
-
-export default PostSearchLayer;
+}

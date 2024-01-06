@@ -1,18 +1,18 @@
 import * as React from 'react';
-import '@scss/components/Pagination.scss';
+import './index.scss';
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/button';
 import { IconArrow, IconMoveEnd } from '@components/icon';
 import { paginationController } from '@src/hooks/usePagination';
 
-interface PostPaginationProps {
+interface PaginationProps {
   pagination: paginationController;
 }
 
-const PostPagination = ({ pagination }: PostPaginationProps) => {
+export default function Pagination({ pagination }: PaginationProps) {
   const { lastPage, currentPage } = pagination;
 
   return (
-    <div className="post-list-page-box">
+    <div className="posts-pagination">
       <div className="left-box">
         {lastPage > 2 && (
           <MyButton
@@ -76,6 +76,4 @@ const PostPagination = ({ pagination }: PostPaginationProps) => {
       </div>
     </div>
   );
-};
-
-export default PostPagination;
+}
