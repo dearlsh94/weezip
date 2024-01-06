@@ -1,18 +1,18 @@
 import React from 'react';
-import '@scss/module/PostCaution.scss';
+import './index.scss';
 import IconCaution from '@components/icon/IconCaution';
 
-interface PostCautionProps {
+interface LastEditedCautionProps {
   lastEditedDate: Date;
 }
-export default function PostCaution({ lastEditedDate }: PostCautionProps) {
+export default function LastEditedCaution({ lastEditedDate }: LastEditedCautionProps) {
   const today = new Date();
   const diff: number = Math.floor((today.getTime() - lastEditedDate.getTime()) / (1000 * 60 * 60 * 24));
 
   return (
     <>
       {diff > 180 && (
-        <aside className="post-notice">
+        <aside className="last-edited-caution">
           <IconCaution color={'white'} />
           <p>
             <em>{diff}</em>일 전에 마지막으로 수정된 글입니다.

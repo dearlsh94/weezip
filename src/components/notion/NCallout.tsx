@@ -2,7 +2,7 @@ import * as React from 'react';
 import '@scss/notion.scss';
 import { Callout, Children } from '@types';
 import { NParagraph } from '@components/notion';
-import ContentWrapper from '@module/ContentWrapper';
+import ContentWrapper from '@components/post/contents';
 interface NCalloutProps {
   callout: Callout;
   children: Children[];

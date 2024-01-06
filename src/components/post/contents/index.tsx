@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { BlockType, Children } from '@types';
-import ContentChildren from '@module/ContentChildren';
+import ContentBlockRender from '@components/post/contents/blockRender';
 
-interface ContentWrapperProps {
+interface ContentsProps {
   childrens: Children[];
 }
 
-const ContentWrapper = ({ childrens = [] }: ContentWrapperProps) => {
+export default function Contents({ childrens = [] }: ContentsProps) {
   let numberedList: Children[] = [];
   let bulletedList: Children[] = [];
   return (
@@ -28,7 +28,7 @@ const ContentWrapper = ({ childrens = [] }: ContentWrapperProps) => {
                 {renderList?.map((item, i) => {
                   return (
                     <li key={`numbered-list-${i}`}>
-                      <ContentChildren block={item} />
+                      <ContentBlockRender block={item} />
                     </li>
                   );
                 })}
@@ -54,7 +54,7 @@ const ContentWrapper = ({ childrens = [] }: ContentWrapperProps) => {
                 {renderList?.map((item, i) => {
                   return (
                     <li key={`bulleted-list-${item.id}`} className={`bulleted-list-${i}`}>
-                      <ContentChildren block={item} />
+                      <ContentBlockRender block={item} />
                     </li>
                   );
                 })}
@@ -65,10 +65,8 @@ const ContentWrapper = ({ childrens = [] }: ContentWrapperProps) => {
           }
         }
 
-        return <ContentChildren block={block} key={block.id} />;
+        return <ContentBlockRender block={block} key={block.id} />;
       })}
     </>
   );
-};
-
-export default ContentWrapper;
+}

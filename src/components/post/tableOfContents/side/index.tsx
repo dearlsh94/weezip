@@ -1,8 +1,9 @@
 import * as React from 'react';
-import './TableOfContentsSide.scss';
+import './index.scss';
 import { moveToTop } from '@utils/scroll';
 import TableOfContentsItem from '@components/post/tableOfContents/item';
 import { usePostActiveText } from '@src/hooks/usePostActiveText';
+import SideBarLayout from '@layout/SideBarLayout';
 
 interface TableOfContentsSideProps {
   list: HTMLHeadingElement[];
@@ -18,16 +19,18 @@ export default function TableOfContentsSide({ list }: TableOfContentsSideProps) 
   const activeText = usePostActiveText(offsetTopPositions);
 
   return (
-    <ol className="table-of-contents-side">
-      <li className="tag-top" onClick={moveToTop}>
-        맨위로
-      </li>
-      {list.map((item, i) => {
-        const text = item.outerText;
-        return (
-          <TableOfContentsItem key={`table-of-contents-side-item-${i}`} item={item} isActive={activeText === text} />
-        );
-      })}
-    </ol>
+    <SideBarLayout>
+      <ol className="table-of-contents-side">
+        <li className="tag-top" onClick={moveToTop}>
+          맨위로
+        </li>
+        {list.map((item, i) => {
+          const text = item.outerText;
+          return (
+            <TableOfContentsItem key={`table-of-contents-side-item-${i}`} item={item} isActive={activeText === text} />
+          );
+        })}
+      </ol>
+    </SideBarLayout>
   );
 }

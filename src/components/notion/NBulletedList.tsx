@@ -2,7 +2,7 @@ import * as React from 'react';
 import '@scss/notion.scss';
 import { NParagraph } from '@components/notion';
 import { Children } from '@types';
-import ContentWrapper from '@module/ContentWrapper';
+import ContentWrapper from '@components/post/contents';
 
 interface NBulletedListProps {
   bulletedListItem: Children;

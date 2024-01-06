@@ -17,11 +17,11 @@ import {
 import NImage from '@components/notion/NImage';
 import Divider from '@components/ui/Divider';
 
-interface ContentChildrenProps {
+interface ContentBlockRenderProps {
   block: Children;
 }
 
-const ContentChildren = ({ block }: ContentChildrenProps) => {
+export default function ContentBlockRender({ block }: ContentBlockRenderProps) {
   const { type } = block;
   const render = () => {
     switch (type) {
@@ -60,6 +60,4 @@ const ContentChildren = ({ block }: ContentChildrenProps) => {
     return;
   };
   return <>{render()}</>;
-};
-
-export default ContentChildren;
+}

@@ -2,7 +2,7 @@ import * as React from 'react';
 import '@scss/notion.scss';
 import { Children, TextBlock } from '@types';
 import { NParagraph } from '@components/notion';
-import ContentWrapper from '@module/ContentWrapper';
+import ContentWrapper from '@components/post/contents';
 import { IconArrow } from '@components/icon';
 
 interface NToggleProps {

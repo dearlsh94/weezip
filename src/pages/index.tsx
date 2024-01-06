@@ -4,7 +4,7 @@ import '@scss/global.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { getNodeJsonByUrl } from '@utils/notionUtils';
 import { Children, INotionContext } from '@types';
-import ContentWrapper from '@module/ContentWrapper';
+import ContentWrapper from '@components/post/contents';
 import { NotionContext } from '@store/rootStore';
 import MainLayout from '@layout/MainLayout';
 import SEO from '@components/header/SEO';

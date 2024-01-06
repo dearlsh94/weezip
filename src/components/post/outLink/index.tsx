@@ -2,7 +2,7 @@ import Linker from '@components/ui/Linker';
 import MyButton, { ButtonColor, ButtonSize, ButtonType } from '@components/ui/MyButton';
 import { Select } from '@types';
 import React from 'react';
-import './OutLink.scss';
+import './index.scss';
 interface OutLinkProps {
   series?: Select;
 }

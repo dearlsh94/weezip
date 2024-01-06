@@ -1,6 +1,6 @@
 import Linker from '@components/ui/Linker';
 import React from 'react';
-import './Breadcrumb.scss';
+import './index.scss';
 
 export interface BreadcrumbStep {
   url: string;

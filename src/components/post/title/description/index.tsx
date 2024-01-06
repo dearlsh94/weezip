@@ -1,10 +1,10 @@
 import { IconCopyLink } from '@components/icon';
-import TagBadges from '@components/post/TagBadges';
-import { CreatedDate, EditedDate } from '@components/ui/date';
+import { CreatedDate, EditedDate } from '@components/post/date';
 import useClipboard from '@src/hooks/useClipboard';
 import { DateProperty, MultiSelectProperty } from '@types';
 import React from 'react';
-import './Description.scss';
+import './index.scss';
+import Tags from '@components/post/tags';
 
 interface TitleDescriptionProps {
   tag: MultiSelectProperty;
@@ -12,7 +12,6 @@ interface TitleDescriptionProps {
   editedDate: DateProperty;
 }
 export default function TitleDescription({ tag, createdDate, editedDate }: TitleDescriptionProps) {
-  const tagNames = tag?.multi_select?.map(t => t.name);
   const { copyToClipboard } = useClipboard();
 
   const handleCopy = async () => {
@@ -21,15 +20,11 @@ export default function TitleDescription({ tag, createdDate, editedDate }: Title
   };
   return (
     <div className="post__description">
-      <TagBadges tagNames={tagNames} />
+      <Tags tag={tag} />
       <div className="post__description__right">
-        <div className="copy-box" onClick={handleCopy} onKeyDown={handleCopy}>
-          <IconCopyLink size={18} color="secondary" />
-        </div>
-        <div className="date-box">
-          <CreatedDate strDate={createdDate?.date?.start} />
-          <EditedDate strDate={editedDate?.date?.start} />
-        </div>
+        <IconCopyLink size={18} color="secondary" handleClick={handleCopy} />
+        <CreatedDate strDate={createdDate?.date?.start} />
+        <EditedDate strDate={editedDate?.date?.start} />
       </div>
     </div>
   );

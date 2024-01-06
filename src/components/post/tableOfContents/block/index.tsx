@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './TableOfContentsBlock.scss';
+import './index.scss';
 import TableOfContentsItem from '@components/post/tableOfContents/item';
 import { usePostActiveText } from '@src/hooks/usePostActiveText';
 import useShow from '@src/hooks/useShow';
@@ -25,12 +25,12 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
       <div className="table-of-contents-block__wrapper">
         <div className="table-of-contents-block__wrapper__header" onClick={showPostIndex.change}>
           <p>목차 {showPostIndex.isShow ? '숨기기' : '보기'}</p>
-          <div className={`icon-box ${showPostIndex.isShow ? '' : 'hide'}`}>
-            <IconArrow direction={'top'} size={20} />
+          <div className={`icon-box ${showPostIndex.isShow ? 'reverse' : ''}`}>
+            <IconArrow direction={'bottom'} size={20} />
           </div>
         </div>
         {list?.length > 0 && (
-          <ol className={`table-of-contents-block__list ${showPostIndex.isShow ? '' : 'hidden'}`}>
+          <ol className={`table-of-contents-block__wrapper__list ${showPostIndex.isShow ? '' : 'hide'}`}>
             {list.map((item, i) => {
               const text = item.outerText;
               return (

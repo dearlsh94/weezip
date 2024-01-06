@@ -1,6 +1,6 @@
 import { moveToOffset } from '@utils/scroll';
 import React from 'react';
-import './TableOfContentsItem.scss';
+import './index.scss';
 
 interface TableOfContentsItemProps {
   item: HTMLHeadingElement;

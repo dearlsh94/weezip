@@ -1,6 +1,6 @@
 import React from 'react';
 import { moveToBottom } from '@utils/scroll';
-import './Feedback.scss';
+import './index.scss';
 
 export default function Feedback() {
   return (

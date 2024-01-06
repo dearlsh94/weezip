@@ -2,7 +2,7 @@
 
 .table-of-contents-block {
   background-color: var(--color-background-opacity);
-  border-radius: 12px;
+  border-radius: 13px;
   margin: 1rem 0rem 2rem;
   width: 100%;
   box-sizing: border-box;
@@ -51,8 +51,8 @@
         align-items: center;
         transform: rotate(0);
         transition-duration: 0.2s;
-        &.hide {
-          transform: rotate(180deg);
+        &.reverse {
+          transform: rotate(-180deg);
         }
       }
 
@@ -73,7 +73,6 @@
       padding-left: 0px;
       max-height: 65vh;
       overflow-y: auto;
-      margin-top: 24px;
 
       .tag-top,
       .tag-h2 {
