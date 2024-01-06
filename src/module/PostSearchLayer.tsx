@@ -6,7 +6,7 @@ import { IconClose, IconSearch } from '@components/icon';
 import { navigate } from 'gatsby';
 import RecommendTag from '../components/post/RecommendTag';
 import { GlobalPortal } from '@components/GlobalPortal';
-import DimWrapper from '@layout/DimWrapper';
+import DimLayout from '@layout/dim';
 
 interface PostSearchLayerProps {
   handleClose: () => void;
@@ -40,7 +40,7 @@ const PostSearchLayer = ({ handleClose }: PostSearchLayerProps) => {
   };
 
   return (
-    <DimWrapper handleClose={handleClose}>
+    <DimLayout handleClose={handleClose}>
       <GlobalPortal.Consumer>
         <div className="post-search-container">
           <div className="post-search-box">
@@ -72,7 +72,7 @@ const PostSearchLayer = ({ handleClose }: PostSearchLayerProps) => {
           </div>
         </div>
       </GlobalPortal.Consumer>
-    </DimWrapper>
+    </DimLayout>
   );
 };
 

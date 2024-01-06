@@ -3,7 +3,7 @@ import './index.scss';
 import { moveToTop } from '@utils/scroll';
 import TableOfContentsItem from '@components/post/tableOfContents/item';
 import { usePostActiveText } from '@src/hooks/usePostActiveText';
-import SideBarLayout from '@layout/SideBarLayout';
+import SideLayout from '@layout/side';
 
 interface TableOfContentsSideProps {
   list: HTMLHeadingElement[];
@@ -19,7 +19,7 @@ export default function TableOfContentsSide({ list }: TableOfContentsSideProps) 
   const activeText = usePostActiveText(offsetTopPositions);
 
   return (
-    <SideBarLayout>
+    <SideLayout>
       <ol className="table-of-contents-side">
         <li className="tag-top" onClick={moveToTop}>
           맨위로
@@ -31,6 +31,6 @@ export default function TableOfContentsSide({ list }: TableOfContentsSideProps) 
           );
         })}
       </ol>
-    </SideBarLayout>
+    </SideLayout>
   );
 }

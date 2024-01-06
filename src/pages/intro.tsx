@@ -5,7 +5,7 @@ import { useGetNotionQuery } from '@services/use-notion';
 import { getNodeJsonByUrl } from '@utils/notionUtils';
 import { Children, INotionContext } from '@types';
 import ContentWrapper from '@components/post/contents';
-import MainLayout from '@layout/MainLayout';
+import MainLayout from '@layout/main';
 import { NotionContext } from '@store/rootStore';
 import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';

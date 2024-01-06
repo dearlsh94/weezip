@@ -4,7 +4,7 @@ import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
 import { getNotionNodeByUrl } from '@services/use-notion';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
-import MainLayout from '@layout/MainLayout';
+import MainLayout from '@layout/main';
 import SEO from '@components/header/SEO';
 import Contents from '@components/post/contents';
 import { graphql } from 'gatsby';

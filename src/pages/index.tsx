@@ -7,7 +7,7 @@ import { getNodeJsonByUrl } from '@utils/notionUtils';
 import { Children, INotionContext } from '@types';
 import ContentWrapper from '@components/post/contents';
 import { NotionContext } from '@store/rootStore';
-import MainLayout from '@layout/MainLayout';
+import MainLayout from '@layout/main';
 import SEO from '@components/header/SEO';
 import LatestPost from '@module/LatestPost';
 import Divider from '@components/ui/Divider';
