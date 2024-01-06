@@ -1,4 +1,4 @@
-import { IconArrow } from '@components/icon';
+import { IconSingleArrow } from '@components/icon';
 import Linker from '@components/ui/linker';
 import { NotionNode } from '@types';
 import React from 'react';
@@ -16,7 +16,7 @@ export default function LatestPostItem({ post }: LatestPostItemProps) {
         <p>{post.notionColumn?.remark}</p>
         {post.notionColumn.tag && <Tags tag={post.notionColumn.tag} />}
         <div className="corner" />
-        <IconArrow size={12} color={'base'} direction="right" />
+        <IconSingleArrow size={12} color={'base'} direction="right" />
       </Linker>
     </li>
   );

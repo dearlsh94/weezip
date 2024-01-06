@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
-import IconSnow from '../../icon/IconSnow';
 import { useSnowflakeStore } from '@store/configStore';
+import { IconSnow } from '@components/icon';
 
 interface Snowflake {
   left: number;

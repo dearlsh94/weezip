@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './index.scss';
 import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/button';
-import { IconArrow, IconMoveEnd } from '@components/icon';
 import { paginationController } from '@src/hooks/usePagination';
+import { IconEndArrow, IconSingleArrow } from '@components/icon';
 
 interface PaginationProps {
   pagination: paginationController;
@@ -23,7 +23,7 @@ export default function Pagination({ pagination }: PaginationProps) {
             width={45}
             handleClick={pagination.first}
           >
-            <IconMoveEnd direction="left" size={18} color="base" />
+            <IconEndArrow direction="left" size={18} color="base" />
           </MyButton>
         )}
         <MyButton
@@ -34,7 +34,7 @@ export default function Pagination({ pagination }: PaginationProps) {
           width={45}
           handleClick={pagination.prev}
         >
-          <IconArrow direction="left" size={12} color="base" />
+          <IconSingleArrow direction="left" size={12} color="base" />
         </MyButton>
       </div>
       <div className="center-box">
@@ -59,7 +59,7 @@ export default function Pagination({ pagination }: PaginationProps) {
           width={45}
           handleClick={pagination.next}
         >
-          <IconArrow direction="right" size={12} color="base" />
+          <IconSingleArrow direction="right" size={12} color="base" />
         </MyButton>
         {lastPage > 2 && (
           <MyButton
@@ -70,7 +70,7 @@ export default function Pagination({ pagination }: PaginationProps) {
             width={45}
             handleClick={pagination.last}
           >
-            <IconMoveEnd direction="right" size={18} color="base" />
+            <IconEndArrow direction="right" size={18} color="base" />
           </MyButton>
         )}
       </div>

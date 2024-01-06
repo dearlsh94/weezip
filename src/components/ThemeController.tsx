@@ -1,7 +1,6 @@
 import * as React from 'react';
-import IconLightTheme from './icon/IconLightTheme';
-import IconDarkTheme from './icon/IconDarkTheme';
 import useTheme from '@src/hooks/useTheme';
+import { IconDarkTheme, IconLightTheme } from '@components/icon';
 
 const ThemeController = () => {
   const { theme, setLight, setDark } = useTheme();
@@ -21,7 +20,7 @@ const ThemeController = () => {
     );
   }, [theme]);
 
-  return <>{theme === 'light' ? <IconLightTheme handleClick={setDark} /> : <IconDarkTheme handleClick={setLight} />}</>;
+  return <>{theme === 'light' ? <IconLightTheme onClick={setDark} /> : <IconDarkTheme onClick={setLight} />}</>;
 };
 
 export default ThemeController;

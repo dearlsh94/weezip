@@ -1,10 +1,10 @@
-import { IconCopyLink } from '@components/icon';
 import { CreatedDate, EditedDate } from '@components/post/date';
 import useClipboard from '@src/hooks/useClipboard';
 import { DateProperty, MultiSelect } from '@types';
 import React from 'react';
 import './index.scss';
 import Tags from '@components/post/tags';
+import { IconCopyLink } from '@components/icon';
 
 interface TitleDescriptionProps {
   tag: MultiSelect;
@@ -30,7 +30,7 @@ export default function TitleDescription({
     <div className="post__description">
       <Tags tag={tag} useLink={useTagLink} />
       <div className="post__description__right">
-        {useCopy && <IconCopyLink size={18} color="secondary" handleClick={handleCopy} />}
+        {useCopy && <IconCopyLink size={18} color="secondary" onClick={handleCopy} />}
         <CreatedDate strDate={createdDate?.date?.start} />
         <EditedDate strDate={editedDate?.date?.start} />
       </div>

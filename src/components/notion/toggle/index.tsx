@@ -3,7 +3,7 @@ import './index.scss';
 import { Children, TextBlock } from '@types';
 import { NParagraph } from '@components/notion';
 import ContentWrapper from '@components/post/contents';
-import { IconArrow } from '@components/icon';
+import { IconSingleArrow } from '@components/icon';
 
 interface NToggleProps {
   toggle: TextBlock;
@@ -19,7 +19,7 @@ export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
         <details className="block-toggle">
           <summary className="toggle-title-box" onClick={() => setIsOpen(!isOpen)}>
             <div className={`icon-box ${isOpen ? 'open' : ''}`}>
-              <IconArrow direction="right" size={16} />
+              <IconSingleArrow direction="right" size={16} />
             </div>
             <NParagraph paragraph={toggle} />
           </summary>

@@ -4,11 +4,11 @@ import './index.scss';
 import Linker from '@components/ui/linker';
 import { StaticImage } from 'gatsby-plugin-image';
 import PostSearchLayer from '@components/search';
-import { IconSearch } from '@components/icon';
 import ThemeController from '@components/ThemeController';
 import useOverlay from '@src/hooks/useOverlay';
 import SNBOpenIcon from '@components/header/snb';
 import useScroll from '@src/hooks/useScroll';
+import { IconSearch } from '@components/icon';
 
 export default function Header() {
   const searchOverlay = useOverlay();

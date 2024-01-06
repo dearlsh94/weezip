@@ -1,9 +1,9 @@
-import { IconDoubleArrow, IconHamburgerMenu } from '@components/icon';
 import useOverlay from '@src/hooks/useOverlay';
 import React from 'react';
 import { useState } from 'react';
 import './index.scss';
 import SideBarNavigation from '@module/SideBarNavigation';
+import { IconDoubleArrow, IconHamburger } from '@components/icon';
 
 export default function SNBOpenIcon() {
   const SNBOverlay = useOverlay();
@@ -26,7 +26,7 @@ export default function SNBOpenIcon() {
             <IconDoubleArrow direction="right" size={28} />
           )
         ) : (
-          <IconHamburgerMenu size={28} />
+          <IconHamburger size={28} />
         )}
       </div>
       {SNBOverlay.isOpen && <SideBarNavigation handleClose={SNBOverlay.close} />}

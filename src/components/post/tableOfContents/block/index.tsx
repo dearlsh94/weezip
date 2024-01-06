@@ -3,7 +3,7 @@ import './index.scss';
 import TableOfContentsItem from '@components/post/tableOfContents/item';
 import { usePostActiveText } from '@src/hooks/usePostActiveText';
 import useShow from '@src/hooks/useShow';
-import { IconArrow } from '@components/icon';
+import { IconSingleArrow } from '@components/icon';
 
 interface TableOfContentsBlockProps {
   list: HTMLHeadingElement[];
@@ -26,7 +26,7 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
         <div className="table-of-contents-block__wrapper__header" onClick={showPostIndex.change}>
           <p>목차 {showPostIndex.isShow ? '숨기기' : '보기'}</p>
           <div className={`icon-box ${showPostIndex.isShow ? 'reverse' : ''}`}>
-            <IconArrow direction={'bottom'} size={20} />
+            <IconSingleArrow direction={'bottom'} size={20} />
           </div>
         </div>
         {list?.length > 0 && (

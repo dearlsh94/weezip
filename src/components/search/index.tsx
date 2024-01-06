@@ -2,11 +2,11 @@ import * as React from 'react';
 import { useRef, useState } from 'react';
 import './index.scss';
 import { throttle } from '@utils/common';
-import { IconClose, IconSearch } from '@components/icon';
 import { navigate } from 'gatsby';
 import RecommendTag from './recommend';
 import { GlobalPortal } from '@components/GlobalPortal';
 import DimLayout from '@layout/dim';
+import { IconClose, IconSearch } from '@components/icon';
 
 interface PostSearchLayerProps {
   handleClose: () => void;
@@ -45,7 +45,7 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
         <div className="post-search-container">
           <div className="post-search-box">
             <div className="icon-close-box">
-              <IconClose size={32} handleClick={handleClose} />
+              <IconClose size={32} onClick={handleClose} />
             </div>
             <div className="search-box">
               <div className="input-box">
@@ -60,12 +60,12 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
                 />
                 {searchText && (
                   <div className="icon-clear-box">
-                    <IconClose size={28} handleClick={clear} />
+                    <IconClose size={28} onClick={clear} />
                   </div>
                 )}
               </div>
               <div className="icon-search-box">
-                <IconSearch size={28} handleClick={search} />
+                <IconSearch size={28} onClick={search} />
               </div>
             </div>
             <RecommendTag />
