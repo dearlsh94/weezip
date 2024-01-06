@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '@scss/components/Snowflakes.scss';
-import IconSnow from './icon/IconSnow';
+import './index.scss';
+import IconSnow from '../../icon/IconSnow';
 import { useSnowflakeStore } from '@store/configStore';
 
 interface Snowflake {
@@ -12,7 +12,7 @@ interface Snowflake {
   size: number;
 }
 
-const Snowflakes = () => {
+export default function Snowflakes() {
   const SNOW_COUNT = 18;
   const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
   const { isShow } = useSnowflakeStore();
@@ -51,6 +51,4 @@ const Snowflakes = () => {
       ))}
     </div>
   );
-};
-
-export default Snowflakes;
+}

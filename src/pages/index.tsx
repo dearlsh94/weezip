@@ -13,7 +13,7 @@ import LatestPost from '@module/LatestPost';
 import Divider from '@components/ui/divider';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { StaticImage } from 'gatsby-plugin-image';
-import Snowflakes from '@components/Snowflakes';
+import Snowflakes from '@components/animation/snowflake';
 import FloatBox from '@components/ui/float';
 
 export const Head: HeadFC = () => {

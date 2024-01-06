@@ -1,5 +1,6 @@
 import { CircleIconWrapper, IconMoveEnd } from '@components/icon';
 import useScroll from '@src/hooks/useScroll';
+import { moveToTop } from '@utils/scroll';
 import React from 'react';
 import { useEffect, useState } from 'react';
 
@@ -11,15 +12,8 @@ export default function MoveTopButton() {
     setStatus(scrollY < 10 ? 'hidden' : '');
   }, [scrollY]);
 
-  const moveTop = () => {
-    scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
   return (
-    <div className={`top-button-box ${status}`} onClick={moveTop}>
+    <div className={`top-button-box ${status}`} onClick={moveToTop}>
       <CircleIconWrapper color="secondary" size={44}>
         <IconMoveEnd direction="top" color="primary" />
       </CircleIconWrapper>
