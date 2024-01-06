@@ -16,7 +16,9 @@ export default function Linker({ url, target, children, ...rest }: LinkerProps) 
           {children}
         </a>
       ) : (
-        <Link to={url}>{children}</Link>
+        <Link to={url} aria-label={rest['aria-label']}>
+          {children}
+        </Link>
       )}
     </>
   );
