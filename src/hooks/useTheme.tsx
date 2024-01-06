@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { CONFIG_THEME_KEY } from '@src/constants';
 import { useLocalStorage } from './useLocalStorage';
 import { Themes, useThemeStore } from '@store/configStore';
@@ -7,7 +7,7 @@ const useTheme = () => {
   const { theme, setDarkTheme, setLightTheme } = useThemeStore();
   const { setConfig, getConfig } = useLocalStorage();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY);
     if (configTheme) {
       if (configTheme === Themes.DARK) {
