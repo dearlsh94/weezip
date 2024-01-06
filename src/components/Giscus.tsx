@@ -31,11 +31,7 @@ const Giscus = () => {
     }
   }, []);
 
-  return (
-    <div id="giscus-box">
-      <div ref={giscusRef} />
-    </div>
-  );
+  return <div className="giscus-container" ref={giscusRef} />;
 };
 
 export default Giscus;
