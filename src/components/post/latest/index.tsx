@@ -1,11 +1,10 @@
 import * as React from 'react';
-import '@scss/module/LatestPost.scss';
+import './index.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { NotionNode } from '@types';
 import { getParseListByNodes } from '@utils/notionUtils';
 import Linker from '@components/ui/linker';
-import { IconArrow } from '@components/icon';
-import TagBadges from '@components/post/TagBadges';
+import LatestPostItem from './item';
 
 export default function LatestPost() {
   const nodes = useGetNotionQuery();
@@ -29,18 +28,7 @@ export default function LatestPost() {
       </div>
       <ul>
         {parseList.slice(0, 6).map(post => {
-          return (
-            <li key={`latest-post-${post.id}`}>
-              <Linker url={post.title} aria-label={`${post.notionColumn.remark} 글 보기`}>
-                <p>{post.notionColumn?.remark}</p>
-                {post.notionColumn.tag && (
-                  <TagBadges tagNames={post.notionColumn.tag.map(t => t.name)} isLink={false} />
-                )}
-                <div className="corner" />
-                <IconArrow size={12} color={'base'} direction="right" />
-              </Linker>
-            </li>
-          );
+          return <LatestPostItem key={`latest-post-${post.id}`} post={post} />;
         })}
       </ul>
     </section>

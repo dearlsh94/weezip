@@ -1,10 +1,10 @@
 import * as React from 'react';
-import '@scss/module/Footer.scss';
+import './index.scss';
 import Linker from '@components/ui/linker';
 import { OWNER_EMAIL } from '@src/constants';
 import { IconMail, CircleIconWrapper, IconInstagram, IconGithub, IconKakao } from '@components/icon';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer>
       <div className="container">
@@ -45,6 +45,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

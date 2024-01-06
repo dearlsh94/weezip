@@ -1,15 +1,15 @@
 import * as React from 'react';
 import './index.scss';
-import Header from '@module/Header';
-import Footer from '@module/Footer';
 import { ScrollProgress } from '@components/ui/progress';
+import Header from '@module/header';
+import Footer from '@module/footer';
 
-interface Props {
+interface MainLayoutProps {
   children: React.ReactNode;
   className: string;
 }
 
-const MainLayout = ({ children, className }: Props) => {
+export default function MainLayout({ children, className }: MainLayoutProps) {
   return (
     <main className={`main-layout ${className}`}>
       <Header />
@@ -18,6 +18,4 @@ const MainLayout = ({ children, className }: Props) => {
       <Footer />
     </main>
   );
-};
-
-export default MainLayout;
+}
