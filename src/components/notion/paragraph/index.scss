@@ -1,0 +1,20 @@
+@import '@scss/abstracts/mixin';
+
+.block-paragraph {
+  line-height: 1.75rem;
+  width: 100%;
+
+  code {
+    background-color: var(--color-grey-6);
+    color: var(--color-red);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11pt;
+  }
+
+  .block-paragraph-text {
+    display: inline;
+    line-height: 1.75rem;
+    width: fit-content;
+  }
+}

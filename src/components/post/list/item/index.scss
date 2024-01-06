@@ -1,0 +1,31 @@
+.posts-item {
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+
+  p {
+    font-size: 15pt;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+  .info-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .date-box {
+      margin-top: 8px;
+      flex-grow: 1;
+      text-align: right;
+      span.date {
+        color: var(--color-grey);
+        font-size: 10pt;
+      }
+      span.date + span.date {
+        margin-left: 8px;
+      }
+    }
+  }
+}

@@ -2,9 +2,9 @@ import * as React from 'react';
 import { useContext } from 'react';
 import '@scss/module/SideBarNavigation.scss';
 import { NotionContext } from '@store/rootStore';
-import SideBarLayout from '@layout/SideBarLayout';
+import SideLayout from '@layout/side';
 import { isDebug, GNB_MENUS } from '@src/constants';
-import Linker from '@components/ui/Linker';
+import Linker from '@components/ui/linker';
 import { IconHome, IconOutLink, IconList, IconStar } from '@components/icon';
 import { NotionNode } from '@types';
 
@@ -16,7 +16,7 @@ const SideBarNavigation = ({ handleClose }: SideBarNavigationProps) => {
   const nodes: NotionNode[] = useContext(NotionContext).nodes;
 
   return (
-    <SideBarLayout handleClose={handleClose}>
+    <SideLayout handleClose={handleClose}>
       <nav className="snb-box">
         <ul>
           {GNB_MENUS?.length > 0 &&
@@ -54,7 +54,7 @@ const SideBarNavigation = ({ handleClose }: SideBarNavigationProps) => {
           })}
         </section>
       )}
-    </SideBarLayout>
+    </SideLayout>
   );
 };
 

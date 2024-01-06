@@ -1,0 +1,25 @@
+@import '@scss/abstracts/mixin';
+
+.float-box {
+  position: fixed;
+  z-index: 30;
+  bottom: 24px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  .top-button-box {
+    cursor: pointer;
+    & .circle-icon-wrapper {
+      background-color: #fff;
+    }
+  }
+
+  .snowflake-button-box {
+    cursor: pointer;
+    & .circle-icon-wrapper {
+      background-color: #fff;
+    }
+  }
+}

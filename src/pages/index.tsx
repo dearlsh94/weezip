@@ -1,17 +1,20 @@
 import * as React from 'react';
 import { type HeadFC, type PageProps } from 'gatsby';
 import '@scss/global.scss';
+import '@scss/pages/IndexPage.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { getNodeJsonByUrl } from '@utils/notionUtils';
 import { Children, INotionContext } from '@types';
-import ContentWrapper from '@module/ContentWrapper';
+import ContentWrapper from '@components/post/contents';
 import { NotionContext } from '@store/rootStore';
-import MainLayout from '@layout/MainLayout';
+import MainLayout from '@layout/main';
 import SEO from '@components/header/SEO';
-import LatestPost from '@module/LatestPost';
-import Divider from '@components/ui/Divider';
+import LatestPost from '@components/post/latest';
+import Divider from '@components/ui/divider';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { StaticImage } from 'gatsby-plugin-image';
+import Snowflakes from '@components/animation/snowflake';
+import FloatBox from '@components/ui/float';
 
 export const Head: HeadFC = () => {
   return <SEO />;
@@ -35,6 +38,8 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </MainLayout>
       </NotionContext.Provider>
+      <Snowflakes />
+      <FloatBox useSnowflake />
     </GlobalPortal.Provider>
   );
 };

@@ -3,6 +3,6 @@ import { NotionNode } from './nodeTypes';
 
 export interface INotionContext {
   nodes: NotionNode[];
-  postTags?: string[];
-  postSeries?: MultiSelect;
+  everyPostsTags?: string[];
+  everyPostsSeries?: MultiSelect;
 }

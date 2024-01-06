@@ -1,5 +1,5 @@
 import { Children, MultiSelect, NotionColumn, NotionNode, RichText } from '@types';
-import { convertDatetimeFormat } from './convertUtils';
+import { convertDatetimeFormat } from './converter';
 
 export const notionNodeToJson = (node: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null;
@@ -36,11 +36,11 @@ export const getParseListByNodes = (nodes: NotionNode[]): NotionNode[] => {
 export const classifyPost = (
   nodes: NotionNode[]
 ): {
-  postTags: string[];
-  postSeries: MultiSelect;
+  everyPostsTags: string[];
+  everyPostsSeries: MultiSelect;
 } => {
   const postTagSet = new Set();
-  const postSeries: MultiSelect = [];
+  const everyPostsSeries: MultiSelect = [];
   const includeSeriesName: string[] = [];
 
   nodes.map(node => {
@@ -55,15 +55,15 @@ export const classifyPost = (
       if (json.properties?.series?.select) {
         if (!includeSeriesName.includes(json.properties?.series?.select.name)) {
           includeSeriesName.push(json.properties?.series?.select.name);
-          postSeries.push(json.properties?.series?.select);
+          everyPostsSeries.push(json.properties?.series?.select);
         }
       }
     }
   });
 
   return {
-    postTags: Array.from(postTagSet) as string[],
-    postSeries,
+    everyPostsTags: Array.from(postTagSet) as string[],
+    everyPostsSeries,
   };
 };
 

@@ -1,0 +1,40 @@
+.block-code {
+  line-height: 1.75rem;
+  background-color: #efefef;
+  margin: 16px 0px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  pre {
+    white-space: pre-wrap;
+    width: 100%;
+    margin: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  span.linenumber {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px 0px;
+
+    .language {
+      color: var(--color-grey);
+      font-size: 9pt;
+    }
+  }
+
+  .caption {
+    color: var(--color-grey);
+    padding: 2px 12px;
+    font-size: 9pt;
+  }
+}

@@ -56,5 +56,11 @@
       "</MyButton>"
     ],
     "description": "to use MyButton component"
+  },
+  "exp def barrel": {
+    "scope": "",
+    "prefix": "export { defaulta as }",
+    "body": ["export { default as $1 } from './$1'"],
+    "description": "to use bareel export"
   }
 }

@@ -1,0 +1,23 @@
+@import '@scss/abstracts/mixin';
+
+.last-edited-caution {
+  @include flexCenter;
+  flex-direction: column;
+  box-sizing: border-box;
+  row-gap: 8px;
+  margin: 2rem 0;
+  padding: 1.75rem 1.5rem;
+  width: 100%;
+  border-radius: 16px;
+  background-color: var(--color-yellow);
+  color: var(--color-black-6);
+
+  p {
+    text-align: center;
+    em {
+      color: var(--color-red);
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,7 +1,7 @@
-import { throttle } from '@utils/commonUtils';
+import { throttle } from '@utils/common';
 import { useEffect, useState } from 'react';
 
-const useScroll = (delay = 30) => {
+const useScroll = (delay = 10) => {
   const [scrollY, setScrollY] = useState(0);
 
   const handleScroll = throttle(() => {

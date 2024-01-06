@@ -3,6 +3,6 @@ import { INotionContext } from '@types';
 
 export const NotionContext = React.createContext<INotionContext>({
   nodes: [],
-  postTags: [],
-  postSeries: [],
+  everyPostsTags: [],
+  everyPostsSeries: [],
 });

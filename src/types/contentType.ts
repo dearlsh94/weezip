@@ -12,7 +12,6 @@ import {
   MultiSelect,
 } from '@types';
 
-// SECTION enum zone ====
 export enum BlockType {
   PARAGRAPH = 'paragraph',
   HEADING_1 = 'heading_1',
@@ -30,7 +29,6 @@ export enum BlockType {
   DIVIDER = 'divider',
 }
 
-// SECTION interface zone ====
 export interface Children {
   object: 'block';
   id: string;

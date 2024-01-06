@@ -1,0 +1,21 @@
+@import '@scss/abstracts/mixin';
+
+.table-of-contents-side {
+  color: var(--color-grey);
+  line-height: 24px;
+  margin-bottom: 0;
+  padding-left: 0px;
+  max-height: 65vh;
+  overflow-y: auto;
+  margin-top: 24px;
+
+  .tag-top,
+  .tag-h2 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .tag-h3 {
+    padding-left: 32px;
+    padding-right: 16px;
+  }
+}
