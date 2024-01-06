@@ -11,7 +11,7 @@ import { classifyPost, getParseListByNodes } from '@utils/notionUtils';
 import SEO from '@components/header/SEO';
 import Divider from '@components/ui/Divider';
 import { GlobalPortal } from '@components/GlobalPortal';
-import { compareString } from '@utils/commonUtils';
+import { compareString } from '@utils/common';
 import PostsFilter from '@components/post/list/filter';
 import LoadSection from '@components/ui/loadSection';
 import Posts from '@components/post/list';

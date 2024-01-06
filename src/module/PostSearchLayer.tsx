@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useRef, useState } from 'react';
 import '@scss/module/PostSearchLayer.scss';
-import { throttle } from '@utils/commonUtils';
+import { throttle } from '@utils/common';
 import { IconClose, IconSearch } from '@components/icon';
 import { navigate } from 'gatsby';
 import RecommendTag from '../components/post/RecommendTag';

@@ -1,5 +1,5 @@
-import { Children, MultiSelect, MultiSelectProperty, NotionColumn, NotionNode, RichText } from '@types';
-import { convertDatetimeFormat } from './convertUtils';
+import { Children, MultiSelect, NotionColumn, NotionNode, RichText } from '@types';
+import { convertDatetimeFormat } from './converter';
 
 export const notionNodeToJson = (node: NotionNode): Children => {
   return node ? JSON.parse(node?.json) : null;

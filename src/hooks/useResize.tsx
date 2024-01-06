@@ -1,4 +1,4 @@
-import { throttle } from '@utils/commonUtils';
+import { throttle } from '@utils/common';
 import { useEffect, useState } from 'react';
 
 const useResize = (delay = 30) => {
