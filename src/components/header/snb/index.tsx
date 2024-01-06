@@ -2,7 +2,7 @@ import { IconDoubleArrow, IconHamburgerMenu } from '@components/icon';
 import useOverlay from '@src/hooks/useOverlay';
 import React from 'react';
 import { useState } from 'react';
-import '@scss/components/ui/SNBOpenIcon.scss';
+import './index.scss';
 import SideBarNavigation from '@module/SideBarNavigation';
 
 export default function SNBOpenIcon() {

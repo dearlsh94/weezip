@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import '@scss/module/Header.scss';
-import Linker from '@components/ui/Linker';
+import Linker from '@components/ui/linker';
 import { StaticImage } from 'gatsby-plugin-image';
 import PostSearchLayer from '@module/PostSearchLayer';
 import { IconSearch } from '@components/icon';
 import ThemeController from '@components/ThemeController';
 import useOverlay from '@src/hooks/useOverlay';
-import SNBOpenIcon from '@components/ui/SNBOpenIcon';
+import SNBOpenIcon from '@components/header/snb';
 import useScroll from '@src/hooks/useScroll';
 
 export default function Header() {

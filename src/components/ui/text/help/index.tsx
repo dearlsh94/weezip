@@ -1,13 +1,11 @@
 import * as React from 'react';
-import '@scss/components/ui/HelpText.scss';
+import './index.scss';
 
-interface Props {
+interface HelpTextProps {
   text: string;
   className?: string;
 }
 
-const HelpText = ({ text, className }: Props) => {
+export default function HelpText({ text, className }: HelpTextProps) {
   return <strong className={`my-help-text ${className || ''}`}>🧚 {text}</strong>;
-};
-
-export default HelpText;
+}

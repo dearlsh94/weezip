@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import '@scss/components/ScrollProgress.scss';
+import './index.scss';
 import useScroll from '@src/hooks/useScroll';
 
-const ScrollProgress = () => {
+export default function ScrollProgress() {
   const { scrollY } = useScroll(10);
   const [status, setStatus] = useState('');
   const [progress, setProgress] = useState(0);
@@ -31,6 +31,4 @@ const ScrollProgress = () => {
       />
     </div>
   );
-};
-
-export default ScrollProgress;
+}

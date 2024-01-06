@@ -4,7 +4,7 @@ import '@scss/module/SideBarNavigation.scss';
 import { NotionContext } from '@store/rootStore';
 import SideLayout from '@layout/side';
 import { isDebug, GNB_MENUS } from '@src/constants';
-import Linker from '@components/ui/Linker';
+import Linker from '@components/ui/linker';
 import { IconHome, IconOutLink, IconList, IconStar } from '@components/icon';
 import { NotionNode } from '@types';
 

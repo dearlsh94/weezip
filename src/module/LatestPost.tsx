@@ -3,7 +3,7 @@ import '@scss/module/LatestPost.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { NotionNode } from '@types';
 import { getParseListByNodes } from '@utils/notionUtils';
-import Linker from '@components/ui/Linker';
+import Linker from '@components/ui/linker';
 import { IconArrow } from '@components/icon';
 import TagBadges from '@components/post/TagBadges';
 

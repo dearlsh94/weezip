@@ -10,11 +10,11 @@ import { NotionContext } from '@store/rootStore';
 import MainLayout from '@layout/main';
 import SEO from '@components/header/SEO';
 import LatestPost from '@module/LatestPost';
-import Divider from '@components/ui/Divider';
+import Divider from '@components/ui/divider';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { StaticImage } from 'gatsby-plugin-image';
 import Snowflakes from '@components/Snowflakes';
-import FloatBox from '@components/ui/FloatBox';
+import FloatBox from '@components/ui/float';
 
 export const Head: HeadFC = () => {
   return <SEO />;

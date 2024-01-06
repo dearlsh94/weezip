@@ -1,4 +1,4 @@
-import Linker from '@components/ui/Linker';
+import Linker from '@components/ui/linker';
 import React from 'react';
 import './index.scss';
 

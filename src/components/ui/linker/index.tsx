@@ -8,7 +8,7 @@ interface LinkerProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   target?: '_blank' | '_parent' | '_self' | '_top';
 }
 
-const Linker = ({ url, target, children, ...rest }: LinkerProps) => {
+export default function Linker({ url, target, children, ...rest }: LinkerProps) {
   return (
     <>
       {url.startsWith('https://') && !url.startsWith('https://weezip.treefeely.com') ? (
@@ -16,12 +16,8 @@ const Linker = ({ url, target, children, ...rest }: LinkerProps) => {
           {children}
         </a>
       ) : (
-        <Link to={url} {...rest}>
-          {children}
-        </Link>
+        <Link to={url}>{children}</Link>
       )}
     </>
   );
-};
-
-export default Linker;
+}

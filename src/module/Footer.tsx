@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '@scss/module/Footer.scss';
-import Linker from '@components/ui/Linker';
+import Linker from '@components/ui/linker';
 import { OWNER_EMAIL } from '@src/constants';
 import { IconMail, CircleIconWrapper, IconInstagram, IconGithub, IconKakao } from '@components/icon';
 

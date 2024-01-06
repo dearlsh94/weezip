@@ -1,12 +1,12 @@
 import * as React from 'react';
-import '@scss/components/ui/Divider.scss';
+import './index.scss';
 
 interface Props {
   color?: string;
   height?: number;
 }
 
-const Divider = ({ color, height }: Props) => {
+export default function Divider({ color, height }: Props) {
   return (
     <hr
       className={`block-divider ${color}`}
@@ -15,6 +15,4 @@ const Divider = ({ color, height }: Props) => {
       }}
     />
   );
-};
-
-export default Divider;
+}

@@ -9,7 +9,7 @@ import { NotionContext } from '@store/rootStore';
 import { INotionContext, NotionNode } from '@types';
 import { classifyPost, getParseListByNodes } from '@utils/notionUtils';
 import SEO from '@components/header/SEO';
-import Divider from '@components/ui/Divider';
+import Divider from '@components/ui/divider';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { compareString } from '@utils/common';
 import PostsFilter from '@components/post/list/filter';

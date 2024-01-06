@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '@scss/components/TagBadge.scss';
-import Linker from '../ui/Linker';
+import Linker from '../ui/linker';
 
 interface Props {
   tagNames: string[];

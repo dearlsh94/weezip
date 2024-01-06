@@ -1,5 +1,5 @@
-import Linker from '@components/ui/Linker';
-import MyButton, { ButtonColor, ButtonSize, ButtonType } from '@components/ui/MyButton';
+import Linker from '@components/ui/linker';
+import MyButton, { ButtonColor, ButtonSize, ButtonType } from '@components/ui/button';
 import { Select } from '@types';
 import React from 'react';
 import './index.scss';

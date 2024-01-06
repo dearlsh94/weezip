@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '@scss/components/Pagination.scss';
-import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/MyButton';
+import MyButton, { ButtonSize, ButtonColor, ButtonType } from '@components/ui/button';
 import { IconArrow, IconMoveEnd } from '@components/icon';
 import { paginationController } from '@src/hooks/usePagination';
 

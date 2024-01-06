@@ -9,7 +9,7 @@ import SEO from '@components/header/SEO';
 import Contents from '@components/post/contents';
 import { graphql } from 'gatsby';
 import { BlockType } from '@types';
-import FloatBox from '@components/ui/FloatBox';
+import FloatBox from '@components/ui/float';
 import { GlobalPortal } from '@components/GlobalPortal';
 import Giscus from '@components/Giscus';
 import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb';
