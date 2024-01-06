@@ -1,21 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect } from 'react';
 import { CONFIG_THEME_KEY } from '@src/constants';
 import { useLocalStorage } from './useLocalStorage';
-
-const themes = {
-  LIGHT: 'light',
-  DARK: 'dark',
-};
-type ThemesType = (typeof themes)[keyof typeof themes];
+import { Themes, useThemeStore } from '@store/configStore';
 
 const useTheme = () => {
+  const { theme, setDarkTheme, setLightTheme } = useThemeStore();
   const { setConfig, getConfig } = useLocalStorage();
-  const [theme, setTheme] = useState<ThemesType>();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY);
     if (configTheme) {
-      if (configTheme === themes.DARK) {
+      if (configTheme === Themes.DARK) {
         setDark();
       } else {
         setLight();
@@ -31,21 +26,21 @@ const useTheme = () => {
   }, []);
 
   const changeLight = () => {
-    document.documentElement.setAttribute(CONFIG_THEME_KEY, themes.LIGHT);
-    setTheme(themes.LIGHT);
+    document.documentElement.setAttribute(CONFIG_THEME_KEY, Themes.LIGHT);
+    setLightTheme();
   };
   const setLight = () => {
     changeLight();
-    setConfig(CONFIG_THEME_KEY, themes.LIGHT);
+    setConfig(CONFIG_THEME_KEY, Themes.LIGHT);
   };
 
   const changeDark = () => {
-    document.documentElement.setAttribute(CONFIG_THEME_KEY, themes.DARK);
-    setTheme(themes.DARK);
+    document.documentElement.setAttribute(CONFIG_THEME_KEY, Themes.DARK);
+    setDarkTheme();
   };
   const setDark = () => {
     changeDark();
-    setConfig(CONFIG_THEME_KEY, themes.DARK);
+    setConfig(CONFIG_THEME_KEY, Themes.DARK);
   };
 
   return { theme, setLight, setDark };

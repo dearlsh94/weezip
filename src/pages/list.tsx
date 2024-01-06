@@ -17,7 +17,6 @@ import LoadSection from '@components/ui/loadSection';
 import Posts from '@components/post/list';
 import PostsDescription from '@components/post/list/description';
 import { getParamValue } from '@utils/url';
-import { useEverySeriesNamesStore } from '@store/notionStore';
 
 export const Head: HeadFC = () => {
   return (
