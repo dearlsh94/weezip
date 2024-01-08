@@ -2,31 +2,36 @@ import React, { useState, useEffect } from 'react';
 import './index.scss';
 import { useSnowflakeStore } from '@store/configStore';
 import { IconSnow } from '@components/icon';
+import { getRandomFloat, getRandomInt } from '@utils/math';
 
 interface Snowflake {
   left: number;
-  fallDelay: string;
+  fallDelay: number;
   shakeDelay: number;
   blur: number;
   opacity: number;
   size: number;
 }
 
-export default function Snowflakes() {
-  const SNOW_COUNT = 18;
+interface SnowflakesProps {
+  count: number; // 눈송이 개수
+}
+
+export default function Snowflakes({ count = 18 }: SnowflakesProps) {
   const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
   const { isShow } = useSnowflakeStore();
 
   useEffect(() => {
-    const newSnowflakes = Array.from({ length: SNOW_COUNT }).map(() => {
-      const fallDelay = (Math.random() * 15).toFixed(1);
+    const newSnowflakes = Array.from({ length: count }).map(() => {
+      const fallDelay = getRandomFloat(0, 15, 1);
+      const shakeDelay = Math.min(getRandomFloat(0, 10, 1), Number.parseFloat((fallDelay - 0.1).toFixed(1)));
       return {
-        left: Math.floor(Math.random() * 100),
-        fallDelay: fallDelay,
-        shakeDelay: Math.min(Number.parseFloat((Math.random() * 10).toFixed(1)), Number.parseFloat(fallDelay) - 0.1),
-        blur: (Math.floor(Math.random() * 4) + 2) / 10,
-        opacity: Math.round((Math.random() * 0.4 + 0.55) * 100) / 100,
-        size: Math.floor(Math.random() * (18 - 12 + 1)) + 12,
+        left: getRandomInt(0, 100),
+        fallDelay,
+        shakeDelay,
+        blur: getRandomFloat(0.2, 0.5, 1),
+        opacity: getRandomFloat(0.55, 0.95, 2),
+        size: getRandomInt(12, 18),
       };
     });
     setSnowflakes(newSnowflakes);
