@@ -5,16 +5,14 @@ import '@scss/pages/IndexPage.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { getNodeJsonByUrl } from '@utils/notionUtils';
 import { INotionContext, NotionChildrenType } from '@types';
-import ContentWrapper from '@components/post/contents';
+import { Contents, LatestPost } from '@components/post';
 import { NotionContext } from '@store/rootStore';
-import MainLayout from '@layout/main';
 import SEO from '@components/header/SEO';
-import LatestPost from '@components/post/latest';
-import Divider from '@components/ui/divider';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { StaticImage } from 'gatsby-plugin-image';
-import Snowflakes from '@components/animation/snowflake';
-import FloatBox from '@components/ui/float';
+import Snowflakes from '@components/animation/Snowflakes/Snowflakes';
+import { Divider, FloatBox } from '@components/ui';
+import { MainLayout } from '@layout/Main';
 
 export const Head: HeadFC = () => {
   return <SEO />;
@@ -32,7 +30,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <MainLayout className="index-layout">
           <LatestPost />
           <Divider />
-          <div className="introduce">{content && <ContentWrapper childrens={content.children} />}</div>
+          <div className="introduce">{content && <Contents childrens={content.children} />}</div>
           <div className="logo-box">
             <StaticImage src="../images/Tesseract-Logo-256x256.png" alt="Weezip Logo" width={128} />
           </div>

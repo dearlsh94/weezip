@@ -4,20 +4,16 @@ import { HeadFC, PageProps, graphql } from 'gatsby';
 import '@scss/global.scss';
 import '@scss/pages/PostsPage.scss';
 import { getNotionNodeAll } from '@services/use-notion';
-import MainLayout from '@layout/main';
 import { NotionContext } from '@store/rootStore';
 import { INotionContext, NotionNode } from '@types';
 import { classifyPost, getParseListByNodes } from '@utils/notionUtils';
 import SEO from '@components/header/SEO';
-import Divider from '@components/ui/divider';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { compareString } from '@utils/common';
-import PostsFilter from '@components/post/list/filter';
-import LoadSection from '@components/ui/loadSection';
-import Posts from '@components/post/list';
-import PostsDescription from '@components/post/list/description';
 import { getParamValue } from '@utils/url';
-
+import { Posts, PostsDescription, PostsFilter } from '@components/post';
+import { Divider, LoadSection, Loader } from '@components/ui';
+import { MainLayout } from '@layout/Main';
 export const Head: HeadFC = () => {
   return (
     <SEO title={`글 목록`} description={`Write, Explain, Edit, Zip`} pathname="/list">
@@ -87,9 +83,9 @@ const ListPage: React.FC<PageProps> = ({ data, location }) => {
             <PostsDescription isLoading={isLoading} length={list.length} filteredText={filterText} />
           </section>
           <Divider color="primary" height={2} />
-          <LoadSection isLoading={isLoading} isError={false}>
+          <Loader isLoading={isLoading} isError={false}>
             <Posts list={list} />
-          </LoadSection>
+          </Loader>
         </MainLayout>
       </NotionContext.Provider>
     </GlobalPortal.Provider>

@@ -1,1 +1,1 @@
-export { default as RecommendTag } from './tag';
+export * from './Tag';
