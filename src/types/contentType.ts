@@ -48,6 +48,11 @@ interface Children {
   type: BlockType;
 }
 
+interface Parent {
+  type: string;
+  database_id: string;
+}
+
 export interface ParagraphChildren extends Children {
   type: BlockType.PARAGRAPH;
   paragraph: TextBlock;
@@ -120,11 +125,6 @@ export type NotionChildrenType =
   | CodeChildren
   | ImageChildren
   | DividerChildren;
-
-export interface Parent {
-  type: string;
-  database_id: string;
-}
 
 export interface NotionColumn {
   id: number;
