@@ -15,7 +15,7 @@ export default function SideBarNavigation({ handleClose }: SideBarNavigationProp
         {GNB_MENUS?.length > 0 && (
           <ul>
             {GNB_MENUS.map((nav, i) => {
-              return <SideBarNavItem key={`gnb-${i}`} {...nav} onClick={handleClose} />;
+              return <SideBarNavItem key={`side-bar-nav-item-${nav.url}`} {...nav} onClick={handleClose} />;
             })}
           </ul>
         )}

@@ -6,16 +6,16 @@ export default function IconCaution(props: SvgControllerProps) {
     <SvgController {...props}>
       <defs>
         <mask id="ipSCaution0">
-          <g fill="none" stroke-width="4">
+          <g fill="none" strokeWidth="4">
             <path
               fill={props.color}
-              fill-rule="evenodd"
+              fillRule="evenodd"
               stroke={props.color}
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               d="M24 5L2 43h44L24 5Z"
               clip-rule="evenodd"
             />
-            <path stroke="#000" stroke-linecap="round" d="M24 35v1m0-17l.008 10" />
+            <path stroke="#000" strokeLinecap="round" d="M24 35v1m0-17l.008 10" />
           </g>
         </mask>
       </defs>
