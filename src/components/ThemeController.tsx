@@ -5,21 +5,6 @@ import { IconDarkTheme, IconLightTheme } from '@components/icon';
 const ThemeController = () => {
   const { theme, changeAndSaveDark, changeAndSaveLight } = useTheme();
 
-  React.useEffect(() => {
-    // Giscus 모듈 처리
-    const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
-    iframe?.contentWindow?.postMessage(
-      {
-        giscus: {
-          setConfig: {
-            theme: theme,
-          },
-        },
-      },
-      'https://giscus.app'
-    );
-  }, [theme]);
-
   return (
     <>
       {theme === 'light' ? (

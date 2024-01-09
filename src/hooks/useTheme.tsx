@@ -4,8 +4,8 @@ import { useLocalStorage } from './useLocalStorage';
 import { Themes, useThemeStore } from '@store/configStore';
 
 const useTheme = () => {
-  const { theme, setDarkTheme, setLightTheme } = useThemeStore();
   const { setConfig, getConfig } = useLocalStorage();
+  const { theme, setDarkTheme, setLightTheme } = useThemeStore();
 
   useEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY);
