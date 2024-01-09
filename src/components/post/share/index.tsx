@@ -1,7 +1,8 @@
 import useClipboard from '@src/hooks/useClipboard';
 import React from 'react';
 import './index.scss';
-import { CircleIconWrapper, IconCopyLink } from '@components/icon';
+import { IconCopyLink } from '@components/icon';
+import { CircleIconWrapper } from '@components/icon/wrapper';
 
 export default function Share() {
   const { copyToClipboard } = useClipboard();

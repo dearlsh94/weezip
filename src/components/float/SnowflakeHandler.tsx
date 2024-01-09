@@ -1,4 +1,5 @@
-import { CircleIconWrapper, IconSnow } from '@components/icon';
+import { IconSnow } from '@components/icon';
+import { CircleIconWrapper } from '@components/icon/wrapper';
 import { useSnowflakeStore } from '@store/configStore';
 import React from 'react';
 

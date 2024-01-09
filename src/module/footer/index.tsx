@@ -2,7 +2,8 @@ import * as React from 'react';
 import './index.scss';
 import Linker from '@components/ui/linker';
 import { OWNER_EMAIL } from '@src/constants';
-import { IconGithub, IconInstagram, IconKakao, IconMail, CircleIconWrapper } from '@components/icon';
+import { IconGithub, IconInstagram, IconKakao, IconMail } from '@components/icon';
+import { CircleIconWrapper } from '@components/icon/wrapper';
 
 export default function Footer() {
   return (

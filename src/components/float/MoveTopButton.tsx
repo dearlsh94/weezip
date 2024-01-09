@@ -1,4 +1,5 @@
-import { CircleIconWrapper, IconEndArrow } from '@components/icon';
+import { IconEndArrow } from '@components/icon';
+import { CircleIconWrapper } from '@components/icon/wrapper';
 import useScroll from '@src/hooks/useScroll';
 import { moveToTop } from '@utils/scroll';
 import React from 'react';
