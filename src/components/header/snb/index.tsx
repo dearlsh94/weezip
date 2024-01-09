@@ -2,7 +2,7 @@ import useOverlay from '@src/hooks/useOverlay';
 import React from 'react';
 import { useState } from 'react';
 import './index.scss';
-import SideBarNavigation from '@module/SideBarNavigation';
+import SideBarNavigation from '@module/side/nav';
 import { IconDoubleArrow, IconHamburger } from '@components/icon';
 
 export default function SNBOpenIcon() {
