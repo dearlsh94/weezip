@@ -12,7 +12,7 @@ export default function SnowflakeHandler() {
 
   return (
     <CircleIconWrapper color="secondary" size={44} onClick={handleSnow}>
-      <IconSnow direction="top" color={`${isShow ? `base` : `secondary`}`} />
+      <IconSnow direction="top" color={`${isShow ? `primary` : `secondary`}`} />
     </CircleIconWrapper>
   );
 }
