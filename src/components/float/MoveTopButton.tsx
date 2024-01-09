@@ -21,8 +21,8 @@ export default function MoveTopButton() {
   return (
     <>
       {showButton.isShow && (
-        <CircleIconWrapper color="secondary" size={44}>
-          <IconEndArrow direction="top" color="primary" onClick={moveToTop} />
+        <CircleIconWrapper color="secondary" size={44} onClick={moveToTop}>
+          <IconEndArrow direction="top" color="primary" />
         </CircleIconWrapper>
       )}
     </>
