@@ -11,7 +11,7 @@ export default function SNBOpenIcon() {
 
   return (
     <>
-      <div
+      <button
         className="snb-open-icon"
         onClick={SNBOverlay.change}
         onMouseOver={() => setIsMenuHover(true)}
@@ -20,15 +20,11 @@ export default function SNBOpenIcon() {
         onBlur={() => setIsMenuHover(false)}
       >
         {isMenuHover ? (
-          SNBOverlay.isOpen ? (
-            <IconDoubleArrow direction="left" size={28} />
-          ) : (
-            <IconDoubleArrow direction="right" size={28} />
-          )
+          <IconDoubleArrow direction={SNBOverlay.isOpen ? 'left' : 'right'} size={28} />
         ) : (
           <IconHamburger size={28} />
         )}
-      </div>
+      </button>
       {SNBOverlay.isOpen && <SideBarNavigation handleClose={SNBOverlay.close} />}
     </>
   );

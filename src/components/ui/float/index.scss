@@ -8,18 +8,4 @@
   display: flex;
   flex-direction: column;
   row-gap: 16px;
-
-  .top-button-box {
-    cursor: pointer;
-    & .circle-icon-wrapper {
-      background-color: #fff;
-    }
-  }
-
-  .snowflake-button-box {
-    cursor: pointer;
-    & .circle-icon-wrapper {
-      background-color: #fff;
-    }
-  }
 }

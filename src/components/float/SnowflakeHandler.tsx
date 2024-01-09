@@ -11,10 +11,8 @@ export default function SnowflakeHandler() {
   };
 
   return (
-    <div className={`snowflake-button-box`} onClick={handleSnow}>
-      <CircleIconWrapper color="secondary" size={44}>
-        <IconSnow direction="top" color={`${isShow ? `base` : `secondary`}`} />
-      </CircleIconWrapper>
-    </div>
+    <CircleIconWrapper color="secondary" size={44}>
+      <IconSnow direction="top" color={`${isShow ? `base` : `secondary`}`} onClick={handleSnow} />
+    </CircleIconWrapper>
   );
 }
