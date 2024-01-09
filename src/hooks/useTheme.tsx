@@ -10,9 +10,9 @@ const useTheme = () => {
   useEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY);
     if (configTheme === Themes.DARK) {
-      setDark();
+      changeAndSaveDark();
     } else if (configTheme === Themes.LIGHT) {
-      setLight();
+      changeAndSaveLight();
     } else if (window.matchMedia('(prefers-color-scheme: dark').matches) {
       changeDark();
     } else {
@@ -24,7 +24,7 @@ const useTheme = () => {
     document.documentElement.setAttribute(CONFIG_THEME_KEY, Themes.LIGHT);
     setLightTheme();
   };
-  const setLight = () => {
+  const changeAndSaveLight = () => {
     changeLight();
     setConfig(CONFIG_THEME_KEY, Themes.LIGHT);
   };
@@ -33,12 +33,12 @@ const useTheme = () => {
     document.documentElement.setAttribute(CONFIG_THEME_KEY, Themes.DARK);
     setDarkTheme();
   };
-  const setDark = () => {
+  const changeAndSaveDark = () => {
     changeDark();
     setConfig(CONFIG_THEME_KEY, Themes.DARK);
   };
 
-  return { theme, setLight, setDark };
+  return { theme, changeAndSaveDark, changeAndSaveLight };
 };
 
 export default useTheme;

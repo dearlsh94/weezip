@@ -2,11 +2,11 @@ import * as React from 'react';
 import { useRef, useState } from 'react';
 import './index.scss';
 import { throttle } from '@utils/common';
-import RecommendTag from './recommend';
 import { GlobalPortal } from '@components/GlobalPortal';
 import DimLayout from '@layout/dim';
 import { IconClose, IconSearch } from '@components/icon';
 import { moveToPostsPage } from '@utils/url';
+import { RecommendTag } from './recommend';
 
 interface PostSearchLayerProps {
   handleClose: () => void;

@@ -37,7 +37,7 @@ export default function IconList(props: SvgControllerProps) {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="32"
-      />{' '}
+      />
     </SvgController>
   );
 }

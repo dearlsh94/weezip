@@ -82,10 +82,10 @@ const ListPage: React.FC<PageProps> = ({ data, location }) => {
     <GlobalPortal.Provider>
       <NotionContext.Provider value={store}>
         <MainLayout className="posts-layout">
-          <div className="posts-layout__header">
+          <section className="posts-layout__header">
             <PostsFilter />
             <PostsDescription isLoading={isLoading} length={list.length} filteredText={filterText} />
-          </div>
+          </section>
           <Divider color="primary" height={2} />
           <LoadSection isLoading={isLoading} isError={false}>
             <Posts list={list} />

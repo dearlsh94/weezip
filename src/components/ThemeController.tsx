@@ -3,7 +3,7 @@ import useTheme from '@src/hooks/useTheme';
 import { IconDarkTheme, IconLightTheme } from '@components/icon';
 
 const ThemeController = () => {
-  const { theme, setLight, setDark } = useTheme();
+  const { theme, changeAndSaveDark, changeAndSaveLight } = useTheme();
 
   React.useEffect(() => {
     // Giscus 모듈 처리
@@ -20,7 +20,15 @@ const ThemeController = () => {
     );
   }, [theme]);
 
-  return <>{theme === 'light' ? <IconLightTheme onClick={setDark} /> : <IconDarkTheme onClick={setLight} />}</>;
+  return (
+    <>
+      {theme === 'light' ? (
+        <IconLightTheme onClick={changeAndSaveDark} />
+      ) : (
+        <IconDarkTheme onClick={changeAndSaveLight} />
+      )}
+    </>
+  );
 };
 
 export default ThemeController;
