@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './index.scss';
-import { Children } from '@types';
+import { ImageChildren } from '@types';
 import NParagraph from '../paragraph';
 
 interface NImageProps {
-  imageBlock: Children;
+  imageBlock: ImageChildren;
 }
 
 export default function MyImage({ imageBlock }: NImageProps) {

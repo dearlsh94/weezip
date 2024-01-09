@@ -1,16 +1,16 @@
-import { Children, MultiSelect, NotionColumn, NotionNode, RichText } from '@types';
+import { NotionChildrenType, MultiSelect, NotionColumn, NotionNode, RichText } from '@types';
 import { convertDatetimeFormat } from './converter';
 
-export const notionNodeToJson = (node: NotionNode): Children => {
+export const notionNodeToJson = (node: NotionNode): NotionChildrenType => {
   return node ? JSON.parse(node?.json) : null;
 };
 
-export const getNodeJsonByUrl = (nodes: NotionNode[], url: string): Children | null => {
+export const getNodeJsonByUrl = (nodes: NotionNode[], url: string): NotionChildrenType | null => {
   const node = nodes.find(n => n.title === url);
   return node ? notionNodeToJson(node) : null;
 };
 
-const parseNotionColumn = (content: Children): NotionColumn => {
+const parseNotionColumn = (content: NotionChildrenType): NotionColumn => {
   const { id, url, remark, created_date, edited_date, series, tag } = content.properties;
 
   return {

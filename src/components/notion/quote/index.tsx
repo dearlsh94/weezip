@@ -1,12 +1,12 @@
 import * as React from 'react';
 import './index.scss';
-import { Children, TextBlock } from '@types';
+import { NotionChildrenType, TextBlock } from '@types';
 import { NParagraph } from '@components/notion';
 import ContentWrapper from '@components/post/contents';
 
 interface NQuoteProps {
   quote?: TextBlock;
-  children: Children[];
+  children: NotionChildrenType[];
 }
 
 export default function NQuote({ quote, children }: NQuoteProps) {

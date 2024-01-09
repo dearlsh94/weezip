@@ -14,7 +14,7 @@ interface Snowflake {
 }
 
 interface SnowflakesProps {
-  count: number; // 눈송이 개수
+  count?: number; // 눈송이 개수
 }
 
 export default function Snowflakes({ count = 17 }: SnowflakesProps) {
