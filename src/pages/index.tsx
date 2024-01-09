@@ -4,7 +4,7 @@ import '@scss/global.scss';
 import '@scss/pages/IndexPage.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { getNodeJsonByUrl } from '@utils/notionUtils';
-import { Children, INotionContext } from '@types';
+import { INotionContext, NotionChildrenType } from '@types';
 import ContentWrapper from '@components/post/contents';
 import { NotionContext } from '@store/rootStore';
 import MainLayout from '@layout/main';
@@ -25,7 +25,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const store: INotionContext = {
     nodes: nodes,
   };
-  const content: Children | null = getNodeJsonByUrl(nodes, '/home');
+  const content: NotionChildrenType | null = getNodeJsonByUrl(nodes, '/home');
   return (
     <GlobalPortal.Provider>
       <NotionContext.Provider value={store}>

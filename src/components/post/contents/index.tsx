@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { BlockType, Children } from '@types';
+import { BlockType, NotionChildrenType } from '@types';
 import ContentBlockRender from '@components/post/contents/blockRender';
 
 interface ContentsProps {
-  childrens: Children[];
+  childrens: NotionChildrenType[];
 }
 
 export default function Contents({ childrens = [] }: ContentsProps) {
-  let numberedList: Children[] = [];
-  let bulletedList: Children[] = [];
+  let numberedList: NotionChildrenType[] = [];
+  let bulletedList: NotionChildrenType[] = [];
   return (
     <>
       {childrens.map((block, i) => {

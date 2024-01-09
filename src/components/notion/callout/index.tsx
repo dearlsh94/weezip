@@ -1,11 +1,11 @@
 import * as React from 'react';
 import './index.scss';
-import { Callout, Children } from '@types';
+import { Callout, NotionChildrenType } from '@types';
 import { NParagraph } from '@components/notion';
 import ContentWrapper from '@components/post/contents';
 interface NCalloutProps {
   callout: Callout;
-  children: Children[];
+  children: NotionChildrenType[];
 }
 
 export default function NCallout({ callout, children = [] }: NCalloutProps) {

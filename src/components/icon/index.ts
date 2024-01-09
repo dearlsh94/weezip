@@ -13,4 +13,3 @@ export * from './share';
 export * from './snow';
 export * from './star';
 export * from './theme';
-export * from './wrapper';

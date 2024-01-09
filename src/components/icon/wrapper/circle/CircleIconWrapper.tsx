@@ -10,6 +10,7 @@ export default function CircleIconWrapper({ children, color = 'mono', size = 36,
   return (
     <div
       className={`circle-icon-wrapper ${color}`}
+      role={rest.onClick ? 'button' : 'img'}
       style={{
         width: `${size}px`,
         height: `${size}px`,

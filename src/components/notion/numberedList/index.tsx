@@ -1,11 +1,11 @@
 import * as React from 'react';
 import './index.scss';
 import { NParagraph } from '@components/notion';
-import { Children } from '@types';
+import { NumberedListItemChildren } from '@types';
 import ContentWrapper from '@components/post/contents';
 
 interface NNumberedListProps {
-  numberedListItem: Children;
+  numberedListItem: NumberedListItemChildren;
 }
 
 export default function NNumberedList({ numberedListItem }: NNumberedListProps) {

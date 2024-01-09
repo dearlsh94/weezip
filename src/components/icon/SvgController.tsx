@@ -22,6 +22,7 @@ export function SvgController({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
+      role={rest.onClick ? 'button' : 'img'}
       viewBox={viewBox}
       width={size}
       height={size}

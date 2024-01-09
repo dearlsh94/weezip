@@ -2,38 +2,47 @@ import React, { useState, useEffect } from 'react';
 import './index.scss';
 import { useSnowflakeStore } from '@store/configStore';
 import { IconSnow } from '@components/icon';
+import { getRandomNumber } from '@utils/math';
 
 interface Snowflake {
   left: number;
-  fallDelay: string;
+  fallDelay: number;
   shakeDelay: number;
   blur: number;
   opacity: number;
   size: number;
 }
 
-export default function Snowflakes() {
-  const SNOW_COUNT = 18;
+interface SnowflakesProps {
+  count?: number; // 눈송이 개수
+}
+
+export default function Snowflakes({ count = 17 }: SnowflakesProps) {
   const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
   const { isShow } = useSnowflakeStore();
 
+  // 클라이언트 사이드에서만 실행되도록.
   useEffect(() => {
-    const newSnowflakes = Array.from({ length: SNOW_COUNT }).map(() => {
-      const fallDelay = (Math.random() * 15).toFixed(1);
+    const newSnowflakes = Array.from({ length: count }).map(() => {
+      const fallDelay = getRandomNumber(0, 15, { fixed: 2 });
+      const shakeDelay = Math.min(
+        getRandomNumber(0, 10, { fixed: 1 }),
+        Number.parseFloat((fallDelay - 0.07).toFixed(1))
+      ); // fallDelay보다 무조건 길어야 한다. 그렇지 않으면 일부 구간 눈송이가 일자로 내리게 된다.
       return {
-        left: Math.floor(Math.random() * 100),
-        fallDelay: fallDelay,
-        shakeDelay: Math.min(Number.parseFloat((Math.random() * 10).toFixed(1)), Number.parseFloat(fallDelay) - 0.1),
-        blur: (Math.floor(Math.random() * 4) + 2) / 10,
-        opacity: Math.round((Math.random() * 0.4 + 0.55) * 100) / 100,
-        size: Math.floor(Math.random() * (18 - 12 + 1)) + 12,
+        left: getRandomNumber(0, 100),
+        fallDelay,
+        shakeDelay,
+        blur: getRandomNumber(0.2, 0.5, { fixed: 1 }),
+        opacity: getRandomNumber(0.55, 0.95, { fixed: 2 }),
+        size: getRandomNumber(12, 18),
       };
     });
     setSnowflakes(newSnowflakes);
   }, []);
 
   return (
-    <div className={`snowflakes ${isShow ? 'visible' : 'hidden'}`} aria-hidden="true">
+    <div className={`snowflakes ${isShow && snowflakes.length ? 'visible' : 'hidden'}`} aria-hidden="true">
       {snowflakes.map((flake, index) => (
         <div
           key={index}
