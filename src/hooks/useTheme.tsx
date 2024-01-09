@@ -9,19 +9,14 @@ const useTheme = () => {
 
   useEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY);
-    if (configTheme) {
-      if (configTheme === Themes.DARK) {
-        setDark();
-      } else {
-        setLight();
-      }
+    if (configTheme === Themes.DARK) {
+      setDark();
+    } else if (configTheme === Themes.LIGHT) {
+      setLight();
+    } else if (window.matchMedia('(prefers-color-scheme: dark').matches) {
+      changeDark();
     } else {
-      const preferDark = window.matchMedia('(prefers-color-scheme: dark');
-      if (preferDark?.matches) {
-        changeDark();
-      } else {
-        changeLight();
-      }
+      changeLight();
     }
   }, []);
 
