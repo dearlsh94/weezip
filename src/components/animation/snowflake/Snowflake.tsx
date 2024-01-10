@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Snowflakes.scss';
+import './Snowflake.scss';
 import { useSnowflakeStore } from '@store/configStore';
 import { IconSnow } from '@components/icon';
 import { getRandomNumber } from '@utils/math';
@@ -13,17 +13,17 @@ interface Snowflake {
   size: number;
 }
 
-interface SnowflakesProps {
+interface SnowflakeProps {
   count?: number; // 눈송이 개수
 }
 
-export default function Snowflakes({ count = 17 }: SnowflakesProps) {
-  const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
+export default function Snowflake({ count = 17 }: SnowflakeProps) {
+  const [snowflake, setSnowflake] = useState<Snowflake[]>([]);
   const { isShow } = useSnowflakeStore();
 
   // 클라이언트 사이드에서만 실행되도록.
   useEffect(() => {
-    const newSnowflakes = Array.from({ length: count }).map(() => {
+    const newSnowflake = Array.from({ length: count }).map(() => {
       const fallDelay = getRandomNumber(0, 15, { fixed: 2 });
       const shakeDelay = Math.min(
         getRandomNumber(0, 10, { fixed: 1 }),
@@ -38,12 +38,12 @@ export default function Snowflakes({ count = 17 }: SnowflakesProps) {
         size: getRandomNumber(12, 18),
       };
     });
-    setSnowflakes(newSnowflakes);
+    setSnowflake(newSnowflake);
   }, []);
 
   return (
-    <div className={`snowflakes ${isShow && snowflakes.length ? 'visible' : 'hidden'}`} aria-hidden="true">
-      {snowflakes.map((flake, index) => (
+    <div className={`snowflake ${isShow && snowflake.length ? 'visible' : 'hidden'}`} aria-hidden="true">
+      {snowflake.map((flake, index) => (
         <div
           key={index}
           className="snowflake"
