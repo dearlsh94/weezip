@@ -1,2 +1,2 @@
 export { default as Contents } from './Contents';
-export * from '@components/post/contents/blockRender';
+export * from '@components/post/contents/block_render';
