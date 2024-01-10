@@ -4,7 +4,7 @@ import { DateProperty, MultiSelect } from '@types';
 import React from 'react';
 import './TitleDescription.scss';
 import { IconCopyLink } from '@components/icon';
-import { Tags } from '@components/post/tags';
+import { Tags } from '@components/post/Tags';
 
 interface TitleDescriptionProps {
   tag: MultiSelect;

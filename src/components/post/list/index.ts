@@ -1,5 +1,5 @@
 export { default as Posts } from './Posts';
-export * from './description';
-export * from './empty';
-export * from './filter';
-export * from './item';
+export * from './Description';
+export * from './Empty';
+export * from './Filter';
+export * from './Item';

@@ -1,1 +1,1 @@
-export * from './lastEdited';
+export * from './LastEdited';

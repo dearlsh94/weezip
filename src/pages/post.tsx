@@ -9,7 +9,7 @@ import { graphql } from 'gatsby';
 import { BlockType, Heading2Children, ImageChildren } from '@types';
 import { GlobalPortal } from '@components/GlobalPortal';
 import Giscus from '@components/Giscus';
-import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb/Breadcrumb';
+import Breadcrumb, { BreadcrumbStep } from '@components/ui/Breadcrumb/Breadcrumb';
 import {
   Contents,
   Feedback,
@@ -21,7 +21,7 @@ import {
   TitleDescription,
 } from '@components/post';
 import { FloatBox } from '@components/ui';
-import { MainLayout } from '@layout/main';
+import { MainLayout } from '@layout/Main';
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));

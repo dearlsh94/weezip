@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './SideBarNavigation.scss';
-import { SideLayout } from '@layout/side';
+import { SideLayout } from '@layout/Side';
 import { GNB_MENUS } from '@src/constants';
-import { SideBarNavItem } from './item';
+import { SideBarNavItem } from './Item';
 
 interface SideBarNavigationProps {
   handleClose: () => void;

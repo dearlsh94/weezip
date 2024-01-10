@@ -2,9 +2,9 @@ import * as React from 'react';
 import './Posts.scss';
 import { NotionNode } from '@types';
 import usePagination from '@src/hooks/usePagination';
-import { PostsItem } from './item';
-import { Pagination } from '../pagination';
-import PostsEmpty from './empty/PostsEmpty';
+import { PostsItem } from './Item';
+import { Pagination } from '../Pagination';
+import PostsEmpty from './Empty/PostsEmpty';
 // import { PostsEmpty } from './empty';
 
 interface PostsProps {

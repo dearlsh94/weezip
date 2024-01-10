@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './MyImage.scss';
 import { ImageChildren } from '@types';
-import { NParagraph } from '../paragraph';
+import { NParagraph } from '../Paragraph';
 
 interface NImageProps {
   imageBlock: ImageChildren;

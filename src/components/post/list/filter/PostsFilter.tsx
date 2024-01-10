@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './PostsFilter.scss';
-import { SeriesFilter } from './series';
-import { TagsFilter } from './tags';
+import { SeriesFilter } from './Series';
+import { TagsFilter } from './Tags';
 
 export default function PostsFilter() {
   return (

@@ -1,2 +1,2 @@
-export * from './circle';
-export * from './scroll';
+export * from './Circle';
+export * from './Scroll';

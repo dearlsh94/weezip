@@ -1,3 +1,3 @@
-export * from './single';
-export * from './double';
-export * from './end';
+export * from './Single';
+export * from './Double';
+export * from './End';
