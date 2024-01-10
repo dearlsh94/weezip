@@ -18,27 +18,21 @@ export enum ButtonType {
   BG = 'TYPE-BG',
 }
 
-interface MyBUttonProps {
+interface MyBUttonProps extends React.PropsWithChildren<React.HTMLAttributes<HTMLButtonElement>> {
   size: ButtonSize;
   color: ButtonColor;
   type: ButtonType;
-  handleClick?: Function;
   width?: number | '100%';
-  className?: string;
-  children?: React.ReactNode;
 }
 
-export default function MyButton({ size, color, type, handleClick, width, className, children }: MyBUttonProps) {
-  const click = () => {
-    handleClick && handleClick();
-  };
+export default function MyButton({ size, color, type, width, className, children, ...rest }: MyBUttonProps) {
   return (
     <button
       className={`my-button ${size} ${color} ${type} ${className}`}
       style={{
         width: typeof width === 'number' ? `${width}px` : width,
       }}
-      onClick={click}
+      {...rest}
     >
       {children}
     </button>

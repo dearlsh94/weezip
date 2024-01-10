@@ -1,6 +1,6 @@
-import useResize from '@src/hooks/useResize';
 import React, { useEffect, useState } from 'react';
 import { TableOfContentsBlock, TableOfContentsSide } from '.';
+import useResize from '@src/hooks/useResize';
 
 interface TableOfContentsProps {
   target: ('h1' | 'h2' | 'h3')[];
@@ -23,9 +23,7 @@ export default function TableOfContents({ target }: TableOfContentsProps) {
 
   return (
     <>
-      <section>
-        <TableOfContentsBlock list={tableOfContents} />
-      </section>
+      <TableOfContentsBlock list={tableOfContents} />
       {resizedInnerWidth > 1280 && <TableOfContentsSide list={tableOfContents} />}
     </>
   );

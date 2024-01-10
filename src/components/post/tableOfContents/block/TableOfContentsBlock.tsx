@@ -21,7 +21,7 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
   const activeText = usePostActiveText(offsetTopPositions);
 
   return (
-    <div className="table-of-contents-block">
+    <section className="table-of-contents-block">
       <div className="table-of-contents-block__wrapper">
         <div className="table-of-contents-block__wrapper__header" onClick={showPostIndex.change}>
           <p>목차 {showPostIndex.isShow ? '숨기기' : '보기'}</p>
@@ -44,6 +44,6 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
           </ol>
         )}
       </div>
-    </div>
+    </section>
   );
 }

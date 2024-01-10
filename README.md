@@ -16,6 +16,7 @@
 <br/>
 
 ## Posts
+- [2023년을 돌아보고 2024년을 맞이하기 위한 회고와 만다라트](https://weezip.treefeely.com/post/retrospective-2023-and-mandalart-2024)<br/>
 - [우아한 테크 콘퍼런스 2023 - 우아한형제들의 첫 오프라인 콘퍼런스, 그 날의 기억. ](https://weezip.treefeely.com/post/review-woowacon-2023)<br/>
 - [SEO 입문 가이드: 구글과 함께 알아보는 검색 엔진 최적화의 기본과 핵심](https://weezip.treefeely.com/post/beginners-guide-to-seo-with-google)<br/>
 - [NPM 패키지 배포, 처음으로 사용한 npm publish와 ENEEDAUTH 오류 해결기.](https://weezip.treefeely.com/post/how-to-npm-package-publish-fix-eneedauth-error)<br/>

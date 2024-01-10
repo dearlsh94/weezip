@@ -45,7 +45,7 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
         <div className="post-search-container">
           <div className="post-search-box">
             <div className="icon-close-box">
-              <IconClose size={32} onClick={handleClose} />
+              <IconClose className="icon-close" size={32} onClick={handleClose} />
             </div>
             <div className="search-box">
               <div className="input-box">
@@ -58,15 +58,9 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
                   onChange={e => setSearchText(e.target.value)}
                   onKeyDown={handleKeyDown}
                 />
-                {searchText && (
-                  <div className="icon-clear-box">
-                    <IconClose size={28} onClick={clear} />
-                  </div>
-                )}
+                {searchText && <IconClose className="icon-clear" size={28} onClick={clear} />}
               </div>
-              <div className="icon-search-box">
-                <IconSearch size={28} onClick={search} />
-              </div>
+              <IconSearch className="icon-search" size={28} onClick={search} />
             </div>
             <RecommendTag />
           </div>

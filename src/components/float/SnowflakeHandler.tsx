@@ -6,12 +6,8 @@ import React from 'react';
 export default function SnowflakeHandler() {
   const { isShow, change } = useSnowflakeStore();
 
-  const handleSnow = () => {
-    change();
-  };
-
   return (
-    <CircleIconWrapper color="secondary" size={44} onClick={handleSnow}>
+    <CircleIconWrapper color="secondary" size={44} onClick={change}>
       <IconSnow direction="top" color={`${isShow ? `primary` : `secondary`}`} />
     </CircleIconWrapper>
   );
