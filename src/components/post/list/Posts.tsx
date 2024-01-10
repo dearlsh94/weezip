@@ -4,8 +4,7 @@ import { NotionNode } from '@types';
 import usePagination from '@src/hooks/usePagination';
 import { PostsItem } from './item';
 import { Pagination } from '../pagination';
-import PostsEmpty from './empty/PostsEmpty';
-// import { PostsEmpty } from './empty';
+import { PostEmptyChecker } from './emptyChecker';
 
 interface PostsProps {
   list: NotionNode[];
@@ -20,19 +19,13 @@ export default function Posts({ list }: PostsProps) {
   const posts = list.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <>
-      {posts.length > 0 ? (
-        <>
-          <ul className={`posts-container`}>
-            {posts.map(post => {
-              return <PostsItem key={`posts-item-${post.id}`} post={post} />;
-            })}
-          </ul>
-          <Pagination pagination={pagination} />
-        </>
-      ) : (
-        <PostsEmpty />
-      )}
-    </>
+    <PostEmptyChecker length={posts.length}>
+      <ul className={`posts-container`}>
+        {posts.map(post => {
+          return <PostsItem key={`posts-item-${post.id}`} post={post} />;
+        })}
+      </ul>
+      <Pagination pagination={pagination} />
+    </PostEmptyChecker>
   );
 }
