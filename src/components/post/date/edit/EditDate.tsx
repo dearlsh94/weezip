@@ -1,9 +1,9 @@
 import React from 'react';
-import './EditedDate.scss';
+import './EditDate.scss';
 
-interface EditedDateProps {
+interface EditDateProps {
   strDate: string;
 }
-export default function EditedDate({ strDate }: EditedDateProps) {
+export default function EditDate({ strDate }: EditDateProps) {
   return <>{strDate && <span className="edited-date">수정 : {strDate}</span>}</>;
 }

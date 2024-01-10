@@ -1,10 +1,10 @@
 import { IconSnow } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
-import { useSnowflaketore } from '@store/configStore';
+import { useSnowflakeStore } from '@store/configStore';
 import React from 'react';
 
 export default function SnowflakeHandler() {
-  const { isShow, change } = useSnowflaketore();
+  const { isShow, change } = useSnowflakeStore();
 
   const handleSnow = () => {
     change();

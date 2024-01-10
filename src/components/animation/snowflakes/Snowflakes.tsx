@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './Snowflake.scss';
+import './Snowflakes.scss';
 import { useSnowflakeStore } from '@store/configStore';
 import { IconSnow } from '@components/icon';
 import { getRandomNumber } from '@utils/math';
 
-interface Snowflake {
+interface Snowflakes {
   left: number;
   fallDelay: number;
   shakeDelay: number;
@@ -13,12 +13,12 @@ interface Snowflake {
   size: number;
 }
 
-interface SnowflakeProps {
+interface SnowflakesProps {
   count?: number; // 눈송이 개수
 }
 
-export default function Snowflake({ count = 17 }: SnowflakeProps) {
-  const [snowflake, setSnowflake] = useState<Snowflake[]>([]);
+export default function Snowflakes({ count = 17 }: SnowflakesProps) {
+  const [snowflake, setSnowflake] = useState<Snowflakes[]>([]);
   const { isShow } = useSnowflakeStore();
 
   // 클라이언트 사이드에서만 실행되도록.

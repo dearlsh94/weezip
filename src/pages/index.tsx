@@ -10,9 +10,9 @@ import { NotionContext } from '@store/rootStore';
 import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Snowflake } from '@components/animation';
 import { Divider, FloatBox } from '@components/ui';
 import { MainLayout } from '@layout/main';
+import { Snowflakes } from '@components/animation';
 
 export const Head: HeadFC = () => {
   return <SEO />;
@@ -36,7 +36,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </MainLayout>
       </NotionContext.Provider>
-      <Snowflake />
+      <Snowflakes />
       <FloatBox useSnowflake />
     </GlobalPortal.Provider>
   );

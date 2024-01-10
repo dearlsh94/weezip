@@ -1,2 +1,2 @@
-export * from './created';
-export * from './edited';
+export * from './create';
+export * from './edit';

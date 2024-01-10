@@ -12,7 +12,7 @@ import { GlobalPortal } from '@components/GlobalPortal';
 import { compareString } from '@utils/common';
 import { getParamValue } from '@utils/url';
 import { Posts, PostsDescription, PostsFilter } from '@components/post';
-import { Divider, Loader } from '@components/ui';
+import { Divider, LoadContainer } from '@components/ui';
 import { MainLayout } from '@layout/main';
 export const Head: HeadFC = () => {
   return (
@@ -83,9 +83,9 @@ const ListPage: React.FC<PageProps> = ({ data, location }) => {
             <PostsDescription isLoading={isLoading} length={list.length} filteredText={filterText} />
           </section>
           <Divider color="primary" height={2} />
-          <Loader isLoading={isLoading} isError={false}>
+          <LoadContainer isLoading={isLoading} isError={false}>
             <Posts list={list} />
-          </Loader>
+          </LoadContainer>
         </MainLayout>
       </NotionContext.Provider>
     </GlobalPortal.Provider>

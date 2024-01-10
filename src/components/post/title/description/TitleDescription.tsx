@@ -1,4 +1,4 @@
-import { CreatedDate, EditedDate } from '@components/post';
+import { CreateDate, EditDate } from '@components/post';
 import useClipboard from '@src/hooks/useClipboard';
 import { DateProperty, MultiSelect } from '@types';
 import React from 'react';
@@ -31,8 +31,8 @@ export default function TitleDescription({
       <Tags tag={tag} useLink={useTagLink} />
       <div className="post__description__right">
         {useCopy && <IconCopyLink size={18} color="secondary" onClick={handleCopy} />}
-        <CreatedDate strDate={createdDate?.date?.start} />
-        <EditedDate strDate={editedDate?.date?.start} />
+        <CreateDate strDate={createdDate?.date?.start} />
+        <EditDate strDate={editedDate?.date?.start} />
       </div>
     </div>
   );

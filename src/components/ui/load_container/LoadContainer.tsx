@@ -1,14 +1,14 @@
 import * as React from 'react';
-import './Loader.scss';
+import './LoadContainer.scss';
 import { CircleProgress } from '../progress/circle';
 
-interface LoaderProps {
+interface LoadContainerProps {
   children: React.ReactNode;
   isLoading: boolean;
   isError: boolean;
 }
 
-export default function Loader({ children, isLoading, isError }: LoaderProps) {
+export default function LoadContainer({ children, isLoading, isError }: LoadContainerProps) {
   return (
     <section className="load-section">
       {isLoading ? <CircleProgress className="spinner" height={360} /> : isError ? <div>Error</div> : children}
