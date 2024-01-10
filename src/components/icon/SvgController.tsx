@@ -26,7 +26,7 @@ export function SvgController({
       viewBox={viewBox}
       width={size}
       height={size}
-      className={`svg-wrapper ${color} ${rest.onClick ? 'pointer' : ''} ${direction || ''}`}
+      className={`svg-wrapper ${color} ${rest.onClick ? 'pointer' : ''} ${direction || ''} ${rest.className || ''}`}
     >
       <g transform={`rotate(${rotate} 12 12)`}>{children}</g>
     </svg>

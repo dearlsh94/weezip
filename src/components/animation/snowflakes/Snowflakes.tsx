@@ -45,7 +45,7 @@ export default function Snowflakes({ count = 17 }: SnowflakesProps) {
     <div className={`snowflake ${isShow && snowflake.length ? 'visible' : 'hidden'}`} aria-hidden="true">
       {snowflake.map((flake, index) => (
         <div
-          key={index}
+          key={`flake-${index}`}
           className="snowflake"
           style={{
             left: `${flake.left}%`,
