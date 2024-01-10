@@ -1,5 +1,3 @@
-export const isDebug = false;
-
 export const GNB_MENUS = Object.freeze([
   { url: '/', title: 'Home', isOutLink: false },
   { url: '/list', title: 'List', isOutLink: false },

@@ -4,22 +4,24 @@ import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
 import { getNotionNodeByUrl } from '@services/use-notion';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
-import MainLayout from '@layout/main';
 import SEO from '@components/header/SEO';
-import Contents from '@components/post/contents';
 import { graphql } from 'gatsby';
-import { BlockType } from '@types';
-import FloatBox from '@components/ui/float';
+import { BlockType, Heading2Children, ImageChildren } from '@types';
 import { GlobalPortal } from '@components/GlobalPortal';
 import Giscus from '@components/Giscus';
-import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb';
-import Feedback from '@components/post/feedback';
-import Share from '@components/post/share';
-import OutLink from '@components/post/outLink';
-import Title from '@components/post/title';
-import TitleDescription from '@components/post/title/description';
-import TableOfContents from '@components/post/tableOfContents';
-import LastEditedCaution from '@components/post/lastEditedCaution';
+import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb/Breadcrumb';
+import {
+  Contents,
+  Feedback,
+  LastEditedCaution,
+  OutLink,
+  Share,
+  TableOfContents,
+  Title,
+  TitleDescription,
+} from '@components/post';
+import { FloatBox } from '@components/ui';
+import { MainLayout } from '@layout/main';
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));
@@ -27,7 +29,7 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
   const series = content?.properties?.series?.select?.name;
   const tagNames = content?.properties.tag?.multi_select?.map(t => t.name) || [];
 
-  const imageBlock = content?.children?.find(c => c.type === BlockType.IMAGE);
+  const imageBlock: ImageChildren = content?.children?.find(c => c.type === BlockType.IMAGE) as ImageChildren;
   const thumbnailUrl = imageBlock?.image
     ? `https://treefeely.notion.site/image/${encodeURIComponent(imageBlock.image?.file.url)}?table=block&id=${
         imageBlock.id
@@ -47,22 +49,19 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
   switch (series) {
     case '트리피디아':
     case '문화 소비자 시점':
-      const h2ReviewIndex = content?.children?.findIndex(
+      const h2Review: Heading2Children = content?.children?.filter(
         c => c.type === 'heading_2' && c.heading_2?.rich_text[0]?.plain_text === '한줄평'
-      );
-      if (h2ReviewIndex) {
-        descriptions.push(`${content?.children[h2ReviewIndex + 1]?.paragraph?.rich_text[0]?.plain_text}`);
+      )[0] as Heading2Children;
+      if (h2Review) {
+        descriptions.push(`${h2Review?.heading_2?.rich_text[0]?.plain_text}`);
       }
       break;
     default:
-      const h2PrefaceIndex = content?.children?.findIndex(
+      const h2Preface = content?.children?.filter(
         c => c.type === 'heading_2' && c.heading_2?.rich_text[0]?.plain_text === '머리말'
-      );
-      if (h2PrefaceIndex) {
-        const h2PrefaceString = `, ${content?.children[h2PrefaceIndex + 1]?.paragraph?.rich_text.reduce(
-          (cur, t) => cur + t.plain_text,
-          ''
-        )}`;
+      )[0] as Heading2Children;
+      if (h2Preface) {
+        const h2PrefaceString = `, ${h2Preface?.heading_2?.rich_text.reduce((cur, t) => cur + t.plain_text, '')}`;
         descriptions.push(h2PrefaceString);
       }
       break;

@@ -28,9 +28,6 @@
   &.secondary {
     border: 2px solid var(--color-secondary);
     background-color: var(--color-reverse-mono);
-    svg path {
-      fill: var(--color-base);
-    }
     @include hoverFine {
       border: 2px solid var(--color-base);
     }

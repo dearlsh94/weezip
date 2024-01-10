@@ -1,9 +1,11 @@
 import { CONFIG_THEME_KEY } from '@src/constants';
 import { useLocalStorage } from '@src/hooks/useLocalStorage';
+import { useThemeStore } from '@store/configStore';
 import * as React from 'react';
 import { useRef, useEffect } from 'react';
 
 const Giscus = () => {
+  const { theme } = useThemeStore();
   const { getConfig } = useLocalStorage();
   const giscusRef = useRef<HTMLDivElement>(null);
 
@@ -30,6 +32,20 @@ const Giscus = () => {
       giscusRef.current.appendChild(script);
     }
   }, []);
+
+  useEffect(() => {
+    const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+    iframe?.contentWindow?.postMessage(
+      {
+        giscus: {
+          setConfig: {
+            theme: theme,
+          },
+        },
+      },
+      'https://giscus.app'
+    );
+  }, [theme]);
 
   return <div className="giscus-container" ref={giscusRef} />;
 };

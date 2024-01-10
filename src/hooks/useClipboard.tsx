@@ -3,14 +3,14 @@ const useClipboard = () => {
     try {
       if (navigator.clipboard) {
         await navigator.clipboard.writeText(textToCopy);
-      } else {
-        const textField = document.createElement('textarea');
-        textField.innerText = textToCopy;
-        document.body.appendChild(textField);
-        textField.select();
-        document.execCommand('copy');
-        textField.remove();
+        return true;
       }
+      const textField = document.createElement('textarea');
+      textField.innerText = textToCopy;
+      document.body.appendChild(textField);
+      textField.select();
+      document.execCommand('copy');
+      textField.remove();
       return true;
     } catch (error) {
       return false;

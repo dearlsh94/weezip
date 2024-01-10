@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { HeadFC, PageProps } from 'gatsby';
 import SEO from '@components/header/SEO';
-import Linker from '@components/ui/linker';
 import { GlobalPortal } from '@components/GlobalPortal';
+import { Linker } from '@components/ui';
 
 const mainStyles = {
   padding: '40px',

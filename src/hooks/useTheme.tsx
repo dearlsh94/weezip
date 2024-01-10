@@ -4,24 +4,19 @@ import { useLocalStorage } from './useLocalStorage';
 import { Themes, useThemeStore } from '@store/configStore';
 
 const useTheme = () => {
-  const { theme, setDarkTheme, setLightTheme } = useThemeStore();
   const { setConfig, getConfig } = useLocalStorage();
+  const { theme, setDarkTheme, setLightTheme } = useThemeStore();
 
   useEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY);
-    if (configTheme) {
-      if (configTheme === Themes.DARK) {
-        setDark();
-      } else {
-        setLight();
-      }
+    if (configTheme === Themes.DARK) {
+      changeAndSaveDark();
+    } else if (configTheme === Themes.LIGHT) {
+      changeAndSaveLight();
+    } else if (window.matchMedia('(prefers-color-scheme: dark').matches) {
+      changeDark();
     } else {
-      const preferDark = window.matchMedia('(prefers-color-scheme: dark');
-      if (preferDark?.matches) {
-        changeDark();
-      } else {
-        changeLight();
-      }
+      changeLight();
     }
   }, []);
 
@@ -29,7 +24,7 @@ const useTheme = () => {
     document.documentElement.setAttribute(CONFIG_THEME_KEY, Themes.LIGHT);
     setLightTheme();
   };
-  const setLight = () => {
+  const changeAndSaveLight = () => {
     changeLight();
     setConfig(CONFIG_THEME_KEY, Themes.LIGHT);
   };
@@ -38,12 +33,12 @@ const useTheme = () => {
     document.documentElement.setAttribute(CONFIG_THEME_KEY, Themes.DARK);
     setDarkTheme();
   };
-  const setDark = () => {
+  const changeAndSaveDark = () => {
     changeDark();
     setConfig(CONFIG_THEME_KEY, Themes.DARK);
   };
 
-  return { theme, setLight, setDark };
+  return { theme, changeAndSaveDark, changeAndSaveLight };
 };
 
 export default useTheme;

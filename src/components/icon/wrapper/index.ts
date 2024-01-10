@@ -1,1 +1,1 @@
-export { default as CircleIconWrapper } from './circle/CircleIconWrapper';
+export * from './circle';

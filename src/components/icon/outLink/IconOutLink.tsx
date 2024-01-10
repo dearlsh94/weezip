@@ -11,7 +11,7 @@ export default function IconOutLink(props: SvgControllerProps) {
             <path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2Z" />
           </g>
         </g>
-      </g>{' '}
+      </g>
     </SvgController>
   );
 }
