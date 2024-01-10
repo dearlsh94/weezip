@@ -1,4 +1,4 @@
 export { default as TableOfContents } from './TableOfContents';
-export * from './Block';
-export * from './Item';
-export * from './Side';
+export * from '@components/post/TableOfContents/Block';
+export * from '@components/post/TableOfContents/Item';
+export * from '@components/post/TableOfContents/Side';

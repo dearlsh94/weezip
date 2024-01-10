@@ -1,1 +1,1 @@
-export * from './SNBOpenIcon';
+export * from '@components/header/SNBOpenIcon';

@@ -1,1 +1,1 @@
-export * from './LastEdited';
+export * from '@components/post/caution/LastEdited';

@@ -1,2 +1,2 @@
 export { default as Tags } from './Tags';
-export * from './Item';
+export * from '@components/post/Tags/Item';

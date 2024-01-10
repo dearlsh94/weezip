@@ -1,2 +1,2 @@
 export { default as LatestPost } from './LatestPost';
-export * from './Item';
+export * from '@components/post/Latest/Item';

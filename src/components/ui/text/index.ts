@@ -1,1 +1,1 @@
-export * from './Help';
+export * from '@components/ui/text/Help';
