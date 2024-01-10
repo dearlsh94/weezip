@@ -1,4 +1,4 @@
-import { CreatedDate, EditedDate } from '@components/post/date';
+import { CreatedDate, EditedDate } from '@components/post';
 import useClipboard from '@src/hooks/useClipboard';
 import { DateProperty, MultiSelect } from '@types';
 import React from 'react';

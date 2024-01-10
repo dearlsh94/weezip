@@ -1,1 +1,1 @@
-export * from '@module/side/nav';
+export * from './nav';

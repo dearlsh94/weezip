@@ -4,7 +4,6 @@ import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
 import { getNotionNodeByUrl } from '@services/use-notion';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
-import { MainLayout } from '@layout/main';
 import SEO from '@components/header/SEO';
 import { graphql } from 'gatsby';
 import { BlockType, Heading2Children, ImageChildren } from '@types';
@@ -22,6 +21,7 @@ import {
   TitleDescription,
 } from '@components/post';
 import { FloatBox } from '@components/ui';
+import { MainLayout } from '@layout/main';
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
   const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));

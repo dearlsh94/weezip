@@ -1,1 +1,1 @@
-export * from '@components/icon/progress/circle';
+export * from './circle';

@@ -1,1 +1,1 @@
-export * from '@components/animation/snowflakes';
+export * from './snowflakes';

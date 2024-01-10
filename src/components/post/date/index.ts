@@ -1,2 +1,2 @@
-export * from '@components/post/date/created';
-export * from '@components/post/date/edited';
+export * from './created';
+export * from './edited';

@@ -12,7 +12,7 @@ import { GlobalPortal } from '@components/GlobalPortal';
 import { compareString } from '@utils/common';
 import { getParamValue } from '@utils/url';
 import { Posts, PostsDescription, PostsFilter } from '@components/post';
-import { Divider, LoadSection, Loader } from '@components/ui';
+import { Divider, Loader } from '@components/ui';
 import { MainLayout } from '@layout/main';
 export const Head: HeadFC = () => {
   return (
