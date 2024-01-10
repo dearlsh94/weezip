@@ -22,7 +22,7 @@ export default function Pagination({ pagination }: PaginationProps) {
             color={ButtonColor.PRIMARY}
             type={ButtonType.BORDER}
             width={45}
-            handleClick={pagination.first}
+            onClick={pagination.first}
           >
             <IconEndArrow direction="left" size={18} color="base" />
           </MyButton>
@@ -33,7 +33,7 @@ export default function Pagination({ pagination }: PaginationProps) {
           color={ButtonColor.PRIMARY}
           type={ButtonType.BORDER}
           width={45}
-          handleClick={pagination.prev}
+          onClick={pagination.prev}
         >
           <IconSingleArrow direction="left" size={12} color="base" />
         </MyButton>
@@ -58,7 +58,7 @@ export default function Pagination({ pagination }: PaginationProps) {
           color={ButtonColor.PRIMARY}
           type={ButtonType.BORDER}
           width={45}
-          handleClick={pagination.next}
+          onClick={pagination.next}
         >
           <IconSingleArrow direction="right" size={12} color="base" />
         </MyButton>
@@ -69,7 +69,7 @@ export default function Pagination({ pagination }: PaginationProps) {
             color={ButtonColor.PRIMARY}
             type={ButtonType.BORDER}
             width={45}
-            handleClick={pagination.last}
+            onClick={pagination.last}
           >
             <IconEndArrow direction="right" size={18} color="base" />
           </MyButton>
