@@ -1,2 +1,2 @@
-export * from '@components/icon/theme/Dark';
-export * from '@components/icon/theme/Light';
+export * from '@components/icon/theme/dark';
+export * from '@components/icon/theme/light';

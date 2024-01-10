@@ -13,7 +13,7 @@ import { compareString } from '@utils/common';
 import { getParamValue } from '@utils/url';
 import { Posts, PostsDescription, PostsFilter } from '@components/post';
 import { Divider, LoadSection, Loader } from '@components/ui';
-import { MainLayout } from '@layout/Main';
+import { MainLayout } from '@layout/main';
 export const Head: HeadFC = () => {
   return (
     <SEO title={`글 목록`} description={`Write, Explain, Edit, Zip`} pathname="/list">

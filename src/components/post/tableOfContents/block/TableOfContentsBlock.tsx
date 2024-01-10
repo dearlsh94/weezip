@@ -3,7 +3,7 @@ import './TableOfContentsBlock.scss';
 import { usePostActiveText } from '@src/hooks/usePostActiveText';
 import useShow from '@src/hooks/useShow';
 import { IconSingleArrow } from '@components/icon';
-import { TableOfContentsItem } from '../Item';
+import { TableOfContentsItem } from '../item';
 
 interface TableOfContentsBlockProps {
   list: HTMLHeadingElement[];

@@ -10,9 +10,9 @@ import { NotionContext } from '@store/rootStore';
 import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { StaticImage } from 'gatsby-plugin-image';
-import Snowflakes from '@components/animation/Snowflakes/Snowflakes';
+import Snowflakes from '@components/animation/snowflakes/Snowflakes';
 import { Divider, FloatBox } from '@components/ui';
-import { MainLayout } from '@layout/Main';
+import { MainLayout } from '@layout/main';
 
 export const Head: HeadFC = () => {
   return <SEO />;

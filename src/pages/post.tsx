@@ -4,13 +4,13 @@ import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
 import { getNotionNodeByUrl } from '@services/use-notion';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
-import { MainLayout } from '@layout/Main';
+import { MainLayout } from '@layout/main';
 import SEO from '@components/header/SEO';
 import { graphql } from 'gatsby';
 import { BlockType, Heading2Children, ImageChildren } from '@types';
 import { GlobalPortal } from '@components/GlobalPortal';
 import Giscus from '@components/Giscus';
-import Breadcrumb, { BreadcrumbStep } from '@components/ui/Breadcrumb/Breadcrumb';
+import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb/Breadcrumb';
 import {
   Contents,
   Feedback,

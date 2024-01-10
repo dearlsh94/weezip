@@ -3,7 +3,7 @@ import './LatestPost.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { NotionNode } from '@types';
 import { getParseListByNodes } from '@utils/notionUtils';
-import { LatestPostItem } from './Item';
+import { LatestPostItem } from './item';
 import { Linker } from '@components/ui';
 
 export default function LatestPost() {

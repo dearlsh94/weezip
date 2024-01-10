@@ -1,1 +1,1 @@
-export * from '@components/Search/recommend/Tag';
+export * from '@components/search/recommend/tag';

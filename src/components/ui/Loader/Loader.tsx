@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Loader.scss';
-import { CircleProgress } from '../progress/Circle';
+import { CircleProgress } from '../progress/circle';
 
 interface LoaderProps {
   children: React.ReactNode;

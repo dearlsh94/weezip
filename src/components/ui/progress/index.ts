@@ -1,2 +1,2 @@
-export * from '@components/ui/progress/Circle';
-export * from '@components/ui/progress/Scroll';
+export * from '@components/ui/progress/circle';
+export * from '@components/ui/progress/scroll';

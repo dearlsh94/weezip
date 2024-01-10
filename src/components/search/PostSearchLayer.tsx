@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import './PostSearchLayer.scss';
 import { throttle } from '@utils/common';
 import { GlobalPortal } from '@components/GlobalPortal';
-import DimLayout from '@layout/Dim';
+import DimLayout from '@layout/dim';
 import { IconClose, IconSearch } from '@components/icon';
 import { moveToPostsPage } from '@utils/url';
 import { RecommendTag } from './recommend';
