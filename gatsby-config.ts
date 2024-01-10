@@ -86,7 +86,7 @@ const config: GatsbyConfig = {
         token: process.env.NOTION_INTEGRATION_TOKEN,
         databases: [
           {
-            id: process.env.NOTION_DB_ID,
+            id: process.env.NOTION_DB_ID_TEST,
             name: 'Weezip',
             pageFilter: {
               property: 'is_published',
