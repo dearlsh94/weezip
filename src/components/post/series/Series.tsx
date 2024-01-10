@@ -8,17 +8,16 @@ interface SeriesProps {
   useLink?: boolean;
 }
 
-export default function Series({ series, useLink = false }: SeriesProps) {
+export default function Series({ series, useLink = false, ...rest }: SeriesProps) {
   return (
     <>
-      {useLink ? (
-        <Linker
-          url={`/list?series=${encodeURIComponent(series?.name)}`}
-          aria-label={`${series?.name} 시리즈 목록으로 이동`}
-        >
-          <span className={`series-box ${useLink ? 'link' : 'normal'}`}>[{series?.name}]</span>
-        </Linker>
-      ) : (
+      {React.createElement(
+        useLink ? Linker : 'span',
+        {
+          url: `/list?series=${encodeURIComponent(series?.name)}`,
+          'aria-label': `${series?.name} 시리즈 목록으로 이동`,
+          ...rest,
+        },
         <span className={`series-box ${useLink ? 'link' : 'normal'}`}>[{series?.name}]</span>
       )}
     </>

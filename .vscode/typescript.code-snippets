@@ -50,7 +50,6 @@
       "color={ButtonColor.PRIMARY}",
       "type={ButtonType.BORDER}",
       "width={'100%'}",
-      "handleClick={() => {}}",
       ">",
       "$1",
       "</MyButton>"
