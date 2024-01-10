@@ -1,2 +1,2 @@
 export { default as Contents } from './Contents';
-export * from './BlockRender';
+export * from './blockRender';

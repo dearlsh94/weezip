@@ -6,7 +6,7 @@ import { GlobalPortal } from '@components/GlobalPortal';
 import { IconClose, IconSearch } from '@components/icon';
 import { moveToPostsPage } from '@utils/url';
 import { RecommendTag } from './recommend';
-import { DimLayout } from '@layout/Dim';
+import { DimLayout } from '@layout/dim';
 
 interface PostSearchLayerProps {
   handleClose: () => void;

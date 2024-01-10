@@ -1,3 +1,3 @@
-export * from './Dim';
-export * from './Main';
-export * from './Side';
+export * from './dim';
+export * from './main';
+export * from './side';

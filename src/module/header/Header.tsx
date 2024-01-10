@@ -8,7 +8,7 @@ import useScroll from '@src/hooks/useScroll';
 import { IconSearch } from '@components/icon';
 import { SNBOpenIcon } from '@components/header';
 import { Linker } from '@components/ui';
-import { PostSearchLayer } from '@components/Search';
+import { PostSearchLayer } from '@components/search';
 
 export default function Header() {
   const searchOverlay = useOverlay();

@@ -2,7 +2,7 @@ import * as React from 'react';
 import './TableOfContentsSide.scss';
 import { moveToTop } from '@utils/scroll';
 import { usePostActiveText } from '@src/hooks/usePostActiveText';
-import { SideLayout } from '@layout/Side';
+import { SideLayout } from '@layout/side';
 import { TableOfContentsItem } from '../item';
 
 interface TableOfContentsSideProps {

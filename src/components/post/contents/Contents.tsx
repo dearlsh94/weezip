@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BlockType, NotionChildrenType } from '@types';
-import ContentBlockRender from '@components/post/Contents/BlockRender/ContentBlockRender';
+import ContentBlockRender from '@components/post/contents/blockRender/ContentBlockRender';
 
 interface ContentsProps {
   childrens: NotionChildrenType[];

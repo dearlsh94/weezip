@@ -14,7 +14,7 @@ import {
   NToggle,
   NNumberList,
 } from '@components/notion';
-import NImage from '@components/notion/Image/MyImage';
+import NImage from '@components/notion/image/MyImage';
 import { Divider } from '@components/ui';
 
 interface ContentBlockRenderProps {

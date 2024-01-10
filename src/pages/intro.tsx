@@ -7,7 +7,7 @@ import { NotionChildrenType, INotionContext } from '@types';
 import { NotionContext } from '@store/rootStore';
 import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
-import { MainLayout } from '@layout/Main';
+import { MainLayout } from '@layout/main';
 import { Contents } from '@components/post';
 
 export const Head: HeadFC = () => {

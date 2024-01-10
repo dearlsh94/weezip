@@ -11,7 +11,7 @@ import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Divider, FloatBox } from '@components/ui';
-import { MainLayout } from '@layout/Main';
+import { MainLayout } from '@layout/main';
 import { Snowflakes } from '@components/animation';
 
 export const Head: HeadFC = () => {

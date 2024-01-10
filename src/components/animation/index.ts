@@ -1,1 +1,1 @@
-export * from './Snowflakes';
+export * from './snowflakes';

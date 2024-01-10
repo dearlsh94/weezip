@@ -1,2 +1,2 @@
 export { default as Title } from './Title';
-export * from './Description';
+export * from './description';
