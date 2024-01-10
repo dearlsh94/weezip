@@ -1,1 +1,1 @@
-export * from './snb_open_icon';
+export * from './snbOpenIcon';
