@@ -52,10 +52,8 @@
     position: fixed;
     top: -10%;
     z-index: 0;
-    user-select: none; /* 모든 브라우저를 위한 표준 속성 */
+    user-select: none;
     cursor: default;
-
-    /* 애니메이션 속성을 단순화하여 중복 제거 */
     animation:
       snowflake-fall 10s linear infinite running,
       snowflake-shake 3s ease-in-out infinite running;
