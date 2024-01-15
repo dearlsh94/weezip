@@ -37,7 +37,7 @@ export default function HTML(props) {
         <link
           rel="stylesheet"
           as="style"
-          crossOrigin
+          crossOrigin="true"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
         />
         {/* <script src="https://developers.kakao.com/sdk/js/kakao.js" /> */}
