@@ -46,28 +46,18 @@
   top: 0;
 
   .snowflake {
-    pointer-events: none; // 다른 클릭이나 인터랙션을 방해하지 않도록
-
+    pointer-events: none; /* 다른 클릭이나 인터랙션을 방해하지 않도록 */
     color: #fff;
     text-shadow: 0 0 1px #000;
-
     position: fixed;
     top: -10%;
     z-index: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    user-select: none; /* 모든 브라우저를 위한 표준 속성 */
     cursor: default;
-    -webkit-animation-name: snowflake-fall, snowflake-shake;
-    -webkit-animation-duration: 10s, 3s;
-    -webkit-animation-timing-function: linear, ease-in-out;
-    -webkit-animation-iteration-count: infinite, infinite;
-    -webkit-animation-play-state: running, running;
-    animation-name: snowflake-fall, snowflake-shake;
-    animation-duration: 10s, 3s;
-    animation-timing-function: linear, ease-in-out;
-    animation-iteration-count: infinite, infinite;
-    animation-play-state: running, running;
+
+    /* 애니메이션 속성을 단순화하여 중복 제거 */
+    animation:
+      snowflake-fall 10s linear infinite running,
+      snowflake-shake 3s ease-in-out infinite running;
   }
 }
