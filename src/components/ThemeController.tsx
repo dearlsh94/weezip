@@ -5,14 +5,10 @@ import { IconDarkTheme, IconLightTheme } from '@components/icon';
 const ThemeController = () => {
   const { theme, changeAndSaveDark, changeAndSaveLight } = useTheme();
 
-  return (
-    <>
-      {theme === 'light' ? (
-        <IconLightTheme onClick={changeAndSaveDark} />
-      ) : (
-        <IconDarkTheme onClick={changeAndSaveLight} />
-      )}
-    </>
+  return theme === 'light' ? (
+    <IconLightTheme onClick={changeAndSaveDark} />
+  ) : (
+    <IconDarkTheme onClick={changeAndSaveLight} />
   );
 };
 

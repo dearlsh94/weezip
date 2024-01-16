@@ -9,12 +9,8 @@ interface NHeading2Props {
 
 export default function NHeading2({ head2 }: NHeading2Props) {
   return (
-    <>
-      {head2 && (
-        <h2>
-          <NParagraph paragraph={head2} />
-        </h2>
-      )}
-    </>
+    <h2>
+      <NParagraph paragraph={head2} />
+    </h2>
   );
 }
