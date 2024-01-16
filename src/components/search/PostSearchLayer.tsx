@@ -16,10 +16,6 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchText, setSearchText] = useState('');
 
-  React.useEffect(() => {
-    inputRef?.current?.focus();
-  }, []);
-
   const clear = () => {
     setSearchText('');
   };
@@ -50,6 +46,7 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
             <div className="search-box">
               <div className="input-box">
                 <input
+                  autoFocus
                   ref={inputRef}
                   className="search"
                   type="text"
