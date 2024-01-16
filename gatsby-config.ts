@@ -94,6 +94,9 @@ const config: GatsbyConfig = {
                 equals: true,
               },
             },
+            option: {
+              isIncludeChildren: true,
+            },
           },
         ],
       },
