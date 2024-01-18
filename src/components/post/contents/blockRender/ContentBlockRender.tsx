@@ -73,5 +73,5 @@ export default function ContentBlockRender({ block }: ContentBlockRenderProps) {
     }
     return;
   };
-  return <>{render()}</>;
+  return render();
 }

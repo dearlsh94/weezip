@@ -19,12 +19,10 @@ export default function MoveTopButton() {
   }, [scrollY]);
 
   return (
-    <>
-      {showButton.isShow && (
-        <CircleIconWrapper color="secondary" size={44} onClick={moveToTop}>
-          <IconEndArrow direction="top" color="primary" />
-        </CircleIconWrapper>
-      )}
-    </>
+    showButton.isShow && (
+      <CircleIconWrapper color="secondary" size={44} onClick={moveToTop}>
+        <IconEndArrow direction="top" color="primary" />
+      </CircleIconWrapper>
+    )
   );
 }

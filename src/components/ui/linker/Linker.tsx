@@ -9,17 +9,13 @@ interface LinkerProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export default function Linker({ url, target, children, ...rest }: LinkerProps) {
-  return (
-    <>
-      {url.startsWith('https://') && !url.startsWith('https://weezip.treefeely.com') ? (
-        <a href={url} target={target} rel="noopener noreferrer" {...rest}>
-          {children}
-        </a>
-      ) : (
-        <Link to={url} aria-label={rest['aria-label']}>
-          {children}
-        </Link>
-      )}
-    </>
+  return url.startsWith('https://') && !url.startsWith('https://weezip.treefeely.com') ? (
+    <a href={url} target={target} rel="noopener noreferrer" {...rest}>
+      {children}
+    </a>
+  ) : (
+    <Link to={url} aria-label={rest['aria-label']}>
+      {children}
+    </Link>
   );
 }

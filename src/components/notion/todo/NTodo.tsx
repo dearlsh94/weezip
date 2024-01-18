@@ -10,13 +10,9 @@ interface NTodoProps {
 
 export default function NTodo({ todo, blockId }: NTodoProps) {
   return (
-    <>
-      {todo && (
-        <label className="block-todo" htmlFor={blockId}>
-          <input id={blockId} type="checkbox" checked={todo.checked} onChange={() => {}} />
-          <NParagraph paragraph={todo} />
-        </label>
-      )}
-    </>
+    <label className="block-todo" htmlFor={blockId}>
+      <input id={blockId} type="checkbox" checked={todo.checked} onChange={() => {}} />
+      <NParagraph paragraph={todo} />
+    </label>
   );
 }

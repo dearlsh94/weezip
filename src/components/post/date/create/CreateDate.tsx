@@ -5,5 +5,5 @@ interface CreateDateProps {
   strDate: string;
 }
 export default function CreateDate({ strDate }: CreateDateProps) {
-  return <>{strDate && <span className="created-date">작성 : {strDate}</span>}</>;
+  return <span className="created-date">작성 : {strDate}</span>;
 }

@@ -9,12 +9,8 @@ interface NHeading3Props {
 
 export default function NHeading3({ head3 }: NHeading3Props) {
   return (
-    <>
-      {head3 && (
-        <h3>
-          <NParagraph paragraph={head3} />
-        </h3>
-      )}
-    </>
+    <h3>
+      <NParagraph paragraph={head3} />
+    </h3>
   );
 }

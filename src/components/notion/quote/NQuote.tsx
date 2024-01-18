@@ -11,13 +11,9 @@ interface NQuoteProps {
 
 export default function NQuote({ quote, children }: NQuoteProps) {
   return (
-    <>
-      {quote && (
-        <blockquote className={`block-quote`}>
-          <NParagraph paragraph={quote} />
-          {children && children?.length > 0 && <Contents childrens={children} />}
-        </blockquote>
-      )}
-    </>
+    <blockquote className={`block-quote`}>
+      <NParagraph paragraph={quote} />
+      {children && children?.length > 0 && <Contents childrens={children} />}
+    </blockquote>
   );
 }
