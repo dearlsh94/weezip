@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Snowflakes.scss';
-import { useSnowflakeStore } from '@store/configStore';
+import { useSnowflakeStore } from '@store/config';
 import { IconSnow } from '@components/icon';
 import { getRandomNumber } from '@utils/math';
 

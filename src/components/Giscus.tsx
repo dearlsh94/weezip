@@ -1,6 +1,6 @@
 import { CONFIG_THEME_KEY } from '@src/constants';
 import { useLocalStorage } from '@src/hooks/useLocalStorage';
-import { useThemeStore } from '@store/configStore';
+import { useThemeStore } from '@store/config';
 import * as React from 'react';
 import { useRef, useEffect } from 'react';
 

@@ -6,7 +6,7 @@ import { useGetNotionQuery } from '@services/use-notion';
 import { getNodeJsonByUrl } from '@utils/notion';
 import { NotionChildrenType } from '@types';
 import { Contents, LatestPost } from '@components/post';
-import { INotionContext, NotionContext } from '@store/rootStore';
+import { NotionContextProps, NotionContext } from '@store/context';
 import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -20,7 +20,7 @@ export const Head: HeadFC = () => {
 
 const IndexPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery();
-  const store: INotionContext = {
+  const store: NotionContextProps = {
     nodes: nodes,
   };
   const content: NotionChildrenType | null = getNodeJsonByUrl(nodes, '/home');

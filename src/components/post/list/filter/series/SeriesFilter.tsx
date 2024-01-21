@@ -1,7 +1,7 @@
 import { Series } from '@components/post';
 import React, { useContext } from 'react';
 import './SeriesFilter.scss';
-import { NotionContext } from '@store/rootStore';
+import { NotionContext } from '@store/context';
 
 export default function SeriesFilter() {
   const { everyPostsSeries } = useContext(NotionContext);

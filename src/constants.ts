@@ -22,3 +22,8 @@ export const RECOMMEND_TAGS = Object.freeze([
 
 export const OWNER_EMAIL = Object.freeze('weezip.ethan@gmail.com');
 export const CONFIG_THEME_KEY = Object.freeze('weezip-theme');
+
+export const enum Themes {
+  LIGHT = 'light',
+  DARK = 'dark',
+}

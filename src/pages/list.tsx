@@ -4,7 +4,7 @@ import { HeadFC, PageProps, graphql } from 'gatsby';
 import '@scss/global.scss';
 import '@scss/pages/PostsPage.scss';
 import { getNotionNodeAll } from '@services/use-notion';
-import { INotionContext, NotionContext } from '@store/rootStore';
+import { NotionContext, NotionContextProps } from '@store/context';
 import { NotionNode } from '@types';
 import { classifyPost, getParseListByNodes } from '@utils/notion';
 import SEO from '@components/header/SEO';
@@ -29,7 +29,7 @@ const ListPage: React.FC<PageProps> = ({ data, location }) => {
     (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt)
   );
   const { everyPostsTags, everyPostsSeries } = classifyPost(parseList);
-  const store: INotionContext = {
+  const store: NotionContextProps = {
     nodes: nodes,
     everyPostsTags: everyPostsTags,
     everyPostsSeries: everyPostsSeries,

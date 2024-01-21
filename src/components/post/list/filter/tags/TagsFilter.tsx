@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './TagsFilter.scss';
-import { NotionContext } from '@store/rootStore';
 import { TagItem } from '@components/post';
+import { NotionContext } from '@store/index';
 
 export default function TagsFilter() {
   const { everyPostsTags } = useContext(NotionContext);

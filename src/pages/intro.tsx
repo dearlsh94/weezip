@@ -4,7 +4,7 @@ import '@scss/global.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { getNodeJsonByUrl } from '@utils/notion';
 import { NotionChildrenType } from '@types';
-import { INotionContext, NotionContext } from '@store/rootStore';
+import { NotionContextProps, NotionContext } from '@store/context';
 import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { MainLayout } from '@layout/main';
@@ -16,7 +16,7 @@ export const Head: HeadFC = () => {
 
 const IntroPage: React.FC<PageProps> = () => {
   const nodes = useGetNotionQuery();
-  const store: INotionContext = {
+  const store: NotionContextProps = {
     nodes: nodes,
   };
   const content: NotionChildrenType | null = getNodeJsonByUrl(nodes, '/intro');
