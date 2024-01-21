@@ -6,7 +6,7 @@ import '@scss/pages/PostsPage.scss';
 import { getNotionNodeAll } from '@services/use-notion';
 import { NotionContext } from '@store/rootStore';
 import { INotionContext, NotionNode } from '@types';
-import { classifyPost, getParseListByNodes } from '@utils/notionUtils';
+import { classifyPost, getParseListByNodes } from '@utils/notion';
 import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { compareString } from '@utils/common';

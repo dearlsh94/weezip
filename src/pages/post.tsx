@@ -3,7 +3,7 @@ import { HeadFC, PageProps } from 'gatsby';
 import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
 import { getNotionNodeByUrl } from '@services/use-notion';
-import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
+import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
 import SEO from '@components/header/SEO';
 import { graphql } from 'gatsby';
 import { BlockType, Heading2Children, ImageChildren } from '@types';

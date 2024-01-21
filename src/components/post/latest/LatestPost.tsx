@@ -2,7 +2,7 @@ import * as React from 'react';
 import './LatestPost.scss';
 import { useGetNotionQuery } from '@services/use-notion';
 import { NotionNode } from '@types';
-import { getParseListByNodes } from '@utils/notionUtils';
+import { getParseListByNodes } from '@utils/notion';
 import { LatestPostItem } from './item';
 import { Linker } from '@components/ui';
 

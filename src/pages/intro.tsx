@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
 import '@scss/global.scss';
 import { useGetNotionQuery } from '@services/use-notion';
-import { getNodeJsonByUrl } from '@utils/notionUtils';
+import { getNodeJsonByUrl } from '@utils/notion';
 import { NotionChildrenType, INotionContext } from '@types';
 import { NotionContext } from '@store/rootStore';
 import SEO from '@components/header/SEO';

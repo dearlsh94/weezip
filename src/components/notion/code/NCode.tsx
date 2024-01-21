@@ -3,7 +3,7 @@ import { Code } from '@types';
 import './NCode.scss';
 import { NParagraph } from '@components/notion';
 import useClipboard from '@src/hooks/useClipboard';
-import { getPlainTextByRichText } from '@utils/notionUtils';
+import { getPlainTextByRichText } from '@utils/notion';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/light';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { IconCopyLink } from '@components/icon';

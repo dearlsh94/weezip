@@ -3,7 +3,7 @@ import { type HeadFC, type PageProps } from 'gatsby';
 import '@scss/global.scss';
 import '@scss/pages/IndexPage.scss';
 import { useGetNotionQuery } from '@services/use-notion';
-import { getNodeJsonByUrl } from '@utils/notionUtils';
+import { getNodeJsonByUrl } from '@utils/notion';
 import { INotionContext, NotionChildrenType } from '@types';
 import { Contents, LatestPost } from '@components/post';
 import { NotionContext } from '@store/rootStore';

@@ -1,7 +1,7 @@
 import { NotionNode } from '@types';
 import React from 'react';
 import './PostsItem.scss';
-import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
+import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
 import { Linker } from '@components/ui';
 import { Series, TitleDescription } from '@components/post';
 
