@@ -3,10 +3,8 @@ import { useEffect, useState } from 'react';
 import { HeadFC, PageProps, graphql } from 'gatsby';
 import '@scss/global.scss';
 import '@scss/pages/PostsPage.scss';
-import { getNotionNodeAll } from '@services/use-notion';
 import { NotionContext, NotionContextProps } from '@store/context';
 import { NotionNode } from '@types';
-import { classifyPost, getParseListByNodes } from '@utils/notion';
 import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { compareString } from '@utils/common';
@@ -14,6 +12,7 @@ import { getParamValue } from '@utils/url';
 import { Posts, PostsDescription, PostsFilter } from '@components/post';
 import { Divider, LoadContainer } from '@components/ui';
 import { MainLayout } from '@layout/main';
+import { useNotion } from '@src/hooks/useNotion';
 export const Head: HeadFC = () => {
   return (
     <SEO title={`글 목록`} description={`Write, Explain, Edit, Zip`} pathname="/list">
@@ -24,13 +23,8 @@ export const Head: HeadFC = () => {
 
 const ListPage: React.FC<PageProps> = ({ data, location }) => {
   const params = new URLSearchParams(location.search);
-  const nodes = getNotionNodeAll(data);
-  const parseList: NotionNode[] = getParseListByNodes(nodes).sort(
-    (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt)
-  );
-  const { everyPostsTags, everyPostsSeries } = classifyPost(parseList);
+  const { posts, everyPostsTags, everyPostsSeries } = useNotion();
   const store: NotionContextProps = {
-    nodes: nodes,
     everyPostsTags: everyPostsTags,
     everyPostsSeries: everyPostsSeries,
   };
@@ -53,7 +47,7 @@ const ListPage: React.FC<PageProps> = ({ data, location }) => {
     let _list: NotionNode[] = [];
 
     if (location.search) {
-      _list = parseList.filter(post => {
+      _list = posts.filter(post => {
         if (series) {
           return compareString(post?.notionColumn?.series?.name, series);
         } else if (tag) {
@@ -64,7 +58,7 @@ const ListPage: React.FC<PageProps> = ({ data, location }) => {
         return true;
       });
     } else {
-      _list = parseList;
+      _list = posts;
     }
 
     setList(_list);

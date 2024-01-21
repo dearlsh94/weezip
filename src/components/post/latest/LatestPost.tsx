@@ -1,22 +1,11 @@
 import * as React from 'react';
 import './LatestPost.scss';
-import { useGetNotionQuery } from '@services/use-notion';
-import { NotionNode } from '@types';
-import { getParseListByNodes } from '@utils/notion';
 import { LatestPostItem } from './item';
 import { Linker } from '@components/ui';
+import { useNotion } from '@src/hooks/useNotion';
 
 export default function LatestPost() {
-  const nodes = useGetNotionQuery();
-
-  const parseList: NotionNode[] = getParseListByNodes(nodes);
-  parseList.sort((a, b) => {
-    if (a.notionColumn?.createdTime && b.notionColumn?.createdTime) {
-      return a.notionColumn?.createdTime > b.notionColumn?.createdTime ? -1 : 1;
-    } else {
-      return 0;
-    }
-  });
+  const { posts } = useNotion();
 
   return (
     <section className="latest-post">
@@ -27,7 +16,7 @@ export default function LatestPost() {
         </Linker>
       </div>
       <ul>
-        {parseList.slice(0, 6).map(post => {
+        {posts.slice(0, 6).map(post => {
           return <LatestPostItem key={`latest-post-${post.id}`} post={post} />;
         })}
       </ul>
