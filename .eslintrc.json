@@ -17,6 +17,15 @@
   "plugins": ["react", "import"],
   "extends": ["plugin:import/recommended"],
   "rules": {
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "ignoreCase": true,
+        "reservedFirst": true,
+        "callbacksLast": true,
+        "shorthandLast": true
+      }
+    ],
     "import/order": [
       "error",
       {

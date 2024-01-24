@@ -13,11 +13,11 @@ export default function SNBOpenIcon() {
     <>
       <button
         className="snb-open-icon"
-        onClick={SNBOverlay.change}
-        onMouseOver={() => setIsMenuHover(true)}
-        onMouseLeave={() => setIsMenuHover(false)}
-        onFocus={() => setIsMenuHover(true)}
         onBlur={() => setIsMenuHover(false)}
+        onClick={SNBOverlay.change}
+        onFocus={() => setIsMenuHover(true)}
+        onMouseLeave={() => setIsMenuHover(false)}
+        onMouseOver={() => setIsMenuHover(true)}
       >
         {isMenuHover ? (
           <IconDoubleArrow direction={SNBOverlay.isOpen ? 'left' : 'right'} size={28} />

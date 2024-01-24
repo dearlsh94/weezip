@@ -19,24 +19,24 @@ export default function Pagination({ pagination }: PaginationProps) {
         {lastPage > 2 && (
           <MyButton
             className={`page-button first ${currentPage === 1 ? 'disabled' : 'active'}`}
-            size={ButtonSize.THIRD}
             color={ButtonColor.PRIMARY}
+            size={ButtonSize.THIRD}
             type={ButtonType.BORDER}
             width={45}
             onClick={pagination.first}
           >
-            <IconEndArrow direction="left" size={18} color="base" />
+            <IconEndArrow color="base" direction="left" size={18} />
           </MyButton>
         )}
         <MyButton
           className={`page-button prev ${currentPage === 1 ? 'disabled' : 'active'}`}
-          size={ButtonSize.THIRD}
           color={ButtonColor.PRIMARY}
+          size={ButtonSize.THIRD}
           type={ButtonType.BORDER}
           width={45}
           onClick={pagination.prev}
         >
-          <IconSingleArrow direction="left" size={12} color="base" />
+          <IconSingleArrow color="base" direction="left" size={12} />
         </MyButton>
       </div>
       <div className="center-box">
@@ -55,24 +55,24 @@ export default function Pagination({ pagination }: PaginationProps) {
       <div className="right-box">
         <MyButton
           className={`page-button next ${currentPage === lastPage ? 'disabled' : 'active'}`}
-          size={ButtonSize.THIRD}
           color={ButtonColor.PRIMARY}
+          size={ButtonSize.THIRD}
           type={ButtonType.BORDER}
           width={45}
           onClick={pagination.next}
         >
-          <IconSingleArrow direction="right" size={12} color="base" />
+          <IconSingleArrow color="base" direction="right" size={12} />
         </MyButton>
         {lastPage > 2 && (
           <MyButton
             className={`page-button last ${currentPage === lastPage ? 'disabled' : 'active'}`}
-            size={ButtonSize.THIRD}
             color={ButtonColor.PRIMARY}
+            size={ButtonSize.THIRD}
             type={ButtonType.BORDER}
             width={45}
             onClick={pagination.last}
           >
-            <IconEndArrow direction="right" size={18} color="base" />
+            <IconEndArrow color="base" direction="right" size={18} />
           </MyButton>
         )}
       </div>

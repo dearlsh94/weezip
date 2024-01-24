@@ -14,22 +14,22 @@ export default function Footer() {
           <p>Contact Me</p>
           <div className="contact-item">
             <CircleIconWrapper color="reverse-mono">
-              <a href={`mailto:${OWNER_EMAIL}`} aria-label={`메일 주소 ${OWNER_EMAIL}`}>
+              <a aria-label={`메일 주소 ${OWNER_EMAIL}`} href={`mailto:${OWNER_EMAIL}`}>
                 <IconMail color="reverse-mono" />
               </a>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://www.instagram.com/treefeely/`} target="_blank" aria-label="인스타그램 이동">
+              <Linker aria-label="인스타그램 이동" target="_blank" url={`https://www.instagram.com/treefeely/`}>
                 <IconInstagram color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://open.kakao.com/me/treefeely`} target="_blank" aria-label="오픈 카카오톡 이동">
+              <Linker aria-label="오픈 카카오톡 이동" target="_blank" url={`https://open.kakao.com/me/treefeely`}>
                 <IconKakao color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://github.com/dearlsh94`} target="_blank" aria-label="Github 이동">
+              <Linker aria-label="Github 이동" target="_blank" url={`https://github.com/dearlsh94`}>
                 <IconGithub color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
         <div className="item refer-box">
           <span>All Icons by</span>
-          <Linker url={`https://icon-sets.iconify.design/`} target={'_blank'}>
+          <Linker target={'_blank'} url={`https://icon-sets.iconify.design/`}>
             iconiFy
           </Linker>
         </div>

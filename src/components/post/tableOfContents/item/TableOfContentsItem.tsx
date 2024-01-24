@@ -13,8 +13,8 @@ export default function TableOfContentsItem({ item, isActive }: TableOfContentsI
 
   return (
     <li
-      id={`index-${text}`}
       className={`table-of-contents-item tag-${tag} ${isActive ? 'active' : ''}`}
+      id={`index-${text}`}
       onClick={() => moveToOffset(item.offsetTop)}
     >
       {text}

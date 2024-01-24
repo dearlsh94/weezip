@@ -30,7 +30,7 @@ export default function NParagraph({ paragraph, richText, className }: NParagrap
           }
           if (t?.href) {
             return (
-              <Linker key={`block-paragraph-text-${i}`} url={t.href} target="_blank" aria-label={`링크 텍스트`}>
+              <Linker key={`block-paragraph-text-${i}`} aria-label={`링크 텍스트`} target="_blank" url={t.href}>
                 {t.plain_text}
               </Linker>
             );

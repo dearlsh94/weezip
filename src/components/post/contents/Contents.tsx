@@ -65,6 +65,6 @@ export default function Contents({ childrens = [] }: ContentsProps) {
       }
     }
 
-    return <ContentBlockRender block={block} key={block.id} />;
+    return <ContentBlockRender key={block.id} block={block} />;
   });
 }

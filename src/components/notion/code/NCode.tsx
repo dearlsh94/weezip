@@ -27,9 +27,9 @@ export default function NCode({ code }: NCodeProps) {
     <figure className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
       <div className="code-header">
         <small className="language">{code.language}</small>
-        <IconCopyLink size={20} color={'primary'} onClick={handleCodeCopy} />
+        <IconCopyLink color={'primary'} size={20} onClick={handleCodeCopy} />
       </div>
-      <SyntaxHighlighter language={code.language} style={vscDarkPlus} showLineNumbers={true}>
+      <SyntaxHighlighter language={code.language} showLineNumbers={true} style={vscDarkPlus}>
         {codeString}
       </SyntaxHighlighter>
       {code.caption.length > 0 && (

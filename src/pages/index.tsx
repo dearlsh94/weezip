@@ -32,7 +32,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <Divider />
         <div className="introduce">{node && <Contents childrens={json.children} />}</div>
         <div className="logo-box">
-          <StaticImage src="../images/Tesseract-Logo-256x256.png" alt="Weezip Logo" width={128} />
+          <StaticImage alt="Weezip Logo" src="../images/Tesseract-Logo-256x256.png" width={128} />
         </div>
       </MainLayout>
       <Snowflakes />

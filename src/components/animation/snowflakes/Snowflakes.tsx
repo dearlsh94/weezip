@@ -43,7 +43,7 @@ export default function Snowflakes({ count = 17 }: SnowflakesProps) {
   }, []);
 
   return (
-    <div className={`snowflake ${isShow && snowflake.length ? 'visible' : 'hidden'}`} aria-hidden="true">
+    <div aria-hidden="true" className={`snowflake ${isShow && snowflake.length ? 'visible' : 'hidden'}`}>
       {snowflake.map((flake, index) => (
         <div
           key={`flake-${index}`}
@@ -56,7 +56,7 @@ export default function Snowflakes({ count = 17 }: SnowflakesProps) {
             WebkitAnimationDelay: `${flake.fallDelay}s, ${flake.shakeDelay}s`,
           }}
         >
-          <IconSnow size={flake.size} color={'primary'} />
+          <IconSnow color={'primary'} size={flake.size} />
         </div>
       ))}
     </div>

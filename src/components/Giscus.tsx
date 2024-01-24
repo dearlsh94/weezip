@@ -48,7 +48,7 @@ const Giscus = () => {
     );
   }, [theme]);
 
-  return <div className="giscus-container" ref={giscusRef} />;
+  return <div ref={giscusRef} className="giscus-container" />;
 };
 
 export default Giscus;

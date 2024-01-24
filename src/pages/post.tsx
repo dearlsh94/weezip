@@ -73,11 +73,11 @@ export const Head: HeadFC = ({ pageContext }: any) => {
   }
   return (
     <SEO
-      title={title}
       description={descriptions.join(', ')}
-      pathname={pageContext.slug}
       keywords={[node?.properties?.series?.select?.name, ...tagNames]}
+      pathname={pageContext.slug}
       thumbnail={thumbnailUrl}
+      title={title}
     />
   );
 };
@@ -102,11 +102,11 @@ const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
       <MainLayout className="post">
         <Breadcrumb steps={breadcrumbSteps} />
         <article>
-          <Title title={title} slug={slug} />
+          <Title slug={slug} title={title} />
           <TitleDescription
-            tag={node?.properties?.tag?.multi_select}
             createdDate={node?.properties?.created_date}
             editedDate={node?.properties?.edited_date}
+            tag={node?.properties?.tag?.multi_select}
             useTagLink={true}
           />
           <LastEditedCaution lastEditedDate={new Date(node?.properties?.edited_date?.date?.start)} />

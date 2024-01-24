@@ -12,9 +12,9 @@ export default function RecommendTag() {
       {RECOMMEND_TAGS.map(tag => (
         <Linker
           key={`recommend-item-${tag.name}`}
-          url={tag.url}
-          className="item"
           aria-label={`${tag.name} 목록으로 이동`}
+          className="item"
+          url={tag.url}
         >
           #{tag.name}
         </Linker>

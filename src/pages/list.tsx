@@ -19,8 +19,8 @@ import { NotionNode } from '@types';
 
 export const Head: HeadFC = () => {
   return (
-    <SEO title={`글 목록`} description={`Write, Explain, Edit, Zip`} pathname="/list">
-      <link rel="canonical" href={`https://weezip.treefeely.com/list`} />
+    <SEO description={`Write, Explain, Edit, Zip`} pathname="/list" title={`글 목록`}>
+      <link href={`https://weezip.treefeely.com/list`} rel="canonical" />
     </SEO>
   );
 };
@@ -73,10 +73,10 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
       <MainLayout className="posts-layout">
         <section className="posts-layout__header">
           <PostsFilter />
-          <PostsDescription isLoading={isLoading} length={list.length} filteredText={filterText} />
+          <PostsDescription filteredText={filterText} isLoading={isLoading} length={list.length} />
         </section>
         <Divider color="primary" height={2} />
-        <LoadContainer isLoading={isLoading} isError={false}>
+        <LoadContainer isError={false} isLoading={isLoading}>
           <Posts list={list} />
         </LoadContainer>
       </MainLayout>

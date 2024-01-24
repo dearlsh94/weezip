@@ -16,16 +16,16 @@ export default function PostsItem({ post }: PostsItemProps) {
 
   return (
     <li>
-      <Linker url={post.title} aria-label={`${post.title} 글 보기`}>
+      <Linker aria-label={`${post.title} 글 보기`} url={post.title}>
         <div className={`posts-item`}>
           <div className="posts-item__title">
             {content?.properties?.series?.select && <Series series={content?.properties?.series?.select} />}
             <p>{title}</p>
           </div>
           <TitleDescription
-            tag={content?.properties?.tag?.multi_select}
             createdDate={content?.properties?.created_date}
             editedDate={content?.properties?.edited_date}
+            tag={content?.properties?.tag?.multi_select}
             useCopy={false}
           />
         </div>

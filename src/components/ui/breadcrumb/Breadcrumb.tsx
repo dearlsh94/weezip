@@ -18,7 +18,7 @@ export default function Breadcrumb({ steps }: BreadcrumbProps) {
       <ol>
         {steps.map(step => (
           <li key={step.name}>
-            <Linker url={step.url} aria-label={`${step.name} 이동`}>
+            <Linker aria-label={`${step.name} 이동`} url={step.url}>
               {step.name}
             </Linker>
           </li>

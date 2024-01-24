@@ -49,12 +49,12 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
             <div className="search-box">
               <div className="input-box">
                 <input
-                  autoFocus
                   ref={inputRef}
                   className="search"
-                  type="text"
                   placeholder="검색어를 입력하세요."
+                  type="text"
                   value={searchText}
+                  autoFocus
                   onChange={e => setSearchText(e.target.value)}
                   onKeyDown={handleKeyDown}
                 />

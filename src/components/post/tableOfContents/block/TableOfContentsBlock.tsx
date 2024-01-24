@@ -38,8 +38,8 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
               return (
                 <TableOfContentsItem
                   key={`table-of-contents-block-side-item-${i}`}
-                  item={item}
                   isActive={activeText === text}
+                  item={item}
                 />
               );
             })}

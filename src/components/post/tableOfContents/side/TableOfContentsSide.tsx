@@ -29,7 +29,7 @@ export default function TableOfContentsSide({ list }: TableOfContentsSideProps) 
         {list.map((item, i) => {
           const text = item.outerText;
           return (
-            <TableOfContentsItem key={`table-of-contents-side-item-${i}`} item={item} isActive={activeText === text} />
+            <TableOfContentsItem key={`table-of-contents-side-item-${i}`} isActive={activeText === text} item={item} />
           );
         })}
       </ol>

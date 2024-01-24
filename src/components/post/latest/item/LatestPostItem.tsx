@@ -14,11 +14,11 @@ interface LatestPostItemProps {
 export default function LatestPostItem({ post }: LatestPostItemProps) {
   return (
     <li className="latest-post-item">
-      <Linker url={post.title} aria-label={`${post.notionColumn.remark} 글 보기`}>
+      <Linker aria-label={`${post.notionColumn.remark} 글 보기`} url={post.title}>
         <p>{post.notionColumn?.remark}</p>
         {post.notionColumn.tag && <Tags tag={post.notionColumn.tag} />}
         <div className="corner" />
-        <IconSingleArrow size={12} color={'base'} direction="right" />
+        <IconSingleArrow color={'base'} direction="right" size={12} />
       </Linker>
     </li>
   );

@@ -31,7 +31,7 @@ export default function TitleDescription({
     <div className="post-description">
       <Tags tag={tag} useLink={useTagLink} />
       <div className="post__description__right">
-        {useCopy && <IconCopyLink size={18} color="secondary" onClick={handleCopy} />}
+        {useCopy && <IconCopyLink color="secondary" size={18} onClick={handleCopy} />}
         <CreateDate strDate={createdDate?.date?.start} />
         <EditDate strDate={editedDate?.date?.start} />
       </div>

@@ -40,7 +40,7 @@ export default function ContentBlockRender({ block }: ContentBlockRenderProps) {
         if (block.heading_3) return <NHeading3 head3={block.heading_3} />;
         break;
       case BlockType.QUOTE:
-        if (block.quote) return <NQuote quote={block.quote} children={block.children} />;
+        if (block.quote) return <NQuote children={block.children} quote={block.quote} />;
         break;
       case BlockType.BULLETED_LIST_ITEM:
         if (block.bulleted_list_item) return <NBulletedList bulletedListItem={block} />;
@@ -49,14 +49,14 @@ export default function ContentBlockRender({ block }: ContentBlockRenderProps) {
         if (block.numbered_list_item) return <NNumberList numberedListItem={block} />;
         break;
       case BlockType.TODO:
-        if (block.to_do) return <NTodo todo={block.to_do} blockId={block.id} />;
+        if (block.to_do) return <NTodo blockId={block.id} todo={block.to_do} />;
         break;
       case BlockType.CALLOUT:
-        if (block.callout) return <NCallout callout={block.callout} children={block.children} />;
+        if (block.callout) return <NCallout children={block.children} callout={block.callout} />;
         break;
       case BlockType.TOGGLE:
         if (block.toggle)
-          return <NToggle toggle={block.toggle} hasChild={block.has_children} childList={block.children} />;
+          return <NToggle childList={block.children} hasChild={block.has_children} toggle={block.toggle} />;
         break;
       case BlockType.BOOKMARK:
         if (block.bookmark) return <NBookmark bookmark={block.bookmark} />;

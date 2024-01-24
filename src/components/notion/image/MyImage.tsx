@@ -24,12 +24,12 @@ export default function MyImage({ imageBlock }: NImageProps) {
       {id && image && (
         <figure className={`block-image`}>
           <img
+            alt={captionText}
+            sizes="100vw"
+            src={`${url}`}
             srcSet={`${url}&width=540 380w,
             ${url}&width=1140 760w,
             ${url}&width=1536 1024w,`}
-            sizes="100vw"
-            src={`${url}`}
-            alt={captionText}
           />
           <figcaption className="caption-box">
             <NParagraph richText={image.caption} />

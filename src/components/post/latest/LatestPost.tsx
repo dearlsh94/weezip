@@ -14,7 +14,7 @@ export default function LatestPost() {
     <section className="latest-post">
       <div className="latest-post__title">
         <h2>최근 포스트</h2>
-        <Linker url={'/list'} aria-label="전체 목록 보기">
+        <Linker aria-label="전체 목록 보기" url={'/list'}>
           전체 보기
         </Linker>
       </div>
