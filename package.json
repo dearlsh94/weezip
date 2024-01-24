@@ -14,12 +14,13 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "hosting": "yarn && yarn build",
-    "pull": "git fetch && git pull",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint '**/*.{js,jsx,ts,tsx}' --fix",
-    "lint:css": "stylelint '**/*.scss'",
-    "lint:css:fix": "stylelint '**/*.scss' --fix"
+    "style": "stylelint '**/*.scss'",
+    "style:fix": "stylelint '**/*.scss' --fix",
+    "code": "yarn format && yarn lint && yarn style",
+    "code:fix": "yarn format && yarn lint:fix && yarn style:fix"
   },
   "dependencies": {
     "gatsby": "^5.13.1",
