@@ -10,7 +10,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Divider, FloatBox } from '@components/ui';
 import { MainLayout } from '@layout/main';
 import { Snowflakes } from '@components/animation';
-import { useNotion } from '@src/hooks/useNotion';
+import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
 import { notionNodeToJson } from '@utils/notion';
 
 export const Head: HeadFC = () => {
@@ -18,7 +18,7 @@ export const Head: HeadFC = () => {
 };
 
 const IndexPage: React.FC<PageProps> = () => {
-  const { getNodeByUrl } = useNotion();
+  const { getNodeByUrl } = useWeezipNotion();
   const node: NotionNode | undefined = getNodeByUrl('/home');
   const json = notionNodeToJson(node);
   return (

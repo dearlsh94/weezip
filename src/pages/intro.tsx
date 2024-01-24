@@ -6,7 +6,7 @@ import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { MainLayout } from '@layout/main';
 import { Contents } from '@components/post';
-import { useNotion } from '@src/hooks/useNotion';
+import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
 import { notionNodeToJson } from '@utils/notion';
 
 export const Head: HeadFC = () => {
@@ -14,7 +14,7 @@ export const Head: HeadFC = () => {
 };
 
 const IntroPage: React.FC<PageProps> = () => {
-  const { getNodeByUrl } = useNotion();
+  const { getNodeByUrl } = useWeezipNotion();
   const node: NotionNode | undefined = getNodeByUrl('/intro');
   const json = notionNodeToJson(node);
   return (

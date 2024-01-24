@@ -11,7 +11,7 @@ import { getParamValue } from '@utils/url';
 import { Posts, PostsDescription, PostsFilter } from '@components/post';
 import { Divider, LoadContainer } from '@components/ui';
 import { MainLayout } from '@layout/main';
-import { useNotion } from '@src/hooks/useNotion';
+import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
 export const Head: HeadFC = () => {
   return (
     <SEO title={`글 목록`} description={`Write, Explain, Edit, Zip`} pathname="/list">
@@ -22,7 +22,7 @@ export const Head: HeadFC = () => {
 
 const ListPage: React.FC<PageProps> = ({ location }) => {
   const params = new URLSearchParams(location.search);
-  const { posts } = useNotion();
+  const { posts } = useWeezipNotion();
 
   const [list, setList] = useState<NotionNode[]>([]);
   const [filterText, setFilterText] = useState('전체');

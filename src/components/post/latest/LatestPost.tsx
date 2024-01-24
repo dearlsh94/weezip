@@ -2,10 +2,10 @@ import * as React from 'react';
 import './LatestPost.scss';
 import { LatestPostItem } from './item';
 import { Linker } from '@components/ui';
-import { useNotion } from '@src/hooks/useNotion';
+import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
 
 export default function LatestPost() {
-  const { posts } = useNotion();
+  const { posts } = useWeezipNotion();
 
   return (
     <section className="latest-post">

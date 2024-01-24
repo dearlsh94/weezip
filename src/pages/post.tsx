@@ -20,10 +20,10 @@ import {
 } from '@components/post';
 import { FloatBox } from '@components/ui';
 import { MainLayout } from '@layout/main';
-import { useNotion } from '@src/hooks/useNotion';
+import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
 
 export const Head: HeadFC = ({ pageContext }: any) => {
-  const { getNodeByUrl } = useNotion();
+  const { getNodeByUrl } = useWeezipNotion();
   const node = notionNodeToJson(getNodeByUrl(pageContext.slug));
   const title = getPlainTextByRichText(node?.properties?.remark?.rich_text);
   const series = node?.properties?.series?.select?.name;
@@ -79,7 +79,7 @@ export const Head: HeadFC = ({ pageContext }: any) => {
 
 const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
   const { slug } = pageContext;
-  const { getNodeByUrl } = useNotion();
+  const { getNodeByUrl } = useWeezipNotion();
   const node = notionNodeToJson(getNodeByUrl(slug));
   const title = getPlainTextByRichText(node?.properties?.remark?.rich_text);
   const series = node?.properties?.series?.select;

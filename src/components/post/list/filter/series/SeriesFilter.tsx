@@ -1,10 +1,10 @@
 import React from 'react';
 import { Series } from '@components/post';
 import './SeriesFilter.scss';
-import { useNotion } from '@src/hooks/useNotion';
+import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
 
 export default function SeriesFilter() {
-  const { everyPostsSeries } = useNotion();
+  const { everyPostsSeries } = useWeezipNotion();
   return (
     everyPostsSeries?.length > 0 && (
       <div className="filter">
