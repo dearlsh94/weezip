@@ -5,7 +5,6 @@ import { NParagraph } from '@components/notion';
 
 import { Todo } from '@types';
 
-
 interface NTodoProps {
   todo: Todo;
   blockId: string;

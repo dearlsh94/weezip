@@ -5,7 +5,6 @@ import { Linker } from '@components/ui';
 
 import { Caption, RichText, TextBlock, TextItem } from '@types';
 
-
 interface NParagraphProps {
   paragraph?: TextBlock;
   richText?: RichText | Caption;

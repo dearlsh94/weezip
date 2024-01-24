@@ -3,7 +3,6 @@ import * as React from 'react';
 import './Posts.scss';
 import usePagination from '@hooks/usePagination';
 
-
 import { PostEmptyChecker } from './emptyChecker';
 import { PostsItem } from './item';
 import { Pagination } from '../pagination';

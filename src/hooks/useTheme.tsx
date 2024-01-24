@@ -5,7 +5,6 @@ import { useThemeStore } from '@store/config';
 
 import { useLocalStorage } from './useLocalStorage';
 
-
 const useTheme = () => {
   const { setConfig, getConfig } = useLocalStorage();
   const { theme, setDarkTheme, setLightTheme } = useThemeStore();

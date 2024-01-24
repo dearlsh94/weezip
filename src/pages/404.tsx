@@ -2,7 +2,6 @@ import { HeadFC, PageProps } from 'gatsby';
 
 import * as React from 'react';
 
-
 import { GlobalPortal } from '@components/GlobalPortal';
 import SEO from '@components/header/SEO';
 import { Linker } from '@components/ui';

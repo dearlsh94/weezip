@@ -5,7 +5,6 @@ import { NParagraph } from '../paragraph';
 
 import { ImageChildren } from '@types';
 
-
 interface NImageProps {
   imageBlock: ImageChildren;
 }

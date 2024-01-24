@@ -6,7 +6,6 @@ import { Contents } from '@components/post';
 
 import { NumberedListItemChildren } from '@types';
 
-
 interface NNumberedListProps {
   numberedListItem: NumberedListItemChildren;
 }

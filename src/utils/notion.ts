@@ -2,7 +2,6 @@ import { convertDatetimeFormat } from './converter';
 
 import { NotionChildrenType, MultiSelect, NotionColumn, NotionNode, RichText } from '@types';
 
-
 export const notionNodeToJson = (node: NotionNode | undefined): NotionChildrenType => {
   return node ? JSON.parse(node?.json) : undefined;
 };

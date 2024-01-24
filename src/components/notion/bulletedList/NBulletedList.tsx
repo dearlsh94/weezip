@@ -6,7 +6,6 @@ import { Contents } from '@components/post';
 
 import { BulletedListItemChildren } from '@types';
 
-
 interface NBulletedListProps {
   bulletedListItem: BulletedListItemChildren;
 }

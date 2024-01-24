@@ -10,7 +10,6 @@ import { moveToPostsPage } from '@utils/url';
 
 import { RecommendTag } from './recommend';
 
-
 interface PostSearchLayerProps {
   handleClose: () => void;
 }

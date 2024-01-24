@@ -5,7 +5,6 @@ import { NParagraph } from '@components/notion';
 
 import { TextBlock } from '@types';
 
-
 interface NHeading1Props {
   head1?: TextBlock;
 }

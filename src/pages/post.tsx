@@ -2,7 +2,6 @@ import { HeadFC, PageProps } from 'gatsby';
 
 import * as React from 'react';
 
-
 import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
 import Giscus from '@components/Giscus';
@@ -25,7 +24,6 @@ import { MainLayout } from '@layout/main';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
 
 import { BlockType, Heading2Children, ImageChildren } from '@types';
-
 
 export const Head: HeadFC = ({ pageContext }: any) => {
   const { getNodeByUrl } = useWeezipNotion();

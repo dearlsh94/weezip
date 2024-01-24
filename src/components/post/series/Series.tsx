@@ -5,7 +5,6 @@ import { Linker } from '@components/ui';
 
 import { Select } from '@types';
 
-
 interface SeriesProps {
   series: Select;
   useLink?: boolean;

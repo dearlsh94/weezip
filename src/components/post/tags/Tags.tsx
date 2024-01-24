@@ -5,7 +5,6 @@ import { TagItem } from './item';
 
 import { MultiSelect } from '@types';
 
-
 interface TagsProps {
   tag: MultiSelect;
   useLink?: boolean;
