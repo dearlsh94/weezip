@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './LastEditedCaution.scss';
 import { IconCaution } from '@components/icon';
 

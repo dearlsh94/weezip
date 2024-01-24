@@ -1,13 +1,16 @@
-import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
+
+import * as React from 'react';
+
 import '@scss/global.scss';
-import { NotionNode } from '@types';
-import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
-import { MainLayout } from '@layout/main';
+import SEO from '@components/header/SEO';
 import { Contents } from '@components/post';
-import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
+import { useWeezipNotion } from '@hooks/useWeezipNotion';
+import { MainLayout } from '@layout/main';
 import { notionNodeToJson } from '@utils/notion';
+
+import { NotionNode } from '@types';
 
 export const Head: HeadFC = () => {
   return <SEO pathname="/intro" title={'노션 컴포넌트셋'} />;

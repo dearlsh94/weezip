@@ -1,9 +1,12 @@
 import * as React from 'react';
+
 import './NToggle.scss';
-import { NotionChildrenType, TextBlock } from '@types';
-import { NParagraph } from '@components/notion';
+
 import { IconSingleArrow } from '@components/icon';
+import { NParagraph } from '@components/notion';
 import { Contents } from '@components/post';
+
+import { NotionChildrenType, TextBlock } from '@types';
 
 interface NToggleProps {
   toggle: TextBlock;

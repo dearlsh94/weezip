@@ -1,5 +1,6 @@
-import { IconHome, IconList, IconOutLink, IconStar } from '@components/icon';
 import React from 'react';
+
+import { IconHome, IconList, IconOutLink, IconStar } from '@components/icon';
 import './SideBarNavItem.scss';
 import { Linker } from '@components/ui';
 

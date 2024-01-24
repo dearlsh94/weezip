@@ -1,6 +1,8 @@
-import { Themes } from '@src/constants';
-import { MultiSelect } from '@types';
 import { create } from 'zustand';
+
+import { Themes } from '@src/constants';
+
+import { MultiSelect } from '@types';
 
 interface SnowflakeState {
   isShow: boolean;

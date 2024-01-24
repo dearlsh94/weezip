@@ -1,11 +1,12 @@
-import { CreateDate, EditDate } from '@components/post';
-import useClipboard from '@src/hooks/useClipboard';
-import { DateProperty, MultiSelect } from '@types';
 import React from 'react';
+
 import './TitleDescription.scss';
 import { IconCopyLink } from '@components/icon';
+import { CreateDate, EditDate } from '@components/post';
 import { Tags } from '@components/post/tags';
+import useClipboard from '@hooks/useClipboard';
 
+import { DateProperty, MultiSelect } from '@types';
 interface TitleDescriptionProps {
   tag: MultiSelect;
   createdDate: DateProperty;

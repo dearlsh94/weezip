@@ -1,7 +1,10 @@
 import * as React from 'react';
+
 import './Tags.scss';
-import { MultiSelect } from '@types';
 import { TagItem } from './item';
+
+import { MultiSelect } from '@types';
+
 
 interface TagsProps {
   tag: MultiSelect;

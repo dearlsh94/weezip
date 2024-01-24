@@ -1,8 +1,9 @@
-import { CONFIG_THEME_KEY } from '@src/constants';
-import { useLocalStorage } from '@src/hooks/useLocalStorage';
-import { useThemeStore } from '@store/config';
 import * as React from 'react';
 import { useRef, useEffect } from 'react';
+
+import { useLocalStorage } from '@hooks/useLocalStorage';
+import { CONFIG_THEME_KEY } from '@src/constants';
+import { useThemeStore } from '@store/config';
 
 const Giscus = () => {
   const { theme } = useThemeStore();

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './TableOfContentsItem.scss';
 import { moveToOffset } from '@utils/scroll';
 

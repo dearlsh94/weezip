@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { moveToBottom } from '@utils/scroll';
 import './Feedback.scss';
 

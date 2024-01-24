@@ -1,17 +1,21 @@
-import * as React from 'react';
 import { type HeadFC, type PageProps } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+
+import * as React from 'react';
+
 import '@scss/global.scss';
 import '@scss/pages/IndexPage.scss';
-import { NotionNode } from '@types';
-import { Contents, LatestPost } from '@components/post';
-import SEO from '@components/header/SEO';
+
 import { GlobalPortal } from '@components/GlobalPortal';
-import { StaticImage } from 'gatsby-plugin-image';
-import { Divider, FloatBox } from '@components/ui';
-import { MainLayout } from '@layout/main';
 import { Snowflakes } from '@components/animation';
-import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
+import SEO from '@components/header/SEO';
+import { Contents, LatestPost } from '@components/post';
+import { Divider, FloatBox } from '@components/ui';
+import { useWeezipNotion } from '@hooks/useWeezipNotion';
+import { MainLayout } from '@layout/main';
 import { notionNodeToJson } from '@utils/notion';
+
+import { NotionNode } from '@types';
 
 export const Head: HeadFC = () => {
   return <SEO />;

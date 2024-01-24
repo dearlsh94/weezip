@@ -1,8 +1,11 @@
 import * as React from 'react';
+
 import './NBookmark.scss';
-import { Bookmark, TextBlock, TextItem } from '@types';
-import { Linker } from '@components/ui';
 import { NParagraph } from '@components/notion';
+import { Linker } from '@components/ui';
+
+import { Bookmark, TextBlock, TextItem } from '@types';
+
 interface NBookmarkProps {
   bookmark: Bookmark;
 }

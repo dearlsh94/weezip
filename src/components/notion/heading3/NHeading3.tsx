@@ -1,7 +1,10 @@
 import * as React from 'react';
+
 import './NHeading3.scss';
-import { TextBlock } from '@types';
 import { NParagraph } from '@components/notion';
+
+import { TextBlock } from '@types';
+
 
 interface NHeading3Props {
   head3?: TextBlock;

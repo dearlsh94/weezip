@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { useRef, useState } from 'react';
+
 import './PostSearchLayer.scss';
-import { throttle } from '@utils/common';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { IconClose, IconSearch } from '@components/icon';
-import { moveToPostsPage } from '@utils/url';
-import { RecommendTag } from './recommend';
 import { DimLayout } from '@layout/dim';
+import { throttle } from '@utils/common';
+import { moveToPostsPage } from '@utils/url';
+
+import { RecommendTag } from './recommend';
+
 
 interface PostSearchLayerProps {
   handleClose: () => void;

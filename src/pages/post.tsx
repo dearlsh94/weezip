@@ -1,13 +1,13 @@
-import * as React from 'react';
 import { HeadFC, PageProps } from 'gatsby';
+
+import * as React from 'react';
+
+
 import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
-import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
-import SEO from '@components/header/SEO';
-import { BlockType, Heading2Children, ImageChildren } from '@types';
-import { GlobalPortal } from '@components/GlobalPortal';
 import Giscus from '@components/Giscus';
-import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb/Breadcrumb';
+import { GlobalPortal } from '@components/GlobalPortal';
+import SEO from '@components/header/SEO';
 import {
   Contents,
   Feedback,
@@ -19,8 +19,13 @@ import {
   TitleDescription,
 } from '@components/post';
 import { FloatBox } from '@components/ui';
+import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb/Breadcrumb';
+import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
-import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
+import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
+
+import { BlockType, Heading2Children, ImageChildren } from '@types';
+
 
 export const Head: HeadFC = ({ pageContext }: any) => {
   const { getNodeByUrl } = useWeezipNotion();

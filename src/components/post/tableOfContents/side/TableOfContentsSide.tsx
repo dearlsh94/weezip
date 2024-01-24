@@ -1,8 +1,10 @@
 import * as React from 'react';
+
 import './TableOfContentsSide.scss';
-import { moveToTop } from '@utils/scroll';
-import { usePostActiveText } from '@src/hooks/usePostActiveText';
+import { usePostActiveText } from '@hooks/usePostActiveText';
 import { SideLayout } from '@layout/side';
+import { moveToTop } from '@utils/scroll';
+
 import { TableOfContentsItem } from '../item';
 
 interface TableOfContentsSideProps {

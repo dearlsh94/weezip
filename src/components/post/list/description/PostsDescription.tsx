@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './PostsDescription.scss';
 import { IconClearAll } from '@components/icon';
 import { moveToPostsPage } from '@utils/url';

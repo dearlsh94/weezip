@@ -1,7 +1,10 @@
-import * as React from 'react';
 import { HeadFC, PageProps } from 'gatsby';
-import SEO from '@components/header/SEO';
+
+import * as React from 'react';
+
+
 import { GlobalPortal } from '@components/GlobalPortal';
+import SEO from '@components/header/SEO';
 import { Linker } from '@components/ui';
 
 const mainStyles = {

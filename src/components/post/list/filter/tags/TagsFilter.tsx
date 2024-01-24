@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { TagItem } from '@components/post';
 import './TagsFilter.scss';
-import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
+import { useWeezipNotion } from '@hooks/useWeezipNotion';
 
 export default function TagsFilter() {
   const { everyPostsTags } = useWeezipNotion();

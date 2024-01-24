@@ -1,7 +1,12 @@
-import { NotionNode } from '@types';
-import { classifyPost, notionNodeToJson, parseNotionColumn } from '@utils/notion';
 import { graphql, useStaticQuery } from 'gatsby';
+
 import { useMemo } from 'react';
+
+
+import { classifyPost, notionNodeToJson, parseNotionColumn } from '@utils/notion';
+
+import { NotionNode } from '@types';
+
 
 export const useWeezipNotion = () => {
   const data = useStaticQuery(graphql`

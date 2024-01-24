@@ -1,7 +1,10 @@
 import * as React from 'react';
+
 import './NTodo.scss';
-import { Todo } from '@types';
 import { NParagraph } from '@components/notion';
+
+import { Todo } from '@types';
+
 
 interface NTodoProps {
   todo: Todo;

@@ -1,8 +1,11 @@
 import * as React from 'react';
+
 import './LatestPost.scss';
-import { LatestPostItem } from './item';
+
 import { Linker } from '@components/ui';
-import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
+import { useWeezipNotion } from '@hooks/useWeezipNotion';
+
+import { LatestPostItem } from './item';
 
 export default function LatestPost() {
   const { posts } = useWeezipNotion();

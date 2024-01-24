@@ -1,5 +1,6 @@
-import { throttle } from '@utils/common';
 import { useEffect, useState } from 'react';
+
+import { throttle } from '@utils/common';
 
 const useResize = (delay = 30) => {
   const [resizedInnerWidth, setResizedInnerWidth] = useState(0);

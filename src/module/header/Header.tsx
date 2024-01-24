@@ -1,14 +1,17 @@
+import { StaticImage } from 'gatsby-plugin-image';
+
 import * as React from 'react';
 import { useEffect, useState } from 'react';
+
 import './Header.scss';
-import { StaticImage } from 'gatsby-plugin-image';
+
 import ThemeController from '@components/ThemeController';
-import useOverlay from '@src/hooks/useOverlay';
-import useScroll from '@src/hooks/useScroll';
-import { IconSearch } from '@components/icon';
 import { SNBOpenIcon } from '@components/header';
-import { Linker } from '@components/ui';
+import { IconSearch } from '@components/icon';
 import { PostSearchLayer } from '@components/search';
+import { Linker } from '@components/ui';
+import useOverlay from '@hooks/useOverlay';
+import useScroll from '@hooks/useScroll';
 
 export default function Header() {
   const searchOverlay = useOverlay();

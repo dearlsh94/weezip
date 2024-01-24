@@ -1,9 +1,10 @@
 import * as React from 'react';
+
 import './Pagination.scss';
+import { IconEndArrow, IconSingleArrow } from '@components/icon';
 import { MyButton } from '@components/ui';
 import { ButtonColor, ButtonSize, ButtonType } from '@components/ui/button/MyButton';
-import { paginationController } from '@src/hooks/usePagination';
-import { IconEndArrow, IconSingleArrow } from '@components/icon';
+import { paginationController } from '@hooks/usePagination';
 
 interface PaginationProps {
   pagination: paginationController;

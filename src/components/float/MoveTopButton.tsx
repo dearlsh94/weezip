@@ -1,10 +1,10 @@
+import React, { useEffect } from 'react';
+
 import { IconEndArrow } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
-import useScroll from '@src/hooks/useScroll';
-import useShow from '@src/hooks/useShow';
+import useScroll from '@hooks/useScroll';
+import useShow from '@hooks/useShow';
 import { moveToTop } from '@utils/scroll';
-import React from 'react';
-import { useEffect } from 'react';
 
 export default function MoveTopButton() {
   const showButton = useShow();

@@ -1,8 +1,11 @@
 import * as React from 'react';
+
 import './NQuote.scss';
-import { NotionChildrenType, TextBlock } from '@types';
+
 import { NParagraph } from '@components/notion';
 import { Contents } from '@components/post';
+
+import { NotionChildrenType, TextBlock } from '@types';
 
 interface NQuoteProps {
   quote?: TextBlock;

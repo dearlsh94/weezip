@@ -1,17 +1,22 @@
+import { HeadFC, PageProps, graphql } from 'gatsby';
+
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { HeadFC, PageProps, graphql } from 'gatsby';
+
 import '@scss/global.scss';
 import '@scss/pages/PostsPage.scss';
-import { NotionNode } from '@types';
-import SEO from '@components/header/SEO';
+
 import { GlobalPortal } from '@components/GlobalPortal';
-import { compareString } from '@utils/common';
-import { getParamValue } from '@utils/url';
+import SEO from '@components/header/SEO';
 import { Posts, PostsDescription, PostsFilter } from '@components/post';
 import { Divider, LoadContainer } from '@components/ui';
+import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
-import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
+import { compareString } from '@utils/common';
+import { getParamValue } from '@utils/url';
+
+import { NotionNode } from '@types';
+
 export const Head: HeadFC = () => {
   return (
     <SEO title={`글 목록`} description={`Write, Explain, Edit, Zip`} pathname="/list">

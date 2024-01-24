@@ -1,9 +1,11 @@
-import { NotionNode } from '@types';
 import React from 'react';
+
 import './PostsItem.scss';
-import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
-import { Linker } from '@components/ui';
 import { Series, TitleDescription } from '@components/post';
+import { Linker } from '@components/ui';
+import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
+
+import { NotionNode } from '@types';
 
 interface PostsItemProps {
   post: NotionNode;

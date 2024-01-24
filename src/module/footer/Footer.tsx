@@ -1,9 +1,10 @@
 import * as React from 'react';
+
 import './Footer.scss';
-import { OWNER_EMAIL } from '@src/constants';
 import { IconGithub, IconInstagram, IconKakao, IconMail } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
 import { Linker } from '@components/ui';
+import { OWNER_EMAIL } from '@src/constants';
 
 export default function Footer() {
   return (

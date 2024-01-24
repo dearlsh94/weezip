@@ -1,5 +1,6 @@
-import { IconClearAll } from '@components/icon';
 import React from 'react';
+
+import { IconClearAll } from '@components/icon';
 import './PostEmptyChecker.scss';
 import { moveToPostsPage } from '@utils/url';
 

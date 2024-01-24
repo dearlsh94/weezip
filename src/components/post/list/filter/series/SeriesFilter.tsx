@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { Series } from '@components/post';
 import './SeriesFilter.scss';
-import { useWeezipNotion } from '@src/hooks/useWeezipNotion';
+import { useWeezipNotion } from '@hooks/useWeezipNotion';
 
 export default function SeriesFilter() {
   const { everyPostsSeries } = useWeezipNotion();

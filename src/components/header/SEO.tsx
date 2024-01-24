@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { useSiteMetadata } from '@services/use-site-metadata';
 
 interface SEOProps {

@@ -1,6 +1,8 @@
+import { Link } from 'gatsby';
+
 import * as React from 'react';
 import { AnchorHTMLAttributes } from 'react';
-import { Link } from 'gatsby';
+
 
 interface LinkerProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   url: string;

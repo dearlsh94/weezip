@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import useScroll from './useScroll';
 
 export const usePostActiveText = (

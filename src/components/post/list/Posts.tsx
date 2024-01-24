@@ -1,10 +1,14 @@
 import * as React from 'react';
+
 import './Posts.scss';
-import { NotionNode } from '@types';
-import usePagination from '@src/hooks/usePagination';
+import usePagination from '@hooks/usePagination';
+
+
+import { PostEmptyChecker } from './emptyChecker';
 import { PostsItem } from './item';
 import { Pagination } from '../pagination';
-import { PostEmptyChecker } from './emptyChecker';
+
+import { NotionNode } from '@types';
 
 interface PostsProps {
   list: NotionNode[];

@@ -1,8 +1,9 @@
 import * as React from 'react';
+
 import './RecommendTag.scss';
+import { Linker } from '@components/ui';
 import { HelpText } from '@components/ui/text';
 import { RECOMMEND_TAGS } from '@src/constants';
-import { Linker } from '@components/ui';
 
 export default function RecommendTag() {
   return (

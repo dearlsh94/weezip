@@ -1,9 +1,11 @@
-import { IconSingleArrow } from '@components/icon';
-import { NotionNode } from '@types';
 import React from 'react';
+
 import './LatestPostItem.scss';
-import { Linker } from '@components/ui';
+import { IconSingleArrow } from '@components/icon';
 import { Tags } from '@components/post';
+import { Linker } from '@components/ui';
+
+import { NotionNode } from '@types';
 
 interface LatestPostItemProps {
   post: NotionNode;

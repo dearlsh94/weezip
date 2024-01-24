@@ -1,7 +1,9 @@
 import * as React from 'react';
+
 import './SideBarNavigation.scss';
 import { SideLayout } from '@layout/side';
 import { GNB_MENUS } from '@src/constants';
+
 import { SideBarNavItem } from './item';
 
 interface SideBarNavigationProps {

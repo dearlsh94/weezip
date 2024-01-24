@@ -1,12 +1,15 @@
 import * as React from 'react';
-import { Code } from '@types';
-import './NCode.scss';
-import { NParagraph } from '@components/notion';
-import useClipboard from '@src/hooks/useClipboard';
-import { getPlainTextByRichText } from '@utils/notion';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/light';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+import './NCode.scss';
+
 import { IconCopyLink } from '@components/icon';
+import { NParagraph } from '@components/notion';
+import useClipboard from '@hooks/useClipboard';
+import { getPlainTextByRichText } from '@utils/notion';
+
+import { Code } from '@types';
 
 interface NCodeProps {
   code: Code;

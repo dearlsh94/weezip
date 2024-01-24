@@ -1,8 +1,11 @@
 import * as React from 'react';
+
 import './NBulletedList.scss';
 import { NParagraph } from '@components/notion';
-import { BulletedListItemChildren } from '@types';
 import { Contents } from '@components/post';
+
+import { BulletedListItemChildren } from '@types';
+
 
 interface NBulletedListProps {
   bulletedListItem: BulletedListItemChildren;

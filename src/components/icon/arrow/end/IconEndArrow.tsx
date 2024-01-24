@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { PropsWithDirection, SvgController, SvgControllerProps } from '@components/icon/SvgController';
 
 export default function IconEndArrow(props: PropsWithDirection<SvgControllerProps>) {

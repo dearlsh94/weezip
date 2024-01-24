@@ -1,7 +1,10 @@
 import * as React from 'react';
+
 import './NParagraph.scss';
-import { Caption, RichText, TextBlock, TextItem } from '@types';
 import { Linker } from '@components/ui';
+
+import { Caption, RichText, TextBlock, TextItem } from '@types';
+
 
 interface NParagraphProps {
   paragraph?: TextBlock;

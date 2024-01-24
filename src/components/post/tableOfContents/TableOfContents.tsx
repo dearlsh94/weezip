@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+
+import useResize from '@hooks/useResize';
+
 import { TableOfContentsBlock, TableOfContentsSide } from '.';
-import useResize from '@src/hooks/useResize';
 
 interface TableOfContentsProps {
   target: ('h1' | 'h2' | 'h3')[];

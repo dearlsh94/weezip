@@ -1,8 +1,10 @@
 import * as React from 'react';
+
 import './TableOfContentsBlock.scss';
-import { usePostActiveText } from '@src/hooks/usePostActiveText';
-import useShow from '@src/hooks/useShow';
 import { IconSingleArrow } from '@components/icon';
+import { usePostActiveText } from '@hooks/usePostActiveText';
+import useShow from '@hooks/useShow';
+
 import { TableOfContentsItem } from '../item';
 
 interface TableOfContentsBlockProps {

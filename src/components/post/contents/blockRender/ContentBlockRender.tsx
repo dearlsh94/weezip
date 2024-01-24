@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BlockType, NotionChildrenType } from '@types';
+
 import {
   NHeading1,
   NHeading2,
@@ -16,6 +16,8 @@ import {
 } from '@components/notion';
 import NImage from '@components/notion/image/MyImage';
 import { Divider } from '@components/ui';
+
+import { BlockType, NotionChildrenType } from '@types';
 
 interface ContentBlockRenderProps {
   block: NotionChildrenType;
