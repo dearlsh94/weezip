@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
-import './TagsFilter.scss';
+import React from 'react';
 import { TagItem } from '@components/post';
-import { NotionContext } from '@store/index';
+import './TagsFilter.scss';
+import { useNotion } from '@src/hooks/useNotion';
 
 export default function TagsFilter() {
-  const { everyPostsTags } = useContext(NotionContext);
+  const { everyPostsTags } = useNotion();
   return (
-    everyPostsTags &&
     everyPostsTags?.length > 0 && (
       <div className="tag filter">
         <p className="title">태그</p>

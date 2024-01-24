@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { HeadFC, PageProps, graphql } from 'gatsby';
 import '@scss/global.scss';
 import '@scss/pages/PostsPage.scss';
-import { NotionContext, NotionContextProps } from '@store/context';
 import { NotionNode } from '@types';
 import SEO from '@components/header/SEO';
 import { GlobalPortal } from '@components/GlobalPortal';
@@ -21,13 +20,9 @@ export const Head: HeadFC = () => {
   );
 };
 
-const ListPage: React.FC<PageProps> = ({ data, location }) => {
+const ListPage: React.FC<PageProps> = ({ location }) => {
   const params = new URLSearchParams(location.search);
-  const { posts, everyPostsTags, everyPostsSeries } = useNotion();
-  const store: NotionContextProps = {
-    everyPostsTags: everyPostsTags,
-    everyPostsSeries: everyPostsSeries,
-  };
+  const { posts } = useNotion();
 
   const [list, setList] = useState<NotionNode[]>([]);
   const [filterText, setFilterText] = useState('전체');
@@ -70,18 +65,16 @@ const ListPage: React.FC<PageProps> = ({ data, location }) => {
 
   return (
     <GlobalPortal.Provider>
-      <NotionContext.Provider value={store}>
-        <MainLayout className="posts-layout">
-          <section className="posts-layout__header">
-            <PostsFilter />
-            <PostsDescription isLoading={isLoading} length={list.length} filteredText={filterText} />
-          </section>
-          <Divider color="primary" height={2} />
-          <LoadContainer isLoading={isLoading} isError={false}>
-            <Posts list={list} />
-          </LoadContainer>
-        </MainLayout>
-      </NotionContext.Provider>
+      <MainLayout className="posts-layout">
+        <section className="posts-layout__header">
+          <PostsFilter />
+          <PostsDescription isLoading={isLoading} length={list.length} filteredText={filterText} />
+        </section>
+        <Divider color="primary" height={2} />
+        <LoadContainer isLoading={isLoading} isError={false}>
+          <Posts list={list} />
+        </LoadContainer>
+      </MainLayout>
     </GlobalPortal.Provider>
   );
 };

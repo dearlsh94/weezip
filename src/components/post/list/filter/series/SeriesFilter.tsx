@@ -1,12 +1,11 @@
+import React from 'react';
 import { Series } from '@components/post';
-import React, { useContext } from 'react';
 import './SeriesFilter.scss';
-import { NotionContext } from '@store/context';
+import { useNotion } from '@src/hooks/useNotion';
 
 export default function SeriesFilter() {
-  const { everyPostsSeries } = useContext(NotionContext);
+  const { everyPostsSeries } = useNotion();
   return (
-    everyPostsSeries &&
     everyPostsSeries?.length > 0 && (
       <div className="filter">
         <p className="title">시리즈</p>
