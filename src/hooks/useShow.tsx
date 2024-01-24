@@ -5,9 +5,15 @@ const useShow = () => {
 
   return {
     isShow,
-    show: () => setIsShow(true),
-    hide: () => setIsShow(false),
-    change: () => setIsShow(!isShow),
+    show() {
+      setIsShow(true);
+    },
+    hide() {
+      setIsShow(false);
+    },
+    change() {
+      setIsShow(!isShow);
+    },
   };
 };
 

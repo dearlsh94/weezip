@@ -8,7 +8,9 @@ interface SnowflakeState {
 }
 export const useSnowflakeStore = create<SnowflakeState>(set => ({
   isShow: true,
-  change: () => set(({ isShow }) => ({ isShow: !isShow })),
+  change() {
+    set(({ isShow }) => ({ isShow: !isShow }));
+  },
 }));
 
 interface ThemeState {
@@ -18,8 +20,12 @@ interface ThemeState {
 }
 export const useThemeStore = create<ThemeState>(set => ({
   theme: Themes.LIGHT,
-  setDarkTheme: () => set(() => ({ theme: Themes.DARK })),
-  setLightTheme: () => set(() => ({ theme: Themes.LIGHT })),
+  setDarkTheme() {
+    set(() => ({ theme: Themes.DARK }));
+  },
+  setLightTheme() {
+    set(() => ({ theme: Themes.LIGHT }));
+  },
 }));
 
 interface EveryPostsTagNamesState {
