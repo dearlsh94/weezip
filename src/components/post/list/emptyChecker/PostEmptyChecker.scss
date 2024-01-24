@@ -10,12 +10,12 @@
   span {
     display: flex;
     align-items: center;
-    cursor: pointer;
-    text-decoration: underline;
     margin-top: 16px;
-    font-weight: 500;
-    font-size: 13pt;
     color: var(--color-primary);
+    cursor: pointer;
+    font-size: 13pt;
+    font-weight: 500;
+    text-decoration: underline;
 
     @include hover-fine {
       svg {

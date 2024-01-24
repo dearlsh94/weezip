@@ -2,22 +2,22 @@
   margin: 12px 0;
 
   ol {
-    border-radius: 0.3rem;
     display: inline-flex;
-    flex-direction: row;
-    list-style: none;
-    padding: 0;
-    margin: 0;
     overflow: hidden;
+    flex-direction: row;
+    padding: 0;
+    border-radius: 0.3rem;
+    margin: 0;
+    list-style: none;
 
     li {
+      position: relative;
       background: var(--color-background);
       color: #333;
+      font-size: 0.85rem;
       outline: none;
-      position: relative;
       text-decoration: none;
       transition: all 0.2s linear;
-      font-size: 0.85rem;
 
       a {
         display: block;
@@ -28,21 +28,21 @@
 
       &::after,
       &::before {
-        background: var(--color-background);
+        position: absolute;
+        z-index: 1;
+        top: 0;
         bottom: 0;
+        left: 100%;
+        width: 1em;
+        background: var(--color-background);
         clip-path: polygon(50% 50%, -50% -50%, 0 100%);
         content: '';
-        left: 100%;
-        position: absolute;
-        top: 0;
         transition: all 0.2s linear;
-        width: 1em;
-        z-index: 1;
       }
 
       &::before {
-        background: var(--color-base);
         margin-left: 1px;
+        background: var(--color-base);
       }
 
       &:hover,

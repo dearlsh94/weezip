@@ -4,19 +4,19 @@
 .snb-open-icon {
   @include flex-center;
 
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  background: none;
-  border: none;
-  z-index: 10;
   position: fixed;
+  z-index: 10;
   top: 12px;
   left: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
 
   @include hover-fine {
-    background-color: var(--color-secondary);
     border-radius: 4px;
+    background-color: var(--color-secondary);
   }
 }

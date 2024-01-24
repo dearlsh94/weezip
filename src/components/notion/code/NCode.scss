@@ -1,18 +1,18 @@
 .block-code {
-  line-height: 1.75rem;
-  background-color: #efefef;
-  margin: 16px 0;
-  border-radius: 4px;
   position: relative;
   display: flex;
   flex-direction: column;
+  border-radius: 4px;
+  margin: 16px 0;
+  background-color: #efefef;
+  line-height: 1.75rem;
 
   pre {
-    white-space: pre-wrap;
     width: 100%;
-    margin: 0;
-    border-radius: 4px;
     box-sizing: border-box;
+    border-radius: 4px;
+    margin: 0;
+    white-space: pre-wrap;
   }
 
   span.linenumber {
@@ -21,8 +21,8 @@
 
   .code-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 8px 12px 0;
 
     .language {
@@ -32,8 +32,8 @@
   }
 
   .caption {
-    color: var(--color-grey);
     padding: 2px 12px;
+    color: var(--color-grey);
     font-size: 9pt;
   }
 }

@@ -2,12 +2,12 @@
 
 .posts-description {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
 
   svg {
-    cursor: pointer;
     margin-right: 8px;
+    cursor: pointer;
 
     @include hover-fine {
       @include animation-rotate(1s);
@@ -15,8 +15,8 @@
   }
 
   .count-box {
-    font-size: 10pt;
     color: var(--color-grey);
+    font-size: 10pt;
 
     @include ellipsis;
 

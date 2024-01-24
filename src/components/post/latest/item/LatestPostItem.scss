@@ -11,20 +11,20 @@
 
   a {
     position: relative;
-    box-sizing: border-box;
-    padding: 1rem;
+    display: flex;
+    overflow: hidden;
     width: 100%;
     height: 100%;
-    display: flex;
+    box-sizing: border-box;
     flex-direction: column;
+    padding: 1rem;
     border: 1.2px solid var(--color-primary);
     border-radius: 8px;
-    overflow: hidden;
     font-size: 1.05rem;
 
     p {
-      margin-bottom: 1.45rem;
       flex: 1;
+      margin-bottom: 1.45rem;
     }
 
     span {
@@ -32,18 +32,18 @@
     }
 
     .corner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: absolute;
+      z-index: -1;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      overflow: hidden;
       width: 32px;
       height: 32px;
-      overflow: hidden;
-      bottom: 0;
-      right: 0;
-      z-index: -1;
-      background-color: var(--color-corner);
+      align-items: center;
+      justify-content: center;
       border-radius: 28px 0 4px;
+      background-color: var(--color-corner);
       transform: scale(1);
       transition: transform 0.5s ease-out;
     }

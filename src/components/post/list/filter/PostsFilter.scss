@@ -4,8 +4,8 @@
   @include flex-center;
 
   width: 100%;
-  margin: 0 auto;
-  flex-direction: column;
   box-sizing: border-box;
+  flex-direction: column;
+  margin: 0 auto;
   row-gap: 16px;
 }

@@ -1,10 +1,10 @@
 @import '@scss/abstracts/mixin';
 
 .table-of-contents-item {
-  cursor: pointer;
-  list-style: none;
-  letter-spacing: -0.8px;
   margin-top: 8px;
+  cursor: pointer;
+  letter-spacing: -0.8px;
+  list-style: none;
 
   @include hover-fine {
     @include text-gradient;

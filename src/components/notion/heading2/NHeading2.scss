@@ -3,7 +3,7 @@
 h2 {
   @include text-gradient;
 
-  font-size: 1.5em;
   color: var(--color-header);
+  font-size: 1.5em;
   margin-block: 1em 0.5em;
 }
