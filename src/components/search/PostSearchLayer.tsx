@@ -36,8 +36,8 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
   };
 
   return (
-    <DimLayout handleClose={handleClose}>
-      <GlobalPortal.Consumer>
+    <GlobalPortal.Consumer>
+      <DimLayout handleClose={handleClose}>
         <div className="post-search-container">
           <div className="post-search-box">
             <div className="icon-close-box">
@@ -62,7 +62,7 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
             <RecommendTag />
           </div>
         </div>
-      </GlobalPortal.Consumer>
-    </DimLayout>
+      </DimLayout>
+    </GlobalPortal.Consumer>
   );
 }
