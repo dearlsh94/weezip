@@ -1,7 +1,8 @@
 @import '@scss/abstracts/mixin';
 
 .latest-post-item {
-  @include flexCenter;
+  @include flex-center;
+
   min-height: 48px;
   border-radius: 8px;
   box-shadow:
@@ -25,6 +26,7 @@
       margin-bottom: 1.45rem;
       flex: 1;
     }
+
     span {
       font-size: 0.75rem;
     }
@@ -41,20 +43,23 @@
       right: 0;
       z-index: -1;
       background-color: var(--color-corner);
-      border-radius: 28px 0px 4px 0px;
+      border-radius: 28px 0 4px;
       transform: scale(1);
       transition: transform 0.5s ease-out;
     }
+
     svg {
       position: absolute;
       right: 6px;
       bottom: 6px;
       transition: transform 0.4s;
     }
-    @include hoverFine {
+
+    @include hover-fine {
       .corner {
         transform: scale(62);
       }
+
       svg {
         transform: translateY(-6px);
       }

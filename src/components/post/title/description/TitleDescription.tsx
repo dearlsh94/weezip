@@ -28,7 +28,7 @@ export default function TitleDescription({
     alert('현재 게시글 주소가 복사되었습니다.');
   };
   return (
-    <div className="post__description">
+    <div className="post-description">
       <Tags tag={tag} useLink={useTagLink} />
       <div className="post__description__right">
         {useCopy && <IconCopyLink size={18} color="secondary" onClick={handleCopy} />}

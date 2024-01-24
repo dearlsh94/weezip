@@ -1,5 +1,6 @@
 .breadcrumb {
-  margin: 12px 0px;
+  margin: 12px 0;
+
   ol {
     border-radius: 0.3rem;
     display: inline-flex;
@@ -25,17 +26,6 @@
         padding: 0.25rem 0.75em 0.25rem 1.25em;
       }
 
-      &:hover,
-      &:hover::after {
-        background: var(--color-breadcrumb-bg);
-      }
-
-      &:focus,
-      &:focus::after {
-        background: #323f4a;
-        color: #fff;
-      }
-
       &::after,
       &::before {
         background: var(--color-background);
@@ -54,6 +44,18 @@
         background: var(--color-base);
         margin-left: 1px;
       }
+
+      &:hover,
+      &:hover::after {
+        background: var(--color-breadcrumb-bg);
+      }
+
+      &:focus,
+      &:focus::after {
+        background: #323f4a;
+        color: #fff;
+      }
+
       &:last-child {
         border-right: none;
       }

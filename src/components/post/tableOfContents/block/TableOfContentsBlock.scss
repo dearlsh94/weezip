@@ -3,7 +3,7 @@
 .table-of-contents-block {
   background-color: var(--color-background-opacity);
   border-radius: 13px;
-  margin: 1rem 0rem 2rem;
+  margin: 1rem 0 2rem;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -51,15 +51,17 @@
         align-items: center;
         transform: rotate(0);
         transition-duration: 0.2s;
+
         &.reverse {
           transform: rotate(-180deg);
         }
       }
 
-      @include hoverFine {
+      @include hover-fine {
         p {
           color: var(--color-primary);
         }
+
         svg path {
           fill: var(--color-primary);
         }
@@ -70,7 +72,7 @@
       margin: 0;
       color: var(--color-grey);
       line-height: 24px;
-      padding-left: 0px;
+      padding-left: 0;
       max-height: 65vh;
       overflow-y: auto;
 
@@ -79,6 +81,7 @@
         padding-left: 16px;
         padding-right: 16px;
       }
+
       .tag-h3 {
         padding-left: 32px;
         padding-right: 16px;

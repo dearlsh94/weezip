@@ -6,12 +6,13 @@
   letter-spacing: -0.8px;
   margin-top: 8px;
 
-  @include hoverFine {
-    @include textGradient;
+  @include hover-fine {
+    @include text-gradient;
   }
 
   &.active {
     font-weight: 700;
-    @include textGradient;
+
+    @include text-gradient;
   }
 }

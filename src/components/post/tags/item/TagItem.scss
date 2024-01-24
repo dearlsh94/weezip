@@ -1,7 +1,8 @@
 @import '@scss/abstracts/mixin';
 
 .tag-item {
-  @include flexCenter;
+  @include flex-center;
+
   padding: 4px;
   font-size: 11pt;
 }

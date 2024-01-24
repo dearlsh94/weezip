@@ -1,7 +1,8 @@
 @import '@scss/abstracts/mixin';
 
 .last-edited-caution {
-  @include flexCenter;
+  @include flex-center;
+
   flex-direction: column;
   box-sizing: border-box;
   row-gap: 8px;
@@ -14,6 +15,7 @@
 
   p {
     text-align: center;
+
     em {
       color: var(--color-red);
       font-style: normal;

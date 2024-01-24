@@ -11,8 +11,9 @@
   .spinner svg {
     cursor: pointer;
     margin-right: 8px;
-    @include hoverFine {
-      @include animationRotate(1s);
+
+    @include hover-fine {
+      @include animation-rotate(1s);
     }
   }
 }

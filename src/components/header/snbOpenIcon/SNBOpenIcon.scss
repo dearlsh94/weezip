@@ -2,7 +2,8 @@
 @import '@scss/abstracts/mixin';
 
 .snb-open-icon {
-  @include flexCenter;
+  @include flex-center;
+
   width: 36px;
   height: 36px;
   cursor: pointer;
@@ -13,7 +14,8 @@
   position: fixed;
   top: 12px;
   left: 12px;
-  @include hoverFine {
+
+  @include hover-fine {
     background-color: var(--color-secondary);
     border-radius: 4px;
   }

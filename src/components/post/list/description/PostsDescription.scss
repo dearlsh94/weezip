@@ -8,26 +8,31 @@
   svg {
     cursor: pointer;
     margin-right: 8px;
-    @include hoverFine {
-      @include animationRotate(1s);
+
+    @include hover-fine {
+      @include animation-rotate(1s);
     }
   }
 
   .count-box {
     font-size: 10pt;
     color: var(--color-grey);
+
     @include ellipsis;
+
+    span {
+      color: var(--color-secondary);
+      font-weight: 500;
+    }
+
     strong {
       color: var(--color-secondary);
       font-weight: 600;
+
       span {
         color: var(--color-grey);
         font-weight: 400;
       }
-    }
-    span {
-      color: var(--color-secondary);
-      font-weight: 500;
     }
   }
 }

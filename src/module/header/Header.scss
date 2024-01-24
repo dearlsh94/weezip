@@ -2,13 +2,13 @@
 
 header {
   background-color: var(--color-background-opacity);
-  @include flexCenter;
+
+  @include flex-center;
+
   flex-direction: row;
   width: 100%;
-  height: 60px;
-  box-shadow: 0px 3px 9px var(--color-shadow);
+  box-shadow: 0 3px 9px var(--color-shadow);
   margin-bottom: 12px;
-  position: relative;
   z-index: 200;
   transition-duration: 0.2s;
 
@@ -20,12 +20,14 @@ header {
     column-gap: 12px;
 
     .icon-box {
-      @include flexCenter;
+      @include flex-center;
+
       width: 36px;
       height: 36px;
       cursor: pointer;
       transition: background-color 0.2s;
-      @include hoverFine {
+
+      @include hover-fine {
         background-color: var(--color-secondary);
         border-radius: 4px;
       }
@@ -39,13 +41,16 @@ header {
   position: sticky;
   top: 0;
   height: 60px;
-  @include animationFadeIn(300ms);
+
+  @include animation-fade-in(300ms);
 
   &.invisible {
     position: sticky;
     top: -60px;
     height: 60px;
-    @include animationFadeOut(300ms);
+
+    @include animation-fade-out(300ms);
+
     .logo-box {
       display: none;
     }

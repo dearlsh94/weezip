@@ -6,11 +6,11 @@
   width: 100vw;
   height: 4px;
   z-index: 1000;
-
   visibility: hidden;
 
   &.visible {
-    @include animationFadeIn(400ms);
+    @include animation-fade-in(400ms);
+
     visibility: visible;
   }
 

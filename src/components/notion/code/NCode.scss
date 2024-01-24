@@ -1,7 +1,7 @@
 .block-code {
   line-height: 1.75rem;
   background-color: #efefef;
-  margin: 16px 0px;
+  margin: 16px 0;
   border-radius: 4px;
   position: relative;
   display: flex;
@@ -17,14 +17,13 @@
 
   span.linenumber {
     user-select: none;
-    -webkit-user-select: none;
   }
 
   .code-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 12px 0px;
+    padding: 8px 12px 0;
 
     .language {
       color: var(--color-grey);

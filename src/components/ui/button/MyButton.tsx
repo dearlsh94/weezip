@@ -2,20 +2,20 @@ import * as React from 'react';
 import './MyButton.scss';
 
 export enum ButtonSize {
-  PRIMARY = 'SIZE-PRIMARY',
-  SECONDARY = 'SIZE-SECONDARY',
-  THIRD = 'SIZE-THIRD',
-  FOURTH = 'SIZE-FOURTH',
+  PRIMARY = 'size-primary',
+  SECONDARY = 'size-secondary',
+  THIRD = 'size-third',
+  FOURTH = 'size-fourth',
 }
 
 export enum ButtonColor {
-  PRIMARY = 'COLOR-PRIMARY',
-  SECONDARY = 'COLOR-SECONDARY',
+  PRIMARY = 'color-primary',
+  SECONDARY = 'color-secondary',
 }
 
 export enum ButtonType {
-  BORDER = 'TYPE-BORDER',
-  BG = 'TYPE-BG',
+  BORDER = 'type-border',
+  BG = 'type-bg',
 }
 
 interface MyBUttonProps extends React.PropsWithChildren<React.HTMLAttributes<HTMLButtonElement>> {

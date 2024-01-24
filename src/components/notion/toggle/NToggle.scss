@@ -1,6 +1,6 @@
 .block-toggle {
   line-height: 1.5rem;
-  margin: 8px 0px 8px 4px;
+  margin: 8px 0 8px 4px;
 
   .toggle-title-box {
     display: flex;
@@ -12,11 +12,13 @@
       margin-right: 6px;
       transform: rotate(0);
       transition-duration: 0.1s;
+
       &.open {
         transform: rotate(90deg);
       }
     }
   }
+
   .toggle-content-box {
     margin-left: 20px;
   }

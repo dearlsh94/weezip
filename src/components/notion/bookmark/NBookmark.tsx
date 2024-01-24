@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import './NBookmark.scss';
 import { NParagraph } from '@components/notion';
 import { Linker } from '@components/ui';
 

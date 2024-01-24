@@ -3,8 +3,8 @@
 .posts-container {
   display: flex;
   flex-direction: column;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   width: 100%;
 
   li {
@@ -17,9 +17,9 @@
     cursor: pointer;
     transition: color 0.2s;
 
-    @include hoverFine {
+    @include hover-fine {
       border-bottom: 2px solid var(--color-primary);
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
 
     a {

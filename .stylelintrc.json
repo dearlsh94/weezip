@@ -1,0 +1,8 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "import-notation": null,
+    "at-rule-no-unknown": null,
+    "media-query-no-invalid": null
+  }
+}
