@@ -34,17 +34,17 @@ export default function Header() {
         <SNBOpenIcon />
         <Linker label="홈으로 이동" url="/">
           <div className="icon-box">
-            <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-64x64.png" width={32} />
+            <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-64x64.png" width={36} />
           </div>
         </Linker>
         {scrollY > 200 && postTitle && <p className="post-title">{postTitle}</p>}
         <div className="right-box">
-          <div className="icon-box">
+          <button className="icon-box">
             <ThemeController />
-          </div>
-          <div aria-label="검색창 열기" className="icon-box" role="button" onClick={searchOverlay.open}>
+          </button>
+          <button aria-label="검색창 열기" className="icon-box" role="button" onClick={searchOverlay.open}>
             <IconSearch />
-          </div>
+          </button>
         </div>
       </header>
       {searchOverlay.isOpen && <PostSearchLayer handleClose={searchOverlay.close} />}

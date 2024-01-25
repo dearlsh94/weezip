@@ -28,26 +28,28 @@ header {
     }
   }
 
+  .icon-box {
+    @include flex-center;
+
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    background: none;
+    border: 0;
+
+    @include hover-fine {
+      border-radius: 4px;
+      background-color: var(--color-secondary);
+    }
+  }
   .right-box {
     position: absolute;
     right: 10px;
     display: flex;
     align-items: center;
-    column-gap: 12px;
-
-    .icon-box {
-      @include flex-center;
-
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-
-      @include hover-fine {
-        border-radius: 4px;
-        background-color: var(--color-secondary);
-      }
-    }
+    column-gap: 8px;
 
     svg {
       cursor: pointer;
