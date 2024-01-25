@@ -30,7 +30,7 @@ export default function TitleDescription({
   return (
     <div className="post-description">
       <Tags tag={tag} useLink={useTagLink} />
-      <div className="post__description__right">
+      <div className="post-description__right">
         {useCopy && (
           <IconCopyLink aria-label="현재 게시글 주소 복사하기" color="secondary" size={18} onClick={handleCopy} />
         )}
