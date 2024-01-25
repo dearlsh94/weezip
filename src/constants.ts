@@ -1,3 +1,5 @@
+export const HOST_DOMAIN = 'weezip.treefeely.com';
+
 export const GNB_MENUS = Object.freeze([
   { url: '/', title: 'Home', isOutLink: false },
   { url: '/list', title: 'List', isOutLink: false },

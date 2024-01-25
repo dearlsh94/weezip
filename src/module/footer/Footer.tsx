@@ -14,7 +14,7 @@ export default function Footer() {
           <p>Contact Me</p>
           <div className="contact-item">
             <CircleIconWrapper color="reverse-mono">
-              <Linker label={`메일 주소 ${OWNER_EMAIL}`} url={`mailto:${OWNER_EMAIL}`}>
+              <Linker label={`${OWNER_EMAIL} 메일 보내기`} url={`mailto:${OWNER_EMAIL}`}>
                 <IconMail color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
