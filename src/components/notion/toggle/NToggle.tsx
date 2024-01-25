@@ -5,6 +5,7 @@ import './NToggle.scss';
 import { IconSingleArrow } from '@components/icon';
 import { NParagraph } from '@components/notion';
 import { Contents } from '@components/post';
+import { ARIA_LABEL } from '@src/constants';
 
 import { NotionChildrenType, TextBlock } from '@types';
 
@@ -19,7 +20,7 @@ export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
   return (
     <details className="block-toggle">
       <summary
-        aria-label={`현재 토글 블럭 ${isOpen ? '접기' : '펼치기'}`}
+        aria-label={`현재 토글 블럭 ${isOpen ? ARIA_LABEL.EXPAND_OFF : ARIA_LABEL.EXPAND_ON}`}
         className="toggle-title-box"
         onClick={() => setIsOpen(!isOpen)}
       >

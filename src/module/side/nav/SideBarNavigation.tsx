@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import './SideBarNavigation.scss';
 import { SideLayout } from '@layout/side';
-import { GNB_MENUS } from '@src/constants';
+import { GNB_MENUS, ARIA_LABEL } from '@src/constants';
 
 import { SideBarNavItem } from './item';
 
@@ -16,12 +16,12 @@ export default function SideBarNavigation({ handleClose }: SideBarNavigationProp
       <nav className="side-bar-nav">
         {GNB_MENUS?.length > 0 && (
           <ul>
-            {GNB_MENUS.map((nav, i) => {
+            {GNB_MENUS.map(nav => {
               return (
                 <SideBarNavItem
                   key={`side-bar-nav-item-${nav.url}`}
                   {...nav}
-                  aria-label={`${nav.title} 메뉴로 이동하기`}
+                  aria-label={`${nav.title} 메뉴로 ${ARIA_LABEL.MOVE}`}
                   onClick={handleClose}
                 />
               );

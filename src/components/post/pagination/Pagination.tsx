@@ -5,6 +5,7 @@ import { IconEndArrow, IconSingleArrow } from '@components/icon';
 import { MyButton } from '@components/ui';
 import { ButtonColor, ButtonSize, ButtonType } from '@components/ui/button/MyButton';
 import { paginationController } from '@hooks/usePagination';
+import { ARIA_LABEL } from '@src/constants';
 
 interface PaginationProps {
   pagination: paginationController;
@@ -18,7 +19,7 @@ export default function Pagination({ pagination }: PaginationProps) {
       <div className="left-box">
         {lastPage > 2 && (
           <MyButton
-            aria-label="첫 페이지로 이동하기"
+            aria-label={`첫 페이지로 ${ARIA_LABEL.MOVE}`}
             className={`page-button first ${currentPage === 1 ? 'disabled' : 'active'}`}
             color={ButtonColor.PRIMARY}
             size={ButtonSize.THIRD}
@@ -30,7 +31,7 @@ export default function Pagination({ pagination }: PaginationProps) {
           </MyButton>
         )}
         <MyButton
-          aria-label="이전 페이지로 이동하기"
+          aria-label={`이전 페이지로 ${ARIA_LABEL.MOVE}`}
           className={`page-button prev ${currentPage === 1 ? 'disabled' : 'active'}`}
           color={ButtonColor.PRIMARY}
           size={ButtonSize.THIRD}
@@ -56,7 +57,7 @@ export default function Pagination({ pagination }: PaginationProps) {
       </div>
       <div className="right-box">
         <MyButton
-          aria-label="다음 페이지로 이동하기"
+          aria-label={`다음 페이지로 ${ARIA_LABEL.MOVE}`}
           className={`page-button next ${currentPage === lastPage ? 'disabled' : 'active'}`}
           color={ButtonColor.PRIMARY}
           size={ButtonSize.THIRD}
@@ -68,7 +69,7 @@ export default function Pagination({ pagination }: PaginationProps) {
         </MyButton>
         {lastPage > 2 && (
           <MyButton
-            aria-label="마지막 페이지로 이동하기"
+            aria-label={`마지막 페이지로 ${ARIA_LABEL.MOVE}`}
             className={`page-button last ${currentPage === lastPage ? 'disabled' : 'active'}`}
             color={ButtonColor.PRIMARY}
             size={ButtonSize.THIRD}

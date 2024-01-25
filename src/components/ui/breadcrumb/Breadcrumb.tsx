@@ -1,6 +1,8 @@
 import React from 'react';
 
 import './Breadcrumb.scss';
+import { ARIA_LABEL } from '@src/constants';
+
 import { Linker } from '../linker';
 
 export interface BreadcrumbStep {
@@ -18,7 +20,7 @@ export default function Breadcrumb({ steps }: BreadcrumbProps) {
       <ol>
         {steps.map(step => (
           <li key={step.name}>
-            <Linker label={`${step.name} 이동`} url={step.url}>
+            <Linker label={`${step.name} ${ARIA_LABEL.MOVE}`} url={step.url}>
               {step.name}
             </Linker>
           </li>

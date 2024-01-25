@@ -5,6 +5,7 @@ import { IconCopyLink } from '@components/icon';
 import { CreateDate, EditDate } from '@components/post';
 import { Tags } from '@components/post/tags';
 import useClipboard from '@hooks/useClipboard';
+import { ARIA_LABEL } from '@src/constants';
 
 import { DateProperty, MultiSelect } from '@types';
 interface TitleDescriptionProps {
@@ -32,7 +33,12 @@ export default function TitleDescription({
       <Tags tag={tag} useLink={useTagLink} />
       <div className="post-description__right">
         {useCopy && (
-          <IconCopyLink aria-label="현재 게시글 주소 복사하기" color="secondary" size={18} onClick={handleCopy} />
+          <IconCopyLink
+            aria-label={`현재 게시글 주소 ${ARIA_LABEL.COPY}`}
+            color="secondary"
+            size={18}
+            onClick={handleCopy}
+          />
         )}
         <CreateDate strDate={createdDate?.date?.start} />
         <EditDate strDate={editedDate?.date?.start} />

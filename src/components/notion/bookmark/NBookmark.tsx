@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { NParagraph } from '@components/notion';
 import { Linker } from '@components/ui';
+import { ARIA_LABEL } from '@src/constants';
 
 import { Bookmark, TextBlock, TextItem } from '@types';
 
@@ -11,7 +12,7 @@ interface NBookmarkProps {
 
 export default function NBookmark({ bookmark }: NBookmarkProps) {
   return (
-    <Linker label={`${bookmark.url} 위치로 이동`} target="_blank" url={bookmark.url}>
+    <Linker label={`${bookmark.url} 위치로 ${ARIA_LABEL.MOVE}`} target="_blank" url={bookmark.url}>
       {bookmark.caption?.length > 0 ? (
         bookmark.caption.map((c: TextItem, i) => {
           const captionParagraph: TextBlock = {

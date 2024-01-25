@@ -4,6 +4,7 @@ import './SNBOpenIcon.scss';
 import { IconDoubleArrow, IconHamburger } from '@components/icon';
 import useOverlay from '@hooks/useOverlay';
 import { SideBarNavigation } from '@module/side';
+import { ARIA_LABEL } from '@src/constants';
 
 export default function SNBOpenIcon() {
   const SNBOverlay = useOverlay();
@@ -12,7 +13,7 @@ export default function SNBOpenIcon() {
   return (
     <>
       <button
-        aria-label="사이드바 메뉴 오픈"
+        aria-label={`사이드바 메뉴 ${ARIA_LABEL.OPEN}`}
         className="snb-open-icon"
         onBlur={() => setIsMenuHover(false)}
         onClick={SNBOverlay.change}

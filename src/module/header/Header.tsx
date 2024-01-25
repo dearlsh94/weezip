@@ -12,6 +12,7 @@ import { PostSearchLayer } from '@components/search';
 import { Linker } from '@components/ui';
 import useOverlay from '@hooks/useOverlay';
 import useScroll from '@hooks/useScroll';
+import { ARIA_LABEL } from '@src/constants';
 import { moveToTop } from '@utils/scroll';
 
 export default function Header() {
@@ -33,7 +34,7 @@ export default function Header() {
     <>
       <header className={`${status}`}>
         <SNBOpenIcon />
-        <Linker label="홈으로 이동" url="/">
+        <Linker label={`홈으로 ${ARIA_LABEL.MOVE}`} url="/">
           <div className="icon-box">
             <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-128x128.png" width={36} />
           </div>
@@ -47,7 +48,12 @@ export default function Header() {
           <button className="icon-box">
             <ThemeController />
           </button>
-          <button aria-label="검색창 열기" className="icon-box" role="button" onClick={searchOverlay.open}>
+          <button
+            aria-label={`검색창 ${ARIA_LABEL.OPEN}`}
+            className="icon-box"
+            role="button"
+            onClick={searchOverlay.open}
+          >
             <IconSearch />
           </button>
         </div>

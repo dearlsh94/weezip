@@ -5,6 +5,7 @@ import './PostSearchLayer.scss';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { IconClose, IconSearch } from '@components/icon';
 import { DimLayout } from '@layout/dim';
+import { ARIA_LABEL } from '@src/constants';
 import { throttle } from '@utils/common';
 import { moveToPostsPage } from '@utils/url';
 
@@ -44,7 +45,7 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
           <div className="post-search-box">
             <div className="icon-close-box">
               <IconClose
-                aria-label="검색창 닫기"
+                aria-label={`검색창 ${ARIA_LABEL.CLOSE}`}
                 className="icon-close"
                 role="button"
                 size={32}
@@ -65,7 +66,7 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
                 />
                 {searchText && (
                   <IconClose
-                    aria-label="검색어 초기화"
+                    aria-label={`검색어 ${ARIA_LABEL.RESET}`}
                     className="icon-clear"
                     role="button"
                     size={28}
@@ -73,7 +74,13 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
                   />
                 )}
               </div>
-              <IconSearch aria-label="검색하기" className="icon-search" role="button" size={28} onClick={search} />
+              <IconSearch
+                aria-label={ARIA_LABEL.SEARCH}
+                className="icon-search"
+                role="button"
+                size={28}
+                onClick={search}
+              />
             </div>
             <RecommendTag />
           </div>

@@ -4,6 +4,7 @@ import './LatestPostItem.scss';
 import { IconSingleArrow } from '@components/icon';
 import { Tags } from '@components/post';
 import { Linker } from '@components/ui';
+import { ARIA_LABEL } from '@src/constants';
 
 import { NotionNode } from '@types';
 
@@ -14,7 +15,7 @@ interface LatestPostItemProps {
 export default function LatestPostItem({ post }: LatestPostItemProps) {
   return (
     <li className="latest-post-item">
-      <Linker label={`${post.notionColumn.remark} 글 보기`} url={post.title}>
+      <Linker label={`${post.notionColumn.remark} 글 페이지로 ${ARIA_LABEL.MOVE}`} url={post.title}>
         <p>{post.notionColumn?.remark}</p>
         {post.notionColumn.tag && <Tags tag={post.notionColumn.tag} />}
         <div className="corner" />

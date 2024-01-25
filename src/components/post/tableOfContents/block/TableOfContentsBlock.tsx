@@ -4,6 +4,7 @@ import './TableOfContentsBlock.scss';
 import { IconSingleArrow } from '@components/icon';
 import { usePostActiveText } from '@hooks/usePostActiveText';
 import useShow from '@hooks/useShow';
+import { ARIA_LABEL } from '@src/constants';
 
 import { TableOfContentsItem } from '../item';
 
@@ -26,11 +27,11 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
     <section className="table-of-contents-block">
       <div className="table-of-contents-block__wrapper">
         <div
-          aria-label={`목차 ${showPostIndex.isShow ? '접기' : '펼치기'}`}
+          aria-label={`목차 ${showPostIndex.isShow ? ARIA_LABEL.EXPAND_OFF : ARIA_LABEL.EXPAND_ON}`}
           className="table-of-contents-block__wrapper__header"
           onClick={showPostIndex.change}
         >
-          <p>목차 {showPostIndex.isShow ? '접기' : '펼치기'}</p>
+          <p>목차 {showPostIndex.isShow ? ARIA_LABEL.EXPAND_OFF : ARIA_LABEL.EXPAND_ON}</p>
           <div className={`icon-box ${showPostIndex.isShow ? 'reverse' : ''}`}>
             <IconSingleArrow direction={'bottom'} size={20} />
           </div>

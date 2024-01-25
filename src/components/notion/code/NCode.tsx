@@ -7,6 +7,7 @@ import './NCode.scss';
 import { IconCopyLink } from '@components/icon';
 import { NParagraph } from '@components/notion';
 import useClipboard from '@hooks/useClipboard';
+import { ARIA_LABEL } from '@src/constants';
 import { getPlainTextByRichText } from '@utils/notion';
 
 import { Code } from '@types';
@@ -27,7 +28,12 @@ export default function NCode({ code }: NCodeProps) {
     <figure className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
       <div className="code-header">
         <small className="language">{code.language}</small>
-        <IconCopyLink aria-label="현재 코드 블럭 복사하기" color={'primary'} size={20} onClick={handleCodeCopy} />
+        <IconCopyLink
+          aria-label={`현재 코드 블럭 ${ARIA_LABEL.COPY}`}
+          color={'primary'}
+          size={20}
+          onClick={handleCodeCopy}
+        />
       </div>
       <SyntaxHighlighter language={code.language} showLineNumbers={true} style={vscDarkPlus}>
         {codeString}

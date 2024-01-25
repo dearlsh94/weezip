@@ -3,6 +3,7 @@ import React from 'react';
 import './PostsItem.scss';
 import { Series, TitleDescription } from '@components/post';
 import { Linker } from '@components/ui';
+import { ARIA_LABEL } from '@src/constants';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
 
 import { NotionNode } from '@types';
@@ -16,7 +17,7 @@ export default function PostsItem({ post }: PostsItemProps) {
 
   return (
     <li>
-      <Linker label={`${post.title} 글 보기`} url={post.title}>
+      <Linker label={`${post.title} 글 페이지로 ${ARIA_LABEL.MOVE}`} url={post.title}>
         <div className={`posts-item`}>
           <div className="posts-item__title">
             {content?.properties?.series?.select && <Series series={content?.properties?.series?.select} />}

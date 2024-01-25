@@ -5,6 +5,7 @@ import * as React from 'react';
 import { GlobalPortal } from '@components/GlobalPortal';
 import SEO from '@components/header/SEO';
 import { Linker } from '@components/ui';
+import { ARIA_LABEL } from '@src/constants';
 
 const mainStyles = {
   padding: '40px',
@@ -27,7 +28,7 @@ const NotFoundPage: React.FC<PageProps> = () => {
           <p>Sorry. we couldn’t find what you were looking for.</p>
         </div>
         <div>
-          <Linker label="홈으로 가기" url="/">
+          <Linker label={`메인 페이지로 ${ARIA_LABEL.MOVE}`} url="/">
             Go Main
           </Linker>
         </div>
