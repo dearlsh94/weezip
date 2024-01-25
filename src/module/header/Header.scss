@@ -17,10 +17,12 @@ header {
   .post-title {
     @include ellipsis;
     @include text-gradient;
+
     display: block;
-    margin-left: 12px;
     max-width: 480px;
+    margin-left: 12px;
     font-weight: 500;
+
     @include mobile {
       display: none;
     }

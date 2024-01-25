@@ -10,7 +10,7 @@ export default function RecommendTag() {
     <div className="recommend-post-tag">
       <HelpText text={'이런 건 어때요?'} />
       {RECOMMEND_TAGS.map(tag => (
-        <Linker key={`recommend-item-${tag.name}`} label={`${tag.name} 목록으로 이동`} className="item" url={tag.url}>
+        <Linker key={`recommend-item-${tag.name}`} className="item" label={`${tag.name} 목록으로 이동`} url={tag.url}>
           #{tag.name}
         </Linker>
       ))}
