@@ -27,7 +27,7 @@ const Giscus = () => {
     script.setAttribute('data-theme', configTheme && configTheme === 'dark' ? 'dark' : 'light');
     script.setAttribute('data-lang', 'ko');
     script.setAttribute('cross-origin', 'anonymous');
-    script.async = true;
+    script.defer = true;
 
     if (giscusRef.current) {
       giscusRef.current.appendChild(script);
