@@ -14,6 +14,18 @@ header {
 
   @include flex-center;
 
+  .post-title {
+    @include ellipsis;
+    @include text-gradient;
+    display: block;
+    margin-left: 12px;
+    max-width: 480px;
+    font-weight: 500;
+    @include mobile {
+      display: none;
+    }
+  }
+
   .right-box {
     position: absolute;
     right: 10px;

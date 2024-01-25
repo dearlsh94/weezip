@@ -16,11 +16,19 @@ import useScroll from '@hooks/useScroll';
 export default function Header() {
   const searchOverlay = useOverlay();
   const [status, setStatus] = useState('');
-  const { scrollY } = useScroll();
+  const { scrollY, isScrollingUp } = useScroll();
+  const [postTitle, setPostTitle] = useState('');
 
   useEffect(() => {
-    setStatus(50 < scrollY && scrollY < document.body.scrollHeight * 0.35 ? 'invisible' : '');
-  }, [scrollY]);
+    setStatus(scrollY < 160 || isScrollingUp ? '' : 'invisible');
+  }, [scrollY, isScrollingUp]);
+
+  useEffect(() => {
+    if (location?.pathname?.startsWith('/post')) {
+      const elTitle = document.querySelector<HTMLHeadingElement>('h1.title');
+      setPostTitle(elTitle?.outerText || '');
+    }
+  }, [location]);
 
   return (
     <>
@@ -31,6 +39,7 @@ export default function Header() {
             <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-64x64.png" width={32} />
           </div>
         </Linker>
+        {scrollY > 200 && postTitle && <p className="post-title">{postTitle}</p>}
         <div className="right-box">
           <div className="icon-box">
             <ThemeController />
