@@ -18,7 +18,11 @@ export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <details className="block-toggle">
-      <summary className="toggle-title-box" onClick={() => setIsOpen(!isOpen)}>
+      <summary
+        aria-label={`현재 토글 블럭 ${isOpen ? '접기' : '펼치기'}`}
+        className="toggle-title-box"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <div className={`icon-box ${isOpen ? 'open' : ''}`}>
           <IconSingleArrow direction="right" size={16} />
         </div>

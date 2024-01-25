@@ -13,7 +13,7 @@ interface SideBarNavItemProps extends React.HTMLAttributes<HTMLLIElement> {
 export default function SideBarNavItem({ url, title, isOutLink, ...props }: SideBarNavItemProps) {
   return (
     <li className="side-bar-nav-item" {...props}>
-      <Linker aria-label={`${title} 이동`} target={isOutLink ? '_blank' : '_parent'} url={url}>
+      <Linker label={`${title} 이동`} target={isOutLink ? '_blank' : '_parent'} url={url}>
         <div className="title-box">
           {title.toUpperCase() === 'HOME' && <IconHome />}
           {title.toUpperCase() === 'LIST' && <IconList />}

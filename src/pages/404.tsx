@@ -27,7 +27,7 @@ const NotFoundPage: React.FC<PageProps> = () => {
           <p>Sorry. we couldn’t find what you were looking for.</p>
         </div>
         <div>
-          <Linker aria-label="홈으로 가기" url="/">
+          <Linker label="홈으로 가기" url="/">
             Go Main
           </Linker>
         </div>

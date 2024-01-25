@@ -43,7 +43,13 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
         <div className="post-search-container">
           <div className="post-search-box">
             <div className="icon-close-box">
-              <IconClose className="icon-close" size={32} onClick={handleClose} />
+              <IconClose
+                aria-label="검색창 닫기"
+                className="icon-close"
+                role="button"
+                size={32}
+                onClick={handleClose}
+              />
             </div>
             <div className="search-box">
               <div className="input-box">
@@ -57,9 +63,17 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
                   onChange={e => setSearchText(e.target.value)}
                   onKeyDown={handleKeyDown}
                 />
-                {searchText && <IconClose className="icon-clear" size={28} onClick={clear} />}
+                {searchText && (
+                  <IconClose
+                    aria-label="검색어 초기화"
+                    className="icon-clear"
+                    role="button"
+                    size={28}
+                    onClick={clear}
+                  />
+                )}
               </div>
-              <IconSearch className="icon-search" size={28} onClick={search} />
+              <IconSearch aria-label="검색하기" className="icon-search" role="button" size={28} onClick={search} />
             </div>
             <RecommendTag />
           </div>

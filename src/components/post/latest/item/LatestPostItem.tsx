@@ -14,7 +14,7 @@ interface LatestPostItemProps {
 export default function LatestPostItem({ post }: LatestPostItemProps) {
   return (
     <li className="latest-post-item">
-      <Linker aria-label={`${post.notionColumn.remark} 글 보기`} url={post.title}>
+      <Linker label={`${post.notionColumn.remark} 글 보기`} url={post.title}>
         <p>{post.notionColumn?.remark}</p>
         {post.notionColumn.tag && <Tags tag={post.notionColumn.tag} />}
         <div className="corner" />

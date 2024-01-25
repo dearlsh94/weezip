@@ -7,9 +7,9 @@ const ThemeController = () => {
   const { theme, changeAndSaveDark, changeAndSaveLight } = useTheme();
 
   return theme === 'light' ? (
-    <IconLightTheme onClick={changeAndSaveDark} />
+    <IconLightTheme aria-label="라이트 모드로 변경하기" onClick={changeAndSaveDark} />
   ) : (
-    <IconDarkTheme onClick={changeAndSaveLight} />
+    <IconDarkTheme aria-label="다크 모드로 변경하기" onClick={changeAndSaveLight} />
   );
 };
 

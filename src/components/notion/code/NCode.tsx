@@ -27,7 +27,7 @@ export default function NCode({ code }: NCodeProps) {
     <figure className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
       <div className="code-header">
         <small className="language">{code.language}</small>
-        <IconCopyLink color={'primary'} size={20} onClick={handleCodeCopy} />
+        <IconCopyLink aria-label="현재 코드 블럭 복사하기" color={'primary'} size={20} onClick={handleCodeCopy} />
       </div>
       <SyntaxHighlighter language={code.language} showLineNumbers={true} style={vscDarkPlus}>
         {codeString}

@@ -17,7 +17,14 @@ export default function SideBarNavigation({ handleClose }: SideBarNavigationProp
         {GNB_MENUS?.length > 0 && (
           <ul>
             {GNB_MENUS.map((nav, i) => {
-              return <SideBarNavItem key={`side-bar-nav-item-${nav.url}`} {...nav} onClick={handleClose} />;
+              return (
+                <SideBarNavItem
+                  key={`side-bar-nav-item-${nav.url}`}
+                  {...nav}
+                  aria-label={`${nav.title} 메뉴로 이동하기`}
+                  onClick={handleClose}
+                />
+              );
             })}
           </ul>
         )}

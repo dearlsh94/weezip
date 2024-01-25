@@ -23,7 +23,7 @@ export default function TableOfContentsSide({ list }: TableOfContentsSideProps) 
   return (
     <SideLayout>
       <ol className="table-of-contents-side">
-        <li className="tag-top" onClick={moveToTop}>
+        <li aria-label="페이지 최상단으로 이동하기" className="tag-top" onClick={moveToTop}>
           맨위로
         </li>
         {list.map((item, i) => {

@@ -13,7 +13,7 @@ interface PostsDescriptionProps {
 export default function PostsDescription({ isLoading, length, filteredText }: PostsDescriptionProps) {
   return (
     <div className={`posts-description ${isLoading ? 'loading' : ''}`}>
-      <IconClearAll onClick={() => moveToPostsPage({})} />
+      <IconClearAll aria-label="글 목록 페이지로 이동하기" onClick={() => moveToPostsPage({})} />
       <div className="count-box ellipsis">
         {filteredText && (
           <strong>

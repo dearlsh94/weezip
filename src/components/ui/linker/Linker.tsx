@@ -5,17 +5,18 @@ import { AnchorHTMLAttributes } from 'react';
 
 interface LinkerProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   url: string;
-  children?: React.ReactNode;
+  label: string;
   target?: '_blank' | '_parent' | '_self' | '_top';
+  children?: React.ReactNode;
 }
 
-export default function Linker({ url, target, children, ...rest }: LinkerProps) {
+export default function Linker({ url, label, target, children, ...rest }: LinkerProps) {
   return url.startsWith('https://') && !url.startsWith('https://weezip.treefeely.com') ? (
-    <a href={url} rel="noopener noreferrer" target={target} {...rest}>
+    <a aria-label={label} href={url} rel="noopener noreferrer" target={target} {...rest}>
       {children}
     </a>
   ) : (
-    <Link aria-label={rest['aria-label']} to={url}>
+    <Link aria-label={label} to={url}>
       {children}
     </Link>
   );

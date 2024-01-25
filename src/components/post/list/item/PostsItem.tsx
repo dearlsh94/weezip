@@ -16,7 +16,7 @@ export default function PostsItem({ post }: PostsItemProps) {
 
   return (
     <li>
-      <Linker aria-label={`${post.title} 글 보기`} url={post.title}>
+      <Linker label={`${post.title} 글 보기`} url={post.title}>
         <div className={`posts-item`}>
           <div className="posts-item__title">
             {content?.properties?.series?.select && <Series series={content?.properties?.series?.select} />}

@@ -8,7 +8,12 @@ export default function SnowflakeHandler() {
   const { isShow, change } = useSnowflakeStore();
 
   return (
-    <CircleIconWrapper color="secondary" size={44} onClick={change}>
+    <CircleIconWrapper
+      aria-label={`눈송이 효과 ${isShow ? '끄기' : '켜기'}`}
+      color="secondary"
+      size={44}
+      onClick={change}
+    >
       <IconSnow color={`${isShow ? `primary` : `secondary`}`} direction="top" />
     </CircleIconWrapper>
   );

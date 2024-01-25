@@ -13,7 +13,7 @@ export default function OutLink({ series }: OutLinkProps) {
   return (
     <div className="out-link-box">
       {series && (
-        <Linker aria-label={`${series.name} 시리즈 목록으로 이동`} url={`/list?series=${series.name}`}>
+        <Linker label={`${series.name} 시리즈 목록으로 이동`} url={`/list?series=${series.name}`}>
           <MyButton
             className="series-button"
             color={ButtonColor.PRIMARY}
@@ -26,7 +26,7 @@ export default function OutLink({ series }: OutLinkProps) {
           </MyButton>
         </Linker>
       )}
-      <Linker aria-label="전체 목록 보기" url={`/list`}>
+      <Linker label="전체 목록 보기" url={`/list`}>
         <MyButton color={ButtonColor.PRIMARY} size={ButtonSize.PRIMARY} type={ButtonType.BORDER} width={'100%'}>
           포스트 전체보기
         </MyButton>

@@ -20,7 +20,7 @@ export default function MoveTopButton() {
 
   return (
     showButton.isShow && (
-      <CircleIconWrapper color="secondary" size={44} onClick={moveToTop}>
+      <CircleIconWrapper aria-label={'페이지 최상단으로 이동하기'} color="secondary" size={44} onClick={moveToTop}>
         <IconEndArrow color="primary" direction="top" />
       </CircleIconWrapper>
     )

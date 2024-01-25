@@ -15,7 +15,7 @@ export default function Share() {
 
   return (
     <div className="share-box">
-      <CircleIconWrapper color={'secondary'} onClick={handleCopy}>
+      <CircleIconWrapper aria-label={'현재 게시글 주소 복사하기'} color={'secondary'} onClick={handleCopy}>
         <IconCopyLink />
       </CircleIconWrapper>
     </div>

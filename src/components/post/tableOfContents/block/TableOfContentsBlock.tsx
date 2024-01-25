@@ -25,8 +25,12 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
   return (
     <section className="table-of-contents-block">
       <div className="table-of-contents-block__wrapper">
-        <div className="table-of-contents-block__wrapper__header" onClick={showPostIndex.change}>
-          <p>목차 {showPostIndex.isShow ? '숨기기' : '보기'}</p>
+        <div
+          aria-label={`목차 ${showPostIndex.isShow ? '접기' : '펼치기'}`}
+          className="table-of-contents-block__wrapper__header"
+          onClick={showPostIndex.change}
+        >
+          <p>목차 {showPostIndex.isShow ? '접기' : '펼치기'}</p>
           <div className={`icon-box ${showPostIndex.isShow ? 'reverse' : ''}`}>
             <IconSingleArrow direction={'bottom'} size={20} />
           </div>

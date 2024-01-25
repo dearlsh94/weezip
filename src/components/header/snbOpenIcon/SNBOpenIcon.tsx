@@ -12,6 +12,7 @@ export default function SNBOpenIcon() {
   return (
     <>
       <button
+        aria-label="사이드바 메뉴 오픈"
         className="snb-open-icon"
         onBlur={() => setIsMenuHover(false)}
         onClick={SNBOverlay.change}

@@ -15,7 +15,7 @@ export default function Series({ series, useLink = false, ...rest }: SeriesProps
     useLink ? Linker : 'span',
     {
       url: `/list?series=${encodeURIComponent(series?.name)}`,
-      'aria-label': `${series?.name} 시리즈 목록으로 이동`,
+      label: `${series?.name} 시리즈 목록으로 이동`,
       ...rest,
     },
     <span className={`series-box ${useLink ? 'link' : 'normal'}`}>[{series?.name}]</span>

@@ -26,7 +26,7 @@ export default function Header() {
     <>
       <header className={`${status}`}>
         <SNBOpenIcon />
-        <Linker aria-label="홈으로 이동" url="/">
+        <Linker label="홈으로 이동" url="/">
           <div className="icon-box">
             <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-64x64.png" width={32} />
           </div>
@@ -35,7 +35,7 @@ export default function Header() {
           <div className="icon-box">
             <ThemeController />
           </div>
-          <div className="icon-box" onClick={searchOverlay.open}>
+          <div aria-label="검색창 열기" className="icon-box" role="button" onClick={searchOverlay.open}>
             <IconSearch />
           </div>
         </div>

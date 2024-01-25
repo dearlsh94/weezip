@@ -10,7 +10,7 @@ export default function DimLayout({ children, handleClose }: DimLayoutProps) {
   return (
     <>
       {children}
-      {handleClose && <aside className="dim-layout" onClick={handleClose} />}
+      {handleClose && <aside aria-label="팝업 닫기" className="dim-layout" onClick={handleClose} />}
     </>
   );
 }

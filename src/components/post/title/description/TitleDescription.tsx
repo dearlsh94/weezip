@@ -31,7 +31,9 @@ export default function TitleDescription({
     <div className="post-description">
       <Tags tag={tag} useLink={useTagLink} />
       <div className="post__description__right">
-        {useCopy && <IconCopyLink color="secondary" size={18} onClick={handleCopy} />}
+        {useCopy && (
+          <IconCopyLink aria-label="현재 게시글 주소 복사하기" color="secondary" size={18} onClick={handleCopy} />
+        )}
         <CreateDate strDate={createdDate?.date?.start} />
         <EditDate strDate={editedDate?.date?.start} />
       </div>
