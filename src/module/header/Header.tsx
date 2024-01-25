@@ -24,11 +24,9 @@ export default function Header() {
   }, [scrollY, isScrollingUp]);
 
   useEffect(() => {
-    if (location?.pathname?.startsWith('/post')) {
-      const elTitle = document.querySelector<HTMLHeadingElement>('h1.title');
-      setPostTitle(elTitle?.outerText || '');
-    }
-  }, [location]);
+    const elTitle = document.querySelector<HTMLHeadingElement>('.post-title h1.title');
+    setPostTitle(elTitle?.outerText || '');
+  }, []);
 
   return (
     <>
