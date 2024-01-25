@@ -12,6 +12,7 @@ import { PostSearchLayer } from '@components/search';
 import { Linker } from '@components/ui';
 import useOverlay from '@hooks/useOverlay';
 import useScroll from '@hooks/useScroll';
+import { moveToTop } from '@utils/scroll';
 
 export default function Header() {
   const searchOverlay = useOverlay();
@@ -34,10 +35,14 @@ export default function Header() {
         <SNBOpenIcon />
         <Linker label="홈으로 이동" url="/">
           <div className="icon-box">
-            <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-64x64.png" width={36} />
+            <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-128x128.png" width={36} />
           </div>
         </Linker>
-        {scrollY > 200 && postTitle && <p className="post-title">{postTitle}</p>}
+        {scrollY > 200 && postTitle && (
+          <p className="title" onClick={moveToTop}>
+            {postTitle}
+          </p>
+        )}
         <div className="right-box">
           <button className="icon-box">
             <ThemeController />
