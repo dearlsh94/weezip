@@ -1,9 +1,11 @@
 import * as React from 'react';
+
 import './TableOfContentsSide.scss';
-import { moveToTop } from '@utils/scroll';
-import { usePostActiveText } from '@src/hooks/usePostActiveText';
+import { TableOfContentsItem } from '@components/post';
+import { usePostActiveText } from '@hooks/usePostActiveText';
 import { SideLayout } from '@layout/side';
-import { TableOfContentsItem } from '../item';
+import { ARIA_LABEL } from '@src/constants';
+import { moveToTop } from '@utils/scroll';
 
 interface TableOfContentsSideProps {
   list: HTMLHeadingElement[];
@@ -21,13 +23,13 @@ export default function TableOfContentsSide({ list }: TableOfContentsSideProps) 
   return (
     <SideLayout>
       <ol className="table-of-contents-side">
-        <li className="tag-top" onClick={moveToTop}>
+        <li aria-label={`페이지 최상단으로 ${ARIA_LABEL.MOVE}`} className="tag-top" onClick={moveToTop}>
           맨위로
         </li>
         {list.map((item, i) => {
           const text = item.outerText;
           return (
-            <TableOfContentsItem key={`table-of-contents-side-item-${i}`} item={item} isActive={activeText === text} />
+            <TableOfContentsItem key={`table-of-contents-side-item-${i}`} isActive={activeText === text} item={item} />
           );
         })}
       </ol>

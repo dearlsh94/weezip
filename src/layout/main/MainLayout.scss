@@ -2,25 +2,26 @@
 
 .main-layout {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0 auto;
   width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
 
   .content {
-    box-sizing: border-box;
+    position: relative;
     width: 100%;
-    min-height: calc(100vh - 50px - 12px);
     max-width: 768px;
+    min-height: calc(100vh - 50px - 12px);
+    box-sizing: border-box;
     padding: 12px 20px;
     word-wrap: break-word;
-    position: relative;
 
     .center {
       display: flex;
       flex-direction: column;
       align-items: center;
+
       .block-paragraph {
         text-align: center !important;
       }

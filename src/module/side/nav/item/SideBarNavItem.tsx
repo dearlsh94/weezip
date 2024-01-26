@@ -1,7 +1,9 @@
-import { IconHome, IconList, IconOutLink, IconStar } from '@components/icon';
 import React from 'react';
+
+import { IconHome, IconList, IconOutLink, IconStar } from '@components/icon';
 import './SideBarNavItem.scss';
 import { Linker } from '@components/ui';
+import { ARIA_LABEL } from '@src/constants';
 
 interface SideBarNavItemProps extends React.HTMLAttributes<HTMLLIElement> {
   url: string;
@@ -12,7 +14,7 @@ interface SideBarNavItemProps extends React.HTMLAttributes<HTMLLIElement> {
 export default function SideBarNavItem({ url, title, isOutLink, ...props }: SideBarNavItemProps) {
   return (
     <li className="side-bar-nav-item" {...props}>
-      <Linker url={url} target={isOutLink ? '_blank' : '_parent'} aria-label={`${title} 이동`}>
+      <Linker label={`${title} ${ARIA_LABEL.MOVE}`} target={isOutLink ? '_blank' : '_parent'} url={url}>
         <div className="title-box">
           {title.toUpperCase() === 'HOME' && <IconHome />}
           {title.toUpperCase() === 'LIST' && <IconList />}

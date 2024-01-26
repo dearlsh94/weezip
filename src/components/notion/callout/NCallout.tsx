@@ -1,8 +1,11 @@
 import * as React from 'react';
+
 import './NCallout.scss';
-import { Callout, NotionChildrenType } from '@types';
+
 import { NParagraph } from '@components/notion';
 import { Contents } from '@components/post';
+
+import { Callout, NotionChildrenType } from '@types';
 interface NCalloutProps {
   callout: Callout;
   children: NotionChildrenType[];

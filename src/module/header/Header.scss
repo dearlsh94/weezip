@@ -1,51 +1,76 @@
 @import '@scss/abstracts/mixin';
 
 header {
-  background-color: var(--color-background-opacity);
-  @include flexCenter;
-  flex-direction: row;
+  position: sticky;
+  z-index: 200;
+  top: 0;
   width: 100%;
   height: 60px;
-  box-shadow: 0px 3px 9px var(--color-shadow);
+  flex-direction: row;
   margin-bottom: 12px;
-  position: relative;
-  z-index: 200;
+  background-color: var(--color-background-opacity);
+  box-shadow: 0 3px 9px var(--color-shadow);
   transition-duration: 0.2s;
+
+  @include flex-center;
+
+  .title {
+    @include ellipsis;
+    @include text-gradient;
+
+    display: block;
+    max-width: 480px;
+    margin-left: 12px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .icon-box {
+    @include flex-center;
+
+    width: 48px;
+    height: 48px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    @include hover-fine {
+      border-radius: 4px;
+      background-color: var(--color-secondary);
+    }
+  }
 
   .right-box {
     position: absolute;
     right: 10px;
     display: flex;
     align-items: center;
-    column-gap: 12px;
-
-    .icon-box {
-      @include flexCenter;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-      @include hoverFine {
-        background-color: var(--color-secondary);
-        border-radius: 4px;
-      }
-    }
+    column-gap: 8px;
 
     svg {
       cursor: pointer;
     }
   }
 
-  position: sticky;
-  top: 0;
-  height: 60px;
-  @include animationFadeIn(300ms);
+  @include animation-fade-in(300ms);
 
   &.invisible {
     position: sticky;
     top: -60px;
     height: 60px;
-    @include animationFadeOut(300ms);
+
+    @include animation-fade-out(300ms);
+
     .logo-box {
       display: none;
     }

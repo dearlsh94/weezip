@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { useRef, useState } from 'react';
+
 import './PostSearchLayer.scss';
-import { throttle } from '@utils/common';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { IconClose, IconSearch } from '@components/icon';
-import { moveToPostsPage } from '@utils/url';
-import { RecommendTag } from './recommend';
 import { DimLayout } from '@layout/dim';
+import { ARIA_LABEL } from '@src/constants';
+import { throttle } from '@utils/common';
+import { moveToPostsPage } from '@utils/url';
+
+import { RecommendTag } from './recommend';
 
 interface PostSearchLayerProps {
   handleClose: () => void;
@@ -36,33 +39,53 @@ export default function PostSearchLayer({ handleClose }: PostSearchLayerProps) {
   };
 
   return (
-    <DimLayout handleClose={handleClose}>
-      <GlobalPortal.Consumer>
+    <GlobalPortal.Consumer>
+      <DimLayout handleClose={handleClose}>
         <div className="post-search-container">
           <div className="post-search-box">
             <div className="icon-close-box">
-              <IconClose className="icon-close" size={32} onClick={handleClose} />
+              <IconClose
+                aria-label={`검색창 ${ARIA_LABEL.CLOSE}`}
+                className="icon-close"
+                role="button"
+                size={32}
+                onClick={handleClose}
+              />
             </div>
             <div className="search-box">
               <div className="input-box">
                 <input
-                  autoFocus
                   ref={inputRef}
                   className="search"
-                  type="text"
                   placeholder="검색어를 입력하세요."
+                  type="text"
                   value={searchText}
+                  autoFocus
                   onChange={e => setSearchText(e.target.value)}
                   onKeyDown={handleKeyDown}
                 />
-                {searchText && <IconClose className="icon-clear" size={28} onClick={clear} />}
+                {searchText && (
+                  <IconClose
+                    aria-label={`검색어 ${ARIA_LABEL.RESET}`}
+                    className="icon-clear"
+                    role="button"
+                    size={28}
+                    onClick={clear}
+                  />
+                )}
               </div>
-              <IconSearch className="icon-search" size={28} onClick={search} />
+              <IconSearch
+                aria-label={ARIA_LABEL.SEARCH}
+                className="icon-search"
+                role="button"
+                size={28}
+                onClick={search}
+              />
             </div>
             <RecommendTag />
           </div>
         </div>
-      </GlobalPortal.Consumer>
-    </DimLayout>
+      </DimLayout>
+    </GlobalPortal.Consumer>
   );
 }

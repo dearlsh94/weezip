@@ -1,11 +1,13 @@
-import { CreateDate, EditDate } from '@components/post';
-import useClipboard from '@src/hooks/useClipboard';
-import { DateProperty, MultiSelect } from '@types';
 import React from 'react';
+
 import './TitleDescription.scss';
 import { IconCopyLink } from '@components/icon';
+import { CreateDate, EditDate } from '@components/post';
 import { Tags } from '@components/post/tags';
+import useClipboard from '@hooks/useClipboard';
+import { ARIA_LABEL } from '@src/constants';
 
+import { DateProperty, MultiSelect } from '@types';
 interface TitleDescriptionProps {
   tag: MultiSelect;
   createdDate: DateProperty;
@@ -27,10 +29,17 @@ export default function TitleDescription({
     alert('현재 게시글 주소가 복사되었습니다.');
   };
   return (
-    <div className="post__description">
+    <div className="post-description">
       <Tags tag={tag} useLink={useTagLink} />
-      <div className="post__description__right">
-        {useCopy && <IconCopyLink size={18} color="secondary" onClick={handleCopy} />}
+      <div className="post-description__right">
+        {useCopy && (
+          <IconCopyLink
+            aria-label={`현재 게시글 주소 ${ARIA_LABEL.COPY}`}
+            color="secondary"
+            size={18}
+            onClick={handleCopy}
+          />
+        )}
         <CreateDate strDate={createdDate?.date?.start} />
         <EditDate strDate={editedDate?.date?.start} />
       </div>

@@ -1,12 +1,13 @@
 .block-divider {
   width: 100%;
+  border-width: 0;
+  margin: 16px 0;
   background-color: #e5e5e5;
-  margin: 16px 0px;
-  border-width: 0px;
 
   &.primary {
     background-color: var(--color-primary);
   }
+
   &.secondary {
     background-color: var(--color-secondary);
   }

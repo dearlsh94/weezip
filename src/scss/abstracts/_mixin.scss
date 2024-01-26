@@ -4,6 +4,7 @@
   @media (max-width: #{$breakpoint-mobile}) {
     @content;
   }
+
   @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
     @content;
   }
@@ -21,13 +22,13 @@
   }
 }
 
-@mixin superDesktop {
+@mixin super-desktop {
   @media (min-width: #{$breakpoint-super-desktop}) {
     @content;
   }
 }
 
-@mixin hoverFine {
+@mixin hover-fine {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       @content;
@@ -35,83 +36,92 @@
   }
 }
 
-@mixin flexCenter {
+@mixin flex-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-@mixin animationFadeIn($duration) {
-  animation: fadeIn $duration;
-  @keyframes fadeIn {
+@mixin animation-fade-in($duration) {
+  @keyframes fade-in {
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
   }
+
+  animation: fade-in $duration;
 }
 
-@mixin animationFadeOut($duration) {
-  animation: fadeOut $duration;
+@mixin animation-fade-out($duration) {
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  animation: fade-out $duration;
   animation-fill-mode: forwards;
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
 }
 
-@mixin animationRotate($duration) {
-  animation: rotate $duration;
+@mixin animation-rotate($duration) {
   @keyframes rotate {
     from {
       transform: rotate(0);
     }
+
     to {
       transform: rotate(360deg);
     }
   }
+
+  animation: rotate $duration;
 }
 
-@mixin animationMotionLeft($distance) {
-  animation: motionLeft;
-  animation-duration: 0.4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in;
-  animation-direction: alternate;
-  @keyframes motionLeft {
+@mixin animation-motion-left($distance) {
+  @keyframes motion-left {
     from {
       transform: translateX(0);
     }
+
     to {
       transform: translateX($distance);
     }
   }
-}
-@mixin animationMotionRight($distance) {
-  animation: motionRight;
+
+  animation: motion-left;
+  animation-direction: alternate;
   animation-duration: 0.4s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in;
-  animation-direction: alternate;
-  @keyframes motionRight {
+}
+
+@mixin animation-motion-right($distance) {
+  @keyframes motion-right {
     from {
       transform: translateX(0);
     }
+
     to {
       transform: translateX($distance);
     }
   }
+
+  animation: motion-right;
+  animation-direction: alternate;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
 }
 
-@mixin animationTada($diffScale: 0.1) {
-  animation: tada;
-  animation-duration: 1.2s;
+@mixin animation-tada($diffScale: 0.1) {
   @keyframes tada {
     0% {
       transform: scale3d(1, 1, 1);
@@ -139,6 +149,9 @@
       transform: scale3d(1, 1, 1);
     }
   }
+
+  animation: tada;
+  animation-duration: 1.2s;
 }
 
 @mixin ellipsis($line: 1) {
@@ -146,24 +159,28 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  } @else {
+  }
+
+ @else {
     display: -webkit-box;
     overflow: hidden;
-    text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: $line;
+    text-overflow: ellipsis;
   }
 }
 
-@mixin textGradient() {
+@mixin text-gradient() {
   /* Define your gradient colors here */
-  background: -webkit-linear-gradient(180deg, var(--color-secondary), var(--color-base)); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(180deg, var(--color-secondary), var(--color-base)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(180deg, var(--color-secondary), var(--color-base)); /* For Firefox 3.6 to 15 */
+
+  /* For Safari 5.1 to 6.0 */
+
+  /* For Opera 11.1 to 12.0 */
+
+  /* For Firefox 3.6 to 15 */
   background: linear-gradient(180deg, var(--color-secondary), var(--color-base)); /* Standard syntax (must be last) */
 
   /* Making the background clip to the text */
-  -webkit-background-clip: text;
   background-clip: text;
 
   /* Setting the text color to transparent */

@@ -15,7 +15,6 @@ function PortalProvider({ children }: PortalProviderProps) {
     <PortalContext.Provider value={portalContainerRef}>
       {children}
       <div
-        id="portal-container"
         ref={elem => {
           if (portalContainerRef !== null || elem === null) {
             return;
@@ -23,6 +22,7 @@ function PortalProvider({ children }: PortalProviderProps) {
 
           setPortalContainerRef(elem);
         }}
+        id="portal-container"
       />
     </PortalContext.Provider>
   );

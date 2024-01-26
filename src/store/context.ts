@@ -1,8 +1,6 @@
 import { MultiSelect } from '@types';
-import { NotionNode } from './nodeTypes';
 
-export interface INotionContext {
-  nodes: NotionNode[];
+export interface NotionContextProps {
   everyPostsTags?: string[];
   everyPostsSeries?: MultiSelect;
 }

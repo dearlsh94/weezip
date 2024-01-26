@@ -2,11 +2,13 @@
 
 .index-layout {
   .introduce {
-    text-align: center;
     margin-top: 4rem;
+    text-align: center;
   }
+
   .logo-box {
-    @include flexCenter;
-    margin: 24px 0px;
+    @include flex-center;
+
+    margin: 24px 0;
   }
 }

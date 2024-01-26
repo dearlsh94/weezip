@@ -1,9 +1,10 @@
-import useOverlay from '@src/hooks/useOverlay';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 import './SNBOpenIcon.scss';
 import { IconDoubleArrow, IconHamburger } from '@components/icon';
+import useOverlay from '@hooks/useOverlay';
 import { SideBarNavigation } from '@module/side';
+import { ARIA_LABEL } from '@src/constants';
 
 export default function SNBOpenIcon() {
   const SNBOverlay = useOverlay();
@@ -12,12 +13,13 @@ export default function SNBOpenIcon() {
   return (
     <>
       <button
+        aria-label={`사이드바 메뉴 ${ARIA_LABEL.OPEN}`}
         className="snb-open-icon"
-        onClick={SNBOverlay.change}
-        onMouseOver={() => setIsMenuHover(true)}
-        onMouseLeave={() => setIsMenuHover(false)}
-        onFocus={() => setIsMenuHover(true)}
         onBlur={() => setIsMenuHover(false)}
+        onClick={SNBOverlay.change}
+        onFocus={() => setIsMenuHover(true)}
+        onMouseLeave={() => setIsMenuHover(false)}
+        onMouseOver={() => setIsMenuHover(true)}
       >
         {isMenuHover ? (
           <IconDoubleArrow direction={SNBOverlay.isOpen ? 'left' : 'right'} size={28} />

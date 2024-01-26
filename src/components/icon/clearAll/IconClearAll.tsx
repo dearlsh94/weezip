@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { SvgController, SvgControllerProps } from '@components/icon/SvgController';
 
 export default function IconClearAll(props: SvgControllerProps) {

@@ -1,16 +1,12 @@
-import { NotionChildrenType, MultiSelect, NotionColumn, NotionNode, RichText } from '@types';
 import { convertDatetimeFormat } from './converter';
 
-export const notionNodeToJson = (node: NotionNode): NotionChildrenType => {
-  return node ? JSON.parse(node?.json) : null;
+import { NotionChildrenType, MultiSelect, NotionColumn, NotionNode, RichText } from '@types';
+
+export const notionNodeToJson = (node: NotionNode | undefined): NotionChildrenType => {
+  return node ? JSON.parse(node?.json) : undefined;
 };
 
-export const getNodeJsonByUrl = (nodes: NotionNode[], url: string): NotionChildrenType | null => {
-  const node = nodes.find(n => n.title === url);
-  return node ? notionNodeToJson(node) : null;
-};
-
-const parseNotionColumn = (content: NotionChildrenType): NotionColumn => {
+export const parseNotionColumn = (content: NotionChildrenType): NotionColumn => {
   const { id, url, remark, created_date, edited_date, series, tag } = content.properties;
 
   return {
@@ -22,15 +18,6 @@ const parseNotionColumn = (content: NotionChildrenType): NotionColumn => {
     tag: tag.multi_select || [],
     series: series.select,
   };
-};
-
-export const getParseListByNodes = (nodes: NotionNode[]): NotionNode[] => {
-  return nodes
-    .filter((node: NotionNode) => node.title.startsWith('/post'))
-    .map((node: NotionNode) => {
-      node.notionColumn = parseNotionColumn(notionNodeToJson(node));
-      return node;
-    });
 };
 
 export const classifyPost = (

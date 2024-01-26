@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import './LoadContainer.scss';
 import { CircleProgress } from '../progress/circle';
 

@@ -9,12 +9,12 @@ interface DividerProps {
 export default function Divider({ color, height }: DividerProps) {
   return (
     <hr
+      aria-orientation="horizontal"
       className={`block-divider ${color}`}
+      role="separator"
       style={{
         height: `${height || 1}px`,
       }}
-      role="separator"
-      aria-orientation="horizontal"
     />
   );
 }

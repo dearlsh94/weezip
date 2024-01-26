@@ -2,6 +2,7 @@
   0% {
     top: -10%;
   }
+
   100% {
     top: 100%;
   }
@@ -10,8 +11,9 @@
 @keyframes snowflake-shake {
   0%,
   100% {
-    transform: translateX(0px);
+    transform: translateX(0);
   }
+
   50% {
     transform: translateX(80px);
   }
@@ -19,20 +21,20 @@
 
 .snowflake {
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
 
   .snowflake {
-    pointer-events: none; /* 다른 클릭이나 인터랙션을 방해하지 않도록 */
-    color: #fff;
-    text-shadow: 0 0 1px #000;
     position: fixed;
-    top: -10%;
     z-index: 0;
-    user-select: none;
-    cursor: default;
+    top: -10%;
     animation:
       snowflake-fall 10s linear infinite running,
       snowflake-shake 3s ease-in-out infinite running;
+    color: #fff;
+    cursor: default;
+    pointer-events: none; /* 다른 클릭이나 인터랙션을 방해하지 않도록 */
+    text-shadow: 0 0 1px #000;
+    user-select: none;
   }
 }

@@ -1,40 +1,61 @@
+import { StaticImage } from 'gatsby-plugin-image';
+
 import * as React from 'react';
 import { useEffect, useState } from 'react';
+
 import './Header.scss';
-import { StaticImage } from 'gatsby-plugin-image';
+
 import ThemeController from '@components/ThemeController';
-import useOverlay from '@src/hooks/useOverlay';
-import useScroll from '@src/hooks/useScroll';
-import { IconSearch } from '@components/icon';
 import { SNBOpenIcon } from '@components/header';
-import { Linker } from '@components/ui';
+import { IconSearch } from '@components/icon';
 import { PostSearchLayer } from '@components/search';
+import { Linker } from '@components/ui';
+import useOverlay from '@hooks/useOverlay';
+import useScroll from '@hooks/useScroll';
+import { ARIA_LABEL } from '@src/constants';
+import { moveToTop } from '@utils/scroll';
 
 export default function Header() {
   const searchOverlay = useOverlay();
   const [status, setStatus] = useState('');
-  const { scrollY } = useScroll();
+  const { scrollY, isScrollingUp } = useScroll();
+  const [postTitle, setPostTitle] = useState('');
 
   useEffect(() => {
-    setStatus(50 < scrollY && scrollY < document.body.scrollHeight * 0.35 ? 'invisible' : '');
-  }, [scrollY]);
+    setStatus(scrollY < 160 || isScrollingUp ? '' : 'invisible');
+  }, [scrollY, isScrollingUp]);
+
+  useEffect(() => {
+    const elTitle = document.querySelector<HTMLHeadingElement>('.post-title h1.title');
+    setPostTitle(elTitle?.outerText || '');
+  }, []);
 
   return (
     <>
       <header className={`${status}`}>
         <SNBOpenIcon />
-        <Linker url="/" aria-label="홈으로 이동">
+        <Linker label={`홈으로 ${ARIA_LABEL.MOVE}`} url="/">
           <div className="icon-box">
-            <StaticImage src="../../images/Tesseract-Logo-64x64.png" alt="Weezip Logo" className="logo" width={32} />
+            <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-128x128.png" width={36} />
           </div>
         </Linker>
+        {scrollY > 200 && postTitle && (
+          <p className="title" onClick={moveToTop}>
+            {postTitle}
+          </p>
+        )}
         <div className="right-box">
-          <div className="icon-box">
+          <button className="icon-box">
             <ThemeController />
-          </div>
-          <div className="icon-box" onClick={searchOverlay.open}>
+          </button>
+          <button
+            aria-label={`검색창 ${ARIA_LABEL.OPEN}`}
+            className="icon-box"
+            role="button"
+            onClick={searchOverlay.open}
+          >
             <IconSearch />
-          </div>
+          </button>
         </div>
       </header>
       {searchOverlay.isOpen && <PostSearchLayer handleClose={searchOverlay.close} />}

@@ -24,21 +24,21 @@ export default function HTML(props) {
       <script dangerouslySetInnerHTML={{ __html: scriptTheme }} />
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="author" content="ethan" />
-        <meta property="og:locale" content="ko_KR" />
-        <meta property="og:site_name" content="Weezip" />
-        <meta property="og:type" content="website" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge;chrome=1" />
-        <meta name="robots" content="all" />
-        <meta name="naver-site-verification" content="f51d65952b7df29d7c83ce742d8b9285921a0508" />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#5e8b7e" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#bcead5" />
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+        <meta content="ethan" name="author" />
+        <meta content="ko_KR" property="og:locale" />
+        <meta content="Weezip" property="og:site_name" />
+        <meta content="website" property="og:type" />
+        <meta content="ie=edge;chrome=1" httpEquiv="x-ua-compatible" />
+        <meta content="all" name="robots" />
+        <meta content="f51d65952b7df29d7c83ce742d8b9285921a0508" name="naver-site-verification" />
+        <meta content="#5e8b7e" media="(prefers-color-scheme: light)" name="theme-color" />
+        <meta content="#bcead5" media="(prefers-color-scheme: dark)" name="theme-color" />
         <link
-          rel="stylesheet"
           as="style"
           crossOrigin="true"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+          rel="stylesheet"
         />
         {/* <script src="https://developers.kakao.com/sdk/js/kakao.js" /> */}
         {props.headComponents}
@@ -55,7 +55,7 @@ export default function HTML(props) {
           Please enable JavaScript in your web browser settings.
         </noscript>
         {props.preBodyComponents}
-        <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
+        <div key={`body`} dangerouslySetInnerHTML={{ __html: props.body }} id="___gatsby" />
         {props.postBodyComponents}
       </body>
     </html>

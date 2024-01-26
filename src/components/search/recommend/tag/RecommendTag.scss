@@ -1,18 +1,18 @@
 .recommend-post-tag {
-  margin-top: 12px;
   display: flex;
   align-items: center;
+  margin-top: 12px;
   column-gap: 12px;
 
   strong {
-    font-size: 12px;
     color: var(--color-base);
+    font-size: 12px;
   }
 
   .item {
+    cursor: pointer;
     font-size: 13px;
     line-height: 12px;
     text-decoration: underline;
-    cursor: pointer;
   }
 }

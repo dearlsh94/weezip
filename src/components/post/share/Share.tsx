@@ -1,8 +1,10 @@
-import useClipboard from '@src/hooks/useClipboard';
 import React from 'react';
+
 import './Share.scss';
 import { IconCopyLink } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
+import useClipboard from '@hooks/useClipboard';
+import { ARIA_LABEL } from '@src/constants';
 
 export default function Share() {
   const { copyToClipboard } = useClipboard();
@@ -14,7 +16,7 @@ export default function Share() {
 
   return (
     <div className="share-box">
-      <CircleIconWrapper color={'secondary'} onClick={handleCopy}>
+      <CircleIconWrapper aria-label={`현재 게시글 주소 ${ARIA_LABEL.COPY}`} color={'secondary'} onClick={handleCopy}>
         <IconCopyLink />
       </CircleIconWrapper>
     </div>

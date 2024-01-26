@@ -1,13 +1,13 @@
 .side-bar-nav {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 100%;
   padding-top: 50px;
 
   ul {
-    padding: 0px;
     width: 100%;
+    padding: 0;
   }
 }

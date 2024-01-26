@@ -1,6 +1,8 @@
 import React from 'react';
+
 import './PostsDescription.scss';
 import { IconClearAll } from '@components/icon';
+import { ARIA_LABEL } from '@src/constants';
 import { moveToPostsPage } from '@utils/url';
 
 interface PostsDescriptionProps {
@@ -12,7 +14,7 @@ interface PostsDescriptionProps {
 export default function PostsDescription({ isLoading, length, filteredText }: PostsDescriptionProps) {
   return (
     <div className={`posts-description ${isLoading ? 'loading' : ''}`}>
-      <IconClearAll onClick={() => moveToPostsPage({})} />
+      <IconClearAll aria-label={`글 목록 페이지로 ${ARIA_LABEL.MOVE}`} onClick={() => moveToPostsPage({})} />
       <div className="count-box ellipsis">
         {filteredText && (
           <strong>

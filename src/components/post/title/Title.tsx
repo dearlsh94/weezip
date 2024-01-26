@@ -8,7 +8,8 @@ interface TitleProps {
 
 export default function Title({ title, slug }: TitleProps) {
   return (
-    <a className="post__title" href={`https://weezip.treefeely.com${slug}`}>
+    // Header부분에서 .post-title h1.title로 해당 엘리먼트 텍스트 사용 중.
+    <a className="post-title" href={`https://weezip.treefeely.com${slug}`}>
       <h1 className="title">{title}</h1>
     </a>
   );

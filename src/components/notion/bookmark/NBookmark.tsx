@@ -1,15 +1,18 @@
 import * as React from 'react';
-import './NBookmark.scss';
-import { Bookmark, TextBlock, TextItem } from '@types';
-import { Linker } from '@components/ui';
+
 import { NParagraph } from '@components/notion';
+import { Linker } from '@components/ui';
+import { ARIA_LABEL } from '@src/constants';
+
+import { Bookmark, TextBlock, TextItem } from '@types';
+
 interface NBookmarkProps {
   bookmark: Bookmark;
 }
 
 export default function NBookmark({ bookmark }: NBookmarkProps) {
   return (
-    <Linker url={bookmark.url} target="_blank" aria-label={`${bookmark.url} 위치로 이동`}>
+    <Linker label={`${bookmark.url} 위치로 ${ARIA_LABEL.MOVE}`} target="_blank" url={bookmark.url}>
       {bookmark.caption?.length > 0 ? (
         bookmark.caption.map((c: TextItem, i) => {
           const captionParagraph: TextBlock = {

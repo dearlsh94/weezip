@@ -3,54 +3,61 @@
 
 .my-button {
   border-radius: 8px;
-  letter-spacing: -0.05px;
   cursor: pointer;
-  @include flexCenter;
+  letter-spacing: -0.05px;
   transition: background-color 0.2s;
 
-  &.SIZE-PRIMARY {
+  @include flex-center;
+
+  &.size-primary {
+    height: 48px;
     padding: 10px;
     font-size: 12pt;
-    height: 48px;
   }
-  &.SIZE-SECONDARY {
-    padding: 8px;
+
+  &.size-secondary {
     height: 40px;
+    padding: 8px;
   }
-  &.SIZE-THIRD {
-    padding: 6px;
+
+  &.size-third {
     height: 32px;
+    padding: 6px;
     border-radius: 4px;
   }
-  &.SIZE-FOURTH {
-    padding: 4px;
+
+  &.size-fourth {
     height: 24px;
+    padding: 4px;
     border-radius: 4px;
     font-size: 12px;
   }
 
-  &.TYPE-BORDER {
+  &.type-border {
     background-color: var(--color-reverse-mono);
-    @include hoverFine {
+
+    @include hover-fine {
       border: 1.5px solid var(--color-third);
       background-color: var(--color-third);
       color: var(--color-base);
     }
   }
 
-  &.COLOR-PRIMARY.TYPE-BORDER {
+  &.color-primary.type-border {
     border: 1.5px solid var(--color-primary);
     color: var(--color-font);
   }
-  &.COLOR-SECONDARY.TYPE-BORDER {
+
+  &.color-secondary.type-border {
     border: 1.5px solid var(--color-secondary);
     color: var(--color-font);
   }
 
-  &.COLOR-PRIMARY.TYPE-BG {
+  &.color-primary.type-bg {
     background-color: var(--color-primary);
   }
-  &.COLOR-SECONDARY.TYPE-BG {
+
+  &.color-secondary.type-bg {
     background-color: var(--color-secondary);
   }
 }

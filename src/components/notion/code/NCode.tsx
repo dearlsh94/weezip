@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { Code } from '@types';
-import './NCode.scss';
-import { NParagraph } from '@components/notion';
-import useClipboard from '@src/hooks/useClipboard';
-import { getPlainTextByRichText } from '@utils/notionUtils';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/light';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+import './NCode.scss';
+
 import { IconCopyLink } from '@components/icon';
+import { NParagraph } from '@components/notion';
+import useClipboard from '@hooks/useClipboard';
+import { ARIA_LABEL } from '@src/constants';
+import { getPlainTextByRichText } from '@utils/notion';
+
+import { Code } from '@types';
 
 interface NCodeProps {
   code: Code;
@@ -24,9 +28,14 @@ export default function NCode({ code }: NCodeProps) {
     <figure className={`block-code ${code.caption && 'caption'} ${code.language && 'language'}`}>
       <div className="code-header">
         <small className="language">{code.language}</small>
-        <IconCopyLink size={20} color={'primary'} onClick={handleCodeCopy} />
+        <IconCopyLink
+          aria-label={`현재 코드 블럭 ${ARIA_LABEL.COPY}`}
+          color={'primary'}
+          size={20}
+          onClick={handleCodeCopy}
+        />
       </div>
-      <SyntaxHighlighter language={code.language} style={vscDarkPlus} showLineNumbers={true}>
+      <SyntaxHighlighter language={code.language} showLineNumbers={true} style={vscDarkPlus}>
         {codeString}
       </SyntaxHighlighter>
       {code.caption.length > 0 && (

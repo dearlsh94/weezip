@@ -1,10 +1,11 @@
+import React, { useEffect } from 'react';
+
 import { IconEndArrow } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
-import useScroll from '@src/hooks/useScroll';
-import useShow from '@src/hooks/useShow';
+import useScroll from '@hooks/useScroll';
+import useShow from '@hooks/useShow';
+import { ARIA_LABEL } from '@src/constants';
 import { moveToTop } from '@utils/scroll';
-import React from 'react';
-import { useEffect } from 'react';
 
 export default function MoveTopButton() {
   const showButton = useShow();
@@ -20,8 +21,13 @@ export default function MoveTopButton() {
 
   return (
     showButton.isShow && (
-      <CircleIconWrapper color="secondary" size={44} onClick={moveToTop}>
-        <IconEndArrow direction="top" color="primary" />
+      <CircleIconWrapper
+        aria-label={`페이지 최상단으로 ${ARIA_LABEL.MOVE}`}
+        color="secondary"
+        size={44}
+        onClick={moveToTop}
+      >
+        <IconEndArrow color="primary" direction="top" />
       </CircleIconWrapper>
     )
   );

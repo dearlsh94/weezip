@@ -1,5 +1,7 @@
 import React from 'react';
+
 import './TableOfContentsItem.scss';
+import { ARIA_LABEL } from '@src/constants';
 import { moveToOffset } from '@utils/scroll';
 
 interface TableOfContentsItemProps {
@@ -12,8 +14,9 @@ export default function TableOfContentsItem({ item, isActive }: TableOfContentsI
 
   return (
     <li
-      id={`index-${text}`}
+      aria-label={`${text} 문단으로 ${ARIA_LABEL.MOVE}`}
       className={`table-of-contents-item tag-${tag} ${isActive ? 'active' : ''}`}
+      id={`index-${text}`}
       onClick={() => moveToOffset(item.offsetTop)}
     >
       {text}

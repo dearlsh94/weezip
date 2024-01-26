@@ -2,15 +2,67 @@
 
 .posts-pagination {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   height: 54px;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 24px;
+
+  .page-button {
+    position: relative;
+
+    &.first,
+    &.prev {
+      svg {
+        position: absolute;
+        left: 12px;
+      }
+
+      &.active {
+        @include hover-fine {
+          svg {
+            @include animation-motion-left($distance: -8px);
+          }
+
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &.last,
+    &.next {
+      svg {
+        position: absolute;
+        right: 12px;
+      }
+
+      &.active {
+        @include hover-fine {
+          svg {
+            @include animation-motion-right($distance: 8px);
+          }
+
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &.first svg {
+      padding-right: 2px;
+    }
+
+    &.disabled {
+      background-color: var(--color-grey-6);
+      color: var(--color-black-6);
+      cursor: default;
+      opacity: 0.3;
+    }
+  }
 
   .left-box,
   .right-box {
     display: flex;
+
     & .page-button + .page-button {
       margin-left: 8px;
     }
@@ -18,6 +70,7 @@
 
   .center-box {
     color: var(--color-primary);
+
     & span + span {
       margin-left: 8px;
     }
@@ -30,55 +83,10 @@
     span.prev,
     span.next {
       cursor: pointer;
-      @include hoverFine {
+
+      @include hover-fine {
         text-decoration: underline;
       }
-    }
-  }
-
-  .page-button {
-    position: relative;
-
-    &.first,
-    &.prev {
-      svg {
-        position: absolute;
-        left: 12px;
-      }
-      &.active {
-        @include hoverFine {
-          svg {
-            @include animationMotionLeft($distance: -8px);
-          }
-          text-decoration: underline;
-        }
-      }
-    }
-
-    &.last,
-    &.next {
-      svg {
-        position: absolute;
-        right: 12px;
-      }
-      &.active {
-        @include hoverFine {
-          svg {
-            @include animationMotionRight($distance: 8px);
-          }
-          text-decoration: underline;
-        }
-      }
-    }
-
-    &.first svg {
-      padding-right: 2px;
-    }
-    &.disabled {
-      background-color: var(--color-grey-6);
-      opacity: 0.3;
-      color: var(--color-black-6);
-      cursor: default;
     }
   }
 }

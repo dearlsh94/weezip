@@ -1,7 +1,10 @@
 import * as React from 'react';
+
 import './NParagraph.scss';
-import { Caption, RichText, TextBlock, TextItem } from '@types';
 import { Linker } from '@components/ui';
+import { ARIA_LABEL } from '@src/constants';
+
+import { Caption, RichText, TextBlock, TextItem } from '@types';
 
 interface NParagraphProps {
   paragraph?: TextBlock;
@@ -27,7 +30,12 @@ export default function NParagraph({ paragraph, richText, className }: NParagrap
           }
           if (t?.href) {
             return (
-              <Linker key={`block-paragraph-text-${i}`} url={t.href} target="_blank" aria-label={`링크 텍스트`}>
+              <Linker
+                key={`block-paragraph-text-${i}`}
+                label={`${t.plain_text} ${ARIA_LABEL.MOVE}`}
+                target="_blank"
+                url={t.href}
+              >
                 {t.plain_text}
               </Linker>
             );

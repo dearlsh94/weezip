@@ -2,19 +2,21 @@
 @import '@scss/abstracts/mixin';
 
 .snb-open-icon {
-  @include flexCenter;
-  width: 36px;
-  height: 36px;
+  @include flex-center;
+
+  position: fixed;
+  z-index: 10;
+  top: 4px;
+  left: 4px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: none;
   cursor: pointer;
   transition: background-color 0.2s;
-  background: none;
-  border: none;
-  z-index: 10;
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  @include hoverFine {
-    background-color: var(--color-secondary);
+
+  @include hover-fine {
     border-radius: 4px;
+    background-color: var(--color-secondary);
   }
 }

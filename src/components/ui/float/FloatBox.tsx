@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import './FloatBox.scss';
 import MoveTopButton from '@components/float/MoveTopButton';
 import SnowflakeHandler from '@components/float/SnowflakeHandler';

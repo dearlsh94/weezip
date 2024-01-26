@@ -1,9 +1,10 @@
 import * as React from 'react';
+
 import './Footer.scss';
-import { OWNER_EMAIL } from '@src/constants';
 import { IconGithub, IconInstagram, IconKakao, IconMail } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
 import { Linker } from '@components/ui';
+import { ARIA_LABEL, OWNER_EMAIL } from '@src/constants';
 
 export default function Footer() {
   return (
@@ -13,22 +14,30 @@ export default function Footer() {
           <p>Contact Me</p>
           <div className="contact-item">
             <CircleIconWrapper color="reverse-mono">
-              <a href={`mailto:${OWNER_EMAIL}`} aria-label={`메일 주소 ${OWNER_EMAIL}`}>
+              <Linker label={`${OWNER_EMAIL} 메일 ${ARIA_LABEL.SEND}`} url={`mailto:${OWNER_EMAIL}`}>
                 <IconMail color="reverse-mono" />
-              </a>
+              </Linker>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://www.instagram.com/treefeely/`} target="_blank" aria-label="인스타그램 이동">
+              <Linker
+                label={`인스타그램 ${ARIA_LABEL.OPEN}`}
+                target="_blank"
+                url={`https://www.instagram.com/treefeely/`}
+              >
                 <IconInstagram color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://open.kakao.com/me/treefeely`} target="_blank" aria-label="오픈 카카오톡 이동">
+              <Linker
+                label={`오픈 카카오톡 ${ARIA_LABEL.OPEN}`}
+                target="_blank"
+                url={`https://open.kakao.com/me/treefeely`}
+              >
                 <IconKakao color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
-              <Linker url={`https://github.com/dearlsh94`} target="_blank" aria-label="Github 이동">
+              <Linker label={`Github ${ARIA_LABEL.OPEN}`} target="_blank" url={`https://github.com/dearlsh94`}>
                 <IconGithub color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
@@ -36,7 +45,11 @@ export default function Footer() {
         </div>
         <div className="item refer-box">
           <span>All Icons by</span>
-          <Linker url={`https://icon-sets.iconify.design/`} target={'_blank'}>
+          <Linker
+            label={`iconiFy 웹 사이트로 ${ARIA_LABEL.MOVE}`}
+            target={'_blank'}
+            url={`https://icon-sets.iconify.design/`}
+          >
             iconiFy
           </Linker>
         </div>

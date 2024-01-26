@@ -1,8 +1,9 @@
 import * as React from 'react';
+
 import './RecommendTag.scss';
-import { HelpText } from '@components/ui/text';
-import { RECOMMEND_TAGS } from '@src/constants';
 import { Linker } from '@components/ui';
+import { HelpText } from '@components/ui/text';
+import { ARIA_LABEL, RECOMMEND_TAGS } from '@src/constants';
 
 export default function RecommendTag() {
   return (
@@ -11,9 +12,9 @@ export default function RecommendTag() {
       {RECOMMEND_TAGS.map(tag => (
         <Linker
           key={`recommend-item-${tag.name}`}
-          url={tag.url}
           className="item"
-          aria-label={`${tag.name} 목록으로 이동`}
+          label={`${tag.name} 목록으로 ${ARIA_LABEL.MOVE}`}
+          url={tag.url}
         >
           #{tag.name}
         </Linker>

@@ -22,11 +22,11 @@ export function SvgController({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
+      className={`svg-wrapper ${color} ${rest.onClick ? 'pointer' : ''} ${direction || ''} ${rest.className || ''}`}
+      height={size}
       role={rest.onClick ? 'button' : 'img'}
       viewBox={viewBox}
       width={size}
-      height={size}
-      className={`svg-wrapper ${color} ${rest.onClick ? 'pointer' : ''} ${direction || ''} ${rest.className || ''}`}
     >
       <g transform={`rotate(${rotate} 12 12)`}>{children}</g>
     </svg>

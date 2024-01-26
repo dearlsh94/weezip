@@ -1,7 +1,10 @@
 import * as React from 'react';
+
 import './Series.scss';
-import { Select } from '@types';
 import { Linker } from '@components/ui';
+import { ARIA_LABEL } from '@src/constants';
+
+import { Select } from '@types';
 
 interface SeriesProps {
   series: Select;
@@ -13,7 +16,7 @@ export default function Series({ series, useLink = false, ...rest }: SeriesProps
     useLink ? Linker : 'span',
     {
       url: `/list?series=${encodeURIComponent(series?.name)}`,
-      'aria-label': `${series?.name} 시리즈 목록으로 이동`,
+      label: `${series?.name} 시리즈 목록으로 ${ARIA_LABEL.MOVE}`,
       ...rest,
     },
     <span className={`series-box ${useLink ? 'link' : 'normal'}`}>[{series?.name}]</span>

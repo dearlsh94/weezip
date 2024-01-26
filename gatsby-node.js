@@ -1,3 +1,5 @@
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
+
 const redirects = require('./redirects.json');
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -33,8 +35,6 @@ exports.createPages = async ({ actions, graphql }) => {
     });
   });
 };
-
-const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

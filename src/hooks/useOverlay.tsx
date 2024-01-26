@@ -13,9 +13,15 @@ const useOverlay = () => {
 
   return {
     isOpen,
-    open: () => setIsOpen(true),
-    close: () => setIsOpen(false),
-    change: () => setIsOpen(!isOpen),
+    open() {
+      setIsOpen(true);
+    },
+    close() {
+      setIsOpen(false);
+    },
+    change() {
+      setIsOpen(!isOpen);
+    },
   };
 };
 

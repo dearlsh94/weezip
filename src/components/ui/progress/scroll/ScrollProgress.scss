@@ -2,15 +2,15 @@
 
 .scroll-progress-container {
   position: fixed;
+  z-index: 1000;
   top: 0;
   width: 100vw;
   height: 4px;
-  z-index: 1000;
-
   visibility: hidden;
 
   &.visible {
-    @include animationFadeIn(400ms);
+    @include animation-fade-in(400ms);
+
     visibility: visible;
   }
 

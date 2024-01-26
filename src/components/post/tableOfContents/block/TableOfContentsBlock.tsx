@@ -1,8 +1,11 @@
 import * as React from 'react';
+
 import './TableOfContentsBlock.scss';
-import { usePostActiveText } from '@src/hooks/usePostActiveText';
-import useShow from '@src/hooks/useShow';
 import { IconSingleArrow } from '@components/icon';
+import { usePostActiveText } from '@hooks/usePostActiveText';
+import useShow from '@hooks/useShow';
+import { ARIA_LABEL } from '@src/constants';
+
 import { TableOfContentsItem } from '../item';
 
 interface TableOfContentsBlockProps {
@@ -23,8 +26,12 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
   return (
     <section className="table-of-contents-block">
       <div className="table-of-contents-block__wrapper">
-        <div className="table-of-contents-block__wrapper__header" onClick={showPostIndex.change}>
-          <p>목차 {showPostIndex.isShow ? '숨기기' : '보기'}</p>
+        <div
+          aria-label={`목차 ${showPostIndex.isShow ? ARIA_LABEL.EXPAND_OFF : ARIA_LABEL.EXPAND_ON}`}
+          className="table-of-contents-block__wrapper__header"
+          onClick={showPostIndex.change}
+        >
+          <p>목차 {showPostIndex.isShow ? ARIA_LABEL.EXPAND_OFF : ARIA_LABEL.EXPAND_ON}</p>
           <div className={`icon-box ${showPostIndex.isShow ? 'reverse' : ''}`}>
             <IconSingleArrow direction={'bottom'} size={20} />
           </div>
@@ -36,8 +43,8 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
               return (
                 <TableOfContentsItem
                   key={`table-of-contents-block-side-item-${i}`}
-                  item={item}
                   isActive={activeText === text}
+                  item={item}
                 />
               );
             })}

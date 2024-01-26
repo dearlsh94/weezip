@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { PropsWithDirection, SvgController, SvgControllerProps } from '@components/icon/SvgController';
 
 export default function IconEndArrow(props: PropsWithDirection<SvgControllerProps>) {
@@ -18,14 +19,14 @@ export default function IconEndArrow(props: PropsWithDirection<SvgControllerProp
     }
   };
   return (
-    <SvgController viewBox="0 0 24 24" rotate={getRotateDegree()} {...props}>
+    <SvgController rotate={getRotateDegree()} viewBox="0 0 24 24" {...props}>
       <path
+        d="M5 3h14m-1 10l-6-6l-6 6m6-6v14"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"
-        d="M5 3h14m-1 10l-6-6l-6 6m6-6v14"
       />
     </SvgController>
   );

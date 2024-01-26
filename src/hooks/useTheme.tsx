@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
-import { CONFIG_THEME_KEY } from '@src/constants';
+
+import { CONFIG_THEME_KEY, Themes } from '@src/constants';
+import { useThemeStore } from '@store/config';
+
 import { useLocalStorage } from './useLocalStorage';
-import { Themes, useThemeStore } from '@store/configStore';
 
 const useTheme = () => {
   const { setConfig, getConfig } = useLocalStorage();

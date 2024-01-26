@@ -1,8 +1,9 @@
 import * as React from 'react';
+
 import './MainLayout.scss';
 import { ScrollProgress } from '@components/ui/progress';
-import { Header } from '@module/header';
 import { Footer } from '@module/footer';
+import { Header } from '@module/header';
 
 interface MainLayoutProps {
   children: React.ReactNode;

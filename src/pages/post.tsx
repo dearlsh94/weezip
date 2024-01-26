@@ -1,15 +1,12 @@
-import * as React from 'react';
 import { HeadFC, PageProps } from 'gatsby';
+
+import * as React from 'react';
+
 import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
-import { getNotionNodeByUrl } from '@services/use-notion';
-import { getPlainTextByRichText, notionNodeToJson } from '@utils/notionUtils';
-import SEO from '@components/header/SEO';
-import { graphql } from 'gatsby';
-import { BlockType, Heading2Children, ImageChildren } from '@types';
-import { GlobalPortal } from '@components/GlobalPortal';
 import Giscus from '@components/Giscus';
-import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb/Breadcrumb';
+import { GlobalPortal } from '@components/GlobalPortal';
+import SEO from '@components/header/SEO';
 import {
   Contents,
   Feedback,
@@ -21,15 +18,21 @@ import {
   TitleDescription,
 } from '@components/post';
 import { FloatBox } from '@components/ui';
+import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb/Breadcrumb';
+import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
+import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
 
-export const Head: HeadFC = ({ data, pageContext }: any) => {
-  const content = notionNodeToJson(getNotionNodeByUrl(data, pageContext.slug));
-  const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
-  const series = content?.properties?.series?.select?.name;
-  const tagNames = content?.properties.tag?.multi_select?.map(t => t.name) || [];
+import { BlockType, Heading2Children, ImageChildren } from '@types';
 
-  const imageBlock: ImageChildren = content?.children?.find(c => c.type === BlockType.IMAGE) as ImageChildren;
+export const Head: HeadFC = ({ pageContext }: any) => {
+  const { getNodeByUrl } = useWeezipNotion();
+  const node = notionNodeToJson(getNodeByUrl(pageContext.slug));
+  const title = getPlainTextByRichText(node?.properties?.remark?.rich_text);
+  const series = node?.properties?.series?.select?.name;
+  const tagNames = node?.properties.tag?.multi_select?.map(t => t.name) || [];
+
+  const imageBlock: ImageChildren = node?.children?.find(c => c.type === BlockType.IMAGE) as ImageChildren;
   const thumbnailUrl = imageBlock?.image
     ? `https://treefeely.notion.site/image/${encodeURIComponent(imageBlock.image?.file.url)}?table=block&id=${
         imageBlock.id
@@ -39,17 +42,17 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
   const descriptions = [];
   descriptions.push('저자: Ethan');
 
-  if (content?.properties?.created_date) {
-    descriptions.push(`작성일: ${content?.properties?.created_date?.date.start}`);
+  if (node?.properties?.created_date) {
+    descriptions.push(`작성일: ${node?.properties?.created_date?.date.start}`);
   }
-  if (content?.properties?.edited_date) {
-    descriptions.push(`수정일: ${content?.properties?.edited_date?.date.start}`);
+  if (node?.properties?.edited_date) {
+    descriptions.push(`수정일: ${node?.properties?.edited_date?.date.start}`);
   }
 
   switch (series) {
     case '트리피디아':
     case '문화 소비자 시점':
-      const h2Review: Heading2Children = content?.children?.filter(
+      const h2Review: Heading2Children = node?.children?.filter(
         c => c.type === 'heading_2' && c.heading_2?.rich_text[0]?.plain_text === '한줄평'
       )[0] as Heading2Children;
       if (h2Review) {
@@ -57,7 +60,7 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
       }
       break;
     default:
-      const h2Preface = content?.children?.filter(
+      const h2Preface = node?.children?.filter(
         c => c.type === 'heading_2' && c.heading_2?.rich_text[0]?.plain_text === '머리말'
       )[0] as Heading2Children;
       if (h2Preface) {
@@ -68,20 +71,21 @@ export const Head: HeadFC = ({ data, pageContext }: any) => {
   }
   return (
     <SEO
-      title={title}
       description={descriptions.join(', ')}
+      keywords={[node?.properties?.series?.select?.name, ...tagNames]}
       pathname={pageContext.slug}
-      keywords={[content?.properties?.series?.select?.name, ...tagNames]}
       thumbnail={thumbnailUrl}
+      title={title}
     />
   );
 };
 
-const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
+const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
   const { slug } = pageContext;
-  const content = notionNodeToJson(getNotionNodeByUrl(data, slug));
-  const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
-  const series = content?.properties?.series?.select;
+  const { getNodeByUrl } = useWeezipNotion();
+  const node = notionNodeToJson(getNodeByUrl(slug));
+  const title = getPlainTextByRichText(node?.properties?.remark?.rich_text);
+  const series = node?.properties?.series?.select;
 
   const breadcrumbSteps: BreadcrumbStep[] = [
     { name: '홈', url: '/' },
@@ -96,16 +100,16 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
       <MainLayout className="post">
         <Breadcrumb steps={breadcrumbSteps} />
         <article>
-          <Title title={title} slug={slug} />
+          <Title slug={slug} title={title} />
           <TitleDescription
-            tag={content?.properties?.tag?.multi_select}
-            createdDate={content?.properties?.created_date}
-            editedDate={content?.properties?.edited_date}
+            createdDate={node?.properties?.created_date}
+            editedDate={node?.properties?.edited_date}
+            tag={node?.properties?.tag?.multi_select}
             useTagLink={true}
           />
-          <LastEditedCaution lastEditedDate={new Date(content?.properties?.edited_date?.date?.start)} />
+          <LastEditedCaution lastEditedDate={new Date(node?.properties?.edited_date?.date?.start)} />
           <TableOfContents target={['h1', 'h2', 'h3']} />
-          <Contents childrens={content?.children} />
+          <Contents childrens={node?.children} />
         </article>
         <section className="post__footer">
           <Share />
@@ -118,22 +122,5 @@ const PostPage: React.FC<PageProps> = ({ data, pageContext }: any) => {
     </GlobalPortal.Provider>
   );
 };
-
-export const postQuery = graphql`
-  query {
-    allNotion {
-      edges {
-        node {
-          id
-          databaseName
-          title
-          json
-          createdAt
-          updatedAt
-        }
-      }
-    }
-  }
-`;
 
 export default PostPage;

@@ -1,8 +1,9 @@
-import { CONFIG_THEME_KEY } from '@src/constants';
-import { useLocalStorage } from '@src/hooks/useLocalStorage';
-import { useThemeStore } from '@store/configStore';
 import * as React from 'react';
 import { useRef, useEffect } from 'react';
+
+import { useLocalStorage } from '@hooks/useLocalStorage';
+import { CONFIG_THEME_KEY } from '@src/constants';
+import { useThemeStore } from '@store/config';
 
 const Giscus = () => {
   const { theme } = useThemeStore();
@@ -26,7 +27,7 @@ const Giscus = () => {
     script.setAttribute('data-theme', configTheme && configTheme === 'dark' ? 'dark' : 'light');
     script.setAttribute('data-lang', 'ko');
     script.setAttribute('cross-origin', 'anonymous');
-    script.async = true;
+    script.defer = true;
 
     if (giscusRef.current) {
       giscusRef.current.appendChild(script);
@@ -47,7 +48,7 @@ const Giscus = () => {
     );
   }, [theme]);
 
-  return <div className="giscus-container" ref={giscusRef} />;
+  return <div ref={giscusRef} className="giscus-container" />;
 };
 
 export default Giscus;

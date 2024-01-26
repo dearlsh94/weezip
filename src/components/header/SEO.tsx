@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { useSiteMetadata } from '@services/use-site-metadata';
 
 interface SEOProps {
@@ -22,22 +23,22 @@ const SEO = ({ title, description, pathname, thumbnail, children, keywords = [] 
   return (
     <>
       <title>{seo.title}</title>
-      <meta name="robots" content="index,follow" />
-      <meta name="content-language" content="kr" />
-      <meta name="description" content={seo.description} />
-      <meta name="keywords" content={['treefeely', 'weezip', ...keywords]?.join(', ')} />
+      <meta content="index,follow" name="robots" />
+      <meta content="kr" name="content-language" />
+      <meta content={seo.description} name="description" />
+      <meta content={['treefeely', 'weezip', ...keywords]?.join(', ')} name="keywords" />
 
-      <meta property="og:type" content={'website'} />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:url" content={seo.url} />
-      <meta property="og:site_name" content={'Weezip'} />
-      <meta property="og:locale" content={'ko_KR'} />
+      <meta content={'website'} property="og:type" />
+      <meta content={seo.title} property="og:title" />
+      <meta content={seo.description} property="og:description" />
+      <meta content={seo.url} property="og:url" />
+      <meta content={'Weezip'} property="og:site_name" />
+      <meta content={'ko_KR'} property="og:locale" />
 
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:title" content={seo.title} />
-      <meta property="twitter:description" content={seo.description} />
-      <meta property="twitter:url" content={seo.url} />
+      <meta content="summary_large_image" property="twitter:card" />
+      <meta content={seo.title} property="twitter:title" />
+      <meta content={seo.description} property="twitter:description" />
+      <meta content={seo.url} property="twitter:url" />
 
       {/* <link
         rel="icon"
@@ -46,10 +47,10 @@ const SEO = ({ title, description, pathname, thumbnail, children, keywords = [] 
 
       {thumbnail && (
         <>
-          <meta name="image" content={thumbnail} />
-          <meta property="og:image" content={thumbnail} />
-          <meta property="og:image:width" content={'1200'} />
-          <meta property="twitter:image" content={thumbnail} />
+          <meta content={thumbnail} name="image" />
+          <meta content={thumbnail} property="og:image" />
+          <meta content={'1200'} property="og:image:width" />
+          <meta content={thumbnail} property="twitter:image" />
         </>
       )}
       {children}
