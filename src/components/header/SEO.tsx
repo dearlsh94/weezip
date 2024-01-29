@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { useSiteMetadata } from '@services/use-site-metadata';
+import { useSiteMetadata } from '@hooks/useSiteMetadata';
 
 interface SEOProps {
   title?: string;

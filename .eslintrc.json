@@ -67,11 +67,6 @@
             "position": "before"
           },
           {
-            "pattern": "@services",
-            "group": "internal",
-            "position": "after"
-          },
-          {
             "pattern": "@store",
             "group": "internal",
             "position": "after"

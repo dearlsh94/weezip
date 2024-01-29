@@ -32,7 +32,6 @@ const config: GatsbyConfig = {
           '@module': 'src/module',
           '@pages': 'src/pages',
           '@scss': 'src/scss',
-          '@services': 'src/services',
           '@store': 'src/store',
           '@hooks': 'src/hooks',
           '@types': 'src/types',
