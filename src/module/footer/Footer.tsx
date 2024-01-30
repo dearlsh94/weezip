@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import './Footer.scss';
-import { IconGithub, IconInstagram, IconKakao, IconMail } from '@components/icon';
+import { IconGithub, IconKakao, IconMail } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
 import { Linker } from '@components/ui';
 import { ARIA_LABEL, OWNER_EMAIL } from '@src/constants';
@@ -16,15 +16,6 @@ export default function Footer() {
             <CircleIconWrapper color="reverse-mono">
               <Linker label={`${OWNER_EMAIL} 메일 ${ARIA_LABEL.SEND}`} url={`mailto:${OWNER_EMAIL}`}>
                 <IconMail color="reverse-mono" />
-              </Linker>
-            </CircleIconWrapper>
-            <CircleIconWrapper color="reverse-mono">
-              <Linker
-                label={`인스타그램 ${ARIA_LABEL.OPEN}`}
-                target="_blank"
-                url={`https://www.instagram.com/treefeely/`}
-              >
-                <IconInstagram color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
             <CircleIconWrapper color="reverse-mono">
