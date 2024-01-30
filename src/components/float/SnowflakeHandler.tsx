@@ -6,14 +6,14 @@ import { ARIA_LABEL } from '@src/constants';
 import { useSnowflakeStore } from '@store/config';
 
 export default function SnowflakeHandler() {
-  const { isShow, change } = useSnowflakeStore();
+  const { isShow, toggle } = useSnowflakeStore();
 
   return (
     <CircleIconWrapper
       aria-label={`눈송이 효과 ${isShow ? ARIA_LABEL.TOGGLE_OFF : ARIA_LABEL.TOGGLE_ON}`}
       color="secondary"
       size={44}
-      onClick={change}
+      onClick={toggle}
     >
       <IconSnow color={`${isShow ? `primary` : `secondary`}`} direction="top" />
     </CircleIconWrapper>
