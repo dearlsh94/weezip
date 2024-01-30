@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useRef, useEffect } from 'react';
+import './Giscus.scss';
 
 import { useLocalStorage } from '@hooks/useLocalStorage';
 import { CONFIG_THEME_KEY } from '@src/constants';
@@ -48,7 +49,16 @@ const Giscus = () => {
     );
   }, [theme]);
 
-  return <div ref={giscusRef} className="giscus-container" />;
+  return (
+    <div className="giscus-container">
+      <p>
+        이 글은 어떠셨나요?
+        <br />
+        <b>댓글</b>과 <b>반응</b>은 큰 힘이 됩니다. ❣️
+      </p>
+      <div ref={giscusRef} />
+    </div>
+  );
 };
 
 export default Giscus;
