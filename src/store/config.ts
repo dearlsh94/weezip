@@ -21,15 +21,17 @@ interface ShowSNBState {
   open: () => void;
   close: () => void;
 }
-export const useShowSNBStore = create<ShowSNBState>(set => ({
+export const useShowSNBStore = create<ShowSNBState>((set, get) => ({
   isShow: false,
   change() {
-    set(({ isShow }) => ({ isShow: !isShow }));
+    get().isShow ? get().close() : get().open();
   },
   open() {
+    document.body.style.overflow = 'hidden';
     set(() => ({ isShow: true }));
   },
   close() {
+    document.body.style.overflow = 'auto';
     set(() => ({ isShow: false }));
   },
 }));
