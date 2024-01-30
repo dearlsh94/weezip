@@ -13,7 +13,7 @@ export default function LastEditedCaution({ lastEditedDate }: LastEditedCautionP
   return (
     diff > 180 && (
       <aside className="last-edited-caution">
-        <IconCaution color={'white'} />
+        <IconCaution color={'white'} viewBox="0 0 64 64" />
         <p>
           <em>{diff}</em>일 전에 마지막으로 수정된 글입니다.
         </p>
