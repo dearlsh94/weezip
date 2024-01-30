@@ -15,6 +15,25 @@ export const useSnowflakeStore = create<SnowflakeState>(set => ({
   },
 }));
 
+interface ShowSNBState {
+  isShow: boolean;
+  change: () => void;
+  open: () => void;
+  close: () => void;
+}
+export const useShowSNBStore = create<ShowSNBState>(set => ({
+  isShow: false,
+  change() {
+    set(({ isShow }) => ({ isShow: !isShow }));
+  },
+  open() {
+    set(() => ({ isShow: true }));
+  },
+  close() {
+    set(() => ({ isShow: false }));
+  },
+}));
+
 interface ThemeState {
   theme: Themes;
   setDarkTheme: () => void;
