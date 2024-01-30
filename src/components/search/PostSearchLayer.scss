@@ -53,6 +53,10 @@
         flex: 1;
         align-items: center;
 
+        input::-webkit-search-cancel-button {
+          display: none;
+        }
+
         .icon-clear {
           position: absolute;
           right: 14px;

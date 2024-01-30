@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import './MainLayout.scss';
+import { PostSearchLayer } from '@components/search';
 import { ScrollProgress } from '@components/ui/progress';
 import { Footer } from '@module/footer';
 import { Header } from '@module/header';
@@ -19,6 +20,7 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
       <div className="content">{children}</div>
       <Footer />
       <SideBarNavigation />
+      <PostSearchLayer />
     </main>
   );
 }

@@ -36,6 +36,27 @@ export const useShowSNBStore = create<ShowSNBState>((set, get) => ({
   },
 }));
 
+interface ShowSearchState {
+  isShow: boolean;
+  change: () => void;
+  open: () => void;
+  close: () => void;
+}
+export const useShowSearchStore = create<ShowSearchState>((set, get) => ({
+  isShow: false,
+  change() {
+    get().isShow ? get().close() : get().open();
+  },
+  open() {
+    document.body.style.overflow = 'hidden';
+    set(() => ({ isShow: true }));
+  },
+  close() {
+    document.body.style.overflow = 'auto';
+    set(() => ({ isShow: false }));
+  },
+}));
+
 interface ThemeState {
   theme: Themes;
   setDarkTheme: () => void;
