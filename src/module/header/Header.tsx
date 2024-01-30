@@ -33,7 +33,9 @@ export default function Header() {
   return (
     <>
       <header className={`${status}`}>
-        <SNBOpenIcon />
+        <div className="left-box">
+          <SNBOpenIcon />
+        </div>
         <Linker label={`홈으로 ${ARIA_LABEL.MOVE}`} url="/">
           <div className="icon-box">
             <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-128x128.png" width={36} />
