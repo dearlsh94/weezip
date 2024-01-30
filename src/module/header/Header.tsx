@@ -17,12 +17,12 @@ import { moveToTop } from '@utils/scroll';
 
 export default function Header() {
   const searchOverlay = useOverlay();
+  const { scrollY, isScrollingUp, isBottom } = useScroll();
   const [status, setStatus] = useState('');
-  const { scrollY, isScrollingUp } = useScroll();
   const [postTitle, setPostTitle] = useState('');
 
   useEffect(() => {
-    setStatus(scrollY < 160 || isScrollingUp ? '' : 'invisible');
+    setStatus(scrollY < 160 || isScrollingUp || isBottom ? '' : 'invisible');
   }, [scrollY, isScrollingUp]);
 
   useEffect(() => {
