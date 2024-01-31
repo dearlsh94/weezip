@@ -5,9 +5,8 @@ header {
   z-index: 200;
   top: 0;
   width: 100%;
-  height: 60px;
   flex-direction: row;
-  margin-bottom: 12px;
+  padding: 8px 0;
   background-color: var(--color-background-opacity);
   box-shadow: 0 3px 9px var(--color-shadow);
   transition-duration: 0.2s;
@@ -47,6 +46,18 @@ header {
     @include hover-fine {
       border-radius: 4px;
       background-color: var(--color-secondary);
+    }
+  }
+
+  .left-box {
+    position: absolute;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    svg {
+      cursor: pointer;
     }
   }
 

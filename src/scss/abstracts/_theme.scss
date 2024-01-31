@@ -1,4 +1,4 @@
-html {
+:root {
   --color-black-1: #090909;
   --color-black-2: #111;
   --color-black-3: #1a1a1a;
@@ -14,7 +14,7 @@ html {
   --color-deep-navy: #0a1128;
 }
 
-html[weezip-theme='light'] {
+html[weezip-theme='light']:root {
   --color-base: #2f5d62;
   --color-primary: #5e8b7e;
   --color-secondary: #a7c4bc;
@@ -55,7 +55,7 @@ html[weezip-theme='light'] {
   --color-background-opacity: rgb(247 247 247 / 95%);
 }
 
-html[weezip-theme='dark'] {
+html[weezip-theme='dark']:root {
   --color-base: #7579e7;
   --color-primary: #9ab3f5;
   --color-secondary: #a3d8f4;

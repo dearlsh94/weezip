@@ -4,7 +4,6 @@ import * as React from 'react';
 
 import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
-import Giscus from '@components/Giscus';
 import { GlobalPortal } from '@components/GlobalPortal';
 import SEO from '@components/header/SEO';
 import {
@@ -17,6 +16,7 @@ import {
   Title,
   TitleDescription,
 } from '@components/post';
+import { Giscus } from '@components/post/giscus';
 import { FloatBox } from '@components/ui';
 import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb/Breadcrumb';
 import { useWeezipNotion } from '@hooks/useWeezipNotion';

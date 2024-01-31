@@ -9,7 +9,7 @@ export default function IconCaution(props: SvgControllerProps) {
         <mask id="ipSCaution0">
           <g fill="none" strokeWidth="4">
             <path
-              clip-rule="evenodd"
+              clipRule="evenodd"
               d="M24 5L2 43h44L24 5Z"
               fill={props.color}
               fillRule="evenodd"

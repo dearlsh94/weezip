@@ -6,12 +6,56 @@ import { MultiSelect } from '@types';
 
 interface SnowflakeState {
   isShow: boolean;
-  change: () => void;
+  toggle: () => void;
 }
 export const useSnowflakeStore = create<SnowflakeState>(set => ({
   isShow: true,
-  change() {
+  toggle() {
     set(({ isShow }) => ({ isShow: !isShow }));
+  },
+}));
+
+interface ShowSNBState {
+  isShow: boolean;
+  toggle: () => void;
+  open: () => void;
+  close: () => void;
+}
+export const useShowSNBStore = create<ShowSNBState>((set, get) => ({
+  isShow: false,
+  toggle() {
+    const { isShow, close, open } = get();
+    isShow ? close() : open();
+  },
+  open() {
+    document.body.style.overflow = 'hidden';
+    set(() => ({ isShow: true }));
+  },
+  close() {
+    document.body.style.overflow = 'auto';
+    set(() => ({ isShow: false }));
+  },
+}));
+
+interface ShowSearchState {
+  isShow: boolean;
+  toggle: () => void;
+  open: () => void;
+  close: () => void;
+}
+export const useShowSearchStore = create<ShowSearchState>((set, get) => ({
+  isShow: false,
+  toggle() {
+    const { isShow, close, open } = get();
+    isShow ? close() : open();
+  },
+  open() {
+    document.body.style.overflow = 'hidden';
+    set(() => ({ isShow: true }));
+  },
+  close() {
+    document.body.style.overflow = 'auto';
+    set(() => ({ isShow: false }));
   },
 }));
 

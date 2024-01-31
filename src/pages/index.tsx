@@ -10,7 +10,7 @@ import { GlobalPortal } from '@components/GlobalPortal';
 import { Snowflakes } from '@components/animation';
 import SEO from '@components/header/SEO';
 import { Contents, LatestPost } from '@components/post';
-import { Divider, FloatBox } from '@components/ui';
+import { FloatBox } from '@components/ui';
 import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
 import { notionNodeToJson } from '@utils/notion';
@@ -29,7 +29,6 @@ const IndexPage: React.FC<PageProps> = () => {
     <GlobalPortal.Provider>
       <MainLayout className="index-layout">
         <LatestPost />
-        <Divider />
         <div className="introduce">{node && <Contents childrens={json.children} />}</div>
         <div className="logo-box">
           <StaticImage alt="Weezip Logo" src="../images/Tesseract-Logo-256x256.png" width={128} />

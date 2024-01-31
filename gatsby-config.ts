@@ -1,6 +1,5 @@
 import type { GatsbyConfig } from 'gatsby';
 
-// Handle Environment Variables
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -14,7 +13,6 @@ const config: GatsbyConfig = {
     siteUrl: siteUrl,
   },
   graphqlTypegen: true,
-  // For to check not available during SSR
   flags: {
     DEV_SSR: true,
     FAST_DEV: true,
@@ -34,7 +32,6 @@ const config: GatsbyConfig = {
           '@module': 'src/module',
           '@pages': 'src/pages',
           '@scss': 'src/scss',
-          '@services': 'src/services',
           '@store': 'src/store',
           '@hooks': 'src/hooks',
           '@types': 'src/types',
