@@ -35,7 +35,7 @@ export default function NCode({ code }: NCodeProps) {
           onClick={handleCodeCopy}
         />
       </div>
-      <SyntaxHighlighter language={code.language} showLineNumbers={true} style={vscDarkPlus}>
+      <SyntaxHighlighter language={code.language} style={vscDarkPlus} showLineNumbers>
         {codeString}
       </SyntaxHighlighter>
       {code.caption.length > 0 && (
