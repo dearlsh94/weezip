@@ -23,7 +23,7 @@ import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
 
-import { BlockType, Heading2Children, ImageChildren } from '@types';
+import { BlockType, ImageChildren, ParagraphChildren } from '@types';
 
 export const Head: HeadFC = ({ pageContext }: any) => {
   const { getNodeByUrl } = useWeezipNotion();
@@ -49,26 +49,33 @@ export const Head: HeadFC = ({ pageContext }: any) => {
     descriptions.push(`수정일: ${node?.properties?.edited_date?.date.start}`);
   }
 
+  const getDescriptionText = (header2Name: '한줄평' | '머리말') => {
+    const h2PrefaceIndex = node?.children?.findIndex(
+      c => c.type === 'heading_2' && c.heading_2?.rich_text[0]?.plain_text === header2Name
+    );
+
+    if (0 <= h2PrefaceIndex && h2PrefaceIndex + 1 < node.children.length) {
+      const h2Preface = node?.children[h2PrefaceIndex + 1];
+      if (h2Preface?.type === BlockType.PARAGRAPH) {
+        return `${header2Name}: ${h2Preface.paragraph.rich_text[0]?.plain_text}`;
+      }
+    } else {
+      const firstParagraph = node?.children?.find(
+        c => c.type === BlockType.PARAGRAPH && c.paragraph.rich_text.length > 0
+      ) as ParagraphChildren;
+      return `${firstParagraph?.paragraph?.rich_text[0]?.plain_text || ''}`;
+    }
+  };
+
   switch (series) {
     case '트리피디아':
-    case '문화 소비자 시점':
-      const h2Review: Heading2Children = node?.children?.filter(
-        c => c.type === 'heading_2' && c.heading_2?.rich_text[0]?.plain_text === '한줄평'
-      )[0] as Heading2Children;
-      if (h2Review) {
-        descriptions.push(`${h2Review?.heading_2?.rich_text[0]?.plain_text}`);
-      }
+      descriptions.push(getDescriptionText('한줄평'));
       break;
     default:
-      const h2Preface = node?.children?.filter(
-        c => c.type === 'heading_2' && c.heading_2?.rich_text[0]?.plain_text === '머리말'
-      )[0] as Heading2Children;
-      if (h2Preface) {
-        const h2PrefaceString = `, ${h2Preface?.heading_2?.rich_text.reduce((cur, t) => cur + t.plain_text, '')}`;
-        descriptions.push(h2PrefaceString);
-      }
+      descriptions.push(getDescriptionText('머리말'));
       break;
   }
+
   return (
     <SEO
       description={descriptions.join(', ')}
