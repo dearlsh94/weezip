@@ -1,8 +1,7 @@
 import * as React from 'react';
 
 import './FloatBox.scss';
-import MoveTopButton from '@components/float/MoveTopButton';
-import SnowflakeHandler from '@components/float/SnowflakeHandler';
+import { FloatMoveTop, FloatSnowflakesHandler } from '@components/float';
 
 interface FloatBoxProps {
   useTop?: boolean;
@@ -12,8 +11,8 @@ interface FloatBoxProps {
 export default function FloatBox({ useTop, useSnowflake }: FloatBoxProps) {
   return (
     <div className={`float-box`}>
-      {useTop && <MoveTopButton />}
-      {useSnowflake && <SnowflakeHandler />}
+      {useTop && <FloatMoveTop />}
+      {useSnowflake && <FloatSnowflakesHandler />}
     </div>
   );
 }

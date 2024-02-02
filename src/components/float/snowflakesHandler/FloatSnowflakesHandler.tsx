@@ -5,7 +5,7 @@ import { CircleIconWrapper } from '@components/icon/wrapper';
 import { ARIA_LABEL } from '@src/constants';
 import { useSnowflakeStore } from '@store/config';
 
-export default function SnowflakeHandler() {
+export default function FloatSnowflakesHandler() {
   const { isShow, toggle } = useSnowflakeStore();
 
   return (
