@@ -11,7 +11,7 @@ export default function TagsFilter() {
       <div className="tag filter">
         <p className="title">태그</p>
         {everyPostsTags.map(name => (
-          <TagItem key={name} name={name} useLink={true} />
+          <TagItem key={name} name={name} useLink />
         ))}
       </div>
     )

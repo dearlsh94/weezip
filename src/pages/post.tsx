@@ -112,7 +112,7 @@ const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
             createdDate={node?.properties?.created_date}
             editedDate={node?.properties?.edited_date}
             tag={node?.properties?.tag?.multi_select}
-            useTagLink={true}
+            useTagLink
           />
           <LastEditedCaution lastEditedDate={new Date(node?.properties?.edited_date?.date?.start)} />
           <TableOfContents target={['h1', 'h2', 'h3']} />
@@ -124,7 +124,7 @@ const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
           <OutLink series={series} />
           <Feedback />
         </section>
-        <FloatBox useTop={true} />
+        <FloatBox useTop />
       </MainLayout>
     </GlobalPortal.Provider>
   );
