@@ -5,17 +5,18 @@ import { useEffect, useState } from 'react';
 
 import './Header.scss';
 
-import ThemeController from '@components/ThemeController';
 import { SNBOpenIcon } from '@components/header';
-import { IconSearch } from '@components/icon';
+import { IconDarkTheme, IconLightTheme, IconSearch } from '@components/icon';
 import { Linker } from '@components/ui';
 import useScroll from '@hooks/useScroll';
+import useTheme from '@hooks/useTheme';
 import { ARIA_LABEL } from '@src/constants';
 import { useShowSearchStore } from '@store/config';
 import { moveToTop } from '@utils/scroll';
 
 export default function Header() {
   const { open: handleOpenSearch } = useShowSearchStore();
+  const { theme, changeAndSaveDark, changeAndSaveLight } = useTheme();
 
   const { scrollY, isScrollingUp, isBottom } = useScroll();
   const [status, setStatus] = useState('');
@@ -46,10 +47,24 @@ export default function Header() {
         </p>
       )}
       <div className="right-box">
-        <button className="icon-box">
-          <ThemeController />
-        </button>
-        <button aria-label={`검색창 ${ARIA_LABEL.OPEN}`} className="icon-box" role="button" onClick={handleOpenSearch}>
+        {theme === 'light' ? (
+          <button
+            aria-label={`현재 라이트 모드. 다크 모드로 ${ARIA_LABEL.EDIT}`}
+            className="icon-box"
+            onClick={changeAndSaveDark}
+          >
+            <IconLightTheme />
+          </button>
+        ) : (
+          <button
+            aria-label={`현재 다크 모드. 라이트 모드로 ${ARIA_LABEL.EDIT}`}
+            className="icon-box"
+            onClick={changeAndSaveLight}
+          >
+            <IconDarkTheme />
+          </button>
+        )}
+        <button aria-label={`검색창 ${ARIA_LABEL.OPEN}`} className="icon-box" onClick={handleOpenSearch}>
           <IconSearch />
         </button>
       </div>
