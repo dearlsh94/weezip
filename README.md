@@ -18,6 +18,7 @@
 
 ## Posts
 
+- [예능 《장사천재 백사장 시즌2》 후기. 프로덕트 개발의 진수가 담겨있었다.](https://weezip.treefeely.com/post/review-the-genius-paik-season-2)
 - [게임과 개발 문화로 알아보는 지속 가능한 커뮤니티 구축을 위한 5가지 깨달음.](https://weezip.treefeely.com/post/5-insights-for-sustainable-community)
 - [리액트와 SCSS로 구현한 눈송이 애니메이션 코드: 사이트에 겨울 불어넣기.](https://weezip.treefeely.com/post/make-snowflakes-effect-in-react)
 - [2023년을 돌아보고 2024년을 맞이하기 위한 회고와 만다라트](https://weezip.treefeely.com/post/retrospective-2023-and-mandalart-2024)
