@@ -1,1 +1,2 @@
-export { default as PostSearchLayer } from './PostSearchLayer';
+export * from './layer';
+export * from './recommend';

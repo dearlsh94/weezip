@@ -10,7 +10,7 @@ import { useShowSearchStore } from '@store/config';
 import { throttle } from '@utils/common';
 import { moveToPostsPage } from '@utils/url';
 
-import { RecommendTag } from './recommend';
+import { RecommendTag } from '../recommend';
 
 export default function PostSearchLayer() {
   const { isShow, close: handleSearchClose } = useShowSearchStore();

@@ -7,7 +7,7 @@ import useShow from '@hooks/useShow';
 import { ARIA_LABEL } from '@src/constants';
 import { moveToTop } from '@utils/scroll';
 
-export default function MoveTopButton() {
+export default function FloatMoveTop() {
   const showButton = useShow();
   const { scrollY } = useScroll();
 
