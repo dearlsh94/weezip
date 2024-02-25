@@ -1,33 +1,41 @@
-.posts-item {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 0;
-  row-gap: 12px;
+@import '@scss/abstracts/mixin';
 
-  p {
-    margin-top: 8px;
-    font-size: 15pt;
-    font-weight: 500;
-  }
-
-  .info-box {
+li {
+  .posts-item {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    padding: 28px 0;
+    row-gap: 12px;
 
-    .date-box {
-      flex-grow: 1;
+    @include mobile {
+      padding: 20px 0;
+    }
+
+    p {
       margin-top: 8px;
-      text-align: right;
+      font-size: 15pt;
+      font-weight: 500;
+    }
 
-      span.date {
-        color: var(--color-grey);
-        font-size: 10pt;
-      }
+    .info-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
 
-      span.date + span.date {
-        margin-left: 8px;
+      .date-box {
+        flex-grow: 1;
+        margin-top: 8px;
+        text-align: right;
+
+        span.date {
+          color: var(--color-grey);
+          font-size: 10pt;
+        }
+
+        span.date + span.date {
+          margin-left: 8px;
+        }
       }
     }
   }
