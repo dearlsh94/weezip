@@ -8,8 +8,10 @@ interface SnowflakeState {
   isShow: boolean;
   toggle: () => void;
 }
+
 export const useSnowflakeStore = create<SnowflakeState>(set => ({
-  isShow: true,
+  // 1월, 2월, 12월만 기본값 true로 설정
+  isShow: [0, 1, 11].includes(new Date().getMonth()),
   toggle() {
     set(({ isShow }) => ({ isShow: !isShow }));
   },
