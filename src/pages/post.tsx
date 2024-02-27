@@ -99,7 +99,7 @@ const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
     { name: '글 목록', url: '/list' },
   ];
   if (series) {
-    breadcrumbSteps.push({ name: `[${series.name}] 시리즈`, url: `/list?series=${series.name}` });
+    breadcrumbSteps.push({ name: `${series.name}`, url: `/list?series=${series.name}` });
   }
 
   return (

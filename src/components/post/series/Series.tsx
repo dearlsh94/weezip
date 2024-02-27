@@ -19,6 +19,6 @@ export default function Series({ series, useLink = false, ...rest }: SeriesProps
       label: `${series?.name} 시리즈 목록으로 ${ARIA_LABEL.MOVE}`,
       ...rest,
     },
-    <span className={`series-box ${useLink ? 'link' : 'normal'}`}>[{series?.name}]</span>
+    <span className={`series-box ${useLink ? 'badge' : 'normal'}`}>{series?.name}</span>
   );
 }
