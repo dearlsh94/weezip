@@ -8,7 +8,7 @@ export default function SeriesFilter() {
   const { everyPostsSeries } = useWeezipNotion();
   return (
     everyPostsSeries?.length > 0 && (
-      <div className="filter">
+      <div className="series-filter">
         <p className="title">시리즈</p>
         {everyPostsSeries.map(series => (
           <Series key={series.id} series={series} useLink />
