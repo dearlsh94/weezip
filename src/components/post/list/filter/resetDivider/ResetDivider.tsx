@@ -12,7 +12,7 @@ export default function ResetDivider() {
       <Divider color="primary" height={2} />
       <span aria-label={`글 목록 페이지로 ${ARIA_LABEL.MOVE}`} className="reset" onClick={() => moveToPostsPage({})}>
         <IconClearAll />
-        초기화
+        전체 글 보기
       </span>
     </div>
   );

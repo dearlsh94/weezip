@@ -2,12 +2,14 @@
   display: flex;
   align-items: center;
   column-gap: 8px;
+  cursor: pointer;
+  color: var(--color-primary);
 
   span {
     display: flex;
     align-items: center;
     column-gap: 4px;
-    width: 90px;
+    width: 140px;
     font-size: 11pt;
   }
 }
