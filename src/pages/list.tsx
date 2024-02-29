@@ -8,8 +8,8 @@ import '@scss/pages/PostsPage.scss';
 
 import { GlobalPortal } from '@components/GlobalPortal';
 import SEO from '@components/header/SEO';
-import { Posts, PostsDescription, PostsFilter } from '@components/post';
-import { Divider, LoadContainer } from '@components/ui';
+import { Posts, PostsDescription, PostsFilter, ResetDivider } from '@components/post';
+import { LoadContainer } from '@components/ui';
 import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
 import { compareString } from '@utils/common';
@@ -73,7 +73,7 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
       <MainLayout className="posts-layout">
         <section className="posts-layout__header">
           <PostsFilter />
-          <Divider color="primary" height={2} />
+          <ResetDivider />
           <PostsDescription filteredText={filterText} isLoading={isLoading} length={list.length} />
         </section>
         <LoadContainer isError={false} isLoading={isLoading}>
