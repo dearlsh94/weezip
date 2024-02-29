@@ -5,6 +5,7 @@ import { MyButton } from '@components/ui';
 import { ButtonColor, ButtonSize, ButtonType } from '@components/ui/button/MyButton';
 import { Linker } from '@components/ui/linker';
 import { ARIA_LABEL } from '@src/constants';
+import { getSeriesURL } from '@utils/url';
 
 import { Select } from '@types';
 interface OutLinkProps {
@@ -14,7 +15,7 @@ export default function OutLink({ series }: OutLinkProps) {
   return (
     <div className="out-link-box">
       {series && (
-        <Linker label={`${series.name} 시리즈 목록으로 ${ARIA_LABEL.MOVE}`} url={`/list?series=${series.name}`}>
+        <Linker label={`${series.name} 시리즈 목록으로 ${ARIA_LABEL.MOVE}`} url={getSeriesURL(series.name)}>
           <MyButton
             className="series-button"
             color={ButtonColor.PRIMARY}

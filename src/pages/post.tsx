@@ -24,6 +24,7 @@ import { MainLayout } from '@layout/main';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
 
 import { BlockType, ImageChildren, ParagraphChildren } from '@types';
+import { getSeriesURL } from '@utils/url';
 
 export const Head: HeadFC = ({ pageContext }: any) => {
   const { getNodeByUrl } = useWeezipNotion();
@@ -99,7 +100,7 @@ const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
     { name: '글 목록', url: '/list' },
   ];
   if (series) {
-    breadcrumbSteps.push({ name: `[${series.name}] 시리즈`, url: `/list?series=${series.name}` });
+    breadcrumbSteps.push({ name: `${series.name}`, url: getSeriesURL(series.name) });
   }
 
   return (

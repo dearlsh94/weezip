@@ -1,34 +1,33 @@
-.posts-item {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 0;
-  row-gap: 12px;
+@import '@scss/abstracts/mixin';
 
-  p {
-    margin-top: 8px;
-    font-size: 15pt;
-    font-weight: 500;
+.posts-item {
+  box-sizing: content-box;
+  border-radius: 4px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 1px;
+  background-color: var(--color-background);
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.2s;
+
+  @include hover-fine {
+    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: 0;
   }
 
-  .info-box {
+  .posts-item__content {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    padding: 28px 0;
 
-    .date-box {
-      flex-grow: 1;
-      margin-top: 8px;
-      text-align: right;
+    @include mobile {
+      padding: 20px 0;
+    }
 
-      span.date {
-        color: var(--color-grey);
-        font-size: 10pt;
-      }
-
-      span.date + span.date {
-        margin-left: 8px;
-      }
+    p {
+      margin: 8px 0px 12px;
+      font-size: 15pt;
+      font-weight: 500;
     }
   }
 }

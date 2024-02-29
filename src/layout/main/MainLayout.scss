@@ -14,8 +14,12 @@
     max-width: 768px;
     min-height: calc(100vh - 50px - 12px);
     box-sizing: border-box;
-    padding: 12px 20px;
+    padding: 36px 20px 48px;
     word-wrap: break-word;
+
+    @include mobile {
+      padding: 24px 20px 48px;
+    }
 
     .center {
       display: flex;
