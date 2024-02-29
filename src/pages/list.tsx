@@ -73,9 +73,9 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
       <MainLayout className="posts-layout">
         <section className="posts-layout__header">
           <PostsFilter />
+          <Divider color="primary" height={2} />
           <PostsDescription filteredText={filterText} isLoading={isLoading} length={list.length} />
         </section>
-        <Divider color="primary" height={2} />
         <LoadContainer isError={false} isLoading={isLoading}>
           <Posts list={list} />
         </LoadContainer>
