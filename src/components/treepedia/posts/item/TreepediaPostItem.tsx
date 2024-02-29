@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './TreepediaPost.scss';
+import './TreepediaPostItem.scss';
 import { TitleDescription } from '@components/post';
 import { Linker } from '@components/ui';
 import { ARIA_LABEL } from '@src/constants';
@@ -8,11 +8,11 @@ import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
 
 import { BlockType, NotionNode } from '@types';
 
-interface TreepediaPostProps {
+interface TreepediaPostItemProps {
   post: NotionNode;
 }
 
-export default function TreepediaPost({ post }: TreepediaPostProps) {
+export default function TreepediaPostItem({ post }: TreepediaPostItemProps) {
   const content = notionNodeToJson(post);
   const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
 

@@ -3,7 +3,7 @@ import * as React from 'react';
 import './TreepediaPosts.scss';
 import { PostEmptyChecker } from '@components/post';
 
-import { TreepediaPost } from './item';
+import { TreepediaPostItem } from './item';
 
 import { NotionNode } from '@types';
 
@@ -15,7 +15,7 @@ export default function TreepediaPosts({ posts }: TreepediaPostsProps) {
     <PostEmptyChecker length={posts.length}>
       <ul className="treepedia-posts">
         {posts.map(post => {
-          return <TreepediaPost key={post.id} post={post} />;
+          return <TreepediaPostItem key={post.id} post={post} />;
         })}
       </ul>
     </PostEmptyChecker>

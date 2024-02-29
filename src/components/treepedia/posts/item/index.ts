@@ -1,1 +1,1 @@
-export { default as TreepediaPost } from './TreepediaPost';
+export { default as TreepediaPostItem } from './TreepediaPostItem';
