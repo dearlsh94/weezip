@@ -16,13 +16,11 @@ export default function PostsItem({ post }: PostsItemProps) {
   const title = getPlainTextByRichText(content?.properties?.remark?.rich_text);
 
   return (
-    <li>
+    <li className="posts-item">
       <Linker label={`${title} 글 페이지로 ${ARIA_LABEL.MOVE}`} url={post.title}>
-        <div className={`posts-item`}>
-          <div className="posts-item__title">
-            {content?.properties?.series?.select && <Series series={content?.properties?.series?.select} />}
-            <p>{title}</p>
-          </div>
+        <div className={`posts-item__content`}>
+          {content?.properties?.series?.select && <Series series={content?.properties?.series?.select} />}
+          <p>{title}</p>
           <TitleDescription
             createdDate={content?.properties?.created_date}
             editedDate={content?.properties?.edited_date}
