@@ -28,3 +28,9 @@ export const moveToPostsPage = ({ keyword, tag, series }: PostsFilter) => {
 export const getParamValue = (params: URLSearchParams, key: string) => {
   return params.has(key) ? params.get(key) || '' : '';
 };
+
+export const getSeriesURL = (seriesName: string) => {
+  if (!seriesName) return '/list';
+
+  return seriesName === '트리피디아' ? '/treepedia' : `/list?series=${encodeURIComponent(seriesName)}`;
+};

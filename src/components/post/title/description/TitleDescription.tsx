@@ -14,6 +14,7 @@ interface TitleDescriptionProps {
   editedDate: DateProperty;
   useCopy?: boolean;
   useTagLink?: boolean;
+  isShowTag?: boolean;
 }
 export default function TitleDescription({
   tag,
@@ -21,6 +22,7 @@ export default function TitleDescription({
   editedDate,
   useCopy = true,
   useTagLink = false,
+  isShowTag = true,
 }: TitleDescriptionProps) {
   const { copyToClipboard } = useClipboard();
 
@@ -30,7 +32,7 @@ export default function TitleDescription({
   };
   return (
     <div className="post-description">
-      <Tags tag={tag} useLink={useTagLink} />
+      {isShowTag && <Tags tag={tag} useLink={useTagLink} />}
       <div className="post-description__right">
         {useCopy && (
           <IconCopyLink

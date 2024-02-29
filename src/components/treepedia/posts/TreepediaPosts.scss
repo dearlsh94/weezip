@@ -1,0 +1,15 @@
+@import '@scss/abstracts/mixin';
+
+.treepedia-posts {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+}
