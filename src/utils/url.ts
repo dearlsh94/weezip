@@ -21,7 +21,7 @@ export const getPostsPageURL = ({ keyword = '', tag = '', series = '' }: PostsFi
   return `/list${params.size > 0 ? `?${params.toString()}` : ``}`;
 };
 
-export const moveToPostsPage = ({ keyword, tag, series }: PostsFilter) => {
+export const moveToPostsPage = ({ keyword, tag, series }: PostsFilter = {}) => {
   navigate(getPostsPageURL({ keyword, tag, series }));
 };
 

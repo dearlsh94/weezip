@@ -17,7 +17,7 @@ export default function TableOfContentsItem({ item, isActive }: TableOfContentsI
       aria-label={`${text} 문단으로 ${ARIA_LABEL.MOVE}`}
       className={`table-of-contents-item tag-${tag} ${isActive ? 'active' : ''}`}
       id={`index-${text}`}
-      onClick={() => moveToOffset(item.offsetTop)}
+      onClick={moveToOffset.bind(null, item.offsetTop)}
     >
       {text}
     </li>

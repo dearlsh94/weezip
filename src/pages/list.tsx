@@ -29,13 +29,13 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
   const params = new URLSearchParams(location.search);
   const { posts } = useWeezipNotion();
 
-  const [list, setList] = useState<NotionNode[]>([]);
-  const [filterText, setFilterText] = useState('전체');
-  const [isLoading, setIsLoading] = useState(true);
-
   const series = getParamValue(params, 'series');
   const tag = getParamValue(params, 'tag');
   const keyword = getParamValue(params, 'keyword');
+
+  const [list, setList] = useState<NotionNode[]>([]);
+  const [filterText, setFilterText] = useState('전체');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     checkFilter();

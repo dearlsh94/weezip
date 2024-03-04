@@ -10,7 +10,11 @@ export default function ResetDivider() {
   return (
     <div className="reset-divider">
       <Divider color="primary" height={2} />
-      <span aria-label={`글 목록 페이지로 ${ARIA_LABEL.MOVE}`} className="reset" onClick={() => moveToPostsPage({})}>
+      <span
+        aria-label={`글 목록 페이지로 ${ARIA_LABEL.MOVE}`}
+        className="reset"
+        onClick={moveToPostsPage.bind(null, {})}
+      >
         <IconClearAll />
         전체 글 보기
       </span>

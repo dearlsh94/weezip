@@ -17,12 +17,14 @@ interface NToggleProps {
 
 export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
   const [isOpen, setIsOpen] = React.useState(false);
+  const change = () => setIsOpen(o => !o);
+
   return (
     <details className="block-toggle">
       <summary
         aria-label={`현재 토글 블럭 ${isOpen ? ARIA_LABEL.EXPAND_OFF : ARIA_LABEL.EXPAND_ON}`}
         className="toggle-title-box"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={change}
       >
         <div className={`icon-box ${isOpen ? 'open' : ''}`}>
           <IconSingleArrow direction="right" size={16} />
