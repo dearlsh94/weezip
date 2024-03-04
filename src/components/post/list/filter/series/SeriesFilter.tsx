@@ -10,9 +10,11 @@ export default function SeriesFilter() {
     everyPostsSeries?.length > 0 && (
       <div className="series-filter">
         <p className="title">시리즈</p>
-        {everyPostsSeries.map(series => (
-          <Series key={series.id} series={series} useLink />
-        ))}
+        <div className="series-filter__items">
+          {everyPostsSeries.map(series => (
+            <Series key={series.id} series={series} useLink />
+          ))}
+        </div>
       </div>
     )
   );
