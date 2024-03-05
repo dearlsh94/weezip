@@ -12,18 +12,20 @@ import { TreepediaPosts } from '@components/treepedia';
 import { Caution } from '@components/ui';
 import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
+import { NAMES } from '@src/constants';
+import { paths } from '@utils/url';
 
 export const Head: HeadFC = () => {
   return (
-    <SEO description={`Write, Explain, Edit, Zip`} pathname="/list" title={`글 목록`}>
-      <link href={`https://weezip.treefeely.com/list`} rel="canonical" />
+    <SEO description={`Write, Explain, Edit, Zip`} pathname={paths.posts()} title={`글 목록`}>
+      <link href={`https://weezip.treefeely.com${paths.posts()}`} rel="canonical" />
     </SEO>
   );
 };
 
 const ListPage: React.FC<PageProps> = () => {
   const { posts } = useWeezipNotion();
-  const lists = posts.filter(post => post.notionColumn?.series?.name === '트리피디아');
+  const lists = posts.filter(post => post.notionColumn?.series?.name === NAMES.TREEPEDIA);
 
   return (
     <GlobalPortal.Provider>

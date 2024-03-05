@@ -3,7 +3,7 @@ import * as React from 'react';
 import './Series.scss';
 import { Linker } from '@components/ui';
 import { ARIA_LABEL } from '@src/constants';
-import { getSeriesURL } from '@utils/url';
+import { paths } from '@utils/url';
 
 import { Select } from '@types';
 
@@ -16,7 +16,7 @@ export default function Series({ series, useLink = false, ...rest }: SeriesProps
   return React.createElement(
     useLink ? Linker : 'span',
     {
-      url: getSeriesURL(series?.name),
+      url: paths.posts({ series: series?.name }),
       label: `${series?.name} 시리즈 목록으로 ${ARIA_LABEL.MOVE}`,
       ...rest,
     },

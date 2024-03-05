@@ -21,10 +21,11 @@ import { FloatBox } from '@components/ui';
 import Breadcrumb, { BreadcrumbStep } from '@components/ui/breadcrumb/Breadcrumb';
 import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
+import { NAMES } from '@src/constants';
 import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
+import { paths } from '@utils/url';
 
 import { BlockType, ImageChildren, ParagraphChildren } from '@types';
-import { getSeriesURL } from '@utils/url';
 
 export const Head: HeadFC = ({ pageContext }: any) => {
   const { getNodeByUrl } = useWeezipNotion();
@@ -69,7 +70,7 @@ export const Head: HeadFC = ({ pageContext }: any) => {
   };
 
   switch (series) {
-    case '트리피디아':
+    case NAMES.TREEPEDIA:
       descriptions.push(getDescriptionText('한줄평'));
       break;
     default:
@@ -96,11 +97,11 @@ const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
   const series = node?.properties?.series?.select;
 
   const breadcrumbSteps: BreadcrumbStep[] = [
-    { name: '홈', url: '/' },
-    { name: '글 목록', url: '/list' },
+    { name: '홈', url: paths.home() },
+    { name: '글 목록', url: paths.posts() },
   ];
   if (series) {
-    breadcrumbSteps.push({ name: `${series.name}`, url: getSeriesURL(series.name) });
+    breadcrumbSteps.push({ name: `${series.name}`, url: paths.posts({ series: series?.name }) });
   }
 
   return (

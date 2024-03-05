@@ -1,36 +1,24 @@
-import { navigate } from 'gatsby';
+import { NAMES } from '@src/constants';
 
-interface PostsFilter {
-  keyword?: string;
-  tag?: string;
-  series?: string;
-}
-
-export const getPostsPageURL = ({ keyword = '', tag = '', series = '' }: PostsFilter) => {
-  const params = new URLSearchParams();
-  if (keyword) {
-    params.set('keyword', keyword);
-  }
-  if (tag) {
-    params.set('tag', tag);
-  }
-  if (series) {
-    params.set('series', series);
-  }
-
-  return `/list${params.size > 0 ? `?${params.toString()}` : ``}`;
+const buildURLWithParams = (endpoint: string, params: Record<string, string> = {}) => {
+  const searchParams = new URLSearchParams();
+  Object.entries(params).forEach(([key, value]) => {
+    if (value) searchParams.append(key, value);
+  });
+  return `${endpoint}${searchParams.size ? `?${searchParams.toString()}` : ''}`;
 };
 
-export const moveToPostsPage = ({ keyword, tag, series }: PostsFilter = {}) => {
-  navigate(getPostsPageURL({ keyword, tag, series }));
-};
+export const paths = Object.freeze({
+  home: () => buildURLWithParams('/'),
+  posts: (params?: { keyword?: string; tag?: string; series?: string }) => {
+    if (params?.series === NAMES.TREEPEDIA) {
+      return paths.treepedia();
+    }
+    return buildURLWithParams('/list', params as Record<string, string>);
+  },
+  treepedia: () => buildURLWithParams('/treepedia'),
+});
 
 export const getParamValue = (params: URLSearchParams, key: string) => {
   return params.has(key) ? params.get(key) || '' : '';
-};
-
-export const getSeriesURL = (seriesName: string) => {
-  if (!seriesName) return '/list';
-
-  return seriesName === '트리피디아' ? '/treepedia' : `/list?series=${encodeURIComponent(seriesName)}`;
 };

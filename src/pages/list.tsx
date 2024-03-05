@@ -13,14 +13,14 @@ import { LoadContainer } from '@components/ui';
 import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
 import { compareString } from '@utils/common';
-import { getParamValue } from '@utils/url';
+import { getParamValue, paths } from '@utils/url';
 
 import { NotionNode } from '@types';
 
 export const Head: HeadFC = () => {
   return (
-    <SEO description={`Write, Explain, Edit, Zip`} pathname="/list" title={`글 목록`}>
-      <link href={`https://weezip.treefeely.com/list`} rel="canonical" />
+    <SEO description={`Write, Explain, Edit, Zip`} pathname={paths.posts()} title={`글 목록`}>
+      <link href={`https://weezip.treefeely.com${paths.posts()}`} rel="canonical" />
     </SEO>
   );
 };
@@ -65,7 +65,11 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
   };
 
   const checkFilter = () => {
-    setFilterText(series || tag || decodeURIComponent(keyword).replaceAll(/ /g, '').toUpperCase() || '전체');
+    setFilterText(
+      decodeURIComponent(series || tag || keyword)
+        .replaceAll(/ /g, '')
+        .toUpperCase() || '전체'
+    );
   };
 
   return (

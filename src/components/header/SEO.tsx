@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { useSiteMetadata } from '@hooks/useSiteMetadata';
+import { NAMES } from '@src/constants';
 
 interface SEOProps {
   title?: string;
@@ -32,7 +33,7 @@ const SEO = ({ title, description, pathname, thumbnail, children, keywords = [] 
       <meta content={seo.title} property="og:title" />
       <meta content={seo.description} property="og:description" />
       <meta content={seo.url} property="og:url" />
-      <meta content={'Weezip'} property="og:site_name" />
+      <meta content={NAMES.SITE} property="og:site_name" />
       <meta content={'ko_KR'} property="og:locale" />
 
       <meta content="summary_large_image" property="twitter:card" />

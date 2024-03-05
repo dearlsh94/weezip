@@ -1,3 +1,5 @@
+import { navigate } from 'gatsby';
+
 import * as React from 'react';
 import { useRef, useState } from 'react';
 
@@ -8,7 +10,7 @@ import { DimLayout } from '@layout/dim';
 import { ARIA_LABEL } from '@src/constants';
 import { useShowSearchStore } from '@store/config';
 import { throttle } from '@utils/common';
-import { moveToPostsPage } from '@utils/url';
+import { paths } from '@utils/url';
 
 import { RecommendTag } from '../recommend';
 
@@ -23,7 +25,7 @@ export default function PostSearchLayer() {
   };
 
   const search = throttle(() => {
-    moveToPostsPage({ keyword: searchText });
+    navigate(paths.posts({ keyword: searchText }));
     handleSearchClose();
   }, 300);
 
