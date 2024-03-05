@@ -12,7 +12,7 @@ import { Posts, PostsDescription, PostsFilter, ResetDivider } from '@components/
 import { LoadContainer } from '@components/ui';
 import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
-import { compareString } from '@utils/common';
+import { includesString } from '@utils/common';
 import { getParamValue, paths } from '@utils/url';
 
 import { NotionNode } from '@types';
@@ -49,11 +49,15 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
     if (location.search) {
       _list = posts.filter(post => {
         if (series) {
-          return compareString(post?.notionColumn?.series?.name, series);
+          return includesString(post.notionColumn?.series?.name, keyword);
         } else if (tag) {
-          return post?.notionColumn?.tag?.find(t => compareString(t.name, decodeURIComponent(tag)));
+          return post.notionColumn?.tag?.find(t => includesString(t.name, keyword));
         } else if (keyword) {
-          return post.notionColumn?.remark?.replaceAll(/ /g, '').toUpperCase().includes(keyword);
+          return (
+            includesString(post.notionColumn?.remark, keyword) ||
+            post.notionColumn?.tag?.find(t => includesString(t.name, keyword)) ||
+            includesString(post.notionColumn?.series?.name, keyword)
+          );
         }
         return true;
       });

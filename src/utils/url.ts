@@ -3,7 +3,7 @@ import { NAMES } from '@src/constants';
 const buildURLWithParams = (endpoint: string, params: Record<string, string> = {}) => {
   const searchParams = new URLSearchParams();
   Object.entries(params).forEach(([key, value]) => {
-    if (value) searchParams.append(key, value);
+    if (value) searchParams.set(key, value);
   });
   return `${endpoint}${searchParams.size ? `?${searchParams.toString()}` : ''}`;
 };
@@ -20,5 +20,5 @@ export const paths = Object.freeze({
 });
 
 export const getParamValue = (params: URLSearchParams, key: string) => {
-  return params.has(key) ? params.get(key) || '' : '';
+  return params.get(key) || '';
 };

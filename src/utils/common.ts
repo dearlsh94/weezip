@@ -29,6 +29,6 @@ export const debounce = (fn: DebounceFn, delay = 10): DebounceFn => {
   };
 };
 
-export const compareString = (text1 = '', text2 = '') => {
-  return text1.replaceAll(/ /g, '').toUpperCase() === text2.replaceAll(/ /g, '').toUpperCase();
+export const includesString = (text1 = '', text2 = '') => {
+  return text1.replaceAll(/ /g, '').toUpperCase().includes(text2.replaceAll(/ /g, '').toUpperCase());
 };
