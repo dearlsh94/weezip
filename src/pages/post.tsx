@@ -118,7 +118,9 @@ const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
           />
           <LastEditedCaution lastEditedDate={new Date(node?.properties?.edited_date?.date?.start)} />
           <TableOfContents target={['h1', 'h2', 'h3']} />
-          <Contents childrens={node?.children} />
+          <div className="contents-box">
+            <Contents childrens={node?.children} />
+          </div>
         </article>
         <section className="post__footer">
           <Share />
