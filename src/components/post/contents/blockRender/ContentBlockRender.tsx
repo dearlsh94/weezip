@@ -14,7 +14,7 @@ import {
   NToggle,
   NNumberList,
 } from '@components/notion';
-import NImage from '@components/notion/image/MyImage';
+import NImage from '@components/notion/image/NImage';
 import { Divider } from '@components/ui';
 
 import { BlockType, NotionChildrenType } from '@types';
