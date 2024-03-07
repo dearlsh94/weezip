@@ -16,10 +16,35 @@
   box-shadow: 6px 0 18px -5px var(--color-shadow);
   color: var(--color-font);
 
+  &.shrink {
+    width: 0;
+  }
+
   .content {
     overflow: auto;
     width: 100%;
     flex: 1;
+  }
+
+  .controller {
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    transform: translateY(-50%);
+    background-color: var(--color-reverse-mono);
+    width: 22px;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 4px 4px 0;
+    border: 1.5px solid var(--color-primary);
+    cursor: pointer;
+    padding: 0;
+
+    @include hover-fine {
+      background-color: var(--color-grey-5);
+    }
   }
 
   &.dim {
