@@ -13,7 +13,7 @@ interface NBookmarkProps {
 export default function NBookmark({ bookmark }: NBookmarkProps) {
   return (
     <Linker label={`${bookmark.url} 위치로 ${ARIA_LABEL.MOVE}`} target="_blank" url={bookmark.url}>
-      {bookmark.caption?.length > 0 ? (
+      {bookmark.caption?.length ? (
         bookmark.caption.map((c: TextItem, i) => {
           const captionParagraph: TextBlock = {
             color: 'gray',

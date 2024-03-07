@@ -32,7 +32,7 @@ export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
         <NParagraph paragraph={toggle} />
       </summary>
       <section className="toggle-content-box">
-        {isOpen && hasChild && childList?.length > 0 && <Contents childrens={childList} />}
+        {isOpen && hasChild && childList?.length && <Contents childrens={childList} />}
       </section>
     </details>
   );

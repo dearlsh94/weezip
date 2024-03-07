@@ -7,7 +7,7 @@ import { useWeezipNotion } from '@hooks/useWeezipNotion';
 export default function TagsFilter() {
   const { everyPostsTags } = useWeezipNotion();
   return (
-    everyPostsTags?.length > 0 && (
+    everyPostsTags?.length && (
       <div className="tag-filter">
         <p className="title">태그</p>
         <div className="tag-filter__items">

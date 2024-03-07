@@ -63,7 +63,7 @@ export const Head: HeadFC = ({ pageContext }: any) => {
       }
     } else {
       const firstParagraph = node?.children?.find(
-        c => c.type === BlockType.PARAGRAPH && c.paragraph.rich_text.length > 0
+        c => c.type === BlockType.PARAGRAPH && c.paragraph.rich_text.length
       ) as ParagraphChildren;
       return `${firstParagraph?.paragraph?.rich_text[0]?.plain_text || ''}`;
     }
