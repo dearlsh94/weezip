@@ -1,3 +1,5 @@
+@import '@scss/abstracts/mixin';
+
 .reset-divider {
   display: flex;
   align-items: center;
@@ -9,11 +11,18 @@
     flex: 1;
   }
 
-  span {
+  .reset {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     column-gap: 4px;
     font-size: 11pt;
+
+    @include hover-fine {
+      svg {
+        @include animation-rotate(1.3s);
+        animation-iteration-count: infinite;
+      }
+    }
   }
 }
