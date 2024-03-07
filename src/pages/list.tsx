@@ -49,9 +49,9 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
     if (location.search) {
       _list = posts.filter(post => {
         if (series) {
-          return includesString(post.notionColumn?.series?.name, keyword);
+          return includesString(post.notionColumn?.series?.name, series);
         } else if (tag) {
-          return post.notionColumn?.tag?.find(t => includesString(t.name, keyword));
+          return post.notionColumn?.tag?.find(t => includesString(t.name, tag));
         } else if (keyword) {
           return (
             includesString(post.notionColumn?.remark, keyword) ||

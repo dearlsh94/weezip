@@ -30,5 +30,6 @@ export const debounce = (fn: DebounceFn, delay = 10): DebounceFn => {
 };
 
 export const includesString = (text1 = '', text2 = '') => {
+  if (!text1 || !text2) return false;
   return text1.replaceAll(/ /g, '').toUpperCase().includes(text2.replaceAll(/ /g, '').toUpperCase());
 };
