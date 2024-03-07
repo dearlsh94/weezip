@@ -16,7 +16,7 @@ export default function NBulletedList({ bulletedListItem }: NBulletedListProps) 
   return (
     <>
       <NParagraph paragraph={bulletedListItem.bulleted_list_item} />
-      {has_children && children?.length > 0 && <Contents childrens={children} />}
+      {has_children && children?.length && <Contents childrens={children} />}
     </>
   );
 }

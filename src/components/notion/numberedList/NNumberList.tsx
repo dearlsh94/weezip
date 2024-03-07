@@ -15,7 +15,7 @@ export default function NNumberedList({ numberedListItem }: NNumberedListProps) 
   return (
     <>
       <NParagraph paragraph={numberedListItem.numbered_list_item} />
-      {has_children && children?.length > 0 && <Contents childrens={children} />}
+      {has_children && children?.length && <Contents childrens={children} />}
     </>
   );
 }

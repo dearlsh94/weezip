@@ -12,15 +12,15 @@ import { Posts, PostsDescription, PostsFilter, ResetDivider } from '@components/
 import { LoadContainer } from '@components/ui';
 import { useWeezipNotion } from '@hooks/useWeezipNotion';
 import { MainLayout } from '@layout/main';
-import { compareString } from '@utils/common';
-import { getParamValue } from '@utils/url';
+import { includesString } from '@utils/common';
+import { getParamValue, paths } from '@utils/url';
 
 import { NotionNode } from '@types';
 
 export const Head: HeadFC = () => {
   return (
-    <SEO description={`Write, Explain, Edit, Zip`} pathname="/list" title={`글 목록`}>
-      <link href={`https://weezip.treefeely.com/list`} rel="canonical" />
+    <SEO description={`Write, Explain, Edit, Zip`} pathname={paths.posts()} title={`글 목록`}>
+      <link href={`https://weezip.treefeely.com${paths.posts()}`} rel="canonical" />
     </SEO>
   );
 };
@@ -29,13 +29,13 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
   const params = new URLSearchParams(location.search);
   const { posts } = useWeezipNotion();
 
-  const [list, setList] = useState<NotionNode[]>([]);
-  const [filterText, setFilterText] = useState('전체');
-  const [isLoading, setIsLoading] = useState(true);
-
   const series = getParamValue(params, 'series');
   const tag = getParamValue(params, 'tag');
   const keyword = getParamValue(params, 'keyword');
+
+  const [list, setList] = useState<NotionNode[]>([]);
+  const [filterText, setFilterText] = useState('전체');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     checkFilter();
@@ -49,11 +49,15 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
     if (location.search) {
       _list = posts.filter(post => {
         if (series) {
-          return compareString(post?.notionColumn?.series?.name, series);
+          return includesString(post.notionColumn?.series?.name, series);
         } else if (tag) {
-          return post?.notionColumn?.tag?.find(t => compareString(t.name, decodeURIComponent(tag)));
+          return post.notionColumn?.tag?.find(t => includesString(t.name, tag));
         } else if (keyword) {
-          return post.notionColumn?.remark?.replaceAll(/ /g, '').toUpperCase().includes(keyword);
+          return (
+            includesString(post.notionColumn?.remark, keyword) ||
+            post.notionColumn?.tag?.find(t => includesString(t.name, keyword)) ||
+            includesString(post.notionColumn?.series?.name, keyword)
+          );
         }
         return true;
       });
@@ -65,7 +69,11 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
   };
 
   const checkFilter = () => {
-    setFilterText(series || tag || decodeURIComponent(keyword).replaceAll(/ /g, '').toUpperCase() || '전체');
+    setFilterText(
+      decodeURIComponent(series || tag || keyword)
+        .replaceAll(/ /g, '')
+        .toUpperCase() || '전체'
+    );
   };
 
   return (

@@ -1,8 +1,6 @@
-import { StaticImage } from 'gatsby-plugin-image';
-
 import * as React from 'react';
 
-import './MyImage.scss';
+import './NImage.scss';
 import { NParagraph } from '../paragraph';
 
 import { ImageChildren } from '@types';
@@ -11,7 +9,7 @@ interface NImageProps {
   imageBlock: ImageChildren;
 }
 
-export default function MyImage({ imageBlock }: NImageProps) {
+export default function NImage({ imageBlock }: NImageProps) {
   const { id, image } = imageBlock;
   const url = image
     ? `https://treefeely.notion.site/image/${encodeURIComponent(image.file.url)}?table=block&id=${id}&cache=v2`

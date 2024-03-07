@@ -1,26 +1,7 @@
+import { IconHome, IconList, IconStar } from '@components/icon';
+import { paths } from '@utils/url';
+
 export const HOST_DOMAIN = 'weezip.treefeely.com';
-
-export const GNB_MENUS = Object.freeze([
-  { url: '/', title: 'Home', isOutLink: false },
-  { url: '/list', title: 'List', isOutLink: false },
-  { url: `/treepedia`, title: '트리피디아', isOutLink: false },
-  { url: 'https://treefeely.com', title: 'Treefeely', isOutLink: true },
-]);
-
-export const RECOMMEND_TAGS = Object.freeze([
-  {
-    url: `/list/?series=${encodeURIComponent('트리피디아')}`,
-    name: '트리피디아',
-  },
-  {
-    url: `/list/?tag=${encodeURIComponent('개발')}`,
-    name: '개발',
-  },
-  {
-    url: '/list/?tag=essay',
-    name: 'Essay',
-  },
-]);
 
 export const OWNER_EMAIL = Object.freeze('weezip.ethan@gmail.com');
 export const CONFIG_THEME_KEY = Object.freeze('weezip-theme');
@@ -44,3 +25,31 @@ export const enum ARIA_LABEL {
   EXPAND_ON = '펼치기',
   EXPAND_OFF = '접기',
 }
+
+export const enum NAMES {
+  SITE = 'Weezip',
+  TREEPEDIA = '트리피디아',
+  TREEFEELY = 'Treefeely',
+}
+
+export const GNB_MENUS = Object.freeze([
+  { url: paths.home(), title: NAMES.SITE, isOutLink: false, Icon: IconHome },
+  { url: paths.posts(), title: '글 목록', isOutLink: false, Icon: IconList },
+  { url: paths.treepedia(), title: NAMES.TREEPEDIA, isOutLink: false, Icon: IconStar },
+  { url: 'https://treefeely.com', title: NAMES.TREEFEELY, isOutLink: true },
+]);
+
+export const RECOMMEND_TAGS = Object.freeze([
+  {
+    url: paths.treepedia(),
+    name: NAMES.TREEPEDIA,
+  },
+  {
+    url: paths.posts({ tag: '개발' }),
+    name: '개발',
+  },
+  {
+    url: paths.posts({ tag: '에세이' }),
+    name: '에세이',
+  },
+]);

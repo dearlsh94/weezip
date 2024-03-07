@@ -38,7 +38,7 @@ export default function NCode({ code }: NCodeProps) {
       <SyntaxHighlighter language={code.language} style={vscDarkPlus} showLineNumbers>
         {codeString}
       </SyntaxHighlighter>
-      {code.caption.length > 0 && (
+      {code.caption.length && (
         <figcaption className="caption">
           <NParagraph richText={code.caption} />
         </figcaption>

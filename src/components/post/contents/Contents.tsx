@@ -17,10 +17,7 @@ export default function Contents({ childrens = [] }: ContentsProps) {
       numberedList.push(block);
 
       // 다음 block이 numbered_list가 아닐 경우 렌더링.
-      if (
-        numberedList?.length > 0 &&
-        childrens[Math.min(i + 1, childrens.length)]?.type !== BlockType.NUMBERED_LIST_ITEM
-      ) {
+      if (numberedList?.length && childrens[Math.min(i + 1, childrens.length)]?.type !== BlockType.NUMBERED_LIST_ITEM) {
         const renderList = numberedList;
         numberedList = [];
         return (
@@ -43,10 +40,7 @@ export default function Contents({ childrens = [] }: ContentsProps) {
     if (block.type === BlockType.BULLETED_LIST_ITEM) {
       bulletedList.push(block);
       // 다음 block이 numbered_list가 아닐 경우 렌더링.
-      if (
-        bulletedList?.length > 0 &&
-        childrens[Math.min(i + 1, childrens.length)]?.type !== BlockType.BULLETED_LIST_ITEM
-      ) {
+      if (bulletedList?.length && childrens[Math.min(i + 1, childrens.length)]?.type !== BlockType.BULLETED_LIST_ITEM) {
         const renderList = bulletedList;
         bulletedList = [];
         return (

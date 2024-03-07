@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import { useMemo } from 'react';
 
+import { NAMES } from '@src/constants';
 import { classifyPost, notionNodeToJson, parseNotionColumn } from '@utils/notion';
 
 import { NotionNode } from '@types';
@@ -26,7 +27,7 @@ export const useWeezipNotion = () => {
 
   const memoized = useMemo(() => {
     const nodes: NotionNode[] = data?.allNotion?.edges?.map(({ node }: { node: NotionNode }) => {
-      if (node.databaseName === 'Weezip') {
+      if (node.databaseName.toUpperCase() === NAMES.SITE.toUpperCase()) {
         return node;
       }
     });
