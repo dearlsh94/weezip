@@ -15,9 +15,11 @@
   background-color: var(--color-background);
   box-shadow: 6px 0 18px -5px var(--color-shadow);
   color: var(--color-font);
+  transform: translateX(0);
+  transition: transform 0.16s ease-in-out;
 
   &.shrink {
-    width: 0;
+    transform: translateX((-100%));
   }
 
   .content {
@@ -26,28 +28,33 @@
     flex: 1;
   }
 
-  .controller {
-    position: absolute;
-    top: 50%;
-    right: -22px;
-    transform: translateY(-50%);
-    background-color: var(--color-reverse-mono);
-    width: 22px;
-    height: 49px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 4px 4px 0;
-    border: 1.5px solid var(--color-primary);
-    cursor: pointer;
-    padding: 0;
-
-    @include hover-fine {
-      background-color: var(--color-grey-5);
-    }
-  }
-
   &.dim {
     z-index: 100;
+  }
+}
+
+.side-layout-controller {
+  position: fixed;
+  top: 50%;
+  left: 260px;
+  transform: translateY(-50%);
+  background-color: var(--color-reverse-mono);
+  width: 22px;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 4px 4px 0;
+  border: 1.5px solid var(--color-primary);
+  cursor: pointer;
+  padding: 0;
+  transition: left 0.16s ease-in-out;
+
+  &.shrink {
+    left: 0;
+  }
+
+  @include hover-fine {
+    background-color: var(--color-grey-5);
   }
 }
