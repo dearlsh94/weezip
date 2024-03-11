@@ -12,7 +12,6 @@ interface NCalloutProps {
 }
 
 export default function NCallout({ callout, children = [] }: NCalloutProps) {
-  console.log('children: ', children);
   const icon = callout?.icon?.emoji;
 
   return (
