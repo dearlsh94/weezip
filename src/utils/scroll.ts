@@ -1,3 +1,6 @@
+export const preventBodyScroll = () => (document.body.style.overflow = 'hidden');
+export const allowBodyScroll = () => (document.body.style.overflow = 'auto');
+
 export const moveToTop = () => {
   window.scrollTo({
     top: 0,

@@ -1,63 +1,64 @@
 import { create } from 'zustand';
 
 import { Themes } from '@src/constants';
+import { allowBodyScroll, preventBodyScroll } from '@utils/scroll';
 
 import { MultiSelect } from '@types';
 
 interface SnowflakeState {
-  isShow: boolean;
+  isVisibility: boolean;
   toggle: () => void;
 }
 
 export const useSnowflakeStore = create<SnowflakeState>(set => ({
   // 1월, 2월, 12월만 기본값 true로 설정
-  isShow: [0, 1, 11].includes(new Date().getMonth()),
+  isVisibility: [0, 1, 11].includes(new Date().getMonth()),
   toggle() {
-    set(({ isShow }) => ({ isShow: !isShow }));
+    set(({ isVisibility }) => ({ isVisibility: !isVisibility }));
   },
 }));
 
 interface ShowSNBState {
-  isShow: boolean;
+  isVisibility: boolean;
   toggle: () => void;
-  open: () => void;
-  close: () => void;
+  show: () => void;
+  hide: () => void;
 }
 export const useShowSNBStore = create<ShowSNBState>((set, get) => ({
-  isShow: false,
+  isVisibility: false,
   toggle() {
-    const { isShow, close, open } = get();
-    isShow ? close() : open();
+    const { isVisibility, hide, show } = get();
+    isVisibility ? hide() : show();
   },
-  open() {
-    document.body.style.overflow = 'hidden';
-    set(() => ({ isShow: true }));
+  show() {
+    preventBodyScroll();
+    set(() => ({ isVisibility: true }));
   },
-  close() {
-    document.body.style.overflow = 'auto';
-    set(() => ({ isShow: false }));
+  hide() {
+    allowBodyScroll();
+    set(() => ({ isVisibility: false }));
   },
 }));
 
 interface ShowSearchState {
-  isShow: boolean;
+  isVisibility: boolean;
   toggle: () => void;
-  open: () => void;
-  close: () => void;
+  show: () => void;
+  hide: () => void;
 }
 export const useShowSearchStore = create<ShowSearchState>((set, get) => ({
-  isShow: false,
+  isVisibility: false,
   toggle() {
-    const { isShow, close, open } = get();
-    isShow ? close() : open();
+    const { isVisibility, hide, show } = get();
+    isVisibility ? hide() : show();
   },
-  open() {
-    document.body.style.overflow = 'hidden';
-    set(() => ({ isShow: true }));
+  show() {
+    preventBodyScroll();
+    set(() => ({ isVisibility: true }));
   },
-  close() {
-    document.body.style.overflow = 'auto';
-    set(() => ({ isShow: false }));
+  hide() {
+    allowBodyScroll();
+    set(() => ({ isVisibility: false }));
   },
 }));
 

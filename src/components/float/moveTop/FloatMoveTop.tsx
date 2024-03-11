@@ -3,12 +3,12 @@ import React, { useEffect } from 'react';
 import { IconEndArrow } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
 import useScroll from '@hooks/useScroll';
-import useShow from '@hooks/useShow';
+import useVisibility from '@hooks/useVisibility';
 import { ARIA_LABEL } from '@src/constants';
 import { moveToTop } from '@utils/scroll';
 
 export default function FloatMoveTop() {
-  const showButton = useShow();
+  const showButton = useVisibility();
   const { scrollY } = useScroll();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function FloatMoveTop() {
   }, [scrollY]);
 
   return (
-    showButton.isShow && (
+    showButton.isVisibility && (
       <CircleIconWrapper
         aria-label={`페이지 최상단으로 ${ARIA_LABEL.MOVE}`}
         color="secondary"

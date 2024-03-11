@@ -6,16 +6,16 @@ import { ARIA_LABEL } from '@src/constants';
 import { useSnowflakeStore } from '@store/config';
 
 export default function FloatSnowflakesHandler() {
-  const { isShow, toggle } = useSnowflakeStore();
+  const { isVisibility, toggle } = useSnowflakeStore();
 
   return (
     <CircleIconWrapper
-      aria-label={`눈송이 효과 ${isShow ? ARIA_LABEL.TOGGLE_OFF : ARIA_LABEL.TOGGLE_ON}`}
+      aria-label={`눈송이 효과 ${isVisibility ? ARIA_LABEL.TOGGLE_OFF : ARIA_LABEL.TOGGLE_ON}`}
       color="secondary"
       size={44}
       onClick={toggle}
     >
-      <IconSnow color={`${isShow ? `primary` : `secondary`}`} direction="top" />
+      <IconSnow color={`${isVisibility ? `primary` : `secondary`}`} direction="top" />
     </CircleIconWrapper>
   );
 }

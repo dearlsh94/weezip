@@ -8,11 +8,12 @@ import { useShowSNBStore } from '@store/config';
 import { SideBarNavItem } from './item';
 
 export default function SideBarNavigation() {
-  const { isShow, close: handleSNBClose } = useShowSNBStore();
+  const { isVisibility, hide: handleHideSNB } = useShowSNBStore();
 
   return (
-    isShow && (
-      <SideLayout handleClose={handleSNBClose}>
+    isVisibility && (
+      <SideLayout handleClose={handleHideSNB}>
+        ƒ
         <nav className="side-bar-nav">
           {GNB_MENUS?.length && (
             <ul>
@@ -22,7 +23,7 @@ export default function SideBarNavigation() {
                     key={`side-bar-nav-item-${nav.url}`}
                     {...nav}
                     aria-label={`${nav.title} 메뉴로 ${ARIA_LABEL.MOVE}`}
-                    onClick={handleSNBClose}
+                    onClick={handleHideSNB}
                   />
                 );
               })}

@@ -6,7 +6,7 @@ import { ARIA_LABEL } from '@src/constants';
 import { useShowSNBStore } from '@store/config';
 
 export default function SNBOpenIcon() {
-  const { isShow, toggle: handleToggleShowSNB } = useShowSNBStore();
+  const { isVisibility, toggle: handleToggleSNB } = useShowSNBStore();
   const [isMenuHover, setIsMenuHover] = useState(false);
 
   return (
@@ -14,12 +14,16 @@ export default function SNBOpenIcon() {
       aria-label={`사이드바 메뉴 ${ARIA_LABEL.OPEN}`}
       className="snb-open-icon"
       onBlur={() => setIsMenuHover(false)}
-      onClick={handleToggleShowSNB}
+      onClick={handleToggleSNB}
       onFocus={() => setIsMenuHover(true)}
       onMouseLeave={() => setIsMenuHover(false)}
       onMouseOver={() => setIsMenuHover(true)}
     >
-      {isMenuHover ? <IconDoubleArrow direction={isShow ? 'left' : 'right'} size={28} /> : <IconHamburger size={28} />}
+      {isMenuHover ? (
+        <IconDoubleArrow direction={isVisibility ? 'left' : 'right'} size={28} />
+      ) : (
+        <IconHamburger size={28} />
+      )}
     </button>
   );
 }
