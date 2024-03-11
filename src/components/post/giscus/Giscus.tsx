@@ -51,12 +51,12 @@ const Giscus = () => {
 
   return (
     <div className="giscus-container">
-      <p>
+      <p className="giscus-container__comment">
         이 글은 어떠셨나요?
         <br />
         <b>댓글</b>과 <b>반응</b>은 큰 힘이 됩니다. ❣️
       </p>
-      <div ref={giscusRef} />
+      <div ref={giscusRef} className="giscus-wrapper" />
     </div>
   );
 };

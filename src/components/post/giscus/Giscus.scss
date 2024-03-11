@@ -1,5 +1,5 @@
 .giscus-container {
-  p {
+  &__comment {
     margin-bottom: 24px;
     color: var(--color-orange);
     font-weight: 500;
@@ -8,5 +8,12 @@
     b {
       font-weight: 600;
     }
+  }
+
+  .giscus-wrapper {
+    min-height: 376px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
