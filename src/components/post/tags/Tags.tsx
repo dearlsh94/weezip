@@ -12,7 +12,7 @@ interface TagsProps {
 
 export default function Tags({ tag, useLink = false }: TagsProps) {
   return (
-    tag?.length && (
+    !!tag?.length && (
       <div className="tags-box">
         {tag?.map(tag => <TagItem key={`tag-item-${tag.name}`} name={tag.name} useLink={useLink} />)}
       </div>

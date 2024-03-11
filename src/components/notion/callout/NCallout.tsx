@@ -18,7 +18,7 @@ export default function NCallout({ callout, children = [] }: NCalloutProps) {
     <aside className={`block-callout`}>
       {icon && <div className="icon-box">{icon}</div>}
       <NParagraph paragraph={callout} />
-      {children && children?.length && <Contents childrens={children} />}
+      {!!children?.length && <Contents childrens={children} />}
     </aside>
   );
 }

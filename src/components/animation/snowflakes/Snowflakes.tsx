@@ -20,7 +20,7 @@ interface SnowflakesProps {
 
 export default function Snowflakes({ count = 17 }: SnowflakesProps) {
   const [snowflake, setSnowflake] = useState<Snowflakes[]>([]);
-  const { isShow } = useSnowflakeStore();
+  const { isVisibility } = useSnowflakeStore();
 
   // 클라이언트 사이드에서만 실행되도록.
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Snowflakes({ count = 17 }: SnowflakesProps) {
   }, []);
 
   return (
-    <div aria-hidden="true" className={`snowflake ${isShow && snowflake.length ? 'visible' : 'hidden'}`}>
+    <div aria-hidden="true" className={`snowflake ${isVisibility && snowflake.length ? 'visible' : 'hidden'}`}>
       {snowflake.map((flake, index) => (
         <div
           key={`flake-${index}`}

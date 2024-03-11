@@ -15,7 +15,7 @@ import { paths } from '@utils/url';
 import { RecommendTag } from '../recommend';
 
 export default function PostSearchLayer() {
-  const { isShow, close: handleSearchClose } = useShowSearchStore();
+  const { isVisibility, hide: handleHideSearch } = useShowSearchStore();
 
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchText, setSearchText] = useState('');
@@ -26,7 +26,7 @@ export default function PostSearchLayer() {
 
   const search = throttle(() => {
     navigate(paths.posts({ keyword: searchText }));
-    handleSearchClose();
+    handleHideSearch();
   }, 300);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -40,9 +40,9 @@ export default function PostSearchLayer() {
   };
 
   return (
-    isShow && (
+    isVisibility && (
       <GlobalPortal.Consumer>
-        <DimLayout handleClose={handleSearchClose}>
+        <DimLayout handleClose={handleHideSearch}>
           <div className="post-search-container">
             <div className="post-search-box">
               <div className="icon-close-box">
@@ -51,7 +51,7 @@ export default function PostSearchLayer() {
                   className="icon-close"
                   role="button"
                   size={32}
-                  onClick={handleSearchClose}
+                  onClick={handleHideSearch}
                 />
               </div>
               <div className="search-box">

@@ -15,7 +15,7 @@ import { useShowSearchStore } from '@store/config';
 import { moveToTop } from '@utils/scroll';
 
 export default function Header() {
-  const { open: handleOpenSearch } = useShowSearchStore();
+  const { show: handleShowSearch } = useShowSearchStore();
   const { theme, changeAndSaveDark, changeAndSaveLight } = useTheme();
 
   const { scrollY, isScrollingUp, isBottom } = useScroll();
@@ -64,7 +64,7 @@ export default function Header() {
             <IconDarkTheme />
           </button>
         )}
-        <button aria-label={`검색창 ${ARIA_LABEL.OPEN}`} className="icon-box" onClick={handleOpenSearch}>
+        <button aria-label={`검색창 ${ARIA_LABEL.OPEN}`} className="icon-box" onClick={handleShowSearch}>
           <IconSearch />
         </button>
       </div>
