@@ -14,7 +14,7 @@ export default function TableOfContents({ target }: TableOfContentsProps) {
 
   useEffect(() => {
     const elHeaders = document.querySelectorAll<HTMLHeadingElement>(target.join(','));
-    if (elHeaders && elHeaders?.length) {
+    if (!!elHeaders?.length) {
       const headers: HTMLHeadingElement[] = [];
       elHeaders.forEach(el => {
         if (!el.className.includes('title')) headers.push(el);

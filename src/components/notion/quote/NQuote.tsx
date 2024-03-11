@@ -16,7 +16,7 @@ export default function NQuote({ quote, children }: NQuoteProps) {
   return (
     <blockquote className={`block-quote`}>
       <NParagraph paragraph={quote} />
-      {children && children?.length && <Contents childrens={children} />}
+      {!!children?.length && <Contents childrens={children} />}
     </blockquote>
   );
 }

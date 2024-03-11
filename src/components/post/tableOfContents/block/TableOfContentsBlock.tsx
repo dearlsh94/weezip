@@ -36,7 +36,7 @@ export default function TableOfContentsBlock({ list }: TableOfContentsBlockProps
             <IconSingleArrow direction={'bottom'} size={20} />
           </div>
         </div>
-        {list?.length && (
+        {!!list?.length && (
           <ol className={`table-of-contents-block__wrapper__list ${showPostIndex.isVisibility ? '' : 'hide'}`}>
             {list.map((item, i) => {
               const text = item.outerText;

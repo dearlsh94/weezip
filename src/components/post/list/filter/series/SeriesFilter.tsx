@@ -7,7 +7,7 @@ import { useWeezipNotion } from '@hooks/useWeezipNotion';
 export default function SeriesFilter() {
   const { everyPostsSeries } = useWeezipNotion();
   return (
-    everyPostsSeries?.length && (
+    !!everyPostsSeries?.length && (
       <div className="series-filter">
         <p className="title">시리즈</p>
         <div className="series-filter__items">

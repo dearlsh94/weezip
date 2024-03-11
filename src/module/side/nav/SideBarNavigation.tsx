@@ -15,7 +15,7 @@ export default function SideBarNavigation() {
       <SideLayout handleClose={handleHideSNB}>
         ƒ
         <nav className="side-bar-nav">
-          {GNB_MENUS?.length && (
+          {!!GNB_MENUS?.length && (
             <ul>
               {GNB_MENUS.map(nav => {
                 return (
