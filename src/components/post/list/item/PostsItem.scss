@@ -10,6 +10,10 @@
   list-style: none;
   transition: color 0.2s;
 
+  a {
+    color: var(--color-font);
+  }
+
   @include hover-fine {
     border-bottom: 2px solid var(--color-primary);
     margin-bottom: 0;
