@@ -10,7 +10,7 @@ export default function PostsFilter() {
   return (
     <div className="post-filter">
       <SeriesFilter />
-      <Divider margin={8} />
+      <Divider color={'primary'} margin={8} />
       <TagsFilter />
     </div>
   );
