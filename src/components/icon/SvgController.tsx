@@ -3,7 +3,7 @@ import './SvgController.scss';
 
 export interface SvgControllerProps extends React.PropsWithChildren<React.SVGProps<SVGSVGElement>> {
   size?: number;
-  color?: 'mono' | 'reverse-mono' | 'base' | 'primary' | 'secondary' | 'black' | 'white';
+  color?: 'mono' | 'reverse-mono' | 'base' | 'primary' | 'secondary' | 'third' | 'black' | 'white';
   rotate?: number;
 }
 

@@ -35,6 +35,12 @@
     }
   }
 
+  &.third {
+    path {
+      fill: var(--color-third);
+    }
+  }
+
   &.mono {
     path {
       fill: var(--color-mono);

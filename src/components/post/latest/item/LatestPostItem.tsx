@@ -19,7 +19,7 @@ export default function LatestPostItem({ post }: LatestPostItemProps) {
         <p>{post.notionColumn?.remark}</p>
         {post.notionColumn.tag && <Tags tag={post.notionColumn.tag} />}
         <div className="corner" />
-        <IconSingleArrow color={'base'} direction="right" size={12} />
+        <IconSingleArrow color={'primary'} direction="right" size={12} />
       </Linker>
     </li>
   );
