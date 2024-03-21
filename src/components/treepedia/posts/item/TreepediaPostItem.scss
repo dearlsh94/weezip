@@ -16,13 +16,12 @@
 
     &__content {
       strong {
-        text-decoration: underline;
+        // text-decoration: underline;
       }
     }
   }
 
   a {
-    color: var(--color-font);
     display: block;
     height: 100%;
   }

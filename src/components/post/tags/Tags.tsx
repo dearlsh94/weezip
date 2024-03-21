@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import './Tags.scss';
-import { TagItem } from './item';
+import Tag from './Tag';
 
 import { MultiSelect } from '@types';
 
@@ -14,7 +14,7 @@ export default function Tags({ tag, useLink = false }: TagsProps) {
   return (
     !!tag?.length && (
       <div className="tags-box">
-        {tag?.map(tag => <TagItem key={`tag-item-${tag.name}`} name={tag.name} useLink={useLink} />)}
+        {tag?.map(tag => <Tag key={`tag-item-${tag.name}`} name={tag.name} useLink={useLink} />)}
       </div>
     )
   );

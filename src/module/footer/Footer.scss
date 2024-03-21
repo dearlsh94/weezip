@@ -9,18 +9,17 @@ footer {
   box-sizing: border-box;
   justify-content: center;
   padding: 36px 24px;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
 
   .container {
     width: 100%;
     max-width: 768px;
-    color: var(--color-font-reverse);
+    color: var(--color-deep-navy);
     line-height: 18pt;
 
     .contact-box {
       a {
         display: flex;
-        color: var(--color-white-5);
       }
 
       p {
@@ -38,7 +37,7 @@ footer {
 
     .item.refer-box a {
       margin-left: 8px;
-      color: var(--color-font-reverse);
+      color: var(--color-deep-navy);
     }
 
     .item + .item {

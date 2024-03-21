@@ -31,9 +31,9 @@ export default function TitleDescription({
     alert('현재 게시글 주소가 복사되었습니다.');
   };
   return (
-    <div className="post-description">
+    <div className="title-description">
       {isShowTag && <Tags tag={tag} useLink={useTagLink} />}
-      <div className="post-description__right">
+      <div className="title-description__right">
         {useCopy && (
           <IconCopyLink
             aria-label={`현재 게시글 주소 ${ARIA_LABEL.COPY}`}
