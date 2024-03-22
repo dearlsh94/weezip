@@ -36,6 +36,7 @@
       font-size: 1.5rem;
       line-height: 2.25rem;
       font-weight: 600;
+      word-break: keep-all;
 
       @include mobile {
         font-size: 1.25rem;
