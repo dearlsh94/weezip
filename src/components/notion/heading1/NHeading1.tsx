@@ -11,7 +11,8 @@ interface NHeading1Props {
 
 export default function NHeading1({ head1 }: NHeading1Props) {
   return (
-    <h1>
+    // TableOfContents 컴포넌트에서 className 사용 중
+    <h1 className="table-of-contents-item">
       <NParagraph paragraph={head1} />
     </h1>
   );

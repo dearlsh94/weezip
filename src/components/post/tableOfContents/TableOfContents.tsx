@@ -17,7 +17,7 @@ export default function TableOfContents({ target }: TableOfContentsProps) {
     if (!!elHeaders?.length) {
       const headers: HTMLHeadingElement[] = [];
       elHeaders.forEach(el => {
-        if (!el.className.includes('title')) headers.push(el);
+        if (el.className.includes('table-of-contents-item')) headers.push(el);
       });
       setTableOfContents(headers);
     }

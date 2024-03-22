@@ -11,7 +11,8 @@ interface NHeading3Props {
 
 export default function NHeading3({ head3 }: NHeading3Props) {
   return (
-    <h3>
+    // TableOfContents 컴포넌트에서 className 사용 중
+    <h3 className="table-of-contents-item">
       <NParagraph paragraph={head3} />
     </h3>
   );
