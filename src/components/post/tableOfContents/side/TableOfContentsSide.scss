@@ -9,6 +9,10 @@
   line-height: 24px;
   overflow-y: auto;
 
+  li {
+    cursor: pointer;
+  }
+
   .tag-top,
   .tag-h2 {
     padding-right: 16px;

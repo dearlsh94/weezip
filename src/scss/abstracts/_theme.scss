@@ -36,7 +36,7 @@ html[weezip-theme='light']:root {
   --color-pink: #ff375f;
   --color-brown: #ac8e68;
 
-  --color-base: #2f5d62;
+  --color-base: #1e3c40;
   --color-primary: #5e8b7e;
   --color-secondary: #a7c4bc;
   --color-third: #dfeeea;
@@ -44,7 +44,7 @@ html[weezip-theme='light']:root {
   --color-mono: var(--color-black-1);
   --color-reverse-mono: var(--color-white-1);
   --color-selection: var(--color-reverse-mono);
-  --color-selection-bg: var(--color-base);
+  --color-selection-bg: var(--color-primary);
   --color-font: var(--color-black-6);
   --color-font-reverse: var(--color-white-2);
   --color-link: #1e3c40;
@@ -89,7 +89,7 @@ html[weezip-theme='dark']:root {
   --color-mono: var(--color-white-1);
   --color-reverse-mono: var(--color-black-1);
   --color-selection: var(--color-reverse-mono);
-  --color-selection-bg: var(--color-base);
+  --color-selection-bg: var(--color-primary);
   --color-font: var(--color-white-2);
   --color-font-reverse: var(--color-black-6);
   --color-link: #a0a3ef;
