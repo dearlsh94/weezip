@@ -9,13 +9,25 @@ footer {
   box-sizing: border-box;
   justify-content: center;
   padding: 36px 24px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-base);
+
+  h2,
+  a,
+  span,
+  p {
+    color: var(--color-font-reverse);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  }
 
   .container {
     width: 100%;
     max-width: 768px;
-    color: var(--color-deep-navy);
-    line-height: 18pt;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
 
     .contact-box {
       a {
@@ -35,13 +47,8 @@ footer {
       }
     }
 
-    .item.refer-box a {
+    .refer-box a {
       margin-left: 8px;
-      color: var(--color-deep-navy);
-    }
-
-    .item + .item {
-      margin-top: 12px;
     }
   }
 }

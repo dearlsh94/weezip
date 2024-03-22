@@ -10,8 +10,8 @@ export default function Footer() {
   return (
     <footer>
       <div className="container">
-        <div className="item contact-box">
-          <p>Contact Me</p>
+        <div className="contact-box">
+          <h2>Wanna get in touch?</h2>
           <div className="contact-item">
             <CircleIconWrapper color="reverse-mono">
               <Linker label={`${OWNER_EMAIL} 메일 ${ARIA_LABEL.SEND}`} url={`mailto:${OWNER_EMAIL}`}>
@@ -34,7 +34,7 @@ export default function Footer() {
             </CircleIconWrapper>
           </div>
         </div>
-        <div className="item refer-box">
+        <div className="refer-box">
           <span>All Icons by</span>
           <Linker
             label={`iconiFy 웹 사이트로 ${ARIA_LABEL.MOVE}`}
@@ -44,8 +44,8 @@ export default function Footer() {
             iconiFy
           </Linker>
         </div>
-        <div className="item copyright-box">
-          <p className="copyright">Copyright 2023. Ethan.lee all rights reserved.</p>
+        <div className="copyright-box">
+          <p>Copyright 2023. Ethan.lee all rights reserved.</p>
         </div>
       </div>
     </footer>

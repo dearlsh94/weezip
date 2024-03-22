@@ -5,15 +5,16 @@
 
   border-radius: 50%;
   cursor: pointer;
+  transition: color 0.2s;
 
   &.mono {
     border: 2px solid var(--color-mono);
 
     @include hover-fine {
-      border: 2px solid var(--color-reverse-mono);
+      border: 2px solid var(--color-secondary);
 
       svg path {
-        fill: var(--color-reverse-mono);
+        fill: var(--color-secondary);
       }
     }
   }
@@ -22,10 +23,10 @@
     border: 2px solid var(--color-reverse-mono);
 
     @include hover-fine {
-      border: 2px solid var(--color-mono);
+      border: 2px solid var(--color-secondary);
 
       svg path {
-        fill: var(--color-mono);
+        fill: var(--color-secondary);
       }
     }
   }
