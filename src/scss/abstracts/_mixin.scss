@@ -22,12 +22,6 @@
   }
 }
 
-@mixin super-desktop {
-  @media (min-width: #{$breakpoint-super-desktop}) {
-    @content;
-  }
-}
-
 @mixin hover-fine {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
