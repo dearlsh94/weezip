@@ -10,24 +10,38 @@
   list-style: none;
   transition: color 0.2s;
 
+  a {
+    color: var(--color-font);
+  }
+
   @include hover-fine {
-    border-bottom: 2px solid var(--color-primary);
-    margin-bottom: 0;
+    border-bottom: 3px solid var(--color-base);
+    margin-bottom: -1px;
+    p {
+      color: var(--color-base);
+    }
   }
 
   .posts-item__content {
     display: flex;
     flex-direction: column;
-    padding: 28px 0;
+    padding: 2rem 0;
 
     @include mobile {
-      padding: 20px 0;
+      padding: 1.5rem 0;
     }
 
     p {
       margin: 8px 0px 12px;
-      font-size: 15pt;
-      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      font-weight: 600;
+      word-break: keep-all;
+
+      @include mobile {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
     }
   }
 }

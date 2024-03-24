@@ -18,6 +18,7 @@
 
 ## Posts
 
+- [새롭게 코어 웹 바이탈 측정 기준이 된 INP는 무엇이고 왜 FID를 대체하게 되었나.](https://weezip.treefeely.com/post/the-new-core-web-vital-inp-replaced-fid)
 - [유데미 《【한글자막】 JavaScript 알고리즘 & 자료구조 마스터클래스》 수강 후기](http://localhost:8000/post/course-review-udemy-javascript-algorithm-master)
 - [유데미 《클린코드 자바스크립트(JavaScript)》 수강 후기](https://weezip.treefeely.com/post/course-review-udemy-clean-code-javascript)
 - [예능 《장사천재 백사장 시즌2》 후기. 프로덕트 개발의 진수가 담겨있었다.](https://weezip.treefeely.com/post/review-the-genius-paik-season-2)

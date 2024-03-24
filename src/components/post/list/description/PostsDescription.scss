@@ -15,22 +15,22 @@
   }
 
   .count-box {
-    color: var(--color-grey);
+    color: var(--color-font);
     font-size: 10pt;
 
     @include ellipsis;
 
     span {
-      color: var(--color-secondary);
+      color: var(--color-base);
       font-weight: 500;
     }
 
     strong {
-      color: var(--color-secondary);
+      color: var(--color-base);
       font-weight: 600;
 
       span {
-        color: var(--color-grey);
+        color: var(--color-font);
         font-weight: 400;
       }
     }

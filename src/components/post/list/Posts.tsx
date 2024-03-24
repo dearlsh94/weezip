@@ -15,7 +15,7 @@ interface PostsProps {
 
 export default function Posts({ list }: PostsProps) {
   const pagination = usePagination({
-    perPage: 10,
+    perPage: 15,
     totalCount: list.length,
   });
   const { indexOfFirstItem, indexOfLastItem } = pagination;

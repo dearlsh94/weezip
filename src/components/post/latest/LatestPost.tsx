@@ -17,7 +17,7 @@ export default function LatestPost() {
       <div className="latest-post__title">
         <h2>최근 포스트</h2>
         <Linker label={`전체 글 페이지로 ${ARIA_LABEL.MOVE}`} url={paths.posts()}>
-          전체 보기
+          모든 포스트 확인하기
         </Linker>
       </div>
       <ul>

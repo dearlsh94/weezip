@@ -22,12 +22,6 @@
   }
 }
 
-@mixin super-desktop {
-  @media (min-width: #{$breakpoint-super-desktop}) {
-    @content;
-  }
-}
-
 @mixin hover-fine {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -159,9 +153,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
- @else {
+  } @else {
     display: -webkit-box;
     overflow: hidden;
     -webkit-box-orient: vertical;
@@ -171,7 +163,7 @@
 }
 
 @mixin text-gradient() {
-  background: linear-gradient(180deg, var(--color-secondary), var(--color-base));
+  background: linear-gradient(180deg, var(--color-primary), var(--color-base));
   background-clip: text;
   color: transparent;
 }

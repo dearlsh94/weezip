@@ -16,7 +16,7 @@
 
     &__content {
       strong {
-        text-decoration: underline;
+        // text-decoration: underline;
       }
     }
   }
@@ -39,7 +39,7 @@
       padding: 20px 24px;
     }
 
-    span {
+    > span {
       color: var(--color-base);
       &.star-5 {
         color: var(--color-green);
