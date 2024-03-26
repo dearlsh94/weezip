@@ -30,7 +30,7 @@ export default function NCode({ code }: NCodeProps) {
         <small className="language">{code.language}</small>
         <IconCopyLink
           aria-label={`현재 코드 블럭 ${ARIA_LABEL.COPY}`}
-          color={'primary'}
+          color={'base'}
           size={20}
           onClick={handleCodeCopy}
         />
@@ -38,7 +38,7 @@ export default function NCode({ code }: NCodeProps) {
       <SyntaxHighlighter language={code.language} style={vscDarkPlus} showLineNumbers>
         {codeString}
       </SyntaxHighlighter>
-      {code.caption.length && (
+      {!!code.caption.length && (
         <figcaption className="caption">
           <NParagraph richText={code.caption} />
         </figcaption>
