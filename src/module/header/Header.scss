@@ -8,7 +8,6 @@ header {
   flex-direction: row;
   padding: 8px 0;
   background-color: var(--color-background-opacity);
-  box-shadow: 0 3px 9px var(--color-shadow);
   transition-duration: 0.2s;
 
   @include flex-center;
