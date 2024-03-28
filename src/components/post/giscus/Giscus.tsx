@@ -13,6 +13,7 @@ const Giscus = () => {
 
   useEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY);
+    const dataTheme = configTheme || (window.matchMedia('(prefers-color-scheme: dark') ? 'dark' : 'light');
 
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
@@ -25,7 +26,7 @@ const Giscus = () => {
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
-    script.setAttribute('data-theme', configTheme && configTheme === 'dark' ? 'dark' : 'light');
+    script.setAttribute('data-theme', dataTheme);
     script.setAttribute('data-lang', 'ko');
     script.setAttribute('cross-origin', 'anonymous');
     script.defer = true;
@@ -41,7 +42,7 @@ const Giscus = () => {
       {
         giscus: {
           setConfig: {
-            theme: theme,
+            theme: 'dark',
           },
         },
       },
