@@ -7,40 +7,48 @@ import { useLocalStorage } from './useLocalStorage';
 
 const useTheme = () => {
   const { setConfig, getConfig } = useLocalStorage();
-  const { theme, setDarkTheme, setLightTheme } = useThemeStore();
+  const { setDarkTheme, setLightTheme } = useThemeStore();
 
   useEffect(() => {
     const configTheme = getConfig(CONFIG_THEME_KEY);
-    if (configTheme === Themes.DARK) {
-      changeAndSaveDark();
-    } else if (configTheme === Themes.LIGHT) {
-      changeAndSaveLight();
-    } else if (window.matchMedia('(prefers-color-scheme: dark').matches) {
-      changeDark();
-    } else {
-      changeLight();
+    switch (configTheme) {
+      case Themes.DARK:
+        changeAndSaveTheme(Themes.DARK);
+        break;
+      case Themes.LIGHT:
+        changeAndSaveTheme(Themes.LIGHT);
+        break;
+      default:
+        changeThemeBasedOnSystemPreference();
+        break;
     }
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      const newTheme = e.matches ? Themes.DARK : Themes.LIGHT;
+      changeAndSaveTheme(newTheme);
+    };
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const changeLight = () => {
-    document.documentElement.setAttribute(CONFIG_THEME_KEY, Themes.LIGHT);
-    setLightTheme();
-  };
-  const changeAndSaveLight = () => {
-    changeLight();
-    setConfig(CONFIG_THEME_KEY, Themes.LIGHT);
-  };
-
-  const changeDark = () => {
-    document.documentElement.setAttribute(CONFIG_THEME_KEY, Themes.DARK);
-    setDarkTheme();
-  };
-  const changeAndSaveDark = () => {
-    changeDark();
-    setConfig(CONFIG_THEME_KEY, Themes.DARK);
+  const changeThemeBasedOnSystemPreference = () => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mediaQuery.matches) {
+      changeAndSaveTheme(Themes.DARK);
+    } else {
+      changeAndSaveTheme(Themes.LIGHT);
+    }
   };
 
-  return { theme, changeAndSaveDark, changeAndSaveLight };
+  const changeAndSaveTheme = (theme: Themes) => {
+    document.documentElement.setAttribute(CONFIG_THEME_KEY, theme);
+    theme === Themes.DARK ? setDarkTheme() : setLightTheme();
+    setConfig(CONFIG_THEME_KEY, theme);
+  };
+
+  return { changeAndSaveTheme };
 };
 
 export default useTheme;
