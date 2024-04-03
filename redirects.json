@@ -18,5 +18,37 @@
   {
     "from": "/post/svelte-viewport-tracker-component",
     "to": "/post/development-viewport-tracker-component"
+  },
+  {
+    "from": "/post/clean-code-prologue",
+    "to": "/list"
+  },
+  {
+    "from": "/post/clean-code-chapter-1-2-3",
+    "to": "/list"
+  },
+  {
+    "from": "/post/clean-code-chapter-4-5-6",
+    "to": "/list"
+  },
+  {
+    "from": "/post/clean-code-chapter-7-8-9",
+    "to": "/list"
+  },
+  {
+    "from": "/post/clean-code-chapter-10",
+    "to": "/list"
+  },
+  {
+    "from": "/post/mac-port-kill",
+    "to": "/list"
+  },
+  {
+    "from": "/post/better-error-message",
+    "to": "/list"
+  },
+  {
+    "from": "/post/create-robots",
+    "to": "/list"
   }
 ]
