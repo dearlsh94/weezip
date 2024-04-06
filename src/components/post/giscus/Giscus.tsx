@@ -42,7 +42,7 @@ const Giscus = () => {
       {
         giscus: {
           setConfig: {
-            theme: 'dark',
+            theme,
           },
         },
       },

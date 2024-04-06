@@ -10,13 +10,14 @@ import { IconDarkTheme, IconLightTheme, IconSearch } from '@components/icon';
 import { Linker } from '@components/ui';
 import useScroll from '@hooks/useScroll';
 import useTheme from '@hooks/useTheme';
-import { ARIA_LABEL } from '@src/constants';
-import { useShowSearchStore } from '@store/config';
+import { ARIA_LABEL, Themes } from '@src/constants';
+import { useShowSearchStore, useThemeStore } from '@store/config';
 import { moveToTop } from '@utils/scroll';
 
 export default function Header() {
   const { show: handleShowSearch } = useShowSearchStore();
-  const { theme, changeAndSaveDark, changeAndSaveLight } = useTheme();
+  const { theme } = useThemeStore();
+  const { changeAndSaveTheme } = useTheme();
 
   const { scrollY, isScrollingUp, isBottom } = useScroll();
   const [status, setStatus] = useState('');
@@ -51,7 +52,7 @@ export default function Header() {
           <button
             aria-label={`현재 라이트 모드. 다크 모드로 ${ARIA_LABEL.EDIT}`}
             className="icon-box"
-            onClick={changeAndSaveDark}
+            onClick={() => changeAndSaveTheme(Themes.DARK)}
           >
             <IconLightTheme />
           </button>
@@ -59,7 +60,7 @@ export default function Header() {
           <button
             aria-label={`현재 다크 모드. 라이트 모드로 ${ARIA_LABEL.EDIT}`}
             className="icon-box"
-            onClick={changeAndSaveLight}
+            onClick={() => changeAndSaveTheme(Themes.LIGHT)}
           >
             <IconDarkTheme />
           </button>
