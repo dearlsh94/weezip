@@ -67,7 +67,6 @@
 - [Gatsby 프로젝트 개발환경 생성부터 alias, git 설정까지.](https://weezip.treefeely.com/post/weezip-set)
 - [개인 블로그 개발의 서막. 코드 네임 : WeeZip.](https://weezip.treefeely.com/post/weezip-start)
 
-
 ### 개발자 도서관
 
 - [웹 개발자의 역량을 고민하다 책 <더 나은 웹 개발을 위한 가이드>를 읽었다.](https://weezip.treefeely.com/post/guide-to-better-web-development-review)
@@ -86,7 +85,6 @@
 - [Clean Code 책 요약. 챕터 1~3 : 깨끗한 코드, 의미있는 이름, 함수](https://weezip.treefeely.com/post/clean-code-chapter-1-2-3)
 - [Clean Code 책 요약. 프롤로그](https://weezip.treefeely.com/post/clean-code-prologue)
 
-
 ### 웹개개
 
 - [통합을 위해 SOP 한계를 극복하는 CORS 정책](https://weezip.treefeely.com/post/cors-policy-for-integration)
@@ -98,7 +96,6 @@
 - [WEB 크로스 브라우징과 바벨, 그리고 폴리필 개념 요약 정리](https://weezip.treefeely.com/post/cross-browsing-babel-polyfill)
 - [WEB 브라우저 렌더링과 웹 렌더링 방식들 개념 요약 정리](https://weezip.treefeely.com/post/browser-rendering-web-rendering)
 - [JavaScript 이벤트 루프, 호이스팅, 클로저 개념 요약 정리](https://weezip.treefeely.com/post/javascript-eventloop-hoisting-closure)
-
 
 ### 트리피디아
 
