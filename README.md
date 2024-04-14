@@ -18,6 +18,8 @@
 
 ## Posts
 
+- [글또 9기, 프런트엔드&모바일 반상회를 다녀왔다.](https://weezip.treefeely.com/post/review-geultto-9th-frontend-and-mobile-conference)
+- [Jenkins pipeline 배포 시 Docker로 빌드하기. (Node.js not supported)](https://weezip.treefeely.com/post/building-with-docker-for-jenkins-pipeline)
 - [새롭게 코어 웹 바이탈 측정 기준이 된 INP는 무엇이고 왜 FID를 대체하게 되었나.](https://weezip.treefeely.com/post/the-new-core-web-vital-inp-replaced-fid)
 - [유데미 《【한글자막】 JavaScript 알고리즘 & 자료구조 마스터클래스》 수강 후기](http://localhost:8000/post/course-review-udemy-javascript-algorithm-master)
 - [유데미 《클린코드 자바스크립트(JavaScript)》 수강 후기](https://weezip.treefeely.com/post/course-review-udemy-clean-code-javascript)
@@ -65,7 +67,6 @@
 - [Gatsby 프로젝트 개발환경 생성부터 alias, git 설정까지.](https://weezip.treefeely.com/post/weezip-set)
 - [개인 블로그 개발의 서막. 코드 네임 : WeeZip.](https://weezip.treefeely.com/post/weezip-start)
 
-
 ### 개발자 도서관
 
 - [웹 개발자의 역량을 고민하다 책 <더 나은 웹 개발을 위한 가이드>를 읽었다.](https://weezip.treefeely.com/post/guide-to-better-web-development-review)
@@ -84,9 +85,9 @@
 - [Clean Code 책 요약. 챕터 1~3 : 깨끗한 코드, 의미있는 이름, 함수](https://weezip.treefeely.com/post/clean-code-chapter-1-2-3)
 - [Clean Code 책 요약. 프롤로그](https://weezip.treefeely.com/post/clean-code-prologue)
 
-
 ### 웹개개
 
+- [통합을 위해 SOP 한계를 극복하는 CORS 정책](https://weezip.treefeely.com/post/cors-policy-for-integration)
 - [JavaScript 커링(Currying) 이해하기: 6가지 실전 활용 사례](https://weezip.treefeely.com/post/learn-js-currying-with-6-examples)
 - [JavaScript 프로토타입, 클래스 개념 요약 정리](https://weezip.treefeely.com/post/javascript-prototype-class)
 - [JavaScript 스코프, 렉시컬 환경, 실행 컨텍스트 개념 요약 정리](https://weezip.treefeely.com/post/javascript-scope-and-lexical-environment-and-execution-context)
@@ -95,7 +96,6 @@
 - [WEB 크로스 브라우징과 바벨, 그리고 폴리필 개념 요약 정리](https://weezip.treefeely.com/post/cross-browsing-babel-polyfill)
 - [WEB 브라우저 렌더링과 웹 렌더링 방식들 개념 요약 정리](https://weezip.treefeely.com/post/browser-rendering-web-rendering)
 - [JavaScript 이벤트 루프, 호이스팅, 클로저 개념 요약 정리](https://weezip.treefeely.com/post/javascript-eventloop-hoisting-closure)
-
 
 ### 트리피디아
 

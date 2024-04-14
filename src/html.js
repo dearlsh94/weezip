@@ -2,22 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 export default function HTML(props) {
   const scriptTheme = `
-    var storage = localStorage.getItem('WEEZIP_CONFIG');
-    if (storage) {
-      var storageTheme = JSON.parse(storage)['weezip-theme'];
-      if (storageTheme === 'dark') {
-        document.documentElement.setAttribute('weezip-theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('weezip-theme', 'light');
-      }
-    } else {
-      var preferDark = window.matchMedia('(prefers-color-scheme: dark');
-      if (preferDark?.matches) {
-        document.documentElement.setAttribute('weezip-theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('weezip-theme', 'light');
-      }
-    }
+    const configKey = 'WEEZIP_CONFIG';
+    const themeKey = 'weezip-theme';
+    const storage = localStorage.getItem(configKey);
+    const theme = storage ? JSON.parse(storage)[themeKey] : null;
+    const preferDarkQuery = '(prefers-color-scheme: dark)';
+    const preferDark = window.matchMedia(preferDarkQuery).matches;
+    const finalTheme = theme || (preferDark ? 'dark' : 'light');
+    document.documentElement.setAttribute(themeKey, finalTheme);
   `;
   return (
     <html {...props.htmlAttributes} lang="ko-KR">
