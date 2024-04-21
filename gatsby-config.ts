@@ -43,6 +43,19 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/images/Tesseract-Logo-BG-512x512.png',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: siteUrl,
+        stripQueryString: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         query: `{
@@ -70,12 +83,6 @@ const config: GatsbyConfig = {
             priority: 0.7,
           };
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        icon: 'src/images/Tesseract-Logo-BG-512x512.png',
       },
     },
     {
@@ -136,13 +143,6 @@ const config: GatsbyConfig = {
     //     publisherId: `ca-pub-1622942491482378`,
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: siteUrl,
-        stripQueryString: true,
-      },
-    },
   ],
 };
 
