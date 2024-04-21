@@ -23,7 +23,7 @@ export const Head: HeadFC = () => {
 
 const IndexPage: React.FC<PageProps> = () => {
   const { getNodeByUrl } = useWeezipNotion();
-  const node: NotionNode | undefined = getNodeByUrl('/home');
+  const node: NotionNode | undefined = getNodeByUrl('/');
   const json = notionNodeToJson(node);
   return (
     <GlobalPortal.Provider>
