@@ -63,7 +63,7 @@ const config: GatsbyConfig = {
               return { ...edge.node, path: edge.node.title };
             });
         },
-        serializer: (props: any) => {
+        serialize: (props: any) => {
           return {
             url: `${props.title}`,
             changefreq: 'daily',
