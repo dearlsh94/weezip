@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { throttle } from '@utils/common';
 
-const useScroll = (delay = 10) => {
+const useScroll = (delay: number = 10): { scrollY: number; isScrollingUp: boolean; isBottom: boolean } => {
   const [scrollY, setScrollY] = useState(0);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [isBottom, setIsBottom] = useState(false);
