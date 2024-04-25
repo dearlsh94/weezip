@@ -24,11 +24,10 @@ export const classifyPost = (
   nodes: NotionNode[]
 ): {
   everyPostsTags: string[];
-  everyPostsSeries: MultiSelect;
+  everyPostsSeries: string[];
 } => {
-  const postTagSet = new Set();
-  const everyPostsSeries: MultiSelect = [];
-  const includeSeriesName: string[] = [];
+  const postTagSet = new Set<string>();
+  const postSeriesSet = new Set<string>();
 
   nodes.map(node => {
     if (node?.title?.toUpperCase()?.includes('POST')) {
@@ -40,17 +39,14 @@ export const classifyPost = (
       });
 
       if (json.properties?.series?.select) {
-        if (!includeSeriesName.includes(json.properties?.series?.select.name)) {
-          includeSeriesName.push(json.properties?.series?.select.name);
-          everyPostsSeries.push(json.properties?.series?.select);
-        }
+        postSeriesSet.add(json.properties?.series?.select.name);
       }
     }
   });
 
   return {
-    everyPostsTags: Array.from(postTagSet) as string[],
-    everyPostsSeries,
+    everyPostsTags: Array.from(postTagSet),
+    everyPostsSeries: Array.from(postSeriesSet),
   };
 };
 

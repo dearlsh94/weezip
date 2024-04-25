@@ -12,7 +12,7 @@ export default function SeriesFilter() {
         <p className="title">시리즈</p>
         <div className="series-filter__items">
           {everyPostsSeries.map(series => (
-            <Series key={series.id} series={series} useLink />
+            <Series key={series} name={series} useLink />
           ))}
         </div>
       </div>
