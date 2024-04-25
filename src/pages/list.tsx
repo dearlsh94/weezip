@@ -19,7 +19,7 @@ import { NotionNode } from '@types';
 
 export const Head: HeadFC = () => {
   return (
-    <SEO description={`Write, Explain, Edit, Zip`} pathname={paths.posts()} title={`글 목록`}>
+    <SEO description={`기술, 회고, 후기 등 다양한 글을 작성해요.`} pathname={paths.posts()} title={`WeeZip 글 목록`}>
       <link href={`https://weezip.treefeely.com${paths.posts()}`} rel="canonical" />
     </SEO>
   );
