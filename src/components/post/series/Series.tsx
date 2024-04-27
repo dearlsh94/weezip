@@ -5,21 +5,19 @@ import { Linker } from '@components/ui';
 import { ARIA_LABEL } from '@src/constants';
 import { paths } from '@utils/url';
 
-import { Select } from '@types';
-
 interface SeriesProps {
-  series: Select;
+  name: string;
   useLink?: boolean;
 }
 
-export default function Series({ series, useLink = false, ...rest }: SeriesProps) {
+export default function Series({ name, useLink = false, ...rest }: SeriesProps) {
   return React.createElement(
     useLink ? Linker : 'span',
     {
-      url: paths.posts({ series: series.name }),
-      label: `${series.name} 시리즈 목록으로 ${ARIA_LABEL.MOVE}`,
+      url: paths.posts({ series: name }),
+      label: `${name} 시리즈 목록으로 ${ARIA_LABEL.MOVE}`,
       ...rest,
     },
-    <span className={`series-box ${useLink ? 'badge' : 'normal'}`}>{series.name}</span>
+    <span className={`series-box ${useLink ? 'badge' : 'normal'}`}>{name}</span>
   );
 }

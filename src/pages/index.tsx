@@ -6,7 +6,6 @@ import * as React from 'react';
 import '@scss/global.scss';
 import '@scss/pages/IndexPage.scss';
 
-import { GlobalPortal } from '@components/GlobalPortal';
 import { Snowflakes } from '@components/animation';
 import SEO from '@components/header/SEO';
 import { Contents, LatestPost } from '@components/post';
@@ -23,20 +22,18 @@ export const Head: HeadFC = () => {
 
 const IndexPage: React.FC<PageProps> = () => {
   const { getNodeByUrl } = useWeezipNotion();
-  const node: NotionNode | undefined = getNodeByUrl('/home');
+  const node: NotionNode | undefined = getNodeByUrl('/');
   const json = notionNodeToJson(node);
   return (
-    <GlobalPortal.Provider>
-      <MainLayout className="index-layout">
-        <LatestPost />
-        <div className="introduce">{node && <Contents childrens={json.children} />}</div>
-        <div className="logo-box">
-          <StaticImage alt="Weezip Logo" src="../images/Tesseract-Logo-256x256.png" width={128} />
-        </div>
-      </MainLayout>
+    <MainLayout className="index-layout">
+      <LatestPost />
+      <div className="introduce">{node && <Contents childrens={json.children} />}</div>
+      <div className="logo-box">
+        <StaticImage alt="Weezip Logo" src="../images/Tesseract-Logo-256x256.png" width={128} />
+      </div>
       <Snowflakes />
       <FloatBox useSnowflake />
-    </GlobalPortal.Provider>
+    </MainLayout>
   );
 };
 

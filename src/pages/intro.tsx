@@ -3,7 +3,6 @@ import type { HeadFC, PageProps } from 'gatsby';
 import * as React from 'react';
 
 import '@scss/global.scss';
-import { GlobalPortal } from '@components/GlobalPortal';
 import SEO from '@components/header/SEO';
 import { Contents } from '@components/post';
 import { useWeezipNotion } from '@hooks/useWeezipNotion';
@@ -20,11 +19,7 @@ const IntroPage: React.FC<PageProps> = () => {
   const { getNodeByUrl } = useWeezipNotion();
   const node: NotionNode | undefined = getNodeByUrl('/intro');
   const json = notionNodeToJson(node);
-  return (
-    <GlobalPortal.Provider>
-      <MainLayout className="intro-layout">{node && <Contents childrens={json.children} />}</MainLayout>
-    </GlobalPortal.Provider>
-  );
+  return <MainLayout className="intro-layout">{node && <Contents childrens={json.children} />}</MainLayout>;
 };
 
 export default IntroPage;

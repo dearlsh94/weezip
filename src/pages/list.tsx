@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import '@scss/global.scss';
 import '@scss/pages/PostsPage.scss';
 
-import { GlobalPortal } from '@components/GlobalPortal';
 import SEO from '@components/header/SEO';
 import { Posts, PostsDescription, PostsFilter, ResetDivider } from '@components/post';
 import { LoadContainer } from '@components/ui';
@@ -19,7 +18,7 @@ import { NotionNode } from '@types';
 
 export const Head: HeadFC = () => {
   return (
-    <SEO description={`Write, Explain, Edit, Zip`} pathname={paths.posts()} title={`글 목록`}>
+    <SEO description={`기술, 회고, 후기 등 다양한 글을 작성해요.`} pathname={paths.posts()} title={`WeeZip 글 목록`}>
       <link href={`https://weezip.treefeely.com${paths.posts()}`} rel="canonical" />
     </SEO>
   );
@@ -77,18 +76,16 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
   };
 
   return (
-    <GlobalPortal.Provider>
-      <MainLayout className="posts-layout">
-        <section className="posts-layout__header">
-          <PostsFilter />
-          <ResetDivider />
-          <PostsDescription filteredText={filterText} isLoading={isLoading} length={list.length} />
-        </section>
-        <LoadContainer isError={false} isLoading={isLoading}>
-          <Posts list={list} />
-        </LoadContainer>
-      </MainLayout>
-    </GlobalPortal.Provider>
+    <MainLayout className="posts-layout">
+      <section className="posts-layout__header">
+        <PostsFilter />
+        <ResetDivider />
+        <PostsDescription filteredText={filterText} isLoading={isLoading} length={list.length} />
+      </section>
+      <LoadContainer isError={false} isLoading={isLoading}>
+        <Posts list={list} />
+      </LoadContainer>
+    </MainLayout>
   );
 };
 

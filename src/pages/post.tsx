@@ -4,7 +4,6 @@ import * as React from 'react';
 
 import '@scss/global.scss';
 import '@scss/pages/PostPage.scss';
-import { GlobalPortal } from '@components/GlobalPortal';
 import SEO from '@components/header/SEO';
 import {
   Contents,
@@ -105,32 +104,30 @@ const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
   }
 
   return (
-    <GlobalPortal.Provider>
-      <MainLayout className="post">
-        <Breadcrumb steps={breadcrumbSteps} />
-        <article>
-          <Title slug={slug} title={title} />
-          <TitleDescription
-            createdDate={node?.properties?.created_date}
-            editedDate={node?.properties?.edited_date}
-            tag={node?.properties?.tag?.multi_select}
-            useTagLink
-          />
-          <LastEditedCaution lastEditedDate={new Date(node?.properties?.edited_date?.date?.start)} />
-          <TableOfContents target={['h1', 'h2', 'h3']} />
-          <div className="contents-box">
-            <Contents childrens={node?.children} />
-          </div>
-        </article>
-        <section className="post__footer">
-          <Share />
-          <Giscus />
-          <OutLink series={series} />
-          <Feedback />
-        </section>
-        <FloatBox useTop />
-      </MainLayout>
-    </GlobalPortal.Provider>
+    <MainLayout className="post">
+      <Breadcrumb steps={breadcrumbSteps} />
+      <article>
+        <Title slug={slug} title={title} />
+        <TitleDescription
+          createdDate={node?.properties?.created_date}
+          editedDate={node?.properties?.edited_date}
+          tag={node?.properties?.tag?.multi_select}
+          useTagLink
+        />
+        <LastEditedCaution lastEditedDate={new Date(node?.properties?.edited_date?.date?.start)} />
+        <TableOfContents target={['h1', 'h2', 'h3']} />
+        <div className="contents-box">
+          <Contents childrens={node?.children} />
+        </div>
+      </article>
+      <section className="post__footer">
+        <Share />
+        <Giscus />
+        <OutLink series={series} />
+        <Feedback />
+      </section>
+      <FloatBox useTop />
+    </MainLayout>
   );
 };
 

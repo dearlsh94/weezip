@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import './MainLayout.scss';
+import { GlobalPortal } from '@components/GlobalPortal';
 import { PostSearchLayer } from '@components/search';
 import { ScrollProgress } from '@components/ui/progress';
 import { Footer } from '@module/footer';
@@ -14,13 +15,15 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children, className }: MainLayoutProps) {
   return (
-    <main className={`main-layout ${className}`}>
-      <Header />
-      <ScrollProgress />
-      <div className="content">{children}</div>
-      <Footer />
-      <SideBarNavigation />
-      <PostSearchLayer />
-    </main>
+    <GlobalPortal.Provider>
+      <main className={`main-layout ${className}`}>
+        <Header />
+        <ScrollProgress />
+        <div className="content">{children}</div>
+        <Footer />
+        <SideBarNavigation />
+        <PostSearchLayer />
+      </main>
+    </GlobalPortal.Provider>
   );
 }
