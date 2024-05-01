@@ -37,11 +37,13 @@ export default function Footer() {
             </CircleIconWrapper>
           </div>
         </div>
-        <div className="visit-box">
-          <p>
-            Today : {todayVisitors} / Total : {allVisitors}
-          </p>
-        </div>
+        {allVisitors !== null && todayVisitors !== null && (
+          <div className="visit-box">
+            <p>
+              Today : {todayVisitors} / Total : {allVisitors}
+            </p>
+          </div>
+        )}
         <div className="refer-box">
           <span>All Icons by</span>
           <Linker

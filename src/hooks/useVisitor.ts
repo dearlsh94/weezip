@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { fetchAllVisitorsCount, fetchTodayVisitorsCount } from '@src/services/visitors';
 
 export const useVisitor = () => {
-  const [allVisitors, setAllVisitors] = useState<number>(0);
-  const [todayVisitors, setTodayVisitors] = useState<number>(0);
+  const [allVisitors, setAllVisitors] = useState<number | null>(null);
+  const [todayVisitors, setTodayVisitors] = useState<number | null>(null);
 
   async function loadAllVisitors() {
     const allVisitorsCount = await fetchAllVisitorsCount();
