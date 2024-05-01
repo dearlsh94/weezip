@@ -1,6 +1,11 @@
 import supabase from '../supabase';
 
 export async function fetchAllVisitorsCount(): Promise<number | null> {
+  if (!supabase) {
+    console.log('supabase is not initialized');
+    return null;
+  }
+
   try {
     const { count } = await supabase.from('weezip_visitors').select('id', { count: 'exact' });
     return count;
@@ -11,6 +16,11 @@ export async function fetchAllVisitorsCount(): Promise<number | null> {
 }
 
 export async function fetchTodayVisitorsCount(): Promise<number | null> {
+  if (!supabase) {
+    console.log('supabase is not initialized');
+    return null;
+  }
+
   try {
     const { count } = await supabase
       .from('weezip_visitors')
