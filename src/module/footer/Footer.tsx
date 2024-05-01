@@ -4,9 +4,12 @@ import './Footer.scss';
 import { IconGithub, IconKakao, IconMail } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
 import { Linker } from '@components/ui';
+import { useVisitor } from '@hooks/useVisitor';
 import { ARIA_LABEL, OWNER_EMAIL } from '@src/constants';
 
 export default function Footer() {
+  const { allVisitors, todayVisitors } = useVisitor();
+
   return (
     <footer>
       <div className="container">
@@ -33,6 +36,11 @@ export default function Footer() {
               </Linker>
             </CircleIconWrapper>
           </div>
+        </div>
+        <div className="visit-box">
+          <p>
+            Today : {todayVisitors} / Total : {allVisitors}
+          </p>
         </div>
         <div className="refer-box">
           <span>All Icons by</span>

@@ -23,6 +23,7 @@
     "code:fix": "yarn format && yarn lint:fix && yarn style:fix"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.43.0",
     "gatsby": "^5.13.4",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-canonical-urls": "^5.13.1",

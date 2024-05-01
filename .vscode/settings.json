@@ -20,7 +20,8 @@
     "feely",
     "adsense",
     "Typegen",
-    "changefreq"
+    "changefreq",
+    "supabase"
   ],
   "css.validate": false,
   "less.validate": false,
