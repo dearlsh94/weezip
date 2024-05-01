@@ -1,6 +1,9 @@
 const { createClient } = require('@supabase/supabase-js');
 
-const supabase = createClient(process.env.SUPABASE_URL || '', process.env.SUPABASE_KEY || '');
+let supabase = undefined;
+if (process.env.SUPABASE_URL && process.env.SUPABASE_KEY) {
+  supabase = createClient(process.env.SUPABASE_URL || '', process.env.SUPABASE_KEY || '');
+}
 
 exports.onInitialClientRender = async () => {
   const ipAddress = await getIpAddress();
