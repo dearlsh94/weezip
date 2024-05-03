@@ -26,7 +26,7 @@ async function getIpAddress() {
 
 async function recordVisit(ipAddress) {
   try {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('weezip_visitors')
       .insert([{ ip_address: ipAddress, visit_date: new Date().toISOString().slice(0, 10) }]);
     if (error) throw error;
@@ -37,15 +37,15 @@ async function recordVisit(ipAddress) {
 
 async function checkDuplicateVisit(ipAddress) {
   try {
-    const { data, error } = await supabase
+    const { count, error } = await supabase
       .from('weezip_visitors')
-      .select('*')
+      .select('count', { count: 'exact' })
       .eq('ip_address', ipAddress)
       .eq('visit_date', new Date().toISOString().slice(0, 10)); // YYYY-MM-DD 형식
 
     if (error) throw error;
 
-    return data.length > 0;
+    return count > 0;
   } catch (error) {
     console.error('Error checking duplicate visit:', error);
     return null;
