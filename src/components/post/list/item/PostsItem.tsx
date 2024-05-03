@@ -19,7 +19,7 @@ export default function PostsItem({ post }: PostsItemProps) {
     <li className="posts-item">
       <Linker label={`${title} 글 페이지로 ${ARIA_LABEL.MOVE}`} url={post.title}>
         <div className={`posts-item__content`}>
-          {content?.properties?.series?.select && <Series series={content?.properties?.series?.select} />}
+          {content?.properties?.series?.select && <Series name={content?.properties?.series?.select?.name} />}
           <p>{title}</p>
           <TitleDescription
             createdDate={content?.properties?.created_date}
