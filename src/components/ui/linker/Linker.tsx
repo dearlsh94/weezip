@@ -12,7 +12,7 @@ interface LinkerProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 export default function Linker({ url, label, target, children, ...rest }: LinkerProps) {
   return url.startsWith('/') ? (
-    <Link aria-label={label} to={url}>
+    <Link aria-label={label} to={url} {...rest}>
       {children}
     </Link>
   ) : (

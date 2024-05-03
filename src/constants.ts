@@ -2,9 +2,8 @@ import { IconHome, IconList, IconStar } from '@components/icon';
 import { paths } from '@utils/url';
 
 export const HOST_DOMAIN = 'weezip.treefeely.com';
-
-export const OWNER_EMAIL = Object.freeze('weezip.ethan@gmail.com');
-export const CONFIG_THEME_KEY = Object.freeze('weezip-theme');
+export const OWNER_EMAIL = 'weezip.ethan@gmail.com';
+export const CONFIG_THEME_KEY = 'weezip-theme';
 
 export const enum Themes {
   LIGHT = 'light',
@@ -45,11 +44,11 @@ export const RECOMMEND_TAGS = Object.freeze([
     name: NAMES.TREEPEDIA,
   },
   {
-    url: paths.posts({ tag: '개발' }),
+    url: paths.posts({ series: '개발' }),
     name: '개발',
   },
   {
-    url: paths.posts({ tag: '에세이' }),
-    name: '에세이',
+    url: paths.posts({ tag: '콘퍼런스' }),
+    name: '콘퍼런스',
   },
 ]);
