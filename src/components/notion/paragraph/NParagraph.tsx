@@ -17,6 +17,16 @@ export default function NParagraph({ paragraph, richText, className }: NParagrap
   if (blockTexts.length === 0) {
     return <br />;
   }
+
+  const renderTextString = (text: string) => {
+    return text.split('\n').map((line, index, array) => (
+      <span key={`paragraph-line-${index}`}>
+        {line}
+        {index < array.length - 1 && <br />}
+      </span>
+    ));
+  };
+
   return (
     blockTexts && (
       <div className="block-paragraph">
@@ -28,58 +38,59 @@ export default function NParagraph({ paragraph, richText, className }: NParagrap
           if (t?.annotations?.color) {
             classNames.push(t?.annotations?.color);
           }
+
           if (t?.href) {
             return (
-              <Linker
-                key={`block-paragraph-text-${i}`}
-                label={`${t.plain_text} ${ARIA_LABEL.MOVE}`}
-                target="_blank"
-                url={t.href}
-              >
+              <Linker key={`paragraph-${i}`} label={`${t.plain_text} ${ARIA_LABEL.MOVE}`} target="_blank" url={t.href}>
                 {t.plain_text}
               </Linker>
             );
           }
+
           if (t?.annotations?.bold) {
             return (
-              <b key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
-                {t.plain_text}
+              <b key={`paragraph-${i}`} className={classNames.join(' ')}>
+                {renderTextString(t.plain_text)}
               </b>
             );
           }
+
           if (t?.annotations?.italic) {
             return (
-              <i key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
-                {t.plain_text}
+              <i key={`paragraph-${i}`} className={classNames.join(' ')}>
+                {renderTextString(t.plain_text)}
               </i>
             );
           }
+
           if (t?.annotations?.strikethrough) {
             return (
-              <s key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
-                {t.plain_text}
+              <s key={`paragraph-${i}`} className={classNames.join(' ')}>
+                {renderTextString(t.plain_text)}
               </s>
             );
           }
+
           if (t?.annotations?.underline) {
             return (
-              <u key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
-                {t.plain_text}
+              <u key={`paragraph-${i}`} className={classNames.join(' ')}>
+                {renderTextString(t.plain_text)}
               </u>
             );
           }
+
           if (t?.annotations?.code) {
             return (
-              <code key={`block-paragraph-text-${i}`} className={classNames.join(' ')}>
-                {t.plain_text}
+              <code key={`paragraph-${i}`} className={classNames.join(' ')}>
+                {renderTextString(t.plain_text)}
               </code>
             );
           }
-          const text = t.plain_text.replaceAll('\n', '<br/>');
+
           return (
-            <React.Fragment key={`block-paragraph-text-${i}`}>
-              <p className={classNames.join(' ')} dangerouslySetInnerHTML={{ __html: text }} />
-            </React.Fragment>
+            <p key={`paragraph-${i}`} className={classNames.join(' ')}>
+              {renderTextString(t.plain_text)}
+            </p>
           );
         })}
       </div>
