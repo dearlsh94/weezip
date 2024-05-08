@@ -11,28 +11,29 @@ import { NotionChildrenType, TextBlock } from '@types';
 
 interface NToggleProps {
   toggle: TextBlock;
-  hasChild: boolean;
   childList: NotionChildrenType[];
 }
 
-export default function NToggle({ toggle, hasChild, childList }: NToggleProps) {
+export default function NToggle({ toggle, childList }: NToggleProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const change = () => setIsOpen(o => !o);
+  const change = () => setIsOpen(!isOpen);
 
   return (
     <details className="block-toggle">
       <summary
+        aria-expanded={isOpen}
         aria-label={`현재 토글 블럭 ${isOpen ? ARIA_LABEL.EXPAND_OFF : ARIA_LABEL.EXPAND_ON}`}
         className="toggle-title-box"
+        role="button"
         onClick={change}
       >
-        <div className={`icon-box ${isOpen ? 'open' : ''}`}>
-          <IconSingleArrow direction="right" size={16} />
+        <div className={`icon-box`}>
+          <IconSingleArrow direction={isOpen ? 'bottom' : 'right'} size={16} />
         </div>
         <NParagraph paragraph={toggle} />
       </summary>
-      <section className="toggle-content-box">
-        {isOpen && hasChild && childList?.length && <Contents childrens={childList} />}
+      <section aria-hidden={!isOpen} className="toggle-content-box">
+        <Contents childrens={childList} />
       </section>
     </details>
   );

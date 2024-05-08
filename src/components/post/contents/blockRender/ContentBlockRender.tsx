@@ -55,8 +55,7 @@ export default function ContentBlockRender({ block }: ContentBlockRenderProps) {
         if (block.callout) return <NCallout children={block.children} callout={block.callout} />;
         break;
       case BlockType.TOGGLE:
-        if (block.toggle)
-          return <NToggle childList={block.children} hasChild={block.has_children} toggle={block.toggle} />;
+        if (block.toggle) return <NToggle childList={block.children} toggle={block.toggle} />;
         break;
       case BlockType.BOOKMARK:
         if (block.bookmark) return <NBookmark bookmark={block.bookmark} />;
