@@ -8,26 +8,21 @@ import { DimLayout } from '@layout/dim';
 
 interface SideLayoutProps {
   children: ReactNode;
-  useExpand?: boolean;
+  useExpandControl?: boolean;
   handleClose?: () => void;
 }
 
-export default function SideLayout({ handleClose, useExpand = false, children }: SideLayoutProps) {
-  const [isExpand, setIsExpand] = useState(false);
-
-  useEffect(() => {
-    setIsExpand(true);
-  }, []);
-
+export default function SideLayout({ handleClose, useExpandControl = false, children }: SideLayoutProps) {
+  const [isExpand, setIsExpand] = useState(true);
   const handleToggleExpand = () => setIsExpand(prev => !prev);
 
   return (
     <GlobalPortal.Consumer>
       <DimLayout handleClose={handleClose}>
-        <aside className={`side-layout ${isExpand ? 'expand' : 'shrink'}`}>
+        <aside aria-modal={true} className={`side-layout ${isExpand ? 'expand' : 'shrink'}`}>
           {isExpand && <div className={`content`}>{children}</div>}
         </aside>
-        {useExpand && (
+        {useExpandControl && (
           <button className={`side-layout-controller ${isExpand ? 'expand' : 'shrink'}`} onClick={handleToggleExpand}>
             <IconSingleArrow color={'primary'} direction={isExpand ? 'left' : 'right'} />
           </button>

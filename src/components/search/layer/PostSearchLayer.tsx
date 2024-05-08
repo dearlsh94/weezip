@@ -43,7 +43,7 @@ export default function PostSearchLayer() {
     isVisibility && (
       <GlobalPortal.Consumer>
         <DimLayout handleClose={handleHideSearch}>
-          <div className="post-search-container">
+          <div aria-modal={true} className="post-search-container">
             <div className="post-search-box">
               <div className="icon-close-box">
                 <IconClose
