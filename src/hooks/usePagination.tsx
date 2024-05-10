@@ -20,31 +20,29 @@ const usePagination = ({ perPage, totalCount }: PaginationProps): paginationCont
   const search = new URLSearchParams(location.search);
   const currentPage = search.has('page') && Number(search.get('page')) ? Number(search.get('page')) : 1;
   const lastPage = Math.ceil(totalCount / perPage);
+  const updatePage = (newPage: number) => {
+    if (currentPage !== newPage) {
+      search.set('page', newPage.toString());
+      navigate(`${location.pathname}?${search.toString()}`);
+    }
+  };
+
   const handleFirst = () => {
-    if (currentPage !== 1) {
-      search.set('page', '1');
-      navigate(`${location.pathname}?${search.toString()}`);
-    }
+    updatePage(1);
   };
+
   const handlePrev = () => {
-    const prev = Math.max(currentPage - 1, 1);
-    if (currentPage !== prev) {
-      search.set('page', prev.toString());
-      navigate(`${location.pathname}?${search.toString()}`);
-    }
+    const prevPage = Math.max(currentPage - 1, 1);
+    updatePage(prevPage);
   };
+
   const handleNext = () => {
-    const next = Math.min(currentPage + 1, lastPage);
-    if (currentPage !== next) {
-      search.set('page', next.toString());
-      navigate(`${location.pathname}?${search.toString()}`);
-    }
+    const nextPage = Math.min(currentPage + 1, lastPage);
+    updatePage(nextPage);
   };
+
   const handleLast = () => {
-    if (currentPage !== lastPage) {
-      search.set('page', lastPage.toString());
-      navigate(`${location.pathname}?${search.toString()}`);
-    }
+    updatePage(lastPage);
   };
 
   return {
