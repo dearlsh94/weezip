@@ -1,2 +1,2 @@
-export * from './layer';
+export * from '../../layout/layer';
 export * from './recommend';

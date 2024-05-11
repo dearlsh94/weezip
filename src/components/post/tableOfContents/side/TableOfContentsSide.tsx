@@ -21,7 +21,7 @@ export default function TableOfContentsSide({ list }: TableOfContentsSideProps) 
   const activeText = usePostActiveText(offsetTopPositions);
 
   return (
-    <SideLayout useExpand={true}>
+    <SideLayout useExpandControl={true}>
       <ol className="table-of-contents-side">
         <li aria-label={`페이지 최상단으로 ${ARIA_LABEL.MOVE}`} className="tag-top" onClick={moveToTop}>
           맨위로

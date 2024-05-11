@@ -37,7 +37,7 @@ export const useWeezipNotion = () => {
         node.notionColumn = parseNotionColumn(notionNodeToJson(node));
         return node;
       })
-      .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+      .sort((a, b) => Date.parse(b.notionColumn.createdTime) - Date.parse(a.notionColumn.createdTime));
 
     const { everyPostsTags, everyPostsSeries } = classifyPost(posts);
 

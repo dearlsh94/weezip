@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import './MainLayout.scss';
 import { GlobalPortal } from '@components/GlobalPortal';
-import { PostSearchLayer } from '@components/search';
+import { ImageLayer, PostSearchLayer } from '@components/search';
 import { ScrollProgress } from '@components/ui/progress';
 import { Footer } from '@module/footer';
 import { Header } from '@module/header';
@@ -23,6 +23,7 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
         <Footer />
         <SideBarNavigation />
         <PostSearchLayer />
+        <ImageLayer />
       </main>
     </GlobalPortal.Provider>
   );

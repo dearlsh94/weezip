@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import './NImage.scss';
+import { useShowImageLayerStore } from '@store/config';
 import { NParagraph } from '../paragraph';
 
 import { ImageChildren } from '@types';
@@ -18,6 +19,8 @@ export default function NImage({ imageBlock }: NImageProps) {
     return acc + ` ${item.plain_text}`;
   }, '');
 
+  const { show: showImageLayer } = useShowImageLayerStore();
+
   return (
     <>
       {id && image && (
@@ -29,6 +32,7 @@ export default function NImage({ imageBlock }: NImageProps) {
             srcSet={`${url}&width=540 380w,
             ${url}&width=1140 760w,
             ${url}&width=1536 1024w,`}
+            onClick={() => showImageLayer(imageBlock)}
           />
           <figcaption className="caption-box">
             <NParagraph richText={image.caption} />

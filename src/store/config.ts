@@ -3,7 +3,7 @@ import { create } from 'zustand';
 import { Themes } from '@src/constants';
 import { allowBodyScroll, preventBodyScroll } from '@utils/scroll';
 
-import { MultiSelect } from '@types';
+import { BlockType, Caption, ImageChildren, MultiSelect } from '@types';
 
 interface SnowflakeState {
   isVisibility: boolean;
@@ -55,6 +55,24 @@ export const useShowSearchStore = create<ShowSearchState>((set, get) => ({
   show() {
     preventBodyScroll();
     set(() => ({ isVisibility: true }));
+  },
+  hide() {
+    allowBodyScroll();
+    set(() => ({ isVisibility: false }));
+  },
+}));
+
+interface ShowImageLayerState {
+  isVisibility: boolean;
+  imageBlock?: ImageChildren;
+  show: (imageBlock: ImageChildren) => void;
+  hide: () => void;
+}
+export const useShowImageLayerStore = create<ShowImageLayerState>((set, get) => ({
+  isVisibility: false,
+  show(imageBlock: ImageChildren) {
+    preventBodyScroll();
+    set(() => ({ isVisibility: true, imageBlock }));
   },
   hide() {
     allowBodyScroll();

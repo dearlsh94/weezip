@@ -12,7 +12,7 @@ import { useShowSearchStore } from '@store/config';
 import { throttle } from '@utils/common';
 import { paths } from '@utils/url';
 
-import { RecommendTag } from '../recommend';
+import { RecommendTag } from '../../../components/search/recommend';
 
 export default function PostSearchLayer() {
   const { isVisibility, hide: handleHideSearch } = useShowSearchStore();
@@ -43,7 +43,7 @@ export default function PostSearchLayer() {
     isVisibility && (
       <GlobalPortal.Consumer>
         <DimLayout handleClose={handleHideSearch}>
-          <div className="post-search-container">
+          <div aria-modal={true} className="post-search-container">
             <div className="post-search-box">
               <div className="icon-close-box">
                 <IconClose
