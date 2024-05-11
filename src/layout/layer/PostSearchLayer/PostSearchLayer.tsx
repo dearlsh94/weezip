@@ -12,7 +12,7 @@ import { useShowSearchStore } from '@store/config';
 import { throttle } from '@utils/common';
 import { paths } from '@utils/url';
 
-import { RecommendTag } from '../recommend';
+import { RecommendTag } from '../../../components/search/recommend';
 
 export default function PostSearchLayer() {
   const { isVisibility, hide: handleHideSearch } = useShowSearchStore();
