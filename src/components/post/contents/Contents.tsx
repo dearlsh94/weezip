@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import './Contents.scss';
 import ContentBlockRender from '@components/post/contents/blockRender/ContentBlockRender';
 
 import { BlockType, NotionChildrenType } from '@types';
