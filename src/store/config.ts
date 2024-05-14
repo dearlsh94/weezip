@@ -3,7 +3,7 @@ import { create } from 'zustand';
 import { Themes } from '@src/constants';
 import { allowBodyScroll, preventBodyScroll } from '@utils/scroll';
 
-import { BlockType, Caption, ImageChildren, MultiSelect } from '@types';
+import { ImageChildren, MultiSelect } from '@types';
 
 interface SnowflakeState {
   isVisibility: boolean;
@@ -31,11 +31,9 @@ export const useShowSNBStore = create<ShowSNBState>((set, get) => ({
     isVisibility ? hide() : show();
   },
   show() {
-    preventBodyScroll();
     set(() => ({ isVisibility: true }));
   },
   hide() {
-    allowBodyScroll();
     set(() => ({ isVisibility: false }));
   },
 }));
