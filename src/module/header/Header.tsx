@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 
 import './Header.scss';
 
-import { SNBOpenIcon } from '@components/header';
 import { IconDarkTheme, IconLightTheme, IconSearch } from '@components/icon';
 import { Linker } from '@components/ui';
 import useScroll from '@hooks/useScroll';
@@ -34,9 +33,6 @@ export default function Header() {
 
   return (
     <header className={`${status}`}>
-      <div className="left-box">
-        <SNBOpenIcon />
-      </div>
       <Linker label={`홈으로 ${ARIA_LABEL.MOVE}`} url="/">
         <div className="icon-box">
           <StaticImage alt="Weezip Logo" className="logo" src="../../images/Tesseract-Logo-128x128.png" width={36} />

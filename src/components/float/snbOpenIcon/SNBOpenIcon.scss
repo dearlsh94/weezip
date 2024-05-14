@@ -10,6 +10,11 @@
   background: none;
   cursor: pointer;
   transition: background-color 0.2s;
+  z-index: $z-index-10;
+
+  position: fixed;
+  top: 6px;
+  left: 12px;
 
   @include hover-fine {
     border-radius: 4px;
