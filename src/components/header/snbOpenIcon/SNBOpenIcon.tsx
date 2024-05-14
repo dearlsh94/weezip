@@ -19,7 +19,9 @@ export default function SNBOpenIcon() {
       onMouseLeave={() => setIsMenuHover(false)}
       onMouseOver={() => setIsMenuHover(true)}
     >
-      {isMenuHover ? (
+      {isVisibility ? (
+        <IconDoubleArrow direction={'left'} size={28} />
+      ) : isMenuHover ? (
         <IconDoubleArrow direction={isVisibility ? 'left' : 'right'} size={28} />
       ) : (
         <IconHamburger size={28} />
