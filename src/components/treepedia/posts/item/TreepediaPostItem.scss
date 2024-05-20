@@ -4,21 +4,14 @@
   box-sizing: content-box;
   border-radius: 16px;
   background-color: var(--color-grey-6);
+  box-shadow: var(--color-grey-4) 8px 8px 25px -12px;
   cursor: pointer;
   list-style: none;
   transition: color 0.2s;
-
-  box-shadow: var(--color-grey-4) 8px 8px 25px -12px;
   transition: all 0.23s ease-in-out;
 
   @include hover-fine {
     transform: rotate3d(0.5, 1, 0, 6deg) scale(1.02);
-
-    &__content {
-      strong {
-        // text-decoration: underline;
-      }
-    }
   }
 
   a {
@@ -28,10 +21,10 @@
 
   &__content {
     display: flex;
-    justify-content: space-between;
     height: 100%;
     box-sizing: border-box;
     flex-direction: column;
+    justify-content: space-between;
     padding: 28px 24px;
     row-gap: 8px;
 
@@ -41,6 +34,7 @@
 
     > span {
       color: var(--color-base);
+
       &.star-5 {
         color: var(--color-green);
       }
@@ -48,15 +42,15 @@
 
     strong {
       margin-top: 8px;
+      color: var(--color-base);
       font-size: 15pt;
       font-weight: 500;
-      color: var(--color-base);
     }
 
     p {
+      flex: 1;
       font-size: 12pt;
       font-weight: 400;
-      flex: 1;
     }
   }
 }

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import './NImage.scss';
 import { useShowImageLayerStore } from '@store/config';
+
 import { NParagraph } from '../paragraph';
 
 import { ImageChildren } from '@types';

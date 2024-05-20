@@ -26,6 +26,7 @@ $side-layout-controller-border: 4px;
       transform: translateX((-100%));
     }
   }
+
   &.right {
     right: 0;
 
@@ -48,17 +49,16 @@ $side-layout-controller-border: 4px;
 .side-layout-controller {
   position: fixed;
   top: 50%;
-  transform: translateY(-50%);
-  background-color: var(--color-reverse-mono);
+  display: flex;
   width: 22px;
   height: 49px;
-  display: flex;
   align-items: center;
   justify-content: center;
-
-  border: 1.5px solid var(--color-primary);
-  cursor: pointer;
   padding: 0;
+  border: 1.5px solid var(--color-primary);
+  background-color: var(--color-reverse-mono);
+  cursor: pointer;
+  transform: translateY(-50%);
   transition: left 0.16s ease-in-out;
 
   &.left {
@@ -69,6 +69,7 @@ $side-layout-controller-border: 4px;
       left: 0;
     }
   }
+
   &.right {
     right: $side-layout-width;
     border-radius: $side-layout-controller-border 0 0 $side-layout-controller-border;

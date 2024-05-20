@@ -3,9 +3,9 @@
 .reset-divider {
   display: flex;
   align-items: center;
+  color: var(--color-link);
   column-gap: 8px;
   cursor: pointer;
-  color: var(--color-link);
 
   hr {
     flex: 1;
@@ -21,6 +21,7 @@
     @include hover-fine {
       svg {
         @include animation-rotate(1.3s);
+
         animation-iteration-count: infinite;
       }
     }
