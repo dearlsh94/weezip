@@ -2,18 +2,18 @@
   &__header {
     display: flex;
     flex-direction: column;
-    row-gap: 12px;
     margin-bottom: 12px;
+    row-gap: 12px;
   }
 
   .desc {
-    font-size: 11pt;
-    color: var(--color-grey);
     margin-bottom: 8px;
+    color: var(--color-grey);
+    font-size: 11pt;
 
     em {
-      font-style: normal;
       color: var(--color-secondary);
+      font-style: normal;
     }
   }
 }

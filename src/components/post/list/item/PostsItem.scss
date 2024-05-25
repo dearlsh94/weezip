@@ -17,12 +17,13 @@
   @include hover-fine {
     border-bottom: 3px solid var(--color-base);
     margin-bottom: -1px;
+
     p {
       color: var(--color-base);
     }
   }
 
-  .posts-item__content {
+  &__content {
     display: flex;
     flex-direction: column;
     padding: 2rem 0;
@@ -32,10 +33,10 @@
     }
 
     p {
-      margin: 8px 0px 12px;
+      margin: 8px 0 12px;
       font-size: 1.5rem;
-      line-height: 2.25rem;
       font-weight: 600;
+      line-height: 2.25rem;
       word-break: keep-all;
 
       @include mobile {

@@ -1,33 +1,41 @@
 import * as React from 'react';
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, ReactNode } from 'react';
 
 import './SideLayout.scss';
 import { GlobalPortal } from '@components/GlobalPortal';
 import { IconSingleArrow } from '@components/icon';
-import { DimLayout } from '@layout/dim';
 
+interface Option {
+  useExpandControl?: boolean;
+  direction?: 'left' | 'right';
+}
 interface SideLayoutProps {
   children: ReactNode;
-  useExpandControl?: boolean;
-  handleClose?: () => void;
+  option?: Option;
 }
 
-export default function SideLayout({ handleClose, useExpandControl = false, children }: SideLayoutProps) {
+export default function SideLayout({ option, children }: SideLayoutProps) {
+  const { useExpandControl = false, direction = 'left' } = option || {};
   const [isExpand, setIsExpand] = useState(true);
   const handleToggleExpand = () => setIsExpand(prev => !prev);
 
   return (
     <GlobalPortal.Consumer>
-      <DimLayout handleClose={handleClose}>
-        <aside aria-modal={true} className={`side-layout ${isExpand ? 'expand' : 'shrink'}`}>
-          {isExpand && <div className={`content`}>{children}</div>}
-        </aside>
-        {useExpandControl && (
-          <button className={`side-layout-controller ${isExpand ? 'expand' : 'shrink'}`} onClick={handleToggleExpand}>
-            <IconSingleArrow color={'primary'} direction={isExpand ? 'left' : 'right'} />
-          </button>
-        )}
-      </DimLayout>
+      <aside aria-modal={true} className={`side-layout ${direction} ${isExpand ? 'expand' : 'shrink'}`}>
+        {isExpand && <div className={`content`}>{children}</div>}
+      </aside>
+
+      {useExpandControl && (
+        <button
+          className={`side-layout-controller ${direction} ${isExpand ? 'expand' : 'shrink'}`}
+          onClick={handleToggleExpand}
+        >
+          <IconSingleArrow
+            color={'primary'}
+            direction={direction === 'left' ? `${isExpand ? 'left' : 'right'}` : `${isExpand ? 'right' : 'left'}`}
+          />
+        </button>
+      )}
     </GlobalPortal.Consumer>
   );
 }

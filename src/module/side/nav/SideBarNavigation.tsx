@@ -12,7 +12,7 @@ export default function SideBarNavigation() {
 
   return (
     isVisibility && (
-      <SideLayout handleClose={handleHideSNB}>
+      <SideLayout>
         <nav className="side-bar-nav">
           {!!GNB_MENUS?.length && (
             <ul>

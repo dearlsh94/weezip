@@ -4,6 +4,10 @@
 .snb-open-icon {
   @include flex-center;
 
+  position: fixed;
+  z-index: $z-index-10;
+  top: 6px;
+  left: 12px;
   width: 48px;
   height: 48px;
   border: none;
