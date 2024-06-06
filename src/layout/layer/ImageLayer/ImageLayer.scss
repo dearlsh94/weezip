@@ -11,7 +11,7 @@
   max-height: 80vh;
   margin: 0;
   background-color: var(--color-background);
-  cursor: pointer;
+  cursor: zoom-out;
   transform: translate(-50%, -50%);
 
   @include mobile {
