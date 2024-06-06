@@ -20,6 +20,8 @@
 
 ### 개발
 
+- [Svelte Webpack5 환경에 Storybook 통합하기 + Chromatic 배포](https://weezip.treefeely.com/post/Integrate-storybook-in-svelte-webpack-5)
+- [5주 간의 Cursor IDE 실전 사용 후기: AI로 코딩 효율성 극대화하기.](https://weezip.treefeely.com/post/five-weeks-hands-on-review-of-cursor-ide)
 - [HTTP 상태 코드와 응답 데이터를 활용한 API 오류 처리 및 모니터링 전략](https://weezip.treefeely.com/post/api-error-handling-and-monitoring-strategies-using-http-status-codes-and-response-data)
 - [글또 9기, 프런트엔드&모바일 반상회를 다녀왔다.](https://weezip.treefeely.com/post/review-geultto-9th-frontend-and-mobile-conference)
 - [Jenkins pipeline 배포 시 Docker로 빌드하기. (Node.js not supported)](https://weezip.treefeely.com/post/building-with-docker-for-jenkins-pipeline)
@@ -56,6 +58,8 @@
 
 ### 개발도서관
 
+- [타입스크립트를 실무에서 사용한다면? ‘이펙티브 타입스크립트’ 후기](https://weezip.treefeely.com/post/review-effective-typescript)
+- [리액트 18까지를 위한 최고의 IT 전문서, ‘모던 리액트 Deep Dive’ 후기](https://weezip.treefeely.com/post/review-modern-react-deep-dive-best-it-book-for-react)
 - [웹 개발자의 역량을 고민하다 책 <더 나은 웹 개발을 위한 가이드>를 읽었다.](https://weezip.treefeely.com/post/guide-to-better-web-development-review)
 - [책 피플웨어(Peopleware) 6부. 여기서는 일이 재미있어야 한다.](https://weezip.treefeely.com/post/peopleware-6-fun-to-work-here)
 - [책 피플웨어(Peopleware) 5부. 비옥한 토양.](https://weezip.treefeely.com/post/peopleware-5-fertile-soil)
