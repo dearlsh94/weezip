@@ -58,6 +58,7 @@
 
 ### 개발도서관
 
+- [Zustand, Jotai, Valtio의 개발자 다이시 카토가 쓴 ‘리액트 훅을 활용한 마이크로 상태 관리’ 후기](https://weezip.treefeely.com/post/review-micro-state-management-with-react-hooks)
 - [타입스크립트를 실무에서 사용한다면? ‘이펙티브 타입스크립트’ 후기](https://weezip.treefeely.com/post/review-effective-typescript)
 - [리액트 18까지를 위한 최고의 IT 전문서, ‘모던 리액트 Deep Dive’ 후기](https://weezip.treefeely.com/post/review-modern-react-deep-dive-best-it-book-for-react)
 - [웹 개발자의 역량을 고민하다 책 <더 나은 웹 개발을 위한 가이드>를 읽었다.](https://weezip.treefeely.com/post/guide-to-better-web-development-review)
