@@ -6,6 +6,7 @@ import { CircleIconWrapper } from '@components/icon/wrapper';
 import { Linker } from '@components/ui';
 import { useVisitor } from '@hooks/useVisitor';
 import { ARIA_LABEL, OWNER_EMAIL } from '@src/constants';
+import { formatWithComma } from '@utils/format';
 
 export default function Footer() {
   const { allVisitors, todayVisitors } = useVisitor();
@@ -40,7 +41,7 @@ export default function Footer() {
         {allVisitors !== null && todayVisitors !== null && (
           <div className="visit-box">
             <p>
-              Today : {todayVisitors} / Total : {allVisitors}
+              Today : {formatWithComma(todayVisitors)} / Total : {formatWithComma(allVisitors)}
             </p>
           </div>
         )}
