@@ -1,4 +1,4 @@
-import { IconHome, IconList, IconStar } from '@components/icon';
+import { IconHome, IconList } from '@components/icon';
 import { paths } from '@utils/url';
 
 export const HOST_DOMAIN = 'weezip.treefeely.com';
@@ -27,22 +27,17 @@ export const enum ARIA_LABEL {
 
 export const enum NAMES {
   SITE = 'Weezip',
-  TREEPEDIA = '트리피디아',
   TREEFEELY = 'Treefeely',
 }
 
 export const GNB_MENUS = Object.freeze([
   { url: paths.home(), title: NAMES.SITE, isOutLink: false, Icon: IconHome },
   { url: paths.posts(), title: '글 목록', isOutLink: false, Icon: IconList },
-  { url: paths.treepedia(), title: NAMES.TREEPEDIA, isOutLink: false, Icon: IconStar },
+  { url: 'https://brunch.co.kr/magazine/treepedia', title: '트리피디아', isOutLink: true },
   { url: 'https://treefeely.com', title: NAMES.TREEFEELY, isOutLink: true },
 ]);
 
 export const RECOMMEND_TAGS = Object.freeze([
-  {
-    url: paths.treepedia(),
-    name: NAMES.TREEPEDIA,
-  },
   {
     url: paths.posts({ series: '개발' }),
     name: '개발',
