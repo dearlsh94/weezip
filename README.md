@@ -20,6 +20,11 @@
 
 ### 개발
 
+- [PG 결제창, 왜 팝업으로 뜰까? 웹 결제의 보안과 UX](http://localhost:8000/post/pg-payment-popup-security-ux)
+- [배럴 파일의 순환 의존성 문제로 인한 Next.js 핫 리로딩 시 서비스 정지 문제](http://localhost:8000/post/nextjs-hot-reloading-issue-barrel-files-circular-dependency)
+- [피자를 향한 12시간(조코딩 AI 해커톤 후기](http://localhost:8000/post/review-jocoding-hackertone-for-pizza)
+- [Svelte Webpack5 환경에 Storybook 통합하기 + Chromatic 배포](https://weezip.treefeely.com/post/Integrate-storybook-in-svelte-webpack-5)
+- [5주 간의 Cursor IDE 실전 사용 후기: AI로 코딩 효율성 극대화하기.](https://weezip.treefeely.com/post/five-weeks-hands-on-review-of-cursor-ide)
 - [HTTP 상태 코드와 응답 데이터를 활용한 API 오류 처리 및 모니터링 전략](https://weezip.treefeely.com/post/api-error-handling-and-monitoring-strategies-using-http-status-codes-and-response-data)
 - [글또 9기, 프런트엔드&모바일 반상회를 다녀왔다.](https://weezip.treefeely.com/post/review-geultto-9th-frontend-and-mobile-conference)
 - [Jenkins pipeline 배포 시 Docker로 빌드하기. (Node.js not supported)](https://weezip.treefeely.com/post/building-with-docker-for-jenkins-pipeline)
@@ -40,6 +45,7 @@
 
 ### 학습
 
+- [나의 첫 개발자 커뮤니티인 글또 9기를 완주한 후기.](http://localhost:8000/post/review-of-geullto-9th)
 - [통합을 위해 SOP 한계를 극복하는 CORS 정책](https://weezip.treefeely.com/post/cors-policy-for-integration)
 - [새롭게 코어 웹 바이탈 측정 기준이 된 INP는 무엇이고 왜 FID를 대체하게 되었나.](https://weezip.treefeely.com/post/the-new-core-web-vital-inp-replaced-fid)
 - [유데미 《【한글자막】 JavaScript 알고리즘 & 자료구조 마스터클래스》 수강 후기](http://localhost:8000/post/course-review-udemy-javascript-algorithm-master)
@@ -56,6 +62,9 @@
 
 ### 개발도서관
 
+- [Zustand, Jotai, Valtio의 개발자 다이시 카토가 쓴 ‘리액트 훅을 활용한 마이크로 상태 관리’ 후기](https://weezip.treefeely.com/post/review-micro-state-management-with-react-hooks)
+- [타입스크립트를 실무에서 사용한다면? ‘이펙티브 타입스크립트’ 후기](https://weezip.treefeely.com/post/review-effective-typescript)
+- [리액트 18까지를 위한 최고의 IT 전문서, ‘모던 리액트 Deep Dive’ 후기](https://weezip.treefeely.com/post/review-modern-react-deep-dive-best-it-book-for-react)
 - [웹 개발자의 역량을 고민하다 책 <더 나은 웹 개발을 위한 가이드>를 읽었다.](https://weezip.treefeely.com/post/guide-to-better-web-development-review)
 - [책 피플웨어(Peopleware) 6부. 여기서는 일이 재미있어야 한다.](https://weezip.treefeely.com/post/peopleware-6-fun-to-work-here)
 - [책 피플웨어(Peopleware) 5부. 비옥한 토양.](https://weezip.treefeely.com/post/peopleware-5-fertile-soil)
@@ -94,26 +103,6 @@
 - [좋은 동료와 함께 성장하기 위한 피드백은 어떻게 해야할까?](https://weezip.treefeely.com/post/how-to-feedback)
 - [내가 매일 업무일지를 작성하는 4가지 이유.](https://weezip.treefeely.com/post/4reasons-why-journal-daily)
 
-### 트리피디아
+### 생각조각
 
-- [[영화] 포드 V 페라리 후기, 매혹적 레이싱과 신화적 삶.](https://weezip.treefeely.com/post/movie-review-ford-vs-ferrari)
-- [예능 《장사천재 백사장 시즌2》 후기. 프로덕트 개발의 진수가 담겨있었다.](https://weezip.treefeely.com/post/review-the-genius-paik-season-2)
-- [[책] 한병철 <서사의 위기> 후기. 우리는 언어와 이야기를 박탈당했다.](https://weezip.treefeely.com/post/review-die-krise-der-narration)
-- [[영화] 픽사의 23번째 장편 영화, 피트 닥터 - 소울 후기](https://weezip.treefeely.com/post/review-pixar-soul)
-- [[영화] 미야자키 하야오 - 그대들은 어떻게 살 것인가 후기](https://weezip.treefeely.com/post/review-the-boy-and-the-heron)
-- [[책] 미셸 푸코 - 감옥의 대안 후기](https://weezip.treefeely.com/post/review-alternatives-a-la-prison)
-- [[책] 유현준 - 도시는 무엇으로 사는가 후기](https://weezip.treefeely.com/post/what-do-cities-live-for-review)
-- [[영화] 쥬세페 토르나토레 - 시네마천국 후기](https://weezip.treefeely.com/post/cinema-paradiso-review)
-- [[영화] 크리스토퍼 놀란 - 오펜하이머 후기](https://weezip.treefeely.com/post/oppenheimer-review)
-- [[공연] 서울시립교향악단 파크콘서트 후기](https://weezip.treefeely.com/post/SPO-park-concert-review)
-- [[영화] 에드거 라이트 - 라스트 나잇 인 소호 후기](https://weezip.treefeely.com/post/last-night-in-soho-review)
-- [[공연] 2023 펜타포트 락 페스티벌 후기. 내 인생에 새겨진 청춘이라는 소인이자 헌시.](https://weezip.treefeely.com/post/2023-pentaport-rock-festival-review)
-- [[영화] 하마구치 류스케 - 드라이브 마이 카 후기](https://weezip.treefeely.com/post/review-drive-my-car)
-- [[책] 올더스 헉슬리 - 멋진 신세계 후기](https://weezip.treefeely.com/post/review-brave-new-world)
-- [[영화] 배리 레빈슨 - 굿모닝 베트남 후기](https://weezip.treefeely.com/post/review-good-morning-vietnam)
-- [[애니메이션] 기생수 후기](https://weezip.treefeely.com/post/review-parasyte)
-- [[영화] 변성현 - 길복순 후기](https://weezip.treefeely.com/post/review-kill-boksoon)
-- [[책] 룰루 밀러 - 물고기는 존재하지 않는다 후기](https://weezip.treefeely.com/post/review-why-fish-dont-exist)
-- [[영화] 스탠리 큐브릭 - 시계태엽오렌지 후기](https://weezip.treefeely.com/post/review-a-clockwork-orange)
-- [[영화] 콘도 카츠야 - 바다가 들린다 후기](https://weezip.treefeely.com/post/review-the-ocean-waves/)
-- [[책] 김호연 - 불편한 편의점 후기](https://weezip.treefeely.com/post/review-uncomfortable-convenience)
+- [생각 조각 1~3. 기술부채, 컨텍스트, 쿼리스트링](http://localhost:8000/post/think-log-1-to-3)
