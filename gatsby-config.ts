@@ -137,12 +137,12 @@ const config: GatsbyConfig = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-adsense`,
-    //   options: {
-    //     publisherId: `ca-pub-1622942491482378`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-1622942491482378`,
+      },
+    },
   ],
 };
 

@@ -33,6 +33,11 @@ export default function HTML(props) {
           rel="stylesheet"
         />
         {/* <script src="https://developers.kakao.com/sdk/js/kakao.js" /> */}
+        <script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1622942491482378"
+          crossOrigin="anonymous"
+          async
+        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
