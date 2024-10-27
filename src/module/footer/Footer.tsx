@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import './Footer.scss';
-import { IconGithub, IconKakao, IconMail } from '@components/icon';
+import { IconGithub, IconKakao, IconLinkedIn, IconMail } from '@components/icon';
 import { CircleIconWrapper } from '@components/icon/wrapper';
 import { Linker } from '@components/ui';
 import { useVisitor } from '@hooks/useVisitor';
@@ -36,12 +36,21 @@ export default function Footer() {
                 <IconGithub color="reverse-mono" />
               </Linker>
             </CircleIconWrapper>
+            <CircleIconWrapper color="reverse-mono">
+              <Linker
+                label={`LinkedIn ${ARIA_LABEL.OPEN}`}
+                target="_blank"
+                url={`https://www.linkedin.com/in/dearlsh94/`}
+              >
+                <IconLinkedIn color="reverse-mono" />
+              </Linker>
+            </CircleIconWrapper>
           </div>
         </div>
         {allVisitors !== null && todayVisitors !== null && (
           <div className="visit-box">
             <p>
-              Today : {formatWithComma(todayVisitors)} / Total : {formatWithComma(allVisitors)}
+              Today : {formatWithComma(todayVisitors)} / Total : {formatWithComma(allVisitors)} (UTC+0)
             </p>
           </div>
         )}
