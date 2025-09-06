@@ -19,7 +19,7 @@ export const Head: HeadFC = () => {
       pathname={paths.treepedia()}
       title={`트리피디아`}
     >
-      <link href={`https://treefeely.com${paths.treepedia()}`} rel="canonical" />
+      <link href={`https://weezip.treefeely.com${paths.treepedia()}`} rel="canonical" />
     </SEO>
   );
 };
