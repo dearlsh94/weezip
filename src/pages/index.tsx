@@ -6,6 +6,7 @@ import * as React from 'react';
 import '@scss/global.scss';
 import '@scss/pages/IndexPage.scss';
 
+import Deprecated from '@components/Deprecated';
 import { Snowflakes } from '@components/animation';
 import SEO from '@components/header/SEO';
 import { Contents, LatestPost } from '@components/post';
@@ -26,6 +27,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const json = notionNodeToJson(node);
   return (
     <MainLayout className="index-layout">
+      <Deprecated />
       <LatestPost />
       <div className="introduce">{node && <Contents childrens={json.children} />}</div>
       <div className="logo-box">

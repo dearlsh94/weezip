@@ -15,6 +15,7 @@ import { includesString } from '@utils/common';
 import { getParamValue, paths } from '@utils/url';
 
 import { NotionNode } from '@types';
+import Deprecated from '@components/Deprecated';
 
 export const Head: HeadFC = () => {
   return (
@@ -77,6 +78,7 @@ const ListPage: React.FC<PageProps> = ({ location }) => {
 
   return (
     <MainLayout className="posts-layout">
+      <Deprecated />
       <section className="posts-layout__header">
         <PostsFilter />
         <ResetDivider />
