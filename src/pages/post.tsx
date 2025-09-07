@@ -25,6 +25,7 @@ import { getPlainTextByRichText, notionNodeToJson } from '@utils/notion';
 import { paths } from '@utils/url';
 
 import { BlockType, ImageChildren, ParagraphChildren } from '@types';
+import Deprecated from '@components/Deprecated';
 
 export const Head: HeadFC = ({ pageContext }: any) => {
   const { getNodeByUrl } = useWeezipNotion();
@@ -105,6 +106,7 @@ const PostPage: React.FC<PageProps> = ({ pageContext }: any) => {
 
   return (
     <MainLayout className="post">
+      <Deprecated />
       <Breadcrumb steps={breadcrumbSteps} />
       <article>
         <Title slug={slug} title={title} />
